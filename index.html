@@ -56,7 +56,7 @@
   :focus-visible{outline:2px solid var(--c-info);outline-offset:3px;border-radius:6px}
 
   /* ─────────── Шапка ─────────── */
-  .hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px)}
+  .hero{padding:clamp(48px,8vw,88px) 0 clamp(8px,1.5vw,16px)}
   .kicker{
     font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--t3);margin:0 0 24px;
@@ -99,7 +99,7 @@
   .stats{
     display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
     background:var(--border);border-radius:var(--r);overflow:hidden;
-    box-shadow:var(--glow);margin:0 0 32px;
+    box-shadow:var(--glow);margin:0;
   }
   @media (min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
   .stat{background:var(--bg-2);padding:20px 22px}
@@ -114,32 +114,6 @@
   .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.09em;
     text-transform:uppercase;color:var(--t3);line-height:1.4;display:block}
 
-  /* карточка-доказательство */
-  .proof{
-    background-image:var(--grad-card);border-radius:var(--r);
-    box-shadow:var(--glow);overflow:hidden;
-  }
-  .proof-top{
-    display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;
-    padding:18px 22px;border-bottom:1px solid var(--border);
-  }
-  .proof-top .t{font-weight:600;color:var(--t1);font-size:15.5px}
-  .proof-top .s{font-family:var(--mono);font-size:11.5px;color:var(--t3);
-    letter-spacing:.07em;text-transform:uppercase}
-  .proof-body{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
-  @media (min-width:640px){.proof-body{grid-template-columns:repeat(4,1fr)}}
-  .pcell{background:var(--bg-2);padding:18px 22px}
-  .pcell b{display:block;font-family:var(--mono);font-size:24px;font-weight:600;
-    font-variant-numeric:tabular-nums;line-height:1.2;color:var(--c-info);margin-bottom:2px}
-  .pcell.warn b{color:var(--c-error)}
-  .pcell.ok b{color:var(--c-success)}
-  .pcell span{font-size:12.5px;color:var(--t3)}
-  .proof-foot{padding:14px 22px;font-size:13.5px;color:var(--t3);border-top:1px solid var(--border);
-    display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
-  .proof-link{display:inline-flex;align-items:center;min-height:44px;
-    color:var(--c-info);font-weight:550;box-shadow:inset 0 -1px 0 var(--border-strong);
-    transition:box-shadow .18s}
-  .proof-link:hover{box-shadow:inset 0 -1px 0 var(--c-info)}
 
   /* ─────────── Секции ─────────── */
   section{padding:clamp(44px,6vw,72px) 0}
@@ -247,22 +221,6 @@
       <div class="stat"><b>108</b><span>требований в своде</span></div>
       <div class="stat"><b>399</b><span>клиник в собранной базе</span></div>
     </div>
-
-    <div class="proof">
-      <div class="proof-top">
-        <span class="t">Как это выглядит на деле: один прогон сканера по сайту клиники</span>
-      </div>
-      <div class="proof-body">
-        <div class="pcell"><b>30</b><span>пунктов проверил</span></div>
-        <div class="pcell"><b>16</b><span>нарушений нашёл</span></div>
-        <div class="pcell warn"><b>2,01 млн ₽</b><span>во столько они могут обойтись клинике</span></div>
-        <div class="pcell ok"><b>~40 сек</b><span>заняла проверка вместо часов</span></div>
-      </div>
-      <div class="proof-foot">
-        Клиника получает такой отчёт целиком, с разбором каждого пункта.
-        <a class="proof-link" href="demo/otchet-klinika-a.html">Открыть этот отчёт →</a>
-      </div>
-    </div>
   </div>
 </header>
 
@@ -283,7 +241,7 @@
           часы становятся деньгами.</p>
         <p class="effect">Разговор с собственником идёт по его цифрам, а не по обещаниям подрядчика</p>
         <p class="tools">Claude Code · один HTML-файл, работает офлайн</p>
-        <div class="open"><a href="demo/kalkulyator-vnedreniya-ii.html">Открыть калькулятор</a></div>
+        <div class="open"><a href="demo/kalkulyator-vnedreniya-ii.html#metodika">Как он считает — и сам калькулятор</a></div>
       </article>
 
       <article class="card">

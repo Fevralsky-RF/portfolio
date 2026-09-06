@@ -124,7 +124,11 @@
   .pcell.warn b{color:var(--c-error)}
   .pcell.ok b{color:var(--c-success)}
   .pcell span{font-size:12.5px;color:var(--t3)}
-  .proof-foot{padding:14px 22px;font-size:13.5px;color:var(--t3);border-top:1px solid var(--border)}
+  .proof-foot{padding:14px 22px;font-size:13.5px;color:var(--t3);border-top:1px solid var(--border);
+    display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+  .proof-link{color:var(--c-info);font-weight:550;border-bottom:1px solid var(--border-strong);
+    padding-bottom:1px;transition:border-color .18s}
+  .proof-link:hover{border-bottom-color:var(--c-info)}
 
   /* ─────────── Секции ─────────── */
   section{padding:clamp(44px,6vw,72px) 0}
@@ -235,16 +239,18 @@
 
     <div class="proof">
       <div class="proof-top">
-        <span class="t">Пример работы сканера</span>
-        <span class="s">на входе адрес сайта · на выходе pdf-отчёт</span>
+        <span class="t">Как это выглядит на деле: один прогон сканера по сайту клиники</span>
       </div>
       <div class="proof-body">
-        <div class="pcell"><b>30</b><span>пунктов проверки</span></div>
-        <div class="pcell"><b>16</b><span>нарушений найдено</span></div>
-        <div class="pcell warn"><b>2,01 млн ₽</b><span>предельные санкции</span></div>
-        <div class="pcell ok"><b>~40 сек</b><span>вместо часов вручную</span></div>
+        <div class="pcell"><b>30</b><span>пунктов проверил</span></div>
+        <div class="pcell"><b>16</b><span>нарушений нашёл</span></div>
+        <div class="pcell warn"><b>2,01 млн ₽</b><span>во столько они могут обойтись клинике</span></div>
+        <div class="pcell ok"><b>~40 сек</b><span>заняла проверка вместо часов</span></div>
       </div>
-      <div class="proof-foot">Четыре обезличенных отчёта по реальным клиникам — в разделе «Делают работу».</div>
+      <div class="proof-foot">
+        Клиника получает такой отчёт целиком, с разбором каждого пункта.
+        <a class="proof-link" href="demo/otchet-klinika-a.html">Открыть этот отчёт →</a>
+      </div>
     </div>
   </div>
 </header>
@@ -303,10 +309,10 @@
         <p class="effect">Часы ручной проверки → около сорока секунд</p>
         <p class="tools">Python · Claude Code · свод 108 требований</p>
         <div class="open">
-          <a href="demo/otchet-klinika-a.html">16 нарушений</a>
-          <a href="demo/otchet-klinika-b.html">17 нарушений</a>
-          <a href="demo/otchet-klinika-v.html">7 нарушений</a>
-          <a href="demo/otchet-klinika-g.html">чистый сайт</a>
+          <a href="demo/otchet-klinika-a.html">16 нарушений · 2,01 млн ₽</a>
+          <a href="demo/otchet-klinika-b.html">17 · 1,79 млн ₽</a>
+          <a href="demo/otchet-klinika-g.html">14 · 1,87 млн ₽</a>
+          <a href="demo/otchet-klinika-v.html">7 · 660 тыс ₽</a>
         </div>
       </article>
 
@@ -343,7 +349,7 @@
           готовности</b>, а не разовый промпт.</p>
         <p class="effect">Агент выполняет процесс одинаково в понедельник и в пятницу</p>
         <p class="tools">Claude Code · Markdown · git</p>
-        <div class="open"><a href="#reglamenty">Список ниже</a></div>
+        <div class="open"><a href="reglamenty.html">Открыть все 28 регламентов</a></div>
       </article>
 
       <article class="card">
@@ -355,27 +361,23 @@
           Дальше — отбор по обороту и приоритизация обзвона.</p>
         <p class="effect">Недели ручного поиска → один прогон скрипта</p>
         <p class="tools">Python · ГИР БО · Claude Code</p>
-        <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Продукт, для которого собиралась</a></div>
+        <div class="open"><a href="https://dental-expert.umnie-resheniya.ru" target="_blank" rel="noopener">Продукт, для которого собиралась</a></div>
       </article>
     </div>
 
     <div class="chips-wrap" id="reglamenty">
-      <p class="chips-title">28 собственных регламентов</p>
+      <p class="chips-title">28 регламентов по семи направлениям</p>
       <div class="chips">
-        <span class="chip">ceo</span><span class="chip">cto</span><span class="chip">pm</span>
-        <span class="chip">prodazhi-dental</span><span class="chip">sparring-zvonok</span>
-        <span class="chip">pyat-edinichek</span><span class="chip">max-voice</span>
-        <span class="chip">branding-dental-expert</span><span class="chip">auditing-dental-compliance</span>
-        <span class="chip">drafting-medical-legal-docs</span><span class="chip">checking-ru-regulations</span>
-        <span class="chip">enriching-ru-company-financials</span><span class="chip">crafting-conversion-products</span>
-        <span class="chip">dark-dashboard-style</span><span class="chip">checkpoint</span>
-        <span class="chip">improving-skills</span><span class="chip">mining-ai-archives</span>
-        <span class="chip">checking-system-health</span><span class="chip">folder-safety-net</span>
-        <span class="chip">installing-cli-without-admin</span><span class="chip">terra-homework-to-drive</span>
-        <span class="chip">verifying-against-source</span><span class="chip">razbor-zadachi</span>
-        <span class="chip">brif-vstrechi</span><span class="chip">explaining-with-metaphors</span>
-        <span class="chip">preparing-job-application</span><span class="chip">tailoring-resume</span>
-        <span class="chip">proverka-tremya-optikami</span>
+        <span class="chip">Управление проектом · 6</span>
+        <span class="chip">Продажи и клиенты · 3</span>
+        <span class="chip">Тексты, бренд, дизайн · 5</span>
+        <span class="chip">Право и комплаенс · 3</span>
+        <span class="chip">Данные и инструменты · 5</span>
+        <span class="chip">Качество системы · 4</span>
+        <span class="chip">Карьера · 2</span>
+      </div>
+      <div class="open" style="padding-top:16px">
+        <a href="reglamenty.html">Посмотреть каждый регламент</a>
       </div>
     </div>
   </div>
@@ -412,9 +414,9 @@
         <p>Собственный B2B-продукт: сайт клиники под требования регуляторов,
           ИИ-администратор, сканер и калькуляторы. <b>Единственная работа в подборке,
           которая живёт на боевом домене.</b></p>
-        <p class="effect">От первого прототипа до продакшена — два месяца</p>
+        <p class="effect">Сайт клиники под требования регуляторов собирается за три дня</p>
         <p class="tools">Claude Code · HTML/CSS/JS · собственная сборка</p>
-        <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Открыть сайт</a></div>
+        <div class="open"><a href="https://dental-expert.umnie-resheniya.ru" target="_blank" rel="noopener">Открыть сайт продукта</a></div>
       </article>
 
       <article class="card">

@@ -8,14 +8,14 @@
 <style>
 /* ===== TOKENS ===== */
 :root {
-  --bg:#F4F4F6;--bg2:#fff;--bg3:#EBEBED;--bg4:#F0F0F2;
-  --card:rgba(255,255,255,.92);--card-s:#fff;
+  --bg:#0f1419;--bg2:#fff;--bg3:#EBEBED;--bg4:#F0F0F2;
+  --card:rgba(255,255,255,.92);--card-s:#1a1f2e;
   --border:rgba(0,0,0,.07);--border2:rgba(0,0,0,.12);
-  --text:#1A1A1C;--text2:#3A3A3C;--muted:#86868B;--muted2:#AEAEB2;
-  --inp:#F0F0F2;
-  --green:#00C572;--green2:#00a85e;
+  --text:#f1f5f9;--text2:#3A3A3C;--muted:#94a3b8;--muted2:#AEAEB2;
+  --inp:#1e293b;
+  --green:#34d399;--green2:#00a85e;
   --green-bg:rgba(0,197,114,.10);--green-bg2:rgba(0,197,114,.06);
-  --red:#FF3B30;--red-bg:rgba(255,59,48,.08);
+  --red:#f87171;--red-bg:rgba(255,59,48,.08);
   --orange:#FF9500;--orange-bg:rgba(255,149,0,.09);
   --blue:#007AFF;--blue-bg:rgba(0,122,255,.09);
   --sh:0 2px 12px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);
@@ -24,14 +24,14 @@
   --r:16px;--rsm:10px;--rlg:22px;--rxl:28px;
 }
 [data-theme="dark"]{
-  --bg:#000;--bg2:#111;--bg3:#1C1C1E;--bg4:#2C2C2E;
-  --card:rgba(28,28,30,.94);--card-s:#1C1C1E;
+  --bg:#0f1419;--bg2:#111;--bg3:#1C1C1E;--bg4:#2C2C2E;
+  --card:rgba(28,28,30,.94);--card-s:#1a1f2e;
   --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
-  --text:#F5F5F7;--text2:#EBEBF0;--muted:#8E8E93;--muted2:#636366;
-  --inp:#2C2C2E;
-  --green:#30D158;--green2:#25b84a;
+  --text:#f1f5f9;--text2:#EBEBF0;--muted:#94a3b8;--muted2:#636366;
+  --inp:#1e293b;
+  --green:#34d399;--green2:#25b84a;
   --green-bg:rgba(48,209,88,.12);--green-bg2:rgba(48,209,88,.07);
-  --red:#FF453A;--red-bg:rgba(255,69,58,.12);
+  --red:#f87171;--red-bg:rgba(255,69,58,.12);
   --orange:#FF9F0A;--orange-bg:rgba(255,159,10,.12);
   --blue:#0A84FF;--blue-bg:rgba(10,132,255,.12);
   --sh:0 2px 16px rgba(0,0,0,.45);
@@ -172,7 +172,7 @@ input[type=range]::-webkit-slider-thumb:active{transform:scale(1.18)}
 .tog-track{position:absolute;inset:0;border-radius:14px;background:#D1D1D6;transition:background .25s}
 [data-theme="dark"] .tog-track{background:#3A3A3C}
 .tog input:checked + .tog-track{background:var(--green)}
-.tog-knob{position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
+.tog-knob{position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#1a1f2e;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
 .tog input:checked ~ .tog-knob{transform:translateX(19px)}
 .adv-divider{grid-column:1/-1;height:1px;background:var(--border);margin:4px 0}
 
@@ -310,7 +310,7 @@ canvas{display:block;width:100% !important}
 .final-quote em{font-style:normal;color:var(--green)}
 .final-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:var(--text);color:var(--bg);font-size:16px;font-weight:800;border:none;border-radius:50px;transition:all .25s;box-shadow:var(--sh-lg)}
 .final-btn:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
-[data-theme="dark"] .final-btn{background:#fff;color:#000}
+[data-theme="dark"] .final-btn{background:#1a1f2e;color:#000}
 .final-btn:hover .final-arrow{transform:translateX(4px)}
 .final-arrow{transition:transform .2s}
 
@@ -357,7 +357,7 @@ canvas{display:block;width:100% !important}
 @media print{
   .topbar{position:relative}
   .icon-btn,.top-cta,.ghost-btn,.lead-card,.urgency,.final,.mid-cta,.hero{display:none}
-  body{background:#fff}
+  body{background:#1a1f2e}
   .card,.card-s{box-shadow:none;border:1px solid #ddd}
 }
 
@@ -384,6 +384,15 @@ canvas{display:block;width:100% !important}
 .chart-wrap{position:relative}
 .chart-hint{position:absolute;top:8px;right:8px;font-size:11px;color:var(--muted);font-weight:600;pointer-events:none;opacity:0;transition:opacity .2s;max-width:55%;text-align:right;line-height:1.35}
 .impact-headline .strike-soft{color:rgba(255,255,255,.45);text-decoration:line-through;font-weight:600;margin-right:8px}
+</style>
+
+<style id="dark-superset">
+/* Фирменная тёмная тема — Apache Superset Dark */
+:root{color-scheme:dark}
+html{background:#0f1419}
+body{background:#0f1419;background-image:linear-gradient(135deg,#0f1419 0%,#1a1f2e 100%);
+     background-attachment:fixed;color:#cbd5e1}
+::selection{background:rgba(59,130,246,.3);color:#fff}
 </style>
 </head>
 <body>

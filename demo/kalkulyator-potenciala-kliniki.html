@@ -3,32 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор "Скрытого потенциала" | Стоматология</title>
+    <title>Встреча с пациентами — Калькулятор дополнительной прибыли</title>
     <style>
-        :root {
-            --color-primary: #3b82f6;
-            --color-success: #34d399;
-            --color-warning: #fbbf24;
-            --color-error: #f87171;
-            --color-info: #60a5fa;
-            
-            --bg-dark: #0f1419;
-            --bg-secondary: #1a1f2e;
-            --bg-tertiary: #1e293b;
-            
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-tertiary: #94a3b8;
-            
-            --border-light: rgba(59, 130, 246, 0.15);
-            --border-medium: rgba(59, 130, 246, 0.2);
-            --border-hover: rgba(59, 130, 246, 0.5);
-            
-            --gradient-primary: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
-            --gradient-background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
-            --gradient-card: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -36,286 +12,290 @@
         }
 
         body {
-            background: var(--gradient-background);
-            color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             min-height: 100vh;
             padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         /* Header */
         .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            animation: slideDown 0.6s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        .header p {
-            color: var(--text-tertiary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Main Card */
-        .calculator-card {
-            background: var(--gradient-card);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2.5rem;
-            backdrop-filter: blur(10px);
-            animation: slideUp 0.6s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section */
-        .section {
-            margin-bottom: 2.5rem;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border-medium);
-        }
-
-        .section-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: rgba(96, 165, 250, 0.15);
-            border-radius: 8px;
-            margin-right: 0.75rem;
-            font-size: 1.2rem;
-        }
-
-        /* Input Group */
-        .input-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .label {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .label-hint {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
-            font-weight: 400;
-        }
-
-        .value-display {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .value-number {
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Radio Buttons */
-        .radio-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
             gap: 1rem;
         }
 
-        .radio-item {
+        .header-left h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .header-left p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* City Selector */
+        .city-selector {
             position: relative;
         }
 
-        .radio-item input[type="radio"] {
-            display: none;
-        }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background: rgba(30, 41, 59, 0.5);
-            border: 2px solid var(--border-light);
+        .city-btn-open {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%);
+            border: 2px solid #60a5fa;
             border-radius: 10px;
+            color: #f1f5f9;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
-            color: var(--text-primary);
-            text-align: center;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .radio-item input[type="radio"]:checked + .radio-label {
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%);
-            border-color: var(--color-info);
             box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
         }
 
-        .radio-label:hover {
-            border-color: var(--border-hover);
+        .city-btn-open:hover {
             transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
         }
 
-        .radio-percent {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
+        .city-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 250px;
+            max-height: 400px;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .city-dropdown.active {
+            display: block;
+        }
+
+        .city-option {
+            padding: 0.75rem 1rem;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: #f1f5f9;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+
+        .city-option:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: #60a5fa;
+        }
+
+        .city-option.selected {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%);
+            border-color: #60a5fa;
+            color: #60a5fa;
+        }
+
+        .city-option-size {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1000px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left Panel - Filters */
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .filter-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .filter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-icon {
+            font-size: 1.2rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #f1f5f9;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .filter-value {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #60a5fa;
+        }
+
+        .filter-percent {
+            font-size: 0.8rem;
+            color: #94a3b8;
             font-weight: 400;
         }
 
-        /* Slider */
-        .slider-container {
-            margin-bottom: 1rem;
+        .filter-hint {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 0.5rem;
         }
 
         .slider {
             width: 100%;
             height: 6px;
             border-radius: 3px;
-            background: linear-gradient(90deg, var(--color-info) 0%, var(--color-success) 100%);
+            background: linear-gradient(90deg, #60a5fa 0%, #34d399 100%);
             outline: none;
             -webkit-appearance: none;
             appearance: none;
+            margin: 1rem 0;
         }
 
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: var(--color-info);
+            background: #60a5fa;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+            box-shadow: 0 0 12px rgba(96, 165, 250, 0.5);
             transition: all 0.2s ease;
         }
 
         .slider::-webkit-slider-thumb:hover {
-            width: 24px;
-            height: 24px;
-            box-shadow: 0 0 25px rgba(96, 165, 250, 0.7);
+            width: 22px;
+            height: 22px;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.7);
         }
 
         .slider::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: var(--color-info);
+            background: #60a5fa;
             cursor: pointer;
             border: none;
-            box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+            box-shadow: 0 0 12px rgba(96, 165, 250, 0.5);
             transition: all 0.2s ease;
         }
 
-        .slider::-moz-range-thumb:hover {
-            width: 24px;
-            height: 24px;
-            box-shadow: 0 0 25px rgba(96, 165, 250, 0.7);
-        }
-
-        .slider-labels {
+        .slider-range {
             display: flex;
             justify-content: space-between;
+            font-size: 0.75rem;
+            color: #94a3b8;
             margin-top: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
         }
 
-        /* Results Grid */
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .text-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+            color: #f1f5f9;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: #60a5fa;
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+        }
+
+        /* Right Panel - Results */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
-            padding: 2rem;
-            background: rgba(15, 20, 25, 0.4);
-            border-radius: 12px;
-            border: 1px solid var(--border-light);
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 600px) {
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .result-card {
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
         }
 
-        .result-label {
+        .result-title {
             font-size: 0.9rem;
-            color: var(--text-tertiary);
-            margin-bottom: 0.5rem;
+            color: #94a3b8;
+            margin-bottom: 0.75rem;
             font-weight: 500;
         }
 
         .result-value {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -324,38 +304,70 @@
 
         .result-unit {
             font-size: 0.85rem;
-            color: var(--text-tertiary);
-            margin-top: 0.25rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
         }
 
-        /* Info Box */
-        .info-box {
-            background: rgba(96, 165, 250, 0.08);
-            border-left: 4px solid var(--color-info);
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .breakdown-card {
+            background: rgba(15, 20, 25, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
             padding: 1rem;
-            border-radius: 8px;
+        }
+
+        .breakdown-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .breakdown-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #60a5fa;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .summary-title {
+            font-weight: 600;
+            color: #34d399;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .summary-text {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .summary-highlight {
+            background: rgba(96, 165, 250, 0.1);
+            padding: 0.75rem 1rem;
+            border-left: 3px solid #60a5fa;
+            border-radius: 6px;
             margin-top: 1rem;
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .info-icon {
-            flex-shrink: 0;
-            font-size: 1.2rem;
-        }
-
-        .info-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            color: #60a5fa;
+            font-weight: 600;
         }
 
         /* Button */
-        .button {
-            width: 100%;
+        .btn-export {
             padding: 1rem;
-            margin-top: 2rem;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
             color: white;
             border: none;
             border-radius: 10px;
@@ -364,445 +376,637 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+            width: 100%;
         }
 
-        .button:hover {
+        .btn-export:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(96, 165, 250, 0.4);
         }
 
-        .button:active {
-            transform: translateY(0);
-        }
-
-        /* Empty State */
-        .potential-message {
-            padding: 1.5rem;
-            background: rgba(52, 211, 153, 0.08);
-            border-left: 4px solid var(--color-success);
+        /* Reset Button */
+        .btn-reset {
+            padding: 0.75rem 1rem;
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 8px;
-            margin-top: 1.5rem;
-            display: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
-        .potential-message.show {
-            display: block;
-            animation: slideUp 0.4s ease;
+        .btn-reset:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #60a5fa;
+            color: #60a5fa;
         }
 
-        .potential-message-title {
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: rgba(59, 130, 246, 0.1);
+            margin: 1rem 0;
+        }
+
+        .city-name-display {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        /* Yandex Credit */
+        .yandex-credit {
+            background: linear-gradient(90deg, #E83D3D 0%, #E83D3D 50%, #FFB300 50%, #FFB300 100%);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 12px rgba(232, 61, 61, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yandex-credit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .yandex-credit:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(232, 61, 61, 0.2);
+        }
+
+        .yandex-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: #FFFFFF;
+            border-radius: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .yandex-logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E83D3D 0%, #FFB300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .yandex-text {
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .yandex-text p {
+            margin: 0;
+        }
+
+        .yandex-text strong {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .yandex-link {
+            color: #FFFFFF;
+            text-decoration: none;
             font-weight: 600;
-            color: var(--color-success);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            font-size: 0.8rem;
         }
 
-        .potential-message-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
+        .yandex-link:hover {
+            opacity: 0.95;
+            text-decoration: underline;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            color: var(--text-tertiary);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+        @media (max-width: 1000px) {
+            .yandex-credit {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.7rem;
+                background: linear-gradient(180deg, #E83D3D 0%, #E83D3D 45%, #FFB300 45%, #FFB300 100%);
+                padding: 0.7rem;
             }
 
-            .calculator-card {
-                padding: 1.5rem;
+            .yandex-logo-container {
+                width: 36px;
+                height: 36px;
             }
 
-            .results-grid {
-                padding: 1.5rem;
-                gap: 1rem;
+            .yandex-logo {
+                font-size: 1.3rem;
             }
 
-            .result-value {
-                font-size: 1.5rem;
+            .yandex-text {
+                font-size: 0.75rem;
             }
 
-            .radio-group {
-                grid-template-columns: 1fr;
+            .yandex-link {
+                font-size: 0.75rem;
             }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animate-value {
-            animation: fadeIn 0.3s ease;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
-            <h1>📈 Рост на +25% в месяц</h1>
-            <p>Узнайте, сколько дополнительных пациентов и выручки вы получите</p>
+            <div class="header-left">
+                <h1>📞 Встреча с пациентами</h1>
+                <p>Рассчитайте дополнительный доход от пациентов, которые ищут вас ночью</p>
+            </div>
+            
+            <!-- Yandex Wordstat Credit -->
+            <div class="yandex-credit">
+                <div class="yandex-logo-container">
+                    <span class="yandex-logo">Я</span>
+                </div>
+                <div class="yandex-text">
+                    <p>Данные из <strong>Яндекс Wordstat</strong></p>
+                    <a href="https://wordstat.yandex.ru/?region=all&view=map&words=%D1%81%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F" target="_blank" class="yandex-link">
+                        📊 К статистике
+                    </a>
+                </div>
+            </div>
+
+            <div class="city-selector">
+                <button class="city-btn-open" onclick="toggleCityDropdown()">
+                    <span id="selectedCityDisplay">🏙️ Москва</span>
+                </button>
+                <div class="city-dropdown" id="cityDropdown">
+                    <button class="city-option selected" onclick="selectCity(600908, 'Москва')">
+                        🏙️ Москва
+                        <span class="city-option-size">600 908 запросов</span>
+                    </button>
+                    <button class="city-option" onclick="selectCity(309863, 'Санкт-Петербург')">
+                        🌉 Санкт-Петербург
+                        <span class="city-option-size">309 863 запроса</span>
+                    </button>
+                    <button class="city-option" onclick="selectCity(130802, 'Екатеринбург')">
+                        🏢 Екатеринбург
+                        <span class="city-option-size">130 802 запроса</span>
+                    </button>
+                    <button class="city-option" onclick="selectCity(90948, 'Нижний Новгород')">
+                        🌆 Нижний Новгород
+                        <span class="city-option-size">90 948 запросов</span>
+                    </button>
+                    <button class="city-option" onclick="selectCity(82799, 'Казань')">
+                        🌃 Казань
+                        <span class="city-option-size">82 799 запросов</span>
+                    </button>
+                    <button class="city-option" onclick="selectCity(0, 'Свой город')">
+                        📍 Свой город
+                        <span class="city-option-size">укажите вручную</span>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="calculator-card">
-            <!-- Step 1: Region Selection -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">📍</div>
-                    Выберите регион
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Ваш город</span>
-                        <span class="label-hint">Данные Яндекс.Вордстат</span>
-                    </label>
-                    <select id="regionSelect" style="width: 100%; padding: 0.75rem; background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 10px; color: var(--text-primary); font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">
-                        <option value="90948">🏙️ Нижний Новгород (90 948)</option>
-                        <option value="82799">🏙️ Казань (82 799)</option>
-                        <option value="130802">🏙️ Екатеринбург (130 802)</option>
-                        <option value="309863">🏙️ Санкт-Петербург (309 863)</option>
-                        <option value="600908">🏙️ Москва (600 908)</option>
-                        <option value="0">Другой (укажите вручную)</option>
-                    </select>
-                    <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 0.75rem;">
-                        ✓ Поисковые запросы по "стоматология" за июнь-июль 2026
-                    </p>
-                </div>
-                <div class="input-group" id="customRegionInput" style="display: none;">
-                    <label class="label">
-                        <span>Укажите количество запросов в месяц</span>
-                    </label>
-                    <input type="number" id="customSearches" placeholder="Введите число" min="1000" step="1000" style="width: 100%; padding: 0.75rem; background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 10px; color: var(--text-primary); font-size: 1rem;">
-                </div>
-            </div>
+        <!-- Main Content -->
+        <div class="main-layout">
+            <!-- Left Panel - Filters -->
+            <div class="left-panel">
+                <!-- Sector 1: Base Market -->
+                <div class="filter-card">
+                    <div class="filter-title">
+                        <span class="filter-icon">🎯</span>
+                        Пациенты ищущие стоматолога в <span id="cityNameF1" class="city-name-display">Москве</span>
+                    </div>
 
-            <!-- Step 2: Base Data -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">🎯</div>
-                    Поисковый спрос
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Ежемесячные поиски "стоматология" в вашем регионе</span>
-                        <span class="label-hint" id="baseValue">90 948</span>
-                    </label>
-                    <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.5rem;">
-                        Люди, которые активно ищут стоматологические услуги именно сейчас
-                    </p>
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Потенциальные клиенты в вашем радиусе (3 км)</span>
-                        <span class="label-hint"><span class="value-number" id="localDemand">6 367</span> в месяц</span>
-                    </label>
-                    <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.5rem;">
-                        7% от всех поисков — это люди, которые ищут стоматолога именно в вашей части города
-                    </p>
-                </div>
-            </div>
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Люди ищут стоматолога</span>
+                            <span class="filter-value"><span id="baseSearchDisplay">600 908</span></span>
+                        </div>
+                        <input type="number" class="text-input" id="baseSearchInput" value="600908" onchange="calculate()">
+                        <div class="filter-hint">Всего запросов в месяц</div>
+                    </div>
 
-            <!-- Step 3: Clinic Visibility -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">🔍</div>
-                    Видимость вашей клиники
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Какая у вас видимость на Яндекс.Картах?</span>
-                        <span class="label-hint">Уровень присутствия в поиске</span>
-                    </label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="new" name="recognition" value="5" checked>
-                            <label for="new" class="radio-label">
-                                <span>🚀 Новая клиника</span>
-                                <span class="radio-percent">5% охвата</span>
-                            </label>
+                    <div class="divider"></div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>В радиусе</span>
+                            <span class="filter-value"><span id="radiusKm">3</span><span class="filter-percent">км</span></span>
                         </div>
-                        <div class="radio-item">
-                            <input type="radio" id="normal" name="recognition" value="10">
-                            <label for="normal" class="radio-label">
-                                <span>⭐ Известная</span>
-                                <span class="radio-percent">10% охвата</span>
-                            </label>
+                        <input type="range" class="slider" id="radiusSlider" min="1" max="3" value="3" step="0.5" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>1 км</span>
+                            <span>3 км</span>
                         </div>
-                        <div class="radio-item">
-                            <input type="radio" id="top" name="recognition" value="15">
-                            <label for="top" class="radio-label">
-                                <span>🏆 Топовая</span>
-                                <span class="radio-percent">15% охвата</span>
-                            </label>
-                        </div>
+                        <div class="filter-hint">Это <span id="radiusCountHint">42 064</span> пациентов которые вас ищут</div>
                     </div>
                 </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Потенциальных пациентов видит вашу клинику</span>
-                        <span class="label-hint"><span class="value-number" id="clinicShare">318</span> в месяц</span>
-                    </label>
-                    <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.5rem;">
-                        Это люди, которые вашу клинику видят в поиске и готовы обратиться
-                    </p>
-                </div>
-            </div>
 
-            <!-- Step 4: Additional Revenue Channel -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">📞</div>
-                    Новый канал заявок
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Пациенты, которые позвонят вне рабочих часов</span>
-                        <span class="label-hint"><span class="value-number" id="offHoursTraffic">143</span> в месяц</span>
-                    </label>
-                    <div class="info-box">
-                        <div class="info-icon">✨</div>
-                        <div class="info-text" id="offHoursMessage">
-                            <strong>45% от всех заинтересованных пациентов звонят вне часов</strong><br>
-                            С системой автоответа вы сможете обработать все эти звонки и назначить приёмы
+                <!-- Sector 2: Visibility -->
+                <div class="filter-card">
+                    <div class="filter-title">
+                        <span class="filter-icon">🔍</span>
+                        Видны ли вы в поиске
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Люди вас находят</span>
+                            <span class="filter-value"><span id="visibilityPercent">5</span><span class="filter-percent">%</span></span>
                         </div>
+                        <input type="range" class="slider" id="visibilitySlider" min="1" max="25" value="5" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>Новая клиника</span>
+                            <span>Популярная клиника</span>
+                        </div>
+                        <div class="filter-hint">Из всех кто ищет, какой % видит вас на Картах</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 5: New Patients -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">👥</div>
-                    Дополнительные пациенты
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Новых пациентов вы получите в месяц</span>
-                        <span class="label-hint"><span class="value-number" id="leads">21</span> пациентов</span>
-                    </label>
-                    <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.5rem;">
-                        15% от звонков в нерабочое время обратятся в клинику (с системой автоответа)
-                    </p>
-                </div>
-            </div>
-
-            <!-- Step 6: Revenue -->
-            <div class="section">
-                <div class="section-title">
-                    <div class="section-icon">💵</div>
-                    Ваш средний чек
-                </div>
-                <div class="input-group">
-                    <label class="label">
-                        <span>Средняя сумма приёма у вас</span>
-                        <span class="label-hint" style="display: flex; gap: 0.5rem; align-items: center;">
-                            <span class="value-number" id="avgCheckDisplay">4 000</span> ₽
-                        </span>
-                    </label>
-                    <div class="slider-container">
-                        <input type="range" min="2000" max="15000" step="500" value="4000" id="avgCheckSlider" class="slider">
-                        <div class="slider-labels">
-                            <span>2 000 ₽</span>
-                            <span>15 000 ₽</span>
-                        </div>
+                <!-- Sector 3: Off-Hours -->
+                <div class="filter-card">
+                    <div class="filter-title">
+                        <span class="filter-icon">🌙</span>
+                        Когда ищут
                     </div>
-                    <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.75rem;">
-                        Укажите среднюю стоимость первичного приёма или лечения
-                    </p>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Ищут в нерабочее время</span>
+                            <span class="filter-value"><span id="offHoursPercent">45</span><span class="filter-percent">%</span></span>
+                        </div>
+                        <input type="range" class="slider" id="offHoursSlider" min="20" max="70" value="45" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>Мало</span>
+                            <span>Много</span>
+                        </div>
+                        <div class="filter-hint">Люди, которые ищут, когда вы не работаете</div>
+                    </div>
                 </div>
+
+                <!-- Sector 4: Conversion -->
+                <div class="filter-card">
+                    <div class="filter-title">
+                        <span class="filter-icon">👥</span>
+                        Встреча с пациентами
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Придут к вам</span>
+                            <span class="filter-value"><span id="conversionPercent">15</span><span class="filter-percent">%</span></span>
+                        </div>
+                        <input type="range" class="slider" id="conversionSlider" min="5" max="40" value="15" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>Не все</span>
+                            <span>Много</span>
+                        </div>
+                        <div class="filter-hint">Из кто попробует связаться ночью</div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Вернутся ещё раз</span>
+                            <span class="filter-value"><span id="repeatPercent">35</span><span class="filter-percent">%</span></span>
+                        </div>
+                        <input type="range" class="slider" id="repeatSlider" min="10" max="60" value="35" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>Редко</span>
+                            <span>Часто</span>
+                        </div>
+                        <div class="filter-hint">Пациенты которые приходят ещё</div>
+                    </div>
+                </div>
+
+                <!-- Sector 5: Revenue -->
+                <div class="filter-card">
+                    <div class="filter-title">
+                        <span class="filter-icon">💰</span>
+                        Доход с пациента
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Первый визит</span>
+                            <span class="filter-value"><span id="avgCheckDisplay">4 000</span>₽</span>
+                        </div>
+                        <input type="range" class="slider" id="avgCheckSlider" min="2000" max="15000" step="500" value="4000" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>2 000₽</span>
+                            <span>15 000₽</span>
+                        </div>
+                        <div class="filter-hint">Сколько платит новый пациент</div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-group">
+                        <div class="filter-label">
+                            <span>Повторный визит</span>
+                            <span class="filter-value"><span id="repeatCheckDisplay">3 500</span>₽</span>
+                        </div>
+                        <input type="range" class="slider" id="repeatCheckSlider" min="1500" max="12000" step="500" value="3500" onchange="calculate()">
+                        <div class="slider-range">
+                            <span>1 500₽</span>
+                            <span>12 000₽</span>
+                        </div>
+                        <div class="filter-hint">Сколько платит вернувшийся пациент</div>
+                    </div>
+                </div>
+
+                <button class="btn-reset" onclick="resetAllFilters()">🔄 Сброс на стандарт</button>
             </div>
 
-            <!-- Results -->
-            <div class="results-grid">
+            <!-- Right Panel - Results -->
+            <div class="right-panel">
+                <!-- People in Radius -->
                 <div class="result-card">
-                    <div class="result-label">✨ Дополнительно в месяц</div>
-                    <div class="result-value animate-value" id="resultLeads">21</div>
-                    <div class="result-unit">новых пациентов</div>
+                    <div class="result-title">Пациентов которые вас ищут в радиусе <span id="radiusKmDisplay">3</span> км</div>
+                    <div class="result-value" id="resultPeopleInRadius">42 064</div>
+                    <div class="result-unit">в месяц</div>
                 </div>
+
+                <!-- Key Metrics -->
                 <div class="result-card">
-                    <div class="result-label">💰 Дополнительная выручка</div>
-                    <div class="result-value animate-value" id="resultPotential">84 000</div>
-                    <div class="result-unit">₽ в месяц</div>
+                    <div class="result-title">Вас видят</div>
+                    <div class="result-value" id="resultClinicVisibility">2 103</div>
+                    <div class="result-unit">людей в месяц</div>
                 </div>
-            </div>
 
-            <div class="potential-message show" id="potentialMessage">
-                <div class="potential-message-title">🚀 Ваши возможности роста</div>
-                <div class="potential-message-text">
-                    Система автоответа позволит вам получить <strong id="messageLead">21</strong> дополнительного пациента и заработать <strong id="messageAmount">84 000 ₽</strong> в месяц от звонков в нерабочое время.
+                <div class="result-grid">
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">В рабочее время</div>
+                        <div class="breakdown-value" id="resultDayRequests">1 157</div>
+                    </div>
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">В нерабочее время</div>
+                        <div class="breakdown-value" id="resultNightRequests">947</div>
+                    </div>
                 </div>
+
+                <!-- Main Results -->
+                <div class="divider"></div>
+
+                <div class="result-card">
+                    <div class="result-title">Новых пациентов в месяц</div>
+                    <div class="result-value" id="resultNewPatients">142</div>
+                    <div class="result-unit">впервые приходят</div>
+                </div>
+
+                <div class="result-grid">
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">Ищут ночью</div>
+                        <div class="breakdown-value" id="resultNightPatients">142</div>
+                    </div>
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">Вернулись ещё</div>
+                        <div class="breakdown-value" id="resultRepeatPatients">50</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Revenue -->
+                <div class="result-card">
+                    <div class="result-title">Дополнительный доход в месяц</div>
+                    <div class="result-value" id="resultMonthlyIncome">743 000</div>
+                    <div class="result-unit">₽</div>
+                </div>
+
+                <div class="result-grid">
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">От новых</div>
+                        <div class="breakdown-value" id="resultPrimaryIncome">568 000</div>
+                    </div>
+                    <div class="breakdown-card">
+                        <div class="breakdown-label">От повторных</div>
+                        <div class="breakdown-value" id="resultRepeatIncome">175 000</div>
+                    </div>
+                </div>
+
+                <!-- Yearly -->
+                <div class="result-card">
+                    <div class="result-title">За весь год</div>
+                    <div class="result-value" id="resultYearlyIncome">8.9M</div>
+                    <div class="result-unit">дополнительный доход</div>
+                </div>
+
+                <!-- Summary -->
+                <div class="summary-box">
+                    <div class="summary-title">✅ Вывод для <span id="citySummary">Москвы</span></div>
+                    <div class="summary-text">
+                        <p>Каждый месяц <span id="summaryNightPatients" style="color: #60a5fa; font-weight: 600;">142</span> человека ищут вас в нерабочее время.</p>
+                        <p style="margin-top: 0.75rem;">Это упущенные <span id="summaryYearlyIncome" style="color: #34d399; font-weight: 600;">8,9М ₽ в год</span>.</p>
+                        <div class="summary-highlight">
+                            💡 Автоответчик встречает их за секунды 24/7
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-export" onclick="exportReport()">📊 Скачать отчёт</button>
             </div>
-
-            <button class="button" onclick="toggleDetails()">📊 Показать подробный расчёт</button>
-        </div>
-
-        <div class="footer">
-            <p>💡 Вывод: Система обработки звонков окупается за 1-3 месяца за счёт дополнительных пациентов</p>
         </div>
     </div>
 
     <script>
-        // Данные из Яндекс Вордстата по регионам
-        const REGIONS = {
-            '90948': { name: 'Нижний Новгород', searches: 90948 },
-            '82799': { name: 'Казань', searches: 82799 },
-            '130802': { name: 'Екатеринбург', searches: 130802 },
-            '309863': { name: 'Санкт-Петербург', searches: 309863 },
-            '600908': { name: 'Москва', searches: 600908 }
+        let currentCity = { name: 'Москва', searches: 600908 };
+
+        const cities = {
+            'Москва': 600908,
+            'Санкт-Петербург': 309863,
+            'Екатеринбург': 130802,
+            'Нижний Новгород': 90948,
+            'Казань': 82799
         };
 
-        let BASE_SEARCHES = 90948; // По умолчанию Нижний Новгород
-        const LOCAL_DEMAND_PERCENT = 0.07;
-        const OFF_HOURS_PERCENT = 0.45;
-        const CONVERSION_PERCENT = 0.15;
+        function toggleCityDropdown() {
+            const dropdown = document.getElementById('cityDropdown');
+            dropdown.classList.toggle('active');
+        }
 
-        // Elements
-        const regionSelect = document.getElementById('regionSelect');
-        const customRegionInput = document.getElementById('customRegionInput');
-        const customSearches = document.getElementById('customSearches');
-        const recognitionInputs = document.querySelectorAll('input[name="recognition"]');
-        const avgCheckSlider = document.getElementById('avgCheckSlider');
+        function selectCity(searches, cityName) {
+            if (searches === 0) {
+                const custom = prompt('Укажите, сколько людей ищут "стоматология" в месяц в вашем городе:');
+                if (!custom) return;
+                currentCity.searches = parseInt(custom.replace(/\s/g, '')) || 600908;
+                currentCity.name = 'Ваш город';
+            } else {
+                currentCity.searches = searches;
+                currentCity.name = cityName;
+            }
 
-        // Result elements
-        const localDemandEl = document.getElementById('localDemand');
-        const clinicShareEl = document.getElementById('clinicShare');
-        const offHoursTrafficEl = document.getElementById('offHoursTraffic');
-        const leadsEl = document.getElementById('leads');
-        const avgCheckDisplayEl = document.getElementById('avgCheckDisplay');
-        const resultLeadsEl = document.getElementById('resultLeads');
-        const resultPotentialEl = document.getElementById('resultPotential');
-        const messageLead = document.getElementById('messageLead');
-        const messageAmount = document.getElementById('messageAmount');
-        const potentialMessageEl = document.getElementById('potentialMessage');
+            document.getElementById('selectedCityDisplay').textContent = `📍 ${currentCity.name}`;
+            document.getElementById('baseSearchInput').value = currentCity.searches;
+            document.getElementById('baseSearchDisplay').textContent = formatNumber(currentCity.searches);
+            
+            document.querySelectorAll('.city-option').forEach(opt => opt.classList.remove('selected'));
+            event.target.closest('.city-option').classList.add('selected');
+            
+            document.getElementById('cityDropdown').classList.remove('active');
+            
+            // Update city names throughout
+            document.getElementById('cityNameF1').textContent = currentCity.name;
+            document.getElementById('citySummary').textContent = currentCity.name;
+            
+            calculate();
+        }
 
         function formatNumber(num) {
-            return new Intl.NumberFormat('ru-RU').format(num);
+            return new Intl.NumberFormat('ru-RU').format(Math.round(num));
         }
 
-        function calculateAll() {
-            // Step 1: Local demand
-            const localDemand = Math.round(BASE_SEARCHES * LOCAL_DEMAND_PERCENT);
-            localDemandEl.textContent = formatNumber(localDemand);
+        function calculate() {
+            // Get all slider values
+            let baseSearches = currentCity.searches;
+            
+            // If user manually entered custom value, use that
+            const inputValue = document.getElementById('baseSearchInput').value;
+            if (inputValue) {
+                const parsed = parseInt(inputValue.toString().replace(/\s/g, ''));
+                if (!isNaN(parsed)) {
+                    baseSearches = parsed;
+                    currentCity.searches = parsed;
+                }
+            }
+            
+            const radiusKm = parseFloat(document.getElementById('radiusSlider').value);
+            
+            // Calculate percentage for radius (proportional: 3km = 7%)
+            const radiusPercent = (radiusKm / 3) * 0.07;
+            
+            const visibilityPercent = parseInt(document.getElementById('visibilitySlider').value) / 100;
+            const offHoursPercent = parseInt(document.getElementById('offHoursSlider').value) / 100;
+            const conversionPercent = parseInt(document.getElementById('conversionSlider').value) / 100;
+            const repeatPercent = parseInt(document.getElementById('repeatSlider').value) / 100;
+            const avgCheck = parseInt(document.getElementById('avgCheckSlider').value);
+            const repeatCheck = parseInt(document.getElementById('repeatCheckSlider').value);
 
-            // Step 2: Clinic share
-            const recognitionPercent = parseInt(document.querySelector('input[name="recognition"]:checked').value) / 100;
-            const clinicShare = Math.round(localDemand * recognitionPercent);
-            clinicShareEl.textContent = formatNumber(clinicShare);
+            // Update display values
+            document.getElementById('radiusKm').textContent = radiusKm;
+            document.getElementById('radiusKmDisplay').textContent = radiusKm;
+            document.getElementById('visibilityPercent').textContent = Math.round(visibilityPercent * 100);
+            document.getElementById('offHoursPercent').textContent = Math.round(offHoursPercent * 100);
+            document.getElementById('conversionPercent').textContent = Math.round(conversionPercent * 100);
+            document.getElementById('repeatPercent').textContent = Math.round(repeatPercent * 100);
+            document.getElementById('avgCheckDisplay').textContent = formatNumber(avgCheck);
+            document.getElementById('repeatCheckDisplay').textContent = formatNumber(repeatCheck);
 
-            // Step 3: Off-hours traffic
-            const offHoursTraffic = Math.round(clinicShare * OFF_HOURS_PERCENT);
-            offHoursTrafficEl.textContent = formatNumber(offHoursTraffic);
+            // Calculations
+            const localDemand = Math.round(baseSearches * radiusPercent);
+            const clinicVisibility = Math.round(localDemand * visibilityPercent);
+            const nightRequests = Math.round(clinicVisibility * offHoursPercent);
+            const dayRequests = clinicVisibility - nightRequests;
+            const newPatients = Math.round(nightRequests * conversionPercent);
+            const repeatPatients = Math.round(newPatients * repeatPercent);
 
-            // Step 4: Leads
-            const leads = Math.round(offHoursTraffic * CONVERSION_PERCENT);
-            leadsEl.textContent = formatNumber(leads);
-
-            // Step 5: Financial potential
-            const avgCheck = parseInt(avgCheckSlider.value);
-            avgCheckDisplayEl.textContent = formatNumber(avgCheck);
-
-            const potential = leads * avgCheck;
+            const primaryIncome = newPatients * avgCheck;
+            const repeatIncome = repeatPatients * repeatCheck;
+            const totalMonthlyIncome = Math.round(primaryIncome + repeatIncome);
+            const yearlyIncome = totalMonthlyIncome * 12;
 
             // Update results
-            resultLeadsEl.textContent = formatNumber(leads);
-            resultLeadsEl.classList.add('animate-value');
-            
-            resultPotentialEl.textContent = formatNumber(potential);
-            resultPotentialEl.classList.add('animate-value');
+            document.getElementById('radiusCountHint').textContent = formatNumber(localDemand);
+            document.getElementById('resultPeopleInRadius').textContent = formatNumber(localDemand);
+            document.getElementById('resultClinicVisibility').textContent = formatNumber(clinicVisibility);
+            document.getElementById('resultDayRequests').textContent = formatNumber(dayRequests);
+            document.getElementById('resultNightRequests').textContent = formatNumber(nightRequests);
 
-            // Update message
-            messageLead.textContent = leads;
-            messageAmount.textContent = formatNumber(potential) + ' ₽';
+            document.getElementById('resultNewPatients').textContent = formatNumber(newPatients);
+            document.getElementById('resultNightPatients').textContent = formatNumber(newPatients);
+            document.getElementById('resultRepeatPatients').textContent = formatNumber(repeatPatients);
 
-            // Trigger animation
-            setTimeout(() => {
-                resultLeadsEl.classList.remove('animate-value');
-                resultPotentialEl.classList.remove('animate-value');
-            }, 300);
+            document.getElementById('resultMonthlyIncome').textContent = formatNumber(totalMonthlyIncome);
+            document.getElementById('resultPrimaryIncome').textContent = formatNumber(primaryIncome);
+            document.getElementById('resultRepeatIncome').textContent = formatNumber(repeatIncome);
+
+            const yearlyMM = (yearlyIncome / 1000000).toFixed(1);
+            document.getElementById('resultYearlyIncome').textContent = yearlyMM + 'M';
+
+            // Update summary
+            document.getElementById('summaryNightPatients').textContent = formatNumber(newPatients);
+            document.getElementById('summaryYearlyIncome').textContent = yearlyMM + 'М ₽ в год';
         }
 
-        // Event listeners
-        regionSelect.addEventListener('change', function() {
-            if (this.value === '0') {
-                customRegionInput.style.display = 'block';
-            } else {
-                customRegionInput.style.display = 'none';
-                BASE_SEARCHES = parseInt(this.value);
-                calculateAll();
-            }
-        });
+        function resetAllFilters() {
+            document.getElementById('baseSearchInput').value = currentCity.searches;
+            document.getElementById('baseSearchDisplay').textContent = formatNumber(currentCity.searches);
+            document.getElementById('radiusSlider').value = 3;
+            document.getElementById('visibilitySlider').value = 5;
+            document.getElementById('offHoursSlider').value = 45;
+            document.getElementById('conversionSlider').value = 15;
+            document.getElementById('repeatSlider').value = 35;
+            document.getElementById('avgCheckSlider').value = 4000;
+            document.getElementById('repeatCheckSlider').value = 3500;
+            calculate();
+        }
 
-        customSearches.addEventListener('input', function() {
-            if (this.value) {
-                BASE_SEARCHES = parseInt(this.value);
-                calculateAll();
-            }
-        });
+        function exportReport() {
+            const cityName = currentCity.name;
+            const newPatients = document.getElementById('resultNewPatients').textContent;
+            const monthlyIncome = document.getElementById('resultMonthlyIncome').textContent;
+            const yearlyIncome = document.getElementById('resultYearlyIncome').textContent;
+            const nightRequests = document.getElementById('resultNightRequests').textContent;
 
-        recognitionInputs.forEach(input => {
-            input.addEventListener('change', calculateAll);
-        });
+            const report = `ОТЧЁТ ДЛЯ ${cityName.toUpperCase()}
 
-        avgCheckSlider.addEventListener('input', calculateAll);
+📊 РЫНОК
+════════════════════════════════════════
+Город: ${cityName}
+Ищут стоматолога: ${document.getElementById('baseSearchDisplay').textContent} запросов/месяц
+Видят вашу клинику: ${document.getElementById('resultClinicVisibility').textContent}
+
+🕐 НЕРАБОЧЕЕ ВРЕМЯ
+════════════════════════════════════════
+Попыток связаться: ${nightRequests}
+
+👥 ПАЦИЕНТЫ
+════════════════════════════════════════
+Приходят впервые: ${newPatients}
+Вернулись повторно: ${document.getElementById('resultRepeatPatients').textContent}
+
+💰 ПРИБЫЛЬ
+════════════════════════════════════════
+От новых пациентов: ${document.getElementById('resultPrimaryIncome').textContent}₽/месяц
+От повторных: ${document.getElementById('resultRepeatIncome').textContent}₽/месяц
+Всего в месяц: ${monthlyIncome}₽
+
+ЗА ГОД: ${yearlyIncome}₽
+
+✅ ГЛАВНОЕ
+════════════════════════════════════════
+${newPatients} пациентов ищут вас в нерабочее время каждый месяц.
+Это ${yearlyIncome} упущенной прибыли в год.
+
+Автоответчик работает вместо вас ночью.`;
+
+            alert(report);
+        }
 
         // Initial calculation
-        calculateAll();
-
-        // Detail toggle
-        function toggleDetails() {
-            const avgCheck = parseInt(avgCheckSlider.value);
-            const recognitionLevel = {
-                '5': 'Новая клиника',
-                '10': 'Известная клиника',
-                '15': 'Топовая клиника'
-            };
-            const level = document.querySelector('input[name="recognition"]:checked').value;
-            
-            const localDemand = Math.round(BASE_SEARCHES * LOCAL_DEMAND_PERCENT);
-            const clinicShare = Math.round(localDemand * (parseInt(level) / 100));
-            const offHours = Math.round(clinicShare * OFF_HOURS_PERCENT);
-            const leads = Math.round(offHours * CONVERSION_PERCENT);
-            const potential = leads * avgCheck;
-
-            const details = `
-ДЕТАЛЬНЫЙ АНАЛИЗ "СКРЫТОГО ПОТЕНЦИАЛА"
-
-📊 Исходные данные:
-├─ Общий месячный поисковый спрос: ${formatNumber(BASE_SEARCHES)} запросов
-├─ Спрос в радиусе 3 км (7%): ${formatNumber(localDemand)} пациентов
-├─ Уровень видимости: ${recognitionLevel[level]}
-└─ Средний чек: ${formatNumber(avgCheck)} ₽
-
-🎯 Расчёт потерь:
-├─ Люди, видящие вашу клинику (${level}%): ${formatNumber(clinicShare)} в месяц
-├─ Пытаются связаться вне часов (45%): ${formatNumber(offHours)} попыток
-├─ Переходят в лиды (15%): ${formatNumber(leads)} потерянных лидов
-└─ Финансовый потенциал: ${formatNumber(potential)} ₽/месяц
-
-💡 Выводы:
-• За год вы теряете ${formatNumber(leads * 12)} пациентов
-• Упущенный доход: ${formatNumber(potential * 12)} ₽/год
-• Средний период окупаемости системы обработки: 1-3 месяца
-
-✅ Рекомендация:
-Установка системы автоответа позволит обработать весь этот потенциал
-            `;
-
-            alert(details);
-        }
+        calculate();
     </script>
 </body>
 </html>

@@ -12,10 +12,10 @@
    на боевой сайт целиком, конфликтов с его версткой не будет.
    ================================================================ */
 .dx-root{
-  --navy:#103050; --navy-soft:#33455E; --muted:#5F7089; --line:#DCE5EC;
-  --green:#2E8F5B; --green-btn:#40B070; --green-bg:#EFF9F3;
-  --bg:#F7F9FB; --bg2:#EEF3F6; --white:#fff;
-  --amber:#B5761E; --amber-bg:#FFF6E8; --red:#B23B3B; --red-bg:#FDF1F1;
+  --navy:#f1f5f9; --navy-soft:#cbd5e1; --muted:#94a3b8; --line:rgba(59,130,246,.18);
+  --green:#34d399; --green-btn:#34d399; --green-bg:#EFF9F3;
+  --bg:#0f1419; --bg2:#EEF3F6; --white:#fff;
+  --amber:#fbbf24; --amber-bg:rgba(251,191,36,.12); --red:#f87171; --red-bg:#FDF1F1;
   --radius:12px;
   font-family:-apple-system,"system-ui","SF Pro Display","Segoe UI",system-ui,sans-serif;
   color:var(--navy); background:var(--bg); line-height:1.5;
@@ -34,7 +34,7 @@
 .dx-chip{background:rgba(255,255,255,.12);border-radius:999px;padding:6px 13px;font-size:13.5px;color:#E7EDF3}
 
 /* ── Фирменный блок ────────────────────────────── */
-.dx-badge{display:inline-flex;align-items:center;background:#fff;border-radius:10px;padding:9px 14px;
+.dx-badge{display:inline-flex;align-items:center;background:#1a1f2e;border-radius:10px;padding:9px 14px;
   box-shadow:0 8px 24px rgba(0,0,0,.22);margin-bottom:16px}
 .dx-badge img{height:64px;width:auto;display:block;object-fit:contain}
 .dx-foot{border-top:1px solid var(--line);margin-top:34px;padding-top:22px;display:flex;gap:20px;
@@ -45,7 +45,7 @@
 .dx-foot .dx-req a{color:var(--green);text-decoration:none}
 
 /* ── Карточки ──────────────────────────────────── */
-.dx-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:16px}
+.dx-card{background:#1a1f2e;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:16px}
 .dx-card h2{font-size:20px;letter-spacing:-0.3px;margin-bottom:6px}
 .dx-card .dx-lead{color:var(--muted);font-size:15px;margin-bottom:18px}
 
@@ -54,10 +54,10 @@
 .dx-field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
 .dx-field .dx-hint{font-weight:400;color:var(--muted);font-size:13.5px;display:block;margin-top:3px}
 .dx-field input[type=text]{width:100%;max-width:420px;padding:10px 13px;border:1px solid var(--line);
-  border-radius:9px;font:inherit;font-size:15px;color:var(--navy);background:#fff}
+  border-radius:9px;font:inherit;font-size:15px;color:var(--navy);background:#1a1f2e}
 .dx-field input[type=text]:focus{outline:2px solid var(--green);outline-offset:1px;border-color:transparent}
 .dx-seg{display:flex;flex-wrap:wrap;gap:8px}
-.dx-seg button{font:inherit;font-size:14.5px;padding:9px 16px;border:1px solid var(--line);background:#fff;
+.dx-seg button{font:inherit;font-size:14.5px;padding:9px 16px;border:1px solid var(--line);background:#1a1f2e;
   color:var(--navy-soft);border-radius:9px;cursor:pointer;transition:.12s}
 .dx-seg button:hover{border-color:var(--muted)}
 .dx-seg button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
@@ -75,8 +75,8 @@
 .dx-dot.ok{background:var(--green)} .dx-dot.warn{background:#E0A63C} .dx-dot.bad{background:var(--red)}
 
 /* ── Блоки чек-листа ───────────────────────────── */
-.dx-block{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
-.dx-bhead{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;user-select:none;background:#fff;
+.dx-block{background:#1a1f2e;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.dx-bhead{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;user-select:none;background:#1a1f2e;
   width:100%;text-align:left;font:inherit;border:0}
 .dx-bhead:hover{background:var(--bg)}
 .dx-bhead .dx-btitle{flex:1}
@@ -102,7 +102,7 @@
 .dx-how{font-size:14px;color:var(--muted);margin-top:7px;max-width:640px}
 .dx-how a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(46,143,91,.35)}
 .dx-ans{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.dx-ans button{font:inherit;font-size:14px;padding:8px 17px;border:1px solid var(--line);background:#fff;
+.dx-ans button{font:inherit;font-size:14px;padding:8px 17px;border:1px solid var(--line);background:#1a1f2e;
   border-radius:9px;cursor:pointer;color:var(--navy-soft);transition:.12s}
 .dx-ans button:hover{border-color:var(--muted)}
 .dx-ans button[aria-pressed=true][data-a=yes]{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
@@ -117,7 +117,7 @@
 .dx-scard .dx-sname{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
 .dx-scard .dx-sval{font-size:27px;font-weight:700;margin-top:6px;letter-spacing:-.5px}
 .dx-scard .dx-sof{font-size:13.5px;color:var(--muted);margin-top:2px}
-.dx-find{border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:15px 17px;margin-bottom:11px;background:#fff}
+.dx-find{border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:15px 17px;margin-bottom:11px;background:#1a1f2e}
 .dx-find.warnb{border-left-color:#E0A63C}
 .dx-find.soonb{border-left-color:var(--amber)}
 .dx-find.infob{border-left-color:var(--navy-soft)}
@@ -138,7 +138,7 @@ table.dx-tbl td:first-child{width:48%}
 .dx-btn.pri{background:var(--green-btn);color:#fff}
 .dx-btn.pri:hover{background:var(--green)}
 .dx-btn.pri:disabled{background:#C8D4DD;cursor:not-allowed}
-.dx-btn.sec{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.dx-btn.sec{background:#1a1f2e;color:var(--navy);border:1px solid var(--line)}
 .dx-btn.sec:hover{border-color:var(--muted)}
 .dx-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .dx-lead-card{background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px 26px;margin-top:18px}
@@ -167,8 +167,8 @@ table.dx-tbl td:first-child{width:48%}
 
 /* ── Печать / PDF ──────────────────────────────── */
 @media print{
-  .dx-root{background:#fff}
-  .dx-hero{background:#fff;color:var(--navy);padding:0 0 14px;border-bottom:3px solid var(--navy)}
+  .dx-root{background:#1a1f2e}
+  .dx-hero{background:#1a1f2e;color:var(--navy);padding:0 0 14px;border-bottom:3px solid var(--navy)}
   .dx-hero h1{font-size:24px} .dx-hero p,.dx-brand{color:var(--muted)} .dx-chip{background:var(--bg2);color:var(--navy)}
   .dx-noprint,.dx-sticky,.dx-block,.dx-setup{display:none!important}
   .dx-lead-card{background:var(--bg);color:var(--navy);border:1px solid var(--line)}
@@ -176,6 +176,15 @@ table.dx-tbl td:first-child{width:48%}
   .dx-find,.dx-card{break-inside:avoid;box-shadow:none}
   .dx-wrap{max-width:100%;padding:0}
 }
+</style>
+
+<style id="dark-superset">
+/* Фирменная тёмная тема — Apache Superset Dark */
+:root{color-scheme:dark}
+html{background:#0f1419}
+body{background:#0f1419;background-image:linear-gradient(135deg,#0f1419 0%,#1a1f2e 100%);
+     background-attachment:fixed;color:#cbd5e1}
+::selection{background:rgba(59,130,246,.3);color:#fff}
 </style>
 </head>
 <body>

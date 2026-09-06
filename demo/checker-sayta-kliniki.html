@@ -13,9 +13,9 @@
    ================================================================ */
 .dx-root{
   --navy:#f1f5f9; --navy-soft:#cbd5e1; --muted:#94a3b8; --line:rgba(59,130,246,.18);
-  --green:#34d399; --green-btn:#34d399; --green-bg:#EFF9F3;
-  --bg:#0f1419; --bg2:#EEF3F6; --white:#fff;
-  --amber:#fbbf24; --amber-bg:rgba(251,191,36,.12); --red:#f87171; --red-bg:#FDF1F1;
+  --green:#34d399; --green-btn:#34d399; --green-bg:rgba(52,211,153,.12);
+  --bg:#0f1419; --bg2:#1e293b; --white:#fff;
+  --amber:#fbbf24; --amber-bg:rgba(251,191,36,.12); --red:#f87171; --red-bg:rgba(248,113,113,.12);
   --radius:12px;
   font-family:-apple-system,"system-ui","SF Pro Display","Segoe UI",system-ui,sans-serif;
   color:var(--navy); background:var(--bg); line-height:1.5;
@@ -154,7 +154,7 @@ table.dx-tbl td:first-child{width:48%}
 .dx-contacts a{font-size:14.5px;color:#fff;text-decoration:none;background:rgba(255,255,255,.12);
   padding:9px 15px;border-radius:9px}
 .dx-contacts a:hover{background:rgba(255,255,255,.2)}
-.dx-disc{font-size:11.5px;color:#8494A8;margin-top:22px;line-height:1.55}
+.dx-disc{font-size:11.5px;color:#94a3b8;margin-top:22px;line-height:1.55}
 .dx-ver{font-size:12.5px;color:var(--muted);margin-top:10px}
 
 @media (max-width:640px){
@@ -804,7 +804,7 @@ function build(){
   /* Дедлайн вперёд находок: он настоящий, до него считаные недели */
   var dl = daysLeft();
   if(dl > 0 && dl <= 120){
-    h += '<div class="dx-note" style="border-color:#E7C58A;background:var(--amber-bg);margin-bottom:6px">'
+    h += '<div class="dx-note" style="border-color:#fbbf24;background:var(--amber-bg);margin-bottom:6px">'
       + '<b>До 1 сентября 2026 осталось '+dl+' '+plural(dl,"день","дня","дней")+'.</b> '
       + 'В этот день начинают действовать новые Правила платных медицинских услуг '
       + '(Постановление Правительства РФ № 659), а домены .ru, .рф и .su продлеваются только '

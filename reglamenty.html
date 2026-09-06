@@ -4,10 +4,9 @@
 <meta name="color-scheme" content="dark">
 <title>28 регламентов для ИИ-агентов — Максим Алексеев</title>
 <style>
-:root{--bg:#0f1419;--bg-2:#1a1f2e;--bg-3:#1e293b;--c-primary:#3b82f6;--c-info:#60a5fa;
---c-success:#34d399;--c-violet:#a855f7;--c-warning:#fbbf24;--c-error:#f87171;
---t1:#f1f5f9;--t2:#cbd5e1;--t3:#94a3b8;--border:rgba(59,130,246,.15);
---border-strong:rgba(59,130,246,.30);--grad-card:linear-gradient(135deg,rgba(30,41,59,.5) 0%,rgba(15,23,42,.5) 100%);
+:root{--bg:#0f1419;--bg-2:#1a1f2e;--t1:#f1f5f9;--t2:#cbd5e1;--t3:#94a3b8;
+--border:rgba(59,130,246,.15);--border-strong:rgba(59,130,246,.30);
+--grad-card:linear-gradient(135deg,rgba(30,41,59,.5) 0%,rgba(15,23,42,.5) 100%);
 --glow:0 0 0 1px var(--border),0 8px 32px rgba(0,0,0,.4);
 --sans:system-ui,-apple-system,"SF Pro Text","Segoe UI",Roboto,sans-serif;
 --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,monospace;}
@@ -15,184 +14,193 @@
 body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--t2);
 background:var(--bg);background-image:linear-gradient(135deg,#0f1419 0%,#1a1f2e 100%);
 background-attachment:fixed;-webkit-font-smoothing:antialiased}
-.shell{max-width:940px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.shell{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--c-info);outline-offset:3px;border-radius:6px}
-.top{padding:clamp(44px,7vw,76px) 0 clamp(28px,4vw,40px)}
+:focus-visible{outline:2px solid #60a5fa;outline-offset:3px;border-radius:6px}
+.top{padding:clamp(44px,7vw,80px) 0 clamp(24px,3vw,32px)}
 .back{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-color:var(--t3);display:inline-block;margin-bottom:24px;transition:color .18s}
-.back:hover{color:var(--c-info)}
+color:var(--t3);display:inline-block;margin-bottom:26px;transition:color .18s}
+.back:hover{color:#60a5fa}
 h1{font-size:clamp(30px,4.6vw,46px);font-weight:700;letter-spacing:-.025em;line-height:1.1;
-color:var(--t1);margin:0 0 18px;text-wrap:balance}
-.lede{font-size:17.5px;color:var(--t2);max-width:60ch;margin:0 0 8px}
+color:var(--t1);margin:0 0 20px;text-wrap:balance;max-width:20ch}
+.lede{font-size:17.5px;color:var(--t2);max-width:62ch;margin:0}
 .lede b{color:var(--t1);font-weight:600}
-.group{padding:clamp(28px,4vw,44px) 0}
-.group h2{font-size:clamp(20px,2.6vw,25px);font-weight:700;letter-spacing:-.02em;color:var(--t1);
-margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--border);
+.hint{font-family:var(--mono);font-size:12px;color:var(--t3);margin:22px 0 0;
+letter-spacing:.03em}
+.group{padding:clamp(26px,3.5vw,40px) 0}
+.group h2{font-size:clamp(19px,2.4vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--t1);
+margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--border);
 display:flex;align-items:center;gap:11px}
-.group h2::before{content:"";width:4px;height:22px;border-radius:2px;background:var(--gc);
+.group h2::before{content:"";width:4px;height:21px;border-radius:2px;background:var(--gc);
 box-shadow:0 0 12px var(--gc)}
 .group h2 .cnt{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--t3);font-weight:400}
-.list{display:grid;gap:12px}
-.sk{background-image:var(--grad-card);border-radius:12px;box-shadow:var(--glow);overflow:hidden}
-.sk summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;
-align-items:flex-start;transition:background .18s}
+.list{display:grid;gap:11px}
+.sk{background-image:var(--grad-card);border-radius:12px;box-shadow:var(--glow);overflow:hidden;
+transition:box-shadow .2s}
+.sk[open]{box-shadow:0 0 0 1px var(--border-strong),0 10px 34px rgba(0,0,0,.5)}
+.sk summary{list-style:none;cursor:pointer;padding:17px 20px;display:grid;
+grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;transition:background .18s}
 .sk summary::-webkit-details-marker{display:none}
 .sk summary:hover{background:rgba(59,130,246,.06)}
-.sk .nm{font-family:var(--mono);font-size:13px;color:var(--gc);font-weight:500;
-white-space:nowrap;padding-top:2px}
-.sk .ds{font-size:14.5px;color:var(--t2);flex:1;min-width:0}
-.sk .arw{color:var(--t3);font-size:13px;transition:transform .2s;padding-top:2px}
+.sk .nm{font-family:var(--mono);font-size:12.5px;color:var(--gc);font-weight:500;white-space:nowrap}
+.sk .ds{font-size:14.5px;color:var(--t2);min-width:0}
+.sk .arw{color:var(--t3);font-size:14px;transition:transform .2s;line-height:1}
 .sk[open] .arw{transform:rotate(90deg)}
-.sk .body{padding:0 20px 18px 20px;border-top:1px solid var(--border);margin-top:0;padding-top:16px}
-.sk .body p{margin:0;font-size:14.5px;color:var(--t3);line-height:1.65}
-footer{border-top:1px solid var(--border);margin-top:36px}
-footer .shell{padding:32px 0 48px}
-footer p{color:var(--t3);font-size:14px;margin:0 0 10px;max-width:64ch}
-footer a.lnk{color:var(--c-info);border-bottom:1px solid var(--border-strong);padding-bottom:2px}
+.sk .body{padding:2px 20px 18px 20px}
+.sk .body p{margin:0;font-size:14.5px;color:var(--t3);line-height:1.7;
+padding-left:14px;border-left:2px solid var(--gc)}
+@media (max-width:560px){
+  .sk summary{grid-template-columns:1fr auto;gap:6px 10px}
+  .sk .nm{grid-column:1/-1}
+}
+footer{border-top:1px solid var(--border);margin-top:32px}
+footer .shell{padding:30px 0 52px}
+footer p{color:var(--t3);font-size:14px;margin:0 0 12px;max-width:66ch;line-height:1.65}
+footer a.lnk{color:#60a5fa;border-bottom:1px solid var(--border-strong);padding-bottom:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head><body>
 <div class="shell top">
 <a class="back" href="index.html">← к портфолио</a>
 <h1>28 регламентов, по которым работают мои ИИ-агенты</h1>
-<p class="lede">Каждый регламент — это <b>воспроизводимый рабочий процесс</b>: когда включать,
+<p class="lede">Каждый регламент — это <b>воспроизводимый рабочий процесс</b>: когда включается,
 пошаговый порядок, красные флаги и критерии готовности. Не разовый промпт, а инструкция,
 которая даёт одинаковый результат в понедельник и в пятницу.</p>
+<p class="hint">Нажмите на любой, чтобы раскрыть описание</p>
 </div>
-<section class="group" style="--gc:var(--c-info)"><div class="shell">
+<section class="group" style="--gc:#60a5fa"><div class="shell">
 <h2>Управление проектом<span class="cnt">6</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/ceo</span><span class="ds">Управляющий проектом «Дентал Эксперт» (CEO / директор проекта). Use when Макс вызывает /ceo или просит разобрать состояние проекта и сказать, что делать сейчас — «что по Денталу», «что горит», «где мы», «чем заняться», «</span><span class="arw">›</span></summary>
-<div class="body"><p>Ты — управляющий проектом. Не исполнитель на подхвате, а тот, кто держит курс, знает состояние в моменте и говорит, что делать прямо сейчас. Дирижёр над командой из 7 субагентов, а не игрок.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/ceo</span><span class="ds">Держит курс проекта: собирает состояние из шести источников и выдаёт три приоритета и первый шаг</span><span class="arw">›</span></summary>
+<div class="body"><p>Раз в день или перед важным решением сводит воедино штаб, дневник, отдел продаж, историю изменений и память. На выходе — не отчёт, а короткий ответ на вопрос «что делать прямо сейчас».</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/cto</span><span class="ds">Технический директор проекта «Дентал Эксперт» — контур завершения прогона. Use в конце значимого прогона или сессии, когда CEO передаёт эстафету, либо когда Макс говорит /cto, «зафиксируй», «закрой прогон», «разбор полёт</span><span class="arw">›</span></summary>
-<div class="body"><p>Ты — тормоз к газу CEO. CEO гонит к цели; ты в конце прогона отвечаешь на один вопрос: сделано ли чисто, чему научились, и зафиксировано ли. Не второй стратег — исполнительный контур гигиены. Оркеструешь то, что уже есть, не пишешь с нуля.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/cto</span><span class="ds">Закрывает рабочий прогон: разбор полётов, уроки, проверка качества, фиксация в истории</span><span class="arw">›</span></summary>
+<div class="body"><p>Тормоз к газу управляющего контура. Не даёт закрыть сессию, пока не снят урок и результат не зафиксирован. Ведёт дневник открытий — так система учится на своих ошибках.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/pm</span><span class="ds">Продакт-менеджер проекта «Дентал Эксперт» — движок продуктовых гипотез и экспериментов. Use when Макс говорит /pm или приносит сырую продуктовую идею / фичу / заход и хочет быстро проверить — «есть идея», «давай проверим</span><span class="arw">›</span></summary>
-<div class="body"><p>Ты — движок обучения проекта. Третий контур операционки: `/ceo` держит курс и говорит «что делать сейчас», `/cto` закрывает прогон и снимает уроки, а ты превращаешь сырую идею в проверяемую гипотезу и убиваешь её самым дешёвым тестом за минимальное время — чтобы за один вечер ста</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/pm</span><span class="ds">Движок продуктовых гипотез: рамка → замер → тест → урок → круг</span><span class="arw">›</span></summary>
+<div class="body"><p>Два закона: гипотеза без метрики — это мнение, а критерий отказа пишется до теста, а не после. Не даёт спорить о вкусах там, где можно измерить.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/checkpoint</span><span class="ds">Use в длинной или многотемной сессии, чтобы вести живое «где мы» и подбивать итог на естественных развилках — САМ, не дожидаясь просьбы. Триггеры: закончил значимый под-этап, перед сменой темы, каждые несколько обменов в</span><span class="arw">›</span></summary>
-<div class="body"><p>Макс в длинных (особенно голосовых) сессиях думает вслух и теряет нить — отсюда частые просьбы «дай резюме». Не жди просьбы: веди чекпоинт сам. См. память [[feedback-max-thinks-out-loud]].</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/checkpoint</span><span class="ds">Ведёт живое «где мы» в длинной работе и подбивает итог на развилках</span><span class="arw">›</span></summary>
+<div class="body"><p>Включается сам, не дожидаясь просьбы: после крупного этапа, перед сменой темы, посреди долгого обсуждения. Нужен, чтобы через два часа работы не потерять нить.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/razbor-zadachi</span><span class="ds">пользователь просит «разбери задачу», «помоги разобраться с задачей», «давай разложим задачу», приносит новую большую или размытую задачу и не знает, с чего начать. Процессный навык из курса Terra.</span><span class="arw">›</span></summary>
-<div class="body"><p>Превратить размытую задачу в ясную: цель · выбранный путь · план из 3–5 шагов.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/razbor-zadachi</span><span class="ds">Раскладывает большую размытую задачу на понятные шаги</span><span class="arw">›</span></summary>
+<div class="body"><p>Для случая «есть задача, не знаю, с чего начать». Разбирает до уровня, на котором первый шаг делается сегодня.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/brif-vstrechi</span><span class="ds">пользователь даёт запись, расшифровку, стенограмму или заметки со встречи, созвона, переговоров и просит собрать бриф, протокол, итоги, саммари встречи. Процессный навык из курса Terra.</span><span class="arw">›</span></summary>
-<div class="body"><p>Из сырых заметок или записи встречи собрать структурированный бриф, по которому через месяц понятно, о чём договорились.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/brif-vstrechi</span><span class="ds">Превращает запись созвона в протокол с решениями и ответственными</span><span class="arw">›</span></summary>
+<div class="body"><p>На входе — расшифровка или заметки, на выходе — что решили, кто делает, к какому сроку и что осталось открытым.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-success)"><div class="shell">
+<section class="group" style="--gc:#34d399"><div class="shell">
 <h2>Продажи и клиенты<span class="cnt">3</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-success)">
-<summary><span class="nm">/prodazhi-dental</span><span class="ds">&gt; Разговор с клиникой по «Дентал Эксперт» — от холодного звонка до согласия на техосмотр. Используй, когда Макс говорит: «готовимся к звонку», «что сказать клинике», «клиент говорит дорого», «отработай возражение», «он с</span><span class="arw">›</span></summary>
-<div class="body"><p>Помогаю Максу и его отделу продаж вести разговор с клиникой: заходить, диагностировать, отрабатывать возражения и закрывать на следующий шаг. Работаю на комплаенс-логике, а не на обещании потока пациентов.</p></div>
+<details class="sk" style="--gc:#34d399">
+<summary><span class="nm">/prodazhi-dental</span><span class="ds">Сценарий разговора с клиникой: от холодного звонка до согласия, с отработкой возражений</span><span class="arw">›</span></summary>
+<div class="body"><p>Собран на реальных звонках: как пройти администратора, как говорить с главврачом, что отвечать на «дорого», «я подумаю» и «пришлите на почту».</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-success)">
-<summary><span class="nm">/sparring-zvonok</span><span class="ds">&gt; Тренажёр звонка в клинику: Клод играет клиента и упирается, Макс продаёт, в конце — разбор. Используй, когда Макс говорит: «давай потренируемся», «сыграй главврача», «спарринг», «побудь клиентом», «потренируй меня», «п</span><span class="arw">›</span></summary>
-<div class="body"><p>Я играю клинику. Макс продаёт. В конце — честный разбор.</p></div>
+<details class="sk" style="--gc:#34d399">
+<summary><span class="nm">/sparring-zvonok</span><span class="ds">Тренажёр звонка: агент играет главврача и упирается, в конце — разбор</span><span class="arw">›</span></summary>
+<div class="body"><p>Отработка на кошках перед реальным звонком. Агент не поддаётся, задаёт неудобные вопросы, а после разбирает, где разговор просел.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-success)">
-<summary><span class="nm">/pyat-edinichek</span><span class="ds">Макс решает, кому продавать, и аудитория звучит широко — «кто наш клиент», «на кого целимся», «сузь аудиторию», «пять единичек», «сделай гипотезу под сегмент», «слишком широкая ЦА», «под кого писать оффер», «какой сегмен</span><span class="arw">›</span></summary>
-<div class="body"><p>Метод Андрея Парабеллума, в массы принёс Михаил Гребенюк. Пять переменных фиксируются в единицу:</p></div>
+<details class="sk" style="--gc:#34d399">
+<summary><span class="nm">/pyat-edinichek</span><span class="ds">Сужает широкую аудиторию до одного сегмента, под который пишется оффер</span><span class="arw">›</span></summary>
+<div class="body"><p>Лечит болезнь «наш продукт нужен всем». Пять переменных фиксируются в единицу — и появляется адресат, которому можно написать конкретно.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-violet)"><div class="shell">
+<section class="group" style="--gc:#a855f7"><div class="shell">
 <h2>Тексты, бренд, дизайн<span class="cnt">5</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-violet)">
-<summary><span class="nm">/max-voice</span><span class="ds">Write texts in Maxim&#x27;s (Макс) own voice — posts, messages, replies, letters, scripts, captions. Use whenever Max asks to &quot;напиши как я&quot;, &quot;напиши от моего лица&quot;, &quot;мой голос&quot;, &quot;редактор моих мыслей&quot;, &quot;оформи мою мысль&quot;, or</span><span class="arw">›</span></summary>
-<div class="body"><p>Ты — редактор мыслей Макса. Он даёт сырую мысль, контекст или голосовую диктовку — ты возвращаешь готовый текст так, будто его написал сам Макс. Не «текст про Макса», а текст от Макса.</p></div>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/max-voice</span><span class="ds">Пишет тексты живым голосом владельца: короткие абзацы, дыхание, без канцелярита</span><span class="arw">›</span></summary>
+<div class="body"><p>Хранит эталоны реальных текстов и держит интонацию. Одна мысль на абзац — так текст читается вслух, а не проглядывается.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-violet)">
-<summary><span class="nm">/crafting-conversion-products</span><span class="ds">Макс собирает наружу клиентский веб-продукт и хочет уровень Apple/Stripe — «одень продукт», «сделай красиво и чтобы продавал», «конверсионный лендинг», «страница услуги», «калькулятор», «сканер рисков», «квиз», «мировой </span><span class="arw">›</span></summary>
-<div class="body"><p>Скилл «одевает» готовый наружный веб-продукт (лендинг, страницу услуги, калькулятор, сканер, квиз) на уровне Apple/Stripe — так, чтобы он выглядел дорого и продавал. Это дирижёр фронтенд-ремесла: сам держит вкус и конверсию, а за текст, оффер, бренд и закон зовёт другие скиллы Ма</p></div>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/crafting-conversion-products</span><span class="ds">Одевает наружный веб-продукт до уровня, на котором он продаёт сам</span><span class="arw">›</span></summary>
+<div class="body"><p>Шесть приёмов ремесла: одна акцентная краска, типографическая шкала, один главный призыв на экран, живой продукт в первом экране вместо стоковой картинки, доказательства в цифрах.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-violet)">
-<summary><span class="nm">/dark-dashboard-style</span><span class="ds">Макс просит сделать картинку, схему, инфографику, дашборд, визуализацию или карточку — «сделай картинку», «нарисуй схему», «визуализируй», «инфографику», «в моём стиле», «как те картинки», «тёмная тема», «чтобы отправить</span><span class="arw">›</span></summary>
-<div class="body"><p>Все картинки, схемы и инфографики Макса делаются в одной визуальной системе: тёмный сине-чёрный фон, неоновые акценты, карточки со свечением. Основана на его собственной палитре Apache Superset Dark Theme.</p></div>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/dark-dashboard-style</span><span class="ds">Фирменная тёмная тема для схем и дашбордов — вёрстка вместо генерации картинок</span><span class="arw">›</span></summary>
+<div class="body"><p>Собственная палитра на базе Apache Superset Dark. Схемы верстаются в HTML и снимаются в PNG: точные цифры, правка за секунду, чёткость в любом размере.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-violet)">
-<summary><span class="nm">/branding-dental-expert</span><span class="ds">Макс делает что-либо наружу под «Дентал Эксперт» — картинку, схему, инфографику, лендинг, сайт, страницу сервиса, презентацию, коммерческое предложение, письмо клинике, договор, приложение к договору, акт, отчёт для клин</span><span class="arw">›</span></summary>
-<div class="body"><p>## Правило</p></div>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/branding-dental-expert</span><span class="ds">Логотип, палитра и реквизиты на всём, что уходит наружу под маркой продукта</span><span class="arw">›</span></summary>
+<div class="body"><p>Правило простое: наружный документ без фирменного знака не выпускается. Держит единый вид писем, коммерческих, договоров и страниц.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-violet)">
-<summary><span class="nm">/explaining-with-metaphors</span><span class="ds">explaining a concept, mechanism, comparison of options, or a multi-part plan to Max in conversation — before delivering an explanation of something abstract or technical.</span><span class="arw">›</span></summary>
-<div class="body"><p>## Когда использовать</p></div>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/explaining-with-metaphors</span><span class="ds">Объясняет сложное через метафору, а не через термины</span><span class="arw">›</span></summary>
+<div class="body"><p>Включается, когда надо донести механизм или сравнение вариантов человеку, который не в теме.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-error)"><div class="shell">
+<section class="group" style="--gc:#f87171"><div class="shell">
 <h2>Право и комплаенс<span class="cnt">3</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-error)">
-<summary><span class="nm">/auditing-dental-compliance</span><span class="ds">Макс приносит сайт, документы или ситуацию конкретной стоматологии и просит оценить регуляторные риски — «проверь сайт клиники», «сделай аудит», «что тут нарушает», «клинике пришло письмо/протокол/представление», «чем эт</span><span class="arw">›</span></summary>
-<div class="body"><p>Клиника всегда нарушает не «вообще», а по трём разным контурам с разными регуляторами, разными санкциями и разной вероятностью проверки. Смешать их — главная ошибка: клиент перестаёт верить, а оффер разваливается на первом же вопросе.</p></div>
+<details class="sk" style="--gc:#f87171">
+<summary><span class="nm">/auditing-dental-compliance</span><span class="ds">Аудит сайта клиники по трём контурам регуляторов с расчётом санкций</span><span class="arw">›</span></summary>
+<div class="body"><p>Клиника нарушает не «вообще», а по трём разным линиям — с разными надзорными органами и разными суммами. Разводит их и считает реальную экспозицию.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-error)">
-<summary><span class="nm">/drafting-medical-legal-docs</span><span class="ds">Макс составляет, проверяет или дорабатывает юридические документы для медбизнеса РФ — «сделай договор для клиники», «проверь этот договор», «нужно поручение на ПД / согласие врача / пациента / акт / ответ на претензию», </span><span class="arw">›</span></summary>
-<div class="body"><p>## Оптика</p></div>
+<details class="sk" style="--gc:#f87171">
+<summary><span class="nm">/drafting-medical-legal-docs</span><span class="ds">Договоры, согласия и поручения для медбизнеса: собрать свой или проверить чужой</span><span class="arw">›</span></summary>
+<div class="body"><p>Банк формулировок и арсенал документов: оферта, поручение на обработку персональных данных, согласия, акты, ответ на претензию.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-error)">
-<summary><span class="nm">/checking-ru-regulations</span><span class="ds">Макс спрашивает, что сейчас по закону в какой-то нише РФ — «какие требования к сайтам», «что изменилось в законе», «что грозит за это», «какие штрафы», «новые правила с такого-то года», «регуляторка по медицине/рекламе/п</span><span class="arw">›</span></summary>
-<div class="body"><p>Российская регуляторка меняется несколько раз в год, а digital-блоги и статьи агентств переписывают друг у друга и отстают на один-два цикла. Ответ, собранный по выдаче поиска, звучит уверенно и оказывается неверным по датам.</p></div>
+<details class="sk" style="--gc:#f87171">
+<summary><span class="nm">/checking-ru-regulations</span><span class="ds">Проверяет норму по первоисточнику, а не по пересказам в блогах агентств</span><span class="arw">›</span></summary>
+<div class="body"><p>Российская регуляторка меняется несколько раз в год, а статьи переписывают друг у друга устаревшее. Правило: цифра штрафа берётся только из официального источника.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-primary)"><div class="shell">
+<section class="group" style="--gc:#3b82f6"><div class="shell">
 <h2>Данные и инструменты<span class="cnt">5</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-primary)">
-<summary><span class="nm">/enriching-ru-company-financials</span><span class="ds">Макс просит подтянуть оборот/выручку/финансы по базе компаний или клиник РФ — «подтяни оборот», «выручка за 2025», «финансы по ИНН», «обогати базу оборотом», «сколько зарабатывает клиника», «оборот по всем», а также когд</span><span class="arw">›</span></summary>
-<div class="body"><p>Выручку любой РФ-компании (ООО, не ИП) можно взять бесплатно и без капчи из официального ГИР БО ФНС (`bo.nalog.gov.ru`) по ИНН. Задача всегда в двух шагах: (1) добыть ИНН, (2) вытащить по нему выручку. Шаг 2 тривиален и надёжен — вся сложность в шаге 1 (резолв «вывеска+адрес → ИН</p></div>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/enriching-ru-company-financials</span><span class="ds">Подтягивает выручку компаний из открытых государственных источников по ИНН</span><span class="arw">›</span></summary>
+<div class="body"><p>Лестница резолва: от названия и адреса к юрлицу, от юрлица к отчётности. Бесплатно, без платных баз — так собрана база на 399 клиник.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-primary)">
-<summary><span class="nm">/mining-ai-archives</span><span class="ds">нужно найти что-то в старых диалогах с ИИ («я где-то обсуждал…», «мы это уже разбирали», «найди в моих переписках», «что я говорил про…», «был текст/решение/расчёт про…», «подними из архива Gemini/ChatGPT»). Технический </span><span class="arw">›</span></summary>
-<div class="body"><p>В архиве лежат 396 диалогов на ~1,4 млн слов — готовые решения, тексты, расчёты и идеи, до которых не дотянуться обычным чтением. Этот навык достаёт оттуда конкретику: точную цитату с датой, а не пересказ.</p></div>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/mining-ai-archives</span><span class="ds">Ищет нужное в архиве старых диалогов с ИИ</span><span class="arw">›</span></summary>
+<div class="body"><p>Для случая «я это где-то уже обсуждал»: поднимает из архива прошлые решения, расчёты и формулировки.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-primary)">
-<summary><span class="nm">/installing-cli-without-admin</span><span class="ds">нужно поставить консольный инструмент или Python-пакет на Mac без пароля администратора («поставь мне X», «нужен gh / uv / CLI», «command not found», «нет Homebrew», «pip не находит пакет», «нужен Python новее»). Техниче</span><span class="arw">›</span></summary>
-<div class="body"><p>Поставить CLI-инструмент на Mac, где нет Homebrew и нет пароля администратора: всё кладём в домашнюю папку `~/.local/bin`, системные каталоги не трогаем.</p></div>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/installing-cli-without-admin</span><span class="ds">Ставит консольные инструменты на мак без пароля администратора</span><span class="arw">›</span></summary>
+<div class="body"><p>Обходит типовые тупики: нет прав, нет Homebrew, системный Python слишком старый.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-primary)">
-<summary><span class="nm">/folder-safety-net</span><span class="ds">пользователь просит поставить папке «страховку», «кнопку отмены», бэкап, откат, подключить git или залить папку в GitHub («забэкапь», «сделай бэкап», «подключи гит», «залей в гитхаб», «чтобы можно было вернуть как было»)</span><span class="arw">›</span></summary>
-<div class="body"><p>Превратить обычную папку в защищённую: журнал изменений (git) + приватная копия в облаке (GitHub) + проверенный откат «верни как было» + автосохранение. После этого любую правку можно отменить одной фразой.</p></div>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/folder-safety-net</span><span class="ds">Подключает папке историю изменений и бэкап, чтобы можно было вернуть как было</span><span class="arw">›</span></summary>
+<div class="body"><p>Страховка от «затёр файл и не откатить»: git, удалённая копия, понятная кнопка отмены.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-primary)">
-<summary><span class="nm">/checking-system-health</span><span class="ds">пользователь просит проверить систему целиком («проверь всю систему», «всё ли на местах», «всё ли синхронизировано», «ничего не сломалось?», «сделай техосмотр», «всё ли работает корректно») или после крупной перестройки </span><span class="arw">›</span></summary>
-<div class="body"><p>Полный техосмотр по семи направлениям: конституция · навыки · память · настройки · подключения · страховка · целостность данных. Каждый пункт — фактической проверкой, не по памяти. На выходе — таблица «зелёное / требует внимания».</p></div>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/checking-system-health</span><span class="ds">Техосмотр всей системы: всё ли на местах и синхронизировано</span><span class="arw">›</span></summary>
+<div class="body"><p>Прогоняется после крупных перестроек — переездов папок, установки инструментов, массовых правок.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-warning)"><div class="shell">
+<section class="group" style="--gc:#fbbf24"><div class="shell">
 <h2>Качество и развитие системы<span class="cnt">4</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-warning)">
-<summary><span class="nm">/improving-skills</span><span class="ds">скилл сработал не так или не сработал вовсе, пользователь поправлял систему вручную, всплыли новые грабли по теме существующего скилла, или он просит «прокачай скиллы», «доработай вот здесь», «почему скилл не сработал», </span><span class="arw">›</span></summary>
-<div class="body"><p>`/skillhunt` рождает новые скиллы. Этот — чинит и усиливает существующие. Проходит по свежему опыту, находит, где навык промахнулся, и правит его так, чтобы в следующий раз сработало.</p></div>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/improving-skills</span><span class="ds">Чинит и дорабатывает сами регламенты, когда они сработали не так</span><span class="arw">›</span></summary>
+<div class="body"><p>Над-регламент: система улучшает саму себя. Сработало криво или пришлось править руками — значит, инструкция неполная, и её надо дописать.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-warning)">
-<summary><span class="nm">/verifying-against-source</span><span class="ds">пользователь просит проверить, всё ли сделано по требованиям («проверь, всё ли выполнено», «сверь с заданием», «где мы срезали углы», «всё ли корректно», «зайди по ссылкам и проверь», «нужно 100% выполнение», «ничего не </span><span class="arw">›</span></summary>
-<div class="body"><p>Взять источник требований (ДЗ, ТЗ, инструкцию, чек-лист, договорённость), разложить его на атомарные проверяемые пункты и сверить каждый с фактическим состоянием системы — не с рассказом о нём. Найти пробелы, закрыть, перепроверить.</p></div>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/verifying-against-source</span><span class="ds">Сверяет сделанное с исходным заданием и ищет срезанные углы</span><span class="arw">›</span></summary>
+<div class="body"><p>Включается, когда работа по чужому ТЗ объявлена законченной. Проверяет не «похоже ли», а построчно по требованиям.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-warning)">
-<summary><span class="nm">/proverka-tremya-optikami</span><span class="ds">Макс собирается отправить что-то живому человеку наружу — письмо клинике, коммерческое, PDF-аудит, лендинг, скрипт звонка, пост — и говорит «прогони через краш-тест», «посмотри глазами собственника», «добавь маркетолога»</span><span class="arw">›</span></summary>
-<div class="body"><p>Перед отправкой наружу прогнать материал через три чужих взгляда: где сломается, что почувствует адресат, что мешает следующему шагу. Каждая оптика видит то, чего не видно изнутри работы.</p></div>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/proverka-tremya-optikami</span><span class="ds">Прогоняет материал через три взгляда перед отправкой живому человеку</span><span class="arw">›</span></summary>
+<div class="body"><p>Письмо, коммерческое или лендинг смотрят глазами собственника, маркетолога и скептика. Что не выдержало — переписывается.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-warning)">
-<summary><span class="nm">/terra-homework-to-drive</span><span class="ds">закончена домашка или занятие курса Terra («домашка Terra готова», «закрыли занятие», «подними документы на Google Диск», «залей отчёт в Terra», «сохрани всё в облако курса»), а также когда надо свериться, всё ли по курс</span><span class="arw">›</span></summary>
-<div class="body"><p>После завершения домашки Terra всё её «бумажное наследие» (отчёт, решения, спецификации, отчёты инструментов) должно лежать в одном месте — в папке `Terra` на Google Диске. Локально в vault документы остаются, Диск — витрина и архив.</p></div>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/terra-homework-to-drive</span><span class="ds">Поднимает документы курса в облако и сверяет комплектность</span><span class="arw">›</span></summary>
+<div class="body"><p>Закрывает занятие: файлы на месте, ничего не забыто, всё разложено по папкам курса.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:var(--c-info)"><div class="shell">
+<section class="group" style="--gc:#60a5fa"><div class="shell">
 <h2>Карьера<span class="cnt">2</span></h2><div class="list">
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/preparing-job-application</span><span class="ds">Макс присылает вакансию (ссылку на hh.ru или текст) и хочет её разобрать, понять свои шансы или подготовить отклик — «вот вакансия», «разбери вакансию», «стоит ли откликаться», «подхожу ли я», «подготовь отклик», «напиши</span><span class="arw">›</span></summary>
-<div class="body"><p>Взять вакансию, разложить её на требования, честно сопоставить с реальным опытом Макса, дать вердикт со шансами — и только потом готовить отклик.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/preparing-job-application</span><span class="ds">Разбирает вакансию, честно считает шансы и готовит отклик</span><span class="arw">›</span></summary>
+<div class="body"><p>Сначала вердикт, потом бумаги. Требования делятся на фильтры, основные и пожелания — и если жёсткий фильтр не пройден, это говорится прямо, а не заглаживается.</p></div>
 </details>
-<details class="sk" style="--gc:var(--c-info)">
-<summary><span class="nm">/tailoring-resume</span><span class="ds">Макс просит перепаковать, доработать, усилить или адаптировать резюме под конкретную вакансию или новое направление — «перепакуй резюме», «подгони резюме под вакансию», «мой опыт не отражён в резюме», «как вплести опыт»,</span><span class="arw">›</span></summary>
-<div class="body"><p>Ты — карьерный редактор Макса. Задача: взять его реальный опыт и пересобрать так, чтобы под конкретную целевую роль он читался релевантно и свежо.</p></div>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/tailoring-resume</span><span class="ds">Перепаковывает резюме под конкретную роль: смена акцентов, а не выдумывание опыта</span><span class="arw">›</span></summary>
+<div class="body"><p>Поднимает наверх то, что человек правда делал, но что спрятано или названо чужим языком. Всё, что попало в резюме, должно выдержать вопрос на собеседовании.</p></div>
 </details>
 </div></div></section><footer><div class="shell">
 <p>Регламенты живут в рабочей системе и применяются ежедневно. Полные тексты содержат
-внутренние методики проектов, поэтому здесь показаны назначение и суть каждого.</p>
+внутренние методики проектов — здесь показаны назначение и суть каждого.</p>
 <p><a class="lnk" href="index.html">← вернуться к портфолио</a></p>
 </div></footer></body></html>

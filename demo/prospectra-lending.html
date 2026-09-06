@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospectra — Увеличьте продажи на 30–50% без холодных звонков</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0b0b0b;
+            --bg-s: #111111;
+            --bg-t: #171717;
+            --bg-e: #1c1c1c;
+            --b: #222222;
+            --bm: #2a2a2a;
+            --bs: #333333;
+            --green: #00ff9d;
+            --green-d: #00cc7d;
+            --green-bg: rgba(0,255,157,0.08);
+            --green-bd: rgba(0,255,157,0.16);
+            --blue: #2f80ff;
+            --blue-d: #1a6fe8;
+            --blue-bg: rgba(47,128,255,0.08);
+            --blue-bd: rgba(47,128,255,0.16);
+            --white: #ffffff;
+            --gray: #a1a1aa;
+            --dim: #71717a;
+            --red: #ff4444;
+            --red-bg: rgba(255,68,68,0.08);
+            --red-bd: rgba(255,68,68,0.16);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bm);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--bs);
+        }
+
+        input, button, textarea {
+            font-family: inherit;
+        }
+
+        input::placeholder {
+            color: var(--dim);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--green) !important;
+        }
+
+        button {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0,255,157,0.2), inset 0 0 20px rgba(0,255,157,0.05);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0,255,157,0.4), inset 0 0 20px rgba(0,255,157,0.1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .pulse-soft {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .glow-green {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .spin {
+            animation: spin 0.8s linear infinite;
+        }
+
+        .mouse-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,255,157,0.15) 0%, rgba(0,255,157,0) 70%);
+            pointer-events: none;
+            filter: blur(60px);
+            z-index: 0;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 24px 80px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-bd);
+            border-radius: 100px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--green);
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            animation: slideUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 .highlight {
+            color: var(--green);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: slideUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            animation: slideUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-info {
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--dim);
+            animation: fadeIn 0.6s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* CTA FORM */
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 14px 16px;
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .cta-form button {
+            padding: 14px 28px;
+            background: var(--green);
+            color: var(--bg);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        .cta-form button:hover:not(:disabled) {
+            background: var(--green-d);
+        }
+
+        .cta-form button:disabled {
+            opacity: 0.7;
+        }
+
+        .success-message {
+            text-align: center;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--green-bg);
+            border: 2px solid var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 32px;
+            animation: pulse 0.6s ease;
+        }
+
+        .success-message h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* SECTION HEADER */
+        section {
+            padding: 80px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            text-align: center;
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        section > p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 48px;
+            font-size: 16px;
+            animation: slideUp 0.8s ease 0.1s forwards;
+        }
+
+        /* PAIN POINTS */
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pain-card {
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pain-card:hover {
+            border-color: var(--green-bd);
+        }
+
+        .pain-card.open {
+            border-color: var(--green-bd);
+        }
+
+        .pain-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .pain-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--red-bg);
+            border: 1px solid var(--red-bd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--red);
+            font-size: 20px;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .pain-card.open .pain-icon {
+            transform: scale(1.1);
+        }
+
+        .pain-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            flex: 1;
+        }
+
+        .pain-chevron {
+            color: var(--green);
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .pain-card.open .pain-chevron {
+            transform: rotate(180deg);
+        }
+
+        .pain-description {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            padding-left: 52px;
+            display: none;
+            margin-top: 12px;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .pain-card.open .pain-description {
+            display: block;
+        }
+
+        /* INSIGHT */
+        .insight {
+            background: var(--bg-s);
+            border: 2px solid var(--green-bd);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideUp 0.8s ease forwards;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .insight-label {
+            font-size: 14px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .insight h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .insight .highlight {
+            color: var(--green);
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 28px 24px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--green-bd);
+            background: var(--bg-t);
+            box-shadow: 0 0 30px rgba(0,255,157,0.1);
+        }
+
+        .feature-bg {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: var(--green-bg);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .feature-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-bd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+            flex-shrink: 0;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-number {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .feature-description {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin: 12px 0;
+        }
+
+        .feature-details {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--b);
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .feature-card.expanded .feature-details {
+            display: block;
+        }
+
+        .feature-detail-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: var(--white);
+        }
+
+        .feature-detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-detail-check {
+            color: var(--green);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* RESULTS */
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .result-metric {
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .result-metric:hover {
+            border-color: var(--green-bd);
+            transform: translateY(-4px);
+        }
+
+        .metric-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-bd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+            margin: 0 auto 12px;
+            font-size: 24px;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .metric-detail {
+            font-size: 13px;
+            color: var(--dim);
+        }
+
+        /* TRUST SECTION */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 12px;
+            padding: 20px;
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 10px;
+        }
+
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+            flex-shrink: 0;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-s);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--green);
+        }
+
+        .faq-chevron {
+            color: var(--green);
+            font-size: 20px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.8;
+            border-top: 1px solid var(--b);
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: var(--bg-s);
+            border: 2px solid var(--green-bd);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideUp 0.8s ease forwards;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            margin: 0 0 24px 0;
+        }
+
+        .final-cta p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid var(--b);
+            text-align: center;
+            font-size: 12px;
+            color: var(--dim);
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: var(--green);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* ANIMATIONS */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .cta-form button {
+                width: 100%;
+            }
+
+            .insight {
+                padding: 40px 24px;
+            }
+
+            .insight h2 {
+                font-size: 24px;
+            }
+
+            .final-cta {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="badge">🚀 Для мероприятия</div>
+            <h1>Как увеличить продажи на <span class="highlight">30–50%</span> без холодных звонков?</h1>
+            <p>Россия, СНГ и международные рынки — в одной системе, которая находит клиентов и продает за вас</p>
+            <div class="hero-cta">
+                <form class="cta-form" onsubmit="handleSubmit(event)">
+                    <input type="email" placeholder="ваш@email.com" required id="emailInput">
+                    <button type="submit" id="submitBtn">
+                        <span id="btnText">→ Получить</span>
+                    </button>
+                </form>
+            </div>
+            <div class="hero-info">
+                ✓ Первые лиды в течение 24 часов&nbsp;&nbsp;&nbsp;✓ Без карты&nbsp;&nbsp;&nbsp;✓ Начните сегодня
+            </div>
+        </section>
+
+        <!-- PAIN POINTS -->
+        <section>
+            <h2>Знакомо?</h2>
+            <p>Ваш отдел продаж борется с этими проблемами каждый день</p>
+            <div class="pain-points" id="painPoints"></div>
+        </section>
+
+        <!-- INSIGHT -->
+        <section style="padding: 80px 24px; text-align: center;">
+            <div class="insight">
+                <div class="insight-label">💡 КЛЮЧЕВОЙ ИНСАЙТ</div>
+                <h2>Рост ограничивает не ваш продукт.<br>Рост ограничивает <span class="highlight">ручной процесс продаж</span>.</h2>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section>
+            <h2>Введём вас в <span class="highlight">Prospectra</span></h2>
+            <div class="features" id="features"></div>
+        </section>
+
+        <!-- RESULTS -->
+        <section>
+            <h2>Результат, который вы получаете</h2>
+            <div class="results" id="results"></div>
+        </section>
+
+        <!-- TRUST -->
+        <section>
+            <h2>Что вы получаете с нами</h2>
+            <div class="trust-grid" id="trust"></div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section style="padding: 80px 24px; text-align: center;">
+            <div class="final-cta">
+                <h2>Готовы к росту?</h2>
+                <p>Получите клиентов и AI-квалификацию уже в течение 24 часов. Первые результаты видны за неделю.</p>
+                <form class="cta-form" onsubmit="handleSubmit(event)">
+                    <input type="email" placeholder="ваш@email.com" required>
+                    <button type="submit">→ Получить</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section style="max-width: 700px;">
+            <h2>Вопросы и ответы</h2>
+            <p>Все что вам нужно знать о Prospectra</p>
+            <div class="faq-container" id="faq"></div>
+        </section>
+
+        <!-- FOOTER CTA -->
+        <section style="border-top: 1px solid var(--b); text-align: center;">
+            <h2>Не потеряйте <span class="highlight">следующую сделку</span></h2>
+            <p>Зарегистрируйтесь сейчас и получите первых клиентов уже завтра</p>
+            <form class="cta-form" style="margin-bottom: 32px;" onsubmit="handleSubmit(event)">
+                <input type="email" placeholder="ваш@email.com" required>
+                <button type="submit">→ Получить</button>
+            </form>
+            <div style="font-size: 12px; color: var(--dim);">
+                Или напишите нам: <span style="color: var(--green);">hello@prospectra.ai</span>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Prospectra. Все права защищены.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#privacy">Политика конфиденциальности</a>
+                <a href="#terms">Условия использования</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Pain points data
+        const painPoints = [
+            { icon: '👥', title: 'Менеджеры ищут клиентов', description: 'Вместо продаж заняты поиском контактов и попаданием в нужные кабинеты. Потенциальные заказы просто проходят мимо.' },
+            { icon: '☎️', title: 'Холодные звонки не работают', description: 'Каждый год холодный обзвон становится менее эффективным. Люди не берут трубку, блокируют номера, и результат падает.' },
+            { icon: '🎯', title: 'Сложно выйти на ЛПР', description: 'Вы знаете кого искать, но как найти нужного человека в организации? Часто начинаете со случайного сотрудника и теряете недели.' },
+            { icon: '📧', title: 'КП уходит в никуда', description: 'Отправили коммерческое предложение и… тишина. Никто не отвечает. Клиент забыл, конкурент опередил, или КП не дошло.' },
+            { icon: '⏱️', title: 'Сделки затягиваются', description: 'От контакта к заказу проходит месяцы, а не дни. Вы не знаете, где застряла сделка и кто её движет дальше.' },
+            { icon: '📈', title: 'Упущенные возможности', description: 'В то время как вы ждёте ответа на КП, клиент уже покупает у конкурента. Спрос есть, но вы его не видите.' }
+        ];
+
+        // Features data
+        const features = [
+            {
+                number: '01',
+                icon: '💾',
+                title: 'Интерактивные базы данных',
+                description: 'Актуальные данные об участниках реальных торговых сделок',
+                details: ['Находите клиентов по отрасли, объёму и географии', 'Получаете прямые контакты для выхода на ЛПР', 'Видите, где уже есть спрос на ваш продукт']
+            },
+            {
+                number: '02',
+                icon: '✨',
+                title: 'AI-ассистент для контакта',
+                description: 'Полностью заменяет холодный обзвон',
+                details: ['Сам связывается с клиентами', 'Ведет первичный диалог и выявляет интерес', 'Отсеивает нецелевых и готовит горячих лидов']
+            },
+            {
+                number: '03',
+                icon: '📧',
+                title: 'Автоматизация КП',
+                description: 'Скорость вместо ожидания',
+                details: ['Формирует персонализированные предложения', 'Адаптирует их под каждого клиента', 'Ускоряет принятие решения на 3-5 дней']
+            },
+            {
+                number: '04',
+                icon: '📊',
+                title: 'Цифровой парсинг и аналитика',
+                description: 'Вы видите, где реальные деньги',
+                details: ['Находит клиентов по цифровому следу вашего продукта', 'Сегментирует рынок и определяет целевую аудиторию', 'Показывает приоритетные рынки для роста']
+            }
+        ];
+
+        // Results data
+        const results = [
+            { icon: '📈', label: 'Рост продаж', value: '50%', detail: 'за первые 3 месяца' },
+            { icon: '⏰', label: 'Лиды в течение', value: '24ч', detail: 'с момента запуска' },
+            { icon: '🌍', label: 'Новые рынки', value: '5+', detail: 'сегментов для роста' },
+            { icon: '👥', label: 'Квалифицированные', value: '3x', detail: 'больше готовых лидов' }
+        ];
+
+        // Trust items
+        const trustItems = [
+            'Клиенты в России, СНГ и по всему миру',
+            'Только актуальные и релевантные данные',
+            'AI, который работает за вас 24/7',
+            'Быстрый запуск и первые лиды за 24h',
+            'Поддержка на русском языке',
+            'Масштабирование без переучивания'
+        ];
+
+        // FAQ data
+        const faqItems = [
+            {
+                question: 'Как быстро можно запустить систему?',
+                answer: 'Вы готовы к работе за 24 часа. Мы интегрируемся с вашей CRM, загружаем базу клиентов, настраиваем AI-ассистент. На второй день уже идут первые звонки и контакты.'
+            },
+            {
+                question: 'Какие данные о клиентах вы используете?',
+                answer: 'Только легальные источники: реестры (ЕГРЮЛ), публичные справочники (2GIS, Flagma), справочные системы (SPR), карьерные сайты (HH, LinkedIn). Все данные актуальны и проверены.'
+            },
+            {
+                question: 'Может ли AI заменить менеджера?',
+                answer: 'Нет, AI помощник усиливает вашу команду. Он берет на себя холодный поиск и первичный контакт, а ваши менеджеры работают с горячими лидами. Продуктивность растет, текучка падает.'
+            },
+            {
+                question: 'Сколько стоит подписка?',
+                answer: 'Стоимость зависит от объема лидов и региона. Начинается с €499 в месяц. Первый месяц — тестовый период со скидкой. Обсудим вашу ситуацию и подберем оптимальный план.'
+            },
+            {
+                question: 'Что если результата нет?',
+                answer: 'Мы даем 30 дней на проверку. Если в течение месяца вы не получите как минимум 10 квалифицированных лидов, мы возвращаем 100% оплаты. Никакого риска.'
+            },
+            {
+                question: 'Работаете ли вы с моей страной?',
+                answer: 'Да, если клиенты вашего продукта находятся в России, СНГ или странах Европы, мы можем их найти. У нас есть партнерские базы данных в 20+ странах.'
+            }
+        ];
+
+        // Render pain points
+        const painPointsContainer = document.getElementById('painPoints');
+        painPoints.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'pain-card';
+            card.innerHTML = `
+                <div class="pain-header">
+                    <div class="pain-icon">${item.icon}</div>
+                    <div class="pain-title">${item.title}</div>
+                    <div class="pain-chevron">▼</div>
+                </div>
+                <div class="pain-description">${item.description}</div>
+            `;
+            card.style.animation = `slideUp 0.6s ease ${index * 0.1}s forwards`;
+            card.style.opacity = '0';
+            card.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+            painPointsContainer.appendChild(card);
+        });
+
+        // Render features
+        const featuresContainer = document.getElementById('features');
+        features.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'feature-card';
+            card.innerHTML = `
+                <div class="feature-bg"></div>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <div class="feature-icon">${item.icon}</div>
+                        <div>
+                            <div class="feature-number">${item.number}</div>
+                            <div class="feature-title">${item.title}</div>
+                        </div>
+                    </div>
+                    <div class="feature-description">${item.description}</div>
+                    <div class="feature-details">
+                        ${item.details.map(detail => `
+                            <div class="feature-detail-item">
+                                <span class="feature-detail-check">✓</span>
+                                <span>${detail}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            card.style.animation = `slideUp 0.8s ease ${index * 0.15}s forwards`;
+            card.style.opacity = '0';
+            card.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+            featuresContainer.appendChild(card);
+        });
+
+        // Render results with counter animation
+        const resultsContainer = document.getElementById('results');
+        results.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'result-metric';
+            card.innerHTML = `
+                <div class="metric-icon">${item.icon}</div>
+                <div class="metric-value"><span class="counter" data-target="${item.value.replace(/[^0-9]/g, '')}">${item.value.replace(/[^0-9]/g, '')}</span>${item.value.replace(/[0-9]/g, '')}</div>
+                <div class="metric-label">${item.label}</div>
+                <div class="metric-detail">${item.detail}</div>
+            `;
+            card.style.animation = `slideUp 0.8s ease ${index * 0.1}s forwards`;
+            card.style.opacity = '0';
+            resultsContainer.appendChild(card);
+        });
+
+        // Animate counters on scroll
+        const observerOptions = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    const counter = entry.target.querySelector('.counter');
+                    if (counter) {
+                        const target = parseInt(counter.dataset.target);
+                        let count = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(count);
+                            }
+                        }, 15);
+                    }
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        resultsContainer.querySelectorAll('.result-metric').forEach(el => observer.observe(el));
+
+        // Render trust items
+        const trustContainer = document.getElementById('trust');
+        trustItems.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'trust-item';
+            div.innerHTML = `
+                <div class="trust-icon">✓</div>
+                <div class="trust-text">${item}</div>
+            `;
+            div.style.animation = `slideUp 0.6s ease ${index * 0.08}s forwards`;
+            div.style.opacity = '0';
+            trustContainer.appendChild(div);
+        });
+
+        // Render FAQ
+        const faqContainer = document.getElementById('faq');
+        faqItems.forEach((item, index) => {
+            const faqDiv = document.createElement('div');
+            faqDiv.className = 'faq-item';
+            faqDiv.innerHTML = `
+                <button class="faq-question">
+                    ${item.question}
+                    <span class="faq-chevron">▼</span>
+                </button>
+                <div class="faq-answer">${item.answer}</div>
+            `;
+            faqDiv.style.animation = `slideUp 0.6s ease ${index * 0.08}s forwards`;
+            faqDiv.style.opacity = '0';
+            faqDiv.querySelector('.faq-question').addEventListener('click', function() {
+                faqDiv.classList.toggle('open');
+            });
+            faqContainer.appendChild(faqDiv);
+        });
+
+        // Mouse glow effect
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('mouseGlow');
+            glow.style.left = (e.clientX - 200) + 'px';
+            glow.style.top = (e.clientY - 200) + 'px';
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const input = e.target.querySelector('input');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<span class="spin">⟳</span> Отправка...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                input.style.display = 'none';
+                btn.style.display = 'none';
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `
+                    <div class="success-icon">✓</div>
+                    <h3>Спасибо! ✨</h3>
+                    <p>Проверьте почту. Первые лиды уже готовы к вам.</p>
+                `;
+                e.target.appendChild(successDiv);
+
+                setTimeout(() => {
+                    input.style.display = 'block';
+                    input.value = '';
+                    btn.style.display = 'flex';
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    successDiv.remove();
+                }, 2000);
+            }, 1000);
+        }
+
+        // Add animation stagger to all sections on scroll
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75) {
+                    section.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

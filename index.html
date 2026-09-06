@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Максим Алексеев — автоматизация бизнес-процессов</title>
+<meta name="description" content="Инструменты автоматизации бизнес-процессов, собранные через Claude Code: калькуляторы окупаемости, сканер сайтов, ИИ-агенты.">
+<style>
+  :root{
+    --paper:#F5F7F6; --card:#FFFFFF; --ink:#0E2A44; --body:#47596B; --muted:#7A8896;
+    --line:#E6EAEC; --line-soft:#EEF1F1;
+    --accent:#1F9D63; --accent-ink:#137A4C; --accent-tint:#E8F5EE;
+    --risk-hi:#D8574A; --risk-mid:#E0A43B;
+    --shadow-sm:0 1px 2px rgba(16,42,68,.05);
+    --shadow:0 1px 2px rgba(16,42,68,.05), 0 20px 44px -22px rgba(16,42,68,.24);
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
+    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,monospace;
+    --r:16px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0A1520; --card:#10202F; --ink:#EAF2F6; --body:#AFBFCF; --muted:#7D91A4;
+      --line:#1E3244; --line-soft:#17293a; --accent:#37B579; --accent-ink:#6BD3A0;
+      --accent-tint:#12302A; --risk-hi:#EF7565; --risk-mid:#EEBE5E;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 46px -22px rgba(0,0,0,.62);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0A1520; --card:#10202F; --ink:#EAF2F6; --body:#AFBFCF; --muted:#7D91A4;
+    --line:#1E3244; --line-soft:#17293a; --accent:#37B579; --accent-ink:#6BD3A0;
+    --accent-tint:#12302A; --risk-hi:#EF7565; --risk-mid:#EEBE5E;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 46px -22px rgba(0,0,0,.62);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.55;font-size:16px}
+  .shell{max-width:1060px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+  a{color:inherit}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;
+      scroll-behavior:auto!important}
+  }
+
+  /* ── Шапка ── */
+  .hero{padding:clamp(48px,7vw,84px) 0 clamp(32px,4vw,48px)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 20px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,54px);line-height:1.08;
+    letter-spacing:-.02em;text-wrap:balance;margin:0 0 20px;max-width:19ch}
+  .lede{font-size:clamp(17px,2vw,20px);color:var(--body);max-width:60ch;margin:0 0 32px}
+  .lede b{color:var(--ink);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:0 0 32px}
+  @media (min-width:680px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:var(--card);padding:18px 20px}
+  .stat b{display:block;font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;
+    line-height:1.15;font-variant-numeric:tabular-nums}
+  .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;
+    border:0;border-radius:10px;padding:13px 22px;font-size:15px;font-weight:600;
+    text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .15s,filter .15s}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .btn:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px}
+  .btn-quiet{color:var(--body);text-decoration:none;font-size:15px;
+    border-bottom:1px solid var(--line);padding-bottom:2px}
+  .btn-quiet:hover{color:var(--accent-ink);border-bottom-color:var(--accent)}
+
+  /* ── Секции ── */
+  section{padding:clamp(36px,5vw,56px) 0;border-top:1px solid var(--line)}
+  .sec-head{margin:0 0 8px}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3vw,28px);
+    letter-spacing:-.01em;margin:0 0 8px}
+  .sec-note{color:var(--muted);font-size:15px;max-width:64ch;margin:0 0 28px}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    padding:22px 22px 20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
+  .card h3{font-size:17px;font-weight:650;margin:0;line-height:1.35;letter-spacing:-.005em}
+  .card .task{color:var(--body);font-size:14.5px;margin:0}
+  .card .did{color:var(--body);font-size:14.5px;margin:0}
+  .card .did b{color:var(--ink);font-weight:600}
+  .effect{background:var(--accent-tint);border-radius:10px;padding:10px 13px;font-size:14px;
+    color:var(--accent-ink);font-weight:550;margin:2px 0 0}
+  .tools{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em;
+    margin:0;padding-top:2px}
+  .card .open{margin-top:auto;padding-top:12px}
+  .open a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;
+    color:var(--accent-ink);text-decoration:none;border-bottom:1.5px solid var(--accent-tint);
+    padding-bottom:2px}
+  .open a:hover{border-bottom-color:var(--accent)}
+  .open a::after{content:"→";font-weight:400}
+  .open .multi{display:flex;flex-wrap:wrap;gap:8px 14px}
+
+  /* ── Карточка-доказательство в герое ── */
+  .proof{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);overflow:hidden;margin:0 0 32px}
+  .proof-top{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+    padding:16px 20px;border-bottom:1px solid var(--line-soft)}
+  .proof-top .t{font-weight:650;font-size:15px}
+  .proof-top .s{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    letter-spacing:.06em;text-transform:uppercase}
+  .proof-body{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft)}
+  @media (min-width:620px){.proof-body{grid-template-columns:repeat(4,1fr)}}
+  .pcell{background:var(--card);padding:16px 20px}
+  .pcell b{display:block;font-family:var(--serif);font-size:23px;font-weight:600;
+    font-variant-numeric:tabular-nums;line-height:1.2}
+  .pcell.hi b{color:var(--risk-hi)}
+  .pcell span{font-size:12.5px;color:var(--muted)}
+  .proof-foot{padding:13px 20px;font-size:13.5px;color:var(--muted);
+    border-top:1px solid var(--line-soft)}
+
+  /* ── Регламенты ── */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0}
+  .chip{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--card);
+    border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+
+  /* ── Подвал ── */
+  footer{border-top:1px solid var(--line);background:var(--card)}
+  footer .shell{padding-top:36px;padding-bottom:44px}
+  footer h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.6vw,26px);margin:0 0 12px}
+  footer p{color:var(--body);max-width:60ch;margin:0 0 20px}
+  .contacts{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:15px;margin:0 0 24px}
+  .contacts a{color:var(--accent-ink);text-decoration:none;font-weight:600;
+    border-bottom:1.5px solid var(--accent-tint);padding-bottom:2px}
+  .contacts a:hover{border-bottom-color:var(--accent)}
+  .fine{font-size:13px;color:var(--muted);max-width:66ch;margin:0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="shell">
+    <p class="kicker">Максим Алексеев · автоматизация бизнес-процессов</p>
+    <h1>Беру задачу бизнеса и довожу до работающего инструмента</h1>
+    <p class="lede">Без команды разработки. Собираю сервисы, ботов и агентские системы
+      через <b>Claude Code</b> и <b>Codex</b>: считаю окупаемость до старта, автоматизирую
+      рутину, довожу до продакшена. Двадцать лет до этого — продажи, инвестиции
+      и собственный бизнес, поэтому считаю в деньгах заказчика, а не в строчках кода.</p>
+
+    <div class="stats">
+      <div class="stat"><b>9</b><span>работающих инструментов</span></div>
+      <div class="stat"><b>28</b><span>регламентов для ИИ-агентов</span></div>
+      <div class="stat"><b>108</b><span>требований в своде</span></div>
+      <div class="stat"><b>399</b><span>клиник в собранной базе</span></div>
+    </div>
+
+    <div class="proof">
+      <div class="proof-top">
+        <span class="t">Пример работы сканера</span>
+        <span class="s">на входе адрес сайта · на выходе PDF-отчёт</span>
+      </div>
+      <div class="proof-body">
+        <div class="pcell"><b>30</b><span>пунктов проверки</span></div>
+        <div class="pcell"><b>16</b><span>нарушений найдено</span></div>
+        <div class="pcell hi"><b>2,01 млн ₽</b><span>предельные санкции</span></div>
+        <div class="pcell"><b>~40 сек</b><span>вместо часов вручную</span></div>
+      </div>
+      <div class="proof-foot">Четыре обезличенных отчёта по реальным клиникам — в разделе «Делают работу».</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="#kontakty">Связаться</a>
+      <a class="btn-quiet" href="#dengi">Посмотреть инструменты</a>
+    </div>
+  </div>
+</header>
+
+<section id="dengi">
+  <div class="shell">
+    <div class="sec-head"><h2>Считают деньги</h2></div>
+    <p class="sec-note">Инструменты, которые отвечают собственнику на вопрос «вернутся ли
+      вложения и когда». Открываются и работают прямо в браузере — можно проверить руками.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Калькулятор внедрения ИИ в бизнес-процессы</h3>
+        <p class="task">Задача: до старта проекта понять, окупится ли автоматизация,
+          и не спорить об этом словами.</p>
+        <p class="did">Считает <b>ROI, NPV, IRR, срок окупаемости и стоимость владения</b>,
+          выносит вердикт светофором. Отдельная вкладка — методика: формулы, порядок расчёта
+          и границы модели, включая честную оговорку про то, когда сэкономленные часы
+          становятся деньгами.</p>
+        <p class="effect">Разговор с собственником идёт по его цифрам, а не по обещаниям подрядчика</p>
+        <p class="tools">Claude Code · один HTML-файл, работает офлайн</p>
+        <div class="open"><a href="demo/kalkulyator-vnedreniya-ii.html">Открыть калькулятор</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Калькулятор упущенной выручки клиники</h3>
+        <p class="task">Задача: показать владельцу клиники, сколько он теряет на обращениях,
+          которые приходят вне рабочих часов.</p>
+        <p class="did">Расчёт построен на <b>реальных частотностях Яндекс.Вордстата</b>
+          по пяти регионам, а не на выдуманных процентах. Каждый коэффициент цепочки
+          подписан прямо в интерфейсе — от числа запросов до денег.</p>
+        <p class="effect">Инструмент пресейла: клиент видит свою цифру за 30 секунд</p>
+        <p class="tools">Claude Code · данные Вордстата, июнь–июль 2026</p>
+        <div class="open"><a href="demo/kalkulyator-potenciala-kliniki.html">Открыть калькулятор</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="rabota">
+  <div class="shell">
+    <div class="sec-head"><h2>Делают работу</h2></div>
+    <p class="sec-note">Не макеты, а инструменты, которые заменили ручной труд.
+      Отчёты обезличены: названия клиник, домены и реквизиты убраны, суть находок сохранена.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Сканер сайтов медицинских клиник</h3>
+        <p class="task">Задача: проверка одного сайта на соответствие требованиям
+          надзорных органов занимала часы работы уровня юриста.</p>
+        <p class="did">Пайплайн из четырёх модулей на Python: поиск признаков нарушений,
+          база правил, сборка отчёта, печатная версия. Сверяется с государственными
+          реестрами. <b>На входе адрес сайта — на выходе готовый PDF</b> с перечнем
+          нарушений и оценкой санкций.</p>
+        <p class="effect">Часы ручной проверки → около сорока секунд</p>
+        <p class="tools">Python · Claude Code · свод 108 требований</p>
+        <div class="open"><div class="multi">
+          <a href="demo/otchet-klinika-a.html">Отчёт: 16 нарушений</a>
+          <a href="demo/otchet-klinika-b.html">17 нарушений</a>
+          <a href="demo/otchet-klinika-v.html">7 нарушений</a>
+          <a href="demo/otchet-klinika-g.html">почти чистый сайт</a>
+        </div></div>
+      </article>
+
+      <article class="card">
+        <h3>Чекер сайта — ранняя версия проверки</h3>
+        <p class="task">Задача: дать клинике возможность проверить себя самостоятельно,
+          без серверной части и установки.</p>
+        <p class="did">Вся логика проверки в <b>одном HTML-файле</b>. Из этого прототипа
+          позже вырос сканер с Python-движком — в паре они показывают, как решение
+          развивалось от идеи до продуктового пайплайна.</p>
+        <p class="effect">Первый шаг связки «идея в одном файле → рабочий инструмент»</p>
+        <p class="tools">Claude Code · self-contained HTML</p>
+        <div class="open"><a href="demo/checker-sayta-kliniki.html">Открыть чекер</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sistema">
+  <div class="shell">
+    <div class="sec-head"><h2>Показывают систему</h2></div>
+    <p class="sec-note">То, что обычно не показывают в портфолио: как устроена сама работа.
+      Для 2026 года это отдельная компетенция — организовать ИИ-агентов так, чтобы
+      результат был воспроизводимым.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Библиотека из 28 регламентов для ИИ-агентов</h3>
+        <p class="task">Задача: сделать работу с ИИ воспроизводимой, чтобы результат
+          не зависел от того, как сегодня сформулирован запрос.</p>
+        <p class="did">Двадцать восемь собственных регламентов: управление проектом,
+          продажи, регуляторный аудит, подготовка юридических документов, контроль
+          качества, разбор задач. <b>Каждый — рабочий процесс с красными флагами
+          и критериями готовности</b>, а не разовый промпт.</p>
+        <p class="effect">Агент выполняет процесс одинаково в понедельник и в пятницу</p>
+        <p class="tools">Claude Code · Markdown · git</p>
+        <div class="open"><a href="#reglamenty">Список регламентов ниже</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Автоматический сбор и обогащение базы</h3>
+        <p class="task">Задача: собрать базу клиник региона и понять, кто из них
+          потянет чек — руками это недели работы.</p>
+        <p class="did">Скриптами собраны <b>399 клиник</b>, найдены их юрлица через
+          резолв ИНН с сайтов, подтянута выручка из открытых государственных источников.
+          Дальше — отбор по обороту и приоритизация.</p>
+        <p class="effect">Недели ручного поиска → один прогон скрипта</p>
+        <p class="tools">Python · ГИР БО · Claude Code</p>
+        <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Продукт, для которого собиралась</a></div>
+      </article>
+    </div>
+
+    <div id="reglamenty" style="margin-top:24px">
+      <p class="tools" style="margin-bottom:10px">28 собственных регламентов:</p>
+      <div class="chips">
+        <span class="chip">ceo</span><span class="chip">cto</span><span class="chip">pm</span>
+        <span class="chip">prodazhi-dental</span><span class="chip">sparring-zvonok</span>
+        <span class="chip">pyat-edinichek</span><span class="chip">max-voice</span>
+        <span class="chip">branding-dental-expert</span><span class="chip">auditing-dental-compliance</span>
+        <span class="chip">drafting-medical-legal-docs</span><span class="chip">checking-ru-regulations</span>
+        <span class="chip">enriching-ru-company-financials</span><span class="chip">crafting-conversion-products</span>
+        <span class="chip">dark-dashboard-style</span><span class="chip">checkpoint</span>
+        <span class="chip">improving-skills</span><span class="chip">mining-ai-archives</span>
+        <span class="chip">checking-system-health</span><span class="chip">folder-safety-net</span>
+        <span class="chip">installing-cli-without-admin</span><span class="chip">terra-homework-to-drive</span>
+        <span class="chip">verifying-against-source</span><span class="chip">razbor-zadachi</span>
+        <span class="chip">brif-vstrechi</span><span class="chip">explaining-with-metaphors</span>
+        <span class="chip">preparing-job-application</span><span class="chip">tailoring-resume</span>
+        <span class="chip">proverka-tremya-optikami</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="produkt">
+  <div class="shell">
+    <div class="sec-head"><h2>Продукт и упаковка</h2></div>
+    <p class="sec-note">Два продукта целиком — от позиционирования и экономики
+      до работающих страниц.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Prospectra — платформа автоматизации B2B-продаж</h3>
+        <p class="task">Задача: собрать продукт, который снимает с менеджеров рутину
+          поиска и квалификации клиентов.</p>
+        <p class="did">Продуктовое описание: четыре боли, процесс из восьми шагов,
+          пять модулей платформы, сбор компаний из более чем пятидесяти источников,
+          <b>скоринг лидов по пятнадцати параметрам</b>. Плюс лендинг, четыре поколения
+          сайта и интерактивные квизы.</p>
+        <p class="effect">Операционная боль переведена в модель и в деньги</p>
+        <p class="tools">Claude Code · HTML/JS · React</p>
+        <div class="open"><div class="multi">
+          <a href="demo/prospectra-lending.html">Лендинг</a>
+          <a href="demo/prospectra-sayt.html">Сайт продукта</a>
+          <a href="demo/prospectra-kviz.html">Квиз</a>
+        </div></div>
+      </article>
+
+      <article class="card">
+        <h3>Дентал Эксперт — сайты и ИИ-ассистенты для стоматологий</h3>
+        <p class="task">Задача: клиника узнаёт о нарушениях на своём сайте из письма
+          с штрафом, а не заранее.</p>
+        <p class="did">Собственный B2B-продукт: сайт клиники, собранный под требования
+          регуляторов, ИИ-администратор, сканер и калькуляторы. <b>Единственная работа
+          в подборке, которая живёт на боевом домене.</b></p>
+        <p class="effect">От первого прототипа до продакшена — два месяца</p>
+        <p class="tools">Claude Code · HTML/CSS/JS · собственная сборка</p>
+        <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Открыть сайт</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Персональная страница-визитка</h3>
+        <p class="task">Задача: собрать себе презентационную страницу без дизайнера
+          и верстальщика.</p>
+        <p class="did">Структура, цифры, кейсы и ритм — сделано самостоятельно.
+          Показывает не только результат, но и скорость: такую страницу
+          <b>я собираю за вечер</b>.</p>
+        <p class="effect">Инструмент, который можно повторить под любую задачу компании</p>
+        <p class="tools">Gamma · собственная структура и тексты</p>
+        <div class="open"><a href="https://maksimalekseev-investici-puwwqaa.gamma.site/" target="_blank" rel="noopener">Открыть визитку</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Свод 108 требований к сайту клиники</h3>
+        <p class="task">Задача: требований несколько десятков, они меняются
+          несколько раз в год, и держать их в голове невозможно.</p>
+        <p class="did">Интерактивный справочник по всем требованиям Минздрава,
+          Росздравнадзора, Роспотребнадзора и ФАС с указанием санкций.
+          <b>Собран генератором из размеченной базы</b>, а не написан руками —
+          поэтому пересобирается при каждом изменении норм.</p>
+        <p class="effect">Экспертиза, оформленная как продукт: и аргумент, и чек-лист</p>
+        <p class="tools">Python-генератор · Claude Code</p>
+        <div class="open"><a href="demo/otchet-klinika-a.html">Как выглядит в отчёте</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer id="kontakty">
+  <div class="shell">
+    <h2>Связаться</h2>
+    <p>Ищу работу на удалёнке: автоматизация процессов внутри компании,
+      внедрение ИИ-агентов, вайб-кодинг внутренних инструментов.</p>
+    <div class="contacts">
+      <a href="tel:+79263724592">+7 926 372-45-92</a>
+      <a href="mailto:maxwwcapital@gmail.com">maxwwcapital@gmail.com</a>
+    </div>
+    <p class="fine">Отчёты по клиникам обезличены: названия, домены и реквизиты убраны,
+      суть находок сохранена полностью. Инструменты открываются в браузере и работают
+      без установки.</p>
+  </div>
+</footer>
+
+</body>
+</html>

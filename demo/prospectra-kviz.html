@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospectra — Ваш потенциал роста</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100vh}
+body{background:#04080f;color:#e6edf3;font-family:'Manrope',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#04080f}::-webkit-scrollbar-thumb{background:#1a2035;border-radius:3px}
+
+/* ── BG ── */
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+#cursor-glow{position:fixed;pointer-events:none;z-index:2;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,197,114,.05) 0%,rgba(59,130,246,.04) 40%,transparent 70%);transform:translate(-50%,-50%);mix-blend-mode:screen;transition:opacity .3s}
+
+/* ── COSMIC ORBS ── */
+.orb{position:fixed;border-radius:50%;filter:blur(150px);pointer-events:none;z-index:0}
+.o1{width:800px;height:800px;background:radial-gradient(circle,#00c572,#3b82f6);top:-300px;left:-350px;opacity:.055;animation:drift1 18s ease-in-out infinite}
+.o2{width:600px;height:600px;background:radial-gradient(circle,#a855f7,#3b82f6);bottom:-250px;right:-250px;opacity:.06;animation:drift2 22s ease-in-out infinite}
+.o3{width:450px;height:450px;background:#00c572;top:40%;left:55%;opacity:.03;animation:drift3 15s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-30px)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.1)}}
+
+/* ── SHOOTING STARS ── */
+.shooting-star{position:fixed;width:2px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none;z-index:1;animation:shoot linear forwards}
+@keyframes shoot{from{transform:translateX(0) translateY(0);opacity:1}to{transform:translateX(300px) translateY(300px);opacity:0}}
+
+/* ── FLOATING PARTICLES (CSS) ── */
+.fp{position:fixed;border-radius:50%;pointer-events:none;z-index:1;animation:floatP linear infinite}
+@keyframes floatP{0%{transform:translateY(100vh) translateX(0) scale(0)}10%{opacity:1}90%{opacity:.3}100%{transform:translateY(-100px) translateX(var(--dx,0px)) scale(1);opacity:0}}
+
+/* ── LAYOUT ── */
+.app{position:relative;z-index:3;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 16px 80px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(4,8,15,.85);backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ni{width:32px;height:32px;background:linear-gradient(135deg,#00c572,#3b82f6);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 0 20px rgba(0,197,114,.4),0 0 40px rgba(0,197,114,.15)}
+.nn{font-size:16px;font-weight:800;color:#e6edf3;letter-spacing:-.03em}
+.nt{font-size:9px;color:#3a4a5c;letter-spacing:.12em;text-transform:uppercase}
+.nav-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:99px;background:rgba(0,197,114,.08);border:1px solid rgba(0,197,114,.2);font-size:11px;font-weight:700;color:#00c572;letter-spacing:.06em;text-transform:uppercase}
+.ndot{width:5px;height:5px;border-radius:50%;background:#00c572;animation:npulse 2s infinite}
+@keyframes npulse{0%,100%{box-shadow:0 0 0 0 rgba(0,197,114,.5)}50%{box-shadow:0 0 0 5px rgba(0,197,114,0)}}
+@media(max-width:600px){nav{padding:12px 18px}.nav-pill{display:none}}
+
+/* ── PROGRESS ── */
+.prog-wrap{width:100%;max-width:700px;margin:100px auto 0;opacity:0;transition:opacity .5s}
+.prog-wrap.vis{opacity:1}
+.prog-meta{display:flex;justify-content:space-between;margin-bottom:10px}
+.prog-lbl{font-size:11px;font-weight:700;color:#3a4a5c;letter-spacing:.08em;text-transform:uppercase}
+.prog-pct{font-size:11px;font-weight:800;color:#00c572}
+.prog-bg{height:3px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#00c572,#3b82f6,#a855f7,#00c572);background-size:300% 100%;transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 0 16px rgba(0,197,114,.6);animation:pgShift 4s linear infinite}
+@keyframes pgShift{0%{background-position:0%}100%{background-position:300%}}
+
+/* ── CARD ── */
+.card{width:100%;max-width:700px;margin-top:18px;background:rgba(8,13,24,.82);border:1px solid rgba(255,255,255,.07);border-radius:26px;overflow:hidden;position:relative;backdrop-filter:blur(40px);box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.03),inset 0 1px 0 rgba(255,255,255,.06)}
+.card-glow{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,197,114,.6),rgba(59,130,246,.6),transparent)}
+.card-inner{padding:46px}
+@media(max-width:520px){.card-inner{padding:30px 20px}}
+
+/* ── LIVE GROWTH TICKER ── */
+.growth-ticker{width:100%;max-width:700px;display:flex;align-items:center;gap:10px;padding:12px 20px;margin-top:14px;background:rgba(0,197,114,.06);border:1px solid rgba(0,197,114,.15);border-radius:12px;font-size:13px;font-weight:600;color:#4ade80;opacity:0;transition:opacity .5s}
+.growth-ticker.vis{opacity:1}
+.gt-dot{width:7px;height:7px;border-radius:50%;background:#00c572;flex-shrink:0;animation:npulse 1.5s infinite}
+.gt-amount{font-weight:900;color:#fff}
+
+/* ── STEP BADGE ── */
+.step-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(0,197,114,.08);border:1px solid rgba(0,197,114,.2);font-size:11px;font-weight:700;color:#00c572;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.sbdot{width:6px;height:6px;border-radius:50%;background:#00c572;animation:npulse 2s infinite}
+
+/* ── TYPOGRAPHY ── */
+.q-title{font-size:clamp(22px,4.5vw,32px);font-weight:900;letter-spacing:-.05em;line-height:1.15;color:#e6edf3;margin-bottom:8px}
+.q-sub{font-size:15px;color:#5a6a7c;font-weight:400;line-height:1.65;margin-bottom:32px}
+.gt{background:linear-gradient(135deg,#00c572 0%,#3b82f6 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt2{background:linear-gradient(135deg,#3b82f6,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── INPUTS ── */
+.fields{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:11px;font-weight:700;color:#3a4a5c;letter-spacing:.09em;text-transform:uppercase}
+.field-wrap{position:relative}
+.fsuf{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:600;color:#3a4a5c;pointer-events:none}
+.field input{width:100%;padding:16px 50px 16px 18px;border-radius:13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#e6edf3;outline:none;transition:border-color .2s,box-shadow .2s,background .2s;-moz-appearance:textfield}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input::placeholder{color:#1e2a3a;font-weight:400;font-size:16px}
+.field input:focus{border-color:rgba(0,197,114,.4);background:rgba(0,197,114,.04);box-shadow:0 0 0 4px rgba(0,197,114,.08)}
+
+/* ── CHOICES ── */
+.choices{display:grid;gap:10px}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:520px){.c2{grid-template-columns:1fr}.c3{grid-template-columns:1fr 1fr}}
+.cb{padding:16px 18px 16px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,197,114,.07),rgba(59,130,246,.04));opacity:0;transition:.2s}
+.cb:hover{border-color:rgba(0,197,114,.3);transform:translateY(-1px)}
+.cb:hover::before{opacity:1}
+.cb.sel{border-color:rgba(0,197,114,.5);background:rgba(0,197,114,.07);box-shadow:0 0 0 4px rgba(0,197,114,.07),0 8px 24px rgba(0,0,0,.3)}
+.cb.sel::before{opacity:1}
+.cb-check{position:absolute;top:11px;right:11px;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:9px;transition:.2s;flex-shrink:0}
+.cb.sel .cb-check{background:#00c572;border-color:#00c572;color:#fff}
+.cb-icon{font-size:22px;margin-bottom:5px}
+.cb-title{font-size:14px;font-weight:700;color:#d0d8e0;line-height:1.3}
+.cb-sub{font-size:11px;color:#4a5a6c;font-weight:400}
+
+/* ── SLIDER ── */
+.sl-lbl{font-size:11px;font-weight:700;color:#3a4a5c;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
+.sl-marks{display:flex;justify-content:space-between;font-size:11px;color:#3a4a5c;margin-bottom:8px}
+input[type=range]{width:100%;height:5px;border-radius:99px;outline:none;cursor:pointer;-webkit-appearance:none;background:linear-gradient(to right,#00c572 var(--pct,0%),rgba(255,255,255,.08) var(--pct,0%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#00c572;border:3px solid #04080f;box-shadow:0 0 0 3px rgba(0,197,114,.3),0 2px 10px rgba(0,0,0,.5);transition:transform .15s}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+.sl-val{text-align:center;margin-top:14px;font-size:32px;font-weight:900;color:#e6edf3;letter-spacing:-.05em}
+.sl-val span{font-size:14px;font-weight:500;color:#4a5a6c;margin-left:5px}
+
+/* ── GROWTH INSIGHT ── */
+.g-insight{margin-top:22px;padding:18px 20px;border-radius:15px;background:rgba(0,197,114,.06);border:1px solid rgba(0,197,114,.18);display:flex;gap:12px;animation:slideUp .4s ease}
+.gi-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.gi-text{font-size:14px;font-weight:600;color:#4ade80;line-height:1.6}
+.gi-text b{font-size:17px;font-weight:900;color:#fff}
+
+/* ── BEFORE/AFTER MINI ── */
+.ba-mini{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:20px;padding:16px;background:rgba(255,255,255,.03);border-radius:14px;border:1px solid rgba(255,255,255,.06)}
+.ba-col{text-align:center}
+.ba-label{font-size:10px;font-weight:700;color:#3a4a5c;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.ba-val{font-size:18px;font-weight:900;letter-spacing:-.04em}
+.ba-arrow{font-size:20px;color:#00c572}
+
+/* ── BUTTONS ── */
+.btn-p{width:100%;padding:18px;border-radius:14px;background:linear-gradient(135deg,#00c572,#00a05d);color:#fff;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:16px;font-weight:800;letter-spacing:-.02em;box-shadow:0 4px 28px rgba(0,197,114,.45),0 0 0 1px rgba(0,197,114,.2);transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden}
+.btn-p::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:.2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 44px rgba(0,197,114,.6)}
+.btn-p:hover::after{opacity:1}
+.btn-p:active{transform:translateY(0)}
+.btn-b{padding:11px 22px;border-radius:11px;background:transparent;border:1px solid rgba(255,255,255,.09);color:#4a5a6c;cursor:pointer;font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;transition:.2s}
+.btn-b:hover{border-color:rgba(255,255,255,.2);color:#e6edf3}
+.btn-row{display:flex;gap:12px;align-items:center;margin-top:28px}
+.btn-row .btn-p{flex:1}
+.divider{height:1px;background:rgba(255,255,255,.05);margin:24px 0}
+
+/* ── HERO ── */
+.hero-wrap{text-align:center;padding:60px 46px 52px}
+@media(max-width:520px){.hero-wrap{padding:42px 22px 40px}}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:99px;background:rgba(0,197,114,.08);border:1px solid rgba(0,197,114,.2);font-size:12px;font-weight:700;color:#00c572;letter-spacing:.05em;text-transform:uppercase;margin-bottom:28px}
+.hbdot{width:6px;height:6px;border-radius:50%;background:#00c572;animation:npulse 2s infinite}
+.hero-title{font-size:clamp(30px,7vw,54px);font-weight:900;letter-spacing:-.05em;line-height:1.1;color:#e6edf3;margin-bottom:16px}
+.hero-sub{font-size:17px;color:#4a5a6c;font-weight:400;line-height:1.65;max-width:460px;margin:0 auto 16px}
+.hero-tagline{font-size:14px;color:#2d5a42;font-weight:600;margin-bottom:36px;font-style:italic}
+.hero-tagline span{color:#00c572}
+.hero-cta-wrap{margin-bottom:40px}
+.hero-stats{display:flex;border-top:1px solid rgba(255,255,255,.06);padding-top:28px}
+.hs-col{flex:1;text-align:center;padding:0 12px}
+.hs-col:not(:last-child){border-right:1px solid rgba(255,255,255,.06)}
+.hs-val{font-size:22px;font-weight:900;letter-spacing:-.04em}
+.hs-lbl{font-size:11px;color:#3a4a5c;font-weight:500;margin-top:3px}
+
+/* ── RESULT ── */
+.res-hero{padding:44px 46px 36px;background:linear-gradient(135deg,rgba(0,197,114,.12) 0%,rgba(59,130,246,.08) 50%,rgba(168,85,247,.06) 100%);border-bottom:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden}
+.res-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,197,114,.18),transparent 65%)}
+.res-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,197,114,.5),rgba(59,130,246,.5),transparent)}
+@media(max-width:520px){.res-hero{padding:32px 20px 28px}}
+.res-hero-inner{position:relative;z-index:1;text-align:center}
+.res-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(0,197,114,.1);border:1px solid rgba(0,197,114,.3);font-size:11px;font-weight:700;color:#4ade80;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.res-bdot{width:6px;height:6px;border-radius:50%;background:#00c572;animation:npulse 1.2s infinite}
+
+/* BEFORE/AFTER BIG */
+.ba-big{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin:24px 0;align-items:center}
+.ba-side{padding:20px;border-radius:16px;text-align:center}
+.ba-before{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.ba-after{background:rgba(0,197,114,.08);border:1px solid rgba(0,197,114,.25);position:relative}
+.ba-after::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,197,114,.12),transparent 70%);border-radius:16px}
+.ba-after-inner{position:relative;z-index:1}
+.ba-side-lbl{font-size:10px;font-weight:700;color:#3a4a5c;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.ba-side-val{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.05em;line-height:1}
+.ba-side-sub{font-size:12px;color:#4a5a6c;margin-top:4px;font-weight:500}
+.ba-mid{display:flex;flex-direction:column;align-items:center;gap:4px}
+.ba-mid-arrow{font-size:22px;color:#00c572;animation:bounce 1.5s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.ba-mid-plus{font-size:10px;font-weight:700;color:#00c572;letter-spacing:.08em;text-transform:uppercase}
+
+/* METRICS GRID */
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.metric-card{padding:18px 16px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s;cursor:default;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--mc,#00c572),transparent);opacity:.6}
+.metric-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.12)}
+.mc-icon{font-size:22px;margin-bottom:8px}
+.mc-val{font-size:24px;font-weight:900;letter-spacing:-.04em;margin-bottom:3px}
+.mc-lbl{font-size:12px;color:#4a5a6c;font-weight:500}
+.mc-delta{font-size:11px;font-weight:700;color:#00c572;margin-top:5px;display:flex;align-items:center;gap:3px}
+
+/* GROWTH BAR */
+.g-bar-wrap{margin-bottom:24px}
+.g-bar-item{margin-bottom:14px}
+.g-bar-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.g-bar-label{font-size:13px;font-weight:700;color:#d0d8e0}
+.g-bar-delta{font-size:12px;font-weight:700;color:#4ade80}
+.g-bar-bg{height:7px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;position:relative}
+.g-bar-fill{height:100%;border-radius:99px;position:absolute;top:0;left:0;transition:width 1.8s cubic-bezier(.4,0,.2,1);width:0}
+.g-bar-was{opacity:.4}
+
+/* CHART */
+.chart-box{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:22px;margin-bottom:24px}
+
+/* CTA */
+.res-cta{background:linear-gradient(135deg,rgba(0,197,114,.1),rgba(59,130,246,.08));border:1px solid rgba(0,197,114,.2);border-radius:20px;padding:28px;text-align:center;position:relative;overflow:hidden}
+.res-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -20%,rgba(0,197,114,.15),transparent 65%)}
+.res-cta-inner{position:relative;z-index:1}
+.res-cta-title{font-size:22px;font-weight:900;color:#e6edf3;letter-spacing:-.04em;margin-bottom:8px}
+.res-cta-sub{font-size:14px;color:#4a5a6c;line-height:1.6;margin-bottom:22px}
+.btn-cta{width:100%;padding:20px;border-radius:14px;background:linear-gradient(135deg,#00c572,#00a05d);color:#fff;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:17px;font-weight:900;letter-spacing:-.03em;box-shadow:0 6px 36px rgba(0,197,114,.55);transition:all .25s;position:relative;overflow:hidden}
+.btn-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent);opacity:0;transition:.2s}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 52px rgba(0,197,114,.7)}
+.btn-cta:hover::after{opacity:1}
+.btn-cta .arr{display:inline-block;margin-left:8px;transition:transform .2s}
+.btn-cta:hover .arr{transform:translateX(6px)}
+
+.trust-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;padding-top:18px}
+.tp{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#3a4a5c}
+.tp-icon{color:#00c572;font-size:13px}
+
+.res-body{padding:36px 46px 48px}
+@media(max-width:520px){.res-body{padding:24px 20px 40px}}
+.sec-lbl{font-size:11px;font-weight:700;color:#3a4a5c;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+
+/* ── ANALOGY CARD ── */
+.analogy-card{display:grid;grid-template-columns:1fr 32px 1fr;gap:0;margin:28px 0 32px;align-items:stretch}
+.an-side{padding:18px 16px;border-radius:16px;display:flex;flex-direction:column;gap:10px}
+.an-old{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+.an-new{background:rgba(0,197,114,.07);border:1px solid rgba(0,197,114,.2);position:relative;overflow:hidden}
+.an-new::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,197,114,.1),transparent 70%)}
+.an-new-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
+.an-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.an-label.old{color:#3a4a5c}.an-label.nw{color:#4ade80}
+.an-icon{font-size:28px;line-height:1}
+.an-title{font-size:14px;font-weight:800;color:#e6edf3;line-height:1.3}
+.an-sub{font-size:12px;color:#3a4a5c;font-weight:400;line-height:1.5}
+.an-new .an-title{color:#e6edf3}.an-new .an-sub{color:#4a5a6c}
+.an-mid{display:flex;align-items:center;justify-content:center}
+.an-arrow{width:32px;height:32px;border-radius:50%;background:rgba(0,197,114,.12);border:1px solid rgba(0,197,114,.25);display:flex;align-items:center;justify-content:center;font-size:14px;color:#00c572;animation:arrowPulse 2s ease-in-out infinite}
+@keyframes arrowPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(0,197,114,.3)}50%{transform:scale(1.08);box-shadow:0 0 0 6px rgba(0,197,114,0)}}
+.an-row{display:flex;align-items:center;gap:8px;font-size:13px}
+.an-row-icon{font-size:14px;flex-shrink:0}
+.an-row-text{color:#8b949e;font-weight:500}
+.an-new .an-row-text{color:#4ade80;font-weight:600}
+@media(max-width:520px){.analogy-card{grid-template-columns:1fr 24px 1fr}.an-side{padding:14px 12px}}
+
+/* ── HERO QUOTE ── */
+.hero-quote{font-size:13px;color:#3a4a5c;font-style:italic;margin-bottom:32px;line-height:1.6;padding:14px 20px;border-left:2px solid rgba(0,197,114,.3);text-align:left;background:rgba(0,197,114,.04);border-radius:0 10px 10px 0}
+.hero-quote b{color:#00c572;font-style:normal}
+
+/* ── ANIMATIONS ── */
+@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes starFloat{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-120px) rotate(360deg);opacity:0}}
+.screen{animation:slideUp .5s cubic-bezier(.4,0,.2,1)}
+.email-note{font-size:12px;color:#3a4a5c;text-align:center;margin-top:9px}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div id="cursor-glow"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+
+<div class="app">
+  <nav>
+    <a class="nl" href="#">
+      <div class="ni">🚀</div>
+      <div><div class="nn">Prospectra</div><div class="nt">B2B Growth AI</div></div>
+    </a>
+    <div class="nav-pill"><div class="ndot"></div>Прирост к выручке за 60 сек</div>
+  </nav>
+
+  <div class="prog-wrap" id="pw">
+    <div class="prog-meta">
+      <span class="prog-lbl" id="plbl">Шаг 1 из 5</span>
+      <span class="prog-pct" id="ppct">0%</span>
+    </div>
+    <div class="prog-bg"><div class="prog-fill" id="pfill" style="width:0"></div></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-glow"></div>
+    <div id="sc"></div>
+  </div>
+
+  <div class="growth-ticker" id="gt">
+    <div class="gt-dot"></div>
+    <span>С Prospectra вы можете добавлять к выручке </span>
+    <span class="gt-amount" id="gta">—</span>
+    <span> каждый месяц</span>
+  </div>
+</div>
+
+<script>
+/* ══════════════════
+   THREE.JS SPACE SCENE
+══════════════════ */
+(function(){
+  const canvas = document.getElementById('bg');
+  const R = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  R.setPixelRatio(Math.min(devicePixelRatio,2));
+  R.setClearColor(0x000000,0);
+
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(65,1,.1,500);
+  cam.position.z = 35;
+
+  // STAR FIELD - dense
+  const starGeo = new THREE.BufferGeometry();
+  const N = 2200;
+  const sp = new Float32Array(N*3);
+  const sc = new Float32Array(N*3);
+  for(let i=0;i<N;i++){
+    sp[i*3]=(Math.random()-.5)*200;
+    sp[i*3+1]=(Math.random()-.5)*200;
+    sp[i*3+2]=(Math.random()-.5)*120-20;
+    // colors: white / blue-ish / green-ish
+    const r=Math.random();
+    if(r<.7){sc[i*3]=1;sc[i*3+1]=1;sc[i*3+2]=1;}
+    else if(r<.85){sc[i*3]=.6;sc[i*3+1]=.8;sc[i*3+2]=1;}
+    else{sc[i*3]=.6;sc[i*3+1]=1;sc[i*3+2]=.8;}
+  }
+  starGeo.setAttribute('position',new THREE.BufferAttribute(sp,3));
+  starGeo.setAttribute('color',new THREE.BufferAttribute(sc,3));
+  const starMat = new THREE.PointsMaterial({size:.12,vertexColors:true,transparent:true,opacity:.7});
+  scene.add(new THREE.Points(starGeo,starMat));
+
+  // NEBULA PARTICLES
+  const nebGeo = new THREE.BufferGeometry();
+  const nebN = 300;
+  const np = new Float32Array(nebN*3);
+  const nc = new Float32Array(nebN*3);
+  const palette=[[0,.77,.44],[.23,.51,.96],[.66,.33,.97],[.97,.6,.25]];
+  for(let i=0;i<nebN;i++){
+    np[i*3]=(Math.random()-.5)*80;
+    np[i*3+1]=(Math.random()-.5)*60;
+    np[i*3+2]=(Math.random()-.5)*40-5;
+    const c=palette[Math.floor(Math.random()*palette.length)];
+    nc[i*3]=c[0];nc[i*3+1]=c[1];nc[i*3+2]=c[2];
+  }
+  nebGeo.setAttribute('position',new THREE.BufferAttribute(np,3));
+  nebGeo.setAttribute('color',new THREE.BufferAttribute(nc,3));
+  const nebMat = new THREE.PointsMaterial({size:.3,vertexColors:true,transparent:true,opacity:.5});
+  const nebPoints = scene.add(new THREE.Points(nebGeo,nebMat));
+
+  // WIREFRAME OBJECTS — planet-like
+  const wires = [];
+  const wDefs = [
+    {geo:new THREE.IcosahedronGeometry(3,1),col:0x00c572,pos:[-22,10,-15],rx:.003,ry:.005,phase:0},
+    {geo:new THREE.OctahedronGeometry(2.2,0),col:0x3b82f6,pos:[20,-8,-18],rx:.004,ry:.003,phase:1},
+    {geo:new THREE.IcosahedronGeometry(1.8,0),col:0xa855f7,pos:[-16,-12,-10],rx:.006,ry:.004,phase:2},
+    {geo:new THREE.OctahedronGeometry(1.4,0),col:0xfbbf24,pos:[18,13,-20],rx:.005,ry:.006,phase:3},
+    {geo:new THREE.IcosahedronGeometry(2.5,0),col:0x00c572,pos:[0,0,-25],rx:.002,ry:.004,phase:4},
+    {geo:new THREE.OctahedronGeometry(1.0,0),col:0x3b82f6,pos:[-8,15,-12],rx:.007,ry:.003,phase:5},
+  ];
+  wDefs.forEach(d=>{
+    const m=new THREE.MeshBasicMaterial({color:d.col,wireframe:true,transparent:true,opacity:.15});
+    const mesh=new THREE.Mesh(d.geo,m);
+    mesh.position.set(...d.pos);
+    mesh.userData={rx:d.rx,ry:d.ry,phase:d.phase};
+    scene.add(mesh);wires.push(mesh);
+  });
+
+  // ORBIT RINGS
+  const rings = [];
+  [[14,.04,0x00c572,.1,0.4],[9,.03,0x3b82f6,.08,0.3]].forEach(([r,t,c,o,rx])=>{
+    const g=new THREE.TorusGeometry(r,t,4,120);
+    const m=new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:o});
+    const mesh=new THREE.Mesh(g,m);
+    mesh.rotation.x=rx*Math.PI;
+    scene.add(mesh);rings.push(mesh);
+  });
+
+  // SHOOTING COMETS
+  const comets=[];
+  function spawnComet(){
+    const g=new THREE.CylinderGeometry(.03,.01,4,4);
+    const m=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.6});
+    const mesh=new THREE.Mesh(g,m);
+    mesh.position.set((Math.random()-.5)*60,(Math.random()-.5)*40,-5);
+    mesh.rotation.z=Math.PI/4;
+    mesh.userData={vx:.6,vy:-.4,life:0,maxLife:80};
+    scene.add(mesh);comets.push(mesh);
+  }
+  setInterval(spawnComet,2200);
+
+  function resize(){
+    const w=window.innerWidth,h=window.innerHeight;
+    R.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  let mx=0,my=0;
+  window.addEventListener('mousemove',e=>{
+    mx=(e.clientX/window.innerWidth-.5)*2;
+    my=-(e.clientY/window.innerHeight-.5)*2;
+    // cursor glow
+    const cg=document.getElementById('cursor-glow');
+    cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px';
+    // orbs
+    document.querySelector('.o1').style.transform=`translate(${mx*40}px,${my*30}px)`;
+    document.querySelector('.o2').style.transform=`translate(${-mx*30}px,${-my*25}px)`;
+  });
+
+  let t=0;
+  (function animate(){
+    requestAnimationFrame(animate);
+    t+=.008;
+    cam.position.x+=(mx*3-cam.position.x)*.025;
+    cam.position.y+=(my*2-cam.position.y)*.025;
+    cam.lookAt(0,0,0);
+    wires.forEach(w=>{
+      w.rotation.x+=w.userData.rx;
+      w.rotation.y+=w.userData.ry;
+      w.position.y+=Math.sin(t+w.userData.phase)*.006;
+    });
+    rings.forEach((r,i)=>{r.rotation.z+=.0015*(i+1);r.rotation.y+=.0008;});
+    starMat.opacity=.55+Math.sin(t*.3)*.12;
+    comets.forEach((c,i)=>{
+      c.userData.life++;
+      c.position.x+=c.userData.vx;
+      c.position.y+=c.userData.vy;
+      c.material.opacity=Math.max(0,1-c.userData.life/c.userData.maxLife);
+      if(c.userData.life>=c.userData.maxLife){scene.remove(c);comets.splice(i,1);}
+    });
+    R.render(scene,cam);
+  })();
+})();
+
+/* ════════════════
+   QUIZ ENGINE
+════════════════ */
+const S = {
+  step:0,
+  d:{ revenue:null, avgCheck:null, managers:null, coldCalls:null, callsPerDay:20,
+      hasCRM:null, clientSearch:null, searchTime:null, hasAutomation:null,
+      badContacts:null, lostDeals:null, managerTurnover:null, usesAI:null, hasAutoLeads:null },
+  email:'',
+  growth:{}
+};
+const STEPS=['hero','s1','s2','s3','s4','s5','result'];
+
+// ── GROWTH CALC (positive framing) ──
+function calcGrowth(){
+  const rev = S.d.revenue||0;
+  const mgr = S.d.managers||1;
+
+  // Efficiency gain from automation
+  const searchT = S.d.searchTime==='low'?.15:S.d.searchTime==='med'?.35:S.d.searchTime==='high'?.55:.35;
+  const autoBoost = S.d.hasAutomation==='no'?1.25:.8;
+  const searchGain = Math.round(rev * searchT * autoBoost * .8); // 80% recovery
+
+  // Contact quality gain
+  const badPct = S.d.badContacts==='always'?.25:S.d.badContacts==='often'?.16:S.d.badContacts==='rare'?.06:.12;
+  const contactGain = Math.round(rev * badPct * .85);
+
+  // Deal retention gain
+  const dealPct = S.d.lostDeals==='always'?.22:S.d.lostDeals==='often'?.14:S.d.lostDeals==='rare'?.05:.10;
+  const crmMult = S.d.hasCRM==='no'?1.3:S.d.hasCRM==='partial'?1.1:.9;
+  const dealGain = Math.round(rev * dealPct * crmMult * .85);
+
+  // Team stability gain
+  const turnPct = S.d.managerTurnover==='always'?.18:S.d.managerTurnover==='often'?.10:S.d.managerTurnover==='rare'?.03:.07;
+  const teamGain = Math.round(rev * turnPct * .8);
+
+  // AI multiplier
+  const aiMult = S.d.usesAI==='yes'?1.1:S.d.usesAI==='partial'?1.2:1.35;
+
+  const totalGain = Math.round((searchGain+contactGain+dealGain+teamGain)*aiMult);
+  const newRevenue = rev + totalGain;
+
+  S.growth = { search:searchGain, contacts:contactGain, deals:dealGain, team:teamGain, total:totalGain, newRevenue, base:rev };
+  return S.growth;
+}
+
+function fmtR(n){
+  if(!n)return'0 ₽';
+  if(n>=1000000)return(n/1000000).toFixed(1).replace('.0','')+'млн ₽';
+  if(n>=1000)return Math.round(n/1000)+'тыс. ₽';
+  return n.toLocaleString('ru')+'₽';
+}
+function fmtN(n){return n?n.toLocaleString('ru'):'0';}
+function pct(g){return g.base?Math.round((g.total/g.base)*100):0;}
+
+function getGrowthInsight(s){
+  const g=calcGrowth();
+  const rev=S.d.revenue||0;
+  const msgs={
+    s1:`Отлично. Как только банк видит ваш счёт — он предлагает нужные продукты. Мы видим ваш бизнес и уже рассчитываем: <b>+${fmtR(Math.round(rev*.32))}</b> к выручке в первые 90 дней.`,
+    s2:`Представьте: вместо похода в банк — push-уведомление «сделка готова». Ваши менеджеры будут закрывать <b>в 2–3× больше</b> за то же рабочее время.`,
+    s3:`Вместо ручного поиска по 2ГИС — AI подбирает клиентов сам, как рекомендации в приложении. Прирост к выручке: <b>+${fmtR(g.search)}</b>/мес без найма.`,
+    s4:`Три рычага вместе дадут <b>+${fmtR(g.contacts+g.deals)}</b>/мес — это как подключить кешбэк, вклад и инвестиции одновременно.`,
+    s5:`Компании, перешедшие на AI-продажи, растут в 2–3× быстрее рынка. Ваш прирост к выручке с Prospectra — <b>+${fmtR(g.total)}</b>/мес.`
+  };
+  return msgs[s]||'';
+}
+
+// ── RENDER ──
+function render(step){
+  const sc=document.getElementById('sc');
+  const prev=sc.querySelector('.screen');
+  if(prev)prev.remove();
+  const div=document.createElement('div');
+  div.className='screen';
+  const map={hero:rHero,s1:rS1,s2:rS2,s3:rS3,s4:rS4,s5:rS5,result:rResult};
+  div.innerHTML=map[step]();
+  sc.appendChild(div);
+  bindEv(step);
+  updProg(step);
+  updTicker();
+  if(step==='result')setTimeout(initResult,120);
+}
+
+// ── CHOICE HELPER ──
+function cb(key,val,icon,title,sub){
+  const sel=S.d[key]===val;
+  return`<button class="cb ${sel?'sel':''}" onclick="pick('${key}','${val}',this)">
+    <div class="cb-check">${sel?'✓':''}</div>
+    <div class="cb-icon">${icon}</div>
+    <div class="cb-title">${title}</div>
+    <div class="cb-sub">${sub}</div>
+  </button>`;
+}
+
+// ── SCREENS ──
+function rHero(){return`<div class="hero-wrap">
+  <div class="hero-badge"><div class="hbdot"></div>Потенциал роста за 60 секунд</div>
+  <h1 class="hero-title">Сколько вы можете<br>добавить к выручке<br><span class="gt">с Prospectra?</span></h1>
+  <p class="hero-sub">Помните, как раньше ходили в банк, чтобы перевести деньги? А сейчас — одна кнопка в приложении. Prospectra делает то же самое с продажами.</p>
+
+  <div class="analogy-card">
+    <div class="an-side an-old">
+      <div class="an-label old">Как сейчас</div>
+      <div class="an-icon">🏦</div>
+      <div class="an-title">Идти в отделение банка</div>
+      <div class="an-row"><span class="an-row-icon">⏳</span><span class="an-row-text">Менеджер ищет базу вручную</span></div>
+      <div class="an-row"><span class="an-row-icon">📞</span><span class="an-row-text">50 холодных звонков в никуда</span></div>
+      <div class="an-row"><span class="an-row-icon">📋</span><span class="an-row-text">Excel, 2ГИС, угадывание</span></div>
+    </div>
+    <div class="an-mid"><div class="an-arrow">→</div></div>
+    <div class="an-side an-new">
+      <div class="an-new-inner">
+        <div class="an-label nw">С Prospectra</div>
+        <div class="an-icon">📱</div>
+        <div class="an-title">Мобильное приложение банка</div>
+        <div class="an-row"><span class="an-row-icon">⚡</span><span class="an-row-text">AI находит клиентов 24/7</span></div>
+        <div class="an-row"><span class="an-row-icon">🎯</span><span class="an-row-text">Только горячие, валидные лиды</span></div>
+        <div class="an-row"><span class="an-row-icon">🚀</span><span class="an-row-text">Менеджеры закрывают сделки</span></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="nextStep()" style="max-width:380px;margin:0 auto 32px">
+    Рассчитать мой прирост к выручке 🚀
+  </button>
+  <div class="hero-stats">
+    <div class="hs-col"><div class="hs-val" style="color:#00c572">+50%</div><div class="hs-lbl">Средний рост выручки</div></div>
+    <div class="hs-col"><div class="hs-val" style="color:#3b82f6">24ч</div><div class="hs-lbl">До первых новых лидов</div></div>
+    <div class="hs-col"><div class="hs-val" style="color:#a855f7">116к+</div><div class="hs-lbl">Компаний в базе</div></div>
+  </div>
+</div>`;}
+
+function rS1(){return`<div class="card-inner">
+  <div class="step-badge"><div class="sbdot"></div>Шаг 1 — Точка А: ваш бизнес сейчас</div>
+  <h2 class="q-title">Откуда стартуем?<br><span class="gt">Ваша текущая база</span></h2>
+  <p class="q-sub">Как в приложении банка — чтобы показать баланс, нужны данные счёта. Укажите цифры, и мы покажем ваш будущий «баланс» выручки.</p>
+  <div class="fields">
+    <div class="field">
+      <label>Текущая выручка в месяц</label>
+      <div class="field-wrap">
+        <input type="number" placeholder="5 000 000" value="${S.d.revenue||''}" oninput="S.d.revenue=+this.value;onRevIn()">
+        <span class="fsuf">₽</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Средний чек сделки</label>
+      <div class="field-wrap">
+        <input type="number" placeholder="150 000" value="${S.d.avgCheck||''}" oninput="S.d.avgCheck=+this.value">
+        <span class="fsuf">₽</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Менеджеров в отделе продаж</label>
+      <div class="field-wrap">
+        <input type="number" placeholder="5" value="${S.d.managers||''}" oninput="S.d.managers=+this.value">
+        <span class="fsuf">чел</span>
+      </div>
+    </div>
+  </div>
+  <div id="s1-ins"></div>
+  <div class="btn-row"><button class="btn-p" onclick="nextStep()">Далее →</button></div>
+</div>`;}
+
+function rS2(){return`<div class="card-inner">
+  <div class="step-badge"><div class="sbdot"></div>Шаг 2 — Как работает отдел сейчас</div>
+  <h2 class="q-title">Пешком или<br><span class="gt2">с приложением?</span></h2>
+  <p class="q-sub">Нет правильных или неправильных ответов — мы просто хотим понять, где ваш рост спрятан прямо сейчас.</p>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Используете холодные звонки?</div>
+    <div class="choices c2">
+      ${cb('coldCalls','yes','📞','Да, звоним активно','Каждый день')}
+      ${cb('coldCalls','no','🔄','Нет / работаем по входящим','Другие каналы')}
+    </div>
+  </div>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Звонков в день на менеджера</div>
+    <div class="sl-marks"><span>0</span><span>50</span><span>100+</span></div>
+    <input type="range" id="sl" min="0" max="100" value="${S.d.callsPerDay}" oninput="S.d.callsPerDay=+this.value;updSlider(this);document.getElementById('slv').textContent=this.value">
+    <div class="sl-val" id="slv">${S.d.callsPerDay}<span>звонков / день</span></div>
+  </div>
+  <div>
+    <div class="sl-lbl">Есть ли CRM?</div>
+    <div class="choices c3">
+      ${cb('hasCRM','yes','✅','Да, используем','amoCRM, Битрикс...')}
+      ${cb('hasCRM','partial','⚠️','Частично','Не у всех менеджеров')}
+      ${cb('hasCRM','no','📋','Нет','Excel / таблицы')}
+    </div>
+  </div>
+  <div id="s2-ins"></div>
+  <div class="btn-row"><button class="btn-b" onclick="prevStep()">← Назад</button><button class="btn-p" onclick="nextStep()">Далее →</button></div>
+</div>`;}
+
+function rS3(){return`<div class="card-inner">
+  <div class="step-badge"><div class="sbdot"></div>Шаг 3 — Поиск клиентов</div>
+  <h2 class="q-title">Как находите<br><span class="gt">новых клиентов?</span></h2>
+  <p class="q-sub">Ходить по адресам лично или получать готовый список? Именно здесь Prospectra добавляет больше всего к выручке.</p>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Кто занимается поиском?</div>
+    <div class="choices">
+      ${cb('clientSearch','managers','👥','Менеджеры ищут сами','2ГИС, Excel, ручной поиск')}
+      ${cb('clientSearch','dedicated','🎯','Отдельный SDR или маркетинг','Специализированная роль')}
+      ${cb('clientSearch','tools','🔧','Используем базы и парсеры','ExportBase, Контур, другие')}
+    </div>
+  </div>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Сколько времени уходит на поиск?</div>
+    <div class="choices c3">
+      ${cb('searchTime','low','⚡','До 20%','Уже хорошо')}
+      ${cb('searchTime','med','⏱️','30–50%','Есть куда расти')}
+      ${cb('searchTime','high','🔥','50%+','Большой потенциал')}
+    </div>
+  </div>
+  <div>
+    <div class="sl-lbl">Есть ли автоматизация поиска?</div>
+    <div class="choices c2">
+      ${cb('hasAutomation','yes','🤖','Да','Частично автоматизировано')}
+      ${cb('hasAutomation','no','🛠️','Нет','Всё вручную — большой потенциал!')}
+    </div>
+  </div>
+  <div id="s3-ins"></div>
+  <div class="btn-row"><button class="btn-b" onclick="prevStep()">← Назад</button><button class="btn-p" onclick="nextStep()">Далее →</button></div>
+</div>`;}
+
+function rS4(){return`<div class="card-inner">
+  <div class="step-badge"><div class="sbdot"></div>Шаг 4 — Где добавим больше всего</div>
+  <h2 class="q-title">Три рычага<br><span class="gt">вашего роста</span></h2>
+  <p class="q-sub">Как в мобильном банке — переводы, кешбэк, инвестиции работают вместе. Оцените честно, и мы покажем, сколько каждый рычаг добавит.</p>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Качество базы контактов?</div>
+    <div class="choices c3">
+      ${cb('badContacts','always','🎯','Часто неактуальна','Prospectra даст чистую базу')}
+      ${cb('badContacts','often','📊','Бывает проблема','Улучшим на 80%')}
+      ${cb('badContacts','rare','✅','База хорошая','Оптимизируем дальше')}
+    </div>
+  </div>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Часто теряете сделки после КП?</div>
+    <div class="choices c3">
+      ${cb('lostDeals','always','🚀','Да — большой потенциал!','Автосопровождение решит это')}
+      ${cb('lostDeals','often','📈','Бывает','Добавим +20–30%')}
+      ${cb('lostDeals','rare','💎','Редко','Масштабируем успех')}
+    </div>
+  </div>
+  <div>
+    <div class="sl-lbl">Стабильность команды менеджеров?</div>
+    <div class="choices c3">
+      ${cb('managerTurnover','always','🔄','Высокая текучка','Снизим нагрузку на 60%')}
+      ${cb('managerTurnover','often','↕️','Средняя','Повысим удержание')}
+      ${cb('managerTurnover','rare','🤝','Стабильная команда','Масштабируем вместе')}
+    </div>
+  </div>
+  <div id="s4-ins"></div>
+  <div class="btn-row"><button class="btn-b" onclick="prevStep()">← Назад</button><button class="btn-p" onclick="nextStep()">Далее →</button></div>
+</div>`;}
+
+function rS5(){return`<div class="card-inner">
+  <div class="step-badge"><div class="sbdot"></div>Шаг 5 — Последний шаг</div>
+  <h2 class="q-title">Готовы перейти<br><span class="gt">на «приложение»?</span></h2>
+  <p class="q-sub">Осталось два вопроса — и вы получите точную цифру прироста к выручке именно для вашего бизнеса.</p>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Используете AI в продажах?</div>
+    <div class="choices">
+      ${cb('usesAI','yes','🤖','Да, уже используем','Усилим то, что работает')}
+      ${cb('usesAI','partial','🧪','Экспериментируем','Выйдем на системный уровень')}
+      ${cb('usesAI','no','🚀','Пока нет — значит огромный рост!','Станете лидером рынка быстро')}
+    </div>
+  </div>
+  <div style="margin-bottom:22px">
+    <div class="sl-lbl">Есть автоматическая генерация лидов?</div>
+    <div class="choices c2">
+      ${cb('hasAutoLeads','yes','✅','Да','Масштабируем дальше')}
+      ${cb('hasAutoLeads','no','⚡','Нет — запустим за 24ч!','Это ваш главный буст')}
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="field" style="margin-bottom:6px">
+    <label>Email — куда отправить полный расчёт</label>
+    <div class="field-wrap">
+      <input type="email" placeholder="ivan@company.ru" value="${S.email}" oninput="S.email=this.value" style="font-size:16px;font-weight:600">
+    </div>
+  </div>
+  <p class="email-note">Пришлём персональный план роста. Без спама и холодных звонков 🙂</p>
+  <div id="s5-ins"></div>
+  <div class="btn-row"><button class="btn-b" onclick="prevStep()">← Назад</button><button class="btn-p" onclick="nextStep()">Показать мой рост 🚀</button></div>
+</div>`;}
+
+function rResult(){
+  const g=calcGrowth();
+  const daily=Math.round(g.total/30);
+  const growPct=pct(g);
+  const maxG=Math.max(g.search,g.contacts,g.deals,g.team,1);
+
+  const items=[
+    {icon:'🤖',label:'Автоматизация поиска',gain:g.search,col:'#00c572',mc:'--mc:#00c572',desc:'Менеджеры продают, не ищут'},
+    {icon:'🎯',label:'Чистая база контактов',gain:g.contacts,col:'#3b82f6',mc:'--mc:#3b82f6',desc:'Только валидные лиды'},
+    {icon:'💼',label:'Удержание сделок',gain:g.deals,col:'#a855f7',mc:'--mc:#a855f7',desc:'AI-сопровождение КП'},
+    {icon:'🤝',label:'Стабильность команды',gain:g.team,col:'#fbbf24',mc:'--mc:#fbbf24',desc:'Меньше рутины — меньше ухода'},
+  ];
+
+  const metCards=items.map(it=>`<div class="metric-card" style="${it.mc}">
+    <div class="mc-icon">${it.icon}</div>
+    <div class="mc-val" style="color:${it.col}">+${fmtR(it.gain)}</div>
+    <div class="mc-lbl">${it.label}</div>
+    <div class="mc-delta">↑ ${it.desc}</div>
+  </div>`).join('');
+
+  const bars=items.map(it=>`<div class="g-bar-item">
+    <div class="g-bar-meta"><span class="g-bar-label">${it.icon} ${it.label}</span><span class="g-bar-delta">+${fmtR(it.gain)}/мес</span></div>
+    <div class="g-bar-bg"><div class="g-bar-fill" id="bar-${it.label.replace(/\s/g,'')}" style="background:${it.col}"></div></div>
+  </div>`).join('');
+
+  return`<div>
+    <div class="res-hero">
+      <div class="res-hero-inner">
+        <div class="res-badge"><div class="res-bdot"></div>Ваш потенциал роста рассчитан</div>
+        <div class="ba-big">
+          <div class="ba-side ba-before">
+            <div class="ba-side-lbl">Сейчас</div>
+            <div class="ba-side-val" style="color:#5a6a7c">${fmtR(g.base)}</div>
+            <div class="ba-side-sub">/ в месяц</div>
+          </div>
+          <div class="ba-mid">
+            <div class="ba-mid-arrow">→</div>
+            <div class="ba-mid-plus">+${growPct}%</div>
+          </div>
+          <div class="ba-side ba-after">
+            <div class="ba-after-inner">
+              <div class="ba-side-lbl" style="color:#4ade80">С Prospectra</div>
+              <div class="ba-side-val" id="resCounter" style="color:#00c572">${fmtR(g.base)}</div>
+              <div class="ba-side-sub" style="color:#4a5a6c">/ в месяц</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:6px">
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;background:rgba(0,197,114,.1);border:1px solid rgba(0,197,114,.2);font-size:13px;font-weight:700;color:#4ade80">
+            🚀 Дополнительная выручка: <span id="totalGain" style="color:#fff;margin-left:2px">0</span>/мес
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-body">
+      <div class="sec-lbl">Откуда берётся рост</div>
+      <div class="metrics-grid">${metCards}</div>
+
+      <div class="g-bar-wrap">
+        <div class="sec-lbl">Распределение прироста</div>
+        ${bars}
+      </div>
+
+      <div class="chart-box">
+        <div class="sec-lbl">До и после Prospectra</div>
+        <canvas id="gc" height="180"></canvas>
+      </div>
+
+      <div class="res-cta">
+        <div class="res-cta-inner">
+          <div class="res-cta-title">Пора перейти на «приложение» 📱</div>
+          <div class="res-cta-sub">Никто уже не ходит в банк за переводами. Prospectra — ваш партнёр, который делает продажи такими же простыми: запустим за 24 часа и будем рядом на каждом шаге роста.</div>
+          <button class="btn-cta" onclick="openCTA()">Подключить Prospectra и начать расти <span class="arr">→</span></button>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <div class="tp"><span class="tp-icon">✓</span> Первые лиды за 24ч</div>
+        <div class="tp"><span class="tp-icon">✓</span> Персональный менеджер</div>
+        <div class="tp"><span class="tp-icon">✓</span> Гарантия результата</div>
+      </div>
+      <div style="text-align:center;margin-top:22px">
+        <button onclick="restart()" style="background:none;border:none;font-family:Manrope,sans-serif;font-size:13px;color:#3a4a5c;cursor:pointer;text-decoration:underline;text-underline-offset:3px">Пересчитать</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── PICK ── */
+function pick(key,val,el){
+  S.d[key]=val;
+  el.closest('.choices').querySelectorAll('.cb').forEach(b=>{
+    b.classList.remove('sel');b.querySelector('.cb-check').textContent='';
+  });
+  el.classList.add('sel');el.querySelector('.cb-check').textContent='✓';
+  showIns(STEPS[S.step]);updTicker();
+}
+
+/* ── SLIDER ── */
+function updSlider(el){
+  const p=((+el.value-+el.min)/(+el.max-+el.min))*100;
+  el.style.setProperty('--pct',p+'%');
+}
+
+/* ── INSIGHTS ── */
+const shownIns=new Set();
+function showIns(sid){
+  if(shownIns.has(sid))return;
+  const el=document.getElementById(sid+'-ins');
+  const txt=getGrowthInsight(sid);
+  if(!el||!txt)return;
+  el.innerHTML=`<div class="g-insight"><div class="gi-icon">✨</div><div class="gi-text">${txt}</div></div>`;
+  shownIns.add(sid);
+}
+let revT;
+function onRevIn(){
+  clearTimeout(revT);
+  revT=setTimeout(()=>{if(S.d.revenue>0){showIns('s1');updTicker();}},700);
+}
+
+/* ── BIND ── */
+function bindEv(step){
+  setTimeout(()=>{document.querySelectorAll('input[type=range]').forEach(updSlider);},50);
+}
+
+/* ── NAV ── */
+function nextStep(){if(S.step<STEPS.length-1){S.step++;render(STEPS[S.step]);}}
+function prevStep(){if(S.step>0){S.step--;render(STEPS[S.step]);}}
+function restart(){S.step=0;S.d={callsPerDay:20};S.email='';shownIns.clear();render(STEPS[0]);}
+
+/* ── PROGRESS ── */
+function updProg(step){
+  const pw=document.getElementById('pw');
+  const pf=document.getElementById('pfill');
+  const pl=document.getElementById('plbl');
+  const pp=document.getElementById('ppct');
+  const gtk=document.getElementById('gt');
+  if(step==='hero'){pw.classList.remove('vis');gtk.classList.remove('vis');return;}
+  pw.classList.add('vis');
+  const qs=STEPS.filter(s=>s!=='hero'&&s!=='result');
+  const qi=qs.indexOf(step);
+  const progress=step==='result'?100:Math.round(((qi+1)/qs.length)*100);
+  pf.style.width=progress+'%';pp.textContent=progress+'%';
+  pl.textContent=step==='result'?'Расчёт готов ✓':`Шаг ${qi+1} из ${qs.length}`;
+  if(step==='result')gtk.classList.remove('vis');
+  else gtk.classList.add('vis');
+}
+
+function updTicker(){
+  const g=calcGrowth();
+  const daily=Math.round((g.total||(S.d.revenue||500000)*.3)/30);
+  const el=document.getElementById('gta');
+  if(el)el.textContent=fmtR(daily);
+}
+
+/* ── RESULT INIT ── */
+function initResult(){
+  const g=calcGrowth();
+  // animate new revenue counter
+  animCount('resCounter',g.base,g.newRevenue);
+  animCount2('totalGain',g.total);
+
+  // bars
+  const items=[
+    {key:'Автоматизациипоиска',amount:g.search},
+    {key:'Чистаябаза',amount:g.contacts}, // won't match exactly, using trim
+    {key:'Удержаниесделок',amount:g.deals},
+    {key:'Стабильностькоманды',amount:g.team}
+  ];
+  // rebuild keys from labels
+  const lkeys=['Автоматизацияпоиска','Чистаябаза','Удержаниесделок','Стабильностькоманды'];
+  // Find bars by partial match
+  setTimeout(()=>{
+    const labels=['Автоматизация поиска','Чистая база контактов','Удержание сделок','Стабильность команды'];
+    const amounts=[g.search,g.contacts,g.deals,g.team];
+    const maxG=Math.max(...amounts,1);
+    labels.forEach((lbl,i)=>{
+      const bar=document.getElementById('bar-'+lbl.replace(/\s/g,''));
+      if(bar)bar.style.width=Math.round((amounts[i]/maxG)*100)+'%';
+    });
+  },300);
+
+  // chart
+  setTimeout(()=>{
+    const ctx=document.getElementById('gc');
+    if(!ctx)return;
+    new Chart(ctx,{
+      type:'bar',
+      data:{
+        labels:['Сейчас','С Prospectra'],
+        datasets:[
+          {label:'Текущая выручка',data:[g.base,g.base],backgroundColor:'rgba(255,255,255,.08)',borderRadius:8,borderSkipped:false},
+          {label:'Дополнительный рост',data:[0,g.total],backgroundColor:['rgba(0,197,114,.6)','rgba(0,197,114,.7)'],borderRadius:8,borderSkipped:false}
+        ]
+      },
+      options:{
+        responsive:true,
+        plugins:{
+          legend:{labels:{font:{family:'Manrope',size:12,weight:'600'},color:'#5a6a7c',usePointStyle:true}},
+          tooltip:{
+            backgroundColor:'rgba(8,13,24,.95)',borderColor:'rgba(255,255,255,.1)',borderWidth:1,
+            bodyFont:{family:'Manrope',weight:'700'},
+            callbacks:{label:c=>' '+fmtR(c.parsed.y)}
+          }
+        },
+        scales:{
+          x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#5a6a7c',font:{family:'Manrope',weight:'600'}}},
+          y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#5a6a7c',font:{family:'Manrope',weight:'600'},callback:v=>fmtR(v)}},
+          stacked:true
+        }
+      }
+    });
+  },500);
+}
+
+function animCount(id,from,to){
+  const el=document.getElementById(id);if(!el)return;
+  const dur=2000,start=Date.now();
+  (function tick(){
+    const p=Math.min((Date.now()-start)/dur,1);
+    const ease=1-Math.pow(1-p,4);
+    el.textContent=fmtR(Math.round(from+(to-from)*ease));
+    if(p<1)requestAnimationFrame(tick);else el.textContent=fmtR(to);
+  })();
+}
+function animCount2(id,target){
+  const el=document.getElementById(id);if(!el)return;
+  const dur=2400,start=Date.now();
+  (function tick(){
+    const p=Math.min((Date.now()-start)/dur,1);
+    const ease=1-Math.pow(1-p,4);
+    el.textContent=fmtR(Math.round(target*ease));
+    if(p<1)requestAnimationFrame(tick);else el.textContent=fmtR(target);
+  })();
+}
+
+function openCTA(){
+  alert('Отлично! Наш менеджер свяжется с вами в течение часа — обсудим персональный план запуска Prospectra.');
+}
+
+/* ── SHOOTING STAR BURST (CSS) ── */
+function spawnCSSstar(){
+  const s=document.createElement('div');
+  s.className='shooting-star';
+  const x=Math.random()*window.innerWidth;
+  const y=Math.random()*window.innerHeight*.5;
+  const len=60+Math.random()*120;
+  const dur=800+Math.random()*800;
+  s.style.cssText=`left:${x}px;top:${y}px;width:${len}px;animation-duration:${dur}ms;transform:rotate(${30+Math.random()*30}deg)`;
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),dur+100);
+}
+setInterval(spawnCSSstar,3500);
+
+// ── INIT ──
+render(STEPS[0]);
+</script>
+</body>
+</html>

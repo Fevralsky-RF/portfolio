@@ -3,138 +3,211 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Максим Алексеев — автоматизация бизнес-процессов</title>
 <meta name="description" content="Инструменты автоматизации бизнес-процессов, собранные через Claude Code: калькуляторы окупаемости, сканер сайтов, ИИ-агенты.">
 <style>
   :root{
-    --paper:#F5F7F6; --card:#FFFFFF; --ink:#0E2A44; --body:#47596B; --muted:#7A8896;
-    --line:#E6EAEC; --line-soft:#EEF1F1;
-    --accent:#1F9D63; --accent-ink:#137A4C; --accent-tint:#E8F5EE;
-    --risk-hi:#D8574A; --risk-mid:#E0A43B;
-    --shadow-sm:0 1px 2px rgba(16,42,68,.05);
-    --shadow:0 1px 2px rgba(16,42,68,.05), 0 20px 44px -22px rgba(16,42,68,.24);
-    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
-    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    /* фон */
+    --bg:#0f1419; --bg-2:#1a1f2e; --bg-3:#1e293b;
+    /* акценты */
+    --c-primary:#3b82f6; --c-info:#60a5fa; --c-success:#34d399;
+    --c-violet:#a855f7; --c-warning:#fbbf24; --c-error:#f87171;
+    /* текст */
+    --t1:#f1f5f9; --t2:#cbd5e1; --t3:#94a3b8;
+    /* рамки — синее свечение, не серые линии */
+    --border:rgba(59,130,246,.15);
+    --border-strong:rgba(59,130,246,.30);
+    /* градиенты */
+    --grad-bg:linear-gradient(135deg,#0f1419 0%,#1a1f2e 100%);
+    --grad-card:linear-gradient(135deg,rgba(30,41,59,.50) 0%,rgba(15,23,42,.50) 100%);
+    --glow:0 0 0 1px var(--border), 0 8px 32px rgba(0,0,0,.40);
+    --glow-lift:0 0 0 1px var(--border-strong), 0 14px 44px rgba(0,0,0,.55);
+    --sans:system-ui,-apple-system,"SF Pro Text","Segoe UI",Roboto,sans-serif;
     --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,monospace;
-    --r:16px;
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --paper:#0A1520; --card:#10202F; --ink:#EAF2F6; --body:#AFBFCF; --muted:#7D91A4;
-      --line:#1E3244; --line-soft:#17293a; --accent:#37B579; --accent-ink:#6BD3A0;
-      --accent-tint:#12302A; --risk-hi:#EF7565; --risk-mid:#EEBE5E;
-      --shadow-sm:0 1px 2px rgba(0,0,0,.4);
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 46px -22px rgba(0,0,0,.62);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#0A1520; --card:#10202F; --ink:#EAF2F6; --body:#AFBFCF; --muted:#7D91A4;
-    --line:#1E3244; --line-soft:#17293a; --accent:#37B579; --accent-ink:#6BD3A0;
-    --accent-tint:#12302A; --risk-hi:#EF7565; --risk-mid:#EEBE5E;
-    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 46px -22px rgba(0,0,0,.62);
+    --r:12px;
+    --sp:8px;
   }
 
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--ink);
-    -webkit-font-smoothing:antialiased;line-height:1.55;font-size:16px}
-  .shell{max-width:1060px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-  a{color:inherit}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;
+    color:var(--t2);background:var(--bg);
+    background-image:var(--grad-bg);background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  .shell{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(59,130,246,.30);color:#fff}
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;
       scroll-behavior:auto!important}
   }
+  :focus-visible{outline:2px solid var(--c-info);outline-offset:3px;border-radius:6px}
 
-  /* ── Шапка ── */
-  .hero{padding:clamp(48px,7vw,84px) 0 clamp(32px,4vw,48px)}
-  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 20px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,54px);line-height:1.08;
-    letter-spacing:-.02em;text-wrap:balance;margin:0 0 20px;max-width:19ch}
-  .lede{font-size:clamp(17px,2vw,20px);color:var(--body);max-width:60ch;margin:0 0 32px}
-  .lede b{color:var(--ink);font-weight:600}
+  /* ─────────── Шапка ─────────── */
+  .hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px)}
+  .kicker{
+    font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--t3);margin:0 0 24px;
+  }
+  h1{
+    font-size:clamp(34px,5.6vw,60px);line-height:1.06;letter-spacing:-.025em;
+    font-weight:700;color:var(--t1);margin:0 0 24px;max-width:17ch;text-wrap:balance;
+  }
+  h1 .accent{
+    background:linear-gradient(135deg,#60a5fa 0%,#34d399 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lede{
+    font-size:clamp(17px,2.1vw,20px);line-height:1.55;color:var(--t2);
+    max-width:56ch;margin:0 0 32px;
+  }
+  .lede b{color:var(--t1);font-weight:600}
 
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
-    border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:0 0 32px}
-  @media (min-width:680px){.stats{grid-template-columns:repeat(4,1fr)}}
-  .stat{background:var(--card);padding:18px 20px}
-  .stat b{display:block;font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;
-    line-height:1.15;font-variant-numeric:tabular-nums}
-  .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--muted)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 48px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
+    color:#fff;border:0;border-radius:10px;padding:14px 26px;
+    font-size:15.5px;font-weight:600;letter-spacing:-.01em;
+    box-shadow:0 0 0 1px rgba(96,165,250,.35), 0 8px 24px rgba(37,99,235,.35);
+    transition:transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s, filter .18s;
+  }
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.08);
+    box-shadow:0 0 0 1px rgba(96,165,250,.55), 0 14px 32px rgba(37,99,235,.45)}
+  .btn:active{transform:translateY(0)}
+  .btn-quiet{
+    color:var(--t2);font-size:15.5px;font-weight:500;
+    border-bottom:1px solid var(--border-strong);padding-bottom:3px;
+    transition:color .18s,border-color .18s;
+  }
+  .btn-quiet:hover{color:var(--c-info);border-bottom-color:var(--c-info)}
 
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;
-    border:0;border-radius:10px;padding:13px 22px;font-size:15px;font-weight:600;
-    text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .15s,filter .15s}
-  .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
-  .btn:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px}
-  .btn-quiet{color:var(--body);text-decoration:none;font-size:15px;
-    border-bottom:1px solid var(--line);padding-bottom:2px}
-  .btn-quiet:hover{color:var(--accent-ink);border-bottom-color:var(--accent)}
+  /* полоса цифр */
+  .stats{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--border);border-radius:var(--r);overflow:hidden;
+    box-shadow:var(--glow);margin:0 0 32px;
+  }
+  @media (min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:var(--bg-2);padding:20px 22px}
+  .stat b{
+    display:block;font-family:var(--mono);font-size:clamp(26px,3.4vw,34px);font-weight:600;
+    line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-bottom:4px;
+  }
+  .stat:nth-child(1) b{color:var(--c-info)}
+  .stat:nth-child(2) b{color:var(--c-success)}
+  .stat:nth-child(3) b{color:var(--c-violet)}
+  .stat:nth-child(4) b{color:var(--c-warning)}
+  .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--t3);line-height:1.4;display:block}
 
-  /* ── Секции ── */
-  section{padding:clamp(36px,5vw,56px) 0;border-top:1px solid var(--line)}
-  .sec-head{margin:0 0 8px}
-  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3vw,28px);
-    letter-spacing:-.01em;margin:0 0 8px}
-  .sec-note{color:var(--muted);font-size:15px;max-width:64ch;margin:0 0 28px}
+  /* карточка-доказательство */
+  .proof{
+    background-image:var(--grad-card);border-radius:var(--r);
+    box-shadow:var(--glow);overflow:hidden;
+  }
+  .proof-top{
+    display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;
+    padding:18px 22px;border-bottom:1px solid var(--border);
+  }
+  .proof-top .t{font-weight:600;color:var(--t1);font-size:15.5px}
+  .proof-top .s{font-family:var(--mono);font-size:11.5px;color:var(--t3);
+    letter-spacing:.07em;text-transform:uppercase}
+  .proof-body{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
+  @media (min-width:640px){.proof-body{grid-template-columns:repeat(4,1fr)}}
+  .pcell{background:var(--bg-2);padding:18px 22px}
+  .pcell b{display:block;font-family:var(--mono);font-size:24px;font-weight:600;
+    font-variant-numeric:tabular-nums;line-height:1.2;color:var(--c-info);margin-bottom:2px}
+  .pcell.warn b{color:var(--c-error)}
+  .pcell.ok b{color:var(--c-success)}
+  .pcell span{font-size:12.5px;color:var(--t3)}
+  .proof-foot{padding:14px 22px;font-size:13.5px;color:var(--t3);border-top:1px solid var(--border)}
 
-  .grid{display:grid;grid-template-columns:1fr;gap:16px}
-  @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  /* ─────────── Секции ─────────── */
+  section{padding:clamp(44px,6vw,72px) 0}
+  .sec-head{margin:0 0 10px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .sec-head h2{
+    font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;
+    margin:0;color:var(--t1);display:flex;align-items:center;gap:12px;
+  }
+  .sec-head h2::before{
+    content:"";width:4px;height:26px;border-radius:2px;background:var(--sec-color,var(--c-primary));
+    box-shadow:0 0 12px var(--sec-color,var(--c-primary));
+  }
+  .sec-note{color:var(--t3);font-size:15px;max-width:62ch;margin:18px 0 30px}
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-    padding:22px 22px 20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
-  .card h3{font-size:17px;font-weight:650;margin:0;line-height:1.35;letter-spacing:-.005em}
-  .card .task{color:var(--body);font-size:14.5px;margin:0}
-  .card .did{color:var(--body);font-size:14.5px;margin:0}
-  .card .did b{color:var(--ink);font-weight:600}
-  .effect{background:var(--accent-tint);border-radius:10px;padding:10px 13px;font-size:14px;
-    color:var(--accent-ink);font-weight:550;margin:2px 0 0}
-  .tools{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em;
-    margin:0;padding-top:2px}
-  .card .open{margin-top:auto;padding-top:12px}
-  .open a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;
-    color:var(--accent-ink);text-decoration:none;border-bottom:1.5px solid var(--accent-tint);
-    padding-bottom:2px}
-  .open a:hover{border-bottom-color:var(--accent)}
-  .open a::after{content:"→";font-weight:400}
-  .open .multi{display:flex;flex-wrap:wrap;gap:8px 14px}
+  #dengi{--sec-color:var(--c-success)}
+  #rabota{--sec-color:var(--c-info)}
+  #sistema{--sec-color:var(--c-violet)}
+  #produkt{--sec-color:var(--c-warning)}
 
-  /* ── Карточка-доказательство в герое ── */
-  .proof{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-    box-shadow:var(--shadow);overflow:hidden;margin:0 0 32px}
-  .proof-top{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
-    padding:16px 20px;border-bottom:1px solid var(--line-soft)}
-  .proof-top .t{font-weight:650;font-size:15px}
-  .proof-top .s{font-family:var(--mono);font-size:11.5px;color:var(--muted);
-    letter-spacing:.06em;text-transform:uppercase}
-  .proof-body{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft)}
-  @media (min-width:620px){.proof-body{grid-template-columns:repeat(4,1fr)}}
-  .pcell{background:var(--card);padding:16px 20px}
-  .pcell b{display:block;font-family:var(--serif);font-size:23px;font-weight:600;
-    font-variant-numeric:tabular-nums;line-height:1.2}
-  .pcell.hi b{color:var(--risk-hi)}
-  .pcell span{font-size:12.5px;color:var(--muted)}
-  .proof-foot{padding:13px 20px;font-size:13.5px;color:var(--muted);
-    border-top:1px solid var(--line-soft)}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media (min-width:740px){.grid{grid-template-columns:1fr 1fr}}
 
-  /* ── Регламенты ── */
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0}
-  .chip{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--card);
-    border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+  .card{
+    background-image:var(--grad-card);border-radius:var(--r);
+    box-shadow:var(--glow);padding:24px;
+    display:flex;flex-direction:column;gap:12px;
+    transition:transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--glow-lift)}
+  .card h3{font-size:17.5px;font-weight:650;line-height:1.35;letter-spacing:-.01em;
+    color:var(--t1);margin:0}
+  .card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--t2)}
+  .card p.task{color:var(--t3)}
+  .card p b{color:var(--t1);font-weight:600}
+  .effect{
+    background:rgba(52,211,153,.12);border-left:2px solid var(--c-success);
+    border-radius:0 8px 8px 0;padding:11px 14px;font-size:14px;
+    color:var(--c-success);font-weight:550;
+  }
+  .tools{
+    font-family:var(--mono);font-size:11.5px;color:var(--t3);
+    letter-spacing:.03em;line-height:1.5;
+  }
+  .open{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:9px}
+  .open a{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.02em;
+    color:var(--c-info);background:rgba(59,130,246,.13);
+    border:1px solid var(--border);border-radius:7px;padding:7px 12px;
+    transition:background .18s,border-color .18s,transform .18s;
+  }
+  .open a:hover{background:rgba(59,130,246,.24);border-color:var(--border-strong);
+    transform:translateY(-1px)}
+  .open a::after{content:"→";opacity:.7}
 
-  /* ── Подвал ── */
-  footer{border-top:1px solid var(--line);background:var(--card)}
-  footer .shell{padding-top:36px;padding-bottom:44px}
-  footer h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.6vw,26px);margin:0 0 12px}
-  footer p{color:var(--body);max-width:60ch;margin:0 0 20px}
-  .contacts{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:15px;margin:0 0 24px}
-  .contacts a{color:var(--accent-ink);text-decoration:none;font-weight:600;
-    border-bottom:1.5px solid var(--accent-tint);padding-bottom:2px}
-  .contacts a:hover{border-bottom-color:var(--accent)}
-  .fine{font-size:13px;color:var(--muted);max-width:66ch;margin:0}
+  /* чипы регламентов */
+  .chips-wrap{margin-top:26px}
+  .chips-title{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--t3);margin:0 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-family:var(--mono);font-size:11.5px;color:var(--t2);
+    background:rgba(168,85,247,.10);border:1px solid rgba(168,85,247,.22);
+    border-radius:6px;padding:5px 10px;
+  }
+
+  /* ─────────── Подвал ─────────── */
+  footer{border-top:1px solid var(--border);background:rgba(15,20,25,.6);margin-top:24px}
+  footer .shell{padding-top:clamp(44px,6vw,64px);padding-bottom:clamp(48px,7vw,72px)}
+  footer h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.02em;
+    color:var(--t1);margin:0 0 14px}
+  footer .sub{color:var(--t2);max-width:56ch;margin:0 0 28px;font-size:16px}
+  .contacts{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 32px}
+  .contact{
+    display:inline-flex;align-items:center;gap:9px;
+    background-image:var(--grad-card);border:1px solid var(--border);
+    border-radius:10px;padding:13px 20px;font-size:15.5px;font-weight:550;color:var(--t1);
+    transition:border-color .18s,transform .18s,box-shadow .18s;
+  }
+  .contact:hover{border-color:var(--border-strong);transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .contact .ico{font-size:16px}
+  .fine{font-size:13px;line-height:1.65;color:var(--t3);max-width:66ch;margin:0}
 </style>
 </head>
 <body>
@@ -142,21 +215,20 @@
 <header class="hero">
   <div class="shell">
     <p class="kicker">Максим Алексеев · автоматизация бизнес-процессов</p>
-    <h1>Беру задачу бизнеса и довожу до работающего инструмента</h1>
+    <h1>Беру задачу бизнеса и довожу до <span class="accent">работающего инструмента</span></h1>
     <p class="lede">Без команды разработки. Собираю сервисы, ботов и агентские системы
-      через <b>Claude Code</b> и <b>Codex</b> — и считаю окупаемость до старта.</p>
+      через <b>Claude Code</b> и <b>Codex</b> — и считаю окупаемость до старта.
+      Двадцать лет до этого продавал и поднимал бизнесы, поэтому считаю в деньгах
+      заказчика, а не в строчках кода.</p>
 
     <div class="cta-row">
       <a class="btn" href="#kontakty">Связаться</a>
       <a class="btn-quiet" href="#dengi">Посмотреть инструменты</a>
     </div>
 
-    <p class="lede" style="margin-top:-14px">Двадцать лет до этого — продажи, инвестиции
-      и собственный бизнес. Поэтому считаю в деньгах заказчика, а не в строчках кода.</p>
-
     <div class="stats">
       <div class="stat"><b>9</b><span>работающих инструментов</span></div>
-      <div class="stat"><b>28</b><span>регламентов для ИИ-агентов</span></div>
+      <div class="stat"><b>28</b><span>регламентов для ии-агентов</span></div>
       <div class="stat"><b>108</b><span>требований в своде</span></div>
       <div class="stat"><b>399</b><span>клиник в собранной базе</span></div>
     </div>
@@ -164,13 +236,13 @@
     <div class="proof">
       <div class="proof-top">
         <span class="t">Пример работы сканера</span>
-        <span class="s">на входе адрес сайта · на выходе PDF-отчёт</span>
+        <span class="s">на входе адрес сайта · на выходе pdf-отчёт</span>
       </div>
       <div class="proof-body">
         <div class="pcell"><b>30</b><span>пунктов проверки</span></div>
         <div class="pcell"><b>16</b><span>нарушений найдено</span></div>
-        <div class="pcell hi"><b>2,01 млн ₽</b><span>предельные санкции</span></div>
-        <div class="pcell"><b>~40 сек</b><span>вместо часов вручную</span></div>
+        <div class="pcell warn"><b>2,01 млн ₽</b><span>предельные санкции</span></div>
+        <div class="pcell ok"><b>~40 сек</b><span>вместо часов вручную</span></div>
       </div>
       <div class="proof-foot">Четыре обезличенных отчёта по реальным клиникам — в разделе «Делают работу».</div>
     </div>
@@ -188,10 +260,10 @@
         <h3>Калькулятор внедрения ИИ в бизнес-процессы</h3>
         <p class="task">Задача: до старта проекта понять, окупится ли автоматизация,
           и не спорить об этом словами.</p>
-        <p class="did">Считает <b>ROI, NPV, IRR, срок окупаемости и стоимость владения</b>,
-          выносит вердикт светофором. Отдельная вкладка — методика: формулы, порядок расчёта
-          и границы модели, включая честную оговорку про то, когда сэкономленные часы
-          становятся деньгами.</p>
+        <p>Считает <b>ROI, NPV, IRR, срок окупаемости и стоимость владения</b>,
+          выносит вердикт светофором. Отдельная вкладка — методика: формулы, порядок
+          расчёта и границы модели, включая честную оговорку про то, когда сэкономленные
+          часы становятся деньгами.</p>
         <p class="effect">Разговор с собственником идёт по его цифрам, а не по обещаниям подрядчика</p>
         <p class="tools">Claude Code · один HTML-файл, работает офлайн</p>
         <div class="open"><a href="demo/kalkulyator-vnedreniya-ii.html">Открыть калькулятор</a></div>
@@ -199,11 +271,11 @@
 
       <article class="card">
         <h3>Калькулятор упущенной выручки клиники</h3>
-        <p class="task">Задача: показать владельцу клиники, сколько он теряет на обращениях,
-          которые приходят вне рабочих часов.</p>
-        <p class="did">Расчёт построен на <b>реальных частотностях Яндекс.Вордстата</b>
-          по пяти регионам, а не на выдуманных процентах. Каждый коэффициент цепочки
-          подписан прямо в интерфейсе — от числа запросов до денег.</p>
+        <p class="task">Задача: показать владельцу клиники, сколько он теряет
+          на обращениях, которые приходят вне рабочих часов.</p>
+        <p>Расчёт построен на <b>реальных частотностях Яндекс.Вордстата</b> по пяти
+          регионам, а не на выдуманных процентах. Каждый коэффициент цепочки подписан
+          прямо в интерфейсе — от числа запросов до денег.</p>
         <p class="effect">Инструмент пресейла: клиент видит свою цифру за 30 секунд</p>
         <p class="tools">Claude Code · данные Вордстата, июнь–июль 2026</p>
         <div class="open"><a href="demo/kalkulyator-potenciala-kliniki.html">Открыть калькулятор</a></div>
@@ -216,34 +288,35 @@
   <div class="shell">
     <div class="sec-head"><h2>Делают работу</h2></div>
     <p class="sec-note">Не макеты, а инструменты, которые заменили ручной труд.
-      Отчёты обезличены: названия клиник, домены и реквизиты убраны, суть находок сохранена.</p>
+      Отчёты обезличены: названия клиник, домены и реквизиты убраны, суть находок
+      сохранена полностью.</p>
 
     <div class="grid">
       <article class="card">
         <h3>Сканер сайтов медицинских клиник</h3>
         <p class="task">Задача: проверка одного сайта на соответствие требованиям
           надзорных органов занимала часы работы уровня юриста.</p>
-        <p class="did">Пайплайн из четырёх модулей на Python: поиск признаков нарушений,
-          база правил, сборка отчёта, печатная версия. Сверяется с государственными
-          реестрами. <b>На входе адрес сайта — на выходе готовый PDF</b> с перечнем
-          нарушений и оценкой санкций.</p>
+        <p>Пайплайн из четырёх модулей на Python: поиск признаков нарушений, база правил,
+          сборка отчёта, печатная версия. Сверяется с государственными реестрами.
+          <b>На входе адрес сайта — на выходе готовый PDF</b> с перечнем нарушений
+          и оценкой санкций.</p>
         <p class="effect">Часы ручной проверки → около сорока секунд</p>
         <p class="tools">Python · Claude Code · свод 108 требований</p>
-        <div class="open"><div class="multi">
-          <a href="demo/otchet-klinika-a.html">Отчёт: 16 нарушений</a>
+        <div class="open">
+          <a href="demo/otchet-klinika-a.html">16 нарушений</a>
           <a href="demo/otchet-klinika-b.html">17 нарушений</a>
           <a href="demo/otchet-klinika-v.html">7 нарушений</a>
-          <a href="demo/otchet-klinika-g.html">почти чистый сайт</a>
-        </div></div>
+          <a href="demo/otchet-klinika-g.html">чистый сайт</a>
+        </div>
       </article>
 
       <article class="card">
         <h3>Чекер сайта — ранняя версия проверки</h3>
         <p class="task">Задача: дать клинике возможность проверить себя самостоятельно,
           без серверной части и установки.</p>
-        <p class="did">Вся логика проверки в <b>одном HTML-файле</b>. Из этого прототипа
-          позже вырос сканер с Python-движком — в паре они показывают, как решение
-          развивалось от идеи до продуктового пайплайна.</p>
+        <p>Вся логика проверки в <b>одном HTML-файле</b>. Из этого прототипа позже вырос
+          сканер с Python-движком — в паре они показывают, как решение развивалось
+          от идеи до продуктового пайплайна.</p>
         <p class="effect">Первый шаг связки «идея в одном файле → рабочий инструмент»</p>
         <p class="tools">Claude Code · self-contained HTML</p>
         <div class="open"><a href="demo/checker-sayta-kliniki.html">Открыть чекер</a></div>
@@ -256,38 +329,38 @@
   <div class="shell">
     <div class="sec-head"><h2>Показывают систему</h2></div>
     <p class="sec-note">То, что обычно не показывают в портфолио: как устроена сама работа.
-      Для 2026 года это отдельная компетенция — организовать ИИ-агентов так, чтобы
-      результат был воспроизводимым.</p>
+      Организовать ИИ-агентов так, чтобы результат был воспроизводимым, — отдельная
+      компетенция.</p>
 
     <div class="grid">
       <article class="card">
         <h3>Библиотека из 28 регламентов для ИИ-агентов</h3>
         <p class="task">Задача: сделать работу с ИИ воспроизводимой, чтобы результат
           не зависел от того, как сегодня сформулирован запрос.</p>
-        <p class="did">Двадцать восемь собственных регламентов: управление проектом,
-          продажи, регуляторный аудит, подготовка юридических документов, контроль
-          качества, разбор задач. <b>Каждый — рабочий процесс с красными флагами
-          и критериями готовности</b>, а не разовый промпт.</p>
+        <p>Двадцать восемь собственных регламентов: управление проектом, продажи,
+          регуляторный аудит, подготовка юридических документов, контроль качества,
+          разбор задач. <b>Каждый — рабочий процесс с красными флагами и критериями
+          готовности</b>, а не разовый промпт.</p>
         <p class="effect">Агент выполняет процесс одинаково в понедельник и в пятницу</p>
         <p class="tools">Claude Code · Markdown · git</p>
-        <div class="open"><a href="#reglamenty">Список регламентов ниже</a></div>
+        <div class="open"><a href="#reglamenty">Список ниже</a></div>
       </article>
 
       <article class="card">
         <h3>Автоматический сбор и обогащение базы</h3>
         <p class="task">Задача: собрать базу клиник региона и понять, кто из них
           потянет чек — руками это недели работы.</p>
-        <p class="did">Скриптами собраны <b>399 клиник</b>, найдены их юрлица через
-          резолв ИНН с сайтов, подтянута выручка из открытых государственных источников.
-          Дальше — отбор по обороту и приоритизация.</p>
+        <p>Скриптами собраны <b>399 клиник</b>, найдены их юрлица через резолв ИНН
+          с сайтов, подтянута выручка из открытых государственных источников.
+          Дальше — отбор по обороту и приоритизация обзвона.</p>
         <p class="effect">Недели ручного поиска → один прогон скрипта</p>
         <p class="tools">Python · ГИР БО · Claude Code</p>
         <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Продукт, для которого собиралась</a></div>
       </article>
     </div>
 
-    <div id="reglamenty" style="margin-top:24px">
-      <p class="tools" style="margin-bottom:10px">28 собственных регламентов:</p>
+    <div class="chips-wrap" id="reglamenty">
+      <p class="chips-title">28 собственных регламентов</p>
       <div class="chips">
         <span class="chip">ceo</span><span class="chip">cto</span><span class="chip">pm</span>
         <span class="chip">prodazhi-dental</span><span class="chip">sparring-zvonok</span>
@@ -319,26 +392,26 @@
         <h3>Prospectra — платформа автоматизации B2B-продаж</h3>
         <p class="task">Задача: собрать продукт, который снимает с менеджеров рутину
           поиска и квалификации клиентов.</p>
-        <p class="did">Продуктовое описание: четыре боли, процесс из восьми шагов,
-          пять модулей платформы, сбор компаний из более чем пятидесяти источников,
-          <b>скоринг лидов по пятнадцати параметрам</b>. Плюс лендинг, четыре поколения
-          сайта и интерактивные квизы.</p>
+        <p>Продуктовое описание: четыре боли, процесс из восьми шагов, пять модулей
+          платформы, сбор компаний из более чем пятидесяти источников,
+          <b>скоринг лидов по пятнадцати параметрам</b>. Плюс лендинг, четыре
+          поколения сайта и интерактивные квизы.</p>
         <p class="effect">Операционная боль переведена в модель и в деньги</p>
         <p class="tools">Claude Code · HTML/JS · React</p>
-        <div class="open"><div class="multi">
+        <div class="open">
           <a href="demo/prospectra-lending.html">Лендинг</a>
           <a href="demo/prospectra-sayt.html">Сайт продукта</a>
           <a href="demo/prospectra-kviz.html">Квиз</a>
-        </div></div>
+        </div>
       </article>
 
       <article class="card">
         <h3>Дентал Эксперт — сайты и ИИ-ассистенты для стоматологий</h3>
         <p class="task">Задача: клиника узнаёт о нарушениях на своём сайте из письма
-          с штрафом, а не заранее.</p>
-        <p class="did">Собственный B2B-продукт: сайт клиники, собранный под требования
-          регуляторов, ИИ-администратор, сканер и калькуляторы. <b>Единственная работа
-          в подборке, которая живёт на боевом домене.</b></p>
+          со штрафом, а не заранее.</p>
+        <p>Собственный B2B-продукт: сайт клиники под требования регуляторов,
+          ИИ-администратор, сканер и калькуляторы. <b>Единственная работа в подборке,
+          которая живёт на боевом домене.</b></p>
         <p class="effect">От первого прототипа до продакшена — два месяца</p>
         <p class="tools">Claude Code · HTML/CSS/JS · собственная сборка</p>
         <div class="open"><a href="https://umnie-resheniya.ru" target="_blank" rel="noopener">Открыть сайт</a></div>
@@ -348,9 +421,8 @@
         <h3>Персональная страница-визитка</h3>
         <p class="task">Задача: собрать себе презентационную страницу без дизайнера
           и верстальщика.</p>
-        <p class="did">Структура, цифры, кейсы и ритм — сделано самостоятельно.
-          Показывает не только результат, но и скорость: такую страницу
-          <b>я собираю за вечер</b>.</p>
+        <p>Структура, цифры, кейсы и ритм — сделано самостоятельно. Показывает не только
+          результат, но и скорость: такую страницу <b>я собираю за вечер</b>.</p>
         <p class="effect">Инструмент, который можно повторить под любую задачу компании</p>
         <p class="tools">Gamma · собственная структура и тексты</p>
         <div class="open"><a href="https://maksimalekseev-investici-puwwqaa.gamma.site/" target="_blank" rel="noopener">Открыть визитку</a></div>
@@ -358,12 +430,12 @@
 
       <article class="card">
         <h3>Свод 108 требований к сайту клиники</h3>
-        <p class="task">Задача: требований несколько десятков, они меняются
-          несколько раз в год, и держать их в голове невозможно.</p>
-        <p class="did">Интерактивный справочник по всем требованиям Минздрава,
-          Росздравнадзора, Роспотребнадзора и ФАС с указанием санкций.
-          <b>Собран генератором из размеченной базы</b>, а не написан руками —
-          поэтому пересобирается при каждом изменении норм.</p>
+        <p class="task">Задача: требований больше сотни, они меняются несколько раз
+          в год, и держать их в голове невозможно.</p>
+        <p>Интерактивный справочник по требованиям Минздрава, Росздравнадзора,
+          Роспотребнадзора и ФАС с указанием санкций. <b>Собран генератором
+          из размеченной базы</b>, а не написан руками — поэтому пересобирается
+          при каждом изменении норм.</p>
         <p class="effect">Экспертиза, оформленная как продукт: и аргумент, и чек-лист</p>
         <p class="tools">Python-генератор · Claude Code</p>
         <div class="open"><a href="demo/otchet-klinika-a.html">Как выглядит в отчёте</a></div>
@@ -375,15 +447,15 @@
 <footer id="kontakty">
   <div class="shell">
     <h2>Связаться</h2>
-    <p>Ищу работу на удалёнке: автоматизация процессов внутри компании,
+    <p class="sub">Ищу работу на удалёнке: автоматизация процессов внутри компании,
       внедрение ИИ-агентов, вайб-кодинг внутренних инструментов.</p>
     <div class="contacts">
-      <a href="tel:+79263724592">+7 926 372-45-92</a>
-      <a href="mailto:maxwwcapital@gmail.com">maxwwcapital@gmail.com</a>
+      <a class="contact" href="tel:+79263724592"><span class="ico">📞</span>+7 926 372-45-92</a>
+      <a class="contact" href="mailto:maxwwcapital@gmail.com"><span class="ico">✉️</span>maxwwcapital@gmail.com</a>
     </div>
     <p class="fine">Отчёты по клиникам обезличены: названия, домены и реквизиты убраны,
-      суть находок сохранена полностью. Инструменты открываются в браузере и работают
-      без установки.</p>
+      суть находок сохранена полностью. Инструменты открываются в браузере
+      и работают без установки.</p>
   </div>
 </footer>
 

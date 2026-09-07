@@ -20,6 +20,7 @@
 --sans:system-ui,-apple-system,"SF Pro Text","Segoe UI",Roboto,sans-serif;
 --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,monospace;}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--t2);
 background:var(--bg);background-image:linear-gradient(135deg,#0f1419 0%,#1a1f2e 100%);
 background-attachment:fixed;-webkit-font-smoothing:antialiased}
@@ -43,11 +44,21 @@ border:1px solid rgba(251,191,36,.30);
 box-shadow:0 6px 24px rgba(0,0,0,.25),inset 0 1px 0 rgba(251,191,36,.08)}
 .note b{color:#fbbf24;font-weight:600}
 .note-ic{flex:none;width:19px;height:19px;margin-top:1px;color:#fbbf24}
-.counts{font-family:var(--mono);font-size:12.5px;color:var(--t3);margin:18px 0 0;letter-spacing:.02em}
-.counts b{color:var(--t1);font-weight:600;font-size:14.5px}
-.counts .sep{opacity:.45;margin:0 7px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:26px 0 0;max-width:540px}
+.stat{background-image:var(--grad-card);border:1px solid var(--border);border-radius:12px;padding:15px 17px}
+.stat b{display:block;font-size:29px;font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--t1)}
+.stat span{display:block;margin-top:7px;font-size:13px;color:var(--t3);line-height:1.45}
+.stat.own b{color:#60a5fa}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0}
+.nav a{display:inline-flex;align-items:center;gap:8px;min-height:40px;font-family:var(--mono);
+font-size:12px;color:var(--t2);background:rgba(30,41,59,.45);border:1px solid var(--border);
+border-radius:9px;padding:0 13px;transition:border-color .18s,color .18s,background .18s}
+.nav a:hover{border-color:var(--border-strong);color:var(--t1);background:rgba(59,130,246,.10)}
+.nav a i{font-style:normal;color:var(--t3);font-size:11px}
+.nav a:hover i{color:#60a5fa}
+@media (max-width:560px){.stats{gap:10px}.stat{padding:13px 14px}.stat b{font-size:26px}}
 @media (max-width:560px){.note{font-size:14.5px;padding:14px 15px;gap:10px}}
-.group{padding:clamp(26px,3.5vw,40px) 0}
+.group{padding:clamp(26px,3.5vw,40px) 0;scroll-margin-top:14px}
 .group h2{font-size:clamp(19px,2.4vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--t1);
 margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--border);
 display:flex;align-items:center;gap:11px}
@@ -82,7 +93,7 @@ footer{border-top:1px solid var(--border);margin-top:32px}
 footer .shell{padding:30px 0 52px}
 footer p{color:var(--t3);font-size:14px;margin:0 0 12px;max-width:66ch;line-height:1.65}
 footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5fa;box-shadow:inset 0 -1px 0 var(--border-strong)}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style></head><body>
 <div class="shell top">
 <a class="back" href="index.html">← к портфолио</a>
@@ -90,13 +101,27 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <p class="lede">Каждый регламент — это <b>воспроизводимый рабочий процесс</b>: когда включается,
 пошаговый порядок, красные флаги и критерии готовности. Не разовый промпт, а инструкция,
 которая даёт одинаковый результат в понедельник и в пятницу.</p>
-<p class="counts"><b>32</b> написаны мной под свои проекты<span class="sep">·</span><b>29</b> подключены как внешние библиотеки</p>
+<div class="stats">
+<div class="stat own"><b>32</b><span>написаны мной под свои проекты</span></div>
+<div class="stat ext-stat"><b>29</b><span>подключены как внешние библиотеки</span></div>
+</div>
 <p class="note"><svg class="note-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 8.9v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="6" r="1.05" fill="currentColor"/></svg><span>Регламенты живут в рабочей системе и применяются ежедневно. Полные тексты содержат
-внутренние методики проектов — <b>здесь показаны назначение и суть каждого</b>. Карточки
-с пометкой «внешний» — готовые библиотеки, которые я подключил и использую; остальные написаны мной.</span></p>
+внутренние методики проектов — <b>здесь показаны назначение и суть каждого</b>. Внешние
+библиотеки помечены в списке.</span></p>
+<nav class="nav" aria-label="Разделы">
+<a href="#upravlenie">Управление проектом<i>10</i></a>
+<a href="#prodazhi">Продажи<i>5</i></a>
+<a href="#strategiya">Стратегия и деньги<i>8</i></a>
+<a href="#teksty">Тексты и дизайн<i>7</i></a>
+<a href="#pravo">Право<i>3</i></a>
+<a href="#dannye">Данные и инструменты<i>7</i></a>
+<a href="#razrabotka">Разработка<i>9</i></a>
+<a href="#kachestvo">Качество системы<i>10</i></a>
+<a href="#karyera">Карьера<i>2</i></a>
+</nav>
 <p class="hint">Нажмите на любой, чтобы раскрыть описание</p>
 </div>
-<section class="group" style="--gc:#60a5fa"><div class="shell">
+<section class="group" id="upravlenie" style="--gc:#60a5fa"><div class="shell">
 <h2>Управление проектом<span class="cnt">10</span></h2><div class="list">
 <details class="sk" style="--gc:#60a5fa">
 <summary><span class="nm">/ceo</span><span class="ds">Держит курс проекта: собирает состояние из шести источников и выдаёт три приоритета и первый шаг</span><span class="arw">›</span></summary>
@@ -139,7 +164,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Под каждый тип решения свой инструмент — Shape Up для фич, ICE для приоритизации, дерево возможностей для исследования. Не даёт обсуждать спецификацию фичи теми же средствами, что и стратегическую ставку.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#34d399"><div class="shell">
+<section class="group" id="prodazhi" style="--gc:#34d399"><div class="shell">
 <h2>Продажи и клиенты<span class="cnt">5</span></h2><div class="list">
 <details class="sk" style="--gc:#34d399">
 <summary><span class="nm">/prodazhi-dental</span><span class="ds">Сценарий разговора с клиникой: от холодного звонка до согласия, с отработкой возражений</span><span class="arw">›</span></summary>
@@ -162,7 +187,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Включается, когда появился новый конкурент или готовится встреча с инвестором. На выходе не список чужих фич, а объяснение, почему клиент выбирает тебя.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#22d3ee"><div class="shell">
+<section class="group" id="strategiya" style="--gc:#22d3ee"><div class="shell">
 <h2>Стратегия, рынок и деньги<span class="cnt">8</span></h2><div class="list">
 <details class="sk" style="--gc:#22d3ee">
 <summary><span class="nm">/designing-business-models<span class="ext">внешний</span></span><span class="ds">Сборка бизнес-модели: канва, готовность платить, юнит-экономика</span><span class="arw">›</span></summary>
@@ -197,7 +222,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Отвечает на вопрос «можем ли мы вообще делать это здесь» — лицензирование, корпоративная структура, требования к финансовым продуктам и проверке клиентов.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#a855f7"><div class="shell">
+<section class="group" id="teksty" style="--gc:#a855f7"><div class="shell">
 <h2>Тексты, бренд, дизайн<span class="cnt">7</span></h2><div class="list">
 <details class="sk" style="--gc:#a855f7">
 <summary><span class="nm">/max-voice</span><span class="ds">Пишет тексты живым голосом владельца: короткие абзацы, дыхание, без канцелярита</span><span class="arw">›</span></summary>
@@ -228,7 +253,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Профиль клиента, уровни осведомлённости и искушённости рынка, уникальный механизм, свойства против выгод. Заготовка, из которой потом пишутся лендинг, письма и реклама.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#f87171"><div class="shell">
+<section class="group" id="pravo" style="--gc:#f87171"><div class="shell">
 <h2>Право и комплаенс<span class="cnt">3</span></h2><div class="list">
 <details class="sk" style="--gc:#f87171">
 <summary><span class="nm">/auditing-dental-compliance</span><span class="ds">Аудит сайта клиники по трём контурам регуляторов с расчётом санкций</span><span class="arw">›</span></summary>
@@ -243,7 +268,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Российская регуляторка меняется несколько раз в год, а статьи переписывают друг у друга устаревшее. Правило: цифра штрафа берётся только из официального источника.</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#3b82f6"><div class="shell">
+<section class="group" id="dannye" style="--gc:#3b82f6"><div class="shell">
 <h2>Данные и инструменты<span class="cnt">7</span></h2><div class="list">
 <details class="sk" style="--gc:#3b82f6">
 <summary><span class="nm">/enriching-ru-company-financials</span><span class="ds">Подтягивает выручку компаний из открытых государственных источников по ИНН</span><span class="arw">›</span></summary>
@@ -274,7 +299,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Код, документы, статьи, картинки и видео разбираются в связанный граф с выделением сообществ и ключевых узлов. На выходе интерактивная карта, машиночитаемый JSON и текстовый отчёт.</p><p class="src">Внешний инструмент со своим MCP-сервером</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#818cf8"><div class="shell">
+<section class="group" id="razrabotka" style="--gc:#818cf8"><div class="shell">
 <h2>Разработка: замысел, план, код<span class="cnt">9</span></h2><div class="list">
 <details class="sk" style="--gc:#818cf8">
 <summary><span class="nm">/brainstorming<span class="ext">внешний</span></span><span class="ds">Разбор замысла до начала работы: цель, требования, устройство решения</span><span class="arw">›</span></summary>
@@ -313,7 +338,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Когда работа готова и проверки зелёные, предлагает варианты интеграции вместо того, чтобы решить за человека. Ловит типовые ошибки финала — забытые ветки и неучтённые изменения.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#fbbf24"><div class="shell">
+<section class="group" id="kachestvo" style="--gc:#fbbf24"><div class="shell">
 <h2>Качество и развитие системы<span class="cnt">10</span></h2><div class="list">
 <details class="sk" style="--gc:#fbbf24">
 <summary><span class="nm">/improving-skills</span><span class="ds">Чинит и дорабатывает сами регламенты, когда они сработали не так</span><span class="arw">›</span></summary>
@@ -356,7 +381,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Корневая инструкция всего пакета: если есть хоть малый шанс, что регламент применим, — он применяется, включая уточняющие вопросы. Разбирает типовые самооправдания вроде «это слишком просто».</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
 </details>
 </div></div></section>
-<section class="group" style="--gc:#60a5fa"><div class="shell">
+<section class="group" id="karyera" style="--gc:#60a5fa"><div class="shell">
 <h2>Карьера<span class="cnt">2</span></h2><div class="list">
 <details class="sk" style="--gc:#60a5fa">
 <summary><span class="nm">/preparing-job-application</span><span class="ds">Разбирает вакансию, честно считает шансы и готовит отклик</span><span class="arw">›</span></summary>

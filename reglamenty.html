@@ -394,13 +394,18 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <p><a class="lnk" href="index.html">← вернуться к портфолио</a></p>
 </div></footer>
 <script>
-/* Страховка для прямой ссылки на раздел: при загрузке с якорем браузер иногда
-   вычисляет позицию до того, как страница добрала высоту, и промахивается.
-   После полной загрузки ставим страницу на нужный раздел. */
+/* Страховка для прямой ссылки на раздел: при загрузке с якорем браузер вычисляет
+   позицию до того, как страница добрала высоту, и промахивается мимо раздела.
+   Ставим страницу на место трижды — сразу, на следующем кадре и с отложением,
+   чтобы попасть в момент, когда вёрстка уже окончательная. */
 addEventListener('load', function () {
   if (!location.hash) return;
   var t = document.getElementById(location.hash.slice(1));
-  if (t) t.scrollIntoView();
+  if (!t) return;
+  var put = function () { t.scrollIntoView(); };
+  put();
+  requestAnimationFrame(put);
+  setTimeout(put, 150);
 });
 </script>
 </body></html>

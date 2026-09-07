@@ -362,8 +362,9 @@
     #view-doc .pill,#view-doc header.top{background:none!important;color:#444!important}
 
     /* блоки, добавленные после первой версии печати */
-    #view-calc .beforeafter,#view-calc .chartbox,#view-calc .proc{
+    #view-calc .beforeafter,#view-calc .chartbox,#view-calc .proc,#view-calc .peoplewarn{
       background:#fff!important;border:1px solid #ccc!important;box-shadow:none!important;break-inside:avoid}
+    #view-calc .peoplewarn{background:#fffbeb!important;border-color:#e5c76b!important;color:#7a5a00!important}
     #view-calc .cb-t,#view-calc .breakdown .bt{color:#0a7c53!important}
     #view-calc .cb-sub,#view-calc .ba-t{color:#222!important}
     #view-calc .ba-line .lb{color:#555!important}
@@ -431,6 +432,13 @@
 
 
 
+
+  #view-calc .namerow .lb-2{margin-left:8px}
+  #view-calc .namerow .inp-num{flex:0 0 92px;min-width:0;font-family:var(--mono);text-align:center}
+  #view-calc .peoplewarn{margin:-6px 0 14px;padding:9px 12px;border-radius:9px;font-size:16.5px;line-height:1.45;
+    background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.35);color:#fcd34d}
+  #view-calc .peoplewarn[hidden]{display:none}
+  @media(max-width:760px){#view-calc .namerow .lb-2{margin-left:0}#view-calc .namerow .inp-num{flex:1 1 auto;text-align:left}}
 
   #view-calc .metric .md .term{display:block;margin-top:5px;font-size:14px;color:var(--muted);font-style:italic;
     opacity:0;transition:opacity .15s}
@@ -535,6 +543,7 @@
         <div class="v-word" id="vWord">—<small id="vWhy"></small></div>
       </div>
       <div class="v-nums" aria-live="polite" aria-atomic="true">
+        <div class="v-num"><div class="l">Времени у сотрудника</div><div class="val" id="vTime">—</div></div>
         <div class="v-num"><div class="l">Когда вернутся деньги</div><div class="val" id="vPay">—</div></div>
         <div class="v-num"><div class="l">Отдача на вложения</div><div class="val" id="vRoi">—</div></div>
         <div class="v-num"><div class="l">Что стоит сегодня</div><div class="val" id="vNpv">—</div></div>
@@ -547,15 +556,18 @@
     <div class="wrap">
       <div class="sec-head"><span class="n">01</span><h2>Процесс, который автоматизируем</h2></div>
       <div class="rule"></div>
-      <p class="sec-sub">Разложите процесс на операции: сколько минут занимает один раз и сколько раз это повторяется за месяц. Часы сложатся сами и сразу попадут в расчёт.</p>
+      <p class="sec-sub">Разложите на операции и укажите, сколько человек этим занято. Время вводится <strong>на одного человека</strong> — общие часы процесса калькулятор посчитает сам, умножив на число людей.</p>
       <div class="proc" id="proc">
         <div class="namerow">
           <label class="lb" for="procName">Название процесса</label>
           <input class="inp" id="procName" type="text" autocomplete="off" placeholder="например, обработка входящей заявки">
+          <label class="lb lb-2" for="procPeople">Сколько человек этим занимается</label>
+          <input class="inp inp-num" id="procPeople" type="text" inputmode="decimal" autocomplete="off" placeholder="напр. 3" required>
         </div>
+        <div class="peoplewarn" id="peopleWarn" hidden></div>
         <div class="mrow mhead">
-          <div>Операция</div><div>Минут на один раз</div><div>Раз в месяц</div>
-          <div style="text-align:right">Часов в месяц</div><div></div>
+          <div>Операция</div><div>Минут на один раз</div><div>Раз в месяц у одного</div>
+          <div style="text-align:right">Часов у одного</div><div></div>
         </div>
         <div id="mrows"></div>
         <button class="btn btn-ghost" id="addRow" type="button">+ добавить операцию</button>
@@ -669,7 +681,7 @@
     <div class="meta">
       <span class="pill">одна HTML-страница</span>
       <span class="pill mint">расчёт локально в браузере</span>
-      <span class="pill violet">8 полей · 7 метрик · 2 диаграммы</span>
+      <span class="pill violet">процесс + 8 полей · 7 метрик · 2 диаграммы</span>
       <span class="pill">данные никуда не отправляются</span>
     </div>
   </div>
@@ -679,8 +691,9 @@
   <section>
     <div class="card l-mint">
       <h3 style="margin-top:0">Коротко: что здесь происходит</h3>
-      <p>Калькулятор отвечает на один вопрос — <strong>вернутся ли деньги, вложенные в автоматизацию, и когда именно</strong>. Вы описываете процесс операциями («приём заявки — 8 минут, 1200 раз в месяц»), говорите, во сколько обходится сотрудник и сколько стоит внедрение. Дальше он сам считает, сколько времени освободится, сколько это в деньгах и через какой месяц вложения окупятся.</p>
-      <p><strong>Восемь полей и ничего лишнего.</strong> Три говорят, что процесс даёт: стоимость сотрудника, освобождённые часы и прочая денежная выгода. Два — во что он обойдётся: разовое внедрение и обслуживание. Три задают рамки: срок, реальная загрузка сотрудника и требуемая доходность. Всё остальное калькулятор выводит сам.</p>
+      <p>Калькулятор отвечает на один вопрос — <strong>вернутся ли деньги, вложенные в автоматизацию, и когда именно</strong>. Вы описываете процесс операциями <strong>на одного человека</strong> («приём заявки — 8 минут, 400 раз в месяц») и говорите, сколько человек этим занято. Дальше — во сколько обходится сотрудник и сколько стоит внедрение. Остальное калькулятор считает сам: сколько времени освободится, сколько это в деньгах и через какой месяц вложения окупятся.</p>
+      <p><strong>Сначала процесс, потом восемь полей.</strong> Блок процесса — название, число занятых людей и список операций. Дальше три поля говорят, что процесс даёт: стоимость сотрудника, освобождённые часы и прочая денежная выгода. Два — во что он обойдётся: разовое внедрение и обслуживание. Три задают рамки: срок, реальная загрузка сотрудника и требуемая доходность. Всё остальное выводится.</p>
+      <p><strong>Почему время вводится на одного, а не на всех.</strong> «Восемь минут на заявку, 400 заявок у каждого, занято трое» — это цифры, которые собственник знает про свой отдел. «9 600 минут в месяц по процессу» не знает никто. Число людей даёт и вторую вещь: калькулятор проверяет, что операции физически помещаются в рабочее время человека, и предупреждает, если нет.</p>
       <p><strong>Чего расчёт не знает.</strong> Он не учитывает налоги, не предсказывает, что решение проработает дольше выбранного срока, и не закладывает стоимость ошибок ИИ — если она существенна, добавьте её в обслуживание. И главное: он принимает, что освобождённые часы уходят из расходов полностью и с первого месяца. В жизни так бывает редко, поэтому осторожную оценку делают проще всего — уменьшив часы. Подробнее об этом в разделе «Границы модели».</p>
     </div>
   </section>
@@ -730,10 +743,14 @@
             <td class="d">А · что процесс даёт</td>
             <td class="d">Полная стоимость сотрудника за месяц: не оклад на руки, а всё, что компания за него платит. Именно она умножается на освобождённые ставки.</td>
             <td class="d">Оклад до вычетов + страховые взносы + премии + рабочее место и программы. Стоимость часа калькулятор считает сам: месячная сумма ÷ 168.</td></tr>
+        <tr><td class="k">люди</td><td><strong>Сколько человек этим занимается</strong></td>
+            <td class="d">блок процесса</td>
+            <td class="d">Сколько сотрудников заняты этим процессом. На него умножается время одного человека — так получаются часы всего процесса. Он же служит проверкой на правдоподобие.</td>
+            <td class="d">Из штатного расписания или со слов руководителя отдела. Допускается дробное: 0,5 — процессом занят человек на полставки. Если по операциям на одного выходит больше часов, чем он вообще работает за месяц, калькулятор об этом скажет.</td></tr>
         <tr><td class="k">Hm</td><td><strong>Сколько часов в месяц освобождается</strong></td>
             <td class="d">А · считается из операций</td>
             <td class="d">Человеко-часы, которые автоматизация забирает у людей каждый месяц. Главный драйвер всей модели.</td>
-            <td class="d">Считается из раздела «Процесс, который автоматизируем»: минуты на один раз × число раз в месяц, по всем операциям. Пример: 8 минут на заявку, 1200 заявок в месяц — это 160 часов. Сумма попадает в поле сразу, без кнопки; можно ввести своё число, тогда связь со списком разорвётся, и вернуть её можно одной ссылкой.</td></tr>
+            <td class="d">Считается из блока процесса: минуты на один раз × число раз в месяц <strong>у одного человека</strong> × сколько человек занято. Пример: 8 минут на заявку, 400 заявок у каждого, занято трое — это 53,3 часа у одного и 160 часов по процессу. Сумма попадает в поле сразу, без кнопки; можно ввести своё число, тогда связь со списком разорвётся, и вернуть её можно одной ссылкой.</td></tr>
         <tr><td class="k">Sm</td><td><strong>Другая выгода в деньгах, в месяц</strong></td>
             <td class="d">А · что процесс даёт</td>
             <td class="d">Всё, что приносит деньги помимо экономии на зарплатах.</td>
@@ -770,8 +787,12 @@
     <div class="card l-mint" style="margin-bottom:14px">
       <h3>Освобождённые ставки — FTE</h3>
       <p>Сколько «целых» сотрудников высвобождает проект. 0,5 — это полдня работы каждый день.</p>
-      <p>Второй строкой показаны те же часы в пересчёте на рабочий день — из 21 рабочего дня в месяце.</p>
-      <div class="formula">FTE = Hm / (168 × L)<span class="c">   // 168 — оплачиваемых часов в месяце</span></div>
+      <p>Рядом показана доля рабочего времени и часы в день у каждого: «40% времени у каждого из 3 · ≈ 2,5 ч в день». Часы в день считаются из 21 рабочего дня в месяце. Эта строка обычно и убеждает собственника: «полторы ставки» звучит абстрактно, «сорок процентов времени каждого из троих» — нет.</p>
+      <div class="formula">Hm  = минуты × повторения у одного × число людей
+FTE = Hm / (168 × L)<span class="c">   // 168 — оплачиваемых часов в месяце</span>
+доля у каждого = FTE / число людей
+часов в день у одного = Hm / число людей / 21</div>
+      <p style="font-size:16.5px;color:#c2cee0;margin-top:8px">Число людей служит и проверкой на правдоподобие: если по операциям на одного человека выходит больше часов, чем он вообще работает за месяц (168 × загрузка), калькулятор говорит об этом прямо под полем — значит ошибка во времени операции или в числе повторений. Вторая проверка ловит больше 400 повторений в месяц у одного: это чаще двадцати раз в день, и такое стоит перепроверить.</p>
       <p style="margin-top:10px">Эта же величина определяет и денежную экономию — см. ниже. Одна оценка часа работает во всех метриках сразу.</p>
     </div>
 
@@ -865,7 +886,7 @@ NPV = −I0 + Σ (t = 1…n) [ Bm / (1 + rm)^t ]</div>
   <section>
     <h2><span class="n">06</span> Порядок работы</h2>
     <ol class="steps">
-      <li><b>Опишите процесс.</b> Раздел «Процесс, который автоматизируем»: название, операции, минуты на один раз и сколько раз в месяц. Часы складываются и попадают в расчёт сразу, без кнопки.</li>
+      <li><b>Опишите процесс.</b> Раздел «Процесс, который автоматизируем»: название, <b>сколько человек этим занято</b>, операции — минуты на один раз и сколько раз в месяц <b>у одного человека</b>. Часы складываются, умножаются на число людей и попадают в расчёт сразу, без кнопки. Если предупреждение под полем сказало, что столько времени у человека нет, — правьте операции, а не игнорируйте.</li>
       <li><b>Поставьте честную стоимость сотрудника за месяц.</b> Не оклад, а полную нагрузку на компанию: оклад до вычетов, взносы, премии, рабочее место и программы. Стоимость часа калькулятор выведет сам. Здесь чаще всего занижают — и получают красивый, но неправдивый результат.</li>
       <li><b>Заполните бюджет и поддержку.</b> <code>I0</code> — из коммерческого предложения, <code>Om</code> — из реальных счетов за инфраструктуру и сопровождение.</li>
       <li><b>Проверьте рамки расчёта.</b> Срок, загрузка и требуемая доходность уже заполнены типовыми: 12 месяцев, 0,8 и 20% годовых. Меняйте под клиента — например, срок берите тот, на который утверждён бюджет. Эти же значения попадут в печатную сводку.</li>
@@ -876,16 +897,17 @@ NPV = −I0 + Σ (t = 1…n) [ Bm / (1 + rm)^t ]</div>
   <!-- 07 -->
   <section class="s-mint">
     <h2><span class="n">07</span> Пример расчёта</h2>
-    <p>Вот типовой сценарий: сотрудник обходится компании в <b>84 000 ₽</b> в месяц, внедрение стоит <b>350 000 ₽</b> разово, обслуживание — <b>12 000 ₽</b> в месяц, считаем на <b>12 месяцев</b>, процесс освобождает <b>160 часов</b> в месяц. Рамки типовые: загрузка 0,8, требуемая доходность 20% годовых. Что из этого получается:</p>
+    <p>Вот типовой сценарий. Процессом заняты <b>три человека</b>, у каждого приём заявки — <b>8 минут</b>, <b>400 раз в месяц</b>: это 53,3 часа у одного и <b>160 часов</b> по процессу. Сотрудник обходится компании в <b>84 000 ₽</b> в месяц, внедрение стоит <b>350 000 ₽</b> разово, обслуживание — <b>12 000 ₽</b> в месяц, считаем на <b>12 месяцев</b>. Рамки типовые: загрузка 0,8, требуемая доходность 20% годовых. Что из этого получается:</p>
     <div class="num-strip">
       <div class="ns"><div class="l">Освобождено</div><div class="v2">1,19<span style="font-size:14px;color:#a6b6cb"> ставки</span></div></div>
+      <div class="ns"><div class="l">У каждого из трёх</div><div class="v2">40<span style="font-size:14px;color:#a6b6cb"> % · 2,5 ч/день</span></div></div>
       <div class="ns"><div class="l">Экономия на зарплатах</div><div class="v2">100 000 ₽<span style="font-size:14px;color:#a6b6cb"> /мес</span></div></div>
       <div class="ns"><div class="l">Чистая выгода</div><div class="v2">88 000 ₽<span style="font-size:14px;color:#a6b6cb"> /мес</span></div></div>
       <div class="ns"><div class="l">Окупаемость</div><div class="v2">4,0<span style="font-size:14px;color:#a6b6cb"> мес</span></div></div>
       <div class="ns"><div class="l">ROI за год</div><div class="v2">202<span style="font-size:14px;color:#a6b6cb"> %</span></div></div>
       <div class="ns"><div class="l">NPV</div><div class="v2">608 013<span style="font-size:14px;color:#a6b6cb"> ₽</span></div></div>
     </div>
-    <p>Вердикт — <b style="color:var(--green)">«Уверенно да»</b>: вложения возвращаются на четвёртом месяце. Считается это так: 160 ч ÷ (168 × 0,8) = 1,19 ставки; 1,19 × 84 000 = 100 000 ₽ экономии; минус 12 000 ₽ обслуживания — остаётся 88 000 ₽ в месяц; 350 000 ÷ 88 000 = 4,0 месяца.</p>
+    <p>Вердикт — <b style="color:var(--green)">«Уверенно да»</b>: вложения возвращаются на четвёртом месяце. Считается это так: 8 мин × 400 раз ÷ 60 = 53,3 ч у одного, × 3 человека = 160 ч по процессу; 160 ÷ (168 × 0,8) = 1,19 ставки, то есть 40% времени каждого из троих; 1,19 × 84 000 = 100 000 ₽ экономии; минус 12 000 ₽ обслуживания — остаётся 88 000 ₽ в месяц; 350 000 ÷ 88 000 = 4,0 месяца.</p>
     <p style="margin-bottom:0">И сразу проверка на прочность, о которой стоит помнить: расчёт принял, что все 160 часов снимаются с первого месяца. Если на деле снимется 100 часов, а не 160, выгода падает до 50 500 ₽ в месяц, окупаемость уезжает на седьмой месяц, а ROI — со 202% до 73%. Проект остаётся в плюсе, но это уже другой разговор с клиентом. Такую прикидку стоит делать до встречи, а не на ней.</p>
   </section>
 
@@ -991,6 +1013,7 @@ const state = {};
 INPUTS.forEach(i => state[i.k] = i.v);
 let hmSource = 'auto';          // откуда берутся часы: 'auto' — из операций, 'manual' — введены руками
 let procName = '';
+let people = 0;                 // сколько человек занято процессом
 
 // ---------- форматирование и разбор чисел ----------
 const nf0 = new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0});
@@ -1081,11 +1104,15 @@ function compute(){
   return {FTE, Cfte, fot, Bm, flows, cum, ROIi, ROIt, Pay, PayD, TCO, NPV, rm,
           I0: p.I0, Om: p.Om, Sm: p.Sm, Hm: p.Hm, n: p.n, L: p.L,
           hoursPerDay: p.Hm / WORKDAYS,
+          people,
+          share:        people > 0 ? FTE / people : null,          // какую долю времени каждого забирает процесс
+          perPersonDay: people > 0 ? p.Hm / people / WORKDAYS : null,
           irr: irrFromFlows(p.I0, flows)};
 }
 
 // пустой бланк не выносит вердикт — сначала говорит, чего не хватает
 function readiness(){
+  if(!(people > 0) && miniTotal() > 0) return {ok:false, msg:'укажите, сколько человек занято процессом — рядом с названием'};
   if(!(state.Hm > 0) && !(state.Sm > 0)) return {ok:false, msg:'добавьте операции процесса — сверху'};
   if(state.Hm > 0 && !(state.Cfte > 0))  return {ok:false, msg:'укажите, во сколько обходится сотрудник в месяц'};
   if(!(state.I0 > 0))                    return {ok:false, msg:'укажите, сколько стоит внедрить'};
@@ -1108,11 +1135,30 @@ function verdict(x){
 const procNameEl = document.getElementById('procName');
 procNameEl.addEventListener('input', e => { procName = e.target.value; renderPrintNote(compute()); });
 
+// сколько человек занято процессом — от него зависят часы всего процесса
+const peopleEl = document.getElementById('procPeople');
+peopleEl.addEventListener('input', e => {
+  const v = parseNum(e.target.value);
+  people = (e.target.value.trim() === '' || isNaN(v)) ? 0 : Math.max(0, v);
+  afterOpsChange();
+});
+peopleEl.addEventListener('blur', e => {
+  if(e.target.value.trim() === ''){ people = 0; afterOpsChange(); return; }
+  const v = parseNum(e.target.value);
+  people = isNaN(v) ? 0 : Math.max(0, Math.min(10000, v));
+  e.target.value = people ? fmtField(people) : '';
+  afterOpsChange();
+});
+
 let miniRows = [{op:'', min:0, cyc:0}];
 const miniTotal = () => miniRows.reduce((s,r) => s + r.min*r.cyc/60, 0);
 function renderTotal(){
   const el = document.getElementById('mtot');
-  if(el) el.textContent = 'Итого: ' + nf1.format(miniTotal()) + ' ч / мес';
+  if(!el) return;
+  const one = miniTotal();
+  el.textContent = people > 0
+    ? 'Итого: ' + nf1.format(one) + ' ч у одного × ' + nf1.format(people) + ' чел. = ' + nf1.format(one*people) + ' ч / мес'
+    : 'Итого: ' + nf1.format(one) + ' ч у одного · укажите, сколько человек занято';
 }
 
 function makeRow(r){
@@ -1126,7 +1172,7 @@ function makeRow(r){
     el.setAttribute('aria-label', aria); el.placeholder = '0';
     return el;
   };
-  const mn = mk(r.min, 'минут на один раз'), cy = mk(r.cyc, 'раз в месяц');
+  const mn = mk(r.min, 'минут на один раз'), cy = mk(r.cyc, 'раз в месяц у одного человека');
   const res = document.createElement('div'); res.className = 'rowres';
   res.textContent = nf1.format(r.min*r.cyc/60);
   const del = document.createElement('button');
@@ -1160,7 +1206,7 @@ function renderRows(){
 function afterOpsChange(){
   renderTotal();
   if(hmSource === 'auto'){
-    state.Hm = Math.round(miniTotal());
+    state.Hm = Math.round(miniTotal() * (people || 0));   // время одного × число людей на процессе
     const el = document.getElementById('in_Hm');
     if(el){ el.value = fmtField(state.Hm); el.closest('.field').classList.remove('is-empty','is-bad'); }
   }
@@ -1232,7 +1278,7 @@ INPUTS.forEach(spec => {
     const back = document.createElement('button');
     back.className = 'backlink'; back.type = 'button'; back.textContent = 'вернуть расчёт из операций';
     back.addEventListener('click', () => {
-      if(Math.round(miniTotal()) <= 0) return;   // нечего возвращать — не стираем введённое
+      if(Math.round(miniTotal() * (people || 0)) <= 0) return;   // нечего возвращать — не стираем введённое
       hmSource = 'auto'; afterOpsChange(); updateHmChip();
     });
     f.appendChild(back);
@@ -1288,7 +1334,7 @@ function updateHmChip(){
   const field = document.getElementById('in_Hm').closest('.field');
   const note = document.getElementById('totalNote');
   const auto = hmSource === 'auto';
-  const fromOps = Math.round(miniTotal());
+  const fromOps = Math.round(miniTotal() * (people || 0));
   const back = field.querySelector('.backlink');
   if(back){
     back.disabled = fromOps <= 0;
@@ -1360,7 +1406,8 @@ function renderPrintNote(x){
   el.textContent = '';
   const date = new Date().toLocaleDateString('ru-RU', {day:'numeric', month:'long', year:'numeric'});
   const h = document.createElement('h3');
-  h.textContent = (procName ? 'Процесс: ' + procName + ' · ' : '') + 'допущения расчёта · ' + date;
+  h.textContent = (procName ? 'Процесс: ' + procName + ' · ' : '') +
+    (people > 0 ? 'занято ' + nf1.format(people) + ' чел. · ' : '') + 'допущения расчёта · ' + date;
   const ul = document.createElement('ul');
   [
     'Освобождается ' + nf1.format(x.Hm) + ' ч в месяц; принято, что эта работа уходит от людей полностью.',
@@ -1383,7 +1430,8 @@ function render(){
 
   if(!ready.ok){
     ['chartBox','baBox'].forEach(id => { const e = document.getElementById(id); if(e) e.hidden = true; });
-    ['mv_FTE','mv_Bm','mv_ROI','mv_Pay','mv_TCO','mv_NPV','mv_IRR','vPay','vRoi','vNpv'].forEach(dash);
+    const w0 = document.getElementById('peopleWarn'); if(w0) w0.hidden = true;
+    ['mv_FTE','mv_Bm','mv_ROI','mv_Pay','mv_TCO','mv_NPV','mv_IRR','vTime','vPay','vRoi','vNpv'].forEach(dash);
     document.getElementById('verdict').classList.add('waiting');
     const word = document.getElementById('vWord');
     word.childNodes[0].nodeValue = 'Заполните данные';
@@ -1396,7 +1444,28 @@ function render(){
   document.getElementById('verdict').classList.remove('waiting');
 
   set('mv_FTE', nf2.format(x.FTE) + ' <span>ставок</span>' +
-      (x.hoursPerDay > 0 ? '<div class="mv sub">≈ ' + nf1.format(x.hoursPerDay) + ' ч в день на всю команду</div>' : ''));
+      (x.share != null
+        ? '<div class="mv sub">' + nf0.format(x.share*100) + '% времени у каждого из ' + nf1.format(x.people) +
+          ' · ≈ ' + nf1.format(x.perPersonDay) + ' ч в день</div>'
+        : (x.hoursPerDay > 0
+            ? '<div class="mv sub">≈ ' + nf1.format(x.hoursPerDay) + ' ч в день на всю команду</div>' : '')));
+
+  // проверка на правдоподобие: нельзя освободить больше времени, чем есть у занятых людей
+  const warn = document.getElementById('peopleWarn');
+  if(warn){
+    const notes = [];
+    const perOne = x.people > 0 ? x.Hm / x.people : 0;      // часов в месяц у одного человека
+    const limit  = HPM * x.L;                               // столько он вообще работает
+    if(x.people > 0 && perOne > limit * 1.02)
+      notes.push('По операциям выходит ' + nf1.format(perOne) + ' ч в месяц на одного человека, а он работает ' +
+        nf0.format(limit) + ' ч. Столько времени у него нет — проверьте минуты или число повторений.');
+    const busiest = miniRows.reduce((m,r) => Math.max(m, r.cyc), 0);
+    if(busiest > 400)
+      notes.push('Указано ' + nf0.format(busiest) + ' повторений в месяц у одного человека — это примерно ' +
+        nf1.format(busiest/21) + ' раз в день. Так и есть?');
+    warn.hidden = notes.length === 0;
+    warn.textContent = notes.join(' ');
+  }
   set('mv_Bm',  money(x.Bm) + ' <span>₽/мес</span>');
   set('mv_ROI', x.ROIi == null ? '— <span>вложений нет</span>'
       : pct(x.ROIi) + '<span> %</span>' +
@@ -1422,6 +1491,9 @@ function render(){
   const word = document.getElementById('vWord');
   word.childNodes[0].nodeValue = v.w; word.style.color = v.c;
   document.getElementById('vWhy').textContent = v.why;
+  set('vTime', x.share != null
+      ? nf0.format(x.share*100) + ' <span>% у каждого</span>'
+      : '— <span>укажите людей</span>');
   set('vPay', isFinite(x.Pay)
       ? (x.Pay < 0.1 ? '&lt; 1 <span>мес</span>' : nf1.format(x.Pay) + ' <span>мес</span>')
       : '∞');
@@ -1562,7 +1634,7 @@ function renderBeforeAfter(x){
 // ---------- расчёт в ссылке ----------
 function packState(){
   const data = {
-    v:2, name:procName, src:hmSource,
+    v:2, name:procName, ppl:people, src:hmSource,
     f:Object.fromEntries(INPUTS.map(i => [i.k, state[i.k]]).filter(([,v]) => v)),
     ops:miniRows.filter(r => r.op || r.min || r.cyc).map(r => [r.op, r.min, r.cyc])
   };
@@ -1576,6 +1648,8 @@ function unpackState(str){
   if(!d || (d.v !== 1 && d.v !== 2)) return false;   // v1 — ссылки старой версии, лишние поля просто игнорируются
   procName = d.name || '';
   procNameEl.value = procName;
+  people = Number(d.ppl) || 0;
+  peopleEl.value = people ? fmtField(people) : '';
   Object.entries(d.f || {}).forEach(([k, v]) => {
     if(!(k in state)) return;
     state[k] = Number(v) || 0;

@@ -394,18 +394,28 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <p><a class="lnk" href="index.html">← вернуться к портфолио</a></p>
 </div></footer>
 <script>
-/* Страховка для прямой ссылки на раздел: при загрузке с якорем браузер вычисляет
+/* Страховка для прямой ссылки на раздел. При загрузке с якорем браузер вычисляет
    позицию до того, как страница добрала высоту, и промахивается мимо раздела.
-   Ставим страницу на место трижды — сразу, на следующем кадре и с отложением,
-   чтобы попасть в момент, когда вёрстка уже окончательная. */
+   Доводим до места, пока вёрстка устаканивается, но молча отступаем, если человек
+   уже начал листать сам — дёргать страницу под рукой читателя нельзя. */
 addEventListener('load', function () {
   if (!location.hash) return;
-  var t = document.getElementById(location.hash.slice(1));
-  if (!t) return;
-  var put = function () { t.scrollIntoView(); };
+  var target = document.getElementById(location.hash.slice(1));
+  if (!target) return;
+  var stop = false;
+  var cancel = function () { stop = true; };
+  addEventListener('wheel', cancel, { once: true, passive: true });
+  addEventListener('touchstart', cancel, { once: true, passive: true });
+  addEventListener('keydown', cancel, { once: true });
+  var put = function () {
+    if (stop) return;
+    var y = target.getBoundingClientRect().top;
+    if (y < -2 || y > 40) target.scrollIntoView();
+  };
   put();
   requestAnimationFrame(put);
   setTimeout(put, 150);
+  setTimeout(cancel, 400);
 });
 </script>
 </body></html>

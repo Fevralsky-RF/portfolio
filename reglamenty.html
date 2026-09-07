@@ -2,12 +2,12 @@
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>28 регламентов для ИИ-агентов — Максим Алексеев</title>
+<title>61 регламент для ИИ-агентов — Максим Алексеев</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230f1419%27/%3E%3Crect x=%273%27 y=%273%27 width=%2726%27 height=%2726%27 rx=%275%27 fill=%27none%27 stroke=%27%233b82f6%27 stroke-opacity=%27.35%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27ui-monospace,Menlo,monospace%27 font-size=%2716%27 font-weight=%27600%27 text-anchor=%27middle%27 fill=%27%2360a5fa%27%3EM%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0f1419">
 <meta property="og:type" content="website">
-<meta property="og:title" content="28 регламентов для ИИ-агентов — Максим Алексеев">
-<meta property="og:description" content="Воспроизводимые рабочие процессы, по которым работают мои ИИ-агенты: управление проектом, продажи, право, данные, качество системы.">
+<meta property="og:title" content="61 регламент для ИИ-агентов — Максим Алексеев">
+<meta property="og:description" content="Рабочая система из 61 регламента: 32 написаны мной, 29 подключены как внешние библиотеки. Управление проектом, продажи, стратегия, право, данные, разработка, качество.">
 <meta property="og:url" content="https://fevralsky-rf.github.io/portfolio/reglamenty.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
@@ -43,6 +43,9 @@ border:1px solid rgba(251,191,36,.30);
 box-shadow:0 6px 24px rgba(0,0,0,.25),inset 0 1px 0 rgba(251,191,36,.08)}
 .note b{color:#fbbf24;font-weight:600}
 .note-ic{flex:none;width:19px;height:19px;margin-top:1px;color:#fbbf24}
+.counts{font-family:var(--mono);font-size:12.5px;color:var(--t3);margin:18px 0 0;letter-spacing:.02em}
+.counts b{color:var(--t1);font-weight:600;font-size:14.5px}
+.counts .sep{opacity:.45;margin:0 7px}
 @media (max-width:560px){.note{font-size:14.5px;padding:14px 15px;gap:10px}}
 .group{padding:clamp(26px,3.5vw,40px) 0}
 .group h2{font-size:clamp(19px,2.4vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--t1);
@@ -66,6 +69,11 @@ grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;transition:bac
 .sk .body{padding:2px 20px 18px 20px}
 .sk .body p{margin:0;font-size:14.5px;color:var(--t3);line-height:1.7;
 padding-left:14px;border-left:2px solid var(--gc)}
+.sk .nm .ext{margin-left:8px;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+color:var(--t3);background:rgba(148,163,184,.10);border:1px solid rgba(148,163,184,.22);
+border-radius:5px;padding:2px 6px;font-weight:500;vertical-align:1px}
+.sk .body p.src{margin:11px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--t3);
+line-height:1.55;border-left-color:rgba(148,163,184,.28)}
 @media (max-width:560px){
   .sk summary{grid-template-columns:1fr auto;gap:6px 10px}
   .sk .nm{grid-column:1/-1}
@@ -78,16 +86,18 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 </style></head><body>
 <div class="shell top">
 <a class="back" href="index.html">← к портфолио</a>
-<h1>28 регламентов, по которым работают мои ИИ-агенты</h1>
+<h1>61 регламент, по которым работают мои ИИ-агенты</h1>
 <p class="lede">Каждый регламент — это <b>воспроизводимый рабочий процесс</b>: когда включается,
 пошаговый порядок, красные флаги и критерии готовности. Не разовый промпт, а инструкция,
 которая даёт одинаковый результат в понедельник и в пятницу.</p>
+<p class="counts"><b>32</b> написаны мной под свои проекты<span class="sep">·</span><b>29</b> подключены как внешние библиотеки</p>
 <p class="note"><svg class="note-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 8.9v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="6" r="1.05" fill="currentColor"/></svg><span>Регламенты живут в рабочей системе и применяются ежедневно. Полные тексты содержат
-внутренние методики проектов — <b>здесь показаны назначение и суть каждого</b>.</span></p>
+внутренние методики проектов — <b>здесь показаны назначение и суть каждого</b>. Карточки
+с пометкой «внешний» — готовые библиотеки, которые я подключил и использую; остальные написаны мной.</span></p>
 <p class="hint">Нажмите на любой, чтобы раскрыть описание</p>
 </div>
 <section class="group" style="--gc:#60a5fa"><div class="shell">
-<h2>Управление проектом<span class="cnt">6</span></h2><div class="list">
+<h2>Управление проектом<span class="cnt">10</span></h2><div class="list">
 <details class="sk" style="--gc:#60a5fa">
 <summary><span class="nm">/ceo</span><span class="ds">Держит курс проекта: собирает состояние из шести источников и выдаёт три приоритета и первый шаг</span><span class="arw">›</span></summary>
 <div class="body"><p>Раз в день или перед важным решением сводит воедино штаб, дневник, отдел продаж, историю изменений и память. На выходе — не отчёт, а короткий ответ на вопрос «что делать прямо сейчас».</p></div>
@@ -112,9 +122,25 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <summary><span class="nm">/brif-vstrechi</span><span class="ds">Превращает запись созвона в протокол с решениями и ответственными</span><span class="arw">›</span></summary>
 <div class="body"><p>На входе — расшифровка или заметки, на выходе — что решили, кто делает, к какому сроку и что осталось открытым.</p></div>
 </details>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/handoff</span><span class="ds">Собирает стартовый промпт для нового чата, когда текущий разросся</span><span class="arw">›</span></summary>
+<div class="body"><p>На 250–400 слов: что изменилось в сессии, какие три-пять файлов читать первыми, кто что решает и какое первое действие. Нужен, чтобы новый чат входил в дело с холода, а не начинал с нуля.</p></div>
+</details>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/save</span><span class="ds">Закрывает сессию: снимок в базу знаний, передача дальше, поиск нового навыка</span><span class="arw">›</span></summary>
+<div class="body"><p>Три вещи за один проход — файл сессии в хранилище с датой и темой, компактная передача контекста в следующий чат и вопрос, что из проделанного стоит превратить в регламент.</p></div>
+</details>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/steering-strategy<span class="ext">внешний</span></span><span class="ds">Годовое планирование, квартальные цели и рамка для крупных решений</span><span class="arw">›</span></summary>
+<div class="body"><p>Собирает стратегию, цели, найм и рабочий ритм команды в один контур. Отвечает на вопрос «на чём фокусируемся» процедурой, а не мнением самого громкого в комнате.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#60a5fa">
+<summary><span class="nm">/shaping-product-strategy<span class="ext">внешний</span></span><span class="ds">Продуктовые решения по уровням: фича, крупная ставка, приоритеты, дискавери</span><span class="arw">›</span></summary>
+<div class="body"><p>Под каждый тип решения свой инструмент — Shape Up для фич, ICE для приоритизации, дерево возможностей для исследования. Не даёт обсуждать спецификацию фичи теми же средствами, что и стратегическую ставку.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
 </div></div></section>
 <section class="group" style="--gc:#34d399"><div class="shell">
-<h2>Продажи и клиенты<span class="cnt">3</span></h2><div class="list">
+<h2>Продажи и клиенты<span class="cnt">5</span></h2><div class="list">
 <details class="sk" style="--gc:#34d399">
 <summary><span class="nm">/prodazhi-dental</span><span class="ds">Сценарий разговора с клиникой: от холодного звонка до согласия, с отработкой возражений</span><span class="arw">›</span></summary>
 <div class="body"><p>Собран на реальных звонках: как пройти администратора, как говорить с главврачом, что отвечать на «дорого», «я подумаю» и «пришлите на почту».</p></div>
@@ -127,9 +153,52 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <summary><span class="nm">/pyat-edinichek</span><span class="ds">Сужает широкую аудиторию до одного сегмента, под который пишется оффер</span><span class="arw">›</span></summary>
 <div class="body"><p>Лечит болезнь «наш продукт нужен всем». Пять переменных фиксируются в единицу — и появляется адресат, которому можно написать конкретно.</p></div>
 </details>
+<details class="sk" style="--gc:#34d399">
+<summary><span class="nm">/closing-deals<span class="ext">внешний</span></span><span class="ds">Полный цикл клиента: квалификация, сделка, партнёрство, удержание</span><span class="arw">›</span></summary>
+<div class="body"><p>Продажи основателем, работа с партнёрами и клиентский успех в одной рамке — от подготовки к звонку до отслеживания здоровья аккаунта и расширения контракта.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#34d399">
+<summary><span class="nm">/gathering-competitive-intelligence<span class="ext">внешний</span></span><span class="ds">Разбор конкурентов: карта Уордли, источники силы, боевые карточки для продаж</span><span class="arw">›</span></summary>
+<div class="body"><p>Включается, когда появился новый конкурент или готовится встреча с инвестором. На выходе не список чужих фич, а объяснение, почему клиент выбирает тебя.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+</div></div></section>
+<section class="group" style="--gc:#22d3ee"><div class="shell">
+<h2>Стратегия, рынок и деньги<span class="cnt">8</span></h2><div class="list">
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/designing-business-models<span class="ext">внешний</span></span><span class="ds">Сборка бизнес-модели: канва, готовность платить, юнит-экономика</span><span class="arw">›</span></summary>
+<div class="body"><p>Отвечает на вопрос «как мы на этом зарабатываем» до запуска, а не после. Проверяет модель на прочность через готовность клиента платить и сходимость экономики.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/validating-ideas<span class="ext">внешний</span></span><span class="ds">Проверка идеи по шагам: канва, рискованное допущение, интервью, претотип</span><span class="arw">›</span></summary>
+<div class="body"><p>Сначала находится самое рискованное допущение, потом дешёвый способ его проверить. Интервью ведутся по правилам Mom Test — чтобы собеседник не хвалил идею из вежливости.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/launching-go-to-market<span class="ext">внешний</span></span><span class="ds">Как выходить на рынок: последовательность сегментов, каналы, механика роста</span><span class="arw">›</span></summary>
+<div class="body"><p>Опирается на переход через пропасть, диагностику каналов и посадку в сегмент с последующим расширением. Отвечает на вопрос «откуда возьмутся первые сто клиентов».</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/planning-market-entry<span class="ext">внешний</span></span><span class="ds">Оценка и очередь географий: привлекательность, регуляторика, способ входа</span><span class="arw">›</span></summary>
+<div class="body"><p>Сравнивает рынки по баллам, а не по ощущениям, и отдельно проверяет юридическую готовность. Отвечает, в какую страну идти первой и в каком виде.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/measuring-growth<span class="ext">внешний</span></span><span class="ds">Диагностика роста: воронка, путеводная метрика, приборная панель</span><span class="arw">›</span></summary>
+<div class="body"><p>Находит, где именно течёт — в привлечении, активации, удержании или деньгах. Сводит квартальные цели и метрики к одной цифре, за которой смотрят все.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/modeling-finances<span class="ext">внешний</span></span><span class="ds">Финансовая модель: выручка, расход денег, юнит-экономика, сценарии</span><span class="arw">›</span></summary>
+<div class="body"><p>Считает, на сколько хватит денег и что произойдёт при смене цены. Сценарии готовятся до разговора с инвестором, а не в ответ на его вопрос.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/raising-capital<span class="ext">внешний</span></span><span class="ds">Раунд под ключ: презентация, воронка инвесторов, регулярные апдейты, закрытие</span><span class="arw">›</span></summary>
+<div class="body"><p>Ведёт весь цикл — от сборки презентации до разбора причин отказов. Инвесторы ведутся как воронка продаж, с ежемесячными письмами о прогрессе.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#22d3ee">
+<summary><span class="nm">/navigating-regulations<span class="ext">внешний</span></span><span class="ds">Регуляторная стратегия в нескольких юрисдикциях: лицензии, структура, комплаенс</span><span class="arw">›</span></summary>
+<div class="body"><p>Отвечает на вопрос «можем ли мы вообще делать это здесь» — лицензирование, корпоративная структура, требования к финансовым продуктам и проверке клиентов.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
 </div></div></section>
 <section class="group" style="--gc:#a855f7"><div class="shell">
-<h2>Тексты, бренд, дизайн<span class="cnt">5</span></h2><div class="list">
+<h2>Тексты, бренд, дизайн<span class="cnt">7</span></h2><div class="list">
 <details class="sk" style="--gc:#a855f7">
 <summary><span class="nm">/max-voice</span><span class="ds">Пишет тексты живым голосом владельца: короткие абзацы, дыхание, без канцелярита</span><span class="arw">›</span></summary>
 <div class="body"><p>Хранит эталоны реальных текстов и держит интонацию. Одна мысль на абзац — так текст читается вслух, а не проглядывается.</p></div>
@@ -150,6 +219,14 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <summary><span class="nm">/explaining-with-metaphors</span><span class="ds">Объясняет механизм или выбор через метафору, а не через термины</span><span class="arw">›</span></summary>
 <div class="body"><p>Включается перед объяснением абстрактного или технического: находит образ из знакомой области, проверяет, что метафора не врёт, и только потом разворачивает суть.</p></div>
 </details>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/building-brand<span class="ext">внешний</span></span><span class="ds">Позиционирование, месседжинг и контент-стратегия по единой рамке</span><span class="arw">›</span></summary>
+<div class="body"><p>Позиционирование по Данфорд, повествование по StoryBrand, контент выстраивается от способа доставки, а не от вдохновения. Отвечает, как о продукте вообще говорить.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
+<details class="sk" style="--gc:#a855f7">
+<summary><span class="nm">/marketing-research<span class="ext">внешний</span></span><span class="ds">Глубокое исследование продукта и аудитории под будущие тексты</span><span class="arw">›</span></summary>
+<div class="body"><p>Профиль клиента, уровни осведомлённости и искушённости рынка, уникальный механизм, свойства против выгод. Заготовка, из которой потом пишутся лендинг, письма и реклама.</p><p class="src">Внешний скилл — готовый набор бизнес-фреймворков</p></div>
+</details>
 </div></div></section>
 <section class="group" style="--gc:#f87171"><div class="shell">
 <h2>Право и комплаенс<span class="cnt">3</span></h2><div class="list">
@@ -167,7 +244,7 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 </details>
 </div></div></section>
 <section class="group" style="--gc:#3b82f6"><div class="shell">
-<h2>Данные и инструменты<span class="cnt">5</span></h2><div class="list">
+<h2>Данные и инструменты<span class="cnt">7</span></h2><div class="list">
 <details class="sk" style="--gc:#3b82f6">
 <summary><span class="nm">/enriching-ru-company-financials</span><span class="ds">Подтягивает выручку компаний из открытых государственных источников по ИНН</span><span class="arw">›</span></summary>
 <div class="body"><p>Лестница резолва: от названия и адреса к юрлицу, от юрлица к отчётности. Бесплатно, без платных баз — так собрана база на 399 клиник.</p></div>
@@ -175,6 +252,10 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <details class="sk" style="--gc:#3b82f6">
 <summary><span class="nm">/mining-ai-archives</span><span class="ds">Находит нужное в архиве из сотен старых диалогов с ИИ</span><span class="arw">›</span></summary>
 <div class="body"><p>Для случая «я это где-то уже обсуждал»: поднимает из архива прошлые решения, расчёты и формулировки. Архив собран из выгрузок Gemini и ChatGPT — почти четыреста диалогов, по которым иначе пришлось бы листать вручную.</p></div>
+</details>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/reading-google-docs</span><span class="ds">Читает Google Docs, Sheets и Slides по ссылке — там, где обычный запрос отдаёт пустышку</span><span class="arw">›</span></summary>
+<div class="body"><p>Ссылка на docs.google.com через веб-запрос возвращает не текст, а оболочку страницы с кнопкой логина. Регламент берёт идентификатор документа прямо из ссылки и читает содержимое напрямую через Google Drive.</p></div>
 </details>
 <details class="sk" style="--gc:#3b82f6">
 <summary><span class="nm">/installing-cli-without-admin</span><span class="ds">Ставит консольные инструменты на мак без пароля администратора</span><span class="arw">›</span></summary>
@@ -188,9 +269,52 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <summary><span class="nm">/checking-system-health</span><span class="ds">Техосмотр всей системы: всё ли на местах и синхронизировано</span><span class="arw">›</span></summary>
 <div class="body"><p>Прогоняется после крупных перестроек — переездов папок, установки инструментов, массовых правок.</p></div>
 </details>
+<details class="sk" style="--gc:#3b82f6">
+<summary><span class="nm">/graphify<span class="ext">внешний</span></span><span class="ds">Превращает папку файлов в навигируемый граф знаний с отчётом на человеческом языке</span><span class="arw">›</span></summary>
+<div class="body"><p>Код, документы, статьи, картинки и видео разбираются в связанный граф с выделением сообществ и ключевых узлов. На выходе интерактивная карта, машиночитаемый JSON и текстовый отчёт.</p><p class="src">Внешний инструмент со своим MCP-сервером</p></div>
+</details>
+</div></div></section>
+<section class="group" style="--gc:#818cf8"><div class="shell">
+<h2>Разработка: замысел, план, код<span class="cnt">9</span></h2><div class="list">
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/brainstorming<span class="ext">внешний</span></span><span class="ds">Разбор замысла до начала работы: цель, требования, устройство решения</span><span class="arw">›</span></summary>
+<div class="body"><p>Не даёт прыгнуть в реализацию с фразой «тут всё просто». Сначала выясняется, чего человек на самом деле хочет, и только потом появляется решение.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/writing-plans<span class="ext">внешний</span></span><span class="ds">Превращает требования в план из задач посильного размера — до того как тронут код</span><span class="arw">›</span></summary>
+<div class="body"><p>Проверяет объём работы, задаёт структуру файлов и режет задачи так, чтобы каждая была обозримой. План пишется до реализации, а не оправдывает её задним числом.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/executing-plans<span class="ext">внешний</span></span><span class="ds">Ведёт исполнение готового плана с точками проверки и остановками</span><span class="arw">›</span></summary>
+<div class="body"><p>Определяет, когда надо остановиться и спросить, а когда вернуться к предыдущему шагу. Держит исполнителя внутри плана, не давая разойтись по дороге.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/subagent-driven-development<span class="ext">внешний</span></span><span class="ds">Раздаёт независимые задачи плана параллельным исполнителям внутри сессии</span><span class="arw">›</span></summary>
+<div class="body"><p>Перед запуском проверяет план, подбирает модель под задачу и собирает результаты обратно. Смысл не в ускорении ради ускорения, а в изоляции задач друг от друга.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/dispatching-parallel-agents<span class="ext">внешний</span></span><span class="ds">Запускает две и более задачи одновременно, когда у них нет общего состояния</span><span class="arw">›</span></summary>
+<div class="body"><p>Условие применения жёсткое: задачи не делят состояние и не зависят от порядка. Задаёт структуру запроса к каждому исполнителю, чтобы результаты можно было сравнить.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/systematic-debugging<span class="ext">внешний</span></span><span class="ds">Четыре фазы разбора бага — до того, как предложено первое исправление</span><span class="arw">›</span></summary>
+<div class="body"><p>Главный закон: сначала понять причину, потом чинить. Не даёт подбирать исправления наугад и объявлять победу после первого зелёного прогона.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/test-driven-development<span class="ext">внешний</span></span><span class="ds">Красный — зелёный — рефакторинг: тест пишется раньше реализации</span><span class="arw">›</span></summary>
+<div class="body"><p>Тест сначала обязан упасть, иначе он ничего не проверяет. Дисциплина против кода, который «вроде работает», но подтвердить это нечем.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/using-git-worktrees<span class="ext">внешний</span></span><span class="ds">Заводит изолированное рабочее место под задачу, чтобы не ломать текущее</span><span class="arw">›</span></summary>
+<div class="body"><p>Сначала проверяет, нет ли изоляции уже, потом создаёт отдельное дерево и настраивает проект. Нужен, когда работа рискованная и её надо держать в стороне от основной ветки.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#818cf8">
+<summary><span class="nm">/finishing-a-development-branch<span class="ext">внешний</span></span><span class="ds">Закрывает ветку: слияние, пул-реквест или уборка — с явным выбором</span><span class="arw">›</span></summary>
+<div class="body"><p>Когда работа готова и проверки зелёные, предлагает варианты интеграции вместо того, чтобы решить за человека. Ловит типовые ошибки финала — забытые ветки и неучтённые изменения.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
 </div></div></section>
 <section class="group" style="--gc:#fbbf24"><div class="shell">
-<h2>Качество и развитие системы<span class="cnt">4</span></h2><div class="list">
+<h2>Качество и развитие системы<span class="cnt">10</span></h2><div class="list">
 <details class="sk" style="--gc:#fbbf24">
 <summary><span class="nm">/improving-skills</span><span class="ds">Чинит и дорабатывает сами регламенты, когда они сработали не так</span><span class="arw">›</span></summary>
 <div class="body"><p>Над-регламент: система улучшает саму себя. Сработало криво или пришлось править руками — значит, инструкция неполная, и её надо дописать.</p></div>
@@ -206,6 +330,30 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <details class="sk" style="--gc:#fbbf24">
 <summary><span class="nm">/terra-homework-to-drive</span><span class="ds">Поднимает документы курса в облако и сверяет комплектность</span><span class="arw">›</span></summary>
 <div class="body"><p>Закрывает занятие: файлы на месте, ничего не забыто, всё разложено по папкам курса.</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/skillhunt</span><span class="ds">Ищет в проделанной работе то, что стоит зафиксировать регламентом</span><span class="arw">›</span></summary>
+<div class="body"><p>Смотрит на реальные сигналы: где спотыкались, что неожиданно сработало, какой приём повторился дважды. Отбрасывает разовые баги и общие «лучшие практики» — остаётся только то, что пригодится снова.</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/verification-before-completion<span class="ext">внешний</span></span><span class="ds">Не даёт сказать «готово» без запущенной проверки и её вывода</span><span class="arw">›</span></summary>
+<div class="body"><p>Закон простой: сначала доказательства, потом утверждения. Перед словами «работает», «починил», «проверки проходят» должна быть команда и её результат.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/requesting-code-review<span class="ext">внешний</span></span><span class="ds">Запрашивает ревью так, чтобы проверяющий понял, что именно проверять</span><span class="arw">›</span></summary>
+<div class="body"><p>Включается перед слиянием и после крупной работы. Формулирует запрос через требования: не «посмотри код», а «проверь, делает ли это то, что просили».</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/receiving-code-review<span class="ext">внешний</span></span><span class="ds">Учит отвечать на замечания разбором, а не поддакиванием</span><span class="arw">›</span></summary>
+<div class="body"><p>Прямо запрещает согласиться с непонятным замечанием и молча его реализовать. Если правка выглядит технически спорной — сначала проверка и вопрос, потом действие.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/writing-skills<span class="ext">внешний</span></span><span class="ds">Правила написания самих регламентов и их проверки до внедрения</span><span class="arw">›</span></summary>
+<div class="body"><p>Определяет, что вообще заслуживает стать регламентом, и переносит логику разработки через тесты на сами инструкции: сначала проверка, что скилл срабатывает, потом внедрение.</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
+</details>
+<details class="sk" style="--gc:#fbbf24">
+<summary><span class="nm">/using-superpowers<span class="ext">внешний</span></span><span class="ds">Обязывает агента искать подходящий регламент до первого ответа, а не после</span><span class="arw">›</span></summary>
+<div class="body"><p>Корневая инструкция всего пакета: если есть хоть малый шанс, что регламент применим, — он применяется, включая уточняющие вопросы. Разбирает типовые самооправдания вроде «это слишком просто».</p><p class="src">Внешний скилл — пакет Superpowers (Jesse Vincent, лицензия MIT)</p></div>
 </details>
 </div></div></section>
 <section class="group" style="--gc:#60a5fa"><div class="shell">

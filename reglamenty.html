@@ -36,6 +36,14 @@ color:var(--t1);margin:0 0 20px;text-wrap:balance;max-width:20ch}
 .lede b{color:var(--t1);font-weight:600}
 .hint{font-family:var(--mono);font-size:12px;color:var(--t3);margin:22px 0 0;
 letter-spacing:.03em}
+.note{display:flex;gap:12px;align-items:flex-start;margin:24px 0 0;max-width:64ch;
+padding:15px 18px;border-radius:12px;font-size:15px;line-height:1.62;color:#fde9b4;
+background:linear-gradient(135deg,rgba(251,191,36,.12) 0%,rgba(251,191,36,.045) 100%);
+border:1px solid rgba(251,191,36,.30);
+box-shadow:0 6px 24px rgba(0,0,0,.25),inset 0 1px 0 rgba(251,191,36,.08)}
+.note b{color:#fbbf24;font-weight:600}
+.note-ic{flex:none;width:19px;height:19px;margin-top:1px;color:#fbbf24}
+@media (max-width:560px){.note{font-size:14.5px;padding:14px 15px;gap:10px}}
 .group{padding:clamp(26px,3.5vw,40px) 0}
 .group h2{font-size:clamp(19px,2.4vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--t1);
 margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--border);
@@ -74,6 +82,8 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <p class="lede">Каждый регламент — это <b>воспроизводимый рабочий процесс</b>: когда включается,
 пошаговый порядок, красные флаги и критерии готовности. Не разовый промпт, а инструкция,
 которая даёт одинаковый результат в понедельник и в пятницу.</p>
+<p class="note"><svg class="note-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 8.9v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="6" r="1.05" fill="currentColor"/></svg><span>Регламенты живут в рабочей системе и применяются ежедневно. Полные тексты содержат
+внутренние методики проектов — <b>здесь показаны назначение и суть каждого</b>.</span></p>
 <p class="hint">Нажмите на любой, чтобы раскрыть описание</p>
 </div>
 <section class="group" style="--gc:#60a5fa"><div class="shell">
@@ -209,7 +219,5 @@ footer a.lnk{display:inline-flex;align-items:center;min-height:44px;color:#60a5f
 <div class="body"><p>Поднимает наверх то, что человек правда делал, но что спрятано или названо чужим языком. Всё, что попало в резюме, должно выдержать вопрос на собеседовании.</p></div>
 </details>
 </div></div></section><footer><div class="shell">
-<p>Регламенты живут в рабочей системе и применяются ежедневно. Полные тексты содержат
-внутренние методики проектов — здесь показаны назначение и суть каждого.</p>
 <p><a class="lnk" href="index.html">← вернуться к портфолио</a></p>
 </div></footer></body></html>

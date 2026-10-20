@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0f1419">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Максим Алексеев — автоматизация бизнес-процессов">
-<meta property="og:description" content="Беру задачу бизнеса и довожу до работающего инструмента без команды разработки. Калькуляторы окупаемости, сканер сайтов, ИИ-агенты, боты.">
+<meta property="og:description" content="Беру задачу бизнеса и довожу до работающего инструмента без команды разработки. Система поиска работы на n8n и Claude, калькуляторы, сканер сайтов, ИИ-агенты, боты.">
 <meta property="og:url" content="https://fevralsky-rf.github.io/portfolio/">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
@@ -111,6 +111,7 @@
   }
   .sec-note{color:var(--t3);font-size:15px;max-width:62ch;margin:18px 0 30px}
 
+  #klyuchevye{--sec-color:var(--c-primary)}
   #dengi{--sec-color:var(--c-success)}
   #rabota{--sec-color:var(--c-info)}
   #sistema{--sec-color:var(--c-violet)}
@@ -119,6 +120,7 @@
 
   .grid{display:grid;grid-template-columns:1fr;gap:18px}
   @media (min-width:740px){.grid{grid-template-columns:1fr 1fr}}
+  @media (min-width:740px){.card.wide{grid-column:1/-1}}
 
   .card{
     background-image:var(--grad-card);border-radius:var(--r);
@@ -197,13 +199,70 @@
 
     <div class="cta-row">
       <a class="btn" href="#kontakty">Связаться</a>
-      <a class="btn-quiet" href="#dengi">Посмотреть инструменты</a>
+      <a class="btn-quiet" href="#klyuchevye">Посмотреть кейсы</a>
     </div>
 
     <p class="hero-note">Автоматизацией занимаюсь <b>с апреля 2025</b>. Всё, что в подборке,
       собрано в 2026 году и открывается прямо в браузере — можно проверить руками.</p>
   </div>
 </header>
+
+<section id="klyuchevye">
+  <div class="shell">
+    <div class="sec-head"><h2>Ключевые кейсы</h2></div>
+    <p class="sec-note">Три инструмента, с которых стоит начать: каждый заменил
+      ручной процесс и работает на реальных данных.</p>
+
+    <div class="grid">
+      <article class="card wide">
+        <h3>AI Job Hunter – система поиска работы и персональных откликов</h3>
+        <p class="task">Задача: качественный отклик руками – это часы. Найти вакансии
+          на нескольких площадках, отсеять лишнее, разобрать требования, переписать
+          резюме под язык работодателя и не приписать себе лишнего.</p>
+        <p>Собственная система на <b>n8n, Python и Claude</b>. Дважды в день собирает
+          вакансии из трёх легальных источников – hh.ru, «Работа России», Хабр Карьера,
+          около 800 за один сбор. Фильтры и предоценка оставляют подходящие:
+          <b>из 790 вакансий – 73</b>, у каждой балл и причины. Резюме разобрано
+          на реестр из 91 факта с дословными цитатами, каждая цитата проверяется кодом,
+          поэтому в адаптированное резюме и письмо попадает только подтверждённый опыт.
+          Решение и отправка отклика остаются за человеком.</p>
+        <p class="effect">Отклик на одну вакансию: с нескольких часов до нескольких минут</p>
+        <p class="tools">n8n · Python, FastAPI, SQLite · Claude · RSS и открытые API</p>
+        <div class="open"><a href="#kontakty">Покажу вживую на созвоне</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Калькулятор упущенных пациентов стоматологии</h3>
+        <p class="task">Задача: показать владельцу клиники, сколько он теряет
+          на обращениях, которые приходят вне рабочих часов.</p>
+        <p>Расчёт построен на <b>реальных частотностях Яндекс.Вордстата</b> по пяти
+          регионам, а не на выдуманных процентах. Каждый коэффициент цепочки подписан
+          прямо в интерфейсе — от числа запросов до денег.</p>
+        <p class="effect">Инструмент пресейла: клиент видит свою цифру за 30 секунд</p>
+        <p class="tools">Claude Code · данные Вордстата, июнь–июль 2026</p>
+        <div class="open"><a href="demo/kalkulyator-potenciala-kliniki.html">Открыть калькулятор</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Сканер сайтов медицинских клиник</h3>
+        <p class="task">Задача: проверка одного сайта на соответствие требованиям
+          надзорных органов занимала часы работы уровня юриста.</p>
+        <p>Пайплайн на Python: загрузка страниц, поиск признаков нарушений, база правил,
+          сверка с государственными реестрами, сборка отчёта и печатная версия.
+          <b>На входе адрес сайта — на выходе готовый PDF</b> с перечнем нарушений
+          и оценкой санкций.</p>
+        <p class="effect">Часы ручной проверки → около сорока секунд</p>
+        <p class="tools">Python · Claude Code · свод 108 требований, машиной — около полусотни</p>
+        <div class="open">
+          <a href="demo/otchet-klinika-a.html">16 нарушений · до 2,01 млн ₽</a>
+          <a href="demo/otchet-klinika-b.html">17 · до 1,79 млн ₽</a>
+          <a href="demo/otchet-klinika-g.html">14 · до 1,87 млн ₽</a>
+          <a href="demo/otchet-klinika-v.html">7 · до 660 тыс ₽</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section id="dengi">
   <div class="shell">
@@ -227,17 +286,7 @@
         <div class="open"><a href="demo/kalkulyator-vnedreniya-ii.html#metodika">Как он считает — и сам калькулятор</a></div>
       </article>
 
-      <article class="card">
-        <h3>Калькулятор упущенной выручки клиники</h3>
-        <p class="task">Задача: показать владельцу клиники, сколько он теряет
-          на обращениях, которые приходят вне рабочих часов.</p>
-        <p>Расчёт построен на <b>реальных частотностях Яндекс.Вордстата</b> по пяти
-          регионам, а не на выдуманных процентах. Каждый коэффициент цепочки подписан
-          прямо в интерфейсе — от числа запросов до денег.</p>
-        <p class="effect">Инструмент пресейла: клиент видит свою цифру за 30 секунд</p>
-        <p class="tools">Claude Code · данные Вордстата, июнь–июль 2026</p>
-        <div class="open"><a href="demo/kalkulyator-potenciala-kliniki.html">Открыть калькулятор</a></div>
-      </article>
+      
     </div>
   </div>
 </section>
@@ -250,23 +299,7 @@
       сохранена полностью.</p>
 
     <div class="grid">
-      <article class="card">
-        <h3>Сканер сайтов медицинских клиник</h3>
-        <p class="task">Задача: проверка одного сайта на соответствие требованиям
-          надзорных органов занимала часы работы уровня юриста.</p>
-        <p>Пайплайн на Python: загрузка страниц, поиск признаков нарушений, база правил,
-          сверка с государственными реестрами, сборка отчёта и печатная версия.
-          <b>На входе адрес сайта — на выходе готовый PDF</b> с перечнем нарушений
-          и оценкой санкций.</p>
-        <p class="effect">Часы ручной проверки → около сорока секунд</p>
-        <p class="tools">Python · Claude Code · свод 108 требований, машиной — около полусотни</p>
-        <div class="open">
-          <a href="demo/otchet-klinika-a.html">16 нарушений · до 2,01 млн ₽</a>
-          <a href="demo/otchet-klinika-b.html">17 · до 1,79 млн ₽</a>
-          <a href="demo/otchet-klinika-g.html">14 · до 1,87 млн ₽</a>
-          <a href="demo/otchet-klinika-v.html">7 · до 660 тыс ₽</a>
-        </div>
-      </article>
+      
 
 
       <article class="card">

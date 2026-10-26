@@ -32,7 +32,13 @@ html,body{margin:0;width:100%;height:100%;background:#0f1419;color:#e5edf8;font:
    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
    const html=await new Response(stream).text();
    if(!html.startsWith("<!doctype html>") || !html.includes("Кто на поле техосмотра")) throw new Error("Проверка оригинального HTML не прошла.");
-   document.getElementById("artifact").srcdoc=html;
+   // Super Dark Apache: pin the original artifact to the same dark palette as the main portfolio.
+   // The source HTML and all research content remain unchanged in storage; only theme selection is forced at render time.
+   const themedHtml=html
+     .replace("<!doctype html><html>", "<!doctype html><html data-theme=\"dark\">")
+     .replace(":root{color-scheme:light}", ":root{color-scheme:dark}");
+   if(!themedHtml.includes('<html data-theme="dark">') || !themedHtml.includes(":root{color-scheme:dark}")) throw new Error("Не удалось закрепить тему Super Dark Apache.");
+   document.getElementById("artifact").srcdoc=themedHtml;
    document.getElementById("artifact").style.display="block";
    state.remove();
  }catch(error){

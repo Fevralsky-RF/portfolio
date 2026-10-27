@@ -110,11 +110,6 @@
     position:relative;display:flex;justify-content:flex-end;align-items:center;
     min-width:0;padding:10px 10px 20px 0;
   }
-  .hero-portrait::before{
-    content:"";position:absolute;inset:7% 0 0 13%;
-    border:1px solid rgba(96,165,250,.30);border-radius:18px;
-    transform:translate(10px,10px);pointer-events:none;
-  }
   .hero-portrait img{
     position:relative;display:block;width:100%;max-width:340px;height:auto;
     aspect-ratio:768/920;object-fit:contain;object-position:center;
@@ -125,7 +120,6 @@
     .hero-layout{grid-template-columns:1fr;gap:24px;align-items:start}
     .hero-portrait{justify-content:center;padding:0 12px 14px}
     .hero-portrait img{max-width:min(320px,82vw)}
-    .hero-portrait::before{inset:6% 8% 0 8%}
   }
 
   /* ─────────── Секции ─────────── */

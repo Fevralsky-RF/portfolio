@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Демонстрационный интерфейс AI Job Hunter — система поиска вакансий, фильтрации и управления воронкой откликов.">
+<title>AI Job Hunter — дашборд | Максим Алексеев</title>
+<style>
+:root{--bg:#0b1020;--panel:#111827;--panel2:#151f31;--stroke:rgba(148,163,184,.14);--stroke2:rgba(96,165,250,.32);--text:#f1f5f9;--muted:#94a3b8;--blue:#60a5fa;--cyan:#67e8f9;--green:#34d399;--amber:#fbbf24;--red:#fb7185;--violet:#c4b5fd;--mono:ui-monospace,"SFMono-Regular",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0%,rgba(37,99,235,.14),transparent 35%),linear-gradient(140deg,#0b1020,#0f172a 55%,#0b1020);color:var(--text);font:14px/1.55 var(--sans);min-height:100vh}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1320px;margin:0 auto;padding:26px clamp(16px,3vw,36px) 46px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--stroke);padding-bottom:22px}.brand{display:flex;align-items:center;gap:13px}.mark{width:42px;height:42px;border:1px solid var(--stroke2);background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(103,232,249,.08));border-radius:12px;display:grid;place-items:center;color:var(--cyan);font:700 15px var(--mono);box-shadow:0 0 28px rgba(59,130,246,.12)}.eyebrow{font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(25px,3vw,35px);line-height:1.15;letter-spacing:-.04em;margin:4px 0 0}.top-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--stroke);padding:10px 14px;border-radius:10px;background:rgba(15,23,42,.8);color:var(--text);font-size:12px;transition:.18s}.btn:hover{border-color:var(--stroke2);background:rgba(30,41,59,.9)}.btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);border-color:rgba(96,165,250,.45)}.btn-primary:hover{background:linear-gradient(135deg,#3b82f6,#2563eb)}.notice{display:flex;gap:12px;align-items:flex-start;margin:20px 0 24px;padding:13px 15px;border:1px solid rgba(251,191,36,.22);background:rgba(251,191,36,.055);border-radius:12px;color:#fde68a;font-size:12px}.notice strong{color:#fff}.notice-mark{font-size:17px;line-height:1.2}.welcome{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:24px 0 18px}.welcome h2{font-size:20px;margin:0 0 4px;letter-spacing:-.025em}.sub{margin:0;color:var(--muted);font-size:12px}.snapshot{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--stroke);border-radius:999px;padding:7px 11px;color:var(--muted);font:10px var(--mono)}.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(52,211,153,.6)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.metric{padding:19px;border:1px solid var(--stroke);border-radius:15px;background:linear-gradient(145deg,rgba(21,31,49,.92),rgba(15,23,42,.82));position:relative;overflow:hidden}.metric:after{content:"";position:absolute;inset:auto -30px -55px auto;width:120px;height:100px;border-radius:50%;background:var(--glow,rgba(96,165,250,.08));filter:blur(20px)}.metric-label{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}.metric-icon{font-size:16px;color:var(--accent,var(--blue))}.metric-value{font-size:clamp(25px,3vw,34px);font-weight:700;letter-spacing:-.055em;margin:12px 0 5px;font-variant-numeric:tabular-nums}.metric-note{color:var(--muted);font-size:11px}.metric-note b{color:var(--accent,var(--blue));font-weight:600}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:30px 0 14px}.section-head h2{font-size:17px;letter-spacing:-.025em;margin:0}.segmented{display:flex;gap:4px;padding:4px;border:1px solid var(--stroke);background:rgba(2,6,23,.45);border-radius:11px}.segmented button{color:var(--muted);border:0;background:transparent;border-radius:8px;padding:8px 13px;font-size:11px}.segmented button[aria-pressed="true"]{background:#1d4ed8;color:#fff;box-shadow:0 4px 12px rgba(29,78,216,.2)}.main-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(275px,.8fr);gap:15px}.panel{border:1px solid var(--stroke);border-radius:15px;background:rgba(15,23,42,.78);overflow:hidden}.panel-head{padding:16px 18px;border-bottom:1px solid var(--stroke);display:flex;justify-content:space-between;align-items:center;gap:12px}.panel-head h3{font-size:13px;margin:0}.panel-head small{font-size:10px;color:var(--muted)}.filters{display:flex;gap:9px;flex-wrap:wrap;padding:13px 16px;border-bottom:1px solid var(--stroke)}.search{flex:1;min-width:150px;position:relative}.search input{width:100%;color:var(--text);background:#0b1220;border:1px solid var(--stroke);border-radius:9px;padding:9px 11px;outline:none;font-size:11px}.search input:focus{border-color:var(--stroke2)}select{background:#0b1220;color:var(--text);border:1px solid var(--stroke);border-radius:9px;padding:9px 10px;font-size:11px;max-width:100%}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}th{text-align:left;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#64748b;padding:11px 16px;background:rgba(2,6,23,.18);white-space:nowrap}td{padding:13px 16px;border-top:1px solid rgba(148,163,184,.075);vertical-align:middle;font-size:11px}tbody tr:hover{background:rgba(96,165,250,.035)}.role{font-size:12px;font-weight:600;color:#e2e8f0;max-width:290px}.company{font-size:10px;color:var(--muted);margin-top:3px}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 8px;font-size:9px;white-space:nowrap;border:1px solid var(--stroke);background:rgba(148,163,184,.07);color:#cbd5e1}.badge:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.b-green{color:var(--green);background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.18)}.b-blue{color:var(--blue);background:rgba(96,165,250,.07);border-color:rgba(96,165,250,.18)}.b-amber{color:var(--amber);background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.18)}.b-violet{color:var(--violet);background:rgba(196,181,253,.07);border-color:rgba(196,181,253,.18)}.score{font:11px var(--mono);color:var(--green)}.table-foot{padding:12px 16px;border-top:1px solid var(--stroke);display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:10px}.empty{display:none;padding:28px;text-align:center;color:var(--muted);font-size:12px}.pipeline{padding:18px}.stage{margin-bottom:19px}.stage:last-child{margin-bottom:0}.stage-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11px;margin-bottom:8px}.stage-top span:last-child{font:11px var(--mono);color:#cbd5e1}.track{height:6px;background:#1e293b;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--color,var(--blue));width:var(--width,50%);box-shadow:0 0 12px color-mix(in srgb,var(--color,var(--blue)) 40%,transparent)}.pipeline-note{margin-top:22px;border-top:1px solid var(--stroke);padding-top:15px;color:var(--muted);font-size:10px;line-height:1.65}.bottom-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:15px;margin-top:15px}.source-list{padding:8px 18px 16px}.source-row{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.07)}.source-row:last-child{border-bottom:0}.source-icon{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--stroke);background:#0b1220;color:var(--cyan);font:11px var(--mono)}.source-info{flex:1}.source-info strong{display:block;font-size:11px;font-weight:600}.source-info span{font-size:10px;color:var(--muted)}.source-count{font:11px var(--mono);color:#cbd5e1}.activity{padding:5px 18px 16px}.activity-row{display:flex;gap:11px;padding:13px 0;border-bottom:1px solid rgba(148,163,184,.07)}.activity-row:last-child{border-bottom:0}.activity-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;background:rgba(96,165,250,.08);color:var(--blue);flex-shrink:0}.activity-text{font-size:11px;color:#cbd5e1}.activity-text small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--stroke);margin-top:24px;padding-top:17px;color:#64748b;font-size:10px}.footer a{color:var(--blue)}.footer a:hover{text-decoration:underline}.hidden{display:none!important}@media(max-width:950px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.main-grid{grid-template-columns:1fr}.bottom-grid{grid-template-columns:1fr}}@media(max-width:520px){.app{padding-top:16px}.metrics{gap:9px}.metric{padding:14px}.metric-value{font-size:27px}.metric-label{font-size:10px}.segmented{width:100%}.segmented button{flex:1}.top-actions{width:100%}.top-actions .btn{flex:1}.welcome{align-items:flex-start}.notice{font-size:11px}.panel-head{padding:14px}.filters{padding:11px}.section-head{margin-top:23px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="mark">JH</div><div><div class="eyebrow">AI WORKFLOW / 001</div><h1>AI Job Hunter</h1></div></div>
+  <div class="top-actions"><a class="btn" href="../index.html">← В портфолио</a><a class="btn btn-primary" href="https://github.com/Fevralsky-RF/portfolio/blob/main/demo/ai-job-hunter-dashboard.html" target="_blank" rel="noopener">Исходник на GitHub ↗</a></div>
+</header>
+
+<div class="notice"><div class="notice-mark">ⓘ</div><div><strong>Публичная демонстрация интерфейса.</strong> Это автономная витрина проекта с обезличенными примерами, а не подключение к рабочей локальной базе. Реальные резюме, данные работодателей, cookies и токены не публикуются.</div></div>
+
+<div class="welcome">
+  <div><h2>Обзор процесса поиска</h2><p class="sub">От сбора вакансий до контроля воронки откликов — в одном рабочем пространстве.</p></div>
+  <div class="snapshot"><span class="dot"></span> СНИМОК ПРОЕКТА · 27 ОКТ 2026</div>
+</div>
+
+<section class="metrics" aria-label="Ключевые показатели проекта">
+  <article class="metric" style="--accent:var(--blue);--glow:rgba(96,165,250,.14)"><div class="metric-label">Собрано вакансий <span class="metric-icon">⌕</span></div><div class="metric-value">1 000+</div><div class="metric-note">из нескольких источников</div></article>
+  <article class="metric" style="--accent:var(--cyan);--glow:rgba(103,232,249,.1)"><div class="metric-label">Поток откликов <span class="metric-icon">↗</span></div><div class="metric-value">14</div><div class="metric-note">отправлено на текущем этапе</div></article>
+  <article class="metric" style="--accent:var(--green);--glow:rgba(52,211,153,.1)"><div class="metric-label">Диалоги <span class="metric-icon">◌</span></div><div class="metric-value">2</div><div class="metric-note">контакта в работе</div></article>
+  <article class="metric" style="--accent:var(--violet);--glow:rgba(196,181,253,.1)"><div class="metric-label">Режим контроля <span class="metric-icon">◇</span></div><div class="metric-value" style="font-size:24px;margin-top:17px">Human-in-the-loop</div><div class="metric-note">решение об отклике остаётся за человеком</div></article>
+</section>
+
+<div class="section-head">
+  <div><h2>Рабочая очередь</h2><p class="sub" style="margin-top:4px">Пример представления вакансий и откликов · записи обезличены</p></div>
+  <div class="segmented" role="group" aria-label="Тип записей"><button type="button" data-view="vacancies" aria-pressed="true">Вакансии</button><button type="button" data-view="applications" aria-pressed="false">Отклики</button></div>
+</div>
+
+<div class="main-grid">
+  <section class="panel" aria-label="Очередь вакансий">
+    <div class="panel-head"><h3 id="queue-title">Подходящие вакансии</h3><small id="queue-count">5 демонстрационных записей</small></div>
+    <div class="filters"><label class="search"><input id="search" type="search" placeholder="Поиск по роли или направлению…" aria-label="Поиск по таблице"></label><select id="status-filter" aria-label="Фильтр по статусу"><option value="">Все статусы</option><option>Подходит</option><option>Отклик отправлен</option><option>Диалог</option><option>Ожидает ответа</option></select></div>
+    <div class="table-wrap"><table><thead><tr><th>Вакансия / направление</th><th>Этап</th><th>Оценка</th></tr></thead><tbody id="table-body"></tbody></table></div>
+    <div class="empty" id="empty-state">По этим условиям ничего не найдено. Попробуй изменить запрос или статус.</div>
+    <div class="table-foot"><span id="shown-count">Показано 5 из 5</span><span>Обезличенный пример</span></div>
+  </section>
+
+  <aside class="panel">
+    <div class="panel-head"><h3>Воронка процесса</h3><small>Схема этапов</small></div>
+    <div class="pipeline">
+      <div class="stage"><div class="stage-top"><span>Сбор и дедупликация</span><span>1 000+</span></div><div class="track"><div class="fill" style="--width:100%;--color:var(--blue)"></div></div></div>
+      <div class="stage"><div class="stage-top"><span>Фильтр релевантности</span><span>↓</span></div><div class="track"><div class="fill" style="--width:70%;--color:var(--cyan)"></div></div></div>
+      <div class="stage"><div class="stage-top"><span>Персонализация отклика</span><span>↓</span></div><div class="track"><div class="fill" style="--width:48%;--color:var(--violet)"></div></div></div>
+      <div class="stage"><div class="stage-top"><span>Отправлено</span><span>14</span></div><div class="track"><div class="fill" style="--width:28%;--color:var(--green)"></div></div></div>
+      <div class="stage"><div class="stage-top"><span>Диалоги</span><span>2</span></div><div class="track"><div class="fill" style="--width:12%;--color:var(--amber)"></div></div></div>
+      <p class="pipeline-note">Полосы показывают схему прохождения процесса, а не точную конверсию между этапами. Для расчёта конверсии нужен единый набор записей с проверенными статусами.</p>
+    </div>
+  </aside>
+</div>
+
+<div class="bottom-grid">
+  <section class="panel">
+    <div class="panel-head"><h3>Источники вакансий</h3><small>Архитектура сбора</small></div>
+    <div class="source-list">
+      <div class="source-row"><div class="source-icon">hh</div><div class="source-info"><strong>HeadHunter</strong><span>Поиск вакансий и проверка статусов</span></div><div class="source-count">API / UI</div></div>
+      <div class="source-row"><div class="source-icon">РР</div><div class="source-info"><strong>Работа России</strong><span>Дополнительный поток вакансий</span></div><div class="source-count">источник</div></div>
+      <div class="source-row"><div class="source-icon">HC</div><div class="source-info"><strong>Хабр Карьера</strong><span>Профильные роли в технологиях</span></div><div class="source-count">источник</div></div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h3>Контроль качества</h3><small>Принципы системы</small></div>
+    <div class="activity">
+      <div class="activity-row"><div class="activity-icon">✓</div><div class="activity-text">Факты резюме проверяются по источникам<small>Не добавлять неподтверждённый опыт</small></div></div>
+      <div class="activity-row"><div class="activity-icon">◎</div><div class="activity-text">Статусы откликов не угадываются<small>Неизвестный статус остаётся неизвестным</small></div></div>
+      <div class="activity-row"><div class="activity-icon">Ⅱ</div><div class="activity-text">Внешние действия под контролем человека<small>Сбор и анализ отдельно от отправки отклика</small></div></div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer"><span>AI Job Hunter · демонстрационный интерфейс</span><span>Собрано Максимом Алексеевым · <a href="../index.html">все кейсы портфолио</a></span></footer>
+</div>
+<script>
+(function(){
+  const vacancyRows=[
+    {title:"AI Product Manager / AI Product Builder",area:"AI-продукты · продуктовая разработка",status:"Подходит",score:"92",cls:"b-green"},
+    {title:"Business Analyst — RPA / AI-agents",area:"Автоматизация бизнес-процессов",status:"Отклик отправлен",score:"88",cls:"b-blue"},
+    {title:"Vibe Coder / AI-Native Developer",area:"Внутренние инструменты · vibe coding",status:"Ожидает ответа",score:"86",cls:"b-amber"},
+    {title:"Chief of Staff / Strategic Execution",area:"Стратегическое исполнение",status:"Диалог",score:"84",cls:"b-violet"},
+    {title:"AI Solutions Sales Manager",area:"B2B-продажи AI-продуктов",status:"Подходит",score:"79",cls:"b-green"}
+  ];
+  const applicationRows=[
+    {title:"AI Product Manager / AI Product Builder",area:"Пример карточки отклика · компания скрыта",status:"Отклик отправлен",score:"—",cls:"b-blue"},
+    {title:"Business Analyst — RPA / AI-agents",area:"Пример карточки отклика · компания скрыта",status:"Диалог",score:"—",cls:"b-violet"},
+    {title:"Vibe Coder / AI-Native Developer",area:"Пример карточки отклика · компания скрыта",status:"Ожидает ответа",score:"—",cls:"b-amber"},
+    {title:"Chief of Staff / Strategic Execution",area:"Пример карточки отклика · компания скрыта",status:"Отклик отправлен",score:"—",cls:"b-blue"},
+    {title:"AI Solutions Sales Manager",area:"Пример карточки отклика · компания скрыта",status:"Подходит",score:"—",cls:"b-green"}
+  ];
+  let view="vacancies";
+  const body=document.getElementById("table-body"), search=document.getElementById("search"), statusFilter=document.getElementById("status-filter");
+  function render(){
+    const data=view==="vacancies"?vacancyRows:applicationRows;
+    const q=search.value.trim().toLowerCase(), s=statusFilter.value;
+    const rows=data.filter(r=>(!q||(r.title+" "+r.area+" "+r.status).toLowerCase().includes(q))&&(!s||r.status===s));
+    body.innerHTML=rows.map(r=>'<tr><td><div class="role">'+r.title+'</div><div class="company">'+r.area+'</div></td><td><span class="badge '+r.cls+'">'+r.status+'</span></td><td class="score">'+r.score+'</td></tr>').join("");
+    document.getElementById("empty-state").style.display=rows.length?"none":"block";
+    document.getElementById("shown-count").textContent="Показано "+rows.length+" из "+data.length;
+    document.getElementById("queue-count").textContent=data.length+" демонстрационных записей";
+    document.getElementById("queue-title").textContent=view==="vacancies"?"Подходящие вакансии":"Воронка откликов";
+  }
+  document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>{
+    view=b.dataset.view;document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));render();
+  }));
+  search.addEventListener("input",render); statusFilter.addEventListener("change",render);
+  render();
+})();
+</script>
+</body>
+</html>

@@ -10,6 +10,31 @@
 <style>
 :root{--bg:#0b1020;--panel:#111827;--panel2:#151f31;--stroke:rgba(148,163,184,.14);--stroke2:rgba(96,165,250,.32);--text:#f1f5f9;--muted:#94a3b8;--blue:#60a5fa;--cyan:#67e8f9;--green:#34d399;--amber:#fbbf24;--red:#fb7185;--violet:#c4b5fd;--mono:ui-monospace,"SFMono-Regular",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0%,rgba(37,99,235,.14),transparent 35%),linear-gradient(140deg,#0b1020,#0f172a 55%,#0b1020);color:var(--text);font:14px/1.55 var(--sans);min-height:100vh}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1320px;margin:0 auto;padding:26px clamp(16px,3vw,36px) 46px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--stroke);padding-bottom:22px}.brand{display:flex;align-items:center;gap:13px}.mark{width:42px;height:42px;border:1px solid var(--stroke2);background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(103,232,249,.08));border-radius:12px;display:grid;place-items:center;color:var(--cyan);font:700 15px var(--mono);box-shadow:0 0 28px rgba(59,130,246,.12)}.eyebrow{font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(25px,3vw,35px);line-height:1.15;letter-spacing:-.04em;margin:4px 0 0}.top-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--stroke);padding:10px 14px;border-radius:10px;background:rgba(15,23,42,.8);color:var(--text);font-size:12px;transition:.18s}.btn:hover{border-color:var(--stroke2);background:rgba(30,41,59,.9)}.btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);border-color:rgba(96,165,250,.45)}.btn-primary:hover{background:linear-gradient(135deg,#3b82f6,#2563eb)}.notice{display:flex;gap:12px;align-items:flex-start;margin:20px 0 24px;padding:13px 15px;border:1px solid rgba(251,191,36,.22);background:rgba(251,191,36,.055);border-radius:12px;color:#fde68a;font-size:12px}.notice strong{color:#fff}.notice-mark{font-size:17px;line-height:1.2}.welcome{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:24px 0 18px}.welcome h2{font-size:20px;margin:0 0 4px;letter-spacing:-.025em}.sub{margin:0;color:var(--muted);font-size:12px}.snapshot{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--stroke);border-radius:999px;padding:7px 11px;color:var(--muted);font:10px var(--mono)}.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(52,211,153,.6)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.metric{padding:19px;border:1px solid var(--stroke);border-radius:15px;background:linear-gradient(145deg,rgba(21,31,49,.92),rgba(15,23,42,.82));position:relative;overflow:hidden}.metric:after{content:"";position:absolute;inset:auto -30px -55px auto;width:120px;height:100px;border-radius:50%;background:var(--glow,rgba(96,165,250,.08));filter:blur(20px)}.metric-label{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}.metric-icon{font-size:16px;color:var(--accent,var(--blue))}.metric-value{font-size:clamp(25px,3vw,34px);font-weight:700;letter-spacing:-.055em;margin:12px 0 5px;font-variant-numeric:tabular-nums}.metric-note{color:var(--muted);font-size:11px}.metric-note b{color:var(--accent,var(--blue));font-weight:600}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:30px 0 14px}.section-head h2{font-size:17px;letter-spacing:-.025em;margin:0}.segmented{display:flex;gap:4px;padding:4px;border:1px solid var(--stroke);background:rgba(2,6,23,.45);border-radius:11px}.segmented button{color:var(--muted);border:0;background:transparent;border-radius:8px;padding:8px 13px;font-size:11px}.segmented button[aria-pressed="true"]{background:#1d4ed8;color:#fff;box-shadow:0 4px 12px rgba(29,78,216,.2)}.main-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(275px,.8fr);gap:15px}.panel{border:1px solid var(--stroke);border-radius:15px;background:rgba(15,23,42,.78);overflow:hidden}.panel-head{padding:16px 18px;border-bottom:1px solid var(--stroke);display:flex;justify-content:space-between;align-items:center;gap:12px}.panel-head h3{font-size:13px;margin:0}.panel-head small{font-size:10px;color:var(--muted)}.filters{display:flex;gap:9px;flex-wrap:wrap;padding:13px 16px;border-bottom:1px solid var(--stroke)}.search{flex:1;min-width:150px;position:relative}.search input{width:100%;color:var(--text);background:#0b1220;border:1px solid var(--stroke);border-radius:9px;padding:9px 11px;outline:none;font-size:11px}.search input:focus{border-color:var(--stroke2)}select{background:#0b1220;color:var(--text);border:1px solid var(--stroke);border-radius:9px;padding:9px 10px;font-size:11px;max-width:100%}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}th{text-align:left;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#64748b;padding:11px 16px;background:rgba(2,6,23,.18);white-space:nowrap}td{padding:13px 16px;border-top:1px solid rgba(148,163,184,.075);vertical-align:middle;font-size:11px}tbody tr:hover{background:rgba(96,165,250,.035)}.role{font-size:12px;font-weight:600;color:#e2e8f0;max-width:290px}.company{font-size:10px;color:var(--muted);margin-top:3px}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 8px;font-size:9px;white-space:nowrap;border:1px solid var(--stroke);background:rgba(148,163,184,.07);color:#cbd5e1}.badge:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.b-green{color:var(--green);background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.18)}.b-blue{color:var(--blue);background:rgba(96,165,250,.07);border-color:rgba(96,165,250,.18)}.b-amber{color:var(--amber);background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.18)}.b-violet{color:var(--violet);background:rgba(196,181,253,.07);border-color:rgba(196,181,253,.18)}.score{font:11px var(--mono);color:var(--green)}.table-foot{padding:12px 16px;border-top:1px solid var(--stroke);display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:10px}.empty{display:none;padding:28px;text-align:center;color:var(--muted);font-size:12px}.pipeline{padding:18px}.stage{margin-bottom:19px}.stage:last-child{margin-bottom:0}.stage-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11px;margin-bottom:8px}.stage-top span:last-child{font:11px var(--mono);color:#cbd5e1}.track{height:6px;background:#1e293b;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--color,var(--blue));width:var(--width,50%);box-shadow:0 0 12px color-mix(in srgb,var(--color,var(--blue)) 40%,transparent)}.pipeline-note{margin-top:22px;border-top:1px solid var(--stroke);padding-top:15px;color:var(--muted);font-size:10px;line-height:1.65}.bottom-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:15px;margin-top:15px}.source-list{padding:8px 18px 16px}.source-row{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.07)}.source-row:last-child{border-bottom:0}.source-icon{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--stroke);background:#0b1220;color:var(--cyan);font:11px var(--mono)}.source-info{flex:1}.source-info strong{display:block;font-size:11px;font-weight:600}.source-info span{font-size:10px;color:var(--muted)}.source-count{font:11px var(--mono);color:#cbd5e1}.activity{padding:5px 18px 16px}.activity-row{display:flex;gap:11px;padding:13px 0;border-bottom:1px solid rgba(148,163,184,.07)}.activity-row:last-child{border-bottom:0}.activity-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;background:rgba(96,165,250,.08);color:var(--blue);flex-shrink:0}.activity-text{font-size:11px;color:#cbd5e1}.activity-text small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--stroke);margin-top:24px;padding-top:17px;color:#64748b;font-size:10px}.footer a{color:var(--blue)}.footer a:hover{text-decoration:underline}.hidden{display:none!important}@media(max-width:950px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.main-grid{grid-template-columns:1fr}.bottom-grid{grid-template-columns:1fr}}@media(max-width:520px){.app{padding-top:16px}.metrics{gap:9px}.metric{padding:14px}.metric-value{font-size:27px}.metric-label{font-size:10px}.segmented{width:100%}.segmented button{flex:1}.top-actions{width:100%}.top-actions .btn{flex:1}.welcome{align-items:flex-start}.notice{font-size:11px}.panel-head{padding:14px}.filters{padding:11px}.section-head{margin-top:23px}}
+
+/* Expanded project detail */
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:15px 0 0}
+.detail-panel{border:1px solid var(--stroke);border-radius:15px;background:linear-gradient(145deg,rgba(17,24,39,.92),rgba(15,23,42,.84));padding:19px}
+.detail-panel h3{font-size:13px;margin:0 0 6px;letter-spacing:-.01em}
+.detail-panel .detail-lead{color:var(--muted);font-size:11px;margin:0 0 16px}
+.detail-list{display:grid;gap:12px}
+.detail-item{display:grid;grid-template-columns:27px 1fr;gap:10px;align-items:start}
+.detail-n{width:25px;height:25px;display:grid;place-items:center;border:1px solid var(--stroke2);border-radius:7px;color:var(--cyan);font:10px var(--mono);background:rgba(96,165,250,.06)}
+.detail-item strong{display:block;color:#e2e8f0;font-size:11px;margin:1px 0 3px}
+.detail-item p{color:var(--muted);font-size:10px;line-height:1.65;margin:0}
+.detail-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}
+.detail-stat{padding:11px;border:1px solid var(--stroke);background:rgba(2,6,23,.22);border-radius:10px}
+.detail-stat strong{display:block;font:700 20px var(--mono);letter-spacing:-.04em;color:var(--text)}
+.detail-stat span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.tag{font:9px var(--mono);color:#cbd5e1;padding:5px 7px;border:1px solid var(--stroke);background:rgba(148,163,184,.05);border-radius:6px}
+.detail-wide{grid-column:1/-1}
+.detail-note{padding:11px 12px;border-left:2px solid var(--blue);background:rgba(96,165,250,.055);border-radius:0 8px 8px 0;color:#cbd5e1;font-size:10px;line-height:1.65;margin-top:14px}
+.detail-note strong{color:#fff}
+.detail-table{width:100%;min-width:0}
+.detail-table th,.detail-table td{padding:9px 10px;font-size:10px}
+.detail-table th{font-size:9px}
+@media(max-width:750px){.detail-grid{grid-template-columns:1fr}.detail-wide{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -32,6 +57,90 @@
   <article class="metric" style="--accent:var(--green);--glow:rgba(52,211,153,.1)"><div class="metric-label">Диалоги <span class="metric-icon">◌</span></div><div class="metric-value">2</div><div class="metric-note">контакта в работе</div></article>
   <article class="metric" style="--accent:var(--violet);--glow:rgba(196,181,253,.1)"><div class="metric-label">Режим контроля <span class="metric-icon">◇</span></div><div class="metric-value" style="font-size:24px;margin-top:17px">Human-in-the-loop</div><div class="metric-note">решение об отклике остаётся за человеком</div></article>
 </section>
+
+
+<div class="section-head" id="system-snapshot">
+  <div><h2>Как устроен AI Job Hunter</h2><p class="sub" style="margin-top:4px">Дополнительные сведения из проектной документации и проверенного снимка локального интерфейса</p></div>
+  <div class="snapshot"><span class="dot"></span> ПРОЕКТНЫЙ СРЕЗ · 27 ОКТ 2026</div>
+</div>
+
+<div class="detail-grid">
+  <section class="detail-panel">
+    <h3>01 / Сбор и фильтрация</h3>
+    <p class="detail-lead">Поток вакансий преобразуется в короткий список для ручного решения.</p>
+    <div class="detail-stats">
+      <div class="detail-stat"><strong>1 000+</strong><span>вакансий собрано в текущей итерации проекта</span></div>
+      <div class="detail-stat"><strong>790 → 73</strong><span>контрольный пример фильтрации · около 9,2% прошло дальше</span></div>
+      <div class="detail-stat"><strong>1 340</strong><span>объём сбора в одном из оптимизированных прогонов 22 октября</span></div>
+      <div class="detail-stat"><strong>3</strong><span>основных источника в базовом контуре</span></div>
+    </div>
+    <div class="detail-list">
+      <div class="detail-item"><div class="detail-n">1</div><div><strong>Сбор и нормализация</strong><p>HeadHunter, «Работа России» и Хабр Карьера. Данные приводятся к общей структуре.</p></div></div>
+      <div class="detail-item"><div class="detail-n">2</div><div><strong>Дедупликация и сохранение</strong><p>Повторные записи HeadHunter склеиваются по ID, результаты сохраняются в SQLite.</p></div></div>
+      <div class="detail-item"><div class="detail-n">3</div><div><strong>Жёсткие фильтры и предоценка</strong><p>Детерминированные правила отсекают неподходящие роли; кандидатам присваивается оценка и объяснение.</p></div></div>
+    </div>
+    <div class="tag-row"><span class="tag">n8n</span><span class="tag">WF-10 · сбор</span><span class="tag">WF-20 · фильтры</span><span class="tag">RSS / API</span></div>
+  </section>
+
+  <section class="detail-panel">
+    <h3>02 / Подготовка резюме и письма</h3>
+    <p class="detail-lead">Персонализация на основе доказуемого опыта, а не генерация «красивых» фактов.</p>
+    <div class="detail-stats">
+      <div class="detail-stat"><strong>91</strong><span>факт в профиле кандидата с дословными цитатами</span></div>
+      <div class="detail-stat"><strong>2–4</strong><span>вызова модели на подготовку пакета в зафиксированном процессе</span></div>
+    </div>
+    <div class="detail-list">
+      <div class="detail-item"><div class="detail-n">A</div><div><strong>Requirement Extractor</strong><p>Выделяет из вакансии требования, приоритеты и язык работодателя.</p></div></div>
+      <div class="detail-item"><div class="detail-n">B</div><div><strong>Evidence Mapper</strong><p>Связывает требования с фактами кандидата. Цитаты и ссылки проверяются кодом.</p></div></div>
+      <div class="detail-item"><div class="detail-n">C</div><div><strong>Resume Tailor + Cover Letter Writer</strong><p>Собирают согласованную пару документов под конкретную роль.</p></div></div>
+      <div class="detail-item"><div class="detail-n">D</div><div><strong>Quality Auditor</strong><p>Проверяет непротиворечивость, подтверждение утверждений и требования к итоговому формату.</p></div></div>
+    </div>
+    <div class="detail-note"><strong>Идемпотентность:</strong> для идентичного входа уже готовый пакет может возвращаться из кэша без повторного вызова модели. Документы остаются версиями с контрольными хешами и отчётом QA.</div>
+  </section>
+
+  <section class="detail-panel">
+    <h3>03 / Контроль качества и активность вакансии</h3>
+    <p class="detail-lead">Сначала проверка допуска, затем приоритизация и подготовка отклика.</p>
+    <div class="detail-list">
+      <div class="detail-item"><div class="detail-n">✓</div><div><strong>Шлюз активности HeadHunter</strong><p>Карточка проверяется под авторизованным аккаунтом. «В архиве» — исключить; неизвестный статус не допускает вакансию в шорт-лист.</p></div></div>
+      <div class="detail-item"><div class="detail-n">✓</div><div><strong>ОТК-0…6</strong><p>Набор проверок охватывает целостность, допуск вакансии, план резюме, пакет документов и проверки до/после действий на HH. В проектном журнале зафиксировано 145 зелёных тестов на 23 октября.</p></div></div>
+      <div class="detail-item"><div class="detail-n">✓</div><div><strong>Актуальные статусы, а не предположения</strong><p>Статус считается подтверждённым только при наличии свежего свидетельства; источник ручной проверки подписан как <code>hh_manual</code>.</p></div></div>
+      <div class="detail-item"><div class="detail-n">✓</div><div><strong>Ручной топ — осознанное решение</strong><p>Основной топ остаётся курируемым человеком по матрице критериев. Новый кандидат не попадает в приоритет автоматически лишь потому, что прошёл фильтр.</p></div></div>
+    </div>
+    <div class="tag-row"><span class="tag">Hard gates</span><span class="tag">Проверяемые факты</span><span class="tag">QA / тесты</span><span class="tag">Аудит источника</span></div>
+  </section>
+
+  <section class="detail-panel">
+    <h3>04 / Техническая архитектура</h3>
+    <p class="detail-lead">Оркестрация, детерминированная логика и языковые задачи разведены по компонентам.</p>
+    <div class="detail-list">
+      <div class="detail-item"><div class="detail-n">01</div><div><strong>n8n</strong><p>Запускает расписание и связывает этапы процесса; повторные сборы ограничиваются защитой от слишком частого запуска.</p></div></div>
+      <div class="detail-item"><div class="detail-n">02</div><div><strong>Python · FastAPI · SQLite</strong><p>Bridge отвечает за состояние, API, фильтры, идемпотентность, валидацию и сохранение данных.</p></div></div>
+      <div class="detail-item"><div class="detail-n">03</div><div><strong>Claude и вспомогательные агенты</strong><p>Используются на ограниченных языковых задачах: разбор требований, сопоставление доказательств, документы и аудит.</p></div></div>
+      <div class="detail-item"><div class="detail-n">04</div><div><strong>Human-in-the-loop</strong><p>Человек выбирает вакансию, проверяет комплект и подтверждает отправку. Автоматическая отправка откликов отключена.</p></div></div>
+    </div>
+    <div class="detail-note"><strong>Граница безопасности:</strong> рабочая база, резюме, cookies, токены и локальные сервисы не публикуются в этой витрине. Прямой applicant-side API HH для записи в проектных заметках был заблокирован ответом 403; отправка выполнялась вручную после проверки.</div>
+  </section>
+
+  <section class="detail-panel detail-wide">
+    <h3>05 / Перенесённая логика исходного локального дашборда</h3>
+    <p class="detail-lead">Сохранённые заметки о рабочем интерфейсе от 22 октября 2026 года — это исторический снимок, а не текущие показатели.</p>
+    <div class="detail-stats">
+      <div class="detail-stat"><strong>10</strong><span>вакансий в списке на момент снимка</span></div>
+      <div class="detail-stat"><strong>13</strong><span>отправленных откликов на момент снимка</span></div>
+      <div class="detail-stat"><strong>24</strong><span>записи в счётчике «прошли»: 10 в списке + 13 отправлено + 1 остановлена</span></div>
+      <div class="detail-stat"><strong>7</strong><span>показатель «сегодня» по московскому календарному дню в том снимке</span></div>
+    </div>
+    <table class="detail-table"><thead><tr><th>Особенность интерфейса</th><th>Поведение, зафиксированное в проекте</th></tr></thead><tbody>
+      <tr><td>Переключатель «Вакансии | Отклики»</td><td>Вынесен наверх, закреплён при прокрутке, снабжён счётчиками.</td></tr>
+      <tr><td>KPI «Диалоги»</td><td>Считает только подтверждённые диалоги и приглашения с HH. Стадия «Ответ» показывается отдельно.</td></tr>
+      <tr><td>Проверка статуса HH</td><td>Статус не считается проверенным, если он не был снят после отправки отклика.</td></tr>
+      <tr><td>Качество данных</td><td>Сводка считает только проверенные статусы; источник ручной проверки виден явно.</td></tr>
+      <tr><td>Карточки рекомендаций</td><td>Пустые поля «Почему подходит» и «Проверить» скрываются; метрика «Совпадение», отсутствующая в матрице критериев, убрана.</td></tr>
+    </tbody></table>
+    <div class="detail-note"><strong>Операционный срез на 27 октября:</strong> в сохранённом статусе проекта зафиксированы более 1 000 собранных вакансий, 14 откликов и 2 текущих диалога. Эти значения показаны отдельно от исторического снимка 22 октября; страница не подключена к рабочей SQLite-базе и не обновляет их автоматически.</div>
+  </section>
+</div>
 
 <div class="section-head">
   <div><h2>Рабочая очередь</h2><p class="sub" style="margin-top:4px">Пример представления вакансий и откликов · записи обезличены</p></div>

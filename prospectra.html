@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<title>Prospectra — кейс · Максим Алексеев</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Кейс Максима Алексеева: система, которая находит B2B-клиентов и готовит для них коммерческие предложения. Кликабельный прототип, лендинг, пилот на реальной задаче.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: кейс-страница в фирменной тёмной гамме Prospectra; одна колонка ~72ch, сверху тезис и три входа (панель, лендинг, калькулятор), ниже доказательства по порядку процесса */
+:root{
+  --bg:#0b0f15; --surface:#121821; --line:#222c3a; --ink:#e7edf5; --muted:#93a0b2; --faint:#5d6b7e;
+  --blue:#4c8dff; --violet:#a87bff; --teal:#3fd6a0; --amber:#f2b94b;
+  --f-display:"Unbounded","Onest",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:880px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:56px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.12;letter-spacing:-.02em;margin:12px 0 18px;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--blue),var(--violet) 55%,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:-.01em;margin:0 0 16px;text-wrap:balance}
+p{margin:0}
+.lead{font-size:18px;color:var(--muted);max-width:64ch}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:28px}
+.door{display:grid;gap:6px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+.door:hover{border-color:var(--teal);transform:translateY(-2px)}
+.door b{font-size:16px}
+.door span{font-size:14px;color:var(--muted)}
+.door .go{font-family:var(--f-mono);font-size:12px;color:var(--teal)}
+.door.main{border-color:color-mix(in srgb,var(--teal) 55%,var(--line));background:linear-gradient(160deg,color-mix(in srgb,var(--teal) 10%,var(--surface)),var(--surface))}
+.note{font-size:13px;color:var(--faint)}
+.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.pain{border-top:2px solid var(--line);padding-top:12px}
+.pain b{display:block;margin-bottom:4px}
+.pain span{font-size:14px;color:var(--muted)}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--f-mono);color:var(--violet);font-size:14px;padding-top:2px}
+ol.steps b{display:block}
+ol.steps span{font-size:14px;color:var(--muted)}
+.role{display:grid;gap:10px;padding:0;margin:0;list-style:none}
+.role li{padding-left:22px;position:relative}
+.role li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--teal)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:500}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:color-mix(in srgb,var(--teal) 8%,transparent)}
+td:first-child{white-space:nowrap;font-weight:600}
+.pilot{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface)}
+.kpi b{display:block;font-family:var(--f-display);font-size:26px;font-weight:500;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--muted)}
+.bars{display:grid;gap:10px;margin-top:6px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 44px;gap:12px;align-items:center;font-size:14px}
+.bar .track{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--teal))}
+.bar .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.honest{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.honest div{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--surface)}
+.honest h3{margin:0 0 8px;font-size:14px;font-family:var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.honest .yes h3{color:var(--teal)} .honest .no h3{color:var(--amber)}
+.honest ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);display:grid;gap:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--f-mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:14px;color:var(--faint)}
+@media (max-width:520px){.bar{grid-template-columns:1fr 44px}.bar .track{grid-column:1/-1;order:3}}
+@media (prefers-reduced-motion:reduce){.door{transition:none}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Кейс · Prospectra · март – июнь 2026</div>
+  <h1>Система, которая <em>находит B2B-клиентов</em> и готовит для них коммерческие предложения</h1>
+  <p class="lead">Я спроектировал платформу, которая берёт на себя путь от «кому продавать» до готового КП, и собрал её кликабельный прототип с помощью Claude. Ниже: что за проблема, как устроен процесс, что можно открыть и потрогать, и что проверено на реальной задаче.</p>
+  <div class="doors">
+    <a class="door main" href="demo/prospectra-panel.html"><b>Панель управления</b><span>Кликабельный прототип из 9 экранов: профиль клиента, сбор базы, сигналы, ИИ-звонки, CRM, генератор КП.</span><span class="go">открыть прототип →</span></a>
+    <a class="door" href="demo/prospectra-lending.html"><b>Лендинг продукта</b><span>Как Prospectra объяснял себя клиенту: модули, процесс, рынок.</span><span class="go">открыть лендинг →</span></a>
+    <a class="door" href="demo/prospectra-kalkulyator-vyruchki.html"><b>Калькулятор выручки</b><span>Сколько отдел продаж добавит к выручке, если освободить менеджеров от поиска базы, обзвона и сборки КП. Сценарии +30 / +50 / +70%, окупаемость и сравнение с наймом.</span><span class="go">открыть калькулятор →</span></a>
+  </div>
+  <p class="note" style="margin-top:12px">Компании и цифры в прототипе демонстрационные. В публичной версии ответы ИИ заменены встроенными примерами, чтобы не публиковать ключ API.</p>
+</header>
+
+<section>
+  <h2>Проблема</h2>
+  <div class="pains">
+    <div class="pain"><b>Поиск клиентов</b><span>Менеджеры тратят большую часть дня на ручной поиск компаний и контактов вместо продаж.</span></div>
+    <div class="pain"><b>Холодные звонки</b><span>Самая нелюбимая часть работы: её откладывают, и воронка пустеет.</span></div>
+    <div class="pain"><b>Качество данных</b><span>Базы устаревают, звонки уходят по закрытым компаниям и мёртвым номерам.</span></div>
+    <div class="pain"><b>Коммерческие предложения</b><span>КП собирают вручную из сайта, каталогов и прайсов, и оно часто не попадает в задачу клиента.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Процесс, который закрывает платформа</h2>
+  <ol class="steps">
+    <li><div><b>Анализ компании</b><span>Сайт, каталог и презентации клиента → продукты, рынки, преимущества.</span></div></li>
+    <li><div><b>Профиль идеального покупателя (ICP)</b><span>Отрасли, роли покупателей, география, размер, ключевые слова.</span></div></li>
+    <li><div><b>Сбор базы</b><span>Реестры, каталоги, тендерные площадки, вакансии; обновление по расписанию.</span></div></li>
+    <li><div><b>Поиск ЛПР</b><span>Должность, имя, телефон, почта; статус проверки контакта.</span></div></li>
+    <li><div><b>Скоринг</b><span>Оценка каждой компании: горячий, тёплый, холодный лид.</span></div></li>
+    <li><div><b>Первый контакт</b><span>Звонок ИИ-агента: квалификация и выявление потребности, расшифровка разговора.</span></div></li>
+    <li><div><b>Коммерческое предложение</b><span>КП под конкретного лида на основе данных CRM и разговора.</span></div></li>
+    <li><div><b>Передача менеджеру</b><span>Горячий лид с историей, КП и рекомендацией следующего шага.</span></div></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Что сделал я</h2>
+  <ul class="role">
+    <li>Сформулировал проблему и разложил продажи B2B на 8 шагов, которые можно автоматизировать по отдельности.</li>
+    <li>Спроектировал модули и экраны платформы.</li>
+    <li>Собрал с Claude кликабельный прототип: React-приложение, где ИИ строит профиль клиента по сайту и генерирует КП под лида.</li>
+    <li>Сделал продающий лендинг, материалы для встреч, тарифы, финансовую модель окупаемости и калькулятор роста выручки для разговора с клиентом.</li>
+    <li>Исследовал рынок B2B Sales AI в России и провайдеров голосовых роботов, провёл переговоры о партнёрстве.</li>
+    <li>Проверил подход на реальной задаче производителя (ниже).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Прототип: 9 экранов</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Экран</th><th>Что можно сделать</th></tr></thead>
+    <tbody>
+      <tr><td>Dashboard</td><td>Метрики воронки, выручка pipeline, воронка от «собрано» до «выиграно», фоновые задачи.</td></tr>
+      <tr><td>ICP Analysis</td><td>Ввести сайт компании и получить профиль покупателя: отрасли с уверенностью, роли, ключевые слова, УТП.</td></tr>
+      <tr><td>Data Engine</td><td>Выбрать группы источников и запустить сбор базы.</td></tr>
+      <tr><td>Signal Feed</td><td>Сигналы готовности к покупке: тендеры, найм, расширение производства.</td></tr>
+      <tr><td>Search</td><td>Поиск по базе компаний со скорингом.</td></tr>
+      <tr><td>AI Calls</td><td>Кампании ИИ-обзвона, монитор звонков, карточка разговора.</td></tr>
+      <tr><td>CRM Pipeline</td><td>Канбан сделок, перенос лида между этапами.</td></tr>
+      <tr class="hl"><td>Proposals</td><td><b>Генератор КП:</b> выбрать лида из CRM → «Создать КП с AI» → вступление, анализ потребностей, решение, состав и цены, следующие шаги.</td></tr>
+      <tr><td>Analytics</td><td>Аналитика воронки и звонков. Плюс навигация по Cmd+K.</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:14px"><a href="demo/prospectra-panel.html">Открыть панель управления →</a></p>
+</section>
+
+<section>
+  <h2>Проверка на реальной задаче</h2>
+  <p class="lead" style="font-size:16px">Производитель изделий из полиэтилена из Нижнего Новгорода искал новых оптовых покупателей. Я прошёл с ним первые шаги процесса вручную, с ИИ-ассистентом: разобрал продуктовую линейку, выделил ниши, собрал и оценил базу, подготовил скрипты.</p>
+  <div class="pilot">
+    <div class="kpi"><b>155</b><span>компаний в базе с ЛПР и статусом проверки контактов</span></div>
+    <div class="kpi"><b>4</b><span>ниши под 4 группы продукции</span></div>
+    <div class="kpi"><b>3</b><span>скрипта холодных звонков под ниши</span></div>
+    <div class="kpi"><b>45+</b><span>вопросов в опроснике аудита отдела продаж</span></div>
+  </div>
+  <div class="bars" role="img" aria-label="Оценка ниш по шкале 0–100: 94, 81, 73, 62">
+    <div class="bar"><span>Крылья для грузовиков</span><div class="track"><div class="fill" style="width:94%"></div></div><span class="v">94</span></div>
+    <div class="bar"><span>Сани-волокуши</span><div class="track"><div class="fill" style="width:81%"></div></div><span class="v">81</span></div>
+    <div class="bar"><span>Садовые пруды</span><div class="track"><div class="fill" style="width:73%"></div></div><span class="v">73</span></div>
+    <div class="bar"><span>Хозинвентарь</span><div class="track"><div class="fill" style="width:62%"></div></div><span class="v">62</span></div>
+  </div>
+  <p class="note" style="margin-top:10px">Оценка ниши из 100 из таблицы пилота. Контакты в публичной версии не показываются.</p>
+</section>
+
+<section>
+  <h2>Честно о статусе</h2>
+  <div class="honest">
+    <div class="yes"><h3>Есть</h3><ul><li>продукт спроектирован и упакован</li><li>кликабельный прототип всех 9 экранов</li><li>ИИ-логика профиля клиента и КП в исходной версии</li><li>пилотная база для реального производителя</li><li>финмодель, исследования рынка, переговоры с провайдером</li></ul></div>
+    <div class="no"><h3>Нет</h3><ul><li>запущенной SaaS-платформы с клиентами</li><li>измеренных конверсий платформы</li><li>цифры на экранах прототипа и лендинга – демонстрационные цели</li></ul></div>
+  </div>
+  <p style="margin-top:14px;color:var(--muted)">Главный вывод для меня: автоматизацию продаж лучше начинать не с платформы целиком, а с одного шага цепочки на реальном клиенте.</p>
+</section>
+
+<section>
+  <h2>Инструменты</h2>
+  <div class="tags"><span class="tag">Claude · Artifacts</span><span class="tag">Claude API</span><span class="tag">React</span><span class="tag">Recharts</span><span class="tag">three.js</span><span class="tag">Google Sheets · финмодель</span><span class="tag">исследование рынка</span></div>
+</section>
+
+<footer>
+  <span>Максим Алексеев · автоматизация бизнес-процессов</span>
+  <span><a href="./">Портфолио</a> · Telegram <span style="color:var(--muted)">@Fevralsky</span></span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospectra — B2B Sales AI</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --bg:#0d1117;--bg-card:rgba(22,27,34,.78);--border:rgba(48,54,61,.9);
+  --text:#e6edf3;--muted:#8b949e;--dim:#484f58;
+  --blue:#3b82f6;--teal:#34d399;--purple:#a855f7;--amber:#fbbf24;--red:#f87171;
+  --bg:rgba(59,130,246,.25);--tg:rgba(52,211,153,.25);--pg:rgba(168,85,247,.25);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#0d1117}::-webkit-scrollbar-thumb{background:#30363d;border-radius:3px}
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.page{position:relative;z-index:1}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.o1{width:700px;height:700px;background:#3b82f6;top:-250px;left:-250px;opacity:.08}
+.o2{width:600px;height:600px;background:#a855f7;bottom:-200px;right:-200px;opacity:.07}
+.o3{width:400px;height:400px;background:#34d399;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.04}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(13,17,23,.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(48,54,61,.9)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ni{width:34px;height:34px;background:linear-gradient(135deg,#3b82f6,#a855f7);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;box-shadow:0 0 28px rgba(59,130,246,.3)}
+.nn{font-size:17px;font-weight:700;color:#e6edf3;letter-spacing:-.03em}
+.nt{font-size:10px;color:#8b949e;letter-spacing:.1em;text-transform:uppercase}
+.nlinks{display:flex;gap:28px}
+.nlinks a{color:#8b949e;text-decoration:none;font-size:14px;transition:color .2s}
+.nlinks a:hover{color:#e6edf3}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;border:none;outline:none;font-family:inherit}
+.bg{background:transparent;color:#8b949e;border:1px solid rgba(48,54,61,.9)}
+.bg:hover{color:#e6edf3;background:rgba(255,255,255,.03)}
+.bp{background:#3b82f6;color:#fff;box-shadow:0 0 28px rgba(59,130,246,.3)}
+.bp:hover{background:#2563eb;box-shadow:0 0 40px rgba(59,130,246,.5);transform:translateY(-1px)}
+.bt{background:transparent;color:#34d399;border:1px solid rgba(52,211,153,.35)}
+.bt:hover{background:rgba(52,211,153,.08)}
+.bl{padding:12px 30px;font-size:16px;border-radius:10px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 40px 80px;position:relative}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:100px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);font-size:12px;font-weight:600;color:#3b82f6;letter-spacing:.04em;margin-bottom:28px;animation:fadeUp .7s ease both}
+.bdot{width:6px;height:6px;border-radius:50%;background:#3b82f6;animation:blink 2s infinite}
+h1{font-size:clamp(36px,6vw,78px);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:24px;animation:fadeUp .7s ease .1s both}
+.gr{background:linear-gradient(135deg,#3b82f6 0%,#a855f7 50%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gm 4s ease infinite}
+.hs{font-size:clamp(15px,2vw,19px);color:#8b949e;max-width:560px;margin:0 auto 40px;line-height:1.7;animation:fadeUp .7s ease .2s both}
+.hb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;animation:fadeUp .7s ease .3s both}
+.hp{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s ease .4s both}
+.pill{display:flex;align-items:center;gap:6px;font-size:12px;color:#484f58}
+.pd{width:5px;height:5px;border-radius:50%}
+.sarr{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:fadeUp .7s ease .6s both}
+.sarr span{font-size:11px;color:#484f58;letter-spacing:.08em;text-transform:uppercase}
+.sar{width:22px;height:22px;border-right:2px solid #484f58;border-bottom:2px solid #484f58;transform:rotate(45deg);animation:bounce .8s ease-in-out infinite alternate}
+
+/* SECTIONS */
+section{padding:80px 48px}
+.mx{max-width:1100px;margin:0 auto}
+.sh{text-align:center;margin-bottom:52px}
+.sl{display:inline-block;font-size:11px;font-weight:600;color:#3b82f6;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.st{font-size:clamp(26px,4vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:14px}
+.ss{font-size:16px;color:#8b949e;max-width:540px;margin:0 auto}
+.divl{height:1px;background:linear-gradient(90deg,transparent,rgba(48,54,61,.9),transparent);margin:0 48px}
+
+/* STATS */
+.stats{padding:60px 48px 40px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sc{background:rgba(22,27,34,.78);border:1px solid rgba(48,54,61,.9);border-radius:16px;padding:24px 20px;text-align:center;backdrop-filter:blur(20px);transition:all .3s;cursor:default;position:relative;overflow:hidden}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--ac,#3b82f6),transparent);opacity:0;transition:opacity .3s}
+.sc:hover{transform:translateY(-5px);border-color:var(--ac,#3b82f6);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.sc:hover::before{opacity:1}
+.si{font-size:26px;margin-bottom:10px}
+.sv{font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:5px}
+.slb{font-size:13px;color:#8b949e;margin-bottom:6px}
+.sd{font-size:11px;color:#34d399;font-weight:500}
+
+/* FEATURES */
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fc{background:rgba(22,27,34,.78);border:1px solid rgba(48,54,61,.9);border-radius:16px;padding:28px 24px;backdrop-filter:blur(20px);transition:transform .2s,border-color .2s,box-shadow .2s;cursor:default;position:relative;overflow:hidden}
+.fc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c,#3b82f6),transparent);opacity:0;transition:opacity .3s}
+.fc:hover{border-color:var(--c,#3b82f6);box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.fc:hover::after{opacity:1}
+.fi{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.fn{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.ft{font-size:17px;font-weight:700;margin-bottom:10px}
+.fd{font-size:14px;color:#8b949e;line-height:1.7}
+
+/* HOW */
+.hg{display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.hg::before{content:'';position:absolute;top:27px;left:calc(16.67% + 20px);right:calc(16.67% + 20px);height:1px;background:linear-gradient(90deg,#3b82f6,#a855f7,#34d399)}
+.step{text-align:center;padding:0 28px;position:relative;z-index:1}
+.stn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 20px;border:2px solid;background:#0d1117}
+.stt{font-size:17px;font-weight:700;margin-bottom:10px}
+.std{font-size:14px;color:#8b949e;line-height:1.7}
+
+/* SEGMENTS */
+.segr{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.seg{background:rgba(22,27,34,.78);border:1px solid rgba(48,54,61,.9);border-radius:14px;padding:20px;backdrop-filter:blur(20px);transition:all .3s;cursor:default}
+.seg:hover{transform:translateY(-4px);border-color:var(--c,#3b82f6)}
+.sgi{font-size:28px;margin-bottom:10px}
+.sgn{font-size:14px;font-weight:700;margin-bottom:3px}
+.sgc{font-size:12px;color:#8b949e}
+.sgs{font-size:19px;font-weight:700;margin-top:8px}
+
+/* TESTIMONIALS */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc{background:rgba(22,27,34,.78);border:1px solid rgba(48,54,61,.9);border-radius:16px;padding:24px;backdrop-filter:blur(20px)}
+.tq{font-size:15px;color:#8b949e;line-height:1.7;margin-bottom:20px;font-style:italic}
+.tq::before{content:'"';font-size:32px;color:#3b82f6;line-height:0;vertical-align:-.4em;margin-right:4px}
+.ta{display:flex;align-items:center;gap:10px}
+.tav{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff}
+.tnm{font-size:13px;font-weight:600}
+.trl{font-size:12px;color:#484f58}
+
+/* CTA */
+.ctaw{max-width:700px;margin:0 auto}
+.ctab{background:rgba(22,27,34,.78);border:1px solid rgba(48,54,61,.9);border-radius:24px;padding:60px 48px;text-align:center;backdrop-filter:blur(20px);position:relative;overflow:hidden}
+.ctab::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.12) 0%,transparent 65%);pointer-events:none}
+.ctab h2{font-size:36px;font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+.ctab p{color:#8b949e;font-size:16px;margin-bottom:32px;line-height:1.7}
+.er{display:flex;gap:10px;max-width:420px;margin:0 auto 18px}
+.er input{flex:1;padding:12px 16px;background:rgba(22,27,34,.8);border:1px solid rgba(48,54,61,.9);border-radius:10px;color:#e6edf3;font-size:14px;outline:none;transition:border-color .2s;font-family:inherit}
+.er input:focus{border-color:#3b82f6}
+.er input::placeholder{color:#484f58}
+.cf{font-size:12px;color:#484f58}
+
+/* FOOTER */
+footer{padding:28px 48px;border-top:1px solid rgba(48,54,61,.9);display:flex;justify-content:space-between;align-items:center}
+footer .fl{font-size:13px;color:#484f58}
+footer .fr{display:flex;gap:20px}
+footer .fr a{font-size:13px;color:#484f58;text-decoration:none;transition:color .2s}
+footer .fr a:hover{color:#8b949e}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(59,130,246,.5)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(59,130,246,0)}}
+@keyframes gm{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes bounce{from{transform:rotate(45deg) translateY(0)}to{transform:rotate(45deg) translateY(4px)}}
+@keyframes spin2{to{transform:rotate(360deg)}}
+.ai{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.ai.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:14px 20px}.nlinks{display:none}
+  section{padding:60px 20px}.stats{padding:50px 20px}
+  .sg,.fg,.tg,.segr{grid-template-columns:repeat(2,1fr)}
+  .hg{grid-template-columns:1fr;gap:32px}.hg::before{display:none}
+  .ctab{padding:40px 24px}
+  footer{flex-direction:column;gap:14px;text-align:center}
+}
+@media(max-width:600px){.sg,.fg,.tg,.segr{grid-template-columns:1fr}.er{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+<canvas id="bg"></canvas>
+
+<div class="page">
+
+<nav>
+  <a href="#" class="nl">
+    <div class="ni">⚡</div>
+    <div><div class="nn">Prospectra</div><div class="nt">B2B Sales AI</div></div>
+  </a>
+  <div class="nlinks">
+    <a href="#features">Возможности</a>
+    <a href="#how">Как работает</a>
+    <a href="#segments">Рынок</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#cta">Цены</a>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a href="#" class="btn bg">Войти</a>
+    <a href="#cta" class="btn bp">→ Попробовать</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge"><span class="bdot"></span>AI-платформа нового поколения</div>
+  <h1>Увеличьте продажи на<br><span class="gr">30–50%</span><br>без холодных звонков</h1>
+  <p class="hs">AI-система лидогенерации для B2B в России и СНГ. Собираем базу из 50+ источников, звоним, квалифицируем — вы просто закрываете сделки.</p>
+  <div class="hb">
+    <a href="#cta" class="btn bp bl">→ Получить первых лидов</a>
+    <a href="#how" class="btn bt bl">▷ Посмотреть как работает</a>
+  </div>
+  <div class="hp">
+    <div class="pill"><div class="pd" style="background:#34d399"></div>Лиды за 24 часа</div>
+    <div class="pill"><div class="pd" style="background:#3b82f6"></div>Без карты</div>
+    <div class="pill"><div class="pd" style="background:#a855f7"></div>50+ источников</div>
+    <div class="pill"><div class="pd" style="background:#fbbf24"></div>Гарантия возврата</div>
+  </div>
+  <div class="sarr"><span>Прокрутить</span><div class="sar"></div></div>
+</section>
+
+<section class="stats">
+  <div class="mx"><div class="sg">
+    <div class="sc ai" style="--ac:#3b82f6"><div class="si">🏭</div><div class="sv" style="color:#3b82f6" data-count="120000" data-sfx="+">0</div><div class="slb">Компаний в базе TAM</div><div class="sd">↑ Россия + СНГ</div></div>
+    <div class="sc ai" style="--ac:#34d399"><div class="si">⚡</div><div class="sv" style="color:#34d399" data-count="24">0</div><div class="slb">Часов до первых лидов</div><div class="sd">↑ Запуск сегодня</div></div>
+    <div class="sc ai" style="--ac:#a855f7"><div class="si">🤖</div><div class="sv" style="color:#a855f7" data-count="50" data-sfx="+">0</div><div class="slb">Источников данных</div><div class="sd">↑ Обновляется 24/7</div></div>
+    <div class="sc ai" style="--ac:#fbbf24"><div class="si">📈</div><div class="sv" style="color:#fbbf24" data-count="50" data-sfx="%">0</div><div class="slb">Рост продаж за 3 мес.</div><div class="sd">↑ Средний показатель</div></div>
+  </div></div>
+</section>
+
+<div class="divl"></div>
+
+<section id="features">
+  <div class="mx">
+    <div class="sh">
+      <div class="sl">🛠 Возможности платформы</div>
+      <h2 class="st">Всё для <span class="gr">роста продаж</span></h2>
+      <p class="ss">Один инструмент заменяет весь отдел лидогенерации — от сбора базы до закрытия сделки</p>
+    </div>
+    <div class="fg">
+      <div class="fc ai" style="--c:#3b82f6"><div class="fi" style="background:rgba(59,130,246,.1)">💾</div><div class="fn" style="color:#3b82f6">01 · Data Engine</div><div class="ft">Базы из 50+ источников</div><div class="fd">ЕГРЮЛ, 2GIS, Flagma, HH, тендеры, LinkedIn. Автоматический сбор и обновление каждые 24 часа по всей России и СНГ.</div></div>
+      <div class="fc ai" style="--c:#34d399"><div class="fi" style="background:rgba(52,211,153,.1)">✨</div><div class="fn" style="color:#34d399">02 · AI Assistant</div><div class="ft">AI вместо SDR</div><div class="fd">Полностью заменяет холодный обзвон. Звонит, ведёт диалог, выявляет интерес и передаёт горячих лидов менеджерам.</div></div>
+      <div class="fc ai" style="--c:#a855f7"><div class="fi" style="background:rgba(168,85,247,.1)">📧</div><div class="fn" style="color:#a855f7">03 · Auto КП</div><div class="ft">AI генерирует КП</div><div class="fd">Персонализированное коммерческое предложение за 30 секунд. Адаптируется под нужды и профиль каждого клиента.</div></div>
+      <div class="fc ai" style="--c:#fbbf24"><div class="fi" style="background:rgba(251,191,36,.1)">📡</div><div class="fn" style="color:#fbbf24">04 · Signal Feed</div><div class="ft">Сигналы покупки</div><div class="fd">Мониторинг тендеров, найма SDR, расширения производств и импорта оборудования — узнаёте раньше конкурентов.</div></div>
+      <div class="fc ai" style="--c:#f87171"><div class="fi" style="background:rgba(248,113,113,.1)">🎯</div><div class="fn" style="color:#f87171">05 · ICP Builder</div><div class="ft">Профиль клиента AI</div><div class="fd">Сканирует ваш сайт и строит ICP. Все дальнейшие поиски точно настроены под вашу нишу и идеального покупателя.</div></div>
+      <div class="fc ai" style="--c:#34d399"><div class="fi" style="background:rgba(52,211,153,.1)">🗺</div><div class="fn" style="color:#34d399">06 · CRM Pipeline</div><div class="ft">Встроенная CRM</div><div class="fd">Kanban-доска, история звонков, статусы сделок. Интеграция с Битрикс24, amoCRM и Мегаплан из коробки.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divl"></div>
+
+<section id="how">
+  <div class="mx">
+    <div class="sh">
+      <div class="sl">⚙ Как работает</div>
+      <h2 class="st">От нуля до <span class="gr">горячих лидов</span> за 24 часа</h2>
+    </div>
+    <div class="hg">
+      <div class="step ai"><div class="stn" style="color:#3b82f6;border-color:#3b82f6">1</div><div class="stt">Анализ вашего бизнеса</div><div class="std">AI сканирует сайт, строит ICP-профиль и настраивает фильтры поиска под нишу, географию и средний чек.</div></div>
+      <div class="step ai"><div class="stn" style="color:#a855f7;border-color:#a855f7">2</div><div class="stt">Сбор и квалификация</div><div class="std">Data Engine парсит 50+ источников. AI-ассистент сам звонит каждой компании и выявляет реальный спрос.</div></div>
+      <div class="step ai"><div class="stn" style="color:#34d399;border-color:#34d399">3</div><div class="stt">Вы закрываете сделки</div><div class="std">Получаете горячих лидов с готовым КП. Менеджеры работают только с теми, кто уже заинтересован и готов платить.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divl"></div>
+
+<section id="segments">
+  <div class="mx">
+    <div class="sh">
+      <div class="sl">📊 Рынок</div>
+      <h2 class="st">120 000+ компаний в <span class="gr">8 сегментах</span></h2>
+      <p class="ss">Каждый сегмент с высокой интенсивностью B2B продаж и готовностью платить за качественную лидогенерацию</p>
+    </div>
+    <div class="segr">
+      <div class="seg ai" style="--c:#3b82f6"><div class="sgi">💻</div><div class="sgn">IT / SaaS</div><div class="sgc">~15 000 компаний</div><div class="sgs" style="color:#3b82f6">★★★★★</div></div>
+      <div class="seg ai" style="--c:#34d399"><div class="sgi">🏭</div><div class="sgn">Производство</div><div class="sgc">~25 000 компаний</div><div class="sgs" style="color:#34d399">★★★★★</div></div>
+      <div class="seg ai" style="--c:#a855f7"><div class="sgi">📦</div><div class="sgn">Опт / Дистрибуция</div><div class="sgc">~20 000 компаний</div><div class="sgs" style="color:#a855f7">★★★★★</div></div>
+      <div class="seg ai" style="--c:#fbbf24"><div class="sgi">🚚</div><div class="sgn">Логистика</div><div class="sgc">~12 000 компаний</div><div class="sgs" style="color:#fbbf24">★★★★</div></div>
+      <div class="seg ai" style="--c:#f87171"><div class="sgi">💰</div><div class="sgn">Финансы / Страхование</div><div class="sgc">~8 000 компаний</div><div class="sgs" style="color:#f87171">★★★★★</div></div>
+      <div class="seg ai" style="--c:#3b82f6"><div class="sgi">🏗</div><div class="sgn">Строительство</div><div class="sgc">~18 000 компаний</div><div class="sgs" style="color:#3b82f6">★★★★</div></div>
+      <div class="seg ai" style="--c:#34d399"><div class="sgi">📣</div><div class="sgn">Маркетинг / Агентства</div><div class="sgc">~10 000 компаний</div><div class="sgs" style="color:#34d399">★★★★</div></div>
+      <div class="seg ai" style="--c:#a855f7"><div class="sgi">👥</div><div class="sgn">HR / EdTech B2B</div><div class="sgc">~8 000 компаний</div><div class="sgs" style="color:#a855f7">★★★</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divl"></div>
+
+<section id="reviews">
+  <div class="mx">
+    <div class="sh">
+      <div class="sl">💬 Отзывы клиентов</div>
+      <h2 class="st">Результаты говорят <span class="gr">сами за себя</span></h2>
+    </div>
+    <div class="tg">
+      <div class="tc ai"><p class="tq">За первые 2 недели получили 34 квалифицированных лида из машиностроения. AI сам нашёл контакты, позвонил и передал нам горячие заявки. Это магия.</p><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#3b82f6,#a855f7)">АС</div><div><div class="tnm">Алексей Смирнов</div><div class="trl">Директор по продажам, ЧПУ Технологии</div></div></div></div>
+      <div class="tc ai"><p class="tq">Мы тратили 80% времени менеджеров на холодный поиск. Prospectra полностью убрала эту боль. Теперь команда работает только с готовыми лидами.</p><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#34d399,#3b82f6)">МК</div><div><div class="tnm">Мария Козлова</div><div class="trl">CEO, МеталлСервис Поволжье</div></div></div></div>
+      <div class="tc ai"><p class="tq">ROI за первый квартал — 380%. Рекомендую всем, кто работает в B2B промышленности и устал от ручного поиска. Окупается за 2 недели.</p><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#a855f7,#f87171)">ДВ</div><div><div class="tnm">Дмитрий Воронов</div><div class="trl">Коммерческий директор, ГК ИнжТех</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divl"></div>
+
+<section id="cta" style="padding:80px 48px 120px">
+  <div class="ctaw">
+    <div class="ctab ai">
+      <div class="badge" style="margin-bottom:20px"><span class="bdot"></span>Начните сегодня</div>
+      <h2>Готовы к <span class="gr">росту?</span></h2>
+      <p>Получите первых квалифицированных лидов уже завтра.<br>Без карты. Без обязательств. 30 дней бесплатно.</p>
+      <div class="er">
+        <input id="einp" type="email" placeholder="ваш@email.com">
+        <button class="btn bp" id="sbtn" onclick="doSubmit()">→ Начать</button>
+      </div>
+      <div class="cf">✓ Бесплатный период 30 дней &nbsp;·&nbsp; ✓ Гарантия возврата &nbsp;·&nbsp; ✓ Поддержка на русском</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">© 2026 Prospectra · hello@prospectra.ai</div>
+  <div class="fr">
+    <a href="#">Политика</a>
+    <a href="#">Условия</a>
+    <a href="#">Контакты</a>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var canvas=document.getElementById('bg');
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setClearColor(0x000000,0);
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,600);
+  camera.position.z=54;
+  var mouse={x:0,y:0,tx:0,ty:0};
+  window.addEventListener('mousemove',function(e){
+    mouse.x=(e.clientX/innerWidth-0.5)*2;
+    mouse.y=-(e.clientY/innerHeight-0.5)*2;
+  });
+  var P=[new THREE.Color(0x3b82f6),new THREE.Color(0x34d399),new THREE.Color(0xa855f7),new THREE.Color(0xfbbf24)];
+
+  // Stars
+  (function(){
+    var N=2000,pos=new Float32Array(N*3),col=new Float32Array(N*3);
+    var ext=P.concat([new THREE.Color(0xffffff)]);
+    for(var i=0;i<N;i++){
+      var r=130+Math.random()*200,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);
+      pos[i*3]=r*Math.sin(p)*Math.cos(t);pos[i*3+1]=r*Math.sin(p)*Math.sin(t);pos[i*3+2]=r*Math.cos(p);
+      var c=ext[~~(Math.random()*ext.length)];col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;
+    }
+    var geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+    var pts=new THREE.Points(geo,new THREE.PointsMaterial({size:.45,vertexColors:true,transparent:true,opacity:.65}));
+    pts.userData.isStar=true;
+    scene.add(pts);
+  })();
+
+  // Globe
+  var globe=new THREE.Group();scene.add(globe);
+  var R=20,N=100,nodes=[],PHI=Math.PI*(3-Math.sqrt(5));
+  for(var i=0;i<N;i++){var y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),a=PHI*i;nodes.push(new THREE.Vector3(Math.cos(a)*r*R,y*R,Math.sin(a)*r*R));}
+  var nodeMeta=[];
+  nodes.forEach(function(pos,i){
+    var geo=new THREE.SphereGeometry(.22+Math.random()*.12,8,8);
+    var mat=new THREE.MeshBasicMaterial({color:P[i%4]});
+    var m=new THREE.Mesh(geo,mat);m.position.copy(pos);globe.add(m);
+    nodeMeta.push({mesh:m,off:Math.random()*Math.PI*2});
+  });
+  var edgePairs=[],lp=[],lc=[];
+  for(var i=0;i<nodes.length;i++){for(var j=i+1;j<nodes.length;j++){
+    if(nodes[i].distanceTo(nodes[j])<9.5){
+      lp.push(nodes[i].x,nodes[i].y,nodes[i].z,nodes[j].x,nodes[j].y,nodes[j].z);
+      var c=P[~~(Math.random()*4)];lc.push(c.r,c.g,c.b,c.r,c.g,c.b);
+      edgePairs.push([nodes[i].clone(),nodes[j].clone()]);
+    }
+  }}
+  var lGeo=new THREE.BufferGeometry();
+  lGeo.setAttribute('position',new THREE.Float32BufferAttribute(lp,3));
+  lGeo.setAttribute('color',new THREE.Float32BufferAttribute(lc,3));
+  globe.add(new THREE.LineSegments(lGeo,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.14})));
+  globe.add(new THREE.Mesh(new THREE.SphereGeometry(R*.82,32,32),new THREE.MeshBasicMaterial({color:0x1a2840,transparent:true,opacity:.1})));
+  globe.add(new THREE.Mesh(new THREE.SphereGeometry(R*1.02,24,24),new THREE.MeshBasicMaterial({color:0x3b82f6,wireframe:true,transparent:true,opacity:.03})));
+  var rings=[];
+  [{r:R+3,c:P[1],rx:Math.PI/2,ry:0,sp:.22},{r:R+5.5,c:P[0],rx:Math.PI/4,ry:Math.PI/5,sp:-.15},{r:R+4,c:P[2],rx:Math.PI/6,ry:Math.PI/3,sp:.10}].forEach(function(cfg){
+    var geo=new THREE.TorusGeometry(cfg.r,.075,16,128);
+    var mat=new THREE.MeshBasicMaterial({color:cfg.c,transparent:true,opacity:.38});
+    var ring=new THREE.Mesh(geo,mat);ring.rotation.set(cfg.rx,cfg.ry,0);ring.userData.sp=cfg.sp;
+    globe.add(ring);rings.push(ring);
+  });
+  for(var i=0;i<12;i++){
+    var dir=new THREE.Vector3(Math.cos(i*.524)*Math.cos(i*.419),Math.sin(i*.419),Math.sin(i*.524)).normalize();
+    var s=dir.clone().multiplyScalar(R*.9),e=dir.clone().multiplyScalar(R+10+Math.random()*20);
+    globe.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([s,e]),new THREE.LineBasicMaterial({color:P[i%4],transparent:true,opacity:.18})));
+  }
+  var flows=[];
+  for(var i=0;i<30;i++){
+    if(!edgePairs.length)break;
+    var geo=new THREE.SphereGeometry(.15,6,6),mat=new THREE.MeshBasicMaterial({color:P[i%4]});
+    var m=new THREE.Mesh(geo,mat);var edge=edgePairs[~~(Math.random()*edgePairs.length)];
+    globe.add(m);flows.push({mesh:m,edge:edge,t:Math.random(),spd:.004+Math.random()*.009});
+  }
+
+  // Crystals
+  var crystals=[];
+  [[-42,20,-18,3.2,0],[44,-14,-16,2.6,2],[-32,-26,10,2.2,1],[38,24,-12,2.8,3],[-24,10,-30,1.9,0],[30,-30,14,2.4,2]].forEach(function(d,i){
+    var geo=new THREE.IcosahedronGeometry(d[3],0);
+    var mat=new THREE.MeshBasicMaterial({color:P[d[4]],wireframe:true,transparent:true,opacity:.44});
+    var m=new THREE.Mesh(geo,mat);m.position.set(d[0],d[1],d[2]);
+    m.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI);
+    scene.add(m);crystals.push({mesh:m,fy:d[1],fo:i*1.1,rx:.003+Math.random()*.004,ry:.002+Math.random()*.003});
+  });
+
+  // Mini cubes
+  var cubes=[];
+  for(var i=0;i<6;i++){
+    var geo=new THREE.BoxGeometry(1.2,1.2,1.2),mat=new THREE.MeshBasicMaterial({color:P[i%4],wireframe:true,transparent:true,opacity:.3});
+    var m=new THREE.Mesh(geo,mat),orbitR=R+8+i*2,angle=(i/6)*Math.PI*2;
+    m.position.set(Math.cos(angle)*orbitR,Math.sin(angle*.5)*6,Math.sin(angle)*orbitR);
+    scene.add(m);cubes.push({mesh:m,angle:angle,orbitR:orbitR,speed:.006+i*.001});
+  }
+
+  // Bursts
+  var bursts=[];
+  window.addEventListener('click',function(e){
+    var tag=e.target.tagName.toUpperCase();
+    if(['A','BUTTON','INPUT'].indexOf(tag)>-1)return;
+    var bx=(e.clientX/innerWidth-0.5)*80,by=-(e.clientY/innerHeight-0.5)*50,parts=[];
+    for(var i=0;i<18;i++){
+      var geo=new THREE.SphereGeometry(.12,6,6),mat=new THREE.MeshBasicMaterial({color:P[~~(Math.random()*4)],transparent:true,opacity:.9});
+      var m=new THREE.Mesh(geo,mat);m.position.set(bx,by,28);scene.add(m);
+      parts.push({m:m,life:1,vx:(Math.random()-.5)*2.5,vy:(Math.random()-.5)*2.5,vz:(Math.random()-.5)*1.5});
+    }
+    bursts.push(parts);
+  });
+
+  var clk=new THREE.Clock();
+  (function animate(){
+    requestAnimationFrame(animate);
+    var t=clk.getElapsedTime();
+    globe.rotation.y=t*.11;globe.rotation.x=Math.sin(t*.07)*.07;
+    rings.forEach(function(r){r.rotation.z+=r.userData.sp*.016;});
+    nodeMeta.forEach(function(n){var s=1+Math.sin(t*1.8+n.off)*.18;n.mesh.scale.setScalar(s);});
+    flows.forEach(function(f){
+      f.t+=f.spd;if(f.t>1){f.t=0;f.edge=edgePairs[~~(Math.random()*edgePairs.length)];}
+      f.mesh.position.lerpVectors(f.edge[0],f.edge[1],f.t);
+    });
+    crystals.forEach(function(c){c.mesh.rotation.x+=c.rx;c.mesh.rotation.y+=c.ry;c.mesh.position.y=c.fy+Math.sin(t*.38+c.fo)*2.2;});
+    cubes.forEach(function(c){
+      c.angle+=c.speed;c.mesh.position.x=Math.cos(c.angle)*c.orbitR;
+      c.mesh.position.z=Math.sin(c.angle)*c.orbitR;c.mesh.position.y=Math.sin(c.angle*.5)*6;
+      c.mesh.rotation.x+=.008;c.mesh.rotation.y+=.01;
+    });
+    for(var bi=bursts.length-1;bi>=0;bi--){
+      var alive=false,parts=bursts[bi];
+      for(var i=parts.length-1;i>=0;i--){
+        var p=parts[i];p.life-=.04;
+        if(p.life>0){alive=true;p.m.position.x+=p.vx*.5;p.m.position.y+=p.vy*.5;p.m.position.z+=p.vz*.5;p.m.material.opacity=p.life;}
+        else{scene.remove(p.m);parts.splice(i,1);}
+      }
+      if(!alive)bursts.splice(bi,1);
+    }
+    scene.children.forEach(function(c){if(c.userData.isStar){c.rotation.y=t*.006;c.rotation.x=t*.003;}});
+    mouse.tx+=(mouse.x*6-mouse.tx)*.04;mouse.ty+=(mouse.y*4-mouse.ty)*.04;
+    camera.position.x=mouse.tx;camera.position.y=mouse.ty;camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+  })();
+
+  window.addEventListener('resize',function(){
+    camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);
+  });
+})();
+
+// Scroll animations
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add('vis');},i*70);});},{threshold:.12});
+document.querySelectorAll('.ai').forEach(function(el){io.observe(el);});
+
+// Counters
+var cio=new IntersectionObserver(function(entries){entries.forEach(function(entry){
+  if(!entry.isIntersecting)return;var el=entry.target,target=+el.dataset.count,sfx=el.dataset.sfx||'',cur=0,step=target/55;
+  var timer=setInterval(function(){cur=Math.min(cur+step,target);var n=Math.floor(cur);el.textContent=(n>=1000?n.toLocaleString('ru'):n)+sfx;if(cur>=target)clearInterval(timer);},16);
+  cio.unobserve(el);
+});},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+
+// Card tilt
+document.querySelectorAll('.fc,.sc,.seg,.tc').forEach(function(card){
+  card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='perspective(700px) rotateX('+((-y*9))+'deg) rotateY('+((x*9))+'deg) translateY(-6px)';});
+  card.addEventListener('mouseleave',function(){card.style.transform='';});
+});
+
+// Submit
+function doSubmit(){
+  var inp=document.getElementById('einp'),btn=document.getElementById('sbtn');
+  if(!inp.value.includes('@')){inp.style.borderColor='#f87171';inp.focus();setTimeout(function(){inp.style.borderColor='';},1600);return;}
+  btn.textContent='⟳ Отправка...';btn.disabled=true;
+  setTimeout(function(){
+    btn.textContent='✓ Отправлено!';btn.style.background='#34d399';btn.style.boxShadow='0 0 28px rgba(52,211,153,.4)';inp.value='';
+    setTimeout(function(){btn.textContent='→ Начать';btn.style.background='';btn.style.boxShadow='';btn.disabled=false;},3000);
+  },1300);
+}
+</script>
+</body>
+</html>

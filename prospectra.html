@@ -76,6 +76,16 @@ td:first-child{white-space:nowrap;font-weight:600}
 footer{border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:14px;color:var(--faint)}
 @media (max-width:520px){.bar{grid-template-columns:1fr 44px}.bar .track{grid-column:1/-1;order:3}}
 @media (prefers-reduced-motion:reduce){.door{transition:none}}
+/* На мобильных сетки кейса повторяют ленту основного портфолио */
+@media (max-width:739px){
+  .doors,
+  .pains,
+  .pilot,
+  .honest{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 
 <div class="wrap">

@@ -1,42 +1,490 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1017">
-<meta name="description" content="UBER STROY — оператор организованных рабочих команд для строительства, дорог, сетей и благоустройства.">
-<meta property="og:title" content="UBER STROY — оператор рабочих команд"><meta property="og:description" content="Рабочая сила. По запросу. Под контролем.">
-<title>UBER STROY — оператор организованных рабочих команд</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090c10">
+<meta name="description" content="UBER STROY — оператор организованных рабочих команд. Строительство, дороги, инженерные сети и благоустройство.">
+<meta property="og:title" content="UBER STROY — команды в движении">
+<meta property="og:description" content="Рабочая сила. По запросу. Под контролем.">
+<meta property="og:type" content="website">
+<title>UBER STROY — Workforce Operations</title>
 <style>
-:root{--bg:#0b1017;--p:#131c26;--p2:#18232f;--l:#2a3744;--t:#f4f6f8;--m:#a0acb8;--o:#ff6a00;--o2:#ff914d;--max:1160px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% 0,rgba(255,106,0,.13),transparent 25rem),var(--bg);color:var(--t);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.accent{color:var(--o)}.muted{color:var(--m)}header{position:sticky;top:0;z-index:5;background:rgba(11,16,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid #26313d}nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:950;letter-spacing:.06em;font-size:16px;display:flex;align-items:center;gap:10px}.brand em{font-style:normal;color:var(--o)}.mark{width:34px;height:34px;border:1px solid #394653;border-radius:10px;background:linear-gradient(145deg,#263441,#0c121a);display:grid;place-items:center;color:var(--o);font-weight:950}.links{display:flex;align-items:center;gap:20px;font-size:12px;color:#c0cad3}.links a:hover{color:var(--o)}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;background:var(--o);color:#160d07;font-weight:850;font-size:12px;box-shadow:0 10px 25px #ff6a002e}.outline{background:transparent;border:1px solid #485766;color:var(--t);box-shadow:none}.menu{display:none;background:#15202b;color:white;border:1px solid #3a4855;border-radius:9px;padding:8px 12px;font-size:17px}.eyebrow{color:var(--o);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(42px,6vw,72px);line-height:.99;letter-spacing:-.055em;margin:19px 0 22px;font-weight:950}h2{font-size:clamp(30px,4vw,46px);line-height:1.06;letter-spacing:-.045em;margin:13px 0}.lead{font-size:17px;color:#bdc7d0;max-width:650px;margin:0 0 28px}.actions{display:flex;gap:11px;flex-wrap:wrap}.hero{padding:76px 0 50px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.art{border:1px solid #344250;border-radius:28px;min-height:350px;background:linear-gradient(145deg,#182431,#0d141d);display:grid;place-items:center;position:relative;overflow:hidden}.art:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,#ff6a003d,transparent 68%)}.monogram{position:relative;font-weight:950;font-size:clamp(100px,17vw,190px);letter-spacing:-.1em;line-height:1;background:linear-gradient(115deg,#fff 0%,#aeb9c4 42%,#ff6a00 43%,#ff9b58 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 18px 55px #0008}.art small{position:absolute;bottom:18px;left:22px;right:22px;color:#94a2af;font-size:9px;letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between}.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}.proof div,.card,.panel,.phase,.analog,.scale{background:var(--p);border:1px solid var(--l);border-radius:17px;padding:20px}.proof b{display:block;font-size:28px;letter-spacing:-.04em}.proof span{display:block;font-size:10px;color:var(--m);margin-top:6px}section{padding:72px 0}.dark{background:linear-gradient(#101822bb,#0b1017dd);border-block:1px solid #25313d}.head{max-width:790px;margin-bottom:28px}.head p{color:var(--m);font-size:13px;max-width:740px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{padding:21px;min-height:170px}.num{font-size:10px;color:var(--o);font-weight:900;letter-spacing:.14em}.card h3{font-size:16px;line-height:1.2;margin:13px 0 8px}.card p{font-size:11px;color:var(--m);line-height:1.65;margin:0}.callout{margin-top:17px;padding:21px 24px;border:1px solid #713e20;border-radius:17px;background:linear-gradient(100deg,#2c1c13,#141d27);display:flex;align-items:center;justify-content:space-between;gap:18px}.callout b{font-size:17px}.callout span{display:block;color:var(--m);font-size:11px;margin-top:4px}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.step{padding:16px 13px;min-height:145px;background:var(--p);border:1px solid var(--l);border-radius:15px}.step b{color:var(--o);font-size:9px;letter-spacing:.1em}.step h3{font-size:13px;margin:13px 0 7px}.step p{font-size:10px;color:var(--m);margin:0}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:14px}.tri .card{min-height:0}.pillbox{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #3a4a58;background:#15202b;color:#d7dee5;border-radius:100px;padding:9px 13px;font-size:11px}.pill.hot{border-color:#75401e;color:#ffb17e;background:#241a15}.market{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:22px}.panel h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#cbd3db;margin:0 0 15px}.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.kpi{padding:14px;border:1px solid var(--l);background:#0e151e;border-radius:13px}.kpi b{font-size:28px;letter-spacing:-.05em}.kpi span{display:block;color:var(--m);font-size:10px;margin-top:5px}.smallstats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.smallstats div{background:#111a24;border:1px solid var(--l);border-radius:12px;padding:12px}.smallstats b{display:block;font-size:19px}.smallstats span{font-size:9px;color:var(--m)}.rows{display:grid;gap:9px}.row{display:grid;grid-template-columns:120px 1fr;gap:11px;padding:10px 0;border-bottom:1px solid var(--l);align-items:center}.row:last-child{border:0}.row strong{font-size:18px;color:var(--o)}.row b{display:block;font-size:11px}.row span{display:block;font-size:9px;color:var(--m)}.caveat{padding:15px 17px;background:#211a16;border:1px solid #56331d;border-radius:14px;color:#d7c6bb;font-size:10px;line-height:1.7;margin-top:14px}.caveat b{color:var(--o2)}.econ{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.econ .kpi{padding:19px}.econ .kpi b{font-size:29px}.feature{border-color:#81451f;background:linear-gradient(135deg,#2a1d15,#131c26)}.tablewrap{overflow-x:auto;margin-top:14px;padding:8px 12px;border:1px solid var(--l);border-radius:17px;background:var(--p)}table{border-collapse:collapse;width:100%;min-width:560px;font-size:11px}th{text-align:left;color:var(--m);font-size:9px;text-transform:uppercase;letter-spacing:.06em}th,td{padding:12px;border-bottom:1px solid var(--l)}tr:last-child td{border:0}td:last-child{color:var(--o);font-weight:850}.analogs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.analog{padding:19px;min-height:270px}.analog .year{color:var(--m);font-size:9px;font-weight:800}.analog h3{margin:8px 0;font-size:18px}.analog .metric{font-size:27px;font-weight:950;color:var(--o);letter-spacing:-.04em}.analog .label{font-size:10px;color:#d7dee5;font-weight:700}.analog p{font-size:10px;color:var(--m);line-height:1.6}.analog a{font-size:10px;color:var(--o);text-decoration:underline;text-underline-offset:3px}.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.phase{padding:19px;min-height:220px}.phase:first-child{border-color:#76401f;background:linear-gradient(150deg,#251a14,var(--p))}.period{font-size:9px;color:var(--o);font-weight:900;letter-spacing:.12em}.phase h3{font-size:16px;margin:11px 0}.phase ul{padding-left:15px;margin:0;color:var(--m);font-size:10px;line-height:1.65}.phase li{margin:6px 0}.scalegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.scalerow{display:grid;grid-template-columns:.7fr 1.2fr 1.2fr;gap:8px;padding:13px 0;border-bottom:1px solid var(--l);align-items:center}.scalerow:last-child{border:0}.scalerow.hd{font-size:9px;color:var(--m);text-transform:uppercase}.scalerow strong{font-size:15px}.scalerow em{font-style:normal;color:var(--o);font-weight:850;font-size:12px}.thesis{display:grid;gap:13px}.point{display:flex;gap:12px}.point i{font-style:normal;background:#2a1b13;color:var(--o);border-radius:9px;padding:7px 10px;height:30px;font-size:10px;font-weight:900}.point b{display:block;font-size:12px}.point span{display:block;font-size:10px;color:var(--m)}.pilot{padding:30px;border:1px solid #72401f;border-radius:22px;background:linear-gradient(110deg,#2a1b13,#131c26 60%);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}.pilot h2{font-size:clamp(30px,4vw,42px);line-height:1.05;margin:11px 0}.pilot p{font-size:12px;color:var(--m)}.pilotstats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.pilotstats div{padding:14px;background:#0b1119aa;border:1px solid #4b443e;border-radius:13px}.pilotstats b{font-size:24px}.pilotstats span{display:block;font-size:9px;color:var(--m)}.sources{font-size:9px;line-height:1.8;color:var(--m);padding:22px 0}.sources a{text-decoration:underline;text-underline-offset:3px;color:#c1cbd4}footer{border-top:1px solid var(--l);padding:22px 0;color:var(--m);font-size:9px}.foot{display:flex;justify-content:space-between;gap:15px}
-@media(max-width:950px){.hero-grid{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(3,1fr)}.phases{grid-template-columns:repeat(2,1fr)}.market,.scalegrid{grid-template-columns:1fr}.analogs{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.wrap{width:calc(100% - 30px)}nav{height:64px}.menu{display:block}.links{display:none;position:absolute;left:0;right:0;top:64px;padding:18px 22px;background:#0d141d;border-bottom:1px solid var(--l);flex-direction:column;align-items:stretch}.links.open{display:flex}.links .btn{width:100%}.hero{padding:48px 0 35px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(42px,12vw,58px)}.lead{font-size:14px}.art{min-height:255px}.proof{grid-template-columns:repeat(2,1fr);margin-top:22px}.proof b{font-size:25px}section{padding:56px 0}.head h2{font-size:33px}.head p{font-size:12px}.grid4,.tri,.phases{grid-template-columns:1fr}.card{min-height:0}.callout{align-items:flex-start;flex-direction:column}.flow{grid-template-columns:repeat(2,1fr)}.step{min-height:135px}.smallstats{grid-template-columns:repeat(2,1fr)}.econ{grid-template-columns:repeat(2,1fr)}.econ .kpi b{font-size:25px}.analogs{grid-template-columns:1fr}.analog{min-height:0}.scalegrid{grid-template-columns:1fr}.scalerow{grid-template-columns:.6fr 1fr 1.1fr}.pilot{grid-template-columns:1fr;padding:22px}.pilot h2{font-size:33px}.foot{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:root{
+ --ink:#090c10;--ink2:#0e1319;--panel:#141b22;--panel2:#1b252e;--line:#2a343d;
+ --paper:#f1efe9;--white:#fff;--muted:#9ba5ad;--muted2:#68747e;
+ --orange:#ff5a1f;--orange2:#ff7a3f;--signal:#ffc247;--green:#9ad6b2;
+ --max:1200px;--ease:cubic-bezier(.2,.75,.25,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.5;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+::selection{background:var(--orange);color:#090c10}
+.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.orange{color:var(--orange)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;line-height:1.2;letter-spacing:.17em;text-transform:uppercase;font-weight:900;color:var(--orange)}
+.eyebrow:before{content:"";width:24px;height:2px;background:var(--orange)}
+.kicker{font:800 9px/1.2 Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.display{font-family:"Arial Narrow","Roboto Condensed",Impact,Arial,sans-serif;font-stretch:condensed;font-weight:950;letter-spacing:-.055em;text-transform:uppercase;line-height:.91}
+h1,h2,h3,p{margin-top:0}
+h2{font-size:clamp(38px,5vw,64px);margin:17px 0 18px}
+.section-intro{max-width:720px;color:#aeb7bd;font-size:15px;line-height:1.7}
+section{padding:108px 0;position:relative}
+.section-dark{background:linear-gradient(180deg,rgba(18,25,32,.95),rgba(10,14,19,.97));border-block:1px solid #202a32}
+.topline{height:3px;background:linear-gradient(90deg,var(--orange) 0 28%,transparent 28% 100%);position:absolute;top:0;left:0;right:0;opacity:.8}
+.progress{position:fixed;z-index:20;top:0;left:0;height:2px;width:0;background:var(--orange);box-shadow:0 0 12px #ff5a1f88}
+header{height:78px;position:sticky;top:0;z-index:15;background:rgba(9,12,16,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.075)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-size:15px;font-weight:950;letter-spacing:.07em}
+.brand-name em{font-style:normal;color:var(--orange)}
+.brand-mark{width:37px;height:37px;border-radius:11px;display:grid;place-items:center;background:var(--orange);color:#111;font:950 17px/1 Impact,Arial,sans-serif;letter-spacing:-.1em;transform:skew(-7deg);box-shadow:0 0 30px #ff5a1f35}
+.nav-links{display:flex;align-items:center;gap:27px;color:#b7c0c7;font-size:11px;font-weight:750}
+.nav-links a{transition:color .2s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:46px;padding:0 19px;border:1px solid var(--orange);background:var(--orange);color:#120c08;font-size:11px;font-weight:950;letter-spacing:.05em;text-transform:uppercase;transition:transform .25s var(--ease),background .25s,border .25s,box-shadow .25s}
+.nav-cta:hover,.button:hover{transform:translateY(-3px);box-shadow:0 12px 28px #ff5a1f35}
+.button .arrow{font-size:17px;line-height:0}
+.button.ghost{background:transparent;color:var(--paper);border-color:#53606a}
+.button.ghost:hover{border-color:var(--orange);color:var(--orange);box-shadow:none}
+.menu-btn{display:none;width:42px;height:42px;background:#171f27;border:1px solid var(--line);color:var(--paper);font-size:18px}
+.hero{padding:74px 0 46px;min-height:710px;display:flex;align-items:center;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-13vw;top:-28vw;width:70vw;height:70vw;border:1px solid #ff5a1f20;border-radius:50%;box-shadow:0 0 0 70px #ff5a1f07,0 0 0 140px #ff5a1f05;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:46px;position:relative;z-index:1}
+.hero h1{font-size:clamp(58px,8vw,110px);margin:25px 0 24px;max-width:740px}
+.hero h1 .outline-word{-webkit-text-stroke:1.4px #f1efe9;color:transparent}
+.hero h1 .orange-word{color:var(--orange)}
+.hero-copy{max-width:560px;color:#b3bdc5;font-size:16px;line-height:1.7;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;align-items:center;gap:14px;margin-top:35px;font-size:10px;color:#76818a;letter-spacing:.08em;text-transform:uppercase}
+.live-dot{height:7px;width:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #9ad6b21a;display:inline-block}
+.hero-stage{min-height:490px;position:relative;display:grid;place-items:center;isolation:isolate}
+.hero-stage:before{content:"";position:absolute;width:420px;height:420px;border:1px solid #35414a;border-radius:50%;box-shadow:0 0 0 48px #ffffff04,0 0 0 96px #ffffff03;z-index:-1}
+.hero-stage:after{content:"";position:absolute;width:300px;height:300px;background:radial-gradient(circle,#ff5a1f30,transparent 68%);z-index:-1}
+.stage-grid{position:absolute;inset:4% 0 2%;background:linear-gradient(90deg,transparent 49.8%,#ffffff12 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#ffffff12 50%,transparent 50.2%);background-size:72px 72px;mask-image:radial-gradient(ellipse,black,transparent 72%);opacity:.6}
+.orbit{position:absolute;width:385px;height:385px;border:1px dashed #ff5a1f65;border-radius:50%;animation:orbit 42s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange)}
+.orbit:before{left:58px;top:40px}.orbit:after{right:28px;bottom:96px;background:var(--signal);box-shadow:0 0 18px var(--signal)}
+.core-logo{width:190px;height:190px;display:grid;place-items:center;border:1px solid #5c6267;background:linear-gradient(145deg,#222c34,#0b1015);clip-path:polygon(12% 0,100% 0,100% 78%,78% 100%,0 100%,0 12%);box-shadow:0 35px 80px #000a;position:relative}
+.core-logo:before{content:"";position:absolute;inset:9px;border:1px solid #ffffff18;clip-path:inherit}
+.core-logo span{font:950 100px/.8 Impact,Arial,sans-serif;letter-spacing:-.12em;transform:skew(-8deg);background:linear-gradient(115deg,#fff 0 46%,var(--orange) 46% 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage-card{position:absolute;width:210px;padding:15px 16px;background:#121920ed;border:1px solid #38444d;box-shadow:0 18px 50px #0008;backdrop-filter:blur(10px)}
+.stage-card.top{top:24px;right:0;transform:rotate(2deg)}
+.stage-card.bottom{bottom:22px;left:-3px;transform:rotate(-2deg)}
+.stage-card .label{font-size:8px;letter-spacing:.14em;color:#89949d;text-transform:uppercase;font-weight:900}
+.stage-card strong{display:block;font-size:24px;letter-spacing:-.05em;margin:6px 0 0}
+.stage-card strong em{font-style:normal;color:var(--orange)}
+.stage-card small{display:block;font-size:9px;color:#8f9aa3;margin-top:3px}
+.stage-status{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.status-pill{font-size:8px;padding:5px 7px;background:#172b23;border:1px solid #315541;color:#9ad6b2;letter-spacing:.08em}
+.stage-lines{display:grid;gap:6px;margin-top:12px}
+.stage-lines i{height:4px;background:#29343d;display:block;position:relative;overflow:hidden}
+.stage-lines i:after{content:"";position:absolute;inset:0;width:72%;background:var(--orange);transform:translateX(-100%);animation:line-load 3s ease-in-out infinite}
+.stage-lines i:nth-child(2):after{width:54%;animation-delay:.35s}
+.stage-lines i:nth-child(3):after{width:88%;animation-delay:.7s}
+.coordinates{position:absolute;right:2%;bottom:0;font-size:8px;letter-spacing:.18em;color:#63707a;writing-mode:vertical-rl}
+.hero-bottom{margin-top:34px;padding-top:22px;border-top:1px solid #2a343d;display:flex;justify-content:space-between;gap:16px;color:#84909a;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.hero-bottom strong{color:var(--paper);font-size:10px}
+.ticker{background:var(--orange);color:#130d08;overflow:hidden;border-block:1px solid #ff8c59}
+.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:ticker 34s linear infinite}
+.ticker span{padding:14px 24px;font:950 13px/1 Impact,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.ticker b{font-size:18px;padding:0 9px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:43px}
+.section-head>div:first-child{max-width:780px}
+.section-tag{font-size:9px;color:var(--muted2);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-bottom:11px}
+.problem-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:stretch}
+.problem-lead{min-height:390px;padding:38px;background:var(--paper);color:#11171c;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.problem-lead:after{content:"";position:absolute;right:-90px;bottom:-125px;width:330px;height:330px;border:44px solid #ff5a1f;border-radius:50%;opacity:.95}
+.problem-lead .kicker{color:#6b7378}
+.problem-lead h3{font:950 clamp(38px,5vw,64px)/.92 Impact,Arial,sans-serif;letter-spacing:-.025em;text-transform:uppercase;max-width:530px;position:relative;z-index:1}
+.problem-lead p{max-width:400px;color:#535b61;font-size:13px;position:relative;z-index:1;margin:0}
+.pain-stack{display:grid;grid-template-rows:repeat(3,1fr);gap:10px}
+.pain{border:1px solid var(--line);background:var(--panel);padding:22px 24px;display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start;transition:transform .3s var(--ease),border-color .3s}
+.pain:hover{transform:translateX(6px);border-color:#8a472e}
+.pain-num{font:900 16px/1 Impact,Arial,sans-serif;color:var(--orange)}
+.pain h3{font-size:15px;margin:0 0 7px}
+.pain p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+.solution-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#303a42;border:1px solid #303a42}
+.rail-step{min-height:212px;padding:20px 15px;background:#111820;position:relative;transition:background .3s,transform .3s var(--ease);overflow:hidden}
+.rail-step:hover{background:#1c252d;transform:translateY(-5px);z-index:1}
+.rail-step:after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--orange);transition:width .35s var(--ease)}
+.rail-step:hover:after{width:100%}
+.rail-step .n{font:950 36px/1 Impact,Arial,sans-serif;color:var(--orange)}
+.rail-step h3{font-size:13px;margin:22px 0 8px}
+.rail-step p{font-size:10px;color:var(--muted);line-height:1.55;margin:0}
+.rail-arrow{position:absolute;right:15px;top:25px;color:#59636b;font-size:15px}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:20px}
+.offer{background:var(--panel);border:1px solid var(--line);padding:24px;position:relative;min-height:190px;overflow:hidden;transition:transform .35s var(--ease),border-color .35s}
+.offer:hover{transform:translateY(-7px);border-color:#8c492f}
+.offer:before{content:"";position:absolute;width:110px;height:110px;right:-50px;bottom:-55px;border:1px solid #ff5a1f55;transform:rotate(45deg);transition:transform .5s var(--ease)}
+.offer:hover:before{transform:rotate(90deg) scale(1.3)}
+.offer .kicker{color:var(--orange)}
+.offer h3{font:900 26px/1 Impact,Arial,sans-serif;text-transform:uppercase;margin:17px 0 10px}
+.offer p{color:var(--muted);font-size:11px;line-height:1.6;margin:0;max-width:300px}
+.industries{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.industry{display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #39434b;background:#131b22;color:#d2d8dc;font-size:10px;transition:background .25s,border .25s,color .25s}
+.industry:before{content:"↗";color:var(--orange);font-weight:900}
+.industry:hover{background:#241b17;border-color:#8a4528;color:#fff}
+.market-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.market-panel{background:#111920;border:1px solid #303b43;padding:27px;position:relative;overflow:hidden}
+.market-panel h3{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#bdc6cd;margin:0 0 20px}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#303b43;border:1px solid #303b43}
+.stat{background:#111920;padding:20px 21px;min-height:115px;position:relative;overflow:hidden}
+.stat:after{content:"";position:absolute;right:-20px;bottom:-30px;width:90px;height:90px;border:1px solid #ff5a1f35;border-radius:50%}
+.stat strong{font:950 38px/1 Impact,Arial,sans-serif;letter-spacing:-.035em}
+.stat span{display:block;color:#9ca7af;font-size:10px;margin-top:9px;max-width:210px}
+.stat small{display:block;color:var(--orange);font-size:8px;letter-spacing:.1em;text-transform:uppercase;margin-top:7px}
+.cohort-bars{display:grid;gap:16px}
+.bar-row{display:grid;grid-template-columns:1.1fr 2fr 28px;gap:12px;align-items:center;font-size:10px;color:#c7cfd4}
+.bar-track{height:5px;background:#29343d;overflow:hidden}
+.bar-track i{height:100%;width:0;display:block;background:linear-gradient(90deg,#d84312,var(--orange2));transition:width 1.2s var(--ease)}
+.bar-row b{font-size:11px;color:var(--orange);text-align:right}
+.note{background:#251b16;border-left:3px solid var(--orange);padding:14px 16px;color:#d7c8bf;font-size:10px;line-height:1.65;margin-top:18px}
+.supply-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.supply-stat{background:var(--panel);border:1px solid var(--line);padding:21px;min-height:136px;position:relative}
+.supply-stat strong{display:block;font:950 39px/1 Impact,Arial,sans-serif}
+.supply-stat span{display:block;color:var(--muted);font-size:10px;margin-top:10px}
+.supply-stat.warning{border-color:#80512a;background:linear-gradient(145deg,#251c15,#141b22)}
+.supply-stat.warning strong{color:var(--signal)}
+.supply-progress{height:5px;background:#2b343b;margin-top:20px;overflow:hidden}
+.supply-progress i{height:100%;display:block;background:var(--orange);width:0;transition:width 1s var(--ease)}
+.econ-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:14px;align-items:stretch}
+.calculator{padding:30px;background:var(--paper);color:#111820;position:relative;overflow:hidden}
+.calculator:after{content:"US / 01";position:absolute;right:17px;top:15px;font:900 9px/1 Impact,Arial,sans-serif;color:#aab0b2;letter-spacing:.12em}
+.calculator h3{font:950 31px/1 Impact,Arial,sans-serif;text-transform:uppercase;margin:0 0 8px}
+.calculator .sub{font-size:11px;color:#636d72;margin-bottom:24px}
+.range-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:10px}
+.range-head label{font-size:10px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+.range-head output{font:950 34px/1 Impact,Arial,sans-serif;color:#e74e1b}
+input[type=range]{appearance:none;width:100%;height:5px;background:#c7c9c6;outline:none;margin:14px 0 8px}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:19px;height:19px;background:var(--orange);border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 1px #e04f1d}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;background:var(--orange);border:3px solid #fff;border-radius:50%}
+.range-labels{display:flex;justify-content:space-between;font-size:9px;color:#778084}
+.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#d0d0cb;margin-top:22px;border:1px solid #d0d0cb}
+.calc-result{padding:14px;background:#e8e7e1}
+.calc-result.feature{background:#191f24;color:#fff}
+.calc-result span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:#657078}
+.calc-result.feature span{color:#b5bfc5}
+.calc-result strong{display:block;font:950 26px/1 Impact,Arial,sans-serif;margin-top:8px}
+.calc-result.feature strong{color:var(--orange)}
+.calc-foot{font-size:9px;color:#69737a;margin-top:15px}
+.econ-context{background:#121a21;border:1px solid #303b43;padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+.econ-context h3{font:950 34px/1 Impact,Arial,sans-serif;text-transform:uppercase;margin:0 0 12px}
+.econ-context>p{font-size:12px;color:#aab4bb;line-height:1.65}
+.econ-table{display:grid;gap:0;margin-top:22px}
+.econ-line{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #303b43;font-size:10px;color:#acb6bd}
+.econ-line strong{font-size:13px;color:#f1efe9}
+.econ-line.total strong{font-size:19px;color:var(--orange)}
+.analog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.analog{background:#111920;border:1px solid #303b43;padding:21px;min-height:265px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s}
+.analog:hover{transform:translateY(-7px);border-color:#9c4a2c}
+.analog:before{content:"";position:absolute;right:-38px;top:-38px;width:120px;height:120px;border:1px solid #ff5a1f30;border-radius:50%}
+.analog .year{font-size:8px;color:#82909a;letter-spacing:.11em;text-transform:uppercase;font-weight:900}
+.analog h3{font:950 24px/1 Impact,Arial,sans-serif;text-transform:uppercase;margin:13px 0 9px}
+.analog .metric{font:950 39px/1 Impact,Arial,sans-serif;color:var(--orange);letter-spacing:-.03em}
+.analog .descriptor{font-size:9px;color:#e6e9eb;font-weight:800;margin-top:5px}
+.analog p{font-size:10px;color:#98a3ab;line-height:1.65;margin:14px 0 18px}
+.analog a{margin-top:auto;font-size:9px;font-weight:900;color:var(--orange);letter-spacing:.06em;text-transform:uppercase}
+.analog a:hover{text-decoration:underline;text-underline-offset:4px}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#34404a;border:1px solid #34404a}
+.phase{background:#111920;padding:23px;min-height:255px;position:relative}
+.phase:first-child{background:linear-gradient(145deg,#2a1d16,#131b22)}
+.phase .time{font-size:9px;letter-spacing:.13em;color:var(--orange);font-weight:950}
+.phase h3{font:950 24px/1 Impact,Arial,sans-serif;text-transform:uppercase;margin:15px 0}
+.phase ul{padding-left:15px;color:#a8b2ba;font-size:10px;line-height:1.75;margin:0}
+.phase li{padding:3px 0}
+.scale-layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.scale-box{padding:28px;background:#121a21;border:1px solid #303b43}
+.scale-row{display:grid;grid-template-columns:.7fr 1.2fr 1.1fr;gap:8px;padding:14px 0;border-bottom:1px solid #2e3942;align-items:center}
+.scale-row:last-child{border:0}
+.scale-row.head{font-size:8px;color:#8d9aa3;text-transform:uppercase;letter-spacing:.1em}
+.scale-row strong{font:950 19px/1 Impact,Arial,sans-serif}
+.scale-row em{font-style:normal;color:var(--orange);font-weight:900;font-size:12px}
+.thesis-list{display:grid;gap:18px}
+.thesis-item{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start}
+.thesis-item i{font:950 14px/1 Impact,Arial,sans-serif;color:var(--orange);font-style:normal;border:1px solid #763e29;padding:9px;text-align:center}
+.thesis-item b{display:block;font-size:12px;margin-bottom:4px}
+.thesis-item span{font-size:10px;color:var(--muted);line-height:1.6}
+.final-cta{background:var(--orange);color:#160d08;padding:58px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.final-cta:after{content:"";position:absolute;right:-90px;top:-190px;width:430px;height:430px;border:2px solid #170e0840;border-radius:50%;box-shadow:0 0 0 50px #170e0815,0 0 0 100px #170e0810}
+.final-cta .eyebrow{color:#21120b}
+.final-cta .eyebrow:before{background:#21120b}
+.final-cta h2{font:950 clamp(39px,5vw,64px)/.94 Impact,Arial,sans-serif;text-transform:uppercase;margin:15px 0}
+.final-cta p{font-size:12px;line-height:1.7;max-width:600px;color:#492616}
+.final-cta .button{background:#111820;color:#fff;border-color:#111820;position:relative;z-index:1}
+.cta-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:1}
+.cta-metric{padding:15px;background:#18130f16;border:1px solid #2011084a}
+.cta-metric b{font:950 29px/1 Impact,Arial,sans-serif}
+.cta-metric span{display:block;font-size:9px;margin-top:7px;color:#482515}
+.sources{font-size:9px;line-height:1.8;color:#77838d;padding:22px 0}
+.sources a{color:#aeb9c1;text-decoration:underline;text-underline-offset:3px}
+footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-brand{font-weight:950;letter-spacing:.07em;color:#e6e8e9}
+.footer-brand em{font-style:normal;color:var(--orange)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes line-load{0%{transform:translateX(-100%)}55%,100%{transform:translateX(140%)}}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media(max-width:1000px){
+ .hero-grid{grid-template-columns:1fr .9fr;gap:20px}.hero h1{font-size:clamp(58px,8vw,86px)}
+ .solution-rail{grid-template-columns:repeat(3,1fr)}.analog-grid{grid-template-columns:repeat(2,1fr)}
+ .roadmap{grid-template-columns:repeat(2,1fr)}.supply-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+ .wrap{width:calc(100% - 32px)}header{height:66px}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 22px;background:#0c1117;border-bottom:1px solid #2a343d;flex-direction:column;align-items:stretch;gap:17px}.nav-links.open{display:flex}.nav-links .nav-cta{text-align:center}.menu-btn{display:block}
+ section{padding:72px 0}.hero{padding:50px 0 32px;min-height:auto}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(56px,14vw,82px);margin:22px 0}.hero-copy{font-size:14px}.hero-stage{min-height:380px;margin-top:8px}.hero-stage:before{width:300px;height:300px}.orbit{width:290px;height:290px}.core-logo{width:145px;height:145px}.core-logo span{font-size:77px}.stage-card{width:175px;padding:12px}.stage-card.top{top:15px;right:0}.stage-card.bottom{bottom:7px;left:0}.stage-card strong{font-size:20px}.hero-bottom{font-size:8px}.section-head{display:block;margin-bottom:29px}.section-tag{padding:0}.section-intro{font-size:13px}.problem-grid{grid-template-columns:1fr;gap:12px}.problem-lead{min-height:300px;padding:25px}.problem-lead h3{font-size:46px}.pain{padding:18px}.solution-rail{grid-template-columns:repeat(2,1fr)}.rail-step{min-height:175px;padding:16px 13px}.rail-step .n{font-size:30px}.rail-step h3{margin-top:18px}.offer-grid{grid-template-columns:1fr}.offer{min-height:0}.market-grid{grid-template-columns:1fr}.market-panel{padding:19px}.stat{padding:15px;min-height:105px}.stat strong{font-size:31px}.bar-row{grid-template-columns:1fr 1.35fr 22px;font-size:9px}.supply-grid{grid-template-columns:repeat(2,1fr)}.supply-stat{padding:16px;min-height:120px}.supply-stat strong{font-size:32px}.econ-layout{grid-template-columns:1fr}.calculator,.econ-context{padding:23px}.analog-grid{grid-template-columns:1fr}.analog{min-height:0}.roadmap{grid-template-columns:1fr}.phase{min-height:0}.scale-layout{grid-template-columns:1fr}.scale-box{padding:20px}.scale-row{grid-template-columns:.55fr 1.2fr 1.05fr}.scale-row strong{font-size:16px}.final-cta{grid-template-columns:1fr;padding:31px 23px;gap:18px}.final-cta h2{font-size:47px}.footer-inner{align-items:flex-start;flex-direction:column}.ticker span{font-size:11px;padding:13px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="#top"><span class="mark">US</span><span>UBER <em>STROY</em></span></a><button class="menu" onclick="toggleMenu()" aria-label="Меню">☰</button><div class="links" id="links"><a href="#problem" onclick="closeMenu()">Проблема</a><a href="#solution" onclick="closeMenu()">Решение</a><a href="#market" onclick="closeMenu()">Рынок</a><a href="#economics" onclick="closeMenu()">Экономика</a><a href="#analogs" onclick="closeMenu()">Аналоги</a><a class="btn" href="#pilot" onclick="closeMenu()">Обсудить пилот ↗</a></div></nav></div></header>
+<div class="progress" id="progress"></div>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top" aria-label="UBER STROY — на главную"><span class="brand-mark">US</span><span class="brand-name">UBER <em>STROY</em></span></a>
+  <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
+   <a href="#solution">Модель</a><a href="#market">Рынок</a><a href="#economics">Экономика</a><a href="#analogues">Аналоги</a><a href="#roadmap">План</a>
+   <a class="nav-cta" href="#contact">Обсудить пилот <span>↗</span></a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
+ </div>
+</header>
 <main id="top">
-<section class="hero"><div class="wrap"><div class="hero-grid"><div><div class="eyebrow">Оператор организованных рабочих команд</div><h1>Рабочая сила.<br><span class="accent">По запросу.</span><br>Под контролем.</h1><p class="lead">UBER STROY соединяет строительные объекты и организованных поставщиков рабочих команд. Подбираем состав под задачу, подтверждаем выход, управляем сменой и закрываем её документально.</p><div class="actions"><a class="btn" href="#pilot">Запустить пилот ↗</a><a class="btn outline" href="#economics">Посмотреть модель ↓</a></div><p class="muted" style="font-size:10px;margin-top:22px">Старт — Нижний Новгород и агломерация. Строительство, дороги, сети, инфраструктура и благоустройство.</p></div><div class="art"><div class="monogram">US</div><small><span>CONSTRUCTION OPERATIONS</span><span>BUILT FOR SCALE</span></small></div></div>
-<div class="proof"><div><b>132</b><span>записи базового строительного реестра</span></div><div><b>39</b><span>проектных линий pipeline и КРТ</span></div><div><b>19</b><span>текущих и ближайших закупочных сигналов</span></div><div><b>₽1 000</b><span>целевой валовый спред на человеко-смену</span></div></div></div></section>
-<section id="problem" class="dark"><div class="wrap"><div class="head"><div class="eyebrow">Проблема рынка</div><h2>Дефицит не только в людях.<br><span class="accent">Дефицит — в управляемости.</span></h2><p>Заказчик сам связывает поставщиков, проверяет наличие людей, координирует старших и пытается свести явку, табели и расчёты. Заявленная численность ещё не означает подтверждённый выход.</p></div><div class="grid4"><article class="card"><div class="num">01 / ФРАГМЕНТАЦИЯ</div><h3>Ресурс разбросан</h3><p>Поставщики, рабочие дома и бригады находятся в отдельных каналах. Нет одного окна подтверждённой доступности.</p></article><article class="card"><div class="num">02 / НЕОПРЕДЕЛЁННОСТЬ</div><h3>Обещание ≠ выход</h3><p>«Есть 30 человек» не отвечает на вопрос, кто выйдет в конкретную дату и кто заменит неявившегося.</p></article><article class="card"><div class="num">03 / НЕТ MATCHING</div><h3>Навык часто неизвестен</h3><p>Объекту нужны конкретные операции, опыт и понимание ограничений. Категория «разнорабочий» слишком широка.</p></article><article class="card"><div class="num">04 / РУЧНОЙ КОНТУР</div><h3>Смена распадается на чаты</h3><p>Поиск, подтверждение, замены, табели, приёмка и расчёты не собраны в единый прозрачный процесс.</p></article></div><div class="callout"><div><b>Объект покупает не список людей.</b><span>Он покупает подтверждённый состав, ответственного, контролируемую смену и закрытый результат.</span></div><a class="btn outline" href="#solution">Как решаем ↗</a></div></div></section>
-<section id="solution"><div class="wrap"><div class="head"><div class="eyebrow">Решение UBER STROY</div><h2>Один оператор.<br>Вся цепочка — от заявки до закрытой смены.</h2><p>Мы соединяем спрос строительного объекта с организованными поставщиками и управляем исполнением через единый операционный контур.</p></div><div class="flow"><div class="step"><b>01 / REQUEST</b><h3>Заявка</h3><p>Адрес, задача, дата, количество и условия.</p></div><div class="step"><b>02 / MATCH</b><h3>Подбор</h3><p>Команда по доступности, опыту и ограничениям.</p></div><div class="step"><b>03 / VERIFY</b><h3>Проверка</h3><p>Состав, старший, документы, СИЗ и допуск.</p></div><div class="step"><b>04 / DISPATCH</b><h3>Выход</h3><p>Координация, явка, контроль и замены.</p></div><div class="step"><b>05 / ACCEPT</b><h3>Приёмка</h3><p>Табель и подтверждение заказчика.</p></div><div class="step"><b>06 / SETTLE</b><h3>Расчёт</h3><p>Документы, платежи, экономика смены.</p></div></div><div class="tri"><article class="card"><div class="eyebrow">Уровень 01</div><h3>Workforce Operations</h3><p>CRM заказчиков и поставщиков, календарь доступности, заявки, диспетчеризация, старшие, табели, замены и расчёты.</p></article><article class="card"><div class="eyebrow">Уровень 02</div><h3>Skill Intelligence</h3><p>Добровольный голосовой профиль опыта: задачи, материалы, инструменты и уровень самостоятельности — с подтверждением.</p></article><article class="card"><div class="eyebrow">Уровень 03</div><h3>Learning Loop</h3><p>После каждой смены история опыта пополняется и помогает точнее сопоставлять задачу, команду и результат.</p></article></div></div></section>
-<section class="dark"><div class="wrap"><div class="head"><div class="eyebrow">Сегменты рынка</div><h2>Не только жилые комплексы.<br><span class="accent">Вся инфраструктура, где нужны команды.</span></h2><p>Начинаем со вспомогательных операций, где можно стандартизировать задачу и приёмку. Квалифицированные работы — только при подтверждённых компетенциях и допусках.</p></div><div class="pillbox"><span class="pill hot">Жилое строительство</span><span class="pill">Монолит и подготовка</span><span class="pill">Демонтаж</span><span class="pill hot">Дороги и мосты</span><span class="pill">Земляные работы</span><span class="pill hot">Трубопроводы и сети</span><span class="pill">Благоустройство</span><span class="pill">Парки и территории</span><span class="pill">Промышленное строительство</span><span class="pill">Капитальный ремонт</span><span class="pill">Логистика на объекте</span></div></div></section>
-<section id="market"><div class="wrap"><div class="head"><div class="eyebrow">Рыночный срез / Нижний Новгород</div><h2>Уже есть карта заказчиков, проектов и закупок.</h2><p>Срез нового реестра 06.11.2026. Количество карточек не равно числу уникальных активных строек: один проект может встречаться в АИП, тендере и pipeline.</p></div><div class="market"><div class="panel"><h3>Мастер-реестр и жилой рынок</h3><div class="kpis"><div class="kpi"><b>132</b><span>базовые записи строительного реестра</span></div><div class="kpi"><b>39</b><span>проектных линий / КРТ / pipeline</span></div><div class="kpi"><b>19</b><span>текущих и ближайших закупочных сигналов</span></div><div class="kpi"><b>44</b><span>строки городского АИП</span></div></div><div class="smallstats"><div><b>46</b><span>застройщиков</span></div><div><b>71 ЖК</b><span>в жилом обзоре</span></div><div><b>135</b><span>строящихся домов</span></div><div><b>1,549 млн</b><span>м² жилой площади</span></div></div><p class="muted" style="font-size:9px">Жилые показатели — отдельный отраслевой срез за сентябрь 2026 года, не весь рынок строительства.</p></div>
-<div class="panel"><h3>Слои спроса и проектов</h3><div class="rows"><div class="row"><strong>₽21,06 млрд</strong><div><b>городской АИП, 43 числовые строки из 44</b><span>ассигнования 2026 года; один некорректный ряд исключён</span></div></div><div class="row"><strong>₽849,9 млн</strong><div><b>17 из 19 закупочных карточек с суммой</b><span>44-ФЗ и 223-ФЗ; смешанные НМЦК, контрактные и агрегаторные цены</span></div></div><div class="row"><strong>503 / 214</strong><div><b>разрешения на строительство / ввод</b><span>число записей региональных наборов; CSV не разобраны</span></div></div><div class="row"><strong>166 / 127</strong><div><b>инфраструктурных / приоритетных инвестпроектов</b><span>региональные массивы, не все относятся к городу</span></div></div></div></div></div>
-<div class="panel" style="margin-top:14px"><h3>Примеры инвестиционных контуров</h3><div class="rows"><div class="row"><strong>₽203,8 млрд</strong><div><b>Восточный обход</b><span>ориентировочная стоимость всех очередей, не контрактная цена</span></div></div><div class="row"><strong>₽9 млрд</strong><div><b>КРТ «Водник»</b><span>оценка вложений в долгосрочный проект до договора КРТ</span></div></div><div class="row"><strong>₽33,34 млрд</strong><div><b>11 инвестиционных проектов с раскрытым числом рабочих мест</b><span>проектные инвестиции, не стоимость строительных подрядов</span></div></div><div class="row"><strong>2 990</strong><div><b>планируемых рабочих мест по этим проектам</b><span>будущая занятость предприятий, не спрос на временные строительные смены</span></div></div></div><div class="caveat"><b>Важное ограничение:</b> реестр не даёт достоверной суммарной потребности стройплощадок в рабочих по сменам. Не подменяем её числом постоянных рабочих мест или инвестициями.</div></div>
-<div class="panel" style="margin-top:14px"><h3>Закупочный слой</h3><div class="rows"><div class="row"><strong>₽425,5 млн</strong><div><b>44-ФЗ · 10 процедур</b><span>известные суммы карточек</span></div></div><div class="row"><strong>₽424,4 млн</strong><div><b>223-ФЗ · 7 процедур</b><span>известные суммы карточек</span></div></div></div><p class="muted" style="font-size:9px">19 сигналов всего; 17 с суммой, 2 без подтверждённой цены. Часть закупок плановая или требует проверки итогов, две позиции — в агломерации.</p></div></div></section>
-<section class="dark"><div class="wrap"><div class="head"><div class="eyebrow">Предложение / supply side</div><h2>Поставщики найдены. Реальная доступность ещё подтверждается.</h2><p>Разделяем охват сети, заявленную мощность поставщиков и людей, подтверждённых поимённо под дату и задачу.</p></div><div class="econ"><div class="kpi"><b>7</b><span>поставщиков-кандидатов в CRM</span></div><div class="kpi"><b>2</b><span>поставщика на переговорах</span></div><div class="kpi"><b>30–80</b><span>заявленная мощность в текущих диалогах</span></div><div class="kpi feature"><b>0</b><span>подтверждённых выходов на дату среза</span></div></div><div class="tri"><article class="card"><div class="num">ОХВАТ СЕТИ</div><h3>200–300 человек</h3><p>Предварительная оценка общего круга контактов проекта. Требует проверки и дедупликации.</p></article><article class="card"><div class="num">ПОТЕНЦИАЛЬНО ДОСТУПНЫЕ</div><h3>Около 100 человек</h3><p>Рабочая гипотеза, не подтверждённая численность на конкретные даты.</p></article><article class="card"><div class="num">ЦЕЛЬ ПИЛОТА</div><h3>50–70 подтверждённых</h3><p>Персонально подтверждённые люди с документами, согласием, доступностью и ответственным старшим.</p></article></div><div class="caveat"><b>Правило продажи:</b> не обещать заказчику численность до поимённого подтверждения, проверки правового статуса и безопасности, назначения старшего и согласования SLA на замену.</div></div></section>
-<section id="economics"><div class="wrap"><div class="head"><div class="eyebrow">Unit economics / базовый сценарий</div><h2>Каждая человеко-смена — измеримая транзакция.</h2><p>Базовая гипотеза: продажа ₽4 250, закупка ₽3 250, целевой валовый спред ₽1 000 на человеко-смену.</p></div><div class="econ"><div class="kpi"><b>₽4 250</b><span>цена клиенту / смена</span></div><div class="kpi"><b>₽3 250</b><span>закупка / смена</span></div><div class="kpi feature"><b>₽1 000</b><span>валовый спред / смена</span></div><div class="kpi"><b>23,5%</b><span>валовая маржа</span></div></div><div class="tablewrap"><table><thead><tr><th>Людей ежедневно</th><th>Оборот / месяц</th><th>Поставщикам</th><th>Валовый спред</th></tr></thead><tbody><tr><td>10</td><td>₽935 000</td><td>₽715 000</td><td>₽220 000</td></tr><tr><td>20</td><td>₽1 870 000</td><td>₽1 430 000</td><td>₽440 000</td></tr><tr><td>50</td><td>₽4 675 000</td><td>₽3 575 000</td><td>₽1 100 000</td></tr><tr><td>70</td><td>₽6 545 000</td><td>₽5 005 000</td><td>₽1 540 000</td></tr><tr><td>100</td><td>₽9 350 000</td><td>₽7 150 000</td><td>₽2 200 000</td></tr></tbody></table></div><div class="caveat"><b>Это валовый спред, не чистая прибыль.</b> Не вычтены налоги, транспорт, питание, СИЗ, координаторы, замены, страхование, юридические и банковские расходы, стоимость финансирования, неприёмка и плохие долги. Расчёт — 22 смены в месяц.</div><div class="panel" style="margin-top:14px"><h3>Оборотный капитал / пример на 70 человек</h3><div class="rows"><div class="row"><strong>₽227,5 тыс.</strong><div><b>одна смена закупки</b><span>70 × ₽3 250</span></div></div><div class="row"><strong>₽910 тыс.</strong><div><b>три смены задержки + одна смена резерва</b><span>ориентир при ежедневной выплате поставщику</span></div></div></div></div></div></section>
-<section id="analogs" class="dark"><div class="wrap"><div class="head"><div class="eyebrow">Западные аналоги</div><h2>Похожие платформенные механики уже работают на миллионах.</h2><p>Это не прямые строительные конкуренты, а примеры гибкой почасовой занятости, промышленных labor pools и управления сменами.</p></div><div class="analogs">
-<article class="analog"><div class="year">ОСНОВАНА В 2015 · США / КАНАДА</div><h3>Instawork</h3><div class="metric">9M+</div><div class="label">работников в сети</div><p>60+ городов; заявленный show rate 98%; 90% вакансий заполняются менее чем за 24 часа. Верификация, профили, рейтинги и onsite Captains.</p><a href="https://www.instawork.com/" target="_blank" rel="noopener">Официальный сайт ↗</a> · <a href="https://www.ycombinator.com/companies/instawork" target="_blank" rel="noopener">YC / 2015 ↗</a></article>
-<article class="analog"><div class="year">ОСНОВАНА В 2014 · США</div><h3>Wonolo</h3><div class="metric">3M+</div><div class="label">skilled workers</div><p>6,2 млн+ заданий опубликовано; 500+ рынков США. Blue-collar jobs: производство, склады, fulfilment и ритейл.</p><a href="https://www.wonolo.com/" target="_blank" rel="noopener">Официальный сайт ↗</a> · <a href="https://info.wonolo.com/about/" target="_blank" rel="noopener">О компании ↗</a></article>
-<article class="analog"><div class="year">ОСНОВАНА В 2017 · США</div><h3>Veryable</h3><div class="metric">750K+</div><div class="label">проверенных работников</div><p>On-demand labor marketplace для производства и складов; 6,1 заявки в среднем на рабочую возможность; 17,21 тыс. same-day shifts filled — метрика сайта без указанного периода.</p><a href="https://www.veryableops.com/about" target="_blank" rel="noopener">Официальный сайт ↗</a> · <a href="https://www.veryableops.com/on-demand-labor" target="_blank" rel="noopener">Модель работы ↗</a></article>
-<article class="analog"><div class="year">SYFT С 2015 · INDEED FLEX С 2019</div><h3>Indeed Flex</h3><div class="metric">5,4M</div><div class="label">смен размещено в 2025 году</div><p>В 2024 году было 4,8 млн смен. Метрика Indeed относится к мировым размещённым сменам.</p><a href="https://indeedflex.co.uk/about-us/" target="_blank" rel="noopener">История компании ↗</a> · <a href="https://d341ezm4iqaae0.cloudfront.net/ews/sites/2/20260313135651/CA_en_Indeed-Workforce-Agility-Report-compressed.pdf" target="_blank" rel="noopener">Отчёт Indeed ↗</a></article>
-</div><div class="caveat"><b>Финансовая прозрачность:</b> публичный GMV / годовая выручка этих частных платформ в перечисленных официальных источниках не раскрыты. Не подставляем недостоверные денежные обороты. Сопоставимые публичные показатели — размер сети, задания, смены и качество исполнения.</div></div></section>
-<section id="roadmap"><div class="wrap"><div class="head"><div class="eyebrow">Roadmap / масштабирование</div><h2>От первого оплаченного выхода — к операторской сети по стране.</h2><p>Сначала доказываем модель в Нижнем Новгороде, затем стандартизируем процессы и тиражируем их в новых городах.</p></div><div class="phases"><article class="phase"><div class="period">0–30 ДНЕЙ</div><h3>Первый пилот</h3><ul><li>Проверить 2 поставщиков и правовую модель.</li><li>30–40 целевых касаний.</li><li>3–5 квалифицированных потребностей.</li><li>2 выезда на объекты.</li><li>1–2 оплаченных теста на 5–10 человек.</li></ul></article><article class="phase"><div class="period">30–90 ДНЕЙ</div><h3>Повторяемая операционка</h3><ul><li>Повторные заказы и графики смен.</li><li>10–20 стабильных выходов.</li><li>SLA, табели, акты и cash control.</li><li>Подтвердить пул 50–70 человек.</li></ul></article><article class="phase"><div class="period">3–12 МЕСЯЦЕВ</div><h3>Продукт и вертикали</h3><ul><li>Автоматизация matching.</li><li>Skill Intelligence и история смен.</li><li>Дороги, сети, благоустройство, промышленность.</li><li>Стандартный playbook города.</li></ul></article><article class="phase"><div class="period">12–36 МЕСЯЦЕВ</div><h3>Региональная сеть</h3><ul><li>Тиражирование в новые города.</li><li>Стандарты поставщиков и качества.</li><li>Кабинеты заказчика и партнёров.</li><li>Федеральная диспетчеризация.</li></ul></article></div></div></section>
-<section class="dark"><div class="wrap"><div class="head"><div class="eyebrow">Потенциал масштаба</div><h2>Городская плотность — фундамент национальной сети.</h2><p>При повторении базовой экономики в новых регионах оператор может наращивать число заказчиков, поставщиков и человеко-смен без владения всей рабочей силой.</p></div><div class="scalegrid"><div class="scale"><div class="scalerow hd"><span>Людей / день</span><span>Оборот / месяц</span><em>Спред / месяц</em></div><div class="scalerow"><strong>100</strong><span>₽9,35 млн</span><em>₽2,20 млн</em></div><div class="scalerow"><strong>300</strong><span>₽28,05 млн</span><em>₽6,60 млн</em></div><div class="scalerow"><strong>1 000</strong><span>₽93,50 млн</span><em>₽22,00 млн</em></div><p class="muted" style="font-size:9px">Сценарии при 22 сменах, цене ₽4 250 и спреде ₽1 000. Математическая иллюстрация, не прогноз и не подтверждённая мощность сети.</p></div><div class="scale"><div class="thesis"><div class="point"><i>01</i><div><b>Плотность спроса</b><span>Повторяющиеся заказы и короткий цикл оплаты.</span></div></div><div class="point"><i>02</i><div><b>Ликвидность предложения</b><span>Проверенные поставщики, доступность и резерв.</span></div></div><div class="point"><i>03</i><div><b>Данные и стандарты</b><span>История смен, опыт и качество matching.</span></div></div><div class="point"><i>04</i><div><b>Тиражирование</b><span>Локальные сети работают по единому стандарту UBER STROY.</span></div></div></div></div></div><p class="muted" style="font-size:9px">«Единорог» — венчурная гипотеза, не текущая оценка компании и не обещание результата.</p></div></section>
-<section id="pilot"><div class="wrap"><div class="pilot"><div><div class="eyebrow">Следующий шаг / 30-дневный пилот</div><h2>От карты рынка —<br>к 50–70 подтверждённым людям.</h2><p>Собраны 132 базовые записи рынка, 39 проектных линий и 19 закупочных сигналов. В CRM — 18 заказчиков, 27 объектов, 7 поставщиков-кандидатов и 2 поставщика на переговорах. Дальше — доказать первую оплачиваемую смену.</p><a class="btn" href="mailto:?subject=UBER%20STROY%20%E2%80%94%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82&body=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82%20UBER%20STROY.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%3A%20...%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%20...%20%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20...%20%D0%94%D0%B0%D1%82%D0%B0%3A%20...">Подготовить запрос на пилот ↗</a></div><div class="pilotstats"><div><b>5–10</b><span>первый тестовый выход</span></div><div><b>10–20</b><span>первые стабильные выходы</span></div><div><b>50–70</b><span>подтверждённый пул — цель</span></div><div><b>30 дней</b><span>проверка совместной модели</span></div></div></div>
-<div class="sources"><b style="color:#d2d9e0">Источники рынка:</b> UBER STROY — строительный реестр Нижнего Новгорода v2, 06.11.2026 (листы «Реестр рынка», «Pipeline и КРТ», «Тендеры активные», «Сводка», «АИП города 01.11»); CRM и рабочий паспорт проекта. Внешние источники: <a href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">DOMOSTROINN</a> · <a href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">реестр разрешений Минстроя</a> · <a href="https://www.budgetnn.ru/planirovanie-byudzheta/adresnyj-investitsionnyj-perechen" target="_blank" rel="noopener">АИП Нижнего Новгорода</a> · <a href="https://www.kommersant.ru/doc/8553052" target="_blank" rel="noopener">Восточный обход</a> · <a href="https://www.kommersant.ru/doc/9080971" target="_blank" rel="noopener">КРТ «Водник»</a>.<br><br><b style="color:#d2d9e0">Ограничения:</b> 132 базовые записи, 39 pipeline-линий и 19 тендеров могут пересекаться. Региональные CSV 503 разрешений на строительство и 214 разрешений на ввод не разобраны построчно. 43 числовые строки городского АИП дают ₽21,06 млрд ассигнований 2026 года; один некорректный ряд исключён. 17 из 19 тендерных карточек содержат суммы; они смешивают НМЦК, цену контракта и значения агрегаторов. 2 990 — плановые рабочие места 11 инвестиционных проектов, не потребность стройплощадок в сменных рабочих. 30–80 — заявления поставщиков; 0 — подтверждённых выходов на дату среза. Юридическая модель, допуски, охрана труда и оформление проверяются до первого выхода. Голосовые профили — только с отдельного добровольного согласия. UBER STROY — рабочее коммерческое наименование; требуется проверка товарного знака. Проект не аффилирован с Uber Technologies, Inc.</div>
-</div></section>
-</main><footer><div class="wrap foot"><div class="brand"><span class="mark">US</span><span>UBER <em>STROY</em></span></div><div>© 2026 · Нижний Новгород · Предварительная партнёрская и финансовая модель</div></div></footer>
-<script>function toggleMenu(){document.getElementById('links').classList.toggle('open')}function closeMenu(){document.getElementById('links').classList.remove('open')}</script>
-</body></html>
+<section class="hero">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div class="hero-copy-block">
+    <div class="eyebrow">Workforce operations / Nizhny Novgorod</div>
+    <h1 class="display">ЛЮДИ.<br><span class="outline-word">ОБЪЕКТЫ.</span><br><span class="orange-word">ДВИЖЕНИЕ.</span></h1>
+    <p class="hero-copy">UBER STROY превращает разрозненный рынок рабочих команд в управляемый ресурс для строительства и инфраструктуры. Подбираем людей под задачу, подтверждаем выход и держим смену под контролем — от заявки до закрывающих документов.</p>
+    <div class="hero-actions"><a class="button" href="#contact">Запустить пилот <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
+    <div class="hero-meta"><span class="live-dot"></span><span>Пилотный регион — Нижний Новгород</span><span>·</span><span>Версия 02 / 2026</span></div>
+   </div>
+   <div class="hero-stage" aria-label="Схема операционной системы UBER STROY">
+    <div class="stage-grid"></div><div class="orbit"></div>
+    <div class="core-logo"><span>US</span></div>
+    <div class="stage-card top"><div class="stage-status"><span class="label">Workforce dispatch</span><span class="status-pill">SYSTEM / DEMO</span></div><strong>1 <em>→</em> 50+</strong><small>от заявки к собранной команде</small><div class="stage-lines"><i></i><i></i><i></i></div></div>
+    <div class="stage-card bottom"><span class="label">Shift control / 08:00</span><strong>READY <em>●</em></strong><small>состав · старший · допуск · табель</small></div>
+    <div class="coordinates">55° 45′ 00″ N / 37° 37′ 00″ E</div>
+   </div>
+  </div>
+  <div class="hero-bottom"><span><strong>Один оператор</strong> / много команд</span><span>строительство · дороги · сети · благоустройство</span><span>операции / данные / масштаб</span></div>
+ </div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b> CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b></span><span>CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b> CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b></span></div></div>
+
+<section id="problem">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">01 / Market friction</div><h2 class="display">РЫНОК НЕ НУЖДАЕТСЯ<br>В ЕЩЁ ОДНОМ ЧАТЕ.</h2><p class="section-intro">Ему нужен оператор, который превращает обещание «люди есть» в подтверждённый выход на конкретный объект и смену.</p></div><div class="section-tag">Проблема / 4 точки потери</div></div>
+  <div class="problem-grid">
+   <div class="problem-lead reveal"><div class="kicker">The gap between demand & delivery</div><h3>«НУЖНО 20 ЧЕЛОВЕК» — ЭТО НЕ ЗАКАЗ. ЭТО НАЧАЛО ПРОЦЕССА.</h3><p>Кто именно выйдет? Кто отвечает? Что умеют? Кто заменит? Как подтвердить часы и оплату? Сегодня ответы разбросаны по звонкам, таблицам и мессенджерам.</p></div>
+   <div class="pain-stack">
+    <article class="pain reveal delay-1"><div class="pain-num">01</div><div><h3>Фрагментированное предложение</h3><p>Поставщики и организованные группы не объединены в единый календарь доступности.</p></div></article>
+    <article class="pain reveal delay-2"><div class="pain-num">02</div><div><h3>Неподтверждённая явка</h3><p>Заявленная численность не равна поимённо подтверждённому составу на дату.</p></div></article>
+    <article class="pain reveal delay-3"><div class="pain-num">03</div><div><h3>Нет прозрачной истории опыта</h3><p>Заказчику сложно подобрать исполнителей под конкретные операции и ограничения допуска.</p></div></article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section-dark" id="solution">
+ <div class="topline"></div><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">02 / The operating system</div><h2 class="display">ОДНА ЦЕПОЧКА.<br>ШЕСТЬ КОНТРОЛЬНЫХ ТОЧЕК.</h2><p class="section-intro">Мы не просто соединяем спрос и предложение. Мы управляем выполнением операционного заказа: от квалификации потребности до принятой смены и расчёта.</p></div><div class="section-tag">UBER STROY / operations</div></div>
+  <div class="solution-rail">
+   <article class="rail-step reveal"><span class="n">01</span><span class="rail-arrow">↗</span><h3>Заявка</h3><p>Объект, дата, задачи, численность, ставка и режим.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">02</span><span class="rail-arrow">↗</span><h3>Matching</h3><p>Подбираем доступные команды под задачи и требования.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">03</span><span class="rail-arrow">↗</span><h3>Верификация</h3><p>Состав, документы, старший, СИЗ и допуски.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">04</span><span class="rail-arrow">↗</span><h3>Диспетчеризация</h3><p>Подтверждение выхода, координация и замены.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">05</span><span class="rail-arrow">↗</span><h3>Приёмка</h3><p>Фактическая явка, табель и подтверждение заказчика.</p></article>
+   <article class="rail-step reveal delay-3"><span class="n">06</span><span class="rail-arrow">↗</span><h3>Расчёт</h3><p>Документы, платежи, экономика и качество смены.</p></article>
+  </div>
+  <div class="offer-grid">
+   <article class="offer reveal"><div class="kicker">Layer / 01</div><h3>Workforce<br>Operations</h3><p>CRM поставщиков и клиентов, календарь доступности, заявки, контроль выхода, табели и экономика смен.</p></article>
+   <article class="offer reveal delay-1"><div class="kicker">Layer / 02</div><h3>Skill<br>Intelligence</h3><p>Голосовой профиль практического опыта: операции, материалы, инструменты и подтверждённый уровень самостоятельности.</p></article>
+   <article class="offer reveal delay-2"><div class="kicker">Layer / 03</div><h3>Learning<br>Loop</h3><p>Каждая смена пополняет историю опыта и улучшает matching между задачей, командой и результатом.</p></article>
+  </div>
+  <div class="industries reveal"><span class="industry">Жилое строительство</span><span class="industry">Монолит и подготовка</span><span class="industry">Дороги и мосты</span><span class="industry">Трубопроводы и сети</span><span class="industry">Земляные работы</span><span class="industry">Благоустройство</span><span class="industry">Промышленность</span><span class="industry">Капремонт</span></div>
+ </div>
+</section>
+
+<section id="market">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">03 / Market intelligence</div><h2 class="display">МЫ УЖЕ ВИДИМ<br>КАРТУ СПРОСА.</h2><p class="section-intro">Реестр Нижнего Новгорода на 06.11.2026 — основа для приоритизации продаж. Разные источники пересекаются: карточка проекта, закупка и бюджетная строка могут относиться к одному объекту.</p></div><div class="section-tag">Nizhny Novgorod / 2026</div></div>
+  <div class="market-grid">
+   <div class="market-panel reveal"><h3>Карта строительного рынка</h3><div class="stats-grid">
+    <div class="stat"><strong data-count="132">132</strong><span>базовые записи строительного реестра</span><small>BASE REGISTER</small></div>
+    <div class="stat"><strong data-count="39">39</strong><span>проектных линий / КРТ / pipeline</span><small>DEVELOPMENT PIPELINE</small></div>
+    <div class="stat"><strong data-count="19">19</strong><span>текущих и ближайших закупочных сигналов</span><small>PROCUREMENT SIGNALS</small></div>
+    <div class="stat"><strong>₽21,06 млрд</strong><span>ассигнования по 43 числовым строкам городского АИП</span><small>2026 BUDGET / NOT TAM</small></div>
+   </div><div class="note"><b>Читаем цифры правильно.</b> АИП, НМЦК, стоимость контракта и инвестиции проекта — разные показатели. Это карта строительной активности, не сумма доступной выручки UBER STROY.</div></div>
+   <div class="market-panel reveal delay-1"><h3>Структура жилого рынка</h3>
+    <div class="stats-grid" style="margin-bottom:24px">
+     <div class="stat"><strong>46</strong><span>застройщиков</span><small>HOUSING</small></div><div class="stat"><strong>71</strong><span>жилой комплекс</span><small>RESIDENTIAL</small></div><div class="stat"><strong>135</strong><span>строящихся домов</span><small>BUILDINGS</small></div><div class="stat"><strong>1,549 млн м²</strong><span>строящаяся жилая площадь</span><small>FLOOR AREA</small></div>
+    </div>
+    <div class="kicker" style="margin-bottom:15px">Отдельный обзор / сентябрь 2026</div><p style="font-size:11px;color:#9ba5ad;line-height:1.7;margin:0">Жилые показатели не охватывают весь строительный рынок. В мастер-реестре также собраны дороги, инженерные сети, благоустройство, социальные и промышленные объекты.</p>
+   </div>
+  </div>
+  <div class="market-panel reveal" style="margin-top:14px"><h3>Инфраструктурный и закупочный контур</h3><div class="stats-grid">
+   <div class="stat"><strong>₽849,9 млн</strong><span>17 закупочных карточек с указанными суммами</span><small>44-FZ + 223-FZ / MIXED AMOUNTS</small></div>
+   <div class="stat"><strong>503 / 214</strong><span>записи в наборах разрешений на строительство / ввод</span><small>REGISTRY RECORDS / NOT DEDUPED</small></div>
+   <div class="stat"><strong>166 / 127</strong><span>региональные инфраструктурные / приоритетные инвестиционные проекты</span><small>REGIONAL PIPELINE</small></div>
+   <div class="stat"><strong>₽33,34 млрд</strong><span>инвестиции 11 промышленных проектов с раскрытыми рабочими местами</span><small>INVESTMENT PROJECTS</small></div>
+  </div><div class="note">2 990 планируемых рабочих мест по 11 инвестиционным проектам — это будущая занятость предприятий, а не подтверждённый спрос на строительные смены. Реестры 503 разрешений и 214 вводов ещё требуют построчной выгрузки и дедупликации.</div></div>
+  <div class="market-panel reveal" style="margin-top:14px"><h3>Срез отраслевых когорт / проектные записи</h3><div class="cohort-bars">
+   <div class="bar-row"><span>Жилое строительство</span><div class="bar-track"><i data-width="100%"></i></div><b>14</b></div>
+   <div class="bar-row"><span>Освещение / аварийный ремонт</span><div class="bar-track"><i data-width="50%"></i></div><b>7</b></div>
+   <div class="bar-row"><span>Детские сады / социнфраструктура</span><div class="bar-track"><i data-width="43%"></i></div><b>6</b></div>
+   <div class="bar-row"><span>Дороги / реконструкция</span><div class="bar-track"><i data-width="36%"></i></div><b>5</b></div>
+   <div class="bar-row"><span>Сети / освещение</span><div class="bar-track"><i data-width="36%"></i></div><b>5</b></div>
+   <div class="bar-row"><span>Школы / социнфраструктура</span><div class="bar-track"><i data-width="29%"></i></div><b>4</b></div>
+  </div><p class="kicker" style="margin-top:19px">Когортные счётчики в реестре · возможны связанные записи одного проекта</p></div>
+ </div>
+</section>
+
+<section class="section-dark" id="supply">
+ <div class="topline"></div><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">04 / Supply network</div><h2 class="display">ПОСТАВЩИКИ НАЙДЕНЫ.<br>МОЩНОСТЬ ПРОВЕРЯЕМ.</h2><p class="section-intro">Не смешиваем контактную базу, заявленные объёмы и людей, которые реально готовы выйти на конкретную площадку.</p></div><div class="section-tag">Supply side / verification</div></div>
+  <div class="supply-grid">
+   <div class="supply-stat reveal"><strong>7</strong><span>поставщиков-кандидатов в CRM</span></div>
+   <div class="supply-stat reveal delay-1"><strong>2</strong><span>поставщика на переговорах</span></div>
+   <div class="supply-stat reveal delay-2"><strong>30–80</strong><span>заявленная мощность в текущих диалогах</span></div>
+   <div class="supply-stat warning reveal delay-3"><strong>0</strong><span>подтверждённых доступных выходов на дату среза</span></div>
+  </div>
+  <div class="offer-grid" style="margin-top:14px">
+   <article class="offer reveal"><div class="kicker">Network reach / hypothesis</div><h3>200–300</h3><p>Предварительная оценка общего круга людей в сети. Требуется дедупликация и проверка контактов.</p></article>
+   <article class="offer reveal delay-1"><div class="kicker">Potential available / hypothesis</div><h3>≈100</h3><p>Рабочая гипотеза о потенциально доступном предложении. Не подтверждённый резерв на дату.</p></article>
+   <article class="offer reveal delay-2"><div class="kicker">Pilot target</div><h3>50–70</h3><p>Целевой пул поимённо подтверждённых людей с документами, согласием, старшим и графиком.</p></article>
+  </div>
+  <div class="note"><b>Коммерческое правило:</b> не продавать неподтверждённую численность. До выхода — правовой статус, добровольное согласие, квалификация, инструктажи, СИЗ, допуск, старший и SLA замены.</div>
+ </div>
+</section>
+
+<section id="economics">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">05 / Unit economics</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Базовая коммерческая гипотеза на старте: цена заказчику ₽4 250, закупка у поставщика ₽3 250, целевой валовый спред ₽1 000 на человеко-смену.</p></div><div class="section-tag">22 shifts / month</div></div>
+  <div class="econ-layout">
+   <div class="calculator reveal">
+    <div class="kicker">Interactive shift calculator</div><h3>Собери свой<br>сценарий.</h3><p class="sub">Меняй число людей на смене — модель пересчитает месячный поток при 22 сменах.</p>
+    <div class="range-head"><label for="crewRange">Людей ежедневно</label><output id="crewOutput" for="crewRange">50</output></div>
+    <input id="crewRange" type="range" min="10" max="100" step="5" value="50">
+    <div class="range-labels"><span>10 человек</span><span>100 человек</span></div>
+    <div class="calc-results">
+     <div class="calc-result"><span>Оборот / месяц</span><strong id="turnover">₽4,675 млн</strong></div>
+     <div class="calc-result"><span>Поставщикам</span><strong id="supplierPay">₽3,575 млн</strong></div>
+     <div class="calc-result feature"><span>Валовый спред / месяц</span><strong id="grossSpread">₽1,100 млн</strong></div>
+     <div class="calc-result"><span>Спред / человеко-смена</span><strong>₽1 000</strong></div>
+    </div>
+    <div class="calc-foot">Формула: люди × 22 смены × ставка. Цена — ₽4 250; закупка — ₽3 250.</div>
+   </div>
+   <div class="econ-context reveal delay-1">
+    <div><div class="kicker">Base case / per worker shift</div><h3>₽1 000<br><span class="orange">GROSS SPREAD</span></h3><p>Валовый спред — до налогов и прямых/операционных затрат. Это не чистая прибыль и не EBITDA.</p></div>
+    <div class="econ-table">
+     <div class="econ-line"><span>Цена заказчику</span><strong>₽4 250</strong></div>
+     <div class="econ-line"><span>Закупка у поставщика</span><strong>₽3 250</strong></div>
+     <div class="econ-line"><span>Валовая маржа</span><strong>23,5%</strong></div>
+     <div class="econ-line total"><span>Спред на смену</span><strong>₽1 000</strong></div>
+    </div>
+    <div class="note">Не включены налоги, транспорт, питание, СИЗ, координаторы, замены, страхование, юристы, банковские расходы, стоимость оборотного капитала и плохие долги. Длительность смены фиксируется в договоре.</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section-dark" id="analogues">
+ <div class="topline"></div><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">06 / Global playbooks</div><h2 class="display">ЭТА МЕХАНИКА<br>УЖЕ РАБОТАЕТ В МИРЕ.</h2><p class="section-intro">Западные аналоги показывают, что гибкий labor marketplace может масштабировать верификацию, доступность и закрытие смен. Это ориентиры по механике, а не обещание повторить их результаты.</p></div><div class="section-tag">Selected benchmarks</div></div>
+  <div class="analog-grid">
+   <article class="analog reveal"><div class="year">EST. 2015 / USA & CANADA</div><h3>Instawork</h3><div class="metric">9M+</div><div class="descriptor">WORKERS IN NETWORK</div><p>Почасовые работники, рейтинги, верификация, on-site captains и быстрый matching. Компания сообщает о сети 9 млн+ работников.</p><a href="https://www.instawork.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
+   <article class="analog reveal delay-1"><div class="year">EST. 2014 / USA</div><h3>Wonolo</h3><div class="metric">3M+</div><div class="descriptor">SKILLED WORKERS</div><p>Более 6,2 млн опубликованных заданий и охват 500+ рынков США. Фокус — производство, fulfilment, склады и retail.</p><a href="https://www.wonolo.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
+   <article class="analog reveal delay-2"><div class="year">EST. 2017 / USA</div><h3>Veryable</h3><div class="metric">750K+</div><div class="descriptor">VETTED WORKERS</div><p>On-demand labor для производства и складов: labor pool, заявки на смены и подбор под операционные потребности.</p><a href="https://www.veryableops.com/about" target="_blank" rel="noopener">О компании ↗</a></article>
+   <article class="analog reveal delay-3"><div class="year">SYFT EST. 2015 / UK</div><h3>Indeed Flex</h3><div class="metric">5.4M</div><div class="descriptor">SHIFTS POSTED / 2025</div><p>Гибкая занятость с управлением сменами. В отчётности Indeed Flex раскрыто 5,4 млн размещённых смен за 2025 год.</p><a href="https://indeedflex.co.uk/about-us/" target="_blank" rel="noopener">О компании ↗</a></article>
+  </div>
+  <div class="note">Публичный GMV / годовая выручка этих частных платформ не раскрыты в использованных источниках. Здесь указаны метрики масштаба сети и активности, а не денежные обороты.</div>
+ </div>
+</section>
+
+<section id="roadmap">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">07 / Roadmap</div><h2 class="display">СНАЧАЛА ДОКАЖЕМ.<br>ПОТОМ ТИРАЖИРУЕМ.</h2><p class="section-intro">Нижний Новгород — полигон для проверки спроса, надёжности предложения, маржи и cash cycle. После повторяемой модели — новые города.</p></div><div class="section-tag">30 days → 36 months</div></div>
+  <div class="roadmap">
+   <article class="phase reveal"><div class="time">PHASE 01 / 0–30 DAYS</div><h3>Первый<br>пилот</h3><ul><li>Проверить 2 поставщиков и правовую модель.</li><li>30–40 целевых касаний.</li><li>3–5 квалифицированных потребностей.</li><li>1–2 оплаченных теста на 5–10 человек.</li></ul></article>
+   <article class="phase reveal delay-1"><div class="time">PHASE 02 / 30–90 DAYS</div><h3>Операционная<br>повторяемость</h3><ul><li>Стабильные 10–20 выходов.</li><li>Повторные заказы и графики смен.</li><li>SLA, табели, акты и cash control.</li><li>Подтверждённый пул 50–70 человек.</li></ul></article>
+   <article class="phase reveal delay-2"><div class="time">PHASE 03 / 3–12 MONTHS</div><h3>Продукт и<br>вертикали</h3><ul><li>Matching и цифровые профили навыков.</li><li>История фактических смен.</li><li>Дороги, сети, благоустройство, промышленные площадки.</li><li>Региональный playbook.</li></ul></article>
+   <article class="phase reveal delay-3"><div class="time">PHASE 04 / 12–36 MONTHS</div><h3>Федеральная<br>сеть</h3><ul><li>Тиражирование в новые города.</li><li>Единый стандарт качества и поставщиков.</li><li>Кабинеты заказчиков и партнёров.</li><li>Единая операционная платформа.</li></ul></article>
+  </div>
+ </div>
+</section>
+
+<section class="section-dark" id="scale">
+ <div class="topline"></div><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">08 / Scale thesis</div><h2 class="display">ОДНА МОДЕЛЬ.<br>МНОГО ГОРОДОВ.</h2><p class="section-intro">При той же ставке и 22 сменах в месяц рост числа подтверждённых ежедневных выходов линейно увеличивает валовый поток. Это сценарная математика, не прогноз продаж.</p></div><div class="section-tag">Scenario / base economics</div></div>
+  <div class="scale-layout">
+   <div class="scale-box reveal">
+    <div class="scale-row head"><span>Людей / день</span><span>Оборот / месяц</span><em>Спред / месяц</em></div>
+    <div class="scale-row"><strong>100</strong><span>₽9,35 млн</span><em>₽2,20 млн</em></div>
+    <div class="scale-row"><strong>300</strong><span>₽28,05 млн</span><em>₽6,60 млн</em></div>
+    <div class="scale-row"><strong>1 000</strong><span>₽93,50 млн</span><em>₽22,00 млн</em></div>
+    <p class="kicker" style="margin-top:17px">22 смены / цена ₽4 250 / спред ₽1 000</p>
+   </div>
+   <div class="scale-box reveal delay-1">
+    <div class="thesis-list">
+     <div class="thesis-item"><i>01</i><div><b>Плотность спроса</b><span>Повторяющиеся заказы от строительных и инфраструктурных клиентов.</span></div></div>
+     <div class="thesis-item"><i>02</i><div><b>Ликвидность предложения</b><span>Проверенные поставщики, календарь доступности, резерв и замены.</span></div></div>
+     <div class="thesis-item"><i>03</i><div><b>Data advantage</b><span>История выходов, навыки, надёжность и качество matching.</span></div></div>
+     <div class="thesis-item"><i>04</i><div><b>Региональная стандартизация</b><span>Локальные команды под единым операционным стандартом UBER STROY.</span></div></div>
+    </div>
+   </div>
+  </div>
+  <p class="kicker" style="margin-top:18px">Единорог — долгосрочная венчурная гипотеза, а не текущая оценка бизнеса или обещание результата.</p>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="final-cta reveal">
+   <div><div class="eyebrow">Next / 30-day pilot</div><h2>ИЗ РЕЕСТРА<br>НА ОБЪЕКТ.</h2><p>Следующий шаг — поимённо подтвердить людей, получить первую квалифицированную заявку, провести тестовую смену и доказать повторяемую экономику на реальном объекте.</p><a class="button" href="mailto:?subject=UBER%20STROY%20%E2%80%94%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82&body=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82%20UBER%20STROY.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%3A%20...%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%20...%20%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20...%20%D0%94%D0%B0%D1%82%D0%B0%3A%20...">Обсудить пилот <span class="arrow">↗</span></a></div>
+   <div class="cta-metrics"><div class="cta-metric"><b>5–10</b><span>человек / первый тестовый выход</span></div><div class="cta-metric"><b>10–20</b><span>первые регулярные смены</span></div><div class="cta-metric"><b>50–70</b><span>подтверждённый пул — цель</span></div><div class="cta-metric"><b>30 дней</b><span>валидация совместной модели</span></div></div>
+  </div>
+  <div class="sources"><b style="color:#cbd2d7">Данные рынка:</b> внутренний строительный реестр Нижнего Новгорода v2 от 06.11.2026; CRM и паспорт UBER STROY. Внешние источники: <a href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">DOMOSTROINN</a> · <a href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">реестр разрешений Минстроя</a> · <a href="https://www.budgetnn.ru/planirovanie-byudzheta/adresnyj-investitsionnyj-perechen" target="_blank" rel="noopener">городской АИП</a>.<br><br><b style="color:#cbd2d7">Методические ограничения:</b> 132 базовые записи, 39 pipeline-линий и 19 закупочных сигналов могут пересекаться. Сумма ₽21,06 млрд — ассигнования по 43 числовым строкам АИП, не стоимость рынка. ₽849,9 млн — 17 закупочных карточек со смешанными видами цен. Наборы 503 разрешений на строительство и 214 разрешений на ввод не разобраны построчно. Охват сети 200–300, потенциально доступные около 100 и заявки поставщиков на 30–80 — предварительные гипотезы; подтверждённых выходов на дату среза — 0. Правовую модель, охрану труда и допуски требуется проверить до первого выхода. Профили навыков — только с добровольного согласия работников. UBER STROY не аффилирован с Uber Technologies, Inc.</div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><div class="footer-brand">UBER <em>STROY</em> / WORKFORCE OPERATIONS</div><div>© 2026 · Нижний Новгород · Partner & investor overview</div><a href="#top">Наверх ↑</a></div></footer>
+<script>
+(function(){
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const menu=document.getElementById('menuBtn');
+ const nav=document.getElementById('navLinks');
+ menu.addEventListener('click',function(){const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';});
+ nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';});});
+ const progress=document.getElementById('progress');
+ function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?window.scrollY/max*100:0)+'%';}
+ window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+ const navLinks=[...nav.querySelectorAll('a[href^="#"]')];
+ const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+ if('IntersectionObserver' in window){const activeObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>activeObserver.observe(s));}
+ const revealEls=document.querySelectorAll('.reveal');
+ if(!reduce && 'IntersectionObserver' in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}}),{threshold:.12});revealEls.forEach(el=>revealObserver.observe(el));}
+ else{revealEls.forEach(el=>el.classList.add('visible'));}
+ const bars=document.querySelectorAll('[data-width]');
+ if('IntersectionObserver' in window){const barObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.width=entry.target.dataset.width;barObserver.unobserve(entry.target);}}),{threshold:.4});bars.forEach(b=>barObserver.observe(b));}else{bars.forEach(b=>b.style.width=b.dataset.width);}
+ const slider=document.getElementById('crewRange');
+ const output=document.getElementById('crewOutput');
+ const fmt=n=>'₽'+Math.round(n).toLocaleString('ru-RU');
+ function updateCalc(){const people=Number(slider.value);const turnover=people*4250*22;const suppliers=people*3250*22;const spread=people*1000*22;output.value=String(people);output.textContent=String(people);document.getElementById('turnover').textContent=fmt(turnover);document.getElementById('supplierPay').textContent=fmt(suppliers);document.getElementById('grossSpread').textContent=fmt(spread);slider.style.background='linear-gradient(90deg,#ff5a1f '+((people-10)/90*100)+'%,#c7c9c6 '+((people-10)/90*100)+'%)';}
+ slider.addEventListener('input',updateCalc);updateCalc();
+ if(!reduce){const ticker=document.querySelector('.ticker-track');ticker.addEventListener('mouseenter',()=>ticker.style.animationPlayState='paused');ticker.addEventListener('mouseleave',()=>ticker.style.animationPlayState='running');}
+})();
+</script>
+</body>
+</html>

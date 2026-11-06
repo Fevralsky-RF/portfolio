@@ -573,6 +573,46 @@ body[data-theme="performance"] .task-ribbon{background:#111920;border-color:#303
 body[data-theme="performance"] .task-match-principle{background:linear-gradient(110deg,#241912,#121a21);border-color:#8a492c}
 
 
+
+/* Base Performance Industrial — best-of-reference human & product upgrade */
+.hero-stage{overflow:hidden;border:1px solid #39454d;background:#101820}
+.hero-human-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;z-index:-2;filter:saturate(.72) contrast(1.08);opacity:.84}
+.hero-human-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,12,16,.1),rgba(8,12,16,.55)),linear-gradient(90deg,rgba(8,12,16,.25),transparent 70%)}
+.hero-stage:before{border-color:#ff8a5b4f;box-shadow:0 0 0 48px #ffffff08,0 0 0 96px #ffffff05}
+.hero-stage .core-logo{background:linear-gradient(145deg,#121a21df,#090d12e8);backdrop-filter:blur(9px)}
+.hero-stage .stage-card{background:rgba(10,16,21,.88);border-color:#ff7a3f80;backdrop-filter:blur(14px)}
+.hero-stage .coordinates{color:#e6e0d9;text-shadow:0 2px 9px #000}
+.entry-routes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px auto 0}
+.entry-route{padding:22px 24px;background:#121a21;border:1px solid #35424b;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.entry-route:hover{transform:translateY(-4px);border-color:var(--orange)}
+.entry-route span{font-size:8px;letter-spacing:.14em;font-weight:950;color:var(--orange)}
+.entry-route strong{display:block;font:950 clamp(20px,2.3vw,27px)/.98 Impact,Arial,sans-serif;letter-spacing:-.025em;margin:12px 0}
+.entry-route p{font-size:10px;line-height:1.6;color:#aab5bd;max-width:420px;margin-bottom:12px}
+.entry-route a{font-size:9px;letter-spacing:.1em;font-weight:950;color:var(--orange)}
+.entry-supplier{background:#f1efe9;color:#111820;border-color:#d6d2c9}
+.entry-supplier p{color:#657078}.entry-supplier a{color:#cf491d}
+.people-proof-section{padding:82px 0;background:#0f151b;border-block:1px solid #29343c}
+.people-proof-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:27px}
+.people-proof-head>div{max-width:760px}
+.people-proof-head h2{font-size:clamp(34px,4.7vw,58px);margin:15px 0}
+.people-proof-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px}
+.people-proof-grid figure{position:relative;min-height:235px;margin:0;overflow:hidden;border:1px solid #35424b;background:#17212a}
+.people-proof-grid img{width:100%;height:100%;min-height:235px;object-fit:cover;filter:saturate(.8);transition:transform .55s}
+.people-proof-grid figure:hover img{transform:scale(1.045)}
+.people-proof-grid figure:after{content:"";position:absolute;inset:25% 0 0;background:linear-gradient(transparent,rgba(5,10,15,.88))}
+.people-proof-grid figcaption{position:absolute;z-index:1;left:16px;right:16px;bottom:15px;display:grid;gap:6px}
+.people-proof-grid small{font-size:8px;letter-spacing:.14em;color:var(--orange);font-weight:950}
+.people-proof-grid b{font-size:12px;line-height:1.35;color:#fff}
+.people-proof-caption{font-size:8px;color:#74818a;margin-top:10px}
+@media(max-width:760px){
+ .entry-routes{grid-template-columns:1fr}
+ .entry-route{padding:18px}
+ .people-proof-head{align-items:flex-start;flex-direction:column}
+ .people-proof-grid{grid-template-columns:1fr 1fr}
+ .people-proof-grid figure:first-child{grid-column:1/-1}
+ .people-proof-grid figure,.people-proof-grid img{min-height:155px}
+}
+
 </style>
 </head>
 <body data-theme="performance">
@@ -581,7 +621,7 @@ body[data-theme="performance"] .task-match-principle{background:linear-gradient(
  <div class="wrap nav">
   <a class="brand" href="#top" aria-label="UBER STROY — на главную"><span class="brand-mark">US</span><span class="brand-name">UBER <em>STROY</em></span></a>
   <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
-   <a href="#solution">Модель</a><a href="#skill-match">Подбор по опыту</a><a href="#market">Рынок</a><a href="#economics">Экономика</a><a href="#analogues">Аналоги</a><a href="#roadmap">План</a>
+   <a href="#solution">Модель</a><a href="#skill-match">Подбор по опыту</a><a href="#market">Рынок</a><a href="#economics">Экономика</a><a href="#analogues">Аналоги</a><a href="#roadmap">План</a><a href="/portfolio/uber-stroy/reference-landings.html">10 дизайнов</a>
    <a class="nav-cta" href="#contact">Подобрать команду <span>↗</span></a>
   </nav>
   <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
@@ -594,7 +634,7 @@ body[data-theme="performance"] .task-match-principle{background:linear-gradient(
   <a class="theme-link theme-performance active" data-theme-link="performance" href="/portfolio/uber-stroy/">01&nbsp; PERFORMANCE</a>
   <a class="theme-link theme-brandbook" data-theme-link="brandbook" href="/portfolio/uber-stroy/brandbook/">02&nbsp; BRANDBOOK</a>
   <a class="theme-link theme-premium" data-theme-link="premium" href="/portfolio/uber-stroy/dark-premium/">03&nbsp; DARK PREMIUM</a>
-  <a class="theme-compare" href="/portfolio/uber-stroy/design-playbook.html">10 US REFERENCES ↗</a><a class="theme-compare" href="/portfolio/uber-stroy/compare.html">СРАВНИТЬ ↗</a>
+  <a class="theme-compare" href="/portfolio/uber-stroy/reference-landings.html">10 ГОТОВЫХ ЛЕНДИНГОВ ↗</a><a class="theme-compare" href="/portfolio/uber-stroy/design-playbook.html">10 US REFERENCES ↗</a><a class="theme-compare" href="/portfolio/uber-stroy/compare.html">СРАВНИТЬ ↗</a>
  </div>
 </div>
 
@@ -610,7 +650,7 @@ body[data-theme="performance"] .task-match-principle{background:linear-gradient(
     <div class="hero-meta"><span class="live-dot"></span><span>Пилотный регион — Нижний Новгород</span><span>·</span><span>Версия 02 / 2026</span></div>
    </div>
    <div class="hero-stage" aria-label="Схема операционной системы UBER STROY">
-    <div class="stage-grid"></div><div class="orbit"></div>
+    <img class="hero-human-photo" src="https://ep-turnerconstruction-prod-asdcetgubtducba3.z01.azurefd.net/thumbs/careers-labor-and-skilled-trades-what-we-offer_thumb-blocks-left-view.jpg?v=6f1eb" alt="Строительная команда в касках и сигнальных жилетах на объекте" loading="eager" fetchpriority="high"><div class="hero-human-overlay"></div><div class="stage-grid"></div><div class="orbit"></div>
     <div class="core-logo"><span>US</span></div>
     <div class="stage-card top"><div class="stage-status"><span class="label">TASK → CREW MATCH</span><span class="status-pill">SYSTEM / DEMO</span></div><strong>TASK <em>→</em> CREW</strong><small>от конкретной операции к людям с релевантным опытом</small><div class="stage-lines"><i></i><i></i><i></i></div></div>
     <div class="stage-card bottom"><span class="label">BEFORE DISPATCH / CHECK</span><strong>RIGHT FIT <em>●</em></strong><small>опыт · доступность · допуск · подтверждение</small></div>
@@ -629,6 +669,10 @@ body[data-theme="performance"] .task-match-principle{background:linear-gradient(
   <span class="task-step"><small>03 / ОПЫТ</small><b>ПРОФИЛИ ЛЮДЕЙ</b></span><i>→</i>
   <span class="task-step task-step-result"><small>04 / РЕЗУЛЬТАТ</small><b>КОМАНДА ПОД РАБОТУ</b></span>
  </div>
+</div>
+<div class="entry-routes wrap">
+ <div class="entry-route entry-client"><span>01 / ДЛЯ ЗАКАЗЧИКА</span><strong>НУЖНЫ ЛЮДИ<br>ПОД КОНКРЕТНУЮ РАБОТУ?</strong><p>Опишите операции, объект и дату. Получите состав с подходящим опытом и понятным статусом проверки.</p><a href="#contact">СОБРАТЬ КОМАНДУ ↗</a></div>
+ <div class="entry-route entry-supplier"><span>02 / ДЛЯ ПОСТАВЩИКА</span><strong>ЕСТЬ ЛЮДИ<br>С ПОДТВЕРЖДЁННЫМ ОПЫТОМ?</strong><p>Покажите реальные компетенции бригады, профили работников и доступность — получайте релевантные заявки.</p><a href="#supply">ПОДКЛЮЧИТЬСЯ К СЕТИ ↗</a></div>
 </div>
 
 <section id="problem">
@@ -708,6 +752,17 @@ body[data-theme="performance"] .task-match-principle{background:linear-gradient(
    </div>
   </div>
   <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>Система подбирает человека не по названию профессии, а по конкретным операциям, которые он действительно выполнял.</strong><span>Работник проверяет профиль. Самоотчёт, подтверждение старшего и документальная квалификация хранятся отдельно — это не одно и то же.</span></div></div>
+ </div>
+</section>
+<section class="people-proof-section">
+ <div class="wrap">
+  <div class="people-proof-head"><div><div class="eyebrow">REAL PEOPLE / REAL CRAFT</div><h2 class="display">ЗА КАЖДЫМ ПРОФИЛЕМ<br><span class="orange">СТОИТ ЧЕЛОВЕК.</span></h2><p class="section-intro">Мы строим цифровую карту навыков не из абстрактных тегов, а вокруг реальных людей, рабочих площадок и опыта, который можно объяснить и подтвердить.</p></div><a class="button ghost" href="#skill-match">ПОСМОТРЕТЬ ПОДБОР ↗</a></div>
+  <div class="people-proof-grid">
+   <figure><img src="https://img.dpr.com/content/uploads/Blog/BAOC-DIRTT-Hero-BLOG.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=630&q=82&s=7bb5c1e2bb0619256ba06d3ee6d035b1&w=1200" alt="Строители на объекте DPR" loading="lazy"><figcaption><small>CRAFT / PEOPLE</small><b>Практический опыт начинается на площадке.</b></figcaption></figure>
+   <figure><img src="https://www.mccarthy.com/sites/default/files/2025-10/Vantage-NV-Trailer.jpg" alt="Большая рабочая команда на строительном проекте" loading="lazy"><figcaption><small>TEAM / QUALITY</small><b>Команда важна не меньше, чем численность.</b></figcaption></figure>
+   <figure><img src="https://www.henselphelps.com/wp-content/uploads/2025/04/HP-Tyndall-Onsite-Day-1-76-1-scaled.jpg" alt="Бригада строительных специалистов Hensel Phelps" loading="lazy"><figcaption><small>SKILLED CRAFT</small><b>У каждого человека — своя специализация.</b></figcaption></figure>
+  </div>
+  <div class="people-proof-caption">Фотографии: публичные страницы DPR Construction, McCarthy Building Companies и Hensel Phelps. Используются как визуальные референсы; права остаются у правообладателей.</div>
  </div>
 </section>
 

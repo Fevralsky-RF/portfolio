@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="theme-color" content="#090c10"><title>UBER STROY — перенаправление</title>
+<style>html,body{margin:0;min-height:100%;background:#090c10;color:#f1efe9;font:16px/1.5 Arial,sans-serif}main{max-width:620px;margin:12vh auto;padding:28px}a{color:#ff7a3f}small{color:#9ba5ad}</style></head>
+<body><main><h1>UBER STROY</h1><p>Перенаправляем на актуальный каталог концепций…</p><p><a id="fallback" href="/portfolio/uber-stroy/reference-landings.html">Открыть каталог десяти лендингов</a></p><small>Если перенаправление не сработало, нажми на ссылку выше.</small></main>
+<script>
+(function(){
+  var p=location.pathname.replace(/\/+$/,"");
+  var root="/portfolio/uber-stroy/";
+  var target=root+"reference-landings.html";
+  var m=p.match(/\/portfolio\/uber-stroy\/refs\/([a-z-]+)(?:\/index\.html)?$/i);
+  if(m){
+    var s=m[1].toLowerCase();
+    var allowed=["turner","dpr","mortenson","mccarthy","kiewit","clark","hensel-phelps","skillit","instawork","veryable"];
+    if(allowed.indexOf(s)>=0) target=root+"concept-"+s+".html";
+  }
+  document.getElementById("fallback").href=target;
+  location.replace(target+"?from=legacy-route");
+})();
+</script></body></html>

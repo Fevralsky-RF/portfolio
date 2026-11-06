@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#090c10">
 <meta name="description" content="UBER STROY — оператор организованных рабочих команд. Строительство, дороги, инженерные сети и благоустройство.">
 <meta property="og:title" content="UBER STROY — команды в движении">
-<meta property="og:description" content="Рабочая сила. По запросу. Под контролем.">
+<meta property="og:description" content="Правильные люди. Под конкретную работу. Подтверждённый опыт, подбор команды и контроль смены.">
 <meta property="og:type" content="website">
 <title>UBER STROY — Brandbook / Product Experience</title>
 <style>
@@ -618,6 +618,41 @@ footer{background:#171b1e}
  .orbit{width:250px;height:250px}
 }
 
+
+/* TASK-FIRST BRAND STORY — the central promise is repeated through the whole experience */
+.task-ribbon{background:#111920;border-block:1px solid #303b43;padding:17px max(24px,calc((100% - var(--max))/2));}
+.task-ribbon-label{font-size:8px;letter-spacing:.15em;font-weight:950;color:var(--orange);margin-bottom:10px}
+.task-ribbon-flow{display:grid;grid-template-columns:1fr 18px 1.5fr 18px 1fr 18px 1.1fr;gap:10px;align-items:center}
+.task-step{display:flex;flex-direction:column;gap:5px;min-width:0}
+.task-step small{font-size:8px;letter-spacing:.11em;color:#8f9ca5;font-weight:900}
+.task-step b{font-size:11px;line-height:1.35;color:#f1efe9}
+.task-ribbon-flow>i{font-style:normal;color:var(--orange);font-size:17px;font-weight:900}
+.task-step-result{border-left:2px solid var(--orange);padding-left:12px}
+.task-match-principle{margin:22px 0 0;padding:22px;border:1px solid #8a492c;background:#211914}
+.task-match-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.task-match-heading .kicker{color:var(--orange);font-size:8px;letter-spacing:.12em}
+.task-match-heading strong{font-size:16px;color:#fff;line-height:1.3}
+.task-match-columns{display:grid;grid-template-columns:1fr 18px 1.4fr 18px 1.2fr;gap:12px;align-items:center;margin-top:18px;padding:15px;background:#111920;border:1px solid #303b43}
+.task-match-columns>div{display:flex;flex-direction:column;gap:5px}
+.task-match-columns>div span{font-size:8px;letter-spacing:.12em;color:#87949e;font-weight:900}
+.task-match-columns>div b{font-size:11px;line-height:1.4;color:#e5e9ec}
+.task-match-columns>i{font-style:normal;color:var(--orange);font-size:17px;font-weight:900}
+.task-match-principle>p{font-size:10px;color:#aab4bb;line-height:1.6;margin:13px 0 0}
+.hero h1{max-width:760px}
+.hero h1 .orange-word{display:inline-block}
+@media(max-width:720px){
+ .task-ribbon{padding:16px}
+ .task-ribbon-flow{grid-template-columns:1fr;gap:6px}
+ .task-ribbon-flow>i{transform:rotate(90deg);transform-origin:left center;margin:0 0 0 10px;height:15px}
+ .task-step{padding:5px 0}
+ .task-step-result{padding-left:10px}
+ .task-match-principle{padding:16px}
+ .task-match-heading strong{font-size:13px}
+ .task-match-columns{grid-template-columns:1fr;gap:7px;padding:12px}
+ .task-match-columns>i{transform:rotate(90deg);transform-origin:left center;margin-left:5px;height:13px}
+ .task-match-columns>div b{font-size:10px}
+}
+
 </style>
 </head>
 <body data-theme="brandbook">
@@ -626,8 +661,8 @@ footer{background:#171b1e}
  <div class="wrap nav">
   <a class="brand" href="#top" aria-label="UBER STROY — на главную"><span class="brand-mark">US</span><span class="brand-name">UBER <em>STROY</em></span></a>
   <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
-   <a href="#solution">Модель</a><a href="#skill-profile">Skill AI</a><a href="#market">Рынок</a><a href="#economics">Экономика</a><a href="#analogues">Аналоги</a><a href="#roadmap">План</a>
-   <a class="nav-cta" href="#contact">Обсудить пилот <span>↗</span></a>
+   <a href="#solution">Модель</a><a href="#skill-match">Подбор по опыту</a><a href="#market">Рынок</a><a href="#economics">Экономика</a><a href="#analogues">Аналоги</a><a href="#roadmap">План</a>
+   <a class="nav-cta" href="#contact">Подобрать команду <span>↗</span></a>
   </nav>
   <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
  </div>
@@ -648,34 +683,43 @@ footer{background:#171b1e}
  <div class="wrap">
   <div class="hero-grid">
    <div class="hero-copy-block">
-    <div class="eyebrow">Workforce operations / Nizhny Novgorod</div>
-    <h1 class="display">ЛЮДИ.<br><span class="outline-word">ОБЪЕКТЫ.</span><br><span class="orange-word">ДВИЖЕНИЕ.</span></h1>
-    <p class="hero-copy">UBER STROY превращает разрозненный рынок рабочих команд в управляемый ресурс для строительства и инфраструктуры. Подбираем людей под задачу, подтверждаем выход и держим смену под контролем — от заявки до закрывающих документов.</p>
-    <div class="hero-actions"><a class="button" href="#contact">Запустить пилот <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
+    <div class="eyebrow">TASK-TO-CREW OPERATOR / NIZHNY NOVGOROD</div>
+    <h1 class="display">ПРАВИЛЬНЫЕ<br><span class="outline-word">ЛЮДИ.</span><br><span class="orange-word">ПОД КОНКРЕТНУЮ<br>РАБОТУ.</span></h1>
+    <p class="hero-copy">UBER STROY подбирает не просто нужное количество людей, а команду под конкретные операции. Вы описываете, что нужно сделать; система сопоставляет задачу с профилями практического опыта. Доступность, обязательные требования и состав подтверждаются до выхода на объект.</p>
+    <div class="hero-actions"><a class="button" href="#contact">Подобрать команду <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
     <div class="hero-meta"><span class="live-dot"></span><span>Пилотный регион — Нижний Новгород</span><span>·</span><span>Версия 02 / 2026</span></div>
    </div>
    <div class="hero-stage" aria-label="Схема операционной системы UBER STROY">
     <div class="stage-grid"></div><div class="orbit"></div>
     <div class="core-logo"><span>US</span></div>
-    <div class="stage-card top"><div class="stage-status"><span class="label">Workforce dispatch</span><span class="status-pill">SYSTEM / DEMO</span></div><strong>1 <em>→</em> 50+</strong><small>от заявки к собранной команде</small><div class="stage-lines"><i></i><i></i><i></i></div></div>
-    <div class="stage-card bottom"><span class="label">Shift control / 08:00</span><strong>READY <em>●</em></strong><small>состав · старший · допуск · табель</small></div>
+    <div class="stage-card top"><div class="stage-status"><span class="label">TASK → CREW MATCH</span><span class="status-pill">SYSTEM / DEMO</span></div><strong>TASK <em>→</em> CREW</strong><small>от конкретной операции к людям с релевантным опытом</small><div class="stage-lines"><i></i><i></i><i></i></div></div>
+    <div class="stage-card bottom"><span class="label">BEFORE DISPATCH / CHECK</span><strong>RIGHT FIT <em>●</em></strong><small>опыт · доступность · допуск · подтверждение</small></div>
     <div class="coordinates">56° 19′ 00″ N / 44° 00′ 00″ E</div>
    </div>
   </div>
-  <div class="hero-bottom"><span><strong>Один оператор</strong> / много команд</span><span>строительство · дороги · сети · благоустройство</span><span>операции / данные / масштаб</span></div>
+  <div class="hero-bottom"><span><strong>Не просто численность</strong> / релевантный опыт</span><span>строительство · дороги · сети · благоустройство</span><span>задача / опыт / подтверждённый выход</span></div>
  </div>
 </section>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b> CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b></span><span>CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b> CREW ON DEMAND <b>✳</b> BUILT TO MOVE <b>✳</b> ONE OPERATOR / MANY TEAMS <b>✳</b> WORKFORCE CONTROL <b>✳</b></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>RIGHT PEOPLE FOR THE RIGHT JOB <b>✳</b> MATCH BY EXPERIENCE <b>✳</b> ONE TASK / THE RIGHT CREW <b>✳</b> SKILL-BASED DISPATCH <b>✳</b> RIGHT PEOPLE FOR THE RIGHT JOB <b>✳</b> MATCH BY EXPERIENCE <b>✳</b> ONE TASK / THE RIGHT CREW <b>✳</b> SKILL-BASED DISPATCH <b>✳</b></span><span>RIGHT PEOPLE FOR THE RIGHT JOB <b>✳</b> MATCH BY EXPERIENCE <b>✳</b> ONE TASK / THE RIGHT CREW <b>✳</b> SKILL-BASED DISPATCH <b>✳</b> RIGHT PEOPLE FOR THE RIGHT JOB <b>✳</b> MATCH BY EXPERIENCE <b>✳</b> ONE TASK / THE RIGHT CREW <b>✳</b> SKILL-BASED DISPATCH <b>✳</b></span></div></div>
+<div class="task-ribbon">
+ <div class="task-ribbon-label">ГЛАВНЫЙ ПРИНЦИП UBER STROY / TASK-TO-CREW</div>
+ <div class="task-ribbon-flow">
+  <span class="task-step"><small>01 / ЗАДАЧА</small><b>МОНОЛИТ</b></span><i>→</i>
+  <span class="task-step"><small>02 / ОПЕРАЦИИ</small><b>ОПАЛУБКА · ПОДАЧА · ПОДГОТОВКА</b></span><i>→</i>
+  <span class="task-step"><small>03 / ОПЫТ</small><b>ПРОФИЛИ ЛЮДЕЙ</b></span><i>→</i>
+  <span class="task-step task-step-result"><small>04 / РЕЗУЛЬТАТ</small><b>КОМАНДА ПОД РАБОТУ</b></span>
+ </div>
+</div>
 
 <section id="problem">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">01 / Market friction</div><h2 class="display">РЫНОК НЕ НУЖДАЕТСЯ<br>В ЕЩЁ ОДНОМ ЧАТЕ.</h2><p class="section-intro">Ему нужен оператор, который превращает обещание «люди есть» в подтверждённый выход на конкретный объект и смену.</p></div><div class="section-tag">Проблема / 4 точки потери</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">01 / Market friction</div><h2 class="display">ЗАКАЗЧИКУ НУЖНЫ НЕ<br>ПРОСТО ЛЮДИ.</h2><p class="section-intro">Ему нужна команда, в которой опыт каждого человека соответствует конкретной работе. Численность важна — но сначала нужно понять, какие операции предстоит выполнить.</p></div><div class="section-tag">Проблема / 4 точки потери</div></div>
   <div class="problem-grid">
-   <div class="problem-lead reveal"><div class="kicker">The gap between demand & delivery</div><h3>«НУЖНО 20 ЧЕЛОВЕК» — ЭТО НЕ ЗАКАЗ. ЭТО НАЧАЛО ПРОЦЕССА.</h3><p>Кто именно выйдет? Кто отвечает? Что умеют? Кто заменит? Как подтвердить часы и оплату? Сегодня ответы разбросаны по звонкам, таблицам и мессенджерам.</p></div>
+   <div class="problem-lead reveal"><div class="kicker">The gap between demand & delivery</div><h3>«НУЖНО 20 ЧЕЛОВЕК НА МОНОЛИТ» — СЛИШКОМ ОБЩАЯ ЗАЯВКА.</h3><p>Нужны люди под конкретные операции: подачу материалов, подготовку опалубки, вспомогательные работы при армировании. И важно понимать, кто выполнял их самостоятельно, кто работал под руководством, а кто только помогал.</p></div>
    <div class="pain-stack">
-    <article class="pain reveal delay-1"><div class="pain-num">01</div><div><h3>Фрагментированное предложение</h3><p>Поставщики и организованные группы не объединены в единый календарь доступности.</p></div></article>
-    <article class="pain reveal delay-2"><div class="pain-num">02</div><div><h3>Неподтверждённая явка</h3><p>Заявленная численность не равна поимённо подтверждённому составу на дату.</p></div></article>
-    <article class="pain reveal delay-3"><div class="pain-num">03</div><div><h3>Нет прозрачной истории опыта</h3><p>Заказчику сложно подобрать исполнителей под конкретные операции и ограничения допуска.</p></div></article>
+    <article class="pain reveal delay-1"><div class="pain-num">01</div><div><h3>Неясно, какие навыки нужны</h3><p>Заявка часто описывает объект и количество людей, но не разбивает работу на операции и требования к опыту.</p></div></article>
+    <article class="pain reveal delay-2"><div class="pain-num">02</div><div><h3>Опыт скрыт за общей категорией</h3><p>В списке может быть «разнорабочий», но не видно, работал ли он с опалубкой, арматурой, деревом или укладкой.</p></div></article>
+    <article class="pain reveal delay-3"><div class="pain-num">03</div><div><h3>Неподходящий состав — риск для объекта</h3><p>Если опыт не совпадает с задачей, заказчик получает лишнее управление, повторное объяснение и риск срыва работ.</p></div></article>
    </div>
   </div>
  </div>
@@ -683,19 +727,28 @@ footer{background:#171b1e}
 
 <section class="section-dark" id="solution">
  <div class="topline"></div><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">02 / The operating system</div><h2 class="display">ОДНА ЦЕПОЧКА.<br>ШЕСТЬ КОНТРОЛЬНЫХ ТОЧЕК.</h2><p class="section-intro">Мы не просто соединяем спрос и предложение. Мы управляем выполнением операционного заказа: от квалификации потребности до принятой смены и расчёта.</p></div><div class="section-tag">UBER STROY / operations</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">02 / The operating system</div><h2 class="display">СНАЧАЛА ПОНИМАЕМ РАБОТУ.<br>ПОТОМ СОБИРАЕМ КОМАНДУ.</h2><p class="section-intro">Главное отличие UBER STROY — подбор от задачи. Сначала разбираем, что именно нужно сделать; затем сопоставляем операции с опытом работников; после этого проверяем доступность, обязательные требования и подтверждаем выход.</p></div><div class="section-tag">UBER STROY / TASK-TO-CREW</div></div>
   <div class="solution-rail">
-   <article class="rail-step reveal"><span class="n">01</span><span class="rail-arrow">↗</span><h3>Заявка</h3><p>Объект, дата, задачи, численность, ставка и режим.</p></article>
-   <article class="rail-step reveal delay-1"><span class="n">02</span><span class="rail-arrow">↗</span><h3>Matching</h3><p>Подбираем доступные команды под задачи и требования.</p></article>
-   <article class="rail-step reveal delay-2"><span class="n">03</span><span class="rail-arrow">↗</span><h3>Верификация</h3><p>Состав, документы, старший, СИЗ и допуски.</p></article>
-   <article class="rail-step reveal delay-1"><span class="n">04</span><span class="rail-arrow">↗</span><h3>Диспетчеризация</h3><p>Подтверждение выхода, координация и замены.</p></article>
-   <article class="rail-step reveal delay-2"><span class="n">05</span><span class="rail-arrow">↗</span><h3>Приёмка</h3><p>Фактическая явка, табель и подтверждение заказчика.</p></article>
-   <article class="rail-step reveal delay-3"><span class="n">06</span><span class="rail-arrow">↗</span><h3>Расчёт</h3><p>Документы, платежи, экономика и качество смены.</p></article>
+   <article class="rail-step reveal"><span class="n">01</span><span class="rail-arrow">↗</span><h3>Разбор задачи</h3><p>Объект, дата, объём и конкретные операции, которые предстоит выполнить.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">02</span><span class="rail-arrow">↗</span><h3>Декомпозиция</h3><p>Разбиваем общий запрос на операции и обязательные требования к исполнителям.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">03</span><span class="rail-arrow">↗</span><h3>Skill match</h3><p>Сопоставляем операции с опытом, материалами, инструментами и уровнем участия.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">04</span><span class="rail-arrow">↗</span><h3>Проверка</h3><p>Подтверждаем опыт, доступность, документы, старшего и необходимые допуски.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">05</span><span class="rail-arrow">↗</span><h3>Сбор команды</h3><p>Формируем состав, в котором закрыты нужные операции и численность.</p></article>
+   <article class="rail-step reveal delay-3"><span class="n">06</span><span class="rail-arrow">↗</span><h3>Выход и обратная связь</h3><p>Контролируем смену, фиксируем результат и добавляем подтверждённый опыт.</p></article>
   </div>
   <div class="offer-grid">
-   <article class="offer reveal"><div class="kicker">Layer / 01</div><h3>Workforce<br>Operations</h3><p>CRM поставщиков и клиентов, календарь доступности, заявки, контроль выхода, табели и экономика смен.</p></article>
-   <article class="offer reveal delay-1"><div class="kicker">Layer / 02</div><h3>Skill<br>Intelligence</h3><p>Голосовой профиль практического опыта: операции, материалы, инструменты и подтверждённый уровень самостоятельности.</p></article>
-   <article class="offer reveal delay-2"><div class="kicker">Layer / 03</div><h3>Learning<br>Loop</h3><p>Каждая смена пополняет историю опыта и улучшает matching между задачей, командой и результатом.</p></article>
+   <article class="offer reveal"><div class="kicker">Layer / 01</div><h3>Task<br>Intelligence</h3><p>Превращает заявку заказчика в список конкретных операций, требований, количества людей и условий выхода.</p></article>
+   <article class="offer reveal delay-1"><div class="kicker">Layer / 02</div><h3>Skill<br>Profiles</h3><p>Превращает двухминутный рассказ работника в структурированный профиль операций, материалов, инструментов и уровня самостоятельности.</p></article>
+   <article class="offer reveal delay-2"><div class="kicker">Layer / 03</div><h3>Evidence<br>Loop</h3><p>Каждая завершённая смена добавляет подтверждённое событие опыта и делает следующий подбор точнее.</p></article>
+  </div>
+  <div class="task-match-principle reveal">
+   <div class="task-match-heading"><span class="kicker">ОТЛИЧИЕ ОТ ОБЫЧНОГО ПОДБОРА</span><strong>Не «кто свободен?», а «кто уже делал именно это?»</strong></div>
+   <div class="task-match-columns">
+    <div><span>ЗАПРОС</span><b>«Нужны 20 человек на монолит»</b></div><i>→</i>
+    <div><span>РАЗБОР</span><b>Подача материалов · опалубка · подготовка зоны</b></div><i>→</i>
+    <div><span>ПОДБОР</span><b>Люди с опытом в этих операциях</b></div>
+   </div>
+   <p>Если на объекте нужны разные операции, система собирает состав по ролям и подтверждённому опыту, а не просто закрывает число в заявке.</p>
   </div>
   <div class="industries reveal"><span class="industry">Жилое строительство</span><span class="industry">Монолит и подготовка</span><span class="industry">Дороги и мосты</span><span class="industry">Трубопроводы и сети</span><span class="industry">Земляные работы</span><span class="industry">Благоустройство</span><span class="industry">Промышленность</span><span class="industry">Капремонт</span></div>
  </div>
@@ -704,43 +757,43 @@ footer{background:#171b1e}
 
 <section class="skill-section" id="skill-profile">
  <div class="topline"></div><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">03 / Workforce skill intelligence</div><h2 class="display">НЕ ПРОСТО РАБОЧИЙ.<br><span class="orange">ПОНЯТНЫЙ ОПЫТ.</span></h2><p class="section-intro">Две минуты голосом — и вместо пустой строки «разнорабочий» появляется структурированный профиль: где человек работал, какие операции выполнял, с чем умеет работать и насколько самостоятельно.</p></div><div class="section-tag">Voice → Structured skill profile</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">03 / Workforce skill intelligence</div><h2 class="display">НЕ ПРОСТО АНКЕТА.<br><span class="orange">КАРТА ОПЫТА.</span></h2><p class="section-intro">За 2–3 минуты человек рассказывает, что действительно делал на объектах. UBER STROY превращает рассказ в профиль по операциям: где работал, с какими материалами и инструментами, на каком уровне самостоятельности и когда выполнял эту работу.</p></div><div class="section-tag">Voice → Structured skill profile</div></div>
   <div class="skill-profile-grid">
    <div class="voice-panel reveal">
     <div class="voice-head"><span class="kicker">VOICE INTAKE / DEMO FLOW</span><span class="voice-time">02:00 MIN</span></div>
     <div class="voice-orb"><div class="voice-mic">●</div><div class="voice-wave" aria-hidden="true">
       <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div></div>
-    <div class="voice-copy"><strong>«Расскажи, что ты реально делал на объектах»</strong><span>Свободный рассказ своими словами. Не экзамен и не резюме на три страницы.</span></div>
+    <div class="voice-copy"><strong>«Расскажи, какую работу ты уже умеешь выполнять»</strong><span>Свободный рассказ на 2–3 минуты. Не нужно подбирать профессиональные формулировки — достаточно описать реальные задачи своими словами.</span></div>
     <div class="voice-prompts">
-     <div><b>01</b><span>На каких объектах работал?</span></div>
-     <div><b>02</b><span>Какие конкретные операции выполнял лично?</span></div>
-     <div><b>03</b><span>С какими материалами, инструментами и оборудованием?</span></div>
-     <div><b>04</b><span>Самостоятельно, под руководством или помогал специалисту?</span></div>
-     <div><b>05</b><span>Когда выполнял эту работу в последний раз и как часто?</span></div>
-     <div><b>06</b><span>Какие документы, допуски и обучение можешь подтвердить отдельно?</span></div>
+     <div><b>01</b><span>На каких объектах и участках работал?</span></div>
+     <div><b>02</b><span>Какие операции выполнял лично — по шагам?</span></div>
+     <div><b>03</b><span>С какими материалами, инструментами и оборудованием работал?</span></div>
+     <div><b>04</b><span>Что делал самостоятельно, что под руководством, а где помогал специалисту?</span></div>
+     <div><b>05</b><span>Когда выполнял эту операцию в последний раз и как часто?</span></div>
+     <div><b>06</b><span>Какие удостоверения, допуски и обучение можешь подтвердить документально?</span></div>
     </div>
     <div class="voice-foot"><span class="live-dot"></span>ДОБРОВОЛЬНАЯ ЗАПИСЬ · ПРОФИЛЬ ПЕРЕДАЁТСЯ НА ПОДТВЕРЖДЕНИЕ</div>
    </div>
    <div class="profile-panel reveal delay-1">
     <div class="profile-top"><div><div class="kicker">WORKER PROFILE / EXAMPLE</div><h3>КАРТОЧКА ОПЫТА</h3></div><span class="demo-stamp">DEMO PROFILE</span></div>
     <div class="worker-id"><div class="worker-avatar">СМ</div><div class="worker-name"><strong>Сергей М.</strong><span>ID · US-0417 / пример интерфейса</span></div><span class="profile-state">ЧЕРНОВИК</span></div>
-    <div class="profile-summary"><span class="kicker">ОСНОВНОЙ ОПЫТ</span><strong>Строительные площадки · монолитные работы</strong><p>Заявленный опыт во вспомогательных операциях. Уровень самостоятельности указывается отдельно по каждой операции.</p></div>
+    <div class="profile-summary"><span class="kicker">ОСНОВНОЙ ОПЫТ</span><strong>Монолитные площадки · вспомогательные операции</strong><p>Демонстрационный профиль: опыт по отдельным операциям указан раздельно. Каждый навык требует подтверждения; допуски и документы проверяются отдельно.</p></div>
     <div class="skill-list">
      <div class="skill-row"><div><strong>Подача и перемещение материалов</strong><span>Материалы / ручной инструмент</span></div><span class="evidence evidence-self">СО СЛОВ</span><b>01</b></div>
      <div class="skill-row"><div><strong>Подготовка опалубки</strong><span>Фанера / крепёж · под руководством</span></div><span class="evidence evidence-lead">СТАРШИЙ</span><b>02</b></div>
      <div class="skill-row"><div><strong>Помощь при армировании</strong><span>Вспомогательная операция · не самостоятельная квалификация</span></div><span class="evidence evidence-check">ПРОВЕРИТЬ</span><b>03</b></div>
     </div>
-    <div class="profile-bottom"><div><span class="kicker">ПРОФИЛЬ СОБРАН ИЗ</span><strong>Голосового рассказа + подтверждения работника</strong></div><div class="profile-complete"><strong>6</strong><span>БЛОКОВ</span></div></div>
+    <div class="profile-bottom"><div><span class="kicker">ПРОФИЛЬ СОБРАН ИЗ</span><strong>Голосового рассказа + проверки работником</strong></div><div class="profile-complete"><strong>6</strong><span>БЛОКОВ</span></div></div>
    </div>
   </div>
-  <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>AI превращает рассказ в рабочие данные, но не придумывает квалификацию.</strong><span>Работник проверяет и подтверждает профиль. Документы, допуски и фактический уровень навыка хранятся отдельными полями.</span></div></div>
+  <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>Система подбирает человека не по названию профессии, а по конкретным операциям, которые он действительно выполнял.</strong><span>Работник проверяет профиль. Самоотчёт, подтверждение старшего и документальная квалификация хранятся отдельно — это не одно и то же.</span></div></div>
  </div>
 </section>
 
 <section class="section-dark skill-section" id="skill-match">
  <div class="topline"></div><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">04 / Precision crew matching</div><h2 class="display">ЗАКАЗЧИКУ НУЖНЫ<br><span class="orange">НЕ 20 ЧЕЛОВЕК.</span><br>НУЖНЫ 20 ПОДХОДЯЩИХ.</h2><p class="section-intro">Заказчик описывает операции, а не только численность. Система сопоставляет задачи с реальным опытом, уровнем участия, подтверждениями и доступностью каждого кандидата.</p></div><div class="section-tag">Request → Ranked crew</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">04 / Precision crew matching</div><h2 class="display">НЕ 20 СЛУЧАЙНЫХ ЛЮДЕЙ.<br><span class="orange">20 ПОДХОДЯЩИХ</span><br>ПОД КОНКРЕТНУЮ РАБОТУ.</h2><p class="section-intro">Заказчик говорит, какую работу нужно выполнить. Система ищет не просто свободных людей, а кандидатов с опытом именно в этих операциях — и показывает, почему каждый подходит, что подтверждено и что ещё нужно проверить.</p></div><div class="section-tag">Task → Skills → Right crew</div></div>
   <div class="match-layout">
    <div class="job-request reveal">
     <div class="request-top"><span class="kicker">ЗАПРОС ЗАКАЗЧИКА / ПРИМЕР</span><span class="request-live">НОВАЯ ЗАЯВКА</span></div>
@@ -749,26 +802,26 @@ footer{background:#171b1e}
     <div class="request-meta"><div><span>ОБЪЕКТ</span><b>Строительная площадка</b></div><div><span>ВЫХОД</span><b>07:00 · пример</b></div><div><span>ЗАДАЧА</span><b>Вспомогательные операции</b></div></div>
     <div class="kicker" style="margin:21px 0 11px">НУЖНЫЕ ОПЕРАЦИИ</div>
     <div class="request-tags"><span>Подача материалов</span><span>Подготовка опалубки</span><span>Помощь при армировании</span><span>Подготовка зоны</span></div>
-    <div class="request-rule">Сначала обязательные требования и доступность. Затем — релевантность опыта и история качества.</div>
+    <div class="request-rule">Сначала обязательные требования, допуски и доступность. Затем — совпадение по операциям, уровень самостоятельности и подтверждённый опыт.</div>
    </div>
    <div class="match-results reveal delay-1">
-    <div class="match-results-head"><div><span class="kicker">MATCH ENGINE / EXAMPLE</span><h3>ПОДХОДЯЩИЕ КАНДИДАТЫ</h3></div><span class="rank-label">RANKED BY RELEVANCE</span></div>
+    <div class="match-results-head"><div><span class="kicker">MATCH ENGINE / EXAMPLE</span><h3>ЛЮДИ С РЕЛЕВАНТНЫМ ОПЫТОМ</h3></div><span class="rank-label">RANKED BY RELEVANCE</span></div>
     <article class="candidate-card">
      <div class="candidate-top"><div class="candidate-avatar">АК</div><div class="candidate-info"><strong>Алексей К.</strong><span>Профиль US-DEMO-0182 · пример</span></div><div class="match-score"><b>94%</b><span>СОВПАДЕНИЕ</span></div></div>
      <div class="candidate-skills"><span class="matched">Подача материалов</span><span class="matched">Подготовка зоны</span><span class="supervised">Опалубка · под руководством</span></div>
-     <div class="candidate-reason"><b>Почему в подборке:</b> релевантные операции указаны в профиле; доступность и подтверждение старшего должны быть проверены перед назначением.</div>
+     <div class="candidate-reason"><b>Почему в подборке:</b> профиль содержит опыт по нужным операциям. Перед назначением отдельно подтверждаются доступность, старший и обязательные требования.</div>
     </article>
     <article class="candidate-card">
      <div class="candidate-top"><div class="candidate-avatar">ИП</div><div class="candidate-info"><strong>Илья П.</strong><span>Профиль US-DEMO-0236 · пример</span></div><div class="match-score"><b>88%</b><span>СОВПАДЕНИЕ</span></div></div>
      <div class="candidate-skills"><span class="matched">Материалы / логистика</span><span class="matched">Монолитная площадка</span><span class="self-reported">Армирование · со слов</span></div>
-     <div class="candidate-reason"><b>Почему в подборке:</b> есть опыт на монолитных объектах; операция армирования требует отдельного подтверждения и допуска, если применимо.</div>
+     <div class="candidate-reason"><b>Почему в подборке:</b> есть опыт на монолитной площадке и в логистике материалов. Опыт по армированию и необходимые допуски проверяются отдельно.</div>
     </article>
     <article class="candidate-card candidate-muted">
      <div class="candidate-top"><div class="candidate-avatar">ДВ</div><div class="candidate-info"><strong>Денис В.</strong><span>Профиль US-DEMO-0311 · пример</span></div><div class="match-score"><b>71%</b><span>СОВПАДЕНИЕ</span></div></div>
      <div class="candidate-skills"><span class="matched">Подготовка рабочей зоны</span><span class="self-reported">Опалубка · со слов</span></div>
-     <div class="candidate-reason"><b>Ограничение:</b> не хватает подтверждённого опыта по части операций; может быть резервом после проверки.</div>
+     <div class="candidate-reason"><b>Ограничение:</b> опыт по части операций пока заявлен самим работником и требует проверки; кандидат может рассматриваться как резерв.</div>
     </article>
-    <div class="match-disclaimer">Иллюстративные демо-карточки и условные оценки, не реальные работники и не результаты пилота. Совпадение не заменяет проверку навыков, документов, допуска и явки.</div>
+    <div class="match-disclaimer">Все карточки, имена, ID и проценты — демонстрационный пример интерфейса, не реальные работники и не результаты пилота. Match score объясняет релевантность, но не заменяет проверку навыков, документов, допусков и явки.</div>
    </div>
   </div>
   <div class="match-logic reveal"><div><span class="kicker">ПРЕДВАРИТЕЛЬНАЯ ЛОГИКА РАНЖИРОВАНИЯ</span><strong>Операции и задачи — 40% · доказательность опыта — 25% · доступность — 20% · надёжность — 10% · логистика — 5%</strong><span>Весовая модель — гипотеза MVP, её предстоит калибровать по фактическим результатам смен. Обязательные допуски и ограничения — фильтры, а не бонусные баллы.</span></div><div class="match-logic-mark">40<span>%</span></div></div>
@@ -777,12 +830,12 @@ footer{background:#171b1e}
 
 <section class="skill-section" id="skill-loop">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">05 / Workforce learning loop</div><h2 class="display">КАЖДАЯ СМЕНА<br>ДЕЛАЕТ ПРОФИЛЬ <span class="orange">ТОЧНЕЕ.</span></h2><p class="section-intro">После работы человек записывает короткий отчёт на 30–60 секунд. Система добавляет новое событие опыта, получает обратную связь и улучшает следующие рекомендации.</p></div><div class="section-tag">Work performed → evidence → better match</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">05 / Workforce learning loop</div><h2 class="display">КАЖДАЯ СМЕНА<br>ДОБАВЛЯЕТ <span class="orange">ДОКАЗАТЕЛЬСТВО.</span></h2><p class="section-intro">После работы человек коротко рассказывает, какие операции выполнил. Старший или заказчик по возможности подтверждает результат. История конкретных работ помогает точнее подбирать человека на следующую задачу.</p></div><div class="section-tag">Work performed → evidence → better match</div></div>
   <div class="loop-grid">
    <div class="loop-step reveal"><span class="loop-number">01</span><div class="loop-icon">◉</div><h3>ГОЛОСОВОЙ ОТЧЁТ</h3><p>Что делал сегодня? Какие операции выполнил лично? С какими материалами и инструментами работал?</p><small>30–60 СЕКУНД</small></div>
    <div class="loop-step reveal delay-1"><span class="loop-number">02</span><div class="loop-icon">▤</div><h3>СОБЫТИЕ ОПЫТА</h3><p>AI записывает дату, объект, задачу, операцию, материалы, инструменты и уровень участия.</p><small>PROFILE HISTORY</small></div>
    <div class="loop-step reveal delay-2"><span class="loop-number">03</span><div class="loop-icon">✓</div><h3>ПОДТВЕРЖДЕНИЕ</h3><p>Старший или заказчик подтверждает выполненную работу. Самоотчёт не превращается в допуск автоматически.</p><small>EVIDENCE LEVEL</small></div>
-   <div class="loop-step reveal delay-3"><span class="loop-number">04</span><div class="loop-icon">↗</div><h3>ТОЧНЕЕ MATCHING</h3><p>История операций и результатов помогает точнее подбирать человека под следующую задачу.</p><small>LEARNING LOOP</small></div>
+   <div class="loop-step reveal delay-3"><span class="loop-number">04</span><div class="loop-icon">↗</div><h3>ТОЧНЕЕ MATCHING</h3><p>История реально выполненных и подтверждённых операций повышает точность следующего подбора.</p><small>LEARNING LOOP</small></div>
   </div>
   <div class="agent-grid">
    <article class="agent-card reveal"><span>AI AGENT / 01</span><h3>PROFILE BUILDER</h3><p>Расшифровывает рассказ, извлекает операции, материалы и инструменты, формирует черновик профиля и отдаёт его работнику на подтверждение.</p></article>
@@ -790,7 +843,7 @@ footer{background:#171b1e}
    <article class="agent-card reveal delay-2"><span>AI AGENT / 03</span><h3>MATCH & VERIFY</h3><p>Ранжирует релевантных людей, показывает причины совпадения, уровень доказательности и недостающие проверки.</p></article>
    <article class="agent-card reveal delay-3"><span>AI AGENT / 04</span><h3>SHIFT LEARNING</h3><p>Добавляет новые события опыта после смены, собирает обратную связь и обновляет историю результата.</p></article>
   </div>
-  <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>Наше преимущество — не просто база рабочих. Это накапливаемая карта реального опыта.</strong><span>Чем больше подтверждённых смен, тем точнее профиль работника и объяснимее подбор. На старте — human-in-the-loop: AI предлагает, человек проверяет и подтверждает.</span></div></div>
+  <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>Наш актив — не список телефонов. Это накапливаемая карта того, кто какую работу реально выполнял и на каком уровне.</strong><span>Каждая смена добавляет данные об опыте и качестве исполнения. AI предлагает совпадение, человек проверяет профиль и подтверждает назначение; обязательные допуски не выводятся из голосового рассказа.</span></div></div>
   <div class="agent-spec-link reveal"><span>PRODUCT SPEC / AI AGENTS</span><a href="https://github.com/Fevralsky-RF/portfolio/blob/main/uber-stroy/product/workforce-skill-intelligence-agents.md" target="_blank" rel="noopener">Открыть спецификацию Workforce Skill Intelligence ↗</a></div>
  </div>
 </section>
@@ -802,7 +855,7 @@ footer{background:#171b1e}
 
 <section id="market">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">06 / Market intelligence</div><h2 class="display">МЫ УЖЕ ВИДИМ<br>КАРТУ СПРОСА.</h2><p class="section-intro">Реестр Нижнего Новгорода на 06.11.2026 — основа для приоритизации продаж. Разные источники пересекаются: карточка проекта, закупка и бюджетная строка могут относиться к одному объекту.</p></div><div class="section-tag">Nizhny Novgorod / 2026</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">06 / Market intelligence</div><h2 class="display">МЫ УЖЕ ВИДИМ<br>КАРТУ СПРОСА.</h2><p class="section-intro">Реестр Нижнего Новгорода помогает находить объекты и закупки, где могут потребоваться конкретные операции: монолит, подготовка, дороги, инженерные сети и благоустройство. Карточки разных источников могут относиться к одному проекту.</p></div><div class="section-tag">Nizhny Novgorod / 2026</div></div>
   <div class="market-grid">
    <div class="market-panel reveal"><h3>Карта строительного рынка</h3><div class="stats-grid">
     <div class="stat"><strong data-count="132">132</strong><span>базовые записи строительного реестра</span><small>BASE REGISTER</small></div>
@@ -836,7 +889,7 @@ footer{background:#171b1e}
 
 <section class="section-dark" id="supply">
  <div class="topline"></div><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">07 / Supply network</div><h2 class="display">ПОСТАВЩИКИ НАЙДЕНЫ.<br>МОЩНОСТЬ ПРОВЕРЯЕМ.</h2><p class="section-intro">Не смешиваем контактную базу, заявленные объёмы и людей, которые реально готовы выйти на конкретную площадку.</p></div><div class="section-tag">Supply side / verification</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">07 / Supply network</div><h2 class="display">ИЩЕМ НЕ ПРОСТО ЛЮДЕЙ.<br>ПРОВЕРЯЕМ НУЖНЫЙ ОПЫТ.</h2><p class="section-intro">Для точного подбора недостаточно знать, сколько людей есть у поставщика. Нужно понять, какие операции каждый из них выполнял, кто доступен на дату и что можно подтвердить.</p></div><div class="section-tag">Supply side / verification</div></div>
   <div class="supply-grid">
    <div class="supply-stat reveal"><strong>7</strong><span>поставщиков-кандидатов в CRM</span></div>
    <div class="supply-stat reveal delay-1"><strong>2</strong><span>поставщика на переговорах</span></div>
@@ -854,7 +907,7 @@ footer{background:#171b1e}
 
 <section id="economics">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">08 / ЮНИТ-ЭКОНОМИКА</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Настрой три параметра: количество людей, цену для заказчика и закупочную ставку поставщика. Спред, валовая маржа и все месячные показатели пересчитываются автоматически.</p></div><div class="section-tag economics-period">РАСЧЁТНЫЙ ПЕРИОД<br><strong>22 РАБОЧИЕ СМЕНЫ В МЕСЯЦ</strong></div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">08 / ЮНИТ-ЭКОНОМИКА</div><h2 class="display">ПРАВИЛЬНЫЙ ПОДБОР.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Подбор строится по задаче и опыту; экономика — по человеко-сменам. Меняй количество людей, цену для заказчика и закупочную ставку поставщика. Спред и все месячные показатели пересчитываются автоматически.</p></div><div class="section-tag economics-period">РАСЧЁТНЫЙ ПЕРИОД<br><strong>22 РАБОЧИЕ СМЕНЫ В МЕСЯЦ</strong></div></div>
   <div class="econ-layout">
    <div class="calculator reveal">
     <div class="kicker">ИНТЕРАКТИВНАЯ МОДЕЛЬ СМЕНЫ</div><h3>СОБЕРИ СВОЙ<br>СЦЕНАРИЙ.</h3><p class="sub">Измени количество людей, цену продажи или закупки. Валовый спред — не отдельная настройка, а разница между двумя ставками.</p>
@@ -911,11 +964,11 @@ footer{background:#171b1e}
 
 <section id="roadmap">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">10 / Roadmap</div><h2 class="display">СНАЧАЛА ДОКАЖЕМ.<br>ПОТОМ ТИРАЖИРУЕМ.</h2><p class="section-intro">Нижний Новгород — полигон для проверки спроса, надёжности предложения, маржи и cash cycle. После повторяемой модели — новые города.</p></div><div class="section-tag">30 days → 36 months</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">10 / Roadmap</div><h2 class="display">СНАЧАЛА ДОКАЖЕМ ТОЧНОСТЬ ПОДБОРА.<br>ПОТОМ ТИРАЖИРУЕМ.</h2><p class="section-intro">Нижний Новгород — полигон, где проверяем всю цепочку: разбор операции, качество профиля, релевантность подбора, подтверждённый выход, повторный заказ и экономика. После доказательства повторяемой модели — новые города.</p></div><div class="section-tag">30 days → 36 months</div></div>
   <div class="roadmap">
-   <article class="phase reveal"><div class="time">PHASE 01 / 0–30 DAYS</div><h3>Первый<br>пилот</h3><ul><li>Проверить 2 поставщиков и правовую модель.</li><li>30–40 целевых касаний.</li><li>3–5 квалифицированных потребностей.</li><li>1–2 оплаченных теста на 5–10 человек.</li></ul></article>
-   <article class="phase reveal delay-1"><div class="time">PHASE 02 / 30–90 DAYS</div><h3>Операционная<br>повторяемость</h3><ul><li>Стабильные 10–20 выходов.</li><li>Повторные заказы и графики смен.</li><li>SLA, табели, акты и cash control.</li><li>Подтверждённый пул 50–70 человек.</li></ul></article>
-   <article class="phase reveal delay-2"><div class="time">PHASE 03 / 3–12 MONTHS</div><h3>Продукт и<br>вертикали</h3><ul><li>Matching и цифровые профили навыков.</li><li>История фактических смен.</li><li>Дороги, сети, благоустройство, промышленные площадки.</li><li>Региональный playbook.</li></ul></article>
+   <article class="phase reveal"><div class="time">PHASE 01 / 0–30 DAYS</div><h3>Первый<br>пилот</h3><ul><li>Проверить 2 поставщиков, договорную модель и доступность по конкретным операциям.</li><li>30–40 целевых касаний.</li><li>Выявить 3–5 конкретных задач и разложить их на операции.</li><li>Провести 1–2 оплаченных теста на 5–10 человек с фиксацией опыта по операциям.</li></ul></article>
+   <article class="phase reveal delay-1"><div class="time">PHASE 02 / 30–90 DAYS</div><h3>Операционная<br>повторяемость</h3><ul><li>10–20 регулярных выходов с подбором под операции.</li><li>Повторные заказы и графики смен.</li><li>SLA, табели, акты и cash control.</li><li>Подтверждённый пул 50–70 человек с заполненными профилями практического опыта.</li></ul></article>
+   <article class="phase reveal delay-2"><div class="time">PHASE 03 / 3–12 MONTHS</div><h3>Продукт и<br>вертикали</h3><ul><li>Task-to-skill matching по проверенным профилям и истории смен.</li><li>История фактических смен.</li><li>Дороги, сети, благоустройство, промышленные площадки.</li><li>Региональный playbook.</li></ul></article>
    <article class="phase reveal delay-3"><div class="time">PHASE 04 / 12–36 MONTHS</div><h3>Федеральная<br>сеть</h3><ul><li>Тиражирование в новые города.</li><li>Единый стандарт качества и поставщиков.</li><li>Кабинеты заказчиков и партнёров.</li><li>Единая операционная платформа.</li></ul></article>
   </div>
  </div>
@@ -951,14 +1004,14 @@ footer{background:#171b1e}
 <section id="contact">
  <div class="wrap">
   <div class="final-cta reveal">
-   <div><div class="eyebrow">Next / 30-day pilot</div><h2>ИЗ РЕЕСТРА<br>НА ОБЪЕКТ.</h2><p>Следующий шаг — поимённо подтвердить людей, получить первую квалифицированную заявку, провести тестовую смену и доказать повторяемую экономику на реальном объекте.</p><a class="button" href="mailto:?subject=UBER%20STROY%20%E2%80%94%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82&body=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82%20UBER%20STROY.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%3A%20...%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%20...%20%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20...%20%D0%94%D0%B0%D1%82%D0%B0%3A%20...">Обсудить пилот <span class="arrow">↗</span></a></div>
+   <div><div class="eyebrow">Next / 30-day pilot</div><h2>НАЗОВИТЕ РАБОТУ.<br>МЫ ПОДБЕРЁМ КОМАНДУ.</h2><p>Следующий шаг — выбрать конкретную операцию на реальном объекте, собрать профили людей с релевантным опытом, проверить доступность и провести первую оплаченную смену. Наша задача — доказать, что подбор по опыту даёт заказчику более подходящую команду и повторяемый результат.</p><a class="button" href="mailto:?subject=UBER%20STROY%20%E2%80%94%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82&body=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82%20UBER%20STROY.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%3A%20...%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%20...%20%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20...%20%D0%94%D0%B0%D1%82%D0%B0%3A%20...">Обсудить пилот <span class="arrow">↗</span></a></div>
    <div class="cta-metrics"><div class="cta-metric"><b>5–10</b><span>человек / первый тестовый выход</span></div><div class="cta-metric"><b>10–20</b><span>первые регулярные смены</span></div><div class="cta-metric"><b>50–70</b><span>подтверждённый пул — цель</span></div><div class="cta-metric"><b>30 дней</b><span>валидация совместной модели</span></div></div>
   </div>
-  <div class="sources"><b style="color:#cbd2d7">Данные рынка:</b> внутренний строительный реестр Нижнего Новгорода v2 от 06.11.2026; CRM и паспорт UBER STROY. Внешние источники: <a href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">DOMOSTROINN</a> · <a href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">реестр разрешений Минстроя</a> · <a href="https://www.budgetnn.ru/planirovanie-byudzheta/adresnyj-investitsionnyj-perechen" target="_blank" rel="noopener">городской АИП</a>.<br><br><b style="color:#cbd2d7">Методические ограничения:</b> 132 базовые записи, 39 pipeline-линий и 19 закупочных сигналов могут пересекаться. Сумма ₽21,06 млрд — ассигнования по 43 числовым строкам АИП, не стоимость рынка. ₽849,9 млн — 17 закупочных карточек со смешанными видами цен. Наборы 503 разрешений на строительство и 214 разрешений на ввод не разобраны построчно. Охват сети 200–300, потенциально доступные около 100 и заявки поставщиков на 30–80 — предварительные гипотезы; подтверждённых выходов на дату среза — 0. Правовую модель, охрану труда и допуски требуется проверить до первого выхода. Профили навыков — только с добровольного согласия работников. UBER STROY не аффилирован с Uber Technologies, Inc.</div>
+  <div class="sources"><b style="color:#cbd2d7">Данные рынка:</b> внутренний строительный реестр Нижнего Новгорода v2 от 06.11.2026; CRM и паспорт UBER STROY. Внешние источники: <a href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">DOMOSTROINN</a> · <a href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">реестр разрешений Минстроя</a> · <a href="https://www.budgetnn.ru/planirovanie-byudzheta/adresnyj-investitsionnyj-perechen" target="_blank" rel="noopener">городской АИП</a>.<br><br><b style="color:#cbd2d7">Методические ограничения:</b> 132 базовые записи, 39 pipeline-линий и 19 закупочных сигналов могут пересекаться. Сумма ₽21,06 млрд — ассигнования по 43 числовым строкам АИП, не стоимость рынка. ₽849,9 млн — 17 закупочных карточек со смешанными видами цен. Наборы 503 разрешений на строительство и 214 разрешений на ввод не разобраны построчно. Охват сети 200–300, потенциально доступные около 100 и заявки поставщиков на 30–80 — предварительные гипотезы; подтверждённых выходов на дату среза — 0. Профили релевантного опыта ещё предстоит собрать и подтвердить в пилоте. Правовую модель, охрану труда и допуски требуется проверить до первого выхода. Профили навыков — только с добровольного согласия работников. UBER STROY не аффилирован с Uber Technologies, Inc.</div>
  </div>
 </section>
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">UBER <em>STROY</em> / WORKFORCE OPERATIONS</div><div>© 2026 · Нижний Новгород · Partner & investor overview</div><a href="#top">Наверх ↑</a></div></footer>
-<script src="../assets/uber-stroy-app.js?v=20261107-theme-v3" defer></script>
+<script src="../assets/uber-stroy-app.js?v=task-first-v1" defer></script>
 </body>
 </html>

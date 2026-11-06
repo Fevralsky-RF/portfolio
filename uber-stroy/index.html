@@ -563,6 +563,16 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  .task-match-columns>div b{font-size:10px}
 }
 
+
+/* Core positioning: right people for the exact work */
+.hero h1{font-size:clamp(52px,7.1vw,96px)}
+.hero-copy{max-width:620px}
+@media(max-width:720px){.hero h1{font-size:clamp(43px,10.8vw,66px);line-height:.94}}
+
+body[data-theme="performance"] .task-ribbon{background:#111920;border-color:#303b43}
+body[data-theme="performance"] .task-match-principle{background:linear-gradient(110deg,#241912,#121a21);border-color:#8a492c}
+
+
 </style>
 </head>
 <body data-theme="performance">
@@ -595,8 +605,8 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
    <div class="hero-copy-block">
     <div class="eyebrow">TASK-TO-CREW OPERATOR / NIZHNY NOVGOROD</div>
     <h1 class="display">ПРАВИЛЬНЫЕ<br><span class="outline-word">ЛЮДИ.</span><br><span class="orange-word">ПОД КОНКРЕТНУЮ<br>РАБОТУ.</span></h1>
-    <p class="hero-copy">UBER STROY подбирает не просто нужное количество людей, а команду под конкретные операции. Вы описываете, что нужно сделать; система сопоставляет задачу с профилями практического опыта. Доступность, обязательные требования и состав подтверждаются до выхода на объект.</p>
-    <div class="hero-actions"><a class="button" href="#contact">Подобрать команду <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
+    <p class="hero-copy">Нужны люди на монолит, укладку, работу с деревом или благоустройство? UBER STROY подбирает не по общему ярлыку «разнорабочий», а по конкретным операциям и практическому опыту. Скажи, что нужно сделать, — мы ищем людей, которые уже выполняли такую работу, и отдельно проверяем доступность, обязательные требования и выход.</p>
+    <div class="hero-actions"><a class="button" href="#contact">Подобрать команду под задачу <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
     <div class="hero-meta"><span class="live-dot"></span><span>Пилотный регион — Нижний Новгород</span><span>·</span><span>Версия 02 / 2026</span></div>
    </div>
    <div class="hero-stage" aria-label="Схема операционной системы UBER STROY">
@@ -639,12 +649,12 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  <div class="topline"></div><div class="wrap">
   <div class="section-head reveal"><div><div class="eyebrow">02 / The operating system</div><h2 class="display">СНАЧАЛА ПОНИМАЕМ РАБОТУ.<br>ПОТОМ СОБИРАЕМ КОМАНДУ.</h2><p class="section-intro">Главное отличие UBER STROY — подбор от задачи. Сначала разбираем, что именно нужно сделать; затем сопоставляем операции с опытом работников; после этого проверяем доступность, обязательные требования и подтверждаем выход.</p></div><div class="section-tag">UBER STROY / TASK-TO-CREW</div></div>
   <div class="solution-rail">
-   <article class="rail-step reveal"><span class="n">01</span><span class="rail-arrow">↗</span><h3>Разбор задачи</h3><p>Объект, дата, объём и конкретные операции, которые предстоит выполнить.</p></article>
-   <article class="rail-step reveal delay-1"><span class="n">02</span><span class="rail-arrow">↗</span><h3>Декомпозиция</h3><p>Разбиваем общий запрос на операции и обязательные требования к исполнителям.</p></article>
-   <article class="rail-step reveal delay-2"><span class="n">03</span><span class="rail-arrow">↗</span><h3>Skill match</h3><p>Сопоставляем операции с опытом, материалами, инструментами и уровнем участия.</p></article>
-   <article class="rail-step reveal delay-1"><span class="n">04</span><span class="rail-arrow">↗</span><h3>Проверка</h3><p>Подтверждаем опыт, доступность, документы, старшего и необходимые допуски.</p></article>
-   <article class="rail-step reveal delay-2"><span class="n">05</span><span class="rail-arrow">↗</span><h3>Сбор команды</h3><p>Формируем состав, в котором закрыты нужные операции и численность.</p></article>
-   <article class="rail-step reveal delay-3"><span class="n">06</span><span class="rail-arrow">↗</span><h3>Выход и обратная связь</h3><p>Контролируем смену, фиксируем результат и добавляем подтверждённый опыт.</p></article>
+   <article class="rail-step reveal"><span class="n">01</span><span class="rail-arrow">↗</span><h3>Разбор задачи</h3><p>Что нужно сделать, на каком объекте, в какую дату и в каком объёме.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">02</span><span class="rail-arrow">↗</span><h3>Декомпозиция</h3><p>Раскладываем «монолит», «укладку» или «благоустройство» на конкретные рабочие операции.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">03</span><span class="rail-arrow">↗</span><h3>Skill match</h3><p>Ищем людей, которые выполняли именно эти операции, с нужными материалами и инструментами.</p></article>
+   <article class="rail-step reveal delay-1"><span class="n">04</span><span class="rail-arrow">↗</span><h3>Проверка</h3><p>Отделяем самоотчёт от подтверждённого опыта; проверяем доступность, документы и обязательные допуски.</p></article>
+   <article class="rail-step reveal delay-2"><span class="n">05</span><span class="rail-arrow">↗</span><h3>Сбор команды</h3><p>Собираем команду так, чтобы нужные операции были закрыты людьми с подходящим опытом.</p></article>
+   <article class="rail-step reveal delay-3"><span class="n">06</span><span class="rail-arrow">↗</span><h3>Выход и обратная связь</h3><p>Подтверждаем выход, фиксируем фактически выполненные операции и пополняем историю опыта.</p></article>
   </div>
   <div class="offer-grid">
    <article class="offer reveal"><div class="kicker">Layer / 01</div><h3>Task<br>Intelligence</h3><p>Превращает заявку заказчика в список конкретных операций, требований, количества людей и условий выхода.</p></article>
@@ -922,6 +932,6 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 </section>
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">UBER <em>STROY</em> / WORKFORCE OPERATIONS</div><div>© 2026 · Нижний Новгород · Partner & investor overview</div><a href="#top">Наверх ↑</a></div></footer>
-<script src="assets/uber-stroy-app.js?v=task-first-v1" defer></script>
+<script src="assets/uber-stroy-app.js?v=task-first-v2" defer></script>
 </body>
 </html>

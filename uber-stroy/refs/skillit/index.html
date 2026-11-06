@@ -750,6 +750,38 @@ footer{background:#0d1c35}
 .ref-hero-skillit .ref-hero-inner{grid-template-columns:1fr .9fr}
 .ref-hero-skillit .ref-hero-copy{max-width:740px}
 
+
+/* Shared client/supplier entry points and real people proof across the 10 concepts */
+.series-entry-routes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px auto 0}
+.series-entry-card{display:block;padding:22px;background:var(--ref-panel,#111922);color:var(--ref-hero-text,#f1f5f9);border:1px solid var(--ref-border,#34414b);text-decoration:none;transition:transform .25s,border-color .25s}
+.series-entry-card:hover{transform:translateY(-3px);border-color:var(--ref-accent,var(--orange))}
+.series-entry-card>span{display:block;font:8px var(--ref-mono,Inter,Arial,sans-serif);letter-spacing:.13em;color:var(--ref-accent,var(--orange));font-weight:900}
+.series-entry-card>strong{display:block;font:950 clamp(20px,2.3vw,27px)/.98 Impact,Arial,sans-serif;margin:12px 0}
+.series-entry-card>p{font-size:10px;line-height:1.6;color:var(--ref-muted,#aab6c0);max-width:470px}
+.series-entry-card>b{font:900 8px var(--ref-mono,Inter,Arial,sans-serif);letter-spacing:.1em;color:var(--ref-accent,var(--orange))}
+.series-entry-card.series-supplier{background:var(--ref-hero-bg,#f2f4f5);color:var(--ref-hero-text,#152333)}
+.series-entry-card.series-supplier>p{color:var(--ref-muted,#667582)}
+.series-people-proof{padding:76px 0;background:var(--ref-hero-bg,#111922);color:var(--ref-hero-text,#f4f7f8);border-block:1px solid var(--ref-line,rgba(255,255,255,.1))}
+.series-people-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px}
+.series-people-head>div{max-width:760px}.series-people-head h2{font-size:clamp(34px,4.5vw,56px);margin:14px 0}
+.series-people-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px}
+.series-people-grid figure{position:relative;min-height:210px;overflow:hidden;margin:0;border:1px solid var(--ref-border,#34414b);background:#141d28}
+.series-people-grid img{width:100%;height:100%;min-height:210px;object-fit:cover;filter:saturate(.82);transition:transform .55s}
+.series-people-grid figure:hover img{transform:scale(1.04)}
+.series-people-grid figure:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(4,8,15,.86))}
+.series-people-grid figcaption{position:absolute;z-index:1;left:14px;right:14px;bottom:13px;display:grid;gap:5px}
+.series-people-grid small{font:8px var(--ref-mono,Inter,Arial,sans-serif);letter-spacing:.12em;color:var(--ref-accent,var(--orange))}
+.series-people-grid b{font-size:11px;line-height:1.35;color:#fff}
+.series-people-credit{font-size:8px;color:var(--ref-muted,#94a3b8);margin-top:10px;line-height:1.5}
+@media(max-width:680px){
+ .series-entry-routes{grid-template-columns:1fr}
+ .series-entry-card{padding:17px}
+ .series-people-head{align-items:flex-start;flex-direction:column}
+ .series-people-grid{grid-template-columns:1fr 1fr}
+ .series-people-grid figure:first-child{grid-column:1/-1}
+ .series-people-grid figure,.series-people-grid img{min-height:150px}
+}
+
 </style>
 </head>
 <body data-theme="reference-skillit">
@@ -798,6 +830,11 @@ footer{background:#0d1c35}
 </div>
 
 <section class="ref-signature sig-skillit"><div class="wrap"><div class="eyebrow">08 / SEARCHABLE WORKER PROFILES</div><h2>ПОИСК НЕ ПО СЛОВУ.<br><em>ПО СОВПАДЕНИЮ ОПЫТА.</em></h2><p>Карточка работника становится рабочим инструментом заказчика: видно, какие операции выполнял человек и откуда взята информация.</p><div class="skillit-search-demo"><div class="skillit-searchbar"><span>⌕</span><b>Подобрать людей для монолитных работ…</b><button>ПОИСК ↗</button></div><div class="skillit-people"><article><img src="https://images.squarespace-cdn.com/content/v1/5f4f9895e09c563a9267f110/4a3a7a51-7c7b-4f24-8198-481eab2f547e/skillit_hero_image_carft_professionals.jpg" alt="Пример портрета рабочего"><div><b>Кандидат / DEMO-0417</b><span>Подготовка опалубки</span><small>Под руководством · самоотчёт</small></div><strong>94%</strong></article><article><img src="https://ep-turnerconstruction-prod-asdcetgubtducba3.z01.azurefd.net/thumbs/careers-labor-and-skilled-trades-what-we-offer_thumb-blocks-left-view.jpg?v=6f1eb" alt="Пример фото команды"><div><b>Кандидат / DEMO-0251</b><span>Подача и перемещение материалов</span><small>Подтверждение старшего</small></div><strong>88%</strong></article><article><img src="https://www.henselphelps.com/wp-content/uploads/2025/04/HP-Tyndall-Onsite-Day-1-76-1-scaled.jpg" alt="Пример фото строительной команды"><div><b>Кандидат / DEMO-0311</b><span>Подготовка рабочей зоны</span><small>Требуется дополнительная проверка</small></div><strong>81%</strong></article></div><div class="skillit-note">Все имена, профили и match-score — демонстрационные. Процент совпадения не заменяет подтверждение навыков, допусков и доступности.</div></div></div></section>
+
+<div class="series-entry-routes wrap">
+ <a class="series-entry-card series-client" href="#contact"><span>01 / ДЛЯ ЗАКАЗЧИКА</span><strong>НУЖНЫ ЛЮДИ<br>ПОД КОНКРЕТНУЮ РАБОТУ?</strong><p>Опишите операции и требования — получите команду с релевантным опытом, проверенной доступностью и понятным статусом.</p><b>СОБРАТЬ КОМАНДУ ↗</b></a>
+ <a class="series-entry-card series-supplier" href="#supply"><span>02 / ДЛЯ ПОСТАВЩИКА</span><strong>ЕСТЬ ЛЮДИ<br>С ПОДТВЕРЖДЁННЫМ ОПЫТОМ?</strong><p>Покажите специализацию, профили работников и доступность — получайте заявки под реальные компетенции.</p><b>ПОДКЛЮЧИТЬ ПОСТАВЩИКА ↗</b></a>
+</div>
 
 <section id="problem">
  <div class="wrap">
@@ -876,6 +913,16 @@ footer{background:#0d1c35}
    </div>
   </div>
   <div class="skill-principle reveal"><span class="principle-icon">↗</span><div><strong>Система подбирает человека не по названию профессии, а по конкретным операциям, которые он действительно выполнял.</strong><span>Работник проверяет профиль. Самоотчёт, подтверждение старшего и документальная квалификация хранятся отдельно — это не одно и то же.</span></div></div>
+ </div>
+</section><section class="series-people-proof">
+ <div class="wrap">
+  <div class="series-people-head"><div><div class="eyebrow">REAL PEOPLE / REAL CRAFT</div><h2 class="display">ЗА КАЖДЫМ ПРОФИЛЕМ<br><span class="orange">СТОИТ ЧЕЛОВЕК.</span></h2><p class="section-intro">Профиль навыков начинается с реального человека, площадки и опыта, который можно объяснить и подтвердить.</p></div><a class="button ghost" href="#skill-match">ПОДБОР ПО ОПЫТУ ↗</a></div>
+  <div class="series-people-grid">
+   <figure><img src="https://img.dpr.com/content/uploads/Blog/BAOC-DIRTT-Hero-BLOG.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=630&q=82&s=7bb5c1e2bb0619256ba06d3ee6d035b1&w=1200" alt="Строители на площадке DPR" loading="lazy"><figcaption><small>CRAFT / PEOPLE</small><b>Практический опыт начинается на площадке.</b></figcaption></figure>
+   <figure><img src="https://www.mccarthy.com/sites/default/files/2025-10/Vantage-NV-Trailer.jpg" alt="Строительная команда на проекте" loading="lazy"><figcaption><small>TEAM / QUALITY</small><b>Команда важна не меньше численности.</b></figcaption></figure>
+   <figure><img src="https://www.henselphelps.com/wp-content/uploads/2025/04/HP-Tyndall-Onsite-Day-1-76-1-scaled.jpg" alt="Бригада Hensel Phelps" loading="lazy"><figcaption><small>SKILLED CRAFT</small><b>У каждого человека — своя специализация.</b></figcaption></figure>
+  </div>
+  <div class="series-people-credit">Фото: публичные страницы DPR Construction, McCarthy Building Companies и Hensel Phelps; права остаются у правообладателей.</div>
  </div>
 </section>
 

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1017">
+<title>UBER STROY — выбор визуальной концепции</title>
+<style>
+:root{--bg:#0b1017;--panel:#141c24;--line:#2b3742;--paper:#f2f3f4;--muted:#9eabb5;--orange:#ff5a1f;--blue:#60a5fa}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#ff5a1f17,transparent 32rem),var(--bg);color:var(--paper);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+header{padding:27px 0;border-bottom:1px solid var(--line)}
+.brand{font-weight:950;letter-spacing:.08em}.brand em{font-style:normal;color:var(--orange)}
+.eyebrow{font-size:10px;color:var(--orange);font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:.98;letter-spacing:-.06em;text-transform:uppercase;margin:18px 0}
+.lede{max-width:720px;color:#aeb8c0;font-size:15px}
+main{padding:58px 0 78px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}
+.card{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:transform .3s,border .3s}
+.card:hover{transform:translateY(-7px);border-color:#8b4b30}
+.preview{height:245px;padding:18px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.preview .mini-nav{display:flex;justify-content:space-between;align-items:center;font-weight:950;font-size:10px;letter-spacing:.07em}
+.preview .mark{display:grid;place-items:center;width:28px;height:28px;font-weight:950}
+.preview .tag{font-size:8px;letter-spacing:.14em;font-weight:900}
+.preview .headline{font-weight:950;line-height:.9;font-size:33px;letter-spacing:-.055em;text-transform:uppercase;max-width:250px}
+.preview .sample-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px}
+.preview .sample-row span{display:block;height:38px;padding:8px;font-size:8px;font-weight:850}
+.performance{background:#090c10;color:#f1efe9}
+.performance .mark{background:#ff5a1f;color:#0b1017;transform:skew(-8deg)}
+.performance .headline em{color:#ff5a1f;font-style:normal}
+.performance .tag{color:#ff5a1f}
+.performance .sample-row span{background:#171f26;border:1px solid #39434d}
+.brandbook{background:#e9e5dc;color:#171b1e}
+.brandbook:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,#f2552222 40% 42%,transparent 42%)}
+.brandbook .mark{background:#f25522;color:#15100d;border-radius:0;transform:skew(-8deg)}
+.brandbook .headline em{color:#f25522;font-style:normal}
+.brandbook .tag{color:#d74418}
+.brandbook .sample-row span{background:#fffdf7;border:1px solid #c9c2b6}
+.premium{background:linear-gradient(135deg,#0f1419,#1a1f2e);color:#f1f5f9}
+.premium .mark{background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;border-radius:9px}
+.premium .tag{color:#60a5fa}
+.premium .headline em{color:#60a5fa;font-style:normal}
+.premium .sample-row span{background:#1e293b;border:1px solid #3b82f644}
+.card-body{padding:22px}
+.num{font-size:9px;letter-spacing:.14em;color:var(--muted);font-weight:900}
+.card h2{font-size:21px;line-height:1.1;margin:9px 0}
+.card p{font-size:11px;color:#aeb8c0;min-height:55px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 19px}
+.meta span{border:1px solid #3a4650;border-radius:100px;padding:5px 8px;font-size:8px;color:#bac4cb}
+.open{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#17100c;font-size:10px;font-weight:950;letter-spacing:.07em;padding:12px 15px;text-transform:uppercase}
+.premium-card .open{background:#3b82f6;color:#fff}
+.brandbook-card .open{background:#f25522}
+.footnote{margin-top:24px;padding:17px 19px;border:1px solid #66402d;background:#211914;color:#d1c5bc;font-size:10px;line-height:1.7}
+@media(max-width:850px){.cards{grid-template-columns:1fr}.preview{height:230px}.card p{min-height:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">UBER <em>STROY</em> / VISUAL CONCEPT LAB</div></div></header>
+<main class="wrap">
+ <div class="eyebrow">Three directions / one operating model</div>
+ <h1>Один продукт.<br><span style="color:#ff5a1f">Три визуальных характера.</span></h1>
+ <p class="lede">Сравни три самостоятельные версии UBER STROY. Продукт, рыночные данные, интерактивная unit-экономика и пять сценариев масштаба одинаковые. Отличается визуальная система, композиция и характер бренда.</p>
+ <div class="cards">
+  <article class="card">
+   <div class="preview performance">
+    <div class="mini-nav"><span><i class="mark">US</i> UBER STROY</span><span>01 / SIGNAL</span></div>
+    <div><div class="tag">PERFORMANCE INDUSTRIAL</div><div class="headline">ЛЮДИ.<br><em>ОБЪЕКТЫ.</em><br>ДВИЖЕНИЕ.</div></div>
+    <div class="sample-row"><span>01 / MATCH</span><span>02 / DISPATCH</span><span>03 / CONTROL</span></div>
+   </div>
+   <div class="card-body"><div class="num">CONCEPT 01</div><h2>Performance Industrial</h2><p>Графит, сигнальный оранжевый, крупная сжатая типографика, диагонали и динамика спортивного бренда.</p><div class="meta"><span>Graphite</span><span>Signal orange</span><span>Kinetic</span></div><a class="open" href="/portfolio/uber-stroy/">Открыть версию 01 ↗</a></div>
+  </article>
+  <article class="card brandbook-card">
+   <div class="preview brandbook">
+    <div class="mini-nav"><span><i class="mark">US</i> UBER STROY</span><span>02 / EDITION</span></div>
+    <div><div class="tag">PRODUCT EXPERIENCE / BRAND SYSTEM</div><div class="headline">СОБИРАЕМ.<br><em>ПРОВЕРЯЕМ.</em><br>ВЫВОДИМ.</div></div>
+    <div class="sample-row"><span>VOICE → PROFILE</span><span>SKILL → MATCH</span><span>SHIFT → DATA</span></div>
+   </div>
+   <div class="card-body"><div class="num">CONCEPT 02</div><h2>Brandbook / Product Experience</h2><p>Тёплый бетон, чёрная типографика, сигнальный оранжевый, редакционная сетка и контрастные продуктовые панели.</p><div class="meta"><span>Concrete</span><span>Ink</span><span>Signal orange</span></div><a class="open" href="/portfolio/uber-stroy/brandbook/">Открыть версию 02 ↗</a></div>
+  </article>
+  <article class="card premium-card">
+   <div class="preview premium">
+    <div class="mini-nav"><span><i class="mark">US</i> UBER STROY</span><span>03 / PREMIUM</span></div>
+    <div><div class="tag">WORKFORCE OPERATIONS</div><div class="headline">ОПЫТ.<br><em>ДАННЫЕ.</em><br>ТОЧНЫЙ MATCH.</div></div>
+    <div class="sample-row"><span>PROFILE</span><span>INTELLIGENCE</span><span>CONTROL</span></div>
+   </div>
+   <div class="card-body"><div class="num">CONCEPT 03</div><h2>Dark Premium</h2><p>Графитово-синяя система твоего портфолио: холодная типографика, сдержанное свечение, синие акценты и зелёные статусы.</p><div class="meta"><span>Deep navy</span><span>Blue</span><span>Emerald</span></div><a class="open" href="/portfolio/uber-stroy/dark-premium/">Открыть версию 03 ↗</a></div>
+  </article>
+ </div>
+ <div class="footnote"><b>Единая расчётная база всех концепций:</b> цена заказчику ₽4 250 за человеко-смену, закупка ₽3 250, валовый спред ₽1 000; 22 смены на активного работника в месяц. Сценарии масштаба: 100 / 1 000 / 10 000 / 100 000 / 1 000 000 активных работников в месяц. Все денежные сценарии — арифметическая модель, не прогноз продаж.</div>
+</main>
+</body>
+</html>

@@ -167,6 +167,7 @@
   }
 
   function boot() {
+    document.documentElement.classList.add("js-ready");
     try { initCalculator(); }
     catch (error) {
       const status = document.getElementById("calcStatus");

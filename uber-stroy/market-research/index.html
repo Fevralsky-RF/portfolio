@@ -3,264 +3,722 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090c10">
-<meta name="description" content="UBER STROY Market Intelligence — исследование российского рынка строительных рабочих команд, платформенной занятости, конкурентов, зарубежных аналогов и потенциала сети до 1 млн профилей к 2031 году.">
-<meta property="og:title" content="UBER STROY — Market Intelligence 2026">
-<meta property="og:description" content="Следующий слой рынка труда — подтверждённый опыт, рабочие команды и управление исполнением на объекте.">
-<title>UBER STROY — Market Intelligence 2026</title>
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="UBER STROY Market Intelligence — Super Dark research edition. Рынок платформенной занятости, строительный спрос, Нижегородский рынок, конкуренты, 10 международных референсов и сценарий роста до 1 млн профилей.">
+<meta property="og:title" content="UBER STROY — Market Intelligence / Super Dark">
+<meta property="og:description" content="Workforce infrastructure for construction. Market, people, crews, proof and scale.">
+<meta property="og:type" content="website">
+<title>UBER STROY — Market Intelligence / Super Dark</title>
 <style>
-:root{--bg:#090c10;--bg2:#0e141a;--panel:#141b22;--panel2:#1b252e;--line:#2a343d;--paper:#f1efe9;--muted:#a1abb3;--soft:#71808a;--orange:#ff5a1f;--orange2:#ff895b;--amber:#ffc247;--green:#8ed3ae;--red:#ff7777;--max:1240px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--paper);font-family:Inter,Manrope,Arial,sans-serif;line-height:1.55;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.1;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(#000,transparent 86%)}
-a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}::selection{background:var(--orange);color:#111}
-.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.orange{color:var(--orange)}.green{color:var(--green)}.amber{color:var(--amber)}.muted{color:var(--muted)}.soft{color:var(--soft)}
-.eyebrow{display:flex;align-items:center;gap:10px;color:var(--orange);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--orange)}
-.kicker{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:900}.display{font-family:"Arial Narrow",Impact,Arial,sans-serif;font-weight:950;letter-spacing:-.055em;text-transform:uppercase;line-height:.92}
-h1,h2,h3,p{margin-top:0}h1{font-size:clamp(52px,7.2vw,102px);margin:22px 0 24px;max-width:940px}h2{font-size:clamp(36px,5vw,62px);line-height:.98;margin:14px 0 18px}h3{font-size:20px;line-height:1.12;margin:0 0 12px}p{color:#b5bec5}
-section{padding:98px 0;position:relative;border-bottom:1px solid #ffffff10}.section-dark{background:linear-gradient(180deg,rgba(18,25,32,.95),rgba(10,14,19,.98))}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:38px}.section-head>div:first-child{max-width:820px}.intro{max-width:790px;color:#b5bec5;font-size:15px;line-height:1.75}.section-no{font:900 11px Impact,Arial,sans-serif;letter-spacing:.15em;color:#6d7881;white-space:nowrap;padding-bottom:10px}
-.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--orange);z-index:40;box-shadow:0 0 16px #ff5a1f88}
-header{position:sticky;top:0;z-index:30;height:76px;background:#090c10e8;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}
-.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:950;letter-spacing:.08em}.brand-mark{width:36px;height:36px;display:grid;place-items:center;background:var(--orange);color:#130e0b;border-radius:9px;font:950 18px Impact,Arial,sans-serif;transform:skew(-7deg)}.brand em{color:var(--orange);font-style:normal}
-.nav-links{display:flex;align-items:center;gap:22px;color:#b4bec6;font-size:10px;font-weight:800}.nav-links a:hover{color:var(--orange)}
-.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 17px;background:var(--orange);border:1px solid var(--orange);color:#140e0b;font-size:10px;font-weight:950;letter-spacing:.07em;text-transform:uppercase;transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px #ff5a1f30}.btn.ghost{background:transparent;color:var(--paper);border-color:#53606a}.btn.ghost:hover{color:var(--orange);border-color:var(--orange);box-shadow:none}.menu-btn{display:none;border:1px solid var(--line);background:#151d24;color:var(--paper);height:40px;width:42px;font-size:20px}
-.hero{padding:88px 0 52px;min-height:680px;display:flex;align-items:center;overflow:hidden}.hero:after{content:"";position:absolute;right:-14vw;top:-30vw;width:70vw;height:70vw;border:1px solid #ff5a1f24;border-radius:50%;box-shadow:0 0 0 70px #ff5a1f08,0 0 0 140px #ff5a1f05;pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px;position:relative;z-index:1}.hero h1 span{color:var(--orange)}.hero-copy{max-width:650px;color:#b5bec5;font-size:16px;line-height:1.75}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-meta{display:flex;align-items:center;gap:12px;margin-top:32px;color:#79858f;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.live-dot{height:7px;width:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #8ed3ae20}
-.hero-board{background:linear-gradient(145deg,#172129,#0e141a);border:1px solid #3b474f;padding:27px;position:relative;box-shadow:0 28px 80px #0009}.hero-board:before{content:"";position:absolute;left:0;top:0;width:28%;height:3px;background:var(--orange)}.board-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.board-title{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#94a0a9;font-weight:900}.board-stamp{font-size:8px;color:var(--green);border:1px solid #355645;padding:5px 8px;letter-spacing:.1em}
-.hero-stat{padding:16px 0;border-top:1px solid #ffffff12;display:flex;align-items:end;justify-content:space-between;gap:12px}.hero-stat strong{font:950 clamp(33px,4vw,52px)/.9 Impact,Arial,sans-serif;letter-spacing:-.03em}.hero-stat strong em{font-style:normal;color:var(--orange)}.hero-stat span{max-width:160px;color:#94a0a9;font-size:10px;line-height:1.45;text-align:right}
-.board-foot{margin-top:15px;padding:14px;background:#0a1015;border:1px solid #ffffff12;color:#8e9ba4;font-size:10px;line-height:1.6}.hero-bottom{margin-top:36px;padding-top:18px;border-top:1px solid #2a343d;display:flex;justify-content:space-between;gap:20px;color:#77838d;font-size:9px;letter-spacing:.1em;text-transform:uppercase}.hero-bottom strong{color:var(--paper)}
-.ticker{background:var(--orange);color:#130d08;overflow:hidden;border-block:1px solid #ff8c59}.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:ticker 34s linear infinite}.ticker span{padding:13px 24px;font:950 13px Impact,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.ticker b{font-size:18px;padding:0 8px}@keyframes ticker{to{transform:translateX(-50%)}}
-.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.card{background:var(--panel);border:1px solid var(--line);padding:23px;position:relative;min-width:0}.card.accent{border-color:#914329;background:linear-gradient(145deg,#241a16,#141b22)}.card.light{background:var(--paper);color:#11171c;border-color:var(--paper)}.card.light p,.card.light .muted{color:#57616a}.card-num{font:950 12px Impact,Arial,sans-serif;color:var(--orange);letter-spacing:.12em}.card h3{margin-top:10px}.card p{font-size:12px;line-height:1.7;margin-bottom:0}
-.metric{font:950 clamp(32px,4vw,49px)/.95 Impact,Arial,sans-serif;letter-spacing:-.04em}.metric small{font:700 12px Inter,Arial,sans-serif;color:var(--muted);letter-spacing:0}.tag{display:inline-flex;align-items:center;padding:5px 8px;border:1px solid #42505a;color:#b9c3ca;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:900}.tag.orange-tag{border-color:#81412d;color:#ff9a70;background:#ff5a1f0d}.tag.green-tag{border-color:#365c48;color:var(--green);background:#8ed3ae0b}
-.big-thesis{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch}.thesis-quote{padding:34px;background:var(--paper);color:#10161b;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden}.thesis-quote:after{content:"";position:absolute;right:-90px;bottom:-135px;width:290px;height:290px;border:40px solid var(--orange);border-radius:50%}.thesis-quote h3{font:950 clamp(30px,4vw,48px)/.96 Impact,Arial,sans-serif;text-transform:uppercase;max-width:560px;position:relative;z-index:1}.thesis-quote p{color:#58616a;max-width:420px;font-size:12px;position:relative;z-index:1}
-.thesis-stack{display:grid;gap:10px}.thesis-row{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;padding:17px 20px;background:var(--panel);border:1px solid var(--line)}.thesis-row b{font:950 16px Impact,Arial,sans-serif;color:var(--orange)}.thesis-row strong{display:block;font-size:13px;margin-bottom:4px}.thesis-row span{display:block;color:#9eabb4;font-size:10px;line-height:1.55}
-.market-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.market-total{padding:27px;background:linear-gradient(140deg,#242c32,#12191f);border:1px solid #45515a}.market-total .metric{font-size:clamp(46px,6vw,72px);margin:16px 0}
-.bar-wrap{margin-top:22px}.bar-item{display:grid;grid-template-columns:140px 1fr 62px;align-items:center;gap:10px;margin:13px 0;font-size:10px;color:#adb7bf}.bar{height:10px;background:#29343d;overflow:hidden;border-radius:2px}.bar i{display:block;height:100%;background:var(--orange);width:var(--w);border-radius:2px}.bar-value{text-align:right;font-weight:900;color:var(--paper)}
-.ring-layout{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.donut{width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange) 0 58%,var(--amber) 58% 74%,#50616d 74% 100%);position:relative;flex:0 0 auto}.donut:after{content:"e2e";position:absolute;inset:22px;border-radius:50%;background:#121920;display:grid;place-items:center;font:950 28px Impact,Arial,sans-serif;color:var(--paper)}
-.legend{display:grid;gap:12px;min-width:190px}.legend-row{display:flex;gap:10px;align-items:center;color:#b2bdc4;font-size:10px}.swatch{width:9px;height:9px;border-radius:2px;background:var(--orange);flex:0 0 auto}.swatch.amber{background:var(--amber)}.swatch.blue{background:#50616d}
-.note{padding:14px 16px;border-left:2px solid var(--amber);background:#ffc2470b;color:#b7c0c7;font-size:10px;line-height:1.65}.note strong{color:var(--amber)}.source-inline{color:var(--orange2);font-size:10px;font-weight:850;text-decoration:underline;text-underline-offset:3px}.source-inline:hover{color:#ffb097}
-.shortage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.shortage{padding:20px;background:#111920;border:1px solid #333e47}.shortage .metric{font-size:38px}.shortage .label{color:#9eabb4;font-size:10px;line-height:1.55;margin-top:10px}
-.concentration{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.concentration .card{background:#111920}.progressline{height:8px;background:#29343d;margin-top:14px}.progressline i{display:block;height:100%;background:linear-gradient(90deg,var(--orange),var(--amber));width:var(--w)}
-.table-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}table{border-collapse:collapse;width:100%;min-width:850px}th,td{padding:14px;border-bottom:1px solid #ffffff12;text-align:left;vertical-align:top;font-size:10px}th{background:#1a242c;color:#ff956f;font-size:8px;letter-spacing:.13em;text-transform:uppercase;position:sticky;top:0}td{color:#aeb8bf}td strong{color:var(--paper);font-size:11px}.status{display:inline-block;font-size:8px;letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border:1px solid #43505a;color:#c5cdd2;white-space:nowrap}.status.good{border-color:#3b674f;color:var(--green)}.status.warn{border-color:#705a2f;color:var(--amber)}.status.gap{border-color:#854632;color:#ff9a70}
-.matrix-caption{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:15px 0 10px;color:#74818a;font-size:9px}.searchbox{max-width:260px;padding:10px 12px;border:1px solid #39454e;background:#10171d;color:var(--paper);font-size:10px;outline:none}.searchbox:focus{border-color:var(--orange)}
-.player-card{display:flex;flex-direction:column;min-height:260px}.player-head{display:flex;justify-content:space-between;align-items:start;gap:12px}.monogram{height:43px;width:43px;display:grid;place-items:center;background:#202b33;border:1px solid #3b4851;color:var(--orange);font:950 15px Impact,Arial,sans-serif}.player-stat{font:950 29px Impact,Arial,sans-serif;color:var(--paper);margin:14px 0 4px}.player-card ul{padding-left:16px;margin:14px 0 18px;color:#aeb9c0;font-size:10px;line-height:1.7}.player-card li{margin-bottom:4px}.player-card .source-inline{margin-top:auto}
-.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.gap-plot{background:#11181e;border:1px solid #36414a;padding:26px}.plot{height:310px;position:relative;margin:22px 35px 24px 56px;border-left:1px solid #6a7780;border-bottom:1px solid #6a7780;background-image:linear-gradient(to right,#ffffff0a 1px,transparent 1px),linear-gradient(to top,#ffffff0a 1px,transparent 1px);background-size:25% 25%}.axis-y{position:absolute;left:-62px;top:44%;transform:rotate(-90deg);font-size:9px;color:#7e8b94;letter-spacing:.12em}.axis-x{position:absolute;bottom:-28px;right:0;font-size:9px;color:#7e8b94;letter-spacing:.12em}.plot-label{position:absolute;font-size:9px;color:#82909a}.plot-label.tl{top:-23px;left:0}.plot-label.br{bottom:-23px;left:0}.dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--orange);border:2px solid #ffc1a7;box-shadow:0 0 0 6px #ff5a1f1c}.dot:after{content:attr(data-name);position:absolute;left:17px;top:-5px;white-space:nowrap;font-size:9px;color:var(--paper);font-weight:850}.dot.dim{background:#a8b6bf;border-color:#d1d9de;box-shadow:0 0 0 6px #a8b6bf17}.dot.gold{background:var(--amber);border-color:#ffdfa0;box-shadow:0 0 0 6px #ffc24717}
-.workflow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:#303a42;border:1px solid #303a42}.flow-step{background:#111920;min-height:168px;padding:18px 13px}.flow-step .step{color:var(--orange);font:950 13px Impact,Arial,sans-serif}.flow-step h3{font-size:12px;margin:12px 0 8px}.flow-step p{font-size:9px;line-height:1.55;margin:0;color:#9ca8b0}
-.agent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.agent{background:#111920;border:1px solid var(--line);padding:20px}.agent .num{font:950 23px Impact,Arial,sans-serif;color:var(--orange)}.agent h3{font-size:14px;margin:12px 0 8px}.agent p{font-size:10px;line-height:1.65;margin:0}
-.global-card{min-height:305px;display:flex;flex-direction:column}.global-top{display:flex;justify-content:space-between;align-items:center;gap:14px}.global-card .metric{font-size:36px;margin:18px 0 4px}.global-card p{font-size:11px;line-height:1.65}.global-card .borrow{margin-top:auto;padding-top:14px;border-top:1px solid #ffffff13;color:#ff9b72;font-size:10px;line-height:1.6}.global-card .borrow b{color:var(--paper)}
-.builder-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.builder{padding:17px;background:#111920;border:1px solid var(--line);display:flex;flex-direction:column;min-height:155px}.builder strong{font:950 16px Impact,Arial,sans-serif;letter-spacing:.03em}.builder span{font-size:9px;color:#96a2ab;margin:7px 0 12px;line-height:1.55}.builder a{color:var(--orange2);font-size:9px;font-weight:850;text-decoration:underline;text-underline-offset:3px;margin-top:auto}.builder a+a{margin-top:8px}
-.scale-hero{padding:34px;background:linear-gradient(140deg,#292018,#141b22 70%);border:1px solid #76503c;display:grid;grid-template-columns:1fr .95fr;gap:25px;align-items:center}.scale-hero .metric{font-size:clamp(60px,8vw,100px);color:var(--orange)}.scale-hero p{max-width:550px}.scale-timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:18px}.year{padding:17px 13px;background:#111920;border:1px solid var(--line);min-height:142px}.year strong{display:block;font:950 27px Impact,Arial,sans-serif;color:var(--orange);margin:10px 0 4px}.year .year-label{font-size:9px;color:#92a0a9}.year .city-label{font-size:8px;color:#75828c;text-transform:uppercase;letter-spacing:.08em}.yearbar{height:5px;background:#2b373f;margin-top:12px}.yearbar i{display:block;height:100%;background:var(--orange);width:var(--w)}
-.calculator{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;background:#121a20;border:1px solid #3d4952;padding:25px;margin-top:24px}.control{padding:13px 0;border-bottom:1px solid #ffffff11}.control:last-child{border:0}.control label{display:flex;justify-content:space-between;gap:14px;color:#b4bec5;font-size:10px;margin-bottom:10px}.control output{color:var(--orange);font-weight:950}.control input[type=range]{width:100%;accent-color:var(--orange)}.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:10px}.result{background:#0c1217;border:1px solid #2d3942;padding:17px}.result span{display:block;font-size:8px;color:#88959e;text-transform:uppercase;letter-spacing:.11em}.result strong{display:block;margin-top:9px;font:950 clamp(24px,3vw,36px) Impact,Arial,sans-serif;color:var(--paper)}.result.primary strong{color:var(--orange)}.result small{display:block;color:#84919b;font-size:9px;margin-top:7px;line-height:1.45}.calc-note{grid-column:1/-1;color:#84919b;font-size:9px;line-height:1.65;padding-top:6px}
-.unit-econ{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.unit-card{background:#111920;border:1px solid var(--line);padding:25px}.unit-card .metric{font-size:50px;color:var(--orange)}.unit-bars{display:grid;gap:13px;margin-top:18px}.unit-line{display:grid;grid-template-columns:130px 1fr 85px;align-items:center;gap:12px;font-size:10px;color:#9aa7b0}.unit-line .bar{height:12px}.unit-line strong{text-align:right;color:var(--paper)}.compare-note{border:1px solid #76502f;background:#ffc2470a;padding:17px;margin-top:16px;color:#bac4cb;font-size:10px;line-height:1.65}.compare-note strong{color:var(--amber)}
-.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gate{background:#111920;border:1px solid var(--line);padding:18px}.gate .phase{font:950 9px Impact,Arial,sans-serif;color:var(--orange);letter-spacing:.13em}.gate h3{font-size:14px;margin:12px 0 7px}.gate p{font-size:10px;margin:0;line-height:1.65}
-.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.source-card{background:#111920;border:1px solid var(--line);padding:16px;min-height:118px}.source-card .type{display:block;color:var(--orange);font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px}.source-card strong{display:block;font-size:11px;line-height:1.35;margin-bottom:7px}.source-card p{font-size:9px;line-height:1.5;margin:0 0 8px;color:#84919a}.source-card a{font-size:9px;color:var(--orange2);font-weight:850;text-decoration:underline;text-underline-offset:3px}
-.methodology{display:grid;grid-template-columns:1fr 1fr;gap:18px}.method-card{background:#111920;border:1px solid var(--line);padding:22px}.method-card h3{font-size:14px}.method-card ul{padding-left:17px;margin:12px 0 0;color:#9eabb4;font-size:10px;line-height:1.75}
-.footer{padding:42px 0 60px;background:#080b0f}.footer-row{display:flex;justify-content:space-between;align-items:start;gap:30px}.footer p{max-width:650px;font-size:10px;line-height:1.7}.footer-links{display:flex;flex-wrap:wrap;gap:10px}.footer-links a{font-size:9px;color:#9da9b1;text-decoration:underline;text-underline-offset:3px}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:1050px){.nav-links{gap:13px}.nav-links a{font-size:9px}.grid-4,.agent-grid,.builder-list{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(4,1fr)}.hero-grid{gap:28px}.scale-hero{grid-template-columns:1fr}.sources-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.wrap{width:min(var(--max),calc(100% - 30px))}header{height:66px}.menu-btn{display:block}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;padding:16px;background:#111920;border:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 6px;border-bottom:1px solid #ffffff12;font-size:11px}
-.hero{padding:62px 0 38px;min-height:auto}.hero-grid,.big-thesis,.market-grid,.two-cols,.unit-econ,.calculator,.methodology{grid-template-columns:1fr}.hero-board{margin-top:8px}.hero h1{font-size:clamp(48px,13.5vw,78px)}section{padding:70px 0}.section-head{display:block;margin-bottom:27px}.section-no{display:none}.grid-2,.grid-3,.shortage-grid,.concentration{grid-template-columns:1fr}.grid-4,.agent-grid,.builder-list,.sources-grid{grid-template-columns:1fr 1fr}.shortage{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:10px}.shortage .label{margin:0}.workflow{grid-template-columns:repeat(2,1fr)}.flow-step{min-height:142px}.scale-timeline{grid-template-columns:repeat(2,1fr)}.year:last-child{grid-column:1/-1}.scale-hero{padding:24px}.calc-results{grid-template-columns:1fr 1fr}.hero-bottom{flex-direction:column}.ring-layout{justify-content:center}.hero-stat strong{font-size:39px}.plot{margin-left:43px;margin-right:12px;height:250px}.plot .dot:after{font-size:8px}.footer-row{display:block}.footer-links{margin-top:20px}.bar-item{grid-template-columns:112px 1fr 45px}.unit-line{grid-template-columns:100px 1fr 70px}}
-@media(max-width:420px){.grid-4,.agent-grid,.builder-list,.sources-grid{grid-template-columns:1fr}.hero-board{padding:20px}.calculator{padding:18px}.calc-results{grid-template-columns:1fr 1fr}.result strong{font-size:25px}.thesis-quote{padding:25px}.scale-timeline{grid-template-columns:1fr 1fr}.source-card{min-height:auto}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{transition:none;opacity:1;transform:none}}
+:root{
+ --bg:#0b1020;--bg2:#0f1728;--panel:#111827;--panel2:#151f31;--panel3:#1a2740;
+ --stroke:rgba(148,163,184,.14);--stroke2:rgba(96,165,250,.32);--text:#f1f5f9;
+ --muted:#94a3b8;--muted2:#64748b;--blue:#60a5fa;--blue2:#3b82f6;--cyan:#67e8f9;
+ --green:#34d399;--amber:#fbbf24;--red:#fb7185;--violet:#c4b5fd;
+ --max:1320px;--r:16px;--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+ --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(148,163,184,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.08) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(#000,transparent 88%)}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
+::selection{background:var(--blue);color:#07101f}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.muted{color:var(--muted)}.soft{color:var(--muted2)}.blue{color:var(--blue)}.cyan{color:var(--cyan)}.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}.violet{color:var(--violet)}
+.mono{font-family:var(--mono)}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font:800 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.eyebrow:before{content:"";height:1px;width:26px;background:var(--cyan);box-shadow:0 0 12px #67e8f955}
+.kicker{font:800 9px/1.3 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted2)}
+.display{font-family:var(--sans);font-weight:950;letter-spacing:-.065em;line-height:.94}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(48px,7.2vw,98px);margin:23px 0 24px;max-width:950px}
+h2{font-size:clamp(34px,4.8vw,60px);line-height:1.01;margin:13px 0 18px}
+h3{font-size:19px;line-height:1.15;margin:0 0 11px}
+p{color:#b8c4d5}
+section{padding:92px 0;position:relative;border-bottom:1px solid var(--stroke)}
+.section-dark{background:linear-gradient(180deg,rgba(17,24,39,.88),rgba(11,16,32,.95));border-block:1px solid var(--stroke)}
+.intro{max-width:820px;color:#aab8ca;font-size:15px;line-height:1.75}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:38px}
+.section-head>div:first-child{max-width:880px}
+.section-id{font:800 10px var(--mono);letter-spacing:.13em;color:#52647f;white-space:nowrap;padding-bottom:10px}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--blue2),var(--cyan));z-index:60;box-shadow:0 0 15px #60a5fa88}
+header{position:sticky;top:0;z-index:40;height:76px;background:rgba(11,16,32,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--stroke)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font:900 13px var(--mono);letter-spacing:.06em}
+.brand-mark{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(140deg,var(--blue),#2563eb);color:#081225;font:950 17px var(--sans);box-shadow:0 0 26px #3b82f633}
+.brand em{font-style:normal;color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:19px;color:#9fb0c7;font:700 10px var(--mono)}
+.nav-links a{transition:.2s}.nav-links a:hover{color:var(--cyan)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:0 17px;border:1px solid var(--blue2);border-radius:9px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#061225;font:900 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px #2563eb22;transition:.2s}
+.nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px #3b82f644}
+.btn.ghost{background:#11182788;color:#dbeafe;border-color:var(--stroke2);box-shadow:none}.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.menu-btn{display:none;width:42px;height:40px;border-radius:9px;border:1px solid var(--stroke);background:var(--panel);color:var(--text);font-size:20px}
+.hero{padding:70px 0 46px;min-height:740px;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:680px;height:680px;right:-290px;top:-180px;border-radius:50%;border:1px solid #60a5fa19;box-shadow:0 0 0 70px #60a5fa08,0 0 0 140px #60a5fa05}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:36px;position:relative;z-index:1}
+.hero h1 .line-blue{background:linear-gradient(100deg,#dbeafe 0%,#60a5fa 53%,#67e8f9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{max-width:680px;color:#b8c4d5;font-size:16px;line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px;color:#6f829f;font:800 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #34d3991b,0 0 16px #34d39999}
+.hero-visual{position:relative;min-height:550px;border:1px solid var(--stroke2);border-radius:20px;overflow:hidden;background:#0b1223;box-shadow:0 32px 90px #0009}
+.hero-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.72) contrast(1.07)}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,12,28,.14),rgba(5,12,28,.32) 38%,rgba(5,12,28,.94)),linear-gradient(90deg,rgba(5,12,28,.22),transparent 80%)}
+.visual-top{position:absolute;z-index:2;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;gap:10px}
+.stamp{padding:7px 10px;border:1px solid #dbeafe35;border-radius:7px;background:#0b1020a8;backdrop-filter:blur(9px);color:#dbeafe;font:800 8px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.hero-panel{position:absolute;z-index:3;left:18px;right:18px;bottom:18px;padding:20px;border:1px solid #93c5fd33;border-radius:13px;background:rgba(8,15,32,.8);backdrop-filter:blur(14px)}
+.hero-panel-top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}
+.hero-panel-title{font:900 10px var(--mono);color:#cbdcf5;letter-spacing:.12em;text-transform:uppercase}
+.hero-panel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.hero-kpi{padding:13px;background:#101a2d;border:1px solid #64748b2e;border-radius:9px}
+.hero-kpi strong{display:block;font:950 30px/1 var(--sans);letter-spacing:-.06em;color:#eff6ff}
+.hero-kpi strong em{font-style:normal;color:var(--cyan)}
+.hero-kpi span{display:block;margin-top:6px;font:700 8px/1.4 var(--mono);color:#8295b2;text-transform:uppercase;letter-spacing:.08em}
+.hero-caption{margin-top:12px;color:#7f91ad;font:700 8px/1.5 var(--mono)}
+.hero-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:26px;padding-top:18px;border-top:1px solid var(--stroke);color:#687b98;font:800 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.hero-bottom strong{color:#dbeafe}
+.ticker{background:#101a2c;border-block:1px solid var(--stroke);overflow:hidden}
+.ticker-track{display:flex;width:max-content;white-space:nowrap;animation:ticker 42s linear infinite}
+.ticker span{padding:13px 23px;color:#9fb2ce;font:800 10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.ticker b{color:var(--cyan);padding:0 10px}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{min-width:0;padding:22px;border:1px solid var(--stroke);border-radius:var(--r);background:linear-gradient(145deg,rgba(21,31,49,.92),rgba(17,24,39,.96));box-shadow:0 12px 34px #02061730}
+.card:hover{border-color:var(--stroke2)}
+.card.blue-card{border-color:#60a5fa50;background:linear-gradient(145deg,#152744,#111827)}
+.card.green-card{border-color:#34d39938}
+.card.amber-card{border-color:#fbbf2438}
+.card .card-id{font:800 9px var(--mono);color:var(--cyan);letter-spacing:.15em}
+.card h3{margin-top:10px}
+.card p{font-size:11px;line-height:1.7;margin:0;color:#a4b3c7}
+.metric{font:950 clamp(32px,4vw,52px)/.95 var(--sans);letter-spacing:-.065em;color:#f1f5f9}
+.metric small{font:750 11px var(--mono);letter-spacing:0;color:#8ea2be}
+.metric-note{font:700 9px/1.5 var(--mono);color:#8194b0;margin-top:10px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid var(--stroke2);border-radius:100px;background:#60a5fa0b;color:#b9d6ff;font:800 8px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pill.green-pill{border-color:#34d39950;background:#34d3990c;color:#86efac}
+.pill.amber-pill{border-color:#fbbf2450;background:#fbbf240c;color:#fcd34d}
+.pill.red-pill{border-color:#fb718550;background:#fb71850c;color:#fda4af}
+.note{padding:14px 16px;border-left:2px solid var(--amber);border-radius:0 9px 9px 0;background:#fbbf2409;color:#aebdd0;font-size:10px;line-height:1.7}
+.note strong{color:#fcd34d}
+.source{color:var(--cyan);font:800 9px var(--mono);text-decoration:underline;text-underline-offset:3px}
+.source:hover{color:#fff}
+.divider{height:1px;background:var(--stroke);margin:17px 0}
+.chart-row{display:grid;grid-template-columns:145px 1fr 75px;align-items:center;gap:10px;margin:13px 0;color:#a6b7cd;font:700 9px var(--mono)}
+.track{height:10px;overflow:hidden;background:#25344d;border-radius:100px}
+.track i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--blue2),var(--cyan));border-radius:100px;box-shadow:0 0 15px #60a5fa55}
+.chart-val{text-align:right;color:#e2edff;font-weight:900}
+.ring-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.donut{width:174px;height:174px;position:relative;flex:0 0 auto;border-radius:50%;background:conic-gradient(var(--blue) 0 58%,var(--cyan) 58% 74%,#475569 74% 100%);box-shadow:0 0 38px #3b82f61b}
+.donut:after{content:"e2e";position:absolute;inset:22px;border-radius:50%;display:grid;place-items:center;background:#121d32;border:1px solid var(--stroke);font:950 26px var(--mono);color:#e0f2fe}
+.legend{display:grid;gap:12px;min-width:190px}
+.legend-item{display:flex;gap:10px;align-items:center;color:#b1c1d6;font:700 9px var(--mono)}
+.swatch{height:9px;width:9px;border-radius:2px;background:var(--blue);flex:0 0 auto}.swatch.cyan{background:var(--cyan)}.swatch.gray{background:#475569}
+.data-ribbon{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.data-cell{padding:16px;border:1px solid var(--stroke);border-radius:11px;background:#0e1729}
+.data-cell strong{display:block;font:950 28px/1 var(--sans);letter-spacing:-.05em;color:#eaf3ff}
+.data-cell span{display:block;margin-top:7px;color:#7589a6;font:700 8px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.big-thesis{display:grid;grid-template-columns:1.05fr .95fr;gap:17px}
+.thesis-visual{min-height:360px;position:relative;border:1px solid var(--stroke2);border-radius:16px;overflow:hidden;background:#0d172b}
+.thesis-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.7)}
+.thesis-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b1020d9,#0b102055 70%),linear-gradient(0deg,#0b1020e8,transparent 70%)}
+.thesis-visual-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:23px}
+.thesis-visual-copy h3{font-size:clamp(24px,3vw,39px);font-weight:950;letter-spacing:-.05em;max-width:540px}
+.thesis-visual-copy p{font-size:11px;max-width:480px;color:#c0cee0}
+.thesis-stack{display:grid;gap:9px}
+.thesis-row{display:grid;grid-template-columns:38px 1fr;gap:13px;padding:16px;border:1px solid var(--stroke);border-radius:11px;background:#111b2d}
+.thesis-row b{color:var(--cyan);font:900 13px var(--mono)}
+.thesis-row strong{display:block;color:#e5efff;font-size:12px;margin-bottom:4px}
+.thesis-row span{display:block;color:#879ab5;font-size:9px;line-height:1.6}
+.local-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.local-map{position:relative;min-height:360px;border:1px solid var(--stroke);border-radius:15px;overflow:hidden;background:#101b31}
+.local-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.43) saturate(.55)}
+.local-map:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b1020f2,transparent 78%),linear-gradient(90deg,#0b1020a8,transparent 90%)}
+.local-map-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:19px}
+.local-map-copy h3{font-size:26px}
+.local-map-copy p{font-size:10px;color:#aabbd2;max-width:450px}
+.local-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.local-stat{padding:17px;border:1px solid var(--stroke);border-radius:11px;background:#111b2d}
+.local-stat strong{display:block;font:950 31px/1 var(--sans);color:#eaf4ff;letter-spacing:-.06em}
+.local-stat span{display:block;margin-top:8px;color:#8296b3;font:750 8px/1.45 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.stat-warning{grid-column:1/-1;padding:13px;border:1px solid #fbbf2440;border-radius:10px;background:#fbbf2409;color:#aebdd0;font-size:9px;line-height:1.6}
+.status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.status-card{padding:17px;border:1px solid var(--stroke);border-radius:11px;background:#111b2d}
+.status-card strong{display:block;font:950 32px/1 var(--sans);letter-spacing:-.06em;color:#edf6ff}
+.status-card span{display:block;margin-top:7px;color:#8295b0;font:750 8px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.07em}
+.status-card.highlight{border-color:#60a5fa55;background:linear-gradient(145deg,#142847,#111827)}
+.readiness{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+.readiness-box{padding:21px;border:1px solid var(--stroke);border-radius:12px;background:#10192b}
+.readiness-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:12px}
+.readiness-bar{height:11px;background:#25344c;border-radius:100px;overflow:hidden}
+.readiness-bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--blue2),var(--cyan));border-radius:100px}
+.readiness-box .caption{font:700 9px/1.6 var(--mono);color:#8ca0bc;margin-top:10px}
+.player-card{display:flex;flex-direction:column;min-height:290px}
+.player-top{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.player-logo{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#192640;border:1px solid var(--stroke2);color:var(--cyan);font:900 12px var(--mono)}
+.player-metric{margin:14px 0 2px;font:950 29px/1 var(--sans);letter-spacing:-.06em;color:#eaf3ff}
+.player-meta{font:700 8px/1.5 var(--mono);color:#788eac}
+.player-card ul{padding-left:16px;margin:14px 0 18px;color:#a6b7cc;font-size:9px;line-height:1.7}
+.player-card li{margin-bottom:4px}
+.player-card .source{margin-top:auto}
+.matrix-caption{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:15px 0 10px;color:#7185a2;font:750 9px var(--mono)}
+.searchbox{max-width:280px;padding:10px 12px;border:1px solid var(--stroke2);border-radius:8px;background:#0c1527;color:var(--text);font-size:10px;outline:none}
+.searchbox:focus{border-color:var(--cyan)}
+.table-wrap{overflow-x:auto;border:1px solid var(--stroke);border-radius:13px;background:#10192b}
+table{border-collapse:collapse;width:100%;min-width:900px}
+th,td{padding:13px 12px;border-bottom:1px solid var(--stroke);text-align:left;vertical-align:top;font-size:9px}
+th{position:sticky;top:0;background:#16233a;color:#8fbcff;font:800 8px var(--mono);letter-spacing:.11em;text-transform:uppercase}
+td{color:#9fb0c6}td strong{color:#e3edfa;font-size:10px}
+.flag{display:inline-block;padding:4px 7px;border:1px solid var(--stroke);border-radius:6px;color:#afc3dd;font:750 7px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.flag.good{border-color:#34d39955;color:#86efac;background:#34d3990a}.flag.warn{border-color:#fbbf2455;color:#fcd34d;background:#fbbf2409}.flag.gap{border-color:#fb718555;color:#fda4af;background:#fb71850a}
+.plot-wrap{padding:22px;border:1px solid var(--stroke);border-radius:14px;background:#111a2b}
+.scatter{height:285px;position:relative;margin:25px 30px 38px 52px;border-left:1px solid #71819b;border-bottom:1px solid #71819b;background-image:linear-gradient(to right,#ffffff0b 1px,transparent 1px),linear-gradient(to top,#ffffff0b 1px,transparent 1px);background-size:25% 25%}
+.axis-y{position:absolute;left:-64px;top:44%;transform:rotate(-90deg);font:750 8px var(--mono);color:#7286a5;letter-spacing:.09em}
+.axis-x{position:absolute;bottom:-27px;right:0;font:750 8px var(--mono);color:#7286a5;letter-spacing:.09em}
+.plot-lab{position:absolute;color:#647a99;font:750 8px var(--mono)}
+.plot-lab.top{top:-20px;left:0}.plot-lab.bottom{bottom:-20px;left:0}
+.point{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid #bfdbfe;box-shadow:0 0 0 6px #60a5fa1c}
+.point:after{content:attr(data-name);position:absolute;left:16px;top:-5px;white-space:nowrap;color:#e1edff;font:750 8px var(--mono)}
+.point.cyan-point{background:var(--cyan);border-color:#cffafe;box-shadow:0 0 0 6px #67e8f91b}
+.point.gray-point{background:#64748b;border-color:#cbd5e1;box-shadow:0 0 0 6px #64748b1d}
+.workflow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:#273750;border:1px solid #273750;border-radius:12px;overflow:hidden}
+.flow-step{padding:17px 12px;background:#111b2d;min-height:157px}
+.flow-step .step{font:850 10px var(--mono);color:var(--cyan)}
+.flow-step h3{font-size:12px;margin:11px 0 7px}
+.flow-step p{font-size:8px;line-height:1.6;margin:0;color:#8fa2bd}
+.agent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.agent{padding:19px;border:1px solid var(--stroke);border-radius:12px;background:#111b2d}
+.agent .n{font:950 21px var(--mono);color:var(--blue)}
+.agent h3{font-size:12px;margin:11px 0 7px}
+.agent p{font-size:9px;line-height:1.65;margin:0;color:#96a9c2}
+.photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
+.photo-card{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--stroke);background:#111827;min-height:215px}
+.photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s;filter:saturate(.78) brightness(.78)}
+.photo-card:hover img{transform:scale(1.05);filter:saturate(.95) brightness(.9)}
+.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#081020f2,transparent 68%)}
+.photo-copy{position:absolute;z-index:2;left:13px;right:13px;bottom:12px}
+.photo-copy strong{display:block;font:850 11px var(--mono);letter-spacing:.05em;color:#f1f7ff}
+.photo-copy span{display:block;margin-top:4px;color:#92a7c5;font-size:8px;line-height:1.45}
+.photo-link{position:absolute;z-index:3;inset:0}
+.ref-note{margin-top:12px;color:#7488a6;font:700 8px/1.7 var(--mono)}
+.global-card{display:flex;flex-direction:column;min-height:302px}
+.global-card p{font-size:10px;line-height:1.7}
+.global-card .takeaway{margin-top:auto;padding-top:13px;border-top:1px solid var(--stroke);font-size:9px;line-height:1.6;color:#8fcaff}
+.global-card .takeaway b{color:#dbeafe}
+.scale-hero{display:grid;grid-template-columns:1fr .95fr;gap:20px;align-items:center;padding:28px;border:1px solid var(--stroke2);border-radius:17px;background:radial-gradient(circle at 80% 0%,#2563eb23,transparent 55%),linear-gradient(140deg,#142441,#111827 75%)}
+.scale-number{font:950 clamp(55px,8vw,100px)/.88 var(--sans);letter-spacing:-.08em;background:linear-gradient(100deg,#e0f2fe,#60a5fa 60%,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.scale-timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.year-card{padding:14px 12px;border:1px solid var(--stroke);border-radius:10px;background:#101a2b;min-height:133px}
+.year-card strong{display:block;margin:11px 0 3px;font:950 25px var(--sans);color:#e7f3ff;letter-spacing:-.05em}
+.year-card span{color:#8095b4;font:750 8px/1.45 var(--mono);text-transform:uppercase}
+.year-line{height:5px;background:#293750;margin-top:13px;border-radius:10px;overflow:hidden}
+.year-line i{display:block;width:var(--w);height:100%;background:linear-gradient(90deg,var(--blue2),var(--cyan))}
+.calculator{display:grid;grid-template-columns:.95fr 1.05fr;gap:17px;padding:22px;margin-top:20px;border:1px solid var(--stroke);border-radius:14px;background:#111a2b}
+.control{padding:12px 0;border-bottom:1px solid var(--stroke)}
+.control:last-child{border-bottom:0}
+.control label{display:flex;justify-content:space-between;gap:12px;color:#a9bbd3;font:750 9px var(--mono);margin-bottom:10px}
+.control output{color:var(--cyan);font-weight:900}
+.control input[type=range]{width:100%;accent-color:var(--blue)}
+.calc-results{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.result{padding:15px;border:1px solid var(--stroke);border-radius:9px;background:#0b1425}
+.result span{display:block;color:#7186a6;font:750 8px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.result strong{display:block;margin-top:9px;font:950 clamp(22px,3vw,34px) var(--sans);letter-spacing:-.06em;color:#e8f3ff}
+.result.primary strong{color:var(--cyan)}
+.result small{display:block;margin-top:6px;color:#7185a2;font:700 8px/1.5 var(--mono)}
+.calc-note{grid-column:1/-1;color:#7287a6;font:700 8px/1.65 var(--mono);padding-top:5px}
+.unit-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:15px}
+.unit-card{padding:22px;border:1px solid var(--stroke);border-radius:13px;background:#111a2b}
+.unit-card .metric{font-size:49px;color:var(--cyan)}
+.unit-line{display:grid;grid-template-columns:110px 1fr 90px;align-items:center;gap:10px;margin:12px 0;color:#9eb0c8;font:750 9px var(--mono)}
+.unit-line strong{text-align:right;color:#e2efff}
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.source-card{padding:15px;border:1px solid var(--stroke);border-radius:10px;background:#101a2b;min-height:116px}
+.source-card .type{display:block;color:var(--cyan);font:800 8px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.source-card strong{display:block;color:#e1edfb;font-size:10px;line-height:1.4;margin-bottom:7px}
+.source-card p{font-size:8px;line-height:1.55;color:#778ca9;margin:0 0 8px}
+.source-card a{color:#8fcaff;font:800 8px var(--mono);text-decoration:underline;text-underline-offset:3px}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.method-card{padding:19px;border:1px solid var(--stroke);border-radius:12px;background:#101a2b}
+.method-card h3{font-size:12px}
+.method-card ul{padding-left:17px;margin:11px 0 0;color:#8ea2be;font-size:9px;line-height:1.75}
+.footer{padding:42px 0 58px;background:#080d19}
+.footer-row{display:flex;align-items:start;justify-content:space-between;gap:25px}
+.footer p{max-width:650px;font-size:9px;line-height:1.7;color:#7285a1}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px}
+.footer-links a{color:#8ca2c1;font:750 8px var(--mono);text-decoration:underline;text-underline-offset:3px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:1080px){.nav-links{gap:11px}.nav-links a{font-size:8px}.hero-grid{gap:24px}.photo-grid{grid-template-columns:repeat(3,1fr)}.workflow{grid-template-columns:repeat(4,1fr)}.grid-4,.agent-grid,.status-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ .wrap{width:min(var(--max),calc(100% - 30px))}header{height:66px}.menu-btn{display:block}.nav-cta{display:none}
+ .nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;padding:13px;background:#101a2b;border:1px solid var(--stroke);border-radius:12px;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}.nav-links a{padding:11px 7px;border-bottom:1px solid var(--stroke);font-size:10px}
+ .hero{padding:56px 0 35px;min-height:auto}.hero-grid,.big-thesis,.local-grid,.readiness,.scale-hero,.calculator,.unit-grid,.method-grid{grid-template-columns:1fr}
+ .hero-visual{min-height:440px;margin-top:6px}.hero h1{font-size:clamp(46px,13vw,74px)}
+ section{padding:68px 0}.section-head{display:block;margin-bottom:27px}.section-id{display:none}
+ .grid-2,.grid-3,.local-stats{grid-template-columns:1fr}.grid-4,.status-grid,.agent-grid{grid-template-columns:1fr 1fr}
+ .data-ribbon{grid-template-columns:repeat(2,1fr)}.hero-bottom{flex-direction:column}
+ .photo-grid{grid-template-columns:repeat(2,1fr)}.photo-card{min-height:190px}
+ .workflow{grid-template-columns:repeat(2,1fr)}.flow-step{min-height:135px}
+ .scale-timeline{grid-template-columns:repeat(2,1fr)}.year-card:last-child{grid-column:1/-1}
+ .calc-results{grid-template-columns:1fr 1fr}.source-grid{grid-template-columns:repeat(2,1fr)}
+ .footer-row{display:block}.footer-links{margin-top:18px}
+ .chart-row{grid-template-columns:112px 1fr 57px}.unit-line{grid-template-columns:90px 1fr 75px}
+ .matrix-caption{align-items:start;flex-direction:column}.searchbox{max-width:none;width:100%}
+ .scatter{margin-left:45px;margin-right:12px;height:235px}.point:after{font-size:7px}
+}
+@media(max-width:420px){
+ .grid-4,.agent-grid,.source-grid,.photo-grid{grid-template-columns:1fr}
+ .hero-visual{min-height:390px}.hero-panel{left:10px;right:10px;bottom:10px;padding:12px}
+ .hero-kpi{padding:9px}.hero-kpi strong{font-size:23px}.hero-kpi span{font-size:7px}
+ .hero-panel-grid{gap:5px}.local-stat{padding:14px}
+ .calculator{padding:15px}.calc-results{grid-template-columns:1fr 1fr}
+ .result strong{font-size:24px}.scale-hero{padding:19px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 <header><div class="wrap nav">
-<a class="brand" href="#top"><span class="brand-mark">U</span><span>UBER <em>STROY</em> <span class="soft">/ RESEARCH</span></span></a>
-<nav class="nav-links" id="navLinks"><a href="#thesis">Вывод</a><a href="#market">Рынок</a><a href="#players">Игроки</a><a href="#world">Мир</a><a href="#product">Продукт</a><a href="#scale">1 млн</a><a href="#sources">Источники</a></nav>
-<a class="nav-cta" href="../dark-premium/">О продукте ↗</a><button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
+<a class="brand" href="#top"><span class="brand-mark">U</span><span>UBER <em>STROY</em> <span class="soft">/ INTELLIGENCE</span></span></a>
+<nav class="nav-links" id="navLinks">
+<a href="#market">Рынок</a><a href="#nizhny">Нижний</a><a href="#reality">Статус</a><a href="#players">Конкуренты</a><a href="#world">Референсы</a><a href="#product">Продукт</a><a href="#scale">1M</a><a href="#sources">Источники</a>
+</nav>
+<a class="nav-cta" href="../dark-premium/">Главный продукт ↗</a>
+<button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
 </div></header>
+
 <main id="top">
-<section class="hero"><div class="wrap"><div class="hero-grid">
-<div><div class="eyebrow">Market intelligence · Russia + global benchmarks · 07.11.2026</div>
-<h1 class="display">РЫНОК УЖЕ <span>ОЦИФРОВАН.</span><br>СТРОИТЕЛЬНЫЕ КОМАНДЫ — ЕЩЁ НЕТ.</h1>
-<p class="hero-copy">Мы исследовали платформы сменной занятости, строительный аутсорсинг, отраслевые экосистемы и международные аналоги. Вывод: следующий конкурентный слой — не каталог рабочих, а управляемая сеть команд с подтверждённым опытом, доступностью и историей выполнения операций.</p>
-<div class="hero-actions"><a class="btn" href="#thesis">Читать вывод исследования ↓</a><a class="btn ghost" href="../dark-premium/">Смотреть продукт UBER STROY ↗</a></div>
-<div class="hero-meta"><i class="live-dot"></i> Публичные источники · внутренние материалы · аналитические оценки</div></div>
-<div class="hero-board"><div class="board-top"><span class="board-title">Рынок / ключевые сигналы</span><span class="board-stamp">DATA CUT · 07 NOV 2026</span></div>
-<div class="hero-stat"><strong>239 <em>млрд ₽</em></strong><span>Российский рынок платформенных решений: e2e + процессинг, 2025</span></div>
-<div class="hero-stat"><strong>38 <em>млрд ₽</em></strong><span>Из него e2e-платформы полного цикла, 2025</span></div>
-<div class="hero-stat"><strong>~210 <em>тыс.</em></strong><span>Краткосрочная дополнительная потребность стройки по оценке НОСТРОЙ</span></div>
-<div class="board-foot">Главное: 239 млрд ₽ — не рынок строительных бригад. 38 млрд ₽ — не строительный TAM. Эти данные показывают зрелость платформенной модели в смежных категориях, но не размер нашего адресуемого рынка.</div></div></div>
-<div class="hero-bottom"><span><strong>UBER STROY</strong> / Task-to-Crew Workforce Infrastructure</span><span>От заявки до подтверждённой смены и накопленного опыта</span></div></div></section>
-<div class="ticker"><div class="ticker-track"><span>Task → Crew <b>✳</b> Skill Intelligence <b>✳</b> Verified Experience <b>✳</b> Dispatch <b>✳</b> Crew Reliability <b>✳</b> Workforce Learning Loop <b>✳</b></span><span>Task → Crew <b>✳</b> Skill Intelligence <b>✳</b> Verified Experience <b>✳</b> Dispatch <b>✳</b> Crew Reliability <b>✳</b> Workforce Learning Loop <b>✳</b></span></div></div>
-
-<section id="thesis"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">01 / Executive thesis</div><h2 class="display">НЕ ПУСТОЙ РЫНОК.<br><span class="orange">НЕЗАКРЫТЫЙ СЛОЙ.</span></h2><p class="intro">В России уже есть крупные цифровые платформы, кадровые операторы и строительные экосистемы. Мы не утверждаем, что никто не умеет выводить людей на стройку. Возможность — в объединении компетенций, которые сегодня чаще продаются разными продуктами.</p></div><div class="section-no">THE INVESTMENT THESIS / 01</div></div>
-<div class="big-thesis reveal"><div class="thesis-quote"><div class="kicker">Главная гипотеза UBER STROY</div><h3>Заказчику нужна не численность в чате. Ему нужна команда, которая подходит под работу и действительно выходит.</h3><p>Мы превращаем разрозненные рабочие дома, поставщиков и бригадиров в управляемый слой мощности строительного объекта — с цифровым доказательством опыта каждого человека.</p></div>
-<div class="thesis-stack">
-<div class="thesis-row"><b>01</b><div><strong>Смены уже оцифрованы</strong><span>Заявки, подбор, проверки документов, геолокация, выплаты и базовые рейтинги — стандарт зрелых e2e-платформ.</span></div></div>
-<div class="thesis-row"><b>02</b><div><strong>Строительный аутсорсинг уже существует</strong><span>Классические операторы продают персонал, сопровождение, замену и вывод на площадку. Нельзя считать рынок свободным.</span></div></div>
-<div class="thesis-row"><b>03</b><div><strong>Навык и доказательство — разные слои</strong><span>Самоотчёт, подтверждение старшего, отзыв заказчика и практическая проверка не должны смешиваться.</span></div></div>
-<div class="thesis-row"><b>04</b><div><strong>Команда — самостоятельная единица продукта</strong><span>Нужно управлять не только человеком, но и составом, старшим, совместной историей, резервом и качеством группы.</span></div></div>
-<div class="thesis-row"><b>05</b><div><strong>Миллион — цель сети, не прогноз рынка</strong><span>1 млн уникальных профилей к 2031 году требует федеральной сети, нескольких вертикалей и доказанного спроса в городах.</span></div></div></div></div>
-<div class="grid-3" style="margin-top:18px"><div class="card"><div class="card-num">WHAT WE ARE NOT</div><h3>Не биржа разнорабочих</h3><p>Не просто каталог свободных исполнителей с откликами и телефоном бригадира.</p></div><div class="card accent"><div class="card-num">WHAT WE ARE BUILDING</div><h3>Managed crew network</h3><p>Сеть организованных команд, управляемая через заявку, доступность, состав, допуск, выход, табель и обратную связь.</p></div><div class="card"><div class="card-num">WHAT COMPOUNDS</div><h3>Доказательная база опыта</h3><p>Каждая завершённая смена добавляет проверяемое событие в цифровую историю человека и команды.</p></div></div>
-</div></section>
-
-<section id="market" class="section-dark"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">02 / Market structure</div><h2 class="display">ПЛАТФОРМЕННЫЙ РЫНОК<br><span class="orange">УЖЕ СОЗДАН.</span></h2><p class="intro">Исследование Data Insight и Ventra Go! за 2025 год раскладывает платформенную занятость России через GMV и FTE. Это важный proof of adoption — но его нельзя выдавать за рынок строительных рабочих.</p></div><div class="section-no">RUSSIA / 2025 DATA</div></div>
-<div class="market-grid reveal"><div class="market-total"><div class="kicker">Весь рынок платформенных решений / e2e + processing</div><div class="metric">239 <small>млрд ₽ GMV</small></div><p>Оценка совокупной стоимости заказов и смен, прошедших через платформенные решения в России за 2025 год. Около 360 тыс. FTE в эквиваленте полной занятости.</p>
-<div class="bar-wrap"><div class="bar-item"><span>Рост за год</span><div class="bar"><i style="--w:40%"></i></div><span class="bar-value">+40%</span></div><div class="bar-item"><span>e2e full-cycle</span><div class="bar"><i style="--w:16%"></i></div><span class="bar-value">38 млрд</span></div><div class="bar-item"><span>e2e рост</span><div class="bar"><i style="--w:56%"></i></div><span class="bar-value">+56%</span></div></div>
-<a class="source-inline" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Источник: Data Insight, 26.02.2026 ↗</a></div>
-<div class="card"><div class="kicker">Структура GMV e2e-сегмента</div><div class="ring-layout" style="margin:19px 0"><div class="donut" role="img" aria-label="Ритейл 58 процентов, оптовая и логистическая деятельность 16 процентов, остальные отрасли 26 процентов"></div><div class="legend"><div class="legend-row"><i class="swatch"></i><span><b>58%</b> · ритейл</span></div><div class="legend-row"><i class="swatch amber"></i><span><b>16%</b> · оптово-логистический кластер</span></div><div class="legend-row"><i class="swatch blue"></i><span><b>26%</b> · другие отрасли</span></div></div></div><p>Почти три четверти e2e GMV приходится на ритейл и оптовую логистику. Именно там проще стандартизировать линейную сменную работу.</p><a class="source-inline" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Методология и сегменты ↗</a></div></div>
-<div class="concentration reveal"><div class="card"><div class="kicker">Концентрация рынка</div><div class="metric">54%</div><p>GMV e2e-сегмента приходится на тройку крупнейших платформ: Ventra Go!, «Рабочие Руки» и JamJob.</p><div class="progressline"><i style="--w:54%"></i></div></div><div class="card"><div class="kicker">Топ-5 игроков</div><div class="metric">72%</div><p>Доля пяти крупнейших e2e-платформ выросла с 64% в 2023 году до 72% в 2025-м.</p><div class="progressline"><i style="--w:72%"></i></div></div></div>
-<div class="note" style="margin-top:18px"><strong>Критическое разграничение.</strong> 239 млрд ₽ — оценка платформенных решений в целом; 38 млрд ₽ — e2e-сегмент. Ни одна цифра не равна строительному TAM UBER STROY. Данные показывают зрелость платформенной занятости, а не размер нашего адресуемого рынка.</div>
-<div class="section-head" style="margin-top:58px"><div><div class="eyebrow">Demand signal / Construction</div><h2 class="display">СТРОЙКЕ НУЖНЫ<br><span class="orange">ЛЮДИ И КОМПЕТЕНЦИИ.</span></h2><p class="intro">Кадровый дефицит создаёт окно для более эффективной координации труда, но разные оценки измеряют разные горизонты и не складываются в одну цифру.</p></div><div class="section-no">LABOUR DEMAND</div></div>
-<div class="shortage-grid reveal"><div class="shortage"><div class="metric">209,9 <small>тыс.</small></div><div class="label">Краткосрочная дополнительная потребность по опросу НОСТРОЙ за 2025 год; 77% — рабочие профессии, 23% — инженерно-технический персонал.</div></div><div class="shortage"><div class="metric">~200 <small>тыс.</small></div><div class="label">Оценка текущего дефицита специалистов в строительстве, озвученная президентом НОСТРОЙ в июне 2026 года.</div></div><div class="shortage"><div class="metric">~780 <small>тыс.</small></div><div class="label">Оценка дополнительной потребности отрасли до 2030 года по результатам опроса работодателей.</div></div></div>
-<div class="note" style="margin-top:15px">Эти показатели нельзя суммировать: краткосрочная дополнительная потребность, оценка дефицита на текущий момент и накопленная потребность до 2030 года — разные показатели и горизонты. Они показывают структурный спрос и нехватку рабочей силы, а не гарантированный пул заказов UBER STROY.</div>
-<div style="display:flex;gap:17px;flex-wrap:wrap;margin-top:16px"><a class="source-inline" href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43360" target="_blank" rel="noopener">НОСТРОЙ · 209,94 тыс. ↗</a><a class="source-inline" href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43595" target="_blank" rel="noopener">НОСТРОЙ · дефицит около 200 тыс. ↗</a><a class="source-inline" href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43514" target="_blank" rel="noopener">НОСТРОЙ · потребность до 2030 ↗</a></div>
-</div></section>
-
-<section id="players"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">03 / Competitive landscape · Russia</div><h2 class="display">ПЯТЬ ТИПОВ ИГРОКОВ.<br><span class="orange">ПЯТЬ РАЗНЫХ МОДЕЛЕЙ.</span></h2><p class="intro">Сравниваем не только компании, но и их продуктовый слой: marketplace смен, процессинг, управляемый аутсорсинг, строительная экосистема и Skill Intelligence.</p></div><div class="section-no">COMPETITOR MAP / RU</div></div>
-<div class="grid-3 reveal">
-<article class="card player-card"><div class="player-head"><div><div class="kicker">E2E marketplace / direct overlap</div><h3>Рабочие Руки</h3></div><div class="monogram">РР</div></div><div class="player-stat">800 тыс.</div><div class="muted" style="font-size:9px">Исполнителей в базе · 5 102 постоянных клиента</div><ul><li>Заявка, подбор, документы и выплаты.</li><li>Компания заявляет 87 выходов на заказ из 100 и среднее время отклика 10 минут.</li><li>Публично указана комиссия 25% от выполненных работ.</li><li>На странице сервиса сказано, что квалификация и опыт исполнителей не проверяются.</li></ul><a class="source-inline" href="https://www.russian.works/" target="_blank" rel="noopener">Официальный сайт и тариф ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Mass shift platform</div><h3>MyGig</h3></div><div class="monogram">MG</div></div><div class="player-stat">1,6 млн+</div><div class="muted" style="font-size:9px">Исполнителей в базе по данным компании</div><ul><li>Шаблоны заказов, ставка, бронирование смены.</li><li>Фиксация прибытия через геолокацию, документы и расчёты через платформу.</li><li>По публичному FAQ обычный поиск исполнителя может занимать до суток.</li><li>Клиент может оценивать исполнителей и приглашать на повторную смену.</li></ul><a class="source-inline" href="https://mygig.ru/business" target="_blank" rel="noopener">Официальная B2B-страница ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Marketplace + processing</div><h3>Наймикс</h3></div><div class="monogram">NX</div></div><div class="player-stat">1,38 млн+</div><div class="muted" style="font-size:9px">Действующих исполнителей в базе на странице сервиса</div><ul><li>Маркетплейс, проверка статуса, документы, ЭДО, платежи и налоги.</li><li>Заявлены 1 733 компании-клиента и 88% задач, закрываемых в срок.</li><li>API, вебхуки, CSV/Excel и интеграция с 1С.</li><li>Сильный административно-правовой слой, но не специализированный оператор строительных бригад.</li></ul><a class="source-inline" href="https://naimix.ru/business" target="_blank" rel="noopener">Официальная B2B-страница ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Large e2e platform</div><h3>Ventra Go!</h3></div><div class="monogram">VG</div></div><div class="player-stat">TOP-3</div><div class="muted" style="font-size:9px">Один из лидеров e2e-сегмента по Data Insight</div><ul><li>Массовые смены: скоринг, matching, геоконтроль и процессинг.</li><li>Опыт больших проектов в ритейле и линейном персонале.</li><li>Платформа требует плотности спроса и предложения в конкретных локациях.</li><li>Полный skill-to-crew продукт для стройки публично не раскрыт.</li></ul><a class="source-inline" href="https://ventra.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">National construction staffing</div><h3>Staff-B</h3></div><div class="monogram">SB</div></div><div class="player-stat">85 городов</div><div class="muted" style="font-size:9px">25 000+ выведенных сотрудников · 300+ проектов по данным компании</div><ul><li>Прямо выделяет строительную отрасль: разнорабочие, сварщики, монтажники, крановщики, грузчики и машинисты.</li><li>Заявляет базу 1 млн+ кандидатов, вывод от 1–3 дней и бесплатную замену в течение 24 часов.</li><li>В FAQ компания указывает проверку документов, проверку по базам, тестирование профессиональных навыков и собеседование.</li><li>Для заказов от 50 человек указывает 3–5 дней на полный запуск — сильный прямой конкурент в управляемом предоставлении строительного персонала.</li></ul><a class="source-inline" href="https://staff-b.ru/msk/autstaffing/stroitelstvo" target="_blank" rel="noopener">Строительное направление ↗</a> · <a class="source-inline" href="https://staff-b.ru/msk" target="_blank" rel="noopener">О компании ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Construction project staffing</div><h3>Стафинжиниринг</h3></div><div class="monogram">SE</div></div><div class="player-stat">30+</div><div class="muted" style="font-size:9px">Крупных проектов по России по данным компании</div><ul><li>Частное агентство занятости с фокусом на строительный персонал и инженерно-технических специалистов.</li><li>Публично перечисляет дороги, аэродромы, мосты, путепроводы, трубопроводы, инженерные сети и ЖБК.</li><li>Предлагает аренду персонала, аутстаффинг и подбор.</li><li>Очень близкий вертикальный ориентир для инфраструктурных направлений UBER STROY.</li></ul><a class="source-inline" href="https://staffeng.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Managed staffing / construction</div><h3>DasGroup Plus</h3></div><div class="monogram">DG</div></div><div class="player-stat">от 450 ₽</div><div class="muted" style="font-size:9px">Публичная стартовая ставка за человеко-час для стройки</div><ul><li>Предлагает рабочих, бетонщиков, грузчиков и бригадиров.</li><li>Берёт на себя кадровое оформление и расчёт оплаты.</li><li>Описывает организацию замены при невыходе.</li><li>Ближе к управляемому аутсорсингу через менеджера, чем к открытой платформе бригад.</li></ul><a class="source-inline" href="https://autsorsing-personala.ru/na-stroitelnyie-obiektyi/" target="_blank" rel="noopener">Строительный аутсорсинг ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Managed staffing / construction</div><h3>Eskela</h3></div><div class="monogram">ES</div></div><div class="player-stat">2–4 дня</div><div class="muted" style="font-size:9px">Заявленный срок вывода группы от 10 человек</div><ul><li>Строительные разнорабочие и вспомогательные операции.</li><li>30 человек — 7–10 дней; 50 — от 15; 100+ — от 30 дней.</li><li>Состав и этапы согласуются до выхода.</li><li>Срок зависит от объёма и условий заказа.</li></ul><a class="source-inline" href="https://eskela.ru/uslugi/autsorsing/stroitelnogo-personala/" target="_blank" rel="noopener">Строительная услуга ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">Construction ecosystem</div><h3>Асдром</h3></div><div class="monogram">AD</div></div><div class="player-stat">3 800+</div><div class="muted" style="font-size:9px">Пользователей по данным платформы</div><ul><li>Объединяет тендеры, подрядчиков, специалистов, материалы, технику, документы и споры.</li><li>Заявлены 200+ объектов и 750+ кейсов.</li><li>Это строительная экосистема и деловая сеть.</li><li>Не тождественна оператору, который гарантирует выход бригады на смену.</li></ul><a class="source-inline" href="https://www.asdrom.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
-<article class="card player-card"><div class="player-head"><div><div class="kicker">E2E marketplace / market leader</div><h3>JamJob / Джем Работа</h3></div><div class="monogram">JJ</div></div><div class="player-stat">TOP-3</div><div class="muted" style="font-size:9px">Входит в тройку лидеров e2e по Data Insight</div><ul><li>Участвует в консолидации рынка платформенной занятости.</li><li>Массовые смены подтверждают спрос на цифровое закрытие линейных операций.</li><li>Не приписываем компании не подтверждённые здесь строительные SLA или цифры базы.</li></ul><a class="source-inline" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Источник по доле рынка ↗</a></article>
+<section class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div>
+<div class="eyebrow">Workforce intelligence / research release 02 · 07 Nov 2026</div>
+<h1 class="display">СТРОИТЕЛЬНЫЙ РЫНОК.<br><span class="line-blue">НОВАЯ ИНФРАСТРУКТУРА</span><br>РАБОЧЕЙ СИЛЫ.</h1>
+<p class="hero-copy">UBER STROY строит управляемую сеть строительных команд: от конкретной операции и подтверждённого опыта каждого человека — до состава бригады, выхода на объект, приёмки смены и накопления истории надёжности.</p>
+<div class="hero-actions"><a class="btn" href="#market">Исследовать рынок ↓</a><a class="btn ghost" href="../dark-premium/">Посмотреть продукт ↗</a></div>
+<div class="hero-meta"><i class="live-dot"></i><span>Super Dark edition</span><span>Market data · CRM snapshot · 10 global references</span></div>
 </div>
-<div class="section-head" style="margin-top:60px"><div><div class="eyebrow">Competitive matrix</div><h2 class="display">ЧТО УЖЕ ЦИФРОВОЕ.<br><span class="orange">ЧТО ОСТАЁТСЯ РУЧНЫМ.</span></h2><p class="intro">Сравнение основано на публично раскрытых возможностях, а не на доступе к внутренним системам конкурентов. «Не найдено» означает отсутствие подтверждения на просмотренных страницах, а не доказанное отсутствие функции.</p></div></div>
-<div class="matrix-caption"><span>Публичная продуктовая матрица · 07.11.2026</span><input class="searchbox" id="matrixSearch" type="search" placeholder="Найти критерий или игрока…" aria-label="Фильтр таблицы"></div>
-<div class="table-wrap reveal"><table id="matrixTable"><thead><tr><th>Критерий</th><th>Массовые e2e<br>Ventra / MyGig / Jam</th><th>Процессинг<br>Наймикс</th><th>Рабочие Руки</th><th>Стройаутсорсинг<br>Staff-B / DasGroup / Eskela / StaffEng</th><th>Стройэкосистема<br>Асдром</th><th>UBER STROY<br>Целевой продукт</th></tr></thead><tbody>
-<tr><td><strong>Онлайн-заявка / публикация смены</strong></td><td><span class="status good">Публично есть</span></td><td><span class="status good">Публично есть</span></td><td><span class="status good">Публично есть</span></td><td><span class="status warn">Через менеджера</span></td><td><span class="status good">Заказы / тендеры</span></td><td><span class="status good">Цель MVP</span></td></tr>
-<tr><td><strong>Доступность исполнителя</strong></td><td><span class="status good">Цифровой подбор</span></td><td><span class="status warn">Отклики / база</span></td><td><span class="status good">Отклик / заказ</span></td><td><span class="status warn">Операторский процесс</span></td><td><span class="status gap">Не подтверждено</span></td><td><span class="status good">Календарь людей и групп</span></td></tr>
-<tr><td><strong>Документы / процессинг</strong></td><td><span class="status good">Сильный слой</span></td><td><span class="status good">Ключевая функция</span></td><td><span class="status good">Статус и документы</span></td><td><span class="status good">Оформление / расчёт</span></td><td><span class="status warn">Документы по объектам</span></td><td><span class="status good">Обязательный контроль</span></td></tr>
-<tr><td><strong>Подбор по строительной операции</strong></td><td><span class="status gap">Публично не показан</span></td><td><span class="status gap">Не профиль продукта</span></td><td><span class="status gap">Опыт не проверяют</span></td><td><span class="status warn">По заявке / позиции</span></td><td><span class="status warn">Поиск специалистов</span></td><td><span class="status good">Task-to-Skill matching</span></td></tr>
-<tr><td><strong>Доказательность навыка</strong></td><td><span class="status warn">Веттинг / рейтинг</span></td><td><span class="status warn">Документальный контроль</span></td><td><span class="status gap">Не проверяют опыт</span></td><td><span class="status warn">Зависит от оператора</span></td><td><span class="status warn">Профили / рейтинги</span></td><td><span class="status good">Самоотчёт → старший → клиент → проверка</span></td></tr>
-<tr><td><strong>Команда как единица заказа</strong></td><td><span class="status warn">Групповые смены частично</span></td><td><span class="status gap">Не профиль продукта</span></td><td><span class="status warn">Вывод исполнителей</span></td><td><span class="status good">Операционно возможно</span></td><td><span class="status gap">Не основной сценарий</span></td><td><span class="status good">Crew-as-a-Service</span></td></tr>
-<tr><td><strong>Старший / история бригады</strong></td><td><span class="status warn">Координаторы в отдельных моделях</span></td><td><span class="status gap">Не основной модуль</span></td><td><span class="status gap">Не подтверждено</span></td><td><span class="status good">Менеджер / бригадир</span></td><td><span class="status gap">Не основной модуль</span></td><td><span class="status good">Старший + crew profile</span></td></tr>
-<tr><td><strong>Чек-ин / табель / приёмка</strong></td><td><span class="status good">Гео / смены / учёт</span></td><td><span class="status good">Журнал / акты</span></td><td><span class="status good">Закрытие работ</span></td><td><span class="status warn">Через сопровождающего</span></td><td><span class="status warn">Документы / проекты</span></td><td><span class="status good">Чек-ин → табель → подтверждение</span></td></tr>
-<tr><td><strong>Замена невыходящего</strong></td><td><span class="status good">В ряде платформ</span></td><td><span class="status warn">Зависит от схемы</span></td><td><span class="status good">Механика заявлена</span></td><td><span class="status good">Согласованный порядок</span></td><td><span class="status gap">Не профиль продукта</span></td><td><span class="status good">Резерв + измеримый SLA</span></td></tr>
-<tr><td><strong>Learning Loop по фактическим операциям</strong></td><td><span class="status gap">Не найдено публично</span></td><td><span class="status gap">Не профиль продукта</span></td><td><span class="status gap">Не найдено</span></td><td><span class="status gap">Не найдено</span></td><td><span class="status warn">Отзывы / рейтинги</span></td><td><span class="status good">Каждая смена = событие опыта</span></td></tr>
-</tbody></table></div>
-<div class="note" style="margin-top:12px">Матрица показывает целевое состояние UBER STROY, а не уже работающие функции. Все пункты последнего столбца — требования к продукту и гипотезы до подтверждения пилотами.</div>
-</div></section>
+<div class="hero-visual">
+<img src="https://www.henselphelps.com/wp-content/uploads/2025/03/HP-Onsite-San-Diego-Day-Two-59-edited-scaled.jpg" alt="Большая команда строительных специалистов на объекте" fetchpriority="high">
+<div class="visual-top"><span class="stamp">FIELD NETWORK / 01</span><span class="stamp">PEOPLE · SKILLS · CREWS</span></div>
+<div class="hero-panel">
+<div class="hero-panel-top"><span class="hero-panel-title">Рынок · ключевые цифры</span><span class="pill green-pill">Verified sources</span></div>
+<div class="hero-panel-grid">
+<div class="hero-kpi"><strong>₽7.8<span style="font-size:.55em">T</span></strong><span>All-sector platform TAM</span></div>
+<div class="hero-kpi"><strong>₽239<span style="font-size:.55em">B</span></strong><span>2025 actual GMV</span></div>
+<div class="hero-kpi"><strong>789<span style="font-size:.55em">K</span></strong><span>Construction need to 2030</span></div>
+</div>
+<div class="hero-caption">TAM — все отрасли временной занятости. Не строительный TAM. 789K — кадровая потребность отрасли до 2030, а не заказ Uber Stroy.</div>
+</div>
+</div>
+</div>
+<div class="hero-bottom"><span><strong>UBER STROY</strong> / Task-to-Crew Workforce Infrastructure</span><span>Нижний Новгород → Россия → масштабируемая сеть</span></div>
+</div>
+</section>
 
-<section id="gap" class="section-dark"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">04 / Market gap</div><h2 class="display">В РЫНКЕ ЕСТЬ ДВЕ<br><span class="orange">СИЛЬНЫЕ ПОЛОВИНЫ.</span></h2><p class="intro">Цифровые платформы умеют масштабировать смены. Строительные операторы умеют организовывать людей на площадке. Задача UBER STROY — связать эти компетенции вокруг конкретной операции и доказанного опыта.</p></div><div class="section-no">POSITIONING MAP</div></div>
-<div class="two-cols reveal"><div class="gap-plot"><div class="kicker">Conceptual positioning / analyst estimate</div><h3 style="margin-top:9px">Карта конкурентных моделей</h3><div class="plot"><span class="axis-y">ОТВЕТСТВЕННОСТЬ ЗА ИСПОЛНЕНИЕ</span><span class="axis-x">ЦИФРОВАЯ ЗРЕЛОСТЬ →</span><span class="plot-label tl">Высокая</span><span class="plot-label br">Низкая</span><i class="dot dim" data-name="Staffing operators" style="left:27%;top:27%"></i><i class="dot dim" data-name="Local crew networks" style="left:16%;top:53%"></i><i class="dot gold" data-name="Skillit" style="left:73%;top:39%"></i><i class="dot dim" data-name="e2e platforms" style="left:80%;top:70%"></i><i class="dot" data-name="UBER STROY target" style="left:75%;top:12%"></i></div><p class="muted" style="font-size:9px">Положение точек — качественная авторская оценка по публичным продуктам, не измеренная рыночная статистика.</p></div>
-<div class="card"><div class="kicker">The unsolved bundle</div><h3 style="font-size:27px;margin:12px 0 16px">Не один модуль. <span class="orange">Связка.</span></h3>
-<div class="thesis-row" style="margin-bottom:8px"><b>1</b><div><strong>Task intelligence</strong><span>Заявка раскладывается на операции, обязательные требования и уровень участия.</span></div></div>
-<div class="thesis-row" style="margin-bottom:8px"><b>2</b><div><strong>Evidence-based profile</strong><span>Навык хранится с источником и доказательностью, а не только названием профессии.</span></div></div>
-<div class="thesis-row" style="margin-bottom:8px"><b>3</b><div><strong>Crew operations</strong><span>Состав, старший, доступность, резерв, выход, табель, приёмка и экономика связаны.</span></div></div>
-<div class="thesis-row"><b>4</b><div><strong>Learning loop</strong><span>Фактическая смена пополняет историю опыта и повышает качество будущего подбора.</span></div></div></div></div>
-</div></section>
+<div class="ticker"><div class="ticker-track">
+<span>Task → Crew <b>✳</b> Skill Intelligence <b>✳</b> Verified Experience <b>✳</b> Availability <b>✳</b> Dispatch <b>✳</b> Acceptance <b>✳</b> Learning Loop <b>✳</b></span>
+<span>Task → Crew <b>✳</b> Skill Intelligence <b>✳</b> Verified Experience <b>✳</b> Availability <b>✳</b> Dispatch <b>✳</b> Acceptance <b>✳</b> Learning Loop <b>✳</b></span>
+</div></div>
 
-<section id="world"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">05 / Global benchmarks</div><h2 class="display">ЗАПАДНЫЕ АНАЛОГИ.<br><span class="orange">МЕХАНИКИ, КОТОРЫЕ УЖЕ РАБОТАЮТ.</span></h2><p class="intro">Международные компании доказывают отдельные части модели: локальный пул, skill profiles, matching, рейтинг после смены, повторный найм и операционную гибкость. Ни одна из них не является точной копией UBER STROY.</p></div><div class="section-no">GLOBAL PRODUCT PATTERNS</div></div>
+<section id="market" class="section-dark">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">01 / Market sizing</div><h2 class="display">ПЛАТФОРМЕННЫЙ РЫНОК<br><span class="blue">УЖЕ ИМЕЕТ ЭКОНОМИКУ.</span></h2><p class="intro">Data Insight и Ventra Go! впервые оценили российский рынок платформенной занятости через фактический GMV и эквивалент полной занятости. Это опора для понимания масштаба платформенной модели — но не готовый TAM строительных бригад.</p></div><div class="section-id">RUSSIA · DATA INSIGHT 2025</div></div>
 <div class="grid-2 reveal">
-<article class="card global-card accent"><div class="global-top"><span class="tag orange-tag">Closest skill-intelligence analogue</span><span class="monogram">SK</span></div><h3 style="margin-top:17px">Skillit</h3><div class="metric">200K+</div><div class="muted" style="font-size:9px">Vetted craft workers · по текущей странице платформы</div><p>Платформа найма строительных специалистов: профили, опыт по направлениям, craft-specific search, assessment, AI scheduling и workforce intelligence. Платформа также заявляет 50 trades, 52% крупнейших американских строителей среди hiring-партнёров и 72 часа от заполнения профиля до интервью в среднем.</p><div class="borrow"><b>Что берём:</b> структурированный craft-профиль, поиск по операции и навыку, оценку практических знаний, data-rich worker identity.<br><b>Чем отличаемся:</b> UBER STROY должен закрывать также смену, бригаду, старшего, замену и фактический выход.</div><a class="source-inline" href="https://skillit.com/" target="_blank" rel="noopener">Skillit ↗</a> · <a class="source-inline" href="https://skillit.com/enterprise" target="_blank" rel="noopener">Enterprise ↗</a> · <a class="source-inline" href="https://skillit.com/mission-2" target="_blank" rel="noopener">Network data ↗</a></article>
-<article class="card global-card"><div class="global-top"><span class="tag">Hourly workforce marketplace</span><span class="monogram">IW</span></div><h3 style="margin-top:17px">Instawork</h3><div class="metric">7M+</div><div class="muted" style="font-size:9px">Hourly workers · страница About</div><p>Гибкий персонал для hourly roles, warehouse, manufacturing, retail, hospitality. Использует background checks, work-history validation, skill verification, AI matching и капитанов для крупных смен. Компания указывает 40+ рынков и 90% вакансий, закрытых менее чем за 24 часа при определённых условиях размещения.</p><div class="borrow"><b>Что берём:</b> веттинг, контроль show-rate, повторный найм лучших исполнителей, локальная ликвидность и капитан/старший для больших смен.</div><a class="source-inline" href="https://www.instawork.com/about" target="_blank" rel="noopener">О компании ↗</a> · <a class="source-inline" href="https://www.instawork.com/" target="_blank" rel="noopener">Для бизнеса ↗</a></article>
-<article class="card global-card"><div class="global-top"><span class="tag">On-demand + repeat workers</span><span class="monogram">WO</span></div><h3 style="margin-top:17px">Wonolo</h3><div class="metric">3M+</div><div class="muted" style="font-size:9px">Skilled workers · 6.2M+ jobs posted · 500+ U.S. markets</div><p>Marketplace, который соединяет компании с работниками для short-term, ongoing, on-demand и temp-to-hire задач. Компания делает акцент на возврате проверенных работников, dedicated support и on-site support.</p><div class="borrow"><b>Что берём:</b> повторные назначения, долгосрочные пулы, сочетание self-service платформы и операционной поддержки.</div><a class="source-inline" href="https://www.wonolo.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
-<article class="card global-card"><div class="global-top"><span class="tag">Industrial on-demand labor</span><span class="monogram">VB</span></div><h3 style="margin-top:17px">Veryable</h3><div class="metric">750K+</div><div class="muted" style="font-size:9px">Vetted workers nationwide · по данным компании</div><p>Marketplace для производства и складских операций. В профилях доступны навыки, опыт, сертификаты и performance ratings. Компания заявляет 6,1 заявки в среднем на work opportunity и более 17 тыс. same-day shifts filled.</p><div class="borrow"><b>Что берём:</b> гибкий labor pool, повторное использование людей, worker bidding, данные о навыках и связь спроса с доступной мощностью.</div><a class="source-inline" href="https://www.veryableops.com/about" target="_blank" rel="noopener">О компании ↗</a> · <a class="source-inline" href="https://www.veryableops.com/on-demand-labor-faq" target="_blank" rel="noopener">FAQ ↗</a></article>
+<div class="card blue-card">
+<div class="card-id">REALIZED MARKET / 2025</div>
+<div class="metric" style="margin:16px 0 5px">₽239 <small>млрд GMV</small></div>
+<p>Совокупная стоимость заказов и смен, прошедших через e2e-платформы и процессинг в 2025 году. Эквивалент — около 360 тыс. FTE.</p>
+<div class="divider"></div>
+<div class="chart-row"><span>Рост рынка за год</span><div class="track"><i style="--w:40%"></i></div><span class="chart-val">+40%</span></div>
+<div class="chart-row"><span>e2e-сегмент</span><div class="track"><i style="--w:16%"></i></div><span class="chart-val">₽38 млрд</span></div>
+<div class="chart-row"><span>Рост e2e</span><div class="track"><i style="--w:56%"></i></div><span class="chart-val">+56%</span></div>
+<a class="source" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Data Insight · 26.02.2026 ↗</a>
 </div>
-<div class="note" style="margin-top:16px"><strong>Метрика не равна метрике.</strong> Registered, vetted, active workers, опубликованные задания и заполненные смены — разные единицы. Цифры на карточках являются публичными заявлениями компаний, не прямым сравнением GMV, выручки или активной численности.</div>
-<div class="section-head" style="margin-top:64px"><div><div class="eyebrow">Construction brand & operating references</div><h2 class="display">СЕМЬ СТРОИТЕЛЬНЫХ<br><span class="orange">РЕФЕРЕНСОВ.</span></h2><p class="intro">Turner, DPR, Mortenson, McCarthy, Kiewit, Clark и Hensel Phelps — не маркетплейсы рабочих. В нашей базе они используются как референсы доверия, культуры безопасности, отраслевых вертикалей, проектной подачи и human story.</p></div></div>
-<div class="builder-list reveal">
-<div class="builder"><strong>TURNER</strong><span>Проектная подача, корпоративный уровень и два B2B-входа: клиент и поставщик.</span><a href="../refs/turner/">Наш референс ↗</a><a href="https://www.turnerconstruction.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>DPR</strong><span>People-first, craft-культура, команда, ценности и доверие.</span><a href="../refs/dpr/">Наш референс ↗</a><a href="https://www.dpr.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>MORTENSON</strong><span>Отраслевые вертикали, секторные карточки и масштабирование.</span><a href="../refs/mortenson/">Наш референс ↗</a><a href="https://www.mortenson.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>McCARTHY</strong><span>Качество, мастерство, доверие и доказательство результата.</span><a href="../refs/mccarthy/">Наш референс ↗</a><a href="https://www.mccarthy.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>KIEWIT</strong><span>Инженерная инфраструктура: дороги, мосты, сети и безопасность.</span><a href="../refs/kiewit/">Наш референс ↗</a><a href="https://www.kiewit.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>CLARK</strong><span>Портфель проектов и маршрут подключения подрядчиков и партнёров.</span><a href="../refs/clark/">Наш референс ↗</a><a href="https://www.clarkconstruction.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>HENSEL PHELPS</strong><span>Человек и craft-pathway: как опыт становится видимым и развивается.</span><a href="../refs/hensel-phelps/">Наш референс ↗</a><a href="https://www.henselphelps.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="builder"><strong>ALL 10 CONCEPTS</strong><span>Полная внутренняя галерея: семь builder references + Skillit, Instawork и Veryable.</span><a href="../refs/">Открыть 10 лендингов ↗</a><a href="../brandbook/">Brandbook UBER STROY ↗</a></div>
-</div></div></section>
+<div class="card">
+<div class="card-id">TOTAL ADDRESSABLE POTENTIAL / ALL INDUSTRIES</div>
+<div class="metric" style="margin:16px 0 5px">₽7.8 <small>трлн / год</small></div>
+<p>Суммарный потенциал платформенного найма временного персонала по всем отраслям. В методологии Data Insight — около 11,7 млн FTE.</p>
+<div class="data-ribbon" style="grid-template-columns:1fr 1fr;margin-top:16px">
+<div class="data-cell"><strong>11.7M</strong><span>FTE potential</span></div>
+<div class="data-cell"><strong>₽38B</strong><span>e2e actual GMV 2025</span></div>
+</div>
+<div class="note" style="margin-top:14px"><strong>Важно:</strong> ₽7,8 трлн — межотраслевой потенциал временной занятости. Отдельный TAM строительных операций ещё предстоит посчитать bottom-up.</div>
+<a class="source" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Методология TAM ↗</a>
+</div>
+</div>
+<div class="grid-2 reveal" style="margin-top:14px">
+<div class="card">
+<div class="card-id">E2E MARKET STRUCTURE / GMV</div>
+<h3 style="margin:11px 0 17px">Куда распределяется спрос</h3>
+<div class="ring-row">
+<div class="donut" role="img" aria-label="Структура e2e GMV: ритейл 58%, оптово-логистический кластер 16%, прочие направления 26%"></div>
+<div class="legend">
+<div class="legend-item"><i class="swatch"></i><span><b>58%</b> · ритейл</span></div>
+<div class="legend-item"><i class="swatch cyan"></i><span><b>16%</b> · оптово-логистический кластер</span></div>
+<div class="legend-item"><i class="swatch gray"></i><span><b>26%</b> · другие направления</span></div>
+</div>
+</div>
+<p style="font-size:9px;margin:17px 0 0">Доли приведены внутри e2e-сегмента: ритейл — 58% GMV и 62% FTE; оптово-логистический кластер — около 16% GMV.</p>
+</div>
+<div class="card">
+<div class="card-id">MARKET CONCENTRATION</div>
+<h3 style="margin:11px 0 18px">Рынок уже консолидируется</h3>
+<div class="metric">54<small>%</small></div>
+<p>Доля GMV e2e-сегмента у тройки лидеров: Ventra Go!, «Рабочие Руки» и JamРабота.</p>
+<div class="divider"></div>
+<div class="metric">72<small>%</small></div>
+<p>Доля пяти крупнейших e2e-платформ в 2025 году — против 64% в 2023-м.</p>
+<a class="source" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Структура конкуренции ↗</a>
+</div>
+</div>
+<div class="note" style="margin-top:14px">239 млрд ₽ — фактический объём платформенных решений за 2025 год; 38 млрд ₽ — фактический e2e-сегмент. 7,8 трлн ₽ — оценка потенциала платформенного найма по всем отраслям. Это разные уровни рынка. Не называем ни одну из этих величин строительной выручкой или подтверждённым TAM UBER STROY.</div>
 
-<section id="product" class="section-dark"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">06 / Product architecture</div><h2 class="display">ОТ ЗАДАЧИ<br>К <span class="orange">ПОДТВЕРЖДЁННОЙ КОМАНДЕ.</span></h2><p class="intro">Клиент описывает работу и операции, а UBER STROY собирает команду из людей с релевантным опытом, проверяет ограничения и управляет выходом.</p></div><div class="section-no">TASK → CREW → EVIDENCE</div></div>
-<div class="workflow reveal"><div class="flow-step"><div class="step">01 / TASK</div><h3>Заявка</h3><p>Объект, операции, дата, объём и ограничения.</p></div><div class="flow-step"><div class="step">02 / PARSE</div><h3>Декомпозиция</h3><p>Работа разбивается на понятные операции и уровни участия.</p></div><div class="flow-step"><div class="step">03 / MATCH</div><h3>Подбор</h3><p>Опыт, доступность, надёжность, логистика и требования.</p></div><div class="flow-step"><div class="step">04 / VERIFY</div><h3>Проверка</h3><p>Документы, допуски, старший, состав и согласие.</p></div><div class="flow-step"><div class="step">05 / DISPATCH</div><h3>Выход</h3><p>Смена, чек-ин, резерв, замена и контроль на площадке.</p></div><div class="flow-step"><div class="step">06 / ACCEPT</div><h3>Приёмка</h3><p>Табель, объём, качество, подтверждение и расчёт.</p></div><div class="flow-step"><div class="step">07 / LEARN</div><h3>История</h3><p>Смена становится событием опыта человека и команды.</p></div></div>
-<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Workforce Skill Intelligence</div><h2 class="display">НЕ ПРОСТО АНКЕТА.<br><span class="orange">КАРТА ОПЫТА.</span></h2><p class="intro">Голосовой рассказ — только начало. AI формирует черновик профиля, работник его подтверждает, а каждое утверждение хранит источник и уровень доказательности.</p></div></div>
-<div class="grid-3 reveal"><div class="card"><div class="card-num">LEVEL 01</div><h3>Заявлено человеком</h3><p>Работник сам рассказал, что выполнял операцию. Это самоотчёт, не подтверждённая квалификация и не допуск.</p></div><div class="card"><div class="card-num">LEVEL 02–03</div><h3>Уточнено и подтверждено</h3><p>Профиль структурирован, работник подтвердил его; старший или бригадир подтвердил участие.</p></div><div class="card accent"><div class="card-num">LEVEL 04–05</div><h3>Подтверждено на объекте</h3><p>Заказчик принял работу или операция проверена практически. Допуски и документы ведутся отдельно.</p></div></div>
-<div class="note" style="margin-top:15px">Не смешивать историю опыта с формальной квалификацией, сертификатом, медицинским допуском или допуском к опасной работе. AI не присваивает разряд и не выдаёт разрешение.</div>
-<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">AI operating system</div><h2 class="display">ЧЕТЫРЕ АГЕНТА.<br><span class="orange">ОДНА СИСТЕМА ДОКАЗАТЕЛЬСТВ.</span></h2></div></div>
-<div class="agent-grid reveal"><div class="agent"><div class="num">01</div><h3>Worker Profile Builder</h3><p>Расшифровывает голос, выделяет операции, материалы, инструменты, участие и сохраняет источник. Не превращает самоотчёт в подтверждённый навык.</p></div><div class="agent"><div class="num">02</div><h3>Job Request Interpreter</h3><p>Превращает задачу клиента в операции, требования к людям, график, документы, СИЗ и обязательные допуски.</p></div><div class="agent"><div class="num">03</div><h3>Crew Matching & Verification</h3><p>Ранжирует людей по опыту, доказательству, доступности, надёжности и площадке. Hard constraints фильтруются заранее.</p></div><div class="agent"><div class="num">04</div><h3>Shift Learning & Evidence</h3><p>Добавляет датированное событие опыта, отзывы старшего и заказчика, не перезаписывая историю без следа.</p></div></div>
-<div class="card" style="margin-top:14px"><div class="kicker">Provisional matching weights · pilot hypothesis</div><div class="bar-wrap"><div class="bar-item"><span>Релевантность операций</span><div class="bar"><i style="--w:40%"></i></div><span class="bar-value">40%</span></div><div class="bar-item"><span>Доказательность опыта</span><div class="bar"><i style="--w:25%"></i></div><span class="bar-value">25%</span></div><div class="bar-item"><span>Подтверждённая доступность</span><div class="bar"><i style="--w:20%"></i></div><span class="bar-value">20%</span></div><div class="bar-item"><span>Явка / обратная связь</span><div class="bar"><i style="--w:10%"></i></div><span class="bar-value">10%</span></div><div class="bar-item"><span>Логистика / площадка</span><div class="bar"><i style="--w:5%"></i></div><span class="bar-value">5%</span></div></div><p class="muted" style="font-size:9px;margin:15px 0 0">Веса взяты из внутренней спецификации продукта и должны быть откалиброваны на результатах пилота. Обязательные документы, безопасность, допуск и доступность — фильтры, не бонусные баллы.</p></div>
-</div></section>
+<div class="section-head" style="margin-top:61px"><div><div class="eyebrow">Construction demand / Labour gap</div><h2 class="display">СТРОИТЕЛЬСТВО ИСПЫТЫВАЕТ<br><span class="cyan">ДЕФИЦИТ РАБОЧЕЙ СИЛЫ.</span></h2><p class="intro">Самый полезный сигнал для продукта — не абстрактный оборот строительной отрасли, а дефицит людей, которые способны выполнять конкретные операции на объекте.</p></div><div class="section-id">LABOUR DEMAND · 2026–2030</div></div>
+<div class="grid-3 reveal">
+<div class="card"><div class="card-id">CURRENT ESTIMATE / 2026</div><div class="metric" style="margin:15px 0 7px">200–400 <small>тыс.</small></div><h3>Недостающие специалисты</h3><p>Оценка дефицита в строительстве, озвученная президентом НОСТРОЙ в сентябре 2026 года.</p><a class="source" href="https://www.kommersant.ru//doc/8925352" target="_blank" rel="noopener">Коммерсантъ · 04.09.2026 ↗</a>
+</div>
+<div class="card blue-card"><div class="card-id">ADDITIONAL NEED / TO 2030</div><div class="metric" style="margin:15px 0 7px">789 <small>тыс.</small></div><h3>Дополнительная кадровая потребность</h3><p>Прогнозируемая потребность по данным Минтруда, приведённым НОСТРОЙ. Это накопленная потребность до 2030 года, а не текущая вакансия рынка.</p><a class="source" href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43051" target="_blank" rel="noopener">НОСТРОЙ ↗</a>
+</div>
+<div class="card"><div class="card-id">WORKFORCE MIX</div><div class="metric" style="margin:15px 0 7px">82 <small>%</small></div><h3>Рабочие кадры</h3><p>Около 82% прогнозной потребности до 2030 года приходится на рабочие кадры; около 18% — специалисты высшей квалификации.</p><a class="source" href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=42890" target="_blank" rel="noopener">НОСТРОЙ · структура спроса ↗</a>
+</div>
+</div>
+<div class="note" style="margin-top:14px">Диапазон 200–400 тыс. и прогноз 789 тыс. нельзя складывать: первый отражает оценку дефицита в отрасли, второй — дополнительную кадровую потребность до 2030 года. Эти показатели не равны спросу на сменных подсобных рабочих и не являются заказами для UBER STROY.</div>
+</div>
+</section>
 
-<section id="scale"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">07 / Five-year ambition</div><h2 class="display">ОДНА СЕТЬ.<br><span class="orange">1 000 000 РАБОТНИКОВ.</span></h2><p class="intro">Цель до ноября 2031 года — создать национальную сеть из одного миллиона уникальных, согласившихся на взаимодействие профилей рабочих и специалистов. Это стратегическая амбиция, не подтверждённый прогноз и не один миллион одновременно занятых людей.</p></div><div class="section-no">NORTH STAR / 2031</div></div>
-<div class="scale-hero reveal"><div><div class="kicker">Five-year network goal</div><div class="metric">1,000,000</div><h3 style="font-size:24px">уникальных профилей в сети к 2031 году</h3><p>Рост возможен только через спрос, локальную плотность, партнёрские сети поставщиков, реальную верификацию и повторяющиеся заказы. Миллион записей без активных клиентов и смен — не активный рынок.</p></div>
-<div class="card" style="background:#0d1318;border-color:#4d453c"><div class="kicker">Определение целевой метрики</div><div class="divider"></div><div style="display:flex;justify-content:space-between;gap:15px;margin:12px 0"><span class="muted" style="font-size:10px">Всего уникальных профилей</span><strong class="orange">1 000 000</strong></div><div style="display:flex;justify-content:space-between;gap:15px;margin:12px 0"><span class="muted" style="font-size:10px">Месячно активные / сценарий 20%</span><strong>200 000</strong></div><div style="display:flex;justify-content:space-between;gap:15px;margin:12px 0"><span class="muted" style="font-size:10px">Смен на одного активного / мес.</span><strong>4</strong></div><div style="display:flex;justify-content:space-between;gap:15px;margin:12px 0"><span class="muted" style="font-size:10px">Смен в месяц</span><strong>800 000</strong></div><div class="note" style="margin-top:13px">Профиль входит в цель после дедупликации, согласия человека, проверки контакта и актуализации статуса. «Зарегистрирован» не означает «доступен сегодня».</div></div></div>
-<div class="scale-timeline reveal"><div class="year"><div class="year-label">2027 · пилот</div><strong>10K</strong><div class="city-label">2–3 города</div><div class="yearbar"><i style="--w:1%"></i></div></div><div class="year"><div class="year-label">2028 · повторяемость</div><strong>50K</strong><div class="city-label">10 городов</div><div class="yearbar"><i style="--w:5%"></i></div></div><div class="year"><div class="year-label">2029 · региональная сеть</div><strong>150K</strong><div class="city-label">25 городов</div><div class="yearbar"><i style="--w:15%"></i></div></div><div class="year"><div class="year-label">2030 · федеральное покрытие</div><strong>400K</strong><div class="city-label">50 городов</div><div class="yearbar"><i style="--w:40%"></i></div></div><div class="year"><div class="year-label">2031 · network scale</div><strong>1M</strong><div class="city-label">100 городов</div><div class="yearbar"><i style="--w:100%"></i></div></div></div>
-<p class="muted" style="font-size:9px;margin-top:10px">Города, объёмы профилей и сроки — внутренняя сценарная траектория, не статистический прогноз. Простая логика масштаба: 100 городов × 10 000 уникальных профилей в среднем.</p>
-<div class="section-head" style="margin-top:58px"><div><div class="eyebrow">Network economics simulator</div><h2 class="display">КАКОЙ БИЗНЕС МОЖЕТ<br><span class="orange">СТОЯТЬ ЗА 1 МЛН ПРОФИЛЕЙ?</span></h2><p class="intro">Меняйте долю месячной активности, количество смен, среднюю цену и валовый спред. Калькулятор показывает сценарную пропускную способность, а не прогноз прибыли.</p></div></div>
-<div class="calculator reveal"><div><div class="kicker">Параметры сценария</div>
+<section id="nizhny">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">02 / Local market intelligence</div><h2 class="display">ПИЛОТНЫЙ РЫНОК —<br><span class="blue">НИЖНИЙ НОВГОРОД.</span></h2><p class="intro">Здесь исследование уже опирается на собственный объектный реестр, закупочные сигналы и строительную аналитику. Это не сумма всех строек города, а рабочая карта источников спроса и объектов для квалификации.</p></div><div class="section-id">NN AGGLOMERATION · 06.11.2026</div></div>
+<div class="local-grid reveal">
+<div class="local-map">
+<img src="https://www.henselphelps.com/wp-content/uploads/2025/03/HP-Onsite-San-Diego-Day-Two-59-edited-scaled.jpg" alt="Команда на большой строительной площадке" loading="lazy">
+<div class="local-map-copy"><span class="pill">Pilot region / stage 01</span><h3>От карты строительства — к адресному спросу на команды.</h3><p>Рабочий реестр объединяет жилой сегмент, проектный pipeline, КРТ, тендерные процедуры и адресный инвестиционный перечень. Строки могут описывать связанные проекты или разные сигналы одной стройки.</p></div>
+</div>
+<div class="local-stats">
+<div class="local-stat"><strong>132</strong><span>Базовые записи мастер-реестра</span></div>
+<div class="local-stat"><strong>39</strong><span>Проектных линий pipeline / КРТ</span></div>
+<div class="local-stat"><strong>19</strong><span>Тендерных сигналов текущих / ближайших</span></div>
+<div class="local-stat"><strong>44</strong><span>Строк городского АИП · срез 01.11</span></div>
+<div class="local-stat"><strong>21</strong><span>Источник в контуре мониторинга</span></div>
+<div class="local-stat"><strong>₽21.06B</strong><span>Ассигнования АИП · 43 из 44 строк с числовой суммой</span></div>
+<div class="stat-warning">Реестр содержит разные сущности: базовые записи, проектные линии, тендеры и бюджетные строки. Их нельзя складывать в число уникальных действующих объектов или в единый TAM.</div>
+</div>
+</div>
+
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Residential construction / September 2026</div><h2 class="display">ЖИЛОЙ СЕГМЕНТ —<br><span class="cyan">КОНКРЕТНАЯ БАЗА ОБЪЕКТОВ.</span></h2><p class="intro">Нижегородская аналитика строящегося жилья показывает плотный портфель девелоперов и домов. Это основа для построения адресной карты заказчиков, подрядчиков и работ — но не число объектов, уже готовых заказать людей.</p></div></div>
+<div class="grid-4 reveal">
+<div class="card"><div class="card-id">DEVELOPERS</div><div class="metric">46</div><p>Застройщиков в обзоре строящегося жилья.</p></div>
+<div class="card"><div class="card-id">RESIDENTIAL COMPLEXES</div><div class="metric">71</div><p>Жилой комплекс в обзоре.</p></div>
+<div class="card"><div class="card-id">BUILDINGS</div><div class="metric">135</div><p>Строящихся домов; 8 сдано и 13 новых в периоде.</p></div>
+<div class="card blue-card"><div class="card-id">TOTAL AREA</div><div class="metric">1.549 <small>млн м²</small></div><p>Площадь квартир в домах из обзора; всего 31 098 квартир.</p></div>
+</div>
+<div class="note" style="margin-top:13px">Источник: обзор Domostroynn.ru по данным за сентябрь 2026 года. Показатели относятся к рынку строящегося жилья, а не ко всем видам строительства, инфраструктуре или коммерческой недвижимости.</div>
+<div style="margin-top:12px"><a class="source" href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">Открыть аналитику Domostroynn ↗</a></div>
+
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Public datasets / Nizhny Novgorod region</div><h2 class="display">РЕЕСТРЫ И ЗАКУПКИ —<br><span class="blue">СИГНАЛЫ ДЛЯ ПРОДАЖ.</span></h2></div></div>
+<div class="grid-3 reveal">
+<div class="card"><div class="card-id">BUILDING PERMITS / 2026</div><div class="metric">503</div><p>Записи в официальном региональном наборе «Реестр разрешений на строительство 2026», обновлённом 12.10.2026.</p><a class="source" href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">Портал открытых данных ↗</a></div>
+<div class="card"><div class="card-id">PROCUREMENT SIGNALS</div><div class="metric">₽849.9 <small>млн</small></div><p>17 из 19 тендерных карточек с известной суммой. 10 процедур по 44-ФЗ — ₽425,5 млн; 7 по 223-ФЗ — ₽424,4 млн.</p><div class="metric-note">Суммы могут быть НМЦК, ценой контракта или агрегаторной оценкой; сроки части процедур требуют проверки.</div></div>
+<div class="card"><div class="card-id">PROJECT PIPELINE</div><div class="metric">₽33.34 <small>млрд</small></div><p>11 инвестиционных проектов с раскрытым плановым числом рабочих мест — 2 990. Это плановая занятость компаний, не потребность стройплощадок в сменных рабочих.</p></div>
+</div>
+<div class="note" style="margin-top:14px"><strong>Правило аналитики:</strong> бюджет АИП, НМЦК закупки, стоимость проекта, инвестиционная оценка и плановые рабочие места — разные типы данных. Не складываем их в «объём рынка». Каждая запись должна иметь тип суммы, период, географию и источник.</div>
+</div>
+</section>
+
+<section id="reality" class="section-dark">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">03 / Current operating snapshot</div><h2 class="display">ЧТО УЖЕ ЕСТЬ У НАС.<br><span class="cyan">И ЧЕГО ПОКА НЕТ.</span></h2><p class="intro">Срез CRM и handoff WORKFORCE FLEET на 6 ноября 2026 года. Показываем фактическую стадию, а не пытаемся представить переговорную мощность как готовую сеть.</p></div><div class="section-id">INTERNAL CRM SNAPSHOT · 06.11.2026</div></div>
+<div class="status-grid reveal">
+<div class="status-card"><strong>18</strong><span>Компаний-заказчиков в CRM</span></div>
+<div class="status-card"><strong>27</strong><span>Объектов / проектов в CRM продаж</span></div>
+<div class="status-card"><strong>7</strong><span>Поставщиков-кандидатов</span></div>
+<div class="status-card highlight"><strong>2</strong><span>Поставщика в переговорах</span></div>
+</div>
+<div class="readiness reveal">
+<div class="readiness-box"><div class="readiness-head"><div><div class="kicker">Supplier-declared capacity</div><div class="metric" style="margin-top:7px">30–80</div></div><span class="pill amber-pill">Not verified</span></div><div class="readiness-bar"><i style="--w:40%"></i></div><div class="caption">Заявленная мощность в диалогах с двумя поставщиками. Состав, документы, согласие и календарь пока не подтверждены поимённо.</div></div>
+<div class="readiness-box" style="border-color:#fb71854c"><div class="readiness-head"><div><div class="kicker">Named & date-confirmed availability</div><div class="metric red" style="margin-top:7px">0</div></div><span class="pill red-pill">Current verified count</span></div><div class="readiness-bar"><i style="--w:0%;background:var(--red)"></i></div><div class="caption">На дату среза в CRM нет персонально подтверждённых людей, доступных на конкретную дату выхода. Это главный операционный gate до продажи.</div></div>
+</div>
+<div class="grid-3" style="margin-top:14px">
+<div class="card"><div class="card-id">PRELIMINARY NETWORK REACH</div><div class="metric">200–300</div><p>Предварительная оценка общего круга людей, с которыми может быть установлен контакт. Не аудит и не доступный пул.</p></div>
+<div class="card"><div class="card-id">POTENTIALLY AVAILABLE</div><div class="metric">≈100</div><p>Предварительная оценка потенциальной доступности. Требует поимённого подтверждения, дат и согласия каждого человека.</p></div>
+<div class="card blue-card"><div class="card-id">PILOT TARGET</div><div class="metric">10–20</div><p>Первый оплачиваемый пилот на 1–2 объектах. Следующая ступень — 50–70 подтверждённых выходов в день.</p></div>
+</div>
+<div class="note" style="margin-top:14px">18 компаний и 27 объектов — записи в CRM, не утверждение о 18 платящих клиентах или 27 активных заказах. 30–80 — слова поставщиков; 200–300 и ≈100 — предварительные оценки сети. Только поимённо подтверждённые доступные люди становятся операционной мощностью.</div>
+</div>
+</section>
+
+<section id="players">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">04 / Competitive landscape · Russia</div><h2 class="display">РЫНОК НЕ ПУСТОЙ.<br><span class="blue">КОНКУРЕНТЫ УЖЕ СИЛЬНЫЕ.</span></h2><p class="intro">Мы сравнили массовые платформы, процессинговые сервисы и строительных кадровых операторов. Сильная инвестиционная история строится не на тезисе «конкурентов нет», а на точном ответе: что они уже делают и какой продуктовый слой UBER STROY должен объединить лучше.</p></div><div class="section-id">RUSSIA · PUBLIC PRODUCT REVIEW</div></div>
+<div class="grid-3 reveal">
+<article class="card player-card"><div class="player-top"><div><div class="card-id">E2E / MASS SHIFT</div><h3>Рабочие Руки</h3></div><div class="player-logo">РР</div></div><div class="player-metric">800 тыс.</div><div class="player-meta">Исполнителей в собственной базе</div><ul><li>5 102 постоянных клиента по данным компании.</li><li>Компания заявляет: 87 из 100 кандидатов выходят на заказ; средний отклик — 10 минут.</li><li>Проверяет статус самозанятого и разрешительные документы, но прямо пишет, что не проверяет квалификацию и опыт.</li></ul><a class="source" href="https://www.russian.works/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">MASS SHIFT PLATFORM</div><h3>MyGig</h3></div><div class="player-logo">MG</div></div><div class="player-metric">1.6 млн+</div><div class="player-meta">Подработчиков в базе по данным сервиса</div><ul><li>Линейный персонал в ритейле, доставке, производстве и складской логистике.</li><li>Заявляет возможность дать от 1 до 100 исполнителей на следующий день.</li><li>Оформление, обучение и расчёты организованы через платформу.</li></ul><a class="source" href="https://mygig.ru/business" target="_blank" rel="noopener">B2B MyGig ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">MARKETPLACE + PROCESSING</div><h3>Наймикс</h3></div><div class="player-logo">NX</div></div><div class="player-metric">1 386 535+</div><div class="player-meta">Действующих исполнителей в базе</div><ul><li>Сервис указывает срок выхода исполнителя на заказ от 85 минут.</li><li>Заявляет 100% автоматизацию договоров и чеков и сокращение админрасходов на 30%.</li><li>Сильный слой оформления, документооборота и расчётов с внешними исполнителями.</li></ul><a class="source" href="https://naimix.ru/business" target="_blank" rel="noopener">B2B Наймикс ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">E2E / MARKET LEADER</div><h3>Ventra Go!</h3></div><div class="player-logo">VG</div></div><div class="player-metric">Top-3</div><div class="player-meta">Лидер e2e сегмента по Data Insight</div><ul><li>Ventra Go!, «Рабочие Руки» и JamРабота совместно контролируют около 54% GMV e2e-сегмента.</li><li>Цифровой контур смен, массового подбора и управления исполнителями.</li><li>Публично раскрытые рыночные метрики не означают строительную специализацию.</li></ul><a class="source" href="https://ventra.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a> · <a class="source" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Исследование ↗</a></article>
+<article class="card player-card blue-card"><div class="player-top"><div><div class="card-id">DIRECT CONSTRUCTION STAFFING</div><h3>Стафф-Б</h3></div><div class="player-logo">SB</div></div><div class="player-metric">85 городов</div><div class="player-meta">25 000+ сотрудников по данным компании</div><ul><li>Отдельное строительное направление: подбор и предоставление персонала.</li><li>Кандидатов обычно начинают показывать через 1–2 дня; заказ от 50 человек — полный запуск от 3 до 5 дней.</li><li>Прямой конкурент в централизованном предоставлении строительного персонала.</li></ul><a class="source" href="https://staff-b.ru/msk/autstaffing/stroitelstvo" target="_blank" rel="noopener">Строительное направление ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">INFRASTRUCTURE STAFFING</div><h3>Стаффинжиниринг</h3></div><div class="player-logo">SE</div></div><div class="player-metric">30+</div><div class="player-meta">Крупных проектов по России по данным компании</div><ul><li>Строительные проекты: дороги, аэродромы, мосты, путепроводы, инженерные системы и ЖБК.</li><li>Аренда персонала, аутстаффинг и подбор специалистов.</li><li>Сильный вертикальный ориентир для инфраструктурной части UBER STROY.</li></ul><a class="source" href="https://staffeng.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">CONSTRUCTION STAFFING</div><h3>Эскела</h3></div><div class="player-logo">ES</div></div><div class="player-metric">2–4 дня</div><div class="player-meta">Заявка от 10 человек · сроки компании</div><ul><li>Строительный персонал, подсобные и дорожные рабочие.</li><li>От 30 человек — 7–10 дней; от 50 — от 15 дней; 100+ — от 30 дней.</li><li>Публично заявляет табель, акты, замену и оформление персонала.</li></ul><a class="source" href="https://eskela.ru/uslugi/autsorsing/stroitelnogo-personala/" target="_blank" rel="noopener">Строительный аутсорсинг ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">CONSTRUCTION ECOSYSTEM</div><h3>Асдром</h3></div><div class="player-logo">AD</div></div><div class="player-metric">3 800+</div><div class="player-meta">Пользователей по данным платформы</div><ul><li>200+ объектов, 750+ кейсов и 1 250+ документов по данным сайта.</li><li>Объединяет заказы, тендеры, специалистов, материалы, технику и документы.</li><li>Экосистема стройрынка; не тождественна оператору ежедневных смен рабочих команд.</li></ul><a class="source" href="https://www.asdrom.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></article>
+<article class="card player-card"><div class="player-top"><div><div class="card-id">E2E / TOP-3</div><h3>JamРабота</h3></div><div class="player-logo">JJ</div></div><div class="player-metric">Top-3</div><div class="player-meta">Один из лидеров российского e2e сегмента</div><ul><li>Участвует в общей доле лидеров e2e-рынка около 54% GMV.</li><li>Показывает зрелость рынка цифрового привлечения внешних исполнителей.</li><li>Не приписываем отдельные строительные показатели, не раскрытые в изученных источниках.</li></ul><a class="source" href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Рыночный отчёт ↗</a></article>
+</div>
+
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Product capability matrix</div><h2 class="display">НАШЕ ОТЛИЧИЕ —<br><span class="cyan">НЕ ОДНА ФУНКЦИЯ.</span></h2><p class="intro">Публичная матрица возможностей. «Не найдено» означает, что функция не подтверждена в изученных публичных материалах, а не что её точно нет внутри продукта конкурента.</p></div></div>
+<div class="matrix-caption"><span>PUBLIC PRODUCT REVIEW · UBER STROY = TARGET PRODUCT SPEC</span><input class="searchbox" id="matrixSearch" type="search" placeholder="Поиск по функциям и игрокам…" aria-label="Фильтр матрицы"></div>
+<div class="table-wrap reveal"><table id="matrixTable">
+<thead><tr><th>Функция</th><th>Shift platforms<br>Ventra / MyGig / RR</th><th>Processing<br>Naimix</th><th>Construction<br>Staff-B / StaffEng / Eskela</th><th>Construction ecosystem<br>Asdrom</th><th>UBER STROY<br>Target</th></tr></thead>
+<tbody>
+<tr><td><strong>Онлайн-заявка и публикация смены</strong></td><td><span class="flag good">Да</span></td><td><span class="flag good">Да</span></td><td><span class="flag warn">Менеджер / заявка</span></td><td><span class="flag good">Заказы / тендеры</span></td><td><span class="flag good">MVP</span></td></tr>
+<tr><td><strong>Юридический и платёжный контур</strong></td><td><span class="flag good">Есть</span></td><td><span class="flag good">Core</span></td><td><span class="flag good">Операторский контур</span></td><td><span class="flag warn">Документы по проектам</span></td><td><span class="flag good">Обязательный слой</span></td></tr>
+<tr><td><strong>Подбор по конкретным операциям стройки</strong></td><td><span class="flag warn">Частично / зависит</span></td><td><span class="flag gap">Не основной продукт</span></td><td><span class="flag good">По заявке / профессии</span></td><td><span class="flag warn">Поиск специалистов</span></td><td><span class="flag good">Task-to-Skill</span></td></tr>
+<tr><td><strong>Индивидуальный опыт с источником доказательства</strong></td><td><span class="flag warn">Веттинг / рейтинг</span></td><td><span class="flag warn">Статус / документы</span></td><td><span class="flag warn">Подбор / проверка</span></td><td><span class="flag warn">Профиль / рейтинг</span></td><td><span class="flag good">Self-report → старший → объект → проверка</span></td></tr>
+<tr><td><strong>Команда как единая единица заказа</strong></td><td><span class="flag warn">Групповые смены</span></td><td><span class="flag gap">Не профиль продукта</span></td><td><span class="flag good">Операционно возможно</span></td><td><span class="flag gap">Не основной сценарий</span></td><td><span class="flag good">Crew-as-a-Service</span></td></tr>
+<tr><td><strong>Старший и история совместной работы бригады</strong></td><td><span class="flag warn">Координаторы</span></td><td><span class="flag gap">Не основной модуль</span></td><td><span class="flag good">Бригадир / менеджер</span></td><td><span class="flag gap">Не основной модуль</span></td><td><span class="flag good">Crew profile + lead</span></td></tr>
+<tr><td><strong>Чек-ин, табель, приёмка и замена</strong></td><td><span class="flag good">Часть платформ</span></td><td><span class="flag good">Акты / процессинг</span></td><td><span class="flag good">Заявлены операторы</span></td><td><span class="flag warn">Проектные документы</span></td><td><span class="flag good">Единый workflow</span></td></tr>
+<tr><td><strong>История фактически выполненных операций после смены</strong></td><td><span class="flag gap">Не найдено публично</span></td><td><span class="flag gap">Не основной модуль</span></td><td><span class="flag gap">Не найдено публично</span></td><td><span class="flag warn">Отзывы / рейтинги</span></td><td><span class="flag good">Learning Loop</span></td></tr>
+<tr><td><strong>Повторный подбор по качеству прошлых смен</strong></td><td><span class="flag good">В части платформ</span></td><td><span class="flag gap">Не профиль продукта</span></td><td><span class="flag warn">Оператор знает историю</span></td><td><span class="flag warn">Рейтинги / отзывы</span></td><td><span class="flag good">Evidence-based matching</span></td></tr>
+</tbody></table></div>
+<div class="note" style="margin-top:13px">Veryable, например, прямо показывает работодателю навыки, опыт, сертификаты и performance ratings работников; Staff-B продаёт квалифицированный строительный персонал. Поэтому нельзя заявлять, что конкуренты вообще не проверяют умения. Потенциальное окно UBER STROY — связать конкретные операции, доказательства по каждой операции, историю смен и устойчивость команды в единой системе.</div>
+</div>
+</section>
+
+<section id="world" class="section-dark">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">05 / Global operating benchmarks</div><h2 class="display">ДЕСЯТЬ РЕФЕРЕНСОВ.<br><span class="blue">ОДНА ПРОДУКТОВАЯ СИСТЕМА.</span></h2><p class="intro">В Playbook собраны семь строительных брендов и три workforce-платформы. Берём не чужой логотип и не копию дизайна, а работающие механики: human-first, craft, task-to-skill, локальный labour pool, безопасность, повторный выход и доверие к исполнению.</p></div><div class="section-id">US DESIGN PLAYBOOK · 10 REFERENCES</div></div>
+<div class="grid-2 reveal">
+<article class="card global-card blue-card"><div class="player-top"><span class="pill">Closest construction skill network</span><div class="player-logo">SK</div></div><h3 style="margin-top:16px">Skillit</h3><div class="player-metric">200K+</div><div class="player-meta">CRAFT WORKERS · DOZENS OF US MARKETS</div><p>Профессиональная сеть строительных работников и AI-first инфраструктура для поиска, связи и найма. Компания сообщает о более чем 200 000 craft workers и сотрудничестве с 13 из 25 крупнейших builders в США.</p><div class="takeaway"><b>Что берём:</b> структурированный профиль craft-опыта, поиск по skill, данные о специалисте и поиск не по общему названию профессии.</div><a class="source" href="https://skillit.com/who-we-are" target="_blank" rel="noopener">Who we are ↗</a> · <a class="source" href="https://skillit.com/blog/skillit-is-expanding-nationwide" target="_blank" rel="noopener">Network update ↗</a></article>
+<article class="card global-card"><div class="player-top"><span class="pill green-pill">Hourly workforce marketplace</span><div class="player-logo">IW</div></div><h3 style="margin-top:16px">Instawork</h3><div class="player-metric">7M+</div><div class="player-meta">HOURLY WORKERS · 40+ MARKETS · 2B+ DATA SIGNALS</div><p>Платформа соединяет компании и hourly workers, публикует временные, долгосрочные и постоянные роли. Публичные показатели показывают масштаб локальной сети и накопленных данных для matching.</p><div class="takeaway"><b>Что берём:</b> локальная плотность, история исполнителя, рейтинги, проверка и качество выхода на смену.</div><a class="source" href="https://www.instawork.com/about" target="_blank" rel="noopener">About Instawork ↗</a> · <a class="source" href="https://www.instawork.com/" target="_blank" rel="noopener">Для бизнеса ↗</a></article>
+<article class="card global-card"><div class="player-top"><span class="pill">Industrial on-demand labor</span><div class="player-logo">VB</div></div><h3 style="margin-top:16px">Veryable</h3><div class="player-metric">750K+</div><div class="player-meta">VETTED WORKERS · 6.1 AVG BIDS / OPPORTUNITY</div><p>On-demand labor marketplace для производства и складов. На профиле работодатель может посмотреть skills, experience, certifications и performance ratings. На странице About указано 17,21 тыс. same-day shifts filled.</p><div class="takeaway"><b>Что берём:</b> гибкий пул, реиспользование проверенных людей, skill & performance data, управление мощностью под колебания объёма.</div><a class="source" href="https://www.veryableops.com/about" target="_blank" rel="noopener">About Veryable ↗</a> · <a class="source" href="https://www.veryableops.com/on-demand-labor-faq" target="_blank" rel="noopener">Skills / FAQ ↗</a></article>
+<article class="card global-card"><div class="player-top"><span class="pill amber-pill">Flexible work marketplace</span><div class="player-logo">WO</div></div><h3 style="margin-top:16px">Wonolo</h3><div class="player-metric">1M+</div><div class="player-meta">WONOLOERS · 3M JOBS POSTED ON ABOUT PAGE</div><p>On-demand staffing для компаний и гибкой занятости. Публичная About-страница показывает сеть работников и число опубликованных заданий; дата статистики на странице не уточняется, поэтому это reference metric, не актуальный audited KPI.</p><div class="takeaway"><b>Что берём:</b> повторные назначения, возможность регулярных и долгосрочных заданий, self-service плюс операционная поддержка.</div><a class="source" href="https://info.wonolo.com/about/" target="_blank" rel="noopener">About Wonolo ↗</a></article>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="player-top"><div><div class="card-id">ADDITIONAL OPERATING BENCHMARK / INVESTOR DECK</div><h3 style="margin:9px 0">Indeed Flex</h3></div><div class="player-logo">IF</div></div>
+<div class="grid-2">
+<div><div class="metric">5.4M</div><div class="player-meta">SHIFTS POSTED IN 2025 · WORLDWIDE</div></div>
+<div><p style="font-size:10px;margin:0">Indeed Workforce Agility Report: число смен, размещённых на Indeed Flex, выросло с 4,8 млн в 2024 году до 5,4 млн в 2025-м. Это операционная метрика смен, а не число уникальных работников и не GMV.</p><a class="source" href="https://d341ezm4iqaae0.cloudfront.net/ews/sites/2/20260313135651/CA_en_Indeed-Workforce-Agility-Report-compressed.pdf" target="_blank" rel="noopener">Indeed Workforce Agility Report ↗</a></div>
+</div>
+</div>
+
+<div class="section-head" style="margin-top:62px"><div><div class="eyebrow">10 reference gallery / your Playbook</div><h2 class="display">НЕ ПРОСТО КРАСИВЫЕ САЙТЫ.<br><span class="cyan">ДЕСЯТЬ СПОСОБОВ ПОКАЗАТЬ ДОВЕРИЕ.</span></h2><p class="intro">Фотографии и компании взяты из текущего UBER STROY Design Playbook. Это визуальные и продуктовые ориентиры, не собственные фотографии или заявленные проекты UBER STROY.</p></div><div class="section-id">PHOTO SOURCES / PLAYBOOK</div></div>
+<div class="photo-grid reveal">
+<div class="photo-card"><img src="https://ep-turnerconstruction-prod-asdcetgubtducba3.z01.azurefd.net/thumbs/careers-labor-and-skilled-trades-what-we-offer_thumb-blocks-left-view.jpg?v=6f1eb" alt="Turner Construction skilled trades team" loading="lazy"><div class="photo-copy"><strong>01 / TURNER</strong><span>Project scale · skilled trades · B2B clarity</span></div><a class="photo-link" href="https://www.turnerconstruction.com/careers/labor-and-skilled-trade-professionals" target="_blank" rel="noopener" aria-label="Официальный референс Turner"></a></div>
+<div class="photo-card"><img src="https://img.dpr.com/content/assets/pages/Careers/Team-Enjoyment-2.jpg?auto=compress%2Cformat&fit=clip&q=80&s=68b2f7629fc66a8d118b60786063414d&w=2880" alt="DPR Construction team at work" loading="lazy"><div class="photo-copy"><strong>02 / DPR</strong><span>People-first · team culture · craft pride</span></div><a class="photo-link" href="https://www.dpr.com/company/careers" target="_blank" rel="noopener" aria-label="Официальный референс DPR"></a></div>
+<div class="photo-card"><img src="https://www.mortenson.com/adobe/dynamicmedia/deliver/dm-aid--d110742f-eb83-4bfe-ac67-5dfedd07ee30/krueger-joe-and-team.jpg?preferwebp=true&quality=82" alt="Mortenson project team" loading="lazy"><div class="photo-copy"><strong>03 / MORTENSON</strong><span>Industries · delivery · scale</span></div><a class="photo-link" href="https://www.mortenson.com/" target="_blank" rel="noopener" aria-label="Официальный референс Mortenson"></a></div>
+<div class="photo-card"><img src="https://www.prosci.com/hs-fs/hubfs/Website_English/3.images/McCarthy%20Case%20Study/McCarthy%20Case%20Study%20image%204.webp?height=425&name=McCarthy+Case+Study+image+4.webp&width=639" alt="McCarthy craft workers briefing" loading="lazy"><div class="photo-copy"><strong>04 / McCARTHY</strong><span>Quality · craft · trust</span></div><a class="photo-link" href="https://www.mccarthy.com/" target="_blank" rel="noopener" aria-label="Официальный референс McCarthy"></a></div>
+<div class="photo-card"><img src="https://join.kiewit.com/wp-content/uploads/2024/07/equipment.jpg" alt="Kiewit construction site and heavy equipment" loading="lazy"><div class="photo-copy"><strong>05 / KIEWIT</strong><span>Infrastructure · capability · safety</span></div><a class="photo-link" href="https://www.kiewit.com/careers/" target="_blank" rel="noopener" aria-label="Официальный референс Kiewit"></a></div>
+<div class="photo-card"><img src="https://www.clarkconstruction.com/sites/default/files/2025-05/Clark_Jobsite_Photos_3.28.2023-2022_jpg.png" alt="Clark Construction field crew" loading="lazy"><div class="photo-copy"><strong>06 / CLARK</strong><span>Projects · partners · delivery</span></div><a class="photo-link" href="https://www.clarkconstruction.com/business-with-us" target="_blank" rel="noopener" aria-label="Официальный референс Clark"></a></div>
+<div class="photo-card"><img src="https://www.henselphelps.com/wp-content/uploads/2025/03/HP-Onsite-San-Diego-Day-Two-59-edited-scaled.jpg" alt="Hensel Phelps construction professionals on site" loading="lazy"><div class="photo-copy"><strong>07 / HENSEL PHELPS</strong><span>Craft pathway · people · workforce</span></div><a class="photo-link" href="https://www.henselphelps.com/careers/" target="_blank" rel="noopener" aria-label="Официальный референс Hensel Phelps"></a></div>
+<div class="photo-card"><img src="https://images.squarespace-cdn.com/content/v1/5f4f9895e09c563a9267f110/4a3a7a51-7c7b-4f24-8198-481eab2f547e/skillit_hero_image_carft_professionals.jpg" alt="Skillit craft professional portrait" loading="lazy"><div class="photo-copy"><strong>08 / SKILLIT</strong><span>Skill marketplace · worker profile</span></div><a class="photo-link" href="https://skillit.com/craft-workers" target="_blank" rel="noopener" aria-label="Официальный референс Skillit"></a></div>
+<div class="photo-card"><img src="https://assets-global.website-files.com/640a2dd38b26e6890f8956a0/6594bb6aca54665411924cb8_AdobeStock_503961979.jpeg" alt="Instawork hourly workforce image" loading="lazy"><div class="photo-copy"><strong>09 / INSTAWORK</strong><span>Shift flow · conversion · local supply</span></div><a class="photo-link" href="https://www.instawork.com/how-it-works" target="_blank" rel="noopener" aria-label="Официальный референс Instawork"></a></div>
+<div class="photo-card"><img src="https://cdn.prod.website-files.com/656f7666617c2816db7ae5c9/65a8499982a3c5e203ef25c5_Vov%20-%20Fitz.jpg" alt="Veryable operations worker portrait" loading="lazy"><div class="photo-copy"><strong>10 / VERYABLE</strong><span>Reusable labor pool · ratings · repeat</span></div><a class="photo-link" href="https://www.veryableops.com/about" target="_blank" rel="noopener" aria-label="Официальный референс Veryable"></a></div>
+</div>
+<div class="ref-note">Внутренняя галерея концепций: <a class="source" href="../design-playbook.html">Design Playbook ↗</a> · <a class="source" href="../refs/">10 адаптированных landing-концепций ↗</a>. Права на фотографии принадлежат их правообладателям; используются как ссылки на визуальные ориентиры.</div>
+</div>
+</section>
+
+<section id="product">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">06 / Product architecture</div><h2 class="display">НЕ БИРЖА ЛЮДЕЙ.<br><span class="blue">ОПЕРАЦИОННАЯ СЕТЬ КОМАНД.</span></h2><p class="intro">Позиционирование UBER STROY — operator-led workforce network. Сначала мы гарантируем дисциплину исполнения через людей и процессы; цифровая платформа усиливает точность, скорость и накопление данных.</p></div><div class="section-id">TASK → CREW → EVIDENCE</div></div>
+<div class="thesis-visual reveal" style="min-height:330px;margin-bottom:16px"><img src="https://ep-turnerconstruction-prod-asdcetgubtducba3.z01.azurefd.net/thumbs/careers-labor-and-skilled-trades-what-we-offer_thumb-blocks-left-view.jpg?v=6f1eb" alt="Профессиональная строительная команда на объекте" loading="lazy"><div class="thesis-visual-copy"><span class="pill">UBER STROY / PRODUCT IDEA</span><h3>Не 20 случайных людей. 20 человек с опытом именно в этой работе.</h3><p>Подбор под операции, подтверждённый состав, старший команды, доступность, табель и история качества.</p></div></div>
+<div class="workflow reveal">
+<div class="flow-step"><div class="step">01 / REQUEST</div><h3>Заявка</h3><p>Объект · операции · дата · численность · ограничения.</p></div>
+<div class="flow-step"><div class="step">02 / DECOMPOSE</div><h3>Разбор задачи</h3><p>Декомпозиция до конкретных работ и уровня участия.</p></div>
+<div class="flow-step"><div class="step">03 / MATCH</div><h3>Подбор</h3><p>Опыт · evidence · доступность · надёжность · логистика.</p></div>
+<div class="flow-step"><div class="step">04 / VERIFY</div><h3>Проверка</h3><p>Документы · допуски · старший · согласие · состав.</p></div>
+<div class="flow-step"><div class="step">05 / DISPATCH</div><h3>Выход</h3><p>Смена · чек-ин · резерв · замена · контроль.</p></div>
+<div class="flow-step"><div class="step">06 / ACCEPT</div><h3>Приёмка</h3><p>Табель · объём · качество · акт · расчёт.</p></div>
+<div class="flow-step"><div class="step">07 / LEARN</div><h3>История</h3><p>Смена создаёт событие опыта и улучшает следующий подбор.</p></div>
+</div>
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Workforce Skill Intelligence</div><h2 class="display">ОПЫТ ДОЛЖЕН СТАТЬ<br><span class="cyan">СТРУКТУРИРОВАННЫМ ДАННЫМ.</span></h2><p class="intro">Голосовой рассказ на 2–3 минуты превращается в черновик профиля. Человек подтверждает его; источник и уровень доказательства сохраняются отдельно.</p></div></div>
+<div class="grid-3 reveal">
+<div class="card"><div class="card-id">01 / SELF-REPORTED</div><h3>Заявлено работником</h3><p>Объекты, операции, материалы, инструменты, давность опыта и уровень участия. Не равно подтверждённому навыку или допуску.</p></div>
+<div class="card blue-card"><div class="card-id">02 / CONFIRMED</div><h3>Подтверждено старшим</h3><p>Старший или поставщик подтверждает участие человека в конкретной операции. Источник и дата сохраняются.</p></div>
+<div class="card"><div class="card-id">03 / SITE EVIDENCE</div><h3>Подтверждено объектом</h3><p>Табель, приёмка, обратная связь клиента или практическая проверка усиливают доказательную историю.</p></div>
+</div>
+<div class="note" style="margin-top:13px">Не смешиваем самоотчёт с удостоверением, разрядом, разрешением или безопасным допуском к работе. Обязательные документы и hard constraints должны проверяться отдельно от AI-match score.</div>
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">AI operating layer</div><h2 class="display">ЧЕТЫРЕ АГЕНТА.<br><span class="blue">ЕДИНАЯ ИСТОРИЯ РАБОТЫ.</span></h2></div></div>
+<div class="agent-grid reveal">
+<div class="agent"><div class="n">01</div><h3>Worker Profile Builder</h3><p>Транскрибирует голос, выделяет операции, материалы и инструменты, спрашивает подтверждение человека.</p></div>
+<div class="agent"><div class="n">02</div><h3>Job Request Interpreter</h3><p>Разбирает заявку объекта на операции, количество, дату, обязательные документы и ограничения.</p></div>
+<div class="agent"><div class="n">03</div><h3>Crew Matching & Verification</h3><p>Собирает shortlist по опыту, уровню доказательства, доступности, надёжности и логистике.</p></div>
+<div class="agent"><div class="n">04</div><h3>Shift Learning & Evidence</h3><p>Добавляет подтверждённую смену в историю опыта, не переписывая прошлое и не повышая квалификацию автоматически.</p></div>
+</div>
+<div class="card" style="margin-top:12px">
+<div class="card-id">MATCHING WEIGHTS / INTERNAL MVP HYPOTHESIS</div>
+<div class="chart-row"><span>Релевантность операций</span><div class="track"><i style="--w:40%"></i></div><span class="chart-val">40%</span></div>
+<div class="chart-row"><span>Доказательность опыта</span><div class="track"><i style="--w:25%"></i></div><span class="chart-val">25%</span></div>
+<div class="chart-row"><span>Доступность смены</span><div class="track"><i style="--w:20%"></i></div><span class="chart-val">20%</span></div>
+<div class="chart-row"><span>История явки / отзывы</span><div class="track"><i style="--w:10%"></i></div><span class="chart-val">10%</span></div>
+<div class="chart-row"><span>Логистика / площадка</span><div class="track"><i style="--w:5%"></i></div><span class="chart-val">5%</span></div>
+<div class="metric-note">Weights are provisional. Mandatory documents, safety approvals, legal status and availability are filters, not scoring bonuses.</div>
+</div>
+</div>
+</section>
+
+<section id="scale" class="section-dark">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">07 / Five-year scale scenario</div><h2 class="display">ЦЕЛЬ — <span class="blue">1 000 000</span><br>УНИКАЛЬНЫХ ПРОФИЛЕЙ.</h2><p class="intro">К ноябрю 2031 года UBER STROY может стремиться к национальной сети из одного миллиона уникальных, дедуплицированных и согласившихся на взаимодействие профилей. Это стратегическая цель, а не прогноз и не миллион одновременно доступных людей.</p></div><div class="section-id">NORTH STAR · NOV 2031</div></div>
+<div class="scale-hero reveal">
+<div><div class="kicker">Five-year network ambition</div><div class="scale-number">1,000,000</div><h3 style="font-size:23px;margin-top:13px">worker profiles in the network</h3><p>Сеть должна расти через локальных партнёров и поставщиков, реальные оплачиваемые смены, повторные заказы и прозрачную верификацию. Профиль входит в North Star только после дедупликации, проверки контакта и согласия человека.</p></div>
+<div class="card" style="background:#0b1425;border-color:#60a5fa45">
+<div class="card-id">ILLUSTRATIVE OPERATING SCENARIO</div><div class="divider"></div>
+<div style="display:flex;justify-content:space-between;gap:12px;margin:12px 0"><span class="muted" style="font-size:9px">Network profiles</span><strong>1 000 000</strong></div>
+<div style="display:flex;justify-content:space-between;gap:12px;margin:12px 0"><span class="muted" style="font-size:9px">Monthly active · 20%</span><strong>200 000</strong></div>
+<div style="display:flex;justify-content:space-between;gap:12px;margin:12px 0"><span class="muted" style="font-size:9px">Shifts / active profile / month</span><strong>4</strong></div>
+<div style="display:flex;justify-content:space-between;gap:12px;margin:12px 0"><span class="muted" style="font-size:9px">Monthly human-shifts</span><strong>800 000</strong></div>
+<div class="note" style="margin-top:13px">20% MAU и 4 смены — расчётные допущения для сценария, не данные о текущей активности UBER STROY.</div>
+</div>
+</div>
+<div class="scale-timeline reveal">
+<div class="year-card"><span>2027 / pilot</span><strong>10K</strong><span>2–3 cities</span><div class="year-line"><i style="--w:1%"></i></div></div>
+<div class="year-card"><span>2028 / repeatability</span><strong>50K</strong><span>10 cities</span><div class="year-line"><i style="--w:5%"></i></div></div>
+<div class="year-card"><span>2029 / regional network</span><strong>150K</strong><span>25 cities</span><div class="year-line"><i style="--w:15%"></i></div></div>
+<div class="year-card"><span>2030 / federal coverage</span><strong>400K</strong><span>50 cities</span><div class="year-line"><i style="--w:40%"></i></div></div>
+<div class="year-card"><span>2031 / network scale</span><strong>1M</strong><span>100 cities</span><div class="year-line"><i style="--w:100%"></i></div></div>
+</div>
+<div class="metric-note" style="margin-top:10px">Сценарная траектория: 100 городов × в среднем 10 000 уникальных профилей. Цифры не являются утверждённым бюджетом привлечения или forecast.</div>
+<div class="section-head" style="margin-top:58px"><div><div class="eyebrow">Interactive network economics</div><h2 class="display">МОДЕЛЬ МАСШТАБА.<br><span class="cyan">МЕНЯЙ ПАРАМЕТРЫ.</span></h2><p class="intro">Калькулятор переводит размер сети в сценарную нагрузку, оборот заказов и валовый спред. Это не прогноз выручки, прибыли или рыночной доли.</p></div></div>
+<div class="calculator reveal">
+<div><div class="kicker">Scenario controls</div>
 <div class="control"><label for="activePct">Месячно активные профили <output id="activePctOut">20%</output></label><input id="activePct" type="range" min="5" max="40" step="1" value="20"></div>
-<div class="control"><label for="shifts">Смен на одного активного / месяц <output id="shiftsOut">4</output></label><input id="shifts" type="range" min="1" max="12" step="1" value="4"></div>
-<div class="control"><label for="price">Средняя цена смены <output id="priceOut">4 750 ₽</output></label><input id="price" type="range" min="4000" max="6000" step="50" value="4750"></div>
-<div class="control"><label for="spread">Валовый спред на смену <output id="spreadOut">1 500 ₽</output></label><input id="spread" type="range" min="500" max="2200" step="50" value="1500"></div>
-<div class="note" style="margin-top:13px">Фиксированная база: 1 000 000 профилей. Доля активности и сменность — сценарное допущение. Расчёт предполагает 22 рабочих дня в каждом месяце.</div></div>
-<div class="calc-results">
-<div class="result"><span>Месячно активные</span><strong id="mau">200 000</strong><small>профилей</small></div><div class="result"><span>Смен в месяц</span><strong id="shiftVolume">800 000</strong><small>человеко-смен</small></div>
-<div class="result primary"><span>Годовой GMV</span><strong id="gmvYear">45,6 млрд ₽</strong><small>оборот заказов, не выручка платформы</small></div><div class="result primary"><span>Годовой валовый спред</span><strong id="spreadYear">14,4 млрд ₽</strong><small>до расходов и налогов</small></div>
-<div class="result"><span>Среднее выходов / день</span><strong id="dailyShifts">36 364</strong><small>на 22 рабочих дня</small></div><div class="result"><span>Профилей вне MAU</span><strong id="inactive">800 000</strong><small>не активны в данном месяце</small></div>
-<div class="calc-note" id="scenarioText">Базовый сценарий: 20% месячной активности, 4 смены на человека и 1 500 ₽ валового спреда.</div></div></div>
-<div class="compare-note"><strong>Проверка на реалистичность.</strong> Базовый сценарий 45,6 млрд ₽ годового GMV превышает оценку всего российского e2e-сегмента 2025 года (38 млрд ₽). Это не доказательство невозможности, но сильный сигнал: 1 млн профилей и такой оборот потребуют рынка следующего масштаба, нескольких вертикалей и федеральной сети. Это не текущий TAM и не гарантированная выручка.</div>
-</div></section>
-
-<section id="economics" class="section-dark"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">08 / Unit economics & execution</div><h2 class="display">СНАЧАЛА МАРЖА.<br><span class="orange">ПОТОМ МАСШТАБ.</span></h2><p class="intro">В рабочем handoff от 6 ноября базовая гипотеза — 4 750 ₽ продажи, 3 250 ₽ закупки и 1 500 ₽ валового спреда на человеко-смену. Это не чистая прибыль и пока не подтверждённая рыночная цена.</p></div><div class="section-no">LATEST INTERNAL HYPOTHESIS</div></div>
-<div class="unit-econ reveal"><div class="unit-card"><div class="kicker">На одну человеко-смену</div><div class="metric">1 500 ₽</div><p>Валовый спред в базовой гипотезе последнего handoff.</p><div class="divider"></div><div style="display:flex;justify-content:space-between;font-size:10px"><span class="muted">Цена заказчику</span><strong>4 750 ₽</strong></div><div style="display:flex;justify-content:space-between;font-size:10px;margin-top:11px"><span class="muted">Закупка у поставщика</span><strong>3 250 ₽</strong></div><div style="display:flex;justify-content:space-between;font-size:10px;margin-top:11px"><span class="muted">Валовая маржа от цены</span><strong class="green">31,6%</strong></div></div>
-<div class="unit-card"><div class="kicker">Месячная экономика · 22 смены / день</div><div class="unit-bars"><div class="unit-line"><span>10 человек</span><div class="bar"><i style="--w:14.3%"></i></div><strong>330 тыс. ₽</strong></div><div class="unit-line"><span>20 человек</span><div class="bar"><i style="--w:28.6%"></i></div><strong>660 тыс. ₽</strong></div><div class="unit-line"><span>30 человек</span><div class="bar"><i style="--w:42.9%"></i></div><strong>990 тыс. ₽</strong></div><div class="unit-line"><span>50 человек</span><div class="bar"><i style="--w:71.4%"></i></div><strong>1,65 млн ₽</strong></div><div class="unit-line"><span>70 человек</span><div class="bar"><i style="--w:100%"></i></div><strong>2,31 млн ₽</strong></div></div><p style="font-size:9px;margin-top:18px">Валовый спред до налогов, транспорта, питания, СИЗ, координаторов, замен, страхования, банковских и юридических расходов, стоимости денег, неприёмки и плохих долгов.</p></div></div>
-<div class="compare-note"><strong>Версионность материалов.</strong> В инвесторской презентации v1 и текущем Dark Premium базовая цена была 4 250 ₽ при закупке 3 250 ₽ (спред 1 000 ₽). Последний handoff от 06.11.2026 обновляет гипотезу до 4 750 ₽ (спред 1 500 ₽). Новый market landing использует более свежую гипотезу; главный калькулятор и инвесторскую презентацию нужно синхронизировать отдельно.</div>
-<div class="section-head" style="margin-top:60px"><div><div class="eyebrow">Scale gates</div><h2 class="display">НЕ МАСШТАБИРУЕМ<br><span class="orange">НЕПОДТВЕРЖДЁННУЮ ОПЕРАЦИЮ.</span></h2><p class="intro">Рост должен следовать за плотностью спроса, качеством исполнения и управляемым денежным циклом.</p></div></div>
-<div class="grid-4 reveal"><div class="card"><div class="card-num">0–30 DAYS / PILOT</div><h3>10–20 выходов</h3><p>Подтвердить поставщиков, правовую модель, заказ, состав, ответственных, допуск и первую оплачиваемую смену.</p></div><div class="card"><div class="card-num">30–90 DAYS / REPEAT</div><h3>50–70 выходов</h3><p>Повторные заказы, табели, замены, маржа после прямых затрат и синхронизация платежей.</p></div><div class="card"><div class="card-num">3–12 MONTHS / PRODUCT</div><h3>Продуктовый MVP</h3><p>CRM поставщиков и объектов, календарь доступности, профили навыков, учёт и история смен.</p></div><div class="card"><div class="card-num">12–60 MONTHS / NETWORK</div><h3>Мультигород</h3><p>Playbook запуска региона, стандарты качества, якорные клиенты, поставщики и локальная ликвидность.</p></div></div>
-</div></section>
-
-<section id="trust"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">09 / Trust, compliance, safety</div><h2 class="display">ДОВЕРИЕ — ЭТО<br><span class="orange">ИНФРАСТРУКТУРА.</span></h2><p class="intro">Безопасная и легальная модель — не footer disclaimer. Она должна быть частью архитектуры продукта, онбординга поставщика и допуска на объект.</p></div></div>
-<div class="grid-3 reveal"><div class="card"><div class="card-num">01 / LEGAL MODEL</div><h3>Правовая конструкция</h3><p>Статья 56.1 ТК РФ запрещает заёмный труд; глава 53.1 регулирует допустимые формы предоставления труда работников. Договор услуг должен соответствовать фактической операционной модели и не маскировать предоставление труда.</p><a class="source-inline" href="https://www.consultant.ru/document/cons_doc_LAW_511088/" target="_blank" rel="noopener">289-ФЗ / текст закона ↗</a></div><div class="card"><div class="card-num">02 / PLATFORM RULES</div><h3>Платформенная экономика</h3><p>Федеральный закон № 289-ФЗ вступил в силу 1 октября 2026 года. Нужно определить, подпадает ли конкретная архитектура под правила посреднической цифровой платформы и какие обязанности возникают.</p><a class="source-inline" href="https://www.nalog.gov.ru/new2026/" target="_blank" rel="noopener">ФНС: изменения 2026 ↗</a></div><div class="card"><div class="card-num">03 / DATA & CONSENT</div><h3>Данные и согласие</h3><p>Голосовой профиль, документы, история смен и отзывы требуют конкретных целей обработки, согласия, разграничения доступа, правил хранения и исправления информации.</p><a class="source-inline" href="https://pd.rkn.gov.ru/" target="_blank" rel="noopener">Роскомнадзор / персональные данные ↗</a></div></div>
-<div class="note" style="margin-top:15px"><strong>До первого исполнения:</strong> юридическая проверка трудовой и платформенной модели, охрана труда, право на работу, документы, СИЗ, медицинские требования и специальные допуски. Skill Intelligence не заменяет удостоверение, допуск или инструктаж.</div>
-</div></section>
-
-<section id="sources" class="section-dark"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">10 / Sources & methodology</div><h2 class="display">ПРОЗРАЧНАЯ БАЗА.<br><span class="orange">КЛИКАБЕЛЬНЫЕ ПЕРВОИСТОЧНИКИ.</span></h2><p class="intro">Ссылки ведут на исследования, официальные страницы компаний, регуляторов и внутренние продуктовые референсы. Динамические показатели компаний помечены как self-reported.</p></div><div class="section-no">SOURCE REGISTER</div></div>
-<div class="sources-grid reveal">
-<div class="source-card"><span class="type">Market research</span><strong>Data Insight — рынок платформенной занятости, 2025</strong><p>239 млрд ₽ total platform solutions; 38 млрд ₽ e2e; отраслевой микс и концентрация.</p><a href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Открыть исследование ↗</a></div>
-<div class="source-card"><span class="type">Market research / publisher</span><strong>Ventra — исследование совместно с Data Insight</strong><p>Разъяснение сегментов рынка, динамики и прогноза.</p><a href="https://ventra.ru/news/rynok-platformennoy-zanyatosti-issledovanie-ventra-go-data-i-insight/" target="_blank" rel="noopener">Открыть публикацию ↗</a></div>
-<div class="source-card"><span class="type">Industry association</span><strong>НОСТРОЙ — дополнительная потребность в кадрах</strong><p>209,94 тыс. человек в краткосрочной потребности, 77% — рабочие профессии.</p><a href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43360" target="_blank" rel="noopener">Открыть публикацию ↗</a></div>
-<div class="source-card"><span class="type">Industry association</span><strong>НОСТРОЙ — оценка текущего дефицита</strong><p>Около 200 тыс. специалистов; отдельная оценка дефицита в 2026 году.</p><a href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43595" target="_blank" rel="noopener">Открыть публикацию ↗</a></div>
-<div class="source-card"><span class="type">Industry association</span><strong>НОСТРОЙ — кадровая потребность до 2030</strong><p>Оценка дополнительной потребности по опросу работодателей.</p><a href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43514" target="_blank" rel="noopener">Открыть публикацию ↗</a></div>
-<div class="source-card"><span class="type">Russian e2e platform</span><strong>Рабочие Руки</strong><p>База исполнителей, клиенты, комиссия и публичное заявление о проверке квалификации.</p><a href="https://www.russian.works/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">Russian shift platform</span><strong>MyGig</strong><p>База исполнителей, геоподтверждение выхода, выплаты, документы и FAQ.</p><a href="https://mygig.ru/business" target="_blank" rel="noopener">B2B-страница ↗</a></div>
-<div class="source-card"><span class="type">Russian processing</span><strong>Наймикс</strong><p>Маркетплейс, ЭДО, выплаты, налоги, API и управление внешними исполнителями.</p><a href="https://naimix.ru/business" target="_blank" rel="noopener">B2B-страница ↗</a></div>
-<div class="source-card"><span class="type">Construction staffing / nationwide</span><strong>Staff-B</strong><p>85 городов, 25 000+ выведенных сотрудников, 300+ проектов; стройка, замена и заявленные сроки вывода.</p><a href="https://staff-b.ru/msk/autstaffing/stroitelstvo" target="_blank" rel="noopener">Строительная услуга ↗</a></div>
-<div class="source-card"><span class="type">Construction staffing / infrastructure</span><strong>Стафинжиниринг</strong><p>Персонал для дорог, аэродромов, мостов, инженерных сетей, трубопроводов и ЖБК.</p><a href="https://staffeng.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">Construction staffing</span><strong>DasGroup Plus</strong><p>Строительные рабочие, бетонщики, бригадиры и публичная ставка от 450 ₽/час.</p><a href="https://autsorsing-personala.ru/na-stroitelnyie-obiektyi/" target="_blank" rel="noopener">Строительная услуга ↗</a></div>
-<div class="source-card"><span class="type">Construction staffing</span><strong>Eskela</strong><p>Публичные сроки вывода персонала по объёму заказа.</p><a href="https://eskela.ru/uslugi/autsorsing/stroitelnogo-personala/" target="_blank" rel="noopener">Строительная услуга ↗</a></div>
-<div class="source-card"><span class="type">Construction ecosystem</span><strong>Асдром</strong><p>Заказы, тендеры, подрядчики, специалисты, материалы, техника и документы.</p><a href="https://www.asdrom.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">Government / registry</span><strong>ФНС — операторы электронных площадок</strong><p>Публичный список площадок и операторов, включая ряд сервисов для исполнителей.</p><a href="https://npd.nalog.ru/aggregators/" target="_blank" rel="noopener">Открыть реестр ↗</a></div>
-<div class="source-card"><span class="type">International / construction craft</span><strong>Skillit — construction hiring platform</strong><p>Craft profiles, AI matching, assessment, skill-specific search and enterprise workflows.</p><a href="https://skillit.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">International / hourly staffing</span><strong>Instawork</strong><p>Веттинг, hourly staffing, AI matching, 7M+ workers on About page.</p><a href="https://www.instawork.com/about" target="_blank" rel="noopener">О компании ↗</a></div>
-<div class="source-card"><span class="type">International / marketplace</span><strong>Wonolo</strong><p>3M+ skilled workers, 6.2M+ jobs posted, 500+ U.S. markets on the company page.</p><a href="https://www.wonolo.com/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">International / industrial labor</span><strong>Veryable</strong><p>Flexible labor pools, vetting, skills, work history and performance data.</p><a href="https://www.veryableops.com/about" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
-<div class="source-card"><span class="type">Regulation / tax service</span><strong>ФНС — изменения 2026</strong><p>Вступление в силу закона № 289-ФЗ о платформенной экономике с 1 октября 2026 года.</p><a href="https://www.nalog.gov.ru/new2026/" target="_blank" rel="noopener">Официальное пояснение ↗</a></div>
-<div class="source-card"><span class="type">Regulation / law</span><strong>Федеральный закон № 289-ФЗ</strong><p>Правовая база платформенной экономики и дата вступления в силу.</p><a href="https://www.consultant.ru/document/cons_doc_LAW_511088/" target="_blank" rel="noopener">Текст закона ↗</a></div>
+<div class="control"><label for="shifts">Смен на активного / месяц <output id="shiftsOut">4</output></label><input id="shifts" type="range" min="1" max="12" step="1" value="4"></div>
+<div class="control"><label for="price">Цена заказчику / смена <output id="priceOut">4 750 ₽</output></label><input id="price" type="range" min="4000" max="6000" step="50" value="4750"></div>
+<div class="control"><label for="spread">Валовый спред / смена <output id="spreadOut">1 500 ₽</output></label><input id="spread" type="range" min="500" max="2200" step="50" value="1500"></div>
+<div class="note" style="margin-top:13px">База — 1 000 000 уникальных профилей. Средняя рабочая нагрузка для FTE-equivalent: 22 смены в месяц × 12 месяцев = 264 смены в год. Сценарные параметры можно менять.</div>
 </div>
-<div class="methodology" style="margin-top:18px"><div class="method-card"><h3>Как читали данные</h3><ul><li>Рыночные показатели — по исследованиям и официальным страницам компаний.</li><li>Размеры баз, клиенты, SLA и рост — заявления самих компаний, если не указано иначе.</li><li>Позиционирование и матрица — аналитическая оценка по публично раскрытому продукту.</li><li>Прогноз на 1 млн профилей — внутренняя сценарная модель, не внешний прогноз.</li></ul></div><div class="method-card"><h3>Что не утверждаем</h3><ul><li>Не называем 239 млрд ₽ строительным TAM.</li><li>Не утверждаем, что у конкурентов нет закрытых внутренних функций.</li><li>Не выдаём регистрацию профиля за активного или доступного работника.</li><li>Не выдаём gross spread за чистую прибыль или оценку компании.</li></ul></div></div>
-</div></section>
+<div class="calc-results">
+<div class="result"><span>Месячно активные</span><strong id="mau">200 000</strong><small>worker profiles</small></div>
+<div class="result"><span>Смен / месяц</span><strong id="shiftVolume">800 000</strong><small>person-shifts</small></div>
+<div class="result primary"><span>Годовой GMV</span><strong id="gmvYear">₽45.6 млрд</strong><small>заказы, не выручка платформы</small></div>
+<div class="result primary"><span>Валовый спред / год</span><strong id="spreadYear">₽14.4 млрд</strong><small>до расходов и налогов</small></div>
+<div class="result"><span>Среднее выходов / день</span><strong id="dailyShifts">36 364</strong><small>22 рабочих дня в месяц</small></div>
+<div class="result"><span>FTE equivalent / год</span><strong id="fteEquivalent">36 364</strong><small>годовые смены / 264</small></div>
+<div class="calc-note" id="scenarioText">Base scenario: 20% MAU · 4 shifts · ₽4,750 client price · ₽1,500 gross spread per shift.</div>
+</div>
+</div>
+<div class="note" style="margin-top:14px">Сценарий 45,6 млрд ₽ GMV в год превышает нынешний фактический e2e-рынок платформенной занятости России за 2025 год (38 млрд ₽). Это подчёркивает масштаб задачи: 1 млн профилей требует федеральной сети, нескольких сегментов и многолетней экспансии. Но он существенно ниже межотраслевого TAM временной занятости 7,8 трлн ₽. Показатели TAM и расчёта нельзя трактовать как гарантированный спрос.</div>
+</div>
+</section>
+
+<section id="economics">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">08 / Unit economics & gates</div><h2 class="display">ТЕКУЩАЯ МОДЕЛЬ.<br><span class="blue">ПОНЯТНАЯ И ПРОВЕРЯЕМАЯ.</span></h2><p class="intro">В последнем handoff и мастер-CRM на 6 ноября используется рабочая гипотеза 4 750 ₽ продажи, 3 250 ₽ закупки и 1 500 ₽ валового спреда на человеко-смену. Это тестируемая гипотеза, не подтверждённый тариф клиента.</p></div><div class="section-id">INTERNAL MODEL · 06.11.2026</div></div>
+<div class="unit-grid reveal">
+<div class="unit-card blue-card">
+<div class="card-id">BASE CASE / PER PERSON-SHIFT</div>
+<div class="metric" style="margin:15px 0 4px">₽1 500</div>
+<p>Валовый спред на человеко-смену.</p>
+<div class="divider"></div>
+<div style="display:flex;justify-content:space-between;gap:10px;margin:10px 0;font-size:10px"><span class="muted">Цена продажи</span><strong>₽4 750</strong></div>
+<div style="display:flex;justify-content:space-between;gap:10px;margin:10px 0;font-size:10px"><span class="muted">Закупка</span><strong>₽3 250</strong></div>
+<div style="display:flex;justify-content:space-between;gap:10px;margin:10px 0;font-size:10px"><span class="muted">Gross margin / price</span><strong class="green">31.58%</strong></div>
+<div class="metric-note">Цена и закупка — гипотеза по человеко-смене. Продолжительность смены и состав прямых расходов уточняются по каждому объекту.</div>
+</div>
+<div class="unit-card">
+<div class="card-id">MONTHLY GROSS SPREAD / 22 DAYS</div>
+<div class="unit-line"><span>10 / day</span><div class="track"><i style="--w:14.3%"></i></div><strong>₽330K</strong></div>
+<div class="unit-line"><span>20 / day</span><div class="track"><i style="--w:28.6%"></i></div><strong>₽660K</strong></div>
+<div class="unit-line"><span>30 / day</span><div class="track"><i style="--w:42.9%"></i></div><strong>₽990K</strong></div>
+<div class="unit-line"><span>50 / day</span><div class="track"><i style="--w:71.4%"></i></div><strong>₽1.65M</strong></div>
+<div class="unit-line"><span>70 / day</span><div class="track"><i style="--w:100%"></i></div><strong>₽2.31M</strong></div>
+<p style="font-size:9px;margin-top:18px">Валовый спред до транспортных расходов, СИЗ, питания, координаторов, замен, страхования, налогов, банковских и юридических расходов, стоимости оборотки, неприёмки и плохих долгов.</p>
+</div>
+</div>
+<div class="note" style="margin-top:13px"><strong>Версионность:</strong> инвесторская презентация v1 и предыдущий Dark Premium использовали старую модель 4 250 ₽ / 3 250 ₽ / 1 000 ₽. Для этой версии взята более свежая база handoff + Master CRM от 06.11.2026: 4 750 ₽ / 3 250 ₽ / 1 500 ₽. Главный landing и investor deck ещё нужно синхронизировать отдельно.</div>
+<div class="section-head" style="margin-top:55px"><div><div class="eyebrow">Scale gates</div><h2 class="display">СНАЧАЛА ДОКАЗАТЬ ВЫХОД.<br><span class="cyan">ПОТОМ УСКОРЯТЬ.</span></h2><p class="intro">Переключение на следующую ступень возможно только после подтверждения предыдущей: оплаченные смены, повторные заказы, маржа после прямых расходов, управляемые дебиторка и оборотный капитал.</p></div></div>
+<div class="grid-4 reveal">
+<div class="card"><div class="card-id">0–30 DAYS / PILOT</div><h3>10–20 выходов</h3><p>Поимённо подтвердить людей, поставщика, правовой статус, согласие, старшего и первый оплаченный тест.</p></div>
+<div class="card"><div class="card-id">30–90 DAYS / REPEAT</div><h3>50–70 доступных</h3><p>Повторные заказы, расписание, show-rate, замены, табели, акты и платежи.</p></div>
+<div class="card"><div class="card-id">3–12 MONTHS / PRODUCT</div><h3>Operations MVP</h3><p>CRM поставщиков, заявки, календарь доступности, dispatch, профили опыта и история смен.</p></div>
+<div class="card"><div class="card-id">12–60 MONTHS / NETWORK</div><h3>Multi-city</h3><p>Стандарт запуска города, локальная плотность спроса и предложения, партнёрская сеть и контроль качества.</p></div>
+</div>
+</div>
+</section>
+
+<section id="compliance" class="section-dark">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">09 / Safety, legal & data governance</div><h2 class="display">ДОВЕРИЕ — ЭТО<br><span class="blue">ЧАСТЬ ИНФРАСТРУКТУРЫ.</span></h2><p class="intro">В стройке недостаточно «найти свободные руки». Необходимо юридически корректно оформить услугу, подтвердить требования площадки и не подменять проверку квалификации автоматическим рейтингом.</p></div></div>
+<div class="grid-3 reveal">
+<div class="card"><div class="card-id">01 / LEGAL MODEL</div><h3>Договорная конструкция</h3><p>Статья 56.1 ТК РФ запрещает заёмный труд; модель договора должна отражать реальное содержание управления и результата. Нельзя маскировать предоставление персонала фиктивным договором услуг.</p><a class="source" href="https://www.consultant.ru/document/cons_doc_LAW_511088/" target="_blank" rel="noopener">Нормативная база ↗</a></div>
+<div class="card"><div class="card-id">02 / PLATFORM ECONOMY</div><h3>ФЗ № 289-ФЗ</h3><p>Закон об отдельных вопросах регулирования платформенной экономики вступил в силу 1 октября 2026 года. Следует определить, попадает ли фактическая бизнес-модель под его требования.</p><a class="source" href="https://zpp.rospotrebnadzor.ru/news/federal/594052" target="_blank" rel="noopener">Разъяснение Роспотребнадзора ↗</a></div>
+<div class="card"><div class="card-id">03 / PEOPLE DATA</div><h3>Персональные данные</h3><p>Голосовые записи, документы, фотографии и история смен требуют согласия, конкретных целей, разграничения доступа, защиты, хранения и механизма исправления данных.</p><a class="source" href="https://pd.rkn.gov.ru/" target="_blank" rel="noopener">Роскомнадзор ↗</a></div>
+</div>
+<div class="note" style="margin-top:14px">До первого выхода: юрист по трудовому праву и платформенной экономике, миграционные требования, охрана труда, инструктажи, СИЗ, медосмотры и специальные допуски по конкретным операциям. Skill Intelligence не заменяет удостоверение, разряд, медицинский допуск или право выполнять опасные работы.</div>
+</div>
+</section>
+
+<section id="sources">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">10 / Source register & methodology</div><h2 class="display">ВСЕ ЦИФРЫ —<br><span class="cyan">С ПРОИСХОЖДЕНИЕМ.</span></h2><p class="intro">В реестре отдельно указаны внешние первоисточники, сайты компаний и внутренние документы проекта. Данные, которые компания сообщает о себе, обозначены как self-reported; рабочие оценки не выдаются за аудит.</p></div><div class="section-id">SOURCE REGISTER / 07.11.2026</div></div>
+<div class="source-grid reveal">
+<div class="source-card"><span class="type">Market research / primary</span><strong>Data Insight — рынок платформенной занятости, 2025</strong><p>GMV 239 млрд ₽; e2e 38 млрд ₽; all-industry TAM 11.7 млн FTE / 7.8 трлн ₽.</p><a href="https://datainsight.ru/DI_employment_2025" target="_blank" rel="noopener">Исследование ↗</a></div>
+<div class="source-card"><span class="type">Construction / industry</span><strong>НОСТРОЙ — прогноз потребности до 2030</strong><p>Около 789 тыс. дополнительной кадровой потребности; 82% рабочие кадры.</p><a href="https://nostroy.ru/company/news/?COMP_ID=t_news&CUR_TAB=0&eid=43051" target="_blank" rel="noopener">НОСТРОЙ ↗</a></div>
+<div class="source-card"><span class="type">Construction / industry press</span><strong>Коммерсантъ — дефицит строительных кадров</strong><p>Оценка нехватки 200–400 тыс. специалистов, сентябрь 2026.</p><a href="https://www.kommersant.ru//doc/8925352" target="_blank" rel="noopener">Статья ↗</a></div>
+<div class="source-card"><span class="type">Nizhny Novgorod / residential</span><strong>Domostroynn — строящееся жильё</strong><p>Сентябрь 2026: 46 застройщиков, 71 ЖК, 135 домов, 1.549 млн м².</p><a href="https://www.domostroynn.ru/analitika" target="_blank" rel="noopener">Обзор ↗</a></div>
+<div class="source-card"><span class="type">Official open data / region</span><strong>Портал открытых данных — разрешения на строительство</strong><p>503 записи в региональном реестре за 2026 год; обновление 12.10.2026.</p><a href="https://data.gov.ru/datasets/d418cb9e-291b-47af-84dd-81fc8a330a4d" target="_blank" rel="noopener">Реестр ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / platform</span><strong>Рабочие Руки</strong><p>800 тыс. исполнителей в базе, 5 102 клиента, 87 из 100 выходов, 10 минут отклик; компания пишет, что не проверяет опыт.</p><a href="https://www.russian.works/" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / mass shifts</span><strong>MyGig</strong><p>1.6 млн+ исполнителей в базе для массовой линейной занятости.</p><a href="https://mygig.ru/business" target="_blank" rel="noopener">B2B ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / processing</span><strong>Наймикс</strong><p>1 386 535+ active performers; от 85 минут до выхода на заказ; 100% автоматизация документов.</p><a href="https://naimix.ru/business" target="_blank" rel="noopener">B2B ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / construction</span><strong>Стафф-Б</strong><p>85 городов, 25 000+ сотрудников; строительное направление и сроки запуска крупных заявок.</p><a href="https://staff-b.ru/msk/autstaffing/stroitelstvo" target="_blank" rel="noopener">Строительство ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / construction</span><strong>Стаффинжиниринг</strong><p>30+ крупных строительных проектов по России; дороги, аэродромы, мосты, сети и ЖБК.</p><a href="https://staffeng.ru/" target="_blank" rel="noopener">Сайт ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / construction</span><strong>Эскела</strong><p>Публичные сроки вывода: от 10 человек 2–4 дня; от 30 — 7–10; 50+ — от 15 дней.</p><a href="https://eskela.ru/uslugi/autsorsing/stroitelnogo-personala/" target="_blank" rel="noopener">Строительное направление ↗</a></div>
+<div class="source-card"><span class="type">Russian competitor / construction ecosystem</span><strong>Асдром</strong><p>3 800+ пользователей, 200+ объектов, 750+ кейсов и 1 250+ документов.</p><a href="https://www.asdrom.com/" target="_blank" rel="noopener">Платформа ↗</a></div>
+<div class="source-card"><span class="type">International / construction</span><strong>Skillit</strong><p>200 000+ craft workers; 13 из 25 крупнейших builders в сети работодателей — по заявлению компании.</p><a href="https://skillit.com/who-we-are" target="_blank" rel="noopener">Who we are ↗</a></div>
+<div class="source-card"><span class="type">International / hourly work</span><strong>Instawork</strong><p>7M+ hourly workers, 40+ markets, 2B+ data signals — по странице About.</p><a href="https://www.instawork.com/about" target="_blank" rel="noopener">About ↗</a></div>
+<div class="source-card"><span class="type">International / industrial labor</span><strong>Veryable</strong><p>750 000+ vetted workers, 6.1 average bids, 17.21K same-day shifts filled.</p><a href="https://www.veryableops.com/about" target="_blank" rel="noopener">About ↗</a></div>
+<div class="source-card"><span class="type">International / on-demand</span><strong>Wonolo</strong><p>1M+ Wonoloers and 3M jobs posted on the current About page; date of the underlying count is not specified.</p><a href="https://info.wonolo.com/about/" target="_blank" rel="noopener">About ↗</a></div>
+<div class="source-card"><span class="type">International / hourly shifts</span><strong>Indeed Flex · Indeed Workforce Agility Report</strong><p>5.4 million shifts posted in 2025 vs 4.8 million in 2024.</p><a href="https://d341ezm4iqaae0.cloudfront.net/ews/sites/2/20260313135651/CA_en_Indeed-Workforce-Agility-Report-compressed.pdf" target="_blank" rel="noopener">Report ↗</a></div>
+<div class="source-card"><span class="type">Regulation / official agency</span><strong>ФЗ № 289-ФЗ — платформенная экономика</strong><p>Вступление в силу 1 октября 2026 года.</p><a href="https://zpp.rospotrebnadzor.ru/news/federal/594052" target="_blank" rel="noopener">Разъяснение ↗</a></div>
+</div>
+<div class="method-grid">
+<div class="method-card"><h3>Как читать исследование</h3><ul><li>GMV — стоимость прошедших через платформы заказов и смен; это не выручка платформ.</li><li>FTE — эквивалент полной занятости; он не равен числу зарегистрированных профилей.</li><li>Размеры баз, клиенты и SLA платформ — данные, заявленные самими компаниями.</li><li>CRM и рынок Нижнего Новгорода — внутренний срез на 06.11.2026.</li></ul></div>
+<div class="method-card"><h3>Что ещё нужно доказать</h3><ul><li>Bottom-up TAM именно строительных смен по регионам и типам операций.</li><li>Поимённую доступность работников, правовой статус и согласие.</li><li>Реальные цены и длительность смен по отдельным поставщикам и объектам.</li><li>Repeat rate, show rate, fill rate, contribution margin и стоимость привлечения.</li></ul></div>
+</div>
+</div>
+</section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="../dark-premium/"><span class="brand-mark">U</span><span>UBER <em>STROY</em></span></a><p style="margin-top:17px">Market Intelligence · 07 ноября 2026. Исследовательский материал для продуктовой стратегии, партнёрских переговоров и подготовки инвестиционной истории. Следующее обновление должно опираться на контрольные запросы конкурентам, оплаченные пилоты и фактические метрики исполнения.</p><div class="kicker">Правильные люди. Под конкретную работу.</div></div><div class="footer-links"><a href="../dark-premium/">Главный продуктовый landing ↗</a><a href="../refs/">10 дизайн-референсов ↗</a><a href="../brandbook/">Brandbook ↗</a><a href="#top">Наверх ↑</a></div></div></footer>
+
+<footer class="footer"><div class="wrap footer-row">
+<div><a class="brand" href="../dark-premium/"><span class="brand-mark">U</span><span>UBER <em>STROY</em></span></a><p style="margin-top:16px">Market Intelligence / Super Dark edition · 07 ноября 2026. Исследовательский материал для продуктовой стратегии, партнёрских переговоров и инвестиционной истории. Внешние показатели компаний помечены как self-reported; внутренние оценки и продуктовые гипотезы отделены от подтверждённых результатов.</p></div>
+<div class="footer-links"><a href="../dark-premium/">Главный landing ↗</a><a href="../design-playbook.html">10-reference Playbook ↗</a><a href="../refs/">10 landing-концепций ↗</a><a href="../brandbook/">Brandbook ↗</a><a href="#top">Наверх ↑</a></div>
+</div></footer>
+
 <script>
 (function(){
-var progress=document.getElementById("progress");function onScroll(){var d=document.documentElement,m=d.scrollHeight-window.innerHeight;progress.style.width=(m>0?window.scrollY/m*100:0)+"%"}window.addEventListener("scroll",onScroll,{passive:true});onScroll();
-var menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("navLinks");menuBtn.addEventListener("click",function(){var o=nav.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o?"true":"false");menuBtn.textContent=o?"×":"☰"});nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");menuBtn.textContent="☰"})});
-var observer=("IntersectionObserver"in window)?new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})},{threshold:.08}):null;document.querySelectorAll(".reveal").forEach(function(el){if(observer)observer.observe(el);else el.classList.add("visible")});
-var search=document.getElementById("matrixSearch");search.addEventListener("input",function(){var q=search.value.trim().toLowerCase();document.querySelectorAll("#matrixTable tbody tr").forEach(function(r){r.style.display=r.textContent.toLowerCase().indexOf(q)>-1?"":"none"})});
-var fmt=function(n){return Math.round(n).toLocaleString("ru-RU")},rub=function(n){if(n>=1e9)return(n/1e9).toLocaleString("ru-RU",{maximumFractionDigits:1})+" млрд ₽";if(n>=1e6)return(n/1e6).toLocaleString("ru-RU",{maximumFractionDigits:1})+" млн ₽";return fmt(n)+" ₽"};
-function calc(){var a=+document.getElementById("activePct").value,s=+document.getElementById("shifts").value,p=+document.getElementById("price").value,g=+document.getElementById("spread").value,mau=1e6*a/100,v=mau*s;
-document.getElementById("activePctOut").textContent=a+"%";document.getElementById("shiftsOut").textContent=s;document.getElementById("priceOut").textContent=fmt(p)+" ₽";document.getElementById("spreadOut").textContent=fmt(g)+" ₽";
-document.getElementById("mau").textContent=fmt(mau);document.getElementById("shiftVolume").textContent=fmt(v);document.getElementById("gmvYear").textContent=rub(v*p*12);document.getElementById("spreadYear").textContent=rub(v*g*12);document.getElementById("dailyShifts").textContent=fmt(v/22);document.getElementById("inactive").textContent=fmt(1e6-mau);document.getElementById("scenarioText").textContent="Сценарий: "+a+"% месячной активности × "+s+" смены на активного × "+fmt(p)+" ₽ средняя цена × "+fmt(g)+" ₽ валовый спред. Расчёт предполагает 12 месяцев и 22 рабочих дня в каждом месяце."}
-["activePct","shifts","price","spread"].forEach(function(id){document.getElementById(id).addEventListener("input",calc)});calc();
+var progress=document.getElementById("progress");
+function onScroll(){var d=document.documentElement,m=d.scrollHeight-window.innerHeight;progress.style.width=(m>0?window.scrollY/m*100:0)+"%"}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+var menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("navLinks");
+menuBtn.addEventListener("click",function(){var o=nav.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o?"true":"false");menuBtn.textContent=o?"×":"☰"});
+nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");menuBtn.textContent="☰"})});
+var observer=("IntersectionObserver"in window)?new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})},{threshold:.07}):null;
+document.querySelectorAll(".reveal").forEach(function(el){if(observer)observer.observe(el);else el.classList.add("visible")});
+var search=document.getElementById("matrixSearch");
+search.addEventListener("input",function(){var q=search.value.trim().toLowerCase();document.querySelectorAll("#matrixTable tbody tr").forEach(function(r){r.style.display=r.textContent.toLowerCase().indexOf(q)>-1?"":"none"})});
+var fmt=function(n){return Math.round(n).toLocaleString("ru-RU")};
+var rub=function(n){if(n>=1e9)return"₽"+(n/1e9).toLocaleString("ru-RU",{maximumFractionDigits:1})+" млрд";if(n>=1e6)return"₽"+(n/1e6).toLocaleString("ru-RU",{maximumFractionDigits:1})+" млн";return"₽"+fmt(n)};
+function calc(){
+ var a=+document.getElementById("activePct").value,s=+document.getElementById("shifts").value,p=+document.getElementById("price").value,g=+document.getElementById("spread").value;
+ var mau=1000000*a/100,v=mau*s,yearShifts=v*12,gmv=yearShifts*p,gross=yearShifts*g,fte=yearShifts/264;
+ document.getElementById("activePctOut").textContent=a+"%";
+ document.getElementById("shiftsOut").textContent=s;
+ document.getElementById("priceOut").textContent=fmt(p)+" ₽";
+ document.getElementById("spreadOut").textContent=fmt(g)+" ₽";
+ document.getElementById("mau").textContent=fmt(mau);
+ document.getElementById("shiftVolume").textContent=fmt(v);
+ document.getElementById("gmvYear").textContent=rub(gmv);
+ document.getElementById("spreadYear").textContent=rub(gross);
+ document.getElementById("dailyShifts").textContent=fmt(v/22);
+ document.getElementById("fteEquivalent").textContent=fmt(fte);
+ document.getElementById("scenarioText").textContent="Scenario: "+a+"% monthly active × "+s+" shifts × "+fmt(p)+" ₽ price × "+fmt(g)+" ₽ gross spread. Annual shifts: "+fmt(yearShifts)+". FTE equivalent assumes 264 full-time shifts per year.";
+}
+["activePct","shifts","price","spread"].forEach(function(id){document.getElementById(id).addEventListener("input",calc)});
+calc();
 })();
 </script>
-</body></html>
+</body>
+</html>

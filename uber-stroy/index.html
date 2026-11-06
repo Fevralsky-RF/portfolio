@@ -290,6 +290,56 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  .econ-line strong{font-size:13px}
 }
 
+
+/* Three-input economics model: people + sell rate + supplier rate */
+.economics-period{font-size:10px;line-height:1.65;white-space:normal;text-align:right;color:#aeb8bf}
+.economics-period strong{font-size:11px;color:var(--paper);letter-spacing:.08em}
+.calculator .kicker,.econ-context .kicker{font-size:11px;letter-spacing:.12em}
+.calculator h3{font-size:clamp(34px,3.1vw,43px);line-height:.98}
+.calculator .sub{font-size:13px;line-height:1.6;color:#555f65;max-width:520px;margin-bottom:18px}
+.range-block{margin:16px 0 19px}
+.range-head{gap:12px;align-items:center;margin-bottom:7px}
+.range-head label{font-size:11px;line-height:1.35;font-weight:900;letter-spacing:.035em;text-transform:uppercase;max-width:76%}
+.range-head output{font-size:29px;min-width:105px;text-align:right;font-variant-numeric:tabular-nums}
+.range-block input[type=range]{margin:10px 0 7px;cursor:ew-resize}
+.range-labels{font-size:9px;font-weight:850;letter-spacing:.05em;color:#657078}
+.spread-control{padding-top:5px;border-top:1px solid #d1d1cb}
+.calc-results{margin-top:17px}
+.calc-result{min-height:88px;padding:14px}
+.calc-result span{font-size:9px;font-weight:850;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:#68737a}
+.calc-result strong{font-size:clamp(20px,2vw,28px);line-height:1.15;letter-spacing:-.045em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc-result.feature strong{color:var(--orange)}
+.calc-result.feature.negative strong{color:#d52f28}
+.calc-foot{display:grid;gap:6px;font-size:10px;line-height:1.55;color:#59636a;margin-top:14px}
+.calc-foot strong{font-size:11px;color:#182027}
+.econ-context h3{font-size:clamp(34px,4vw,46px);line-height:.98}
+.econ-context>div:first-child>p{font-size:12px;line-height:1.65;max-width:520px}
+.econ-line{font-size:11px;line-height:1.45;gap:12px}
+.econ-line strong{font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.econ-line.total strong{font-size:21px}
+.economics-note{padding:17px 18px;font-size:11px;line-height:1.6}
+.economics-note strong{display:block;color:var(--orange2);font-size:10px;letter-spacing:.09em;margin-bottom:6px}
+.economics-note span{display:block}
+.is-negative{color:#ff6f68!important}
+.scale-row{grid-template-columns:.55fr 1.1fr 1.1fr 1.1fr}
+@media(max-width:720px){
+ .economics-period{text-align:left;margin-top:14px;font-size:10px}
+ .economics-period strong{font-size:11px}
+ .calculator .sub{font-size:12px}
+ .range-head label{font-size:10px}
+ .range-head output{font-size:25px;min-width:90px}
+ .range-labels{font-size:8px}
+ .calc-result{padding:12px;min-height:84px}
+ .calc-result span{font-size:8px}
+ .calc-result strong{font-size:clamp(17px,4.9vw,23px)}
+ .calc-foot{font-size:9px}
+ .econ-line{font-size:10px}
+ .econ-line strong{font-size:12px}
+ .scale-row{grid-template-columns:.45fr 1fr 1fr 1fr;gap:5px}
+ .scale-row strong{font-size:14px}
+ .scale-row span,.scale-row em{font-size:10px}
+}
+
 </style>
 </head>
 <body>
@@ -416,19 +466,24 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 
 <section id="economics">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">05 / ЮНИТ-ЭКОНОМИКА</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Базовая цена для заказчика — ₽4 250 за человеко-смену. Меняй объём команды и валовый спред: закупочная ставка, валовая маржа и месячные суммы пересчитаются автоматически.</p></div><div class="section-tag economics-period">РАСЧЁТНЫЙ ПЕРИОД<br><strong>22 РАБОЧИЕ СМЕНЫ В МЕСЯЦ</strong></div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">05 / ЮНИТ-ЭКОНОМИКА</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Настрой три параметра: количество людей, цену для заказчика и закупочную ставку поставщика. Спред, валовая маржа и все месячные показатели пересчитываются автоматически.</p></div><div class="section-tag economics-period">РАСЧЁТНЫЙ ПЕРИОД<br><strong>22 РАБОЧИЕ СМЕНЫ В МЕСЯЦ</strong></div></div>
   <div class="econ-layout">
    <div class="calculator reveal">
-    <div class="kicker">ИНТЕРАКТИВНАЯ МОДЕЛЬ СМЕНЫ</div><h3>СОБЕРИ СВОЙ<br>СЦЕНАРИЙ.</h3><p class="sub">Выбери количество людей на ежедневном выходе и спред на одну человеко-смену. Все показатели ниже обновляются сразу.</p>
+    <div class="kicker">ИНТЕРАКТИВНАЯ МОДЕЛЬ СМЕНЫ</div><h3>СОБЕРИ СВОЙ<br>СЦЕНАРИЙ.</h3><p class="sub">Измени количество людей, цену продажи или закупки. Валовый спред — не отдельная настройка, а разница между двумя ставками.</p>
     <div class="range-block">
-     <div class="range-head"><label for="crewRange">Людей на ежедневном выходе</label><output id="crewOutput" for="crewRange">50</output></div>
+     <div class="range-head"><label for="crewRange">Людей на ежедневном выходе</label><output id="crewOutput" for="crewRange" aria-live="polite">50</output></div>
      <input id="crewRange" type="range" min="10" max="100" step="5" value="50" aria-label="Количество людей на ежедневном выходе">
      <div class="range-labels"><span>10 ЧЕЛОВЕК</span><span>100 ЧЕЛОВЕК</span></div>
     </div>
+    <div class="range-block">
+     <div class="range-head"><label for="salePriceRange">Цена для заказчика / человеко-смена</label><output id="salePriceOutput" for="salePriceRange" aria-live="polite">₽4 250</output></div>
+     <input id="salePriceRange" type="range" min="3500" max="6000" step="50" value="4250" aria-label="Цена для заказчика за одну человеко-смену">
+     <div class="range-labels"><span>₽3 500</span><span>₽6 000</span></div>
+    </div>
     <div class="range-block spread-control">
-     <div class="range-head"><label for="spreadRange">Валовый спред на человеко-смену</label><output id="spreadOutput" for="spreadRange">₽1 000</output></div>
-     <input id="spreadRange" type="range" min="500" max="2000" step="100" value="1000" aria-label="Валовый спред на одну человеко-смену">
-     <div class="range-labels"><span>₽500</span><span>₽2 000</span></div>
+     <div class="range-head"><label for="purchasePriceRange">Закупка у поставщика / человеко-смена</label><output id="purchasePriceOutput" for="purchasePriceRange" aria-live="polite">₽3 250</output></div>
+     <input id="purchasePriceRange" type="range" min="2000" max="5500" step="50" value="3250" aria-label="Закупочная цена поставщика за одну человеко-смену">
+     <div class="range-labels"><span>₽2 000</span><span>₽5 500</span></div>
     </div>
     <div class="calc-results">
      <div class="calc-result"><span>Оборот за месяц</span><strong id="turnover">₽4 675 000</strong></div>
@@ -436,10 +491,10 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
      <div class="calc-result feature"><span>Валовый спред за месяц</span><strong id="grossSpread">₽1 100 000</strong></div>
      <div class="calc-result"><span>Спред на одну человеко-смену</span><strong id="perShiftSpread">₽1 000</strong></div>
     </div>
-    <div class="calc-foot"><strong id="monthlyShifts">1 100 человеко-смен в месяц</strong><span>Формула: люди × 22 рабочие смены. Одна человеко-смена — один человек на одной рабочей смене; её продолжительность определяется договором.</span></div>
+    <div class="calc-foot"><strong id="monthlyShifts">1 100 человеко-смен в месяц</strong><span>Формула: число людей × 22 рабочие смены. Одна человеко-смена — один человек на одной рабочей смене; её продолжительность определяется договором.</span></div>
    </div>
    <div class="econ-context reveal delay-1">
-    <div><div class="kicker">РАСЧЁТ НА ОДНУ ЧЕЛОВЕКО-СМЕНУ</div><h3 id="spreadHeadline">₽1 000<br><span class="orange">ВАЛОВЫЙ СПРЕД</span></h3><p>Валовый спред — разница между ценой для заказчика и закупочной ставкой поставщика до вычета расходов компании.</p></div>
+    <div><div class="kicker">РАСЧЁТ НА ОДНУ ЧЕЛОВЕКО-СМЕНУ</div><h3 id="spreadHeadline">₽1 000<br><span class="orange">ВАЛОВЫЙ СПРЕД</span></h3><p id="spreadDescription">Валовый спред — разница между ценой для заказчика и закупочной ставкой поставщика до вычета расходов компании.</p></div>
     <div class="econ-table">
      <div class="econ-line"><span>Цена для заказчика</span><strong id="unitSale">₽4 250</strong></div>
      <div class="econ-line"><span>Закупка у поставщика</span><strong id="unitCost">₽3 250</strong></div>
@@ -482,11 +537,11 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
   <div class="section-head reveal"><div><div class="eyebrow">08 / Scale thesis</div><h2 class="display">ОДНА МОДЕЛЬ.<br>МНОГО ГОРОДОВ.</h2><p class="section-intro">При той же ставке и 22 сменах в месяц рост числа подтверждённых ежедневных выходов линейно увеличивает валовый поток. Это сценарная математика, не прогноз продаж.</p></div><div class="section-tag">Scenario / base economics</div></div>
   <div class="scale-layout">
    <div class="scale-box reveal">
-    <div class="scale-row head"><span>Людей / день</span><span>Оборот / месяц</span><em>Спред / месяц</em></div>
-    <div class="scale-row"><strong>100</strong><span>₽9,35 млн</span><em>₽2,20 млн</em></div>
-    <div class="scale-row"><strong>300</strong><span>₽28,05 млн</span><em>₽6,60 млн</em></div>
-    <div class="scale-row"><strong>1 000</strong><span>₽93,50 млн</span><em>₽22,00 млн</em></div>
-    <p class="kicker" style="margin-top:17px">22 смены / цена ₽4 250 / спред ₽1 000</p>
+    <div class="scale-row head"><span>Людей / день</span><span>Оборот / мес.</span><span>Поставщикам / мес.</span><em>Спред / мес.</em></div>
+    <div class="scale-row"><strong>100</strong><span>₽9,35 млн</span><span>₽7,15 млн</span><em>₽2,20 млн</em></div>
+    <div class="scale-row"><strong>300</strong><span>₽28,05 млн</span><span>₽21,45 млн</span><em>₽6,60 млн</em></div>
+    <div class="scale-row"><strong>1 000</strong><span>₽93,50 млн</span><span>₽71,50 млн</span><em>₽22,00 млн</em></div>
+    <p class="kicker" style="margin-top:17px">22 смены / продажа ₽4 250 / закупка ₽3 250 / спред ₽1 000</p>
    </div>
    <div class="scale-box reveal delay-1">
     <div class="thesis-list">
@@ -533,11 +588,12 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  if('IntersectionObserver' in window){const barObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.width=entry.target.dataset.width;barObserver.unobserve(entry.target);}}),{threshold:.4});bars.forEach(b=>barObserver.observe(b));}else{bars.forEach(b=>b.style.width=b.dataset.width);}
  const crewSlider=document.getElementById('crewRange');
  const crewOutput=document.getElementById('crewOutput');
- const spreadSlider=document.getElementById('spreadRange');
- const spreadOutput=document.getElementById('spreadOutput');
- const salePrice=4250;
+ const saleSlider=document.getElementById('salePriceRange');
+ const saleOutput=document.getElementById('salePriceOutput');
+ const purchaseSlider=document.getElementById('purchasePriceRange');
+ const purchaseOutput=document.getElementById('purchasePriceOutput');
  const workDays=22;
- const money=n=>'₽'+Math.round(n).toLocaleString('ru-RU');
+ const money=n=>(n<0?'-':'')+'₽'+Math.abs(Math.round(n)).toLocaleString('ru-RU');
  const percent=n=>(n*100).toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
  function paintRange(slider,min,max){
   const progress=(Number(slider.value)-min)/(max-min)*100;
@@ -545,31 +601,41 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  }
  function updateCalc(){
   const people=Number(crewSlider.value);
-  const spreadPerShift=Number(spreadSlider.value);
-  const procurementPrice=salePrice-spreadPerShift;
+  const salePrice=Number(saleSlider.value);
+  const procurementPrice=Number(purchaseSlider.value);
+  const spreadPerShift=salePrice-procurementPrice;
+  const margin=salePrice>0?spreadPerShift/salePrice:0;
   const monthlyShifts=people*workDays;
   const turnover=monthlyShifts*salePrice;
   const suppliers=monthlyShifts*procurementPrice;
   const grossSpread=monthlyShifts*spreadPerShift;
   crewOutput.value=String(people);
   crewOutput.textContent=String(people);
-  spreadOutput.value=money(spreadPerShift);
-  spreadOutput.textContent=money(spreadPerShift);
+  saleOutput.value=money(salePrice);
+  saleOutput.textContent=money(salePrice);
+  purchaseOutput.value=money(procurementPrice);
+  purchaseOutput.textContent=money(procurementPrice);
   document.getElementById('turnover').textContent=money(turnover);
   document.getElementById('supplierPay').textContent=money(suppliers);
   document.getElementById('grossSpread').textContent=money(grossSpread);
   document.getElementById('perShiftSpread').textContent=money(spreadPerShift);
   document.getElementById('monthlyShifts').textContent=monthlyShifts.toLocaleString('ru-RU')+' человеко-смен в месяц';
-  document.getElementById('spreadHeadline').innerHTML=money(spreadPerShift)+'<br><span class="orange">ВАЛОВЫЙ СПРЕД</span>';
+  document.getElementById('spreadHeadline').innerHTML=money(spreadPerShift)+'<br><span class="orange">'+(spreadPerShift>=0?'ВАЛОВЫЙ СПРЕД':'ОТРИЦАТЕЛЬНЫЙ СПРЕД')+'</span>';
+  document.getElementById('spreadDescription').textContent=spreadPerShift>=0?'Валовый спред — разница между ценой для заказчика и закупочной ставкой поставщика до вычета расходов компании.':'Закупка выше цены продажи: каждая человеко-смена создаёт отрицательный валовый результат до учёта прочих расходов.';
   document.getElementById('unitSale').textContent=money(salePrice);
   document.getElementById('unitCost').textContent=money(procurementPrice);
-  document.getElementById('unitMargin').textContent=percent(spreadPerShift/salePrice);
+  document.getElementById('unitMargin').textContent=percent(margin);
   document.getElementById('unitSpread').textContent=money(spreadPerShift);
+  const spreadCard=document.getElementById('spreadHeadline');
+  spreadCard.classList.toggle('is-negative',spreadPerShift<0);
+  document.getElementById('grossSpread').closest('.calc-result').classList.toggle('negative',spreadPerShift<0);
+  document.getElementById('perShiftSpread').classList.toggle('is-negative',spreadPerShift<0);
+  document.getElementById('unitSpread').classList.toggle('is-negative',spreadPerShift<0);
   paintRange(crewSlider,10,100);
-  paintRange(spreadSlider,500,2000);
+  paintRange(saleSlider,3500,6000);
+  paintRange(purchaseSlider,2000,5500);
  }
- crewSlider.addEventListener('input',updateCalc);
- spreadSlider.addEventListener('input',updateCalc);
+ [crewSlider,saleSlider,purchaseSlider].forEach(slider=>slider.addEventListener('input',updateCalc));
  updateCalc();
  if(!reduce){const ticker=document.querySelector('.ticker-track');ticker.addEventListener('mouseenter',()=>ticker.style.animationPlayState='paused');ticker.addEventListener('mouseleave',()=>ticker.style.animationPlayState='running');}
 })();

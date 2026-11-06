@@ -7,11 +7,15 @@
   var p=location.pathname.replace(/\/+$/,"");
   var root="/portfolio/uber-stroy/";
   var target=root+"reference-landings.html";
-  var m=p.match(/\/portfolio\/uber-stroy\/refs\/([a-z-]+)(?:\/index\.html)?$/i);
-  if(m){
-    var s=m[1].toLowerCase();
-    var allowed=["turner","dpr","mortenson","mccarthy","kiewit","clark","hensel-phelps","skillit","instawork","veryable"];
-    if(allowed.indexOf(s)>=0) target=root+"concept-"+s+".html";
+  if(p===root+"refs"||p===root+"refs/index.html"){
+    target=root+"reference-landings.html";
+  }else{
+    var m=p.match(/\/portfolio\/uber-stroy\/refs\/([a-z-]+)(?:\/index\.html)?$/i);
+    if(m){
+      var s=m[1].toLowerCase();
+      var allowed=["turner","dpr","mortenson","mccarthy","kiewit","clark","hensel-phelps","skillit","instawork","veryable"];
+      if(allowed.indexOf(s)>=0) target=root+"concept-"+s+".html";
+    }
   }
   document.getElementById("fallback").href=target;
   location.replace(target+"?from=legacy-route");

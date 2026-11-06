@@ -8,7 +8,7 @@
 <meta property="og:title" content="UBER STROY — команды в движении">
 <meta property="og:description" content="Рабочая сила. По запросу. Под контролем.">
 <meta property="og:type" content="website">
-<title>UBER STROY — Workforce Operations</title>
+<title>UBER STROY — Performance Industrial</title>
 <style>
 :root{
  --ink:#090c10;--ink2:#0e1319;--panel:#141b22;--panel2:#1b252e;--line:#2a343d;
@@ -499,9 +499,38 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 .agent-spec-link a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:720px){.agent-spec-link{align-items:flex-start;flex-direction:column;gap:8px}}
 
+
+/* Shared theme comparison bar and clarified monthly scale scenarios */
+.theme-lab{position:relative;z-index:12;background:rgba(10,14,18,.96);border-bottom:1px solid rgba(255,255,255,.09)}
+.theme-lab-inner{width:min(var(--max),calc(100% - 48px));min-height:43px;margin:auto;display:flex;align-items:center;gap:8px}
+.theme-lab-label{font-size:8px;letter-spacing:.14em;font-weight:900;color:#71808a;margin-right:5px;white-space:nowrap}
+.theme-link,.theme-compare{font-size:8px;font-weight:950;letter-spacing:.09em;padding:7px 10px;border:1px solid #36424b;color:#aeb8bf;white-space:nowrap;transition:all .2s}
+.theme-link:hover,.theme-compare:hover{color:#fff;border-color:var(--orange)}
+.theme-link.active{background:var(--orange);border-color:var(--orange);color:#15100c}
+.theme-compare{margin-left:auto;color:var(--orange);border-color:#6c3d29}
+.scale-box{min-width:0}
+.scale-assumption{font-size:10px;line-height:1.65;color:#919da5;margin-top:15px;max-width:900px}
+.scale-row{grid-template-columns:1.1fr 1fr 1.15fr 1.1fr}
+.scale-row.head{font-size:8px;line-height:1.35}
+.scale-row strong{white-space:nowrap}
+.scale-row span,.scale-row em{white-space:nowrap}
+@media(max-width:900px){
+ .theme-lab-inner{overflow-x:auto;scrollbar-width:none}
+ .theme-lab-inner::-webkit-scrollbar{display:none}
+ .theme-lab-label{display:none}
+ .theme-compare{margin-left:4px}
+ .scale-box{overflow-x:auto}
+ .scale-row{min-width:590px}
+}
+@media(max-width:720px){
+ .theme-lab-inner{width:calc(100% - 20px);gap:5px}
+ .theme-link,.theme-compare{font-size:7px;padding:7px 8px}
+ .scale-assumption{font-size:9px}
+}
+
 </style>
 </head>
-<body>
+<body data-theme="performance">
 <div class="progress" id="progress"></div>
 <header>
  <div class="wrap nav">
@@ -513,6 +542,17 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
   <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
  </div>
 </header>
+
+<div class="theme-lab theme-lab-performance" aria-label="Выбор визуальной концепции">
+ <div class="theme-lab-inner">
+  <span class="theme-lab-label">ВИЗУАЛЬНЫЕ КОНЦЕПЦИИ /</span>
+  <a class="theme-link theme-performance active" data-theme-link="performance" href="/portfolio/uber-stroy/">01&nbsp; PERFORMANCE</a>
+  <a class="theme-link theme-brandbook" data-theme-link="brandbook" href="/portfolio/uber-stroy/brandbook/">02&nbsp; BRANDBOOK</a>
+  <a class="theme-link theme-premium" data-theme-link="premium" href="/portfolio/uber-stroy/dark-premium/">03&nbsp; DARK PREMIUM</a>
+  <a class="theme-compare" href="/portfolio/uber-stroy/compare.html">СРАВНИТЬ ↗</a>
+ </div>
+</div>
+
 <main id="top">
 <section class="hero">
  <div class="wrap">
@@ -793,14 +833,16 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 
 <section class="section-dark" id="scale">
  <div class="topline"></div><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">11 / Scale thesis</div><h2 class="display">ОДНА МОДЕЛЬ.<br>МНОГО ГОРОДОВ.</h2><p class="section-intro">При той же ставке и 22 сменах в месяц рост числа подтверждённых ежедневных выходов линейно увеличивает валовый поток. Это сценарная математика, не прогноз продаж.</p></div><div class="section-tag">Scenario / base economics</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">11 / Scale thesis</div><h2 class="display">ОДНА МОДЕЛЬ.<br>МИЛЛИОН РАБОТНИКОВ.</h2><p class="section-intro">Масштабируем не количество офисов, а активный пул людей и число подтверждённых человеко-смен. Сценарии показывают, какой денежный поток даёт одна и та же операционная модель при росте сети.</p></div><div class="section-tag">Monthly active workforce / scenario</div></div>
   <div class="scale-layout">
    <div class="scale-box reveal">
-    <div class="scale-row head"><span>Людей / день</span><span>Оборот / мес.</span><span>Поставщикам / мес.</span><em>Спред / мес.</em></div>
+    <div class="scale-row head"><span>Активных работников / месяц</span><span>Оборот / месяц</span><span>Поставщикам / месяц</span><em>Валовый спред / месяц</em></div>
     <div class="scale-row"><strong>100</strong><span>₽9,35 млн</span><span>₽7,15 млн</span><em>₽2,20 млн</em></div>
-    <div class="scale-row"><strong>300</strong><span>₽28,05 млн</span><span>₽21,45 млн</span><em>₽6,60 млн</em></div>
     <div class="scale-row"><strong>1 000</strong><span>₽93,50 млн</span><span>₽71,50 млн</span><em>₽22,00 млн</em></div>
-    <p class="kicker" style="margin-top:17px">22 смены / продажа ₽4 250 / закупка ₽3 250 / спред ₽1 000</p>
+    <div class="scale-row"><strong>10 000</strong><span>₽935 млн</span><span>₽715 млн</span><em>₽220 млн</em></div>
+    <div class="scale-row"><strong>100 000</strong><span>₽9,35 млрд</span><span>₽7,15 млрд</span><em>₽2,20 млрд</em></div>
+    <div class="scale-row"><strong>1 000 000</strong><span>₽93,50 млрд</span><span>₽71,50 млрд</span><em>₽22,00 млрд</em></div>
+    <p class="kicker" style="margin-top:17px">МОДЕЛЬ: 22 СМЕНЫ НА АКТИВНОГО РАБОТНИКА / МЕСЯЦ · ПРОДАЖА ₽4 250 · ЗАКУПКА ₽3 250</p>
    </div>
    <div class="scale-box reveal delay-1">
     <div class="thesis-list">
@@ -811,6 +853,7 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
     </div>
    </div>
   </div>
+  <p class="scale-assumption">Расчётное допущение: каждый активный работник в среднем отрабатывает 22 смены в месяц. Один worker-month = 22 человеко-смены. Показатели — сценарная арифметика при неизменных ставках, не прогноз продаж, не подтверждённая мощность сети и не оценка рынка.</p>
   <p class="kicker" style="margin-top:18px">Единорог — долгосрочная венчурная гипотеза, а не текущая оценка бизнеса или обещание результата.</p>
  </div>
 </section>
@@ -826,6 +869,6 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 </section>
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">UBER <em>STROY</em> / WORKFORCE OPERATIONS</div><div>© 2026 · Нижний Новгород · Partner & investor overview</div><a href="#top">Наверх ↑</a></div></footer>
-<script src="assets/uber-stroy-app.js?v=20261106-skill-v2" defer></script>
+<script src="assets/uber-stroy-app.js?v=20261107-theme-v3" defer></script>
 </body>
 </html>

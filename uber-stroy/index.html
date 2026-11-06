@@ -246,6 +246,50 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
  .reveal{opacity:1;transform:none}
 }
+
+/* Economics calculator: readable, synchronized financial controls */
+.economics-period{font-size:10px;line-height:1.65;white-space:normal;text-align:right;color:#aeb8bf}
+.economics-period strong{font-size:11px;color:var(--paper);letter-spacing:.08em}
+.calculator .kicker,.econ-context .kicker{font-size:11px;letter-spacing:.12em}
+.calculator h3{font-size:clamp(34px,3.1vw,43px);line-height:.98}
+.calculator .sub{font-size:13px;line-height:1.6;color:#555f65;max-width:520px;margin-bottom:22px}
+.range-block{margin:20px 0 23px}
+.range-head{gap:14px;align-items:center;margin-bottom:8px}
+.range-head label{font-size:12px;line-height:1.4;font-weight:900;letter-spacing:.045em;text-transform:uppercase;max-width:75%}
+.range-head output{font-size:32px;min-width:105px;text-align:right;font-variant-numeric:tabular-nums}
+.range-block input[type=range]{margin:12px 0 8px;cursor:ew-resize}
+.range-labels{font-size:10px;font-weight:850;letter-spacing:.05em;color:#657078}
+.spread-control{padding-top:5px;border-top:1px solid #d1d1cb}
+.calc-results{margin-top:20px}
+.calc-result{min-height:95px;padding:16px}
+.calc-result span{font-size:10px;font-weight:850;line-height:1.35;letter-spacing:.045em;text-transform:uppercase;color:#68737a}
+.calc-result strong{font-size:clamp(22px,2.15vw,30px);line-height:1.15;letter-spacing:-.045em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc-result.feature strong{color:var(--orange)}
+.calc-foot{display:grid;gap:6px;font-size:11px;line-height:1.55;color:#59636a;margin-top:16px}
+.calc-foot strong{font-size:12px;color:#182027}
+.econ-context h3{font-size:clamp(34px,4vw,46px);line-height:.98}
+.econ-context>div:first-child>p{font-size:13px;line-height:1.65;max-width:520px}
+.econ-line{font-size:12px;line-height:1.45;gap:12px}
+.econ-line strong{font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.econ-line.total strong{font-size:21px}
+.economics-note{padding:18px 19px;font-size:12px;line-height:1.65}
+.economics-note strong{display:block;color:var(--orange2);font-size:11px;letter-spacing:.09em;margin-bottom:6px}
+.economics-note span{display:block}
+@media(max-width:720px){
+ .economics-period{text-align:left;margin-top:14px;font-size:10px}
+ .economics-period strong{font-size:11px}
+ .calculator .sub{font-size:12px}
+ .range-head label{font-size:11px}
+ .range-head output{font-size:29px;min-width:90px}
+ .range-labels{font-size:9px}
+ .calc-result{padding:13px;min-height:88px}
+ .calc-result span{font-size:9px}
+ .calc-result strong{font-size:clamp(18px,5.2vw,25px)}
+ .calc-foot{font-size:10px}
+ .econ-line{font-size:11px}
+ .econ-line strong{font-size:13px}
+}
+
 </style>
 </head>
 <body>
@@ -372,30 +416,37 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
 
 <section id="economics">
  <div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">05 / Unit economics</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Базовая коммерческая гипотеза на старте: цена заказчику ₽4 250, закупка у поставщика ₽3 250, целевой валовый спред ₽1 000 на человеко-смену.</p></div><div class="section-tag">22 shifts / month</div></div>
+  <div class="section-head reveal"><div><div class="eyebrow">05 / ЮНИТ-ЭКОНОМИКА</div><h2 class="display">КАЖДАЯ СМЕНА.<br>ПОНЯТНАЯ ЭКОНОМИКА.</h2><p class="section-intro">Базовая цена для заказчика — ₽4 250 за человеко-смену. Меняй объём команды и валовый спред: закупочная ставка, валовая маржа и месячные суммы пересчитаются автоматически.</p></div><div class="section-tag economics-period">РАСЧЁТНЫЙ ПЕРИОД<br><strong>22 РАБОЧИЕ СМЕНЫ В МЕСЯЦ</strong></div></div>
   <div class="econ-layout">
    <div class="calculator reveal">
-    <div class="kicker">Interactive shift calculator</div><h3>Собери свой<br>сценарий.</h3><p class="sub">Меняй число людей на смене — модель пересчитает месячный поток при 22 сменах.</p>
-    <div class="range-head"><label for="crewRange">Людей ежедневно</label><output id="crewOutput" for="crewRange">50</output></div>
-    <input id="crewRange" type="range" min="10" max="100" step="5" value="50">
-    <div class="range-labels"><span>10 человек</span><span>100 человек</span></div>
-    <div class="calc-results">
-     <div class="calc-result"><span>Оборот / месяц</span><strong id="turnover">₽4,675 млн</strong></div>
-     <div class="calc-result"><span>Поставщикам</span><strong id="supplierPay">₽3,575 млн</strong></div>
-     <div class="calc-result feature"><span>Валовый спред / месяц</span><strong id="grossSpread">₽1,100 млн</strong></div>
-     <div class="calc-result"><span>Спред / человеко-смена</span><strong>₽1 000</strong></div>
+    <div class="kicker">ИНТЕРАКТИВНАЯ МОДЕЛЬ СМЕНЫ</div><h3>СОБЕРИ СВОЙ<br>СЦЕНАРИЙ.</h3><p class="sub">Выбери количество людей на ежедневном выходе и спред на одну человеко-смену. Все показатели ниже обновляются сразу.</p>
+    <div class="range-block">
+     <div class="range-head"><label for="crewRange">Людей на ежедневном выходе</label><output id="crewOutput" for="crewRange">50</output></div>
+     <input id="crewRange" type="range" min="10" max="100" step="5" value="50" aria-label="Количество людей на ежедневном выходе">
+     <div class="range-labels"><span>10 ЧЕЛОВЕК</span><span>100 ЧЕЛОВЕК</span></div>
     </div>
-    <div class="calc-foot">Формула: люди × 22 смены × ставка. Цена — ₽4 250; закупка — ₽3 250.</div>
+    <div class="range-block spread-control">
+     <div class="range-head"><label for="spreadRange">Валовый спред на человеко-смену</label><output id="spreadOutput" for="spreadRange">₽1 000</output></div>
+     <input id="spreadRange" type="range" min="500" max="2000" step="100" value="1000" aria-label="Валовый спред на одну человеко-смену">
+     <div class="range-labels"><span>₽500</span><span>₽2 000</span></div>
+    </div>
+    <div class="calc-results">
+     <div class="calc-result"><span>Оборот за месяц</span><strong id="turnover">₽4 675 000</strong></div>
+     <div class="calc-result"><span>Выплаты поставщикам за месяц</span><strong id="supplierPay">₽3 575 000</strong></div>
+     <div class="calc-result feature"><span>Валовый спред за месяц</span><strong id="grossSpread">₽1 100 000</strong></div>
+     <div class="calc-result"><span>Спред на одну человеко-смену</span><strong id="perShiftSpread">₽1 000</strong></div>
+    </div>
+    <div class="calc-foot"><strong id="monthlyShifts">1 100 человеко-смен в месяц</strong><span>Формула: люди × 22 рабочие смены. Одна человеко-смена — один человек на одной рабочей смене; её продолжительность определяется договором.</span></div>
    </div>
    <div class="econ-context reveal delay-1">
-    <div><div class="kicker">Base case / per worker shift</div><h3>₽1 000<br><span class="orange">GROSS SPREAD</span></h3><p>Валовый спред — до налогов и прямых/операционных затрат. Это не чистая прибыль и не EBITDA.</p></div>
+    <div><div class="kicker">РАСЧЁТ НА ОДНУ ЧЕЛОВЕКО-СМЕНУ</div><h3 id="spreadHeadline">₽1 000<br><span class="orange">ВАЛОВЫЙ СПРЕД</span></h3><p>Валовый спред — разница между ценой для заказчика и закупочной ставкой поставщика до вычета расходов компании.</p></div>
     <div class="econ-table">
-     <div class="econ-line"><span>Цена заказчику</span><strong>₽4 250</strong></div>
-     <div class="econ-line"><span>Закупка у поставщика</span><strong>₽3 250</strong></div>
-     <div class="econ-line"><span>Валовая маржа</span><strong>23,5%</strong></div>
-     <div class="econ-line total"><span>Спред на смену</span><strong>₽1 000</strong></div>
+     <div class="econ-line"><span>Цена для заказчика</span><strong id="unitSale">₽4 250</strong></div>
+     <div class="econ-line"><span>Закупка у поставщика</span><strong id="unitCost">₽3 250</strong></div>
+     <div class="econ-line"><span>Валовая маржа от цены продажи</span><strong id="unitMargin">23,5%</strong></div>
+     <div class="econ-line total"><span>Валовый спред на смену</span><strong id="unitSpread">₽1 000</strong></div>
     </div>
-    <div class="note">Не включены налоги, транспорт, питание, СИЗ, координаторы, замены, страхование, юристы, банковские расходы, стоимость оборотного капитала и плохие долги. Длительность смены фиксируется в договоре.</div>
+    <div class="note economics-note"><strong>ЧТО НЕ ВЫЧТЕНО ИЗ СПРЕДА</strong><span>Налоги, координация, транспорт, питание, СИЗ, замены, страхование, юридические и банковские расходы, финансирование кассового разрыва и потери от неоплаты или непринятой смены. Поэтому валовый спред — не чистая прибыль и не EBITDA.</span></div>
    </div>
   </div>
  </div>
@@ -480,11 +531,46 @@ footer{padding:24px 0;border-top:1px solid #27323a;color:#74808a;font-size:9px}
  else{revealEls.forEach(el=>el.classList.add('visible'));}
  const bars=document.querySelectorAll('[data-width]');
  if('IntersectionObserver' in window){const barObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.width=entry.target.dataset.width;barObserver.unobserve(entry.target);}}),{threshold:.4});bars.forEach(b=>barObserver.observe(b));}else{bars.forEach(b=>b.style.width=b.dataset.width);}
- const slider=document.getElementById('crewRange');
- const output=document.getElementById('crewOutput');
- const fmt=n=>'₽'+Math.round(n).toLocaleString('ru-RU');
- function updateCalc(){const people=Number(slider.value);const turnover=people*4250*22;const suppliers=people*3250*22;const spread=people*1000*22;output.value=String(people);output.textContent=String(people);document.getElementById('turnover').textContent=fmt(turnover);document.getElementById('supplierPay').textContent=fmt(suppliers);document.getElementById('grossSpread').textContent=fmt(spread);slider.style.background='linear-gradient(90deg,#ff5a1f '+((people-10)/90*100)+'%,#c7c9c6 '+((people-10)/90*100)+'%)';}
- slider.addEventListener('input',updateCalc);updateCalc();
+ const crewSlider=document.getElementById('crewRange');
+ const crewOutput=document.getElementById('crewOutput');
+ const spreadSlider=document.getElementById('spreadRange');
+ const spreadOutput=document.getElementById('spreadOutput');
+ const salePrice=4250;
+ const workDays=22;
+ const money=n=>'₽'+Math.round(n).toLocaleString('ru-RU');
+ const percent=n=>(n*100).toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+ function paintRange(slider,min,max){
+  const progress=(Number(slider.value)-min)/(max-min)*100;
+  slider.style.background='linear-gradient(90deg,#ff5a1f '+progress+'%,#c7c9c6 '+progress+'%)';
+ }
+ function updateCalc(){
+  const people=Number(crewSlider.value);
+  const spreadPerShift=Number(spreadSlider.value);
+  const procurementPrice=salePrice-spreadPerShift;
+  const monthlyShifts=people*workDays;
+  const turnover=monthlyShifts*salePrice;
+  const suppliers=monthlyShifts*procurementPrice;
+  const grossSpread=monthlyShifts*spreadPerShift;
+  crewOutput.value=String(people);
+  crewOutput.textContent=String(people);
+  spreadOutput.value=money(spreadPerShift);
+  spreadOutput.textContent=money(spreadPerShift);
+  document.getElementById('turnover').textContent=money(turnover);
+  document.getElementById('supplierPay').textContent=money(suppliers);
+  document.getElementById('grossSpread').textContent=money(grossSpread);
+  document.getElementById('perShiftSpread').textContent=money(spreadPerShift);
+  document.getElementById('monthlyShifts').textContent=monthlyShifts.toLocaleString('ru-RU')+' человеко-смен в месяц';
+  document.getElementById('spreadHeadline').innerHTML=money(spreadPerShift)+'<br><span class="orange">ВАЛОВЫЙ СПРЕД</span>';
+  document.getElementById('unitSale').textContent=money(salePrice);
+  document.getElementById('unitCost').textContent=money(procurementPrice);
+  document.getElementById('unitMargin').textContent=percent(spreadPerShift/salePrice);
+  document.getElementById('unitSpread').textContent=money(spreadPerShift);
+  paintRange(crewSlider,10,100);
+  paintRange(spreadSlider,500,2000);
+ }
+ crewSlider.addEventListener('input',updateCalc);
+ spreadSlider.addEventListener('input',updateCalc);
+ updateCalc();
  if(!reduce){const ticker=document.querySelector('.ticker-track');ticker.addEventListener('mouseenter',()=>ticker.style.animationPlayState='paused');ticker.addEventListener('mouseleave',()=>ticker.style.animationPlayState='running');}
 })();
 </script>

@@ -674,6 +674,213 @@ body[data-theme="dark-premium"] .task-match-columns>div b{color:#f1f5f9}
 body[data-theme="dark-premium"] .task-match-principle>p{color:#aebbd0}
 
 
+
+/* DARK PREMIUM / portfolio-native design system */
+:root{
+ --bg:#0b1020;--panel:#111827;--panel2:#151f31;
+ --stroke:rgba(148,163,184,.14);--stroke2:rgba(96,165,250,.32);
+ --text:#f1f5f9;--muted:#94a3b8;--blue:#60a5fa;--cyan:#67e8f9;
+ --green:#34d399;--amber:#fbbf24;--red:#fb7185;--violet:#c4b5fd;
+ --ink:#0b1020;--ink2:#0f172a;--paper:#f1f5f9;--white:#fff;
+ --orange:#60a5fa;--orange2:#67e8f9;--signal:#fbbf24;
+ --line:rgba(148,163,184,.14);--max:1240px;--ease:cubic-bezier(.2,.8,.2,1);
+ --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+html{background:var(--bg);scroll-padding-top:120px}
+body{background:
+ radial-gradient(ellipse at 18% 0%,rgba(37,99,235,.16),transparent 35rem),
+ radial-gradient(ellipse at 90% 18%,rgba(103,232,249,.07),transparent 33rem),
+ linear-gradient(140deg,#0b1020,#0f172a 55%,#0b1020);
+ color:var(--text);font-family:var(--sans)}
+body:before{opacity:.25;background-size:56px 56px}
+header{height:76px;background:rgba(11,16,32,.88);border-bottom:1px solid var(--stroke);backdrop-filter:blur(20px)}
+.brand{font-size:14px;letter-spacing:.065em}
+.brand-mark{background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(103,232,249,.1));border:1px solid var(--stroke2);border-radius:12px;color:var(--cyan);box-shadow:0 0 28px rgba(59,130,246,.12);transform:none}
+.brand-name em{color:var(--blue)}
+.nav-links{font-size:11px;color:#cbd5e1}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-cta,.button{background:linear-gradient(135deg,#2563eb,#1d4ed8);border:1px solid rgba(96,165,250,.45);border-radius:10px;color:#fff;text-transform:none;letter-spacing:0;box-shadow:0 8px 24px rgba(37,99,235,.22)}
+.nav-cta:hover,.button:hover{box-shadow:0 14px 32px rgba(37,99,235,.3)}
+.button.ghost{background:rgba(15,23,42,.55);border:1px solid var(--stroke2);color:var(--text)}
+.eyebrow,.kicker{color:var(--cyan)}
+.eyebrow:before{background:var(--blue)}
+.hero{padding:64px 0 46px;min-height:700px}
+.hero h1{font-family:var(--sans);font-size:clamp(54px,6.4vw,88px);font-weight:820;letter-spacing:-.07em;text-transform:none;line-height:.94}
+.hero h1 .outline-word{-webkit-text-stroke:1.25px #cbd5e1;color:transparent}
+.hero h1 .orange-word{color:var(--cyan)}
+.hero-copy{color:#cbd5e1;font-size:15px;line-height:1.75}
+.hero-meta{color:#94a3b8}
+.live-dot{background:var(--green);box-shadow:0 0 0 5px rgba(52,211,153,.13)}
+.hero-stage{min-height:490px}
+.hero-stage:before{display:none}
+.hero-stage:after{display:none}
+.hero-stage-photo{display:block;border:1px solid var(--stroke2);border-radius:22px;overflow:hidden;min-height:470px;background:#101827;box-shadow:0 30px 90px #0008}
+.hero-photo-main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.04)}
+.hero-photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,22,.1),rgba(7,12,22,.15) 35%,rgba(7,12,22,.94) 100%),linear-gradient(90deg,rgba(7,12,22,.35),transparent 75%)}
+.hero-photo-topline{position:absolute;top:17px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between;gap:10px;font:9px var(--mono);letter-spacing:.12em;color:#e2e8f0}
+.photo-live{display:flex;align-items:center;gap:7px;border:1px solid rgba(52,211,153,.35);background:rgba(11,16,32,.72);padding:7px 10px;color:#baf6d8}
+.photo-live i,.hero-worker-card span i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 9px var(--green)}
+.hero-photo-caption{position:absolute;left:27px;bottom:30px;display:flex;flex-direction:column;gap:9px;max-width:340px}
+.photo-index{font:9px var(--mono);letter-spacing:.15em;color:var(--cyan)}
+.hero-photo-caption strong{font:850 clamp(38px,5vw,60px)/.9 var(--sans);letter-spacing:-.065em;color:#fff}
+.hero-photo-caption strong em{font-style:normal;color:var(--cyan)}
+.hero-photo-caption>span:last-child{font-size:10px;color:#cbd5e1;max-width:280px;line-height:1.5}
+.hero-worker-card{position:absolute;right:17px;bottom:22px;width:180px;padding:8px;background:rgba(15,23,42,.88);border:1px solid rgba(148,163,184,.25);border-radius:13px;backdrop-filter:blur(16px);box-shadow:0 18px 45px #0008}
+.hero-worker-card img{display:block;width:100%;height:112px;object-fit:cover;object-position:center 28%;border-radius:8px;filter:saturate(.85)}
+.hero-worker-card div{display:grid;gap:5px;padding:8px 2px 3px}
+.hero-worker-card small{font:7px var(--mono);letter-spacing:.1em;color:#94a3b8}
+.hero-worker-card b{font-size:10px;color:#f1f5f9}
+.hero-worker-card span{display:flex;align-items:center;gap:6px;font:7px var(--mono);color:var(--green)}
+.hero-photo-count{position:absolute;right:18px;top:75px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;color:#dbeafe}
+.hero-photo-count b{font:900 35px/1 var(--sans);letter-spacing:-.06em}
+.hero-photo-count span{font:7px var(--mono);letter-spacing:.12em;color:#bfdbfe}
+.hero-bottom{border-color:var(--stroke);color:#94a3b8}
+.hero-bottom strong{color:#e2e8f0}
+.ticker{background:linear-gradient(90deg,#1d4ed8,#2563eb,#0891b2);color:white;border:0}
+.section-dark{background:rgba(17,24,39,.64);border-block-color:var(--stroke)}
+.section-intro{color:#aebbd0}
+.section-tag{color:#7d8ba3}
+.card,.market-panel,.scale-box,.analog,.phase,.pain,.rail-step,.offer,.loop-step,.agent-card,.match-results,.voice-panel{
+ background:linear-gradient(145deg,rgba(21,31,49,.94),rgba(15,23,42,.88));
+ border:1px solid var(--stroke);border-radius:15px;
+ box-shadow:0 0 0 1px rgba(96,165,250,.025),0 14px 40px rgba(0,0,0,.22);
+}
+.card:hover,.analog:hover,.agent-card:hover,.offer:hover,.pain:hover{border-color:var(--stroke2);box-shadow:0 0 0 1px rgba(96,165,250,.1),0 18px 44px rgba(0,0,0,.32)}
+.card h3,.offer h3,.loop-step h3,.agent-card h3,.pain h3,.rail-step h3,.analog h3{color:#f1f5f9}
+.card p,.offer p,.loop-step p,.agent-card p,.pain p,.rail-step p,.analog p{color:#aebbd0}
+.problem-lead{background:linear-gradient(145deg,#142c4f,#111827);color:#f1f5f9;border:1px solid var(--stroke2);border-radius:15px}
+.problem-lead .kicker{color:var(--cyan)}.problem-lead p{color:#cbd5e1}
+.problem-lead:after{border-color:var(--blue)}
+.pain{background:rgba(21,31,49,.8)}
+.solution-rail{background:rgba(96,165,250,.13);border-color:var(--stroke)}
+.rail-step{background:rgba(15,23,42,.92)}
+.rail-step .n{color:var(--blue)}
+.rail-step:after{background:var(--cyan)}
+.offer .kicker{color:var(--cyan)}
+.industry{background:rgba(21,31,49,.72);border-color:var(--stroke);color:#cbd5e1;border-radius:8px}
+.industry:hover{background:#1e3a5f;border-color:var(--blue)}
+.market-panel h3{color:#dce7f5}
+.stats-grid{background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.14)}
+.stat{background:#111827;color:#f1f5f9}
+.stat span{color:#aebbd0}.stat small{color:var(--cyan)}
+.stat:after{border-color:rgba(96,165,250,.2)}
+.bar-track{background:#273449}.bar-track i{background:linear-gradient(90deg,#2563eb,#67e8f9)}
+.supply-stat{background:linear-gradient(140deg,#151f31,#0f172a);border-color:var(--stroke);border-radius:14px}
+.supply-stat strong{color:#f1f5f9}.supply-stat.warning{background:linear-gradient(145deg,#2a2318,#141a28);border-color:rgba(251,191,36,.28)}
+.supply-stat.warning strong{color:var(--amber)}
+.calculator{background:linear-gradient(145deg,#f8fafc,#e2e8f0);border-radius:15px;box-shadow:0 18px 55px rgba(0,0,0,.25)}
+.calculator .kicker{color:#1d4ed8}
+.calculator h3{color:#0f172a}
+.calculator .sub{color:#475569}
+.range-head label{color:#1e293b}
+.range-head output{color:#2563eb}
+.calc-result{background:#f1f5f9}.calc-result span{color:#475569}.calc-result strong{color:#0f172a}
+.calc-result.feature{background:#0f172a}.calc-result.feature span{color:#bfdbfe}.calc-result.feature strong{color:#67e8f9}
+.calc-foot,.calc-foot strong{color:#475569}
+.econ-context{background:linear-gradient(145deg,rgba(21,31,49,.96),rgba(15,23,42,.94));border:1px solid var(--stroke);border-radius:15px}
+.econ-context h3{color:#f1f5f9}.econ-context h3 .orange{color:var(--cyan)}
+.econ-line{border-color:var(--stroke);color:#aebbd0}.econ-line strong{color:#f1f5f9}.econ-line.total strong{color:var(--cyan)}
+.economics-note{background:rgba(251,191,36,.06);border-color:rgba(251,191,36,.2);border-left-color:var(--amber);color:#cbd5e1}
+.economics-note strong{color:var(--amber)}
+.analog{background:linear-gradient(145deg,#151f31,#101827)}
+.analog .year,.analog p{color:#9eacc0}.analog .descriptor{color:#dce7f5}
+.analog .metric{color:var(--cyan)}
+.phase{background:linear-gradient(145deg,#151f31,#111827)}
+.phase:first-child{background:linear-gradient(145deg,#142e50,#111827);border-color:var(--stroke2)}
+.phase .period{color:var(--cyan)}.phase ul{color:#aebbd0}
+.scale-box{background:linear-gradient(145deg,rgba(21,31,49,.94),rgba(15,23,42,.9));border-color:var(--stroke)}
+.scale-row{border-color:var(--stroke)}.scale-row.head{color:#94a3b8}
+.scale-row strong{color:#f1f5f9}.scale-row span{color:#cbd5e1}.scale-row em{color:var(--cyan)}
+.scale-assumption{color:#94a3b8}
+.thesis-item i{color:var(--cyan);border-color:rgba(96,165,250,.3)}
+.final-cta{background:linear-gradient(135deg,#1d4ed8,#1e40af 55%,#0e7490);color:#fff;border:1px solid rgba(147,197,253,.35);border-radius:18px}
+.final-cta:after{border-color:rgba(255,255,255,.2);box-shadow:0 0 0 50px rgba(255,255,255,.04),0 0 0 100px rgba(255,255,255,.025)}
+.final-cta .eyebrow{color:#bfdbfe}.final-cta .eyebrow:before{background:#bfdbfe}
+.final-cta h2{color:#fff}.final-cta p{color:#dbeafe}
+.final-cta .button{background:#0f172a;color:#fff;border-color:rgba(255,255,255,.2)}
+.theme-lab{background:rgba(11,16,32,.96);border-color:var(--stroke)}
+.theme-lab-label{color:#94a3b8}.theme-link{border-color:var(--stroke);color:#cbd5e1}
+.theme-link:hover,.theme-compare:hover{border-color:var(--blue)}
+.theme-link.active{background:linear-gradient(135deg,#2563eb,#1d4ed8);border-color:#60a5fa;color:#fff}
+.theme-compare{color:var(--cyan);border-color:rgba(103,232,249,.35)}
+.profile-panel{background:#f1f5f9;color:#111827;border-radius:15px}
+.voice-panel{background:linear-gradient(145deg,#111827,#0f172a);border-color:var(--stroke)}
+.voice-panel:after{border-color:rgba(96,165,250,.22);box-shadow:0 0 0 32px rgba(96,165,250,.035),0 0 0 64px rgba(96,165,250,.02)}
+.voice-time,.demo-stamp,.request-live,.rank-label{color:var(--cyan);border-color:rgba(96,165,250,.3)}
+.voice-mic{background:linear-gradient(135deg,#2563eb,#0891b2);color:#fff;box-shadow:0 0 0 10px rgba(96,165,250,.12),0 0 40px rgba(37,99,235,.4)}
+.voice-wave i{background:var(--cyan)}
+.request-live{background:rgba(96,165,250,.08)}
+.request-tags span{border-color:rgba(96,165,250,.3)}
+.request-rule{border-color:rgba(96,165,250,.25)}
+.match-results{background:linear-gradient(145deg,#111827,#0f172a)}
+.match-results-head .kicker{color:var(--cyan)}
+.candidate-card{background:rgba(21,31,49,.8);border-color:var(--stroke)}
+.candidate-card:hover{border-color:var(--stroke2)}
+.match-score b{color:var(--cyan)}
+.candidate-skills .matched{color:#a7f3d0;border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.08)}
+.candidate-skills .supervised{color:#fde68a;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.07)}
+.candidate-skills .self-reported{color:#c4b5fd;border-color:rgba(196,181,253,.3);background:rgba(196,181,253,.07)}
+.match-logic{background:rgba(21,31,49,.72);border-color:var(--stroke)}
+.match-logic-mark{color:var(--cyan)}
+.loop-step{background:#111827}
+.loop-step:hover{background:#17243a}
+.loop-icon{background:rgba(96,165,250,.1);border-color:rgba(96,165,250,.28);color:var(--cyan);border-radius:10px}
+.loop-step small{color:var(--cyan)}
+.agent-card{background:rgba(21,31,49,.78)}
+.agent-card>span{color:var(--cyan)}
+.skill-principle{background:rgba(21,31,49,.9);border-color:var(--stroke2);border-radius:13px}
+.principle-icon{background:linear-gradient(135deg,#2563eb,#0891b2);color:#fff;border-radius:10px}
+.task-ribbon{background:rgba(17,24,39,.88);border-block-color:var(--stroke)}
+.task-ribbon-label{color:var(--cyan)}
+.task-step small{color:#94a3b8}.task-step b{color:#f1f5f9}
+.task-ribbon-flow>i{color:var(--cyan)}
+.task-step-result{border-color:var(--blue)}
+.task-match-principle{background:linear-gradient(130deg,#151f31,#111827);border-color:var(--stroke2);border-radius:14px}
+.task-match-heading strong{color:#f1f5f9}
+.task-match-columns{background:#0f172a;border-color:var(--stroke)}
+.task-match-columns>div span{color:#94a3b8}
+.task-match-columns>div b{color:#f1f5f9}
+.task-match-principle>p{color:#aebbd0}
+.agent-spec-link{background:rgba(21,31,49,.72);border-color:var(--stroke);border-radius:10px}
+.agent-spec-link span{color:#94a3b8}.agent-spec-link a{color:var(--cyan)}
+.sources{color:#94a3b8}.sources a{color:#cbd5e1}
+footer{background:rgba(11,16,32,.76);border-color:var(--stroke)}
+.footer-brand{color:#f1f5f9}.footer-brand em{color:var(--cyan)}
+.theme-lab-label{color:#94a3b8}
+.theme-link,.theme-compare{font-family:var(--mono)}
+.task-ribbon{padding-top:19px;padding-bottom:19px}
+.task-match-heading .kicker{color:var(--cyan)}
+.skill-section .section-head .eyebrow{color:var(--cyan)}
+/* real crew imagery */
+.human-proof{display:grid;grid-template-columns:1.35fr .8fr .8fr;gap:12px;margin:18px auto 0}
+.human-proof-card{position:relative;min-height:210px;border:1px solid var(--stroke);border-radius:14px;overflow:hidden;background:#111827}
+.human-proof-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.04);transition:transform .7s var(--ease)}
+.human-proof-card:hover img{transform:scale(1.045)}
+.human-proof-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(5,10,20,.85))}
+.human-proof-caption{position:absolute;z-index:1;left:15px;bottom:14px;right:15px;display:grid;gap:5px}
+.human-proof-caption small{font:8px var(--mono);letter-spacing:.12em;color:var(--cyan)}
+.human-proof-caption strong{font-size:14px;line-height:1.2;color:#fff}
+.hero-stage-photo{min-height:500px}
+.photo-live i{background:var(--green);box-shadow:0 0 9px var(--green)}
+.hero-photo-caption strong em{color:var(--cyan)}
+.hero-worker-card{border-color:rgba(96,165,250,.32);background:rgba(11,16,32,.88)}
+.hero-worker-card span{color:var(--green)}
+.profile-photo{width:44px;height:44px;flex:0 0 44px;object-fit:cover;object-position:center 25%;border-radius:12px;border:1px solid #cbd5e1}
+.worker-id .worker-avatar{background:#1e3a8a;color:#fff;border-radius:10px}
+.profile-panel .demo-stamp{color:#1d4ed8;border-color:#93c5fd}
+.photo-credit{font-size:8px;color:#94a3b8;margin-top:7px}
+@media(max-width:1000px){.human-proof{grid-template-columns:1fr 1fr}.human-proof-card:first-child{grid-column:1/-1}}
+@media(max-width:720px){
+ .hero{padding-top:42px}.hero-stage-photo{min-height:440px;margin-top:12px}
+ .hero-photo-caption{left:17px;bottom:22px}.hero-photo-caption strong{font-size:42px}
+ .hero-worker-card{width:142px;right:9px;bottom:10px}.hero-worker-card img{height:82px}
+ .hero-photo-count{top:68px;right:13px}
+ .human-proof{grid-template-columns:1fr 1fr;gap:8px}
+ .human-proof-card{min-height:150px}
+ .human-proof-card:first-child{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){.human-proof-card img{transition:none}}
+
 </style>
 </head>
 <body data-theme="dark-premium">
@@ -695,7 +902,7 @@ body[data-theme="dark-premium"] .task-match-principle>p{color:#aebbd0}
   <a class="theme-link theme-performance" data-theme-link="performance" href="/portfolio/uber-stroy/">01&nbsp; PERFORMANCE</a>
   <a class="theme-link theme-brandbook" data-theme-link="brandbook" href="/portfolio/uber-stroy/brandbook/">02&nbsp; BRANDBOOK</a>
   <a class="theme-link theme-premium active" data-theme-link="premium" href="/portfolio/uber-stroy/dark-premium/">03&nbsp; DARK PREMIUM</a>
-  <a class="theme-compare" href="/portfolio/uber-stroy/compare.html">СРАВНИТЬ ↗</a>
+  <a class="theme-compare" href="/portfolio/uber-stroy/design-playbook.html">10 US REFERENCES ↗</a><a class="theme-compare" href="/portfolio/uber-stroy/compare.html">СРАВНИТЬ ↗</a>
  </div>
 </div>
 
@@ -710,13 +917,17 @@ body[data-theme="dark-premium"] .task-match-principle>p{color:#aebbd0}
     <div class="hero-actions"><a class="button" href="#contact">Подобрать команду под задачу <span class="arrow">↗</span></a><a class="button ghost" href="#economics">Посчитать смену <span class="arrow">↓</span></a></div>
     <div class="hero-meta"><span class="live-dot"></span><span>Пилотный регион — Нижний Новгород</span><span>·</span><span>Версия 02 / 2026</span></div>
    </div>
-   <div class="hero-stage" aria-label="Схема операционной системы UBER STROY">
-    <div class="stage-grid"></div><div class="orbit"></div>
-    <div class="core-logo"><span>US</span></div>
-    <div class="stage-card top"><div class="stage-status"><span class="label">TASK → CREW MATCH</span><span class="status-pill">SYSTEM / DEMO</span></div><strong>TASK <em>→</em> CREW</strong><small>от конкретной операции к людям с релевантным опытом</small><div class="stage-lines"><i></i><i></i><i></i></div></div>
-    <div class="stage-card bottom"><span class="label">BEFORE DISPATCH / CHECK</span><strong>RIGHT FIT <em>●</em></strong><small>опыт · доступность · допуск · подтверждение</small></div>
-    <div class="coordinates">56° 19′ 00″ N / 44° 00′ 00″ E</div>
-   </div>
+   <div class="hero-stage hero-stage-photo" aria-label="Рабочая команда на строительной площадке">
+    <img class="hero-photo-main" src="https://img.dpr.com/content/assets/pages/Careers/Team-Enjoyment-2.jpg?auto=compress%2Cformat&fit=clip&q=80&s=68b2f7629fc66a8d118b60786063414d&w=2880" alt="Команда строительных специалистов DPR на объекте" loading="eager" fetchpriority="high">
+    <div class="hero-photo-shade"></div>
+    <div class="hero-photo-topline"><span>UBER STROY / FIELD NETWORK</span><span class="photo-live"><i></i> CREW INTELLIGENCE</span></div>
+    <div class="hero-photo-caption"><span class="photo-index">01 — THE RIGHT CREW</span><strong>ОПЫТ.<br>КОМАНДА.<br><em>РЕЗУЛЬТАТ.</em></strong><span>Реальные люди. Конкретные операции. Подтверждённый опыт.</span></div>
+    <div class="hero-worker-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f4f9895e09c563a9267f110/4a3a7a51-7c7b-4f24-8198-481eab2f547e/skillit_hero_image_carft_professionals.jpg" alt="Пример изображения craft-профессионала" loading="lazy">
+      <div><small>SKILL PROFILE / VISUAL REFERENCE</small><b>CONCRETE · FORMWORK</b><span><i></i> EXPERIENCE-BASED MATCH</span></div>
+    </div>
+    <div class="hero-photo-count"><b>01</b><span>ЗАДАЧА → ОПЫТ → КОМАНДА</span></div>
+   </div>div>
   </div>
   <div class="hero-bottom"><span><strong>Не просто численность</strong> / релевантный опыт</span><span>строительство · дороги · сети · благоустройство</span><span>задача / опыт / подтверждённый выход</span></div>
  </div>
@@ -798,7 +1009,7 @@ body[data-theme="dark-premium"] .task-match-principle>p{color:#aebbd0}
    </div>
    <div class="profile-panel reveal delay-1">
     <div class="profile-top"><div><div class="kicker">WORKER PROFILE / EXAMPLE</div><h3>КАРТОЧКА ОПЫТА</h3></div><span class="demo-stamp">DEMO PROFILE</span></div>
-    <div class="worker-id"><div class="worker-avatar">СМ</div><div class="worker-name"><strong>Сергей М.</strong><span>ID · US-0417 / пример интерфейса</span></div><span class="profile-state">ЧЕРНОВИК</span></div>
+    <div class="worker-id"><img class="profile-photo" src="https://images.squarespace-cdn.com/content/v1/5f4f9895e09c563a9267f110/4a3a7a51-7c7b-4f24-8198-481eab2f547e/skillit_hero_image_carft_professionals.jpg" alt="Фото craft-профессионала в качестве визуального референса"><div class="worker-name"><strong>ПРОФИЛЬ / ДЕМО</strong><span>US-0417 · пример интерфейса, не реальный кандидат UBER STROY</span></div><span class="profile-state">ЧЕРНОВИК</span></div>
     <div class="profile-summary"><span class="kicker">ОСНОВНОЙ ОПЫТ</span><strong>Монолитные площадки · вспомогательные операции</strong><p>Демонстрационный профиль: опыт по отдельным операциям указан раздельно. Каждый навык требует подтверждения; допуски и документы проверяются отдельно.</p></div>
     <div class="skill-list">
      <div class="skill-row"><div><strong>Подача и перемещение материалов</strong><span>Материалы / ручной инструмент</span></div><span class="evidence evidence-self">СО СЛОВ</span><b>01</b></div>

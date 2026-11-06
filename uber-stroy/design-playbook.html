@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="10 американских строительных и workforce-платформ как визуальные и продуктовые референсы для UBER STROY.">
+<title>UBER STROY — US Design Playbook / 10 References</title>
+<style>
+:root{--bg:#0b1020;--panel:#111827;--panel2:#151f31;--stroke:rgba(148,163,184,.14);--stroke2:rgba(96,165,250,.32);--text:#f1f5f9;--muted:#94a3b8;--blue:#60a5fa;--cyan:#67e8f9;--green:#34d399;--amber:#fbbf24;--red:#fb7185;--violet:#c4b5fd;--mono:ui-monospace,"SFMono-Regular",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;--max:1300px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 20% 0%,rgba(37,99,235,.16),transparent 33rem),radial-gradient(ellipse at 92% 12%,rgba(103,232,249,.07),transparent 29rem),linear-gradient(140deg,#0b1020,#0f172a 55%,#0b1020);color:var(--text);font:14px/1.55 var(--sans);min-height:100vh}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--stroke)}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:900;letter-spacing:.07em}.brand-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(59,130,246,.24),rgba(103,232,249,.09));border:1px solid var(--stroke2);color:var(--cyan);font:800 14px var(--mono)}.brand em{font-style:normal;color:var(--blue)}
+.top-links{display:flex;gap:18px;align-items:center;color:#aebbd0;font-size:10px;font-weight:800}.top-links a:hover{color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 15px;border:1px solid rgba(96,165,250,.35);border-radius:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:white;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,.26)}
+.hero{padding:72px 0 45px}.eyebrow{font:10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:24px;height:2px;background:var(--blue)}
+h1{font-size:clamp(42px,6vw,82px);line-height:.96;letter-spacing:-.065em;margin:19px 0 20px;max-width:970px}.hero h1 em{font-style:normal;color:var(--cyan)}
+.lede{max-width:790px;color:#aebbd0;font-size:15px;line-height:1.75}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.metric-chip{padding:9px 12px;border:1px solid var(--stroke);border-radius:999px;background:rgba(17,24,39,.7);font:9px var(--mono);color:#cbd5e1}.metric-chip b{color:var(--cyan);font-weight:900}
+.hero-photo{height:310px;border:1px solid var(--stroke2);border-radius:18px;overflow:hidden;position:relative;margin-top:33px;background:#111827}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.86)}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,10,20,.82),rgba(5,10,20,.2) 70%),linear-gradient(0deg,rgba(5,10,20,.42),transparent 50%)}.hero-photo-copy{position:absolute;z-index:1;left:28px;bottom:24px;max-width:560px}.hero-photo-copy small{font:9px var(--mono);letter-spacing:.13em;color:var(--cyan)}.hero-photo-copy strong{display:block;font-size:clamp(25px,4vw,42px);line-height:1.05;letter-spacing:-.045em;margin-top:8px}
+.filters{position:sticky;top:72px;z-index:8;padding:14px 0;background:rgba(11,16,32,.88);backdrop-filter:blur(14px);border-block:1px solid var(--stroke);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.filter-buttons{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--stroke);background:rgba(17,24,39,.75);color:#aebbd0;border-radius:999px;padding:8px 13px;font-size:9px;font-weight:900;letter-spacing:.08em}.filter[aria-pressed="true"]{border-color:var(--blue);background:rgba(37,99,235,.18);color:#dbeafe}.filter-note{font:9px var(--mono);color:#72829a}
+.catalog{padding:28px 0 80px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.ref-card{border:1px solid var(--stroke);border-radius:17px;background:linear-gradient(145deg,rgba(21,31,49,.96),rgba(15,23,42,.91));overflow:hidden;position:relative;transition:transform .28s,border-color .28s,box-shadow .28s}
+.ref-card:hover{transform:translateY(-5px);border-color:var(--stroke2);box-shadow:0 18px 45px rgba(0,0,0,.27)}
+.ref-card[hidden]{display:none}
+.card-visual{height:255px;position:relative;overflow:hidden;background:#172033}
+.card-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.86);transition:transform .7s cubic-bezier(.2,.75,.25,1)}
+.ref-card:hover .card-visual img{transform:scale(1.04)}
+.card-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,10,20,.84),rgba(5,10,20,.02) 70%)}
+.visual-overlay{position:absolute;z-index:1;left:17px;right:17px;bottom:15px;display:flex;align-items:end;justify-content:space-between;gap:10px}
+.visual-overlay small{display:block;font:8px var(--mono);letter-spacing:.15em;color:var(--cyan);margin-bottom:6px}
+.visual-overlay strong{font-size:clamp(20px,2.4vw,29px);line-height:.98;letter-spacing:-.045em;display:block}
+.visual-index{font:900 12px var(--mono);color:#dbeafe;border:1px solid rgba(219,234,254,.35);background:rgba(11,16,32,.5);padding:8px 10px;backdrop-filter:blur(10px)}
+.card-body{padding:20px 22px 22px}
+.card-head{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.card-head h2{font-size:21px;letter-spacing:-.035em;margin:5px 0 0}
+.kind{font:8px var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(96,165,250,.25);border-radius:6px;padding:6px 8px;white-space:nowrap}
+.summary{font-size:11px;color:#b4c0cf;line-height:1.65;margin:13px 0 15px}
+.lesson{border-left:2px solid var(--blue);padding:11px 13px;background:rgba(96,165,250,.055);margin-top:9px}
+.lesson b{display:block;font:9px var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px}
+.lesson span{font-size:10px;line-height:1.55;color:#c5d0de}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.tags span{padding:5px 8px;border:1px solid var(--stroke);border-radius:6px;font:8px var(--mono);color:#92a2b9}
+.card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:15px;padding-top:14px;border-top:1px solid var(--stroke)}
+.source-note{font-size:8px;color:#788aa3;line-height:1.4}
+.visit{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);white-space:nowrap}.visit:hover{text-decoration:underline;text-underline-offset:4px}
+.card-kpi{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.card-kpi span{font-size:9px;color:#dbeafe;background:rgba(59,130,246,.1);border:1px solid rgba(96,165,250,.2);padding:5px 7px;border-radius:6px}.card-kpi strong{color:var(--green)}
+.recommendation{margin-top:23px;border:1px solid rgba(52,211,153,.25);background:linear-gradient(130deg,rgba(21,55,54,.62),rgba(17,24,39,.96));border-radius:17px;padding:25px;display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+.recommendation .eyebrow{color:var(--green)}.recommendation .eyebrow:before{background:var(--green)}
+.recommendation h2{font-size:clamp(25px,3vw,37px);line-height:1.03;letter-spacing:-.05em;margin:12px 0}
+.recommendation p{font-size:11px;color:#a9bbc6;line-height:1.7;margin:0}
+.mix{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mix-item{padding:13px;border:1px solid rgba(148,163,184,.14);background:rgba(11,16,32,.45);border-radius:10px}
+.mix-item b{display:block;font-size:11px;color:#f1f5f9;margin-bottom:6px}.mix-item span{font-size:9px;color:#9fb0c2;line-height:1.5}
+.sources{padding:25px 0 45px;color:#7f91a8;font-size:9px;line-height:1.8}.sources a{color:#a9c5e8;text-decoration:underline;text-underline-offset:3px}
+footer{border-top:1px solid var(--stroke);padding:23px 0;color:#71819a;font:9px var(--mono);letter-spacing:.04em}
+@media(max-width:900px){.cards{grid-template-columns:1fr}.recommendation{grid-template-columns:1fr}.hero-photo{height:270px}}
+@media(max-width:600px){.wrap{width:calc(100% - 28px)}.topbar{height:64px}.top-links{gap:10px}.top-links a:not(.btn){display:none}.hero{padding:48px 0 30px}h1{font-size:clamp(40px,12vw,58px)}.lede{font-size:13px}.hero-photo{height:230px}.hero-photo-copy{left:16px;right:15px;bottom:15px}.hero-photo-copy strong{font-size:25px}.filters{top:64px}.filter{padding:7px 10px;font-size:8px}.filter-note{display:none}.card-visual{height:210px}.card-body{padding:17px}.card-head h2{font-size:19px}.summary{font-size:10px}.recommendation{padding:19px}.mix{grid-template-columns:1fr}.mix-item{padding:11px}}
+</style>
+</head>
+<body>
+<header><div class="wrap topbar">
+ <a class="brand" href="/portfolio/uber-stroy/"><span class="brand-mark">US</span><span>UBER <em>STROY</em> / REFERENCE LAB</span></a>
+ <nav class="top-links"><a href="/portfolio/uber-stroy/">Базовый лендинг</a><a href="/portfolio/uber-stroy/dark-premium/">Dark Premium</a><a class="btn" href="#catalog">Смотреть 10 концепций ↘</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+ <div class="eyebrow">US DESIGN PLAYBOOK / 10 AMERICAN REFERENCES</div>
+ <h1>10 зарубежных референсов.<br><em>10 разных способов</em><br>показать силу команды.</h1>
+ <p class="lede">Подборка реальных сайтов американских строительных компаний и workforce-платформ. Здесь не просто красивые картинки: разбираем, как они показывают людей, проекты, навыки, скорость подбора и доверие — и что из каждого подхода стоит забрать в UBER STROY.</p>
+ <div class="hero-metrics"><span class="metric-chip"><b>07</b> строительных брендов</span><span class="metric-chip"><b>03</b> workforce-платформы</span><span class="metric-chip"><b>10</b> визуальных направлений</span><span class="metric-chip">Реальные команды и craft workers</span></div>
+ <div class="hero-photo">
+  <img src="https://www.henselphelps.com/wp-content/uploads/2025/03/HP-Onsite-San-Diego-Day-Two-59-edited-scaled.jpg" alt="Большая команда строительных специалистов в касках на площадке" loading="eager">
+  <div class="hero-photo-copy"><small>THE PEOPLE BEHIND THE PROJECTS</small><strong>Не показываем абстрактную рабочую силу.<br>Показываем людей, которые умеют выполнять работу.</strong></div>
+ </div>
+</div></section>
+<div class="filters"><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+ <div class="filter-buttons" role="group" aria-label="Фильтр референсов">
+  <button class="filter" data-filter="all" aria-pressed="true">ВСЕ 10</button>
+  <button class="filter" data-filter="builder" aria-pressed="false">СТРОИТЕЛИ</button>
+  <button class="filter" data-filter="platform" aria-pressed="false">WORKFORCE-ПЛАТФОРМЫ</button>
+ </div><span class="filter-note">LIVE REFERENCES / CLICK TO OPEN SOURCE</span>
+</div></div>
+<main class="catalog wrap" id="catalog">
+<div class="cards">
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://ep-turnerconstruction-prod-asdcetgubtducba3.z01.azurefd.net/thumbs/careers-labor-and-skilled-trades-what-we-offer_thumb-blocks-left-view.jpg?v=6f1eb" alt="Turner Construction skilled trades team on site" loading="lazy"><div class="visual-overlay"><div><small>01 / CINEMATIC BUILDER</small><strong>TURNER<br>CONSTRUCTION</strong></div><span class="visual-index">01</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">GENERAL CONTRACTOR</div><h2>Turner Construction</h2></div></div>
+  <p class="summary">Большой масштаб, чистая навигация и заметный вход для разных аудиторий. На отдельной странице Turner показывает labor & skilled-trade professionals — не прячет рабочих профессий за корпоративной витриной.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Крупный cinematic hero, один ясный вопрос «What do you want to build?», быстрые переходы в проекты, careers и skilled trades.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Hero с реальной бригадой в касках, крупным обещанием и двумя входами: «Заказать команду» / «Стать поставщиком».</span></div>
+  <div class="tags"><span>VIDEO HERO</span><span>REAL CREWS</span><span>DUAL AUDIENCE</span></div>
+  <div class="card-footer"><span class="source-note">Фото: Turner Construction / careers</span><a class="visit" href="https://www.turnerconstruction.com/careers/labor-and-skilled-trade-professionals" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://img.dpr.com/content/assets/pages/Careers/Team-Enjoyment-2.jpg?auto=compress%2Cformat&fit=clip&q=80&s=68b2f7629fc66a8d118b60786063414d&w=2880" alt="DPR Construction team on site" loading="lazy"><div class="visual-overlay"><div><small>02 / HUMAN-FIRST BRAND</small><strong>DPR<br>CONSTRUCTION</strong></div><span class="visual-index">02</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">GENERAL CONTRACTOR</div><h2>DPR Construction</h2></div></div>
+  <p class="summary">DPR показывает людей так же уверенно, как объекты. В коммуникации — реальные craft professionals, командность и self-perform capabilities; короткие формулировки оставляют место фотографии.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Человек крупным планом, минимум UI-шума, широкие изображения, крупная типографика и лаконичные смысловые блоки.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Показывать не стокового строителя, а живую команду в процессе: обсуждение чертежа, подача материалов, опалубка, дорожные работы.</span></div>
+  <div class="tags"><span>HUMAN PHOTOGRAPHY</span><span>MINIMAL COPY</span><span>CRAFT CULTURE</span></div>
+  <div class="card-footer"><span class="source-note">Фото: DPR Construction / careers</span><a class="visit" href="https://www.dpr.com/company/careers" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://www.mortenson.com/adobe/dynamicmedia/deliver/dm-aid--d110742f-eb83-4bfe-ac67-5dfedd07ee30/krueger-joe-and-team.jpg?preferwebp=true&quality=82" alt="Mortenson construction team united on project site" loading="lazy"><div class="visual-overlay"><div><small>03 / SECTOR STORYTELLING</small><strong>MORTENSON</strong></div><span class="visual-index">03</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">BUILDER + DEVELOPER</div><h2>Mortenson</h2></div></div>
+  <p class="summary">Сегментация по вертикалям — sports, healthcare, data centers, renewables. Компания подкрепляет историю команды конкретными цифрами: 2025 revenue $11B, 12 региональных офисов, 10 000+ team members.</p>
+  <div class="card-kpi"><span><strong>$11B</strong> revenue 2025</span><span><strong>10,000+</strong> team members</span><span><strong>12</strong> US offices</span></div>
+  <div class="lesson"><b>Дизайн-механика</b><span>Сильный брендовый тезис + отраслевые мини-лендинги + KPI доверия в правильном месте.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Отдельные визуальные направления для монолита, дорог, инженерных сетей, благоустройства и промышленных работ.</span></div>
+  <div class="tags"><span>VERTICAL LANDING PAGES</span><span>METRICS</span><span>EDITORIAL</span></div>
+  <div class="card-footer"><span class="source-note">Метрики: Mortenson careers / 2025</span><a class="visit" href="https://www.mortenson.com/careers" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://www.prosci.com/hs-fs/hubfs/Website_English/3.images/McCarthy%20Case%20Study/McCarthy%20Case%20Study%20image%204.webp?height=425&name=McCarthy+Case+Study+image+4.webp&width=639" alt="McCarthy craft workers in safety briefing" loading="lazy"><div class="visual-overlay"><div><small>04 / CULTURE AS PROOF</small><strong>McCARTHY<br>BUILDING COMPANIES</strong></div><span class="visual-index">04</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">EMPLOYEE-OWNED BUILDER</div><h2>McCarthy Building Companies</h2></div></div>
+  <p class="summary">Компания строит позиционирование вокруг 100% employee-owned модели: ответственность, качество, забота о проекте и людях. Разводит Buildings, Infrastructure и Expertise, а craft workforce не прячет за общим разделом careers.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Один сильный факт о компании превращён в повторяющийся брендовый аргумент; реальные safety huddles и команды добавляют доверия.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Повторять один продуктовый тезис по всему сайту: «правильные люди под конкретную работу» — от заявки до карточки кандидата.</span></div>
+  <div class="tags"><span>TRUST</span><span>PEOPLE & QUALITY</span><span>PROJECT PROOF</span></div>
+  <div class="card-footer"><span class="source-note">Фото: McCarthy case story / Prosci</span><a class="visit" href="https://www.mccarthy.com/" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://join.kiewit.com/wp-content/uploads/2024/07/equipment.jpg" alt="Kiewit employees inspecting a construction site under a crane" loading="lazy"><div class="visual-overlay"><div><small>05 / INFRASTRUCTURE AUTHORITY</small><strong>KIEWIT</strong></div><span class="visual-index">05</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">INFRASTRUCTURE & ENGINEERING</div><h2>Kiewit</h2></div></div>
+  <p class="summary">Сайт показывает масштаб через понятную карту рынков: transportation, bridges, roads, tunnels, water, energy, industrial. Отдельно разведены staff openings и craft openings — важная деталь для оператора рабочих команд.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Инфраструктура как большой визуальный мир: тяжёлая техника, масштаб площадки, проектные proof points и понятные отраслевые маршруты.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Большие реальные фотографии объектов и отдельный каталог операций, чтобы заказчик сразу узнавал свой тип работ.</span></div>
+  <div class="tags"><span>INFRASTRUCTURE</span><span>PROJECT SCALE</span><span>CRAFT ROUTE</span></div>
+  <div class="card-footer"><span class="source-note">Фото: Kiewit / careers</span><a class="visit" href="https://www.kiewit.com/careers/" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://www.clarkconstruction.com/sites/default/files/2025-05/Clark_Jobsite_Photos_3.28.2023-2022_jpg.png" alt="Clark Construction craft team on site" loading="lazy"><div class="visual-overlay"><div><small>06 / PROJECT-FIRST PORTFOLIO</small><strong>CLARK<br>CONSTRUCTION</strong></div><span class="visual-index">06</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">GENERAL CONTRACTOR</div><h2>Clark Construction</h2></div></div>
+  <p class="summary">Впечатляющая лента реализованных проектов, а рядом отдельный маршрут Business With Us для trade contractors и suppliers. Это не только витрина заказчикам — это система привлечения партнёров.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Большие проектные карточки с именем объекта, короткой историей и быстрым входом в детали; отдельная точка входа для подрядчиков.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Раздел «Объекты и заказчики» плюс отдельный «Стать поставщиком» с простой квалификацией бригады.</span></div>
+  <div class="tags"><span>PROJECT CARDS</span><span>TRADE PARTNERS</span><span>B2B CONVERSION</span></div>
+  <div class="card-footer"><span class="source-note">Фото: Clark Construction / careers</span><a class="visit" href="https://www.clarkconstruction.com/business-with-us" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="builder">
+ <div class="card-visual"><img src="https://www.henselphelps.com/wp-content/uploads/2025/03/HP-Onsite-San-Diego-Day-Two-59-edited-scaled.jpg" alt="Large Hensel Phelps field crew on construction site" loading="lazy"><div class="visual-overlay"><div><small>07 / CRAFT CAREER PATHS</small><strong>HENSEL<br>PHELPS</strong></div><span class="visual-index">07</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">BUILDER / CRAFT WORKFORCE</div><h2>Hensel Phelps</h2></div></div>
+  <p class="summary">Рабочие профессии показаны как отдельный и важный путь. На career page раскрыты craft, обучение, safety и реальные траектории; опубликованы показатели: средний стаж 13 лет, 3 600+ salaried employees, 1 400+ craft employees.</p>
+  <div class="card-kpi"><span><strong>13 лет</strong> средний стаж</span><span><strong>1 400+</strong> craft</span><span><strong>3 600+</strong> salaried</span></div>
+  <div class="lesson"><b>Дизайн-механика</b><span>Большие групповые фото, реальные лица, отдельные craft pathways и факты, которые дают ощущение устойчивого работодателя.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Каталог бригад и людей с лицами, опытом, специализациями и прозрачным уровнем подтверждения.</span></div>
+  <div class="tags"><span>PEOPLE STORY</span><span>CRAFT PATHWAYS</span><span>SAFETY</span></div>
+  <div class="card-footer"><span class="source-note">Фото и показатели: Hensel Phelps / careers</span><a class="visit" href="https://www.henselphelps.com/careers/" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="platform">
+ <div class="card-visual"><img src="https://images.squarespace-cdn.com/content/v1/5f4f9895e09c563a9267f110/4a3a7a51-7c7b-4f24-8198-481eab2f547e/skillit_hero_image_carft_professionals.jpg" alt="Skillit craft professional profile portrait reference" loading="lazy"><div class="visual-overlay"><div><small>08 / SKILL DATA & MATCHING</small><strong>SKILLIT</strong></div><span class="visual-index">08</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">CONSTRUCTION TALENT PLATFORM</div><h2>Skillit</h2></div></div>
+  <p class="summary">Самый близкий продуктовый ориентир для Skill Intelligence: профиль craft worker, навыки, опыт, история работы, сертификаты и craft-specific search. На официальном сайте указаны 52% крупнейших строителей, использующих Skillit, и 72 часа от создания профиля до интервью в среднем.</p>
+  <div class="card-kpi"><span><strong>52%</strong> крупнейших builders</span><span><strong>72 ч</strong> до интервью</span></div>
+  <div class="lesson"><b>Дизайн-механика</b><span>Человек — центр интерфейса: фото, профессия, навыки, опыт, документы и карточка кандидата. Matching объясняется через данные профиля.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Сделать профиль работника главным цифровым активом: не «разнорабочий», а список конкретных операций и уровень самостоятельности.</span></div>
+  <div class="tags"><span>WORKER PROFILE</span><span>AI MATCH</span><span>CRAFT SEARCH</span></div>
+  <div class="card-footer"><span class="source-note">Фото и метрики: Skillit official</span><a class="visit" href="https://skillit.com/craft-workers" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="platform">
+ <div class="card-visual"><img src="https://assets-global.website-files.com/640a2dd38b26e6890f8956a0/6594bb6aca54665411924cb8_AdobeStock_503961979.jpeg" alt="Instawork warehouse worker portrait" loading="lazy"><div class="visual-overlay"><div><small>09 / SHIFT MARKETPLACE</small><strong>INSTAWORK</strong></div><span class="visual-index">09</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">ON-DEMAND STAFFING PLATFORM</div><h2>Instawork</h2></div></div>
+  <p class="summary">Платформа хорошо показывает простую механику: заказчик публикует смену и требования к навыкам/опыту, получает matched workers и видит профили в приложении; далее — check-in, часы и backup coverage.</p>
+  <div class="lesson"><b>Дизайн-механика</b><span>Сценарий из трёх шагов: Post a shift → Get matched → Run your shift. Сильный customer flow и ясные CTA с разделением Business / Worker.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>Заявка должна начинаться не только с количества, а с операции, даты и требований к опыту; в ответ — кандидаты, профили и подтверждение выхода.</span></div>
+  <div class="tags"><span>SHIFT POSTING</span><span>PROFILE MATCH</span><span>CHECK-IN</span></div>
+  <div class="card-footer"><span class="source-note">Фото: Instawork / blog</span><a class="visit" href="https://www.instawork.com/how-it-works" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+
+<article class="ref-card" data-category="platform">
+ <div class="card-visual"><img src="https://cdn.prod.website-files.com/656f7666617c2816db7ae5c9/65a8499982a3c5e203ef25c5_Vov%20-%20Fitz.jpg" alt="Veryable on-demand operator portrait in a warehouse" loading="lazy"><div class="visual-overlay"><div><small>10 / LABOR POOL & REUSE</small><strong>VERYABLE</strong></div><span class="visual-index">10</span></div></div>
+ <div class="card-body"><div class="card-head"><div><div class="kind">ON-DEMAND LABOR MARKETPLACE</div><h2>Veryable</h2></div></div>
+  <p class="summary">Очень полезная операционная механика: компания публикует конкретную работу, выбирает людей по skills, certifications, ratings и work history, оценивает результат после смены и собирает собственный Labor Pool для повторного вызова.</p>
+  <div class="card-kpi"><span><strong>750K+</strong> vetted workers</span><span><strong>6.1</strong> bids / opportunity</span><span><strong>17.21K</strong> same-day shifts filled*</span></div>
+  <div class="lesson"><b>Дизайн-механика</b><span>Наглядный цикл: Post work → Select workers → Rate workers → Build labor pool. Видимый рейтинг и история помогают снова выбирать знакомых людей.</span></div>
+  <div class="lesson"><b>Что взять UBER STROY</b><span>После каждой смены сохранять фактически выполненные операции, оценку и подтверждение старшего. Повторные заявки должны собирать лучших под конкретную работу.</span></div>
+  <div class="tags"><span>LABOR POOL</span><span>RATINGS</span><span>REPEAT CREWS</span></div>
+  <div class="card-footer"><span class="source-note">*Показатель Veryable на сайте без указанного периода.</span><a class="visit" href="https://www.veryableops.com/about" target="_blank" rel="noopener">Открыть референс ↗</a></div>
+ </div>
+</article>
+</div>
+
+<section class="recommendation">
+ <div><div class="eyebrow">UBER STROY / RECOMMENDED DESIGN MIX</div><h2>Не копировать одного.<br>Собрать свою систему.</h2><p>Наше преимущество — объединить живую строительную айдентику с интерфейсом, который умеет объяснить, почему именно этот человек подходит к конкретной операции.</p></div>
+ <div class="mix">
+  <div class="mix-item"><b>01 / Люди и фотографии</b><span>DPR + Turner + Hensel Phelps. Реальные лица, команды, площадки, каски, инструменты.</span></div>
+  <div class="mix-item"><b>02 / Продуктовый профиль</b><span>Skillit. Карточка человека, skills, операции, подтверждения и опыт.</span></div>
+  <div class="mix-item"><b>03 / Операционный поток</b><span>Instawork + Veryable. Заявка, подбор, выход, рейтинг и повторный вызов.</span></div>
+  <div class="mix-item"><b>04 / Доверие заказчика</b><span>Turner + Clark + Mortenson. Кейсы, отраслевые направления, масштаб и доказательства.</span></div>
+  <div class="mix-item"><b>05 / Визуальный слой</b><span>Dark Premium из портфолио: navy, blue, cyan, green, data cards, тонкие границы.</span></div>
+  <div class="mix-item"><b>06 / Главный месседж</b><span>Правильные люди. Под конкретную работу. Не headcount — skill-based crew.</span></div>
+ </div>
+</section>
+
+<div class="sources">
+ <b style="color:#cbd5e1">Источники и владельцы изображений:</b>
+ <a href="https://www.turnerconstruction.com/" target="_blank" rel="noopener">Turner</a> ·
+ <a href="https://www.dpr.com/" target="_blank" rel="noopener">DPR</a> ·
+ <a href="https://www.mortenson.com/" target="_blank" rel="noopener">Mortenson</a> ·
+ <a href="https://www.mccarthy.com/" target="_blank" rel="noopener">McCarthy</a> ·
+ <a href="https://www.kiewit.com/" target="_blank" rel="noopener">Kiewit</a> ·
+ <a href="https://www.clarkconstruction.com/" target="_blank" rel="noopener">Clark</a> ·
+ <a href="https://www.henselphelps.com/" target="_blank" rel="noopener">Hensel Phelps</a> ·
+ <a href="https://skillit.com/" target="_blank" rel="noopener">Skillit</a> ·
+ <a href="https://www.instawork.com/" target="_blank" rel="noopener">Instawork</a> ·
+ <a href="https://www.veryableops.com/" target="_blank" rel="noopener">Veryable</a>.
+ <br><br>Фото показаны как визуальные референсы и остаются собственностью соответствующих правообладателей. Числа на карточках — публичные данные самих компаний; это не показатели UBER STROY. Veryable указывает 17.21K same-day shifts filled, но на странице не обозначает период этой метрики. Skillit сообщает 52% крупнейших builders и 72 часа от setup профиля до интервью. Mortenson сообщает $11B revenue за 2025 год, 12 региональных офисов в США и 10,000+ team members. Hensel Phelps сообщает средний стаж 13 лет, 3,600+ salaried и 1,400+ craft employees.
+</div>
+</main>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap"><span>UBER STROY / US DESIGN PLAYBOOK</span><span>10 REFERENCES · ONE PRODUCT DIRECTION · 2026</span><a href="#catalog" style="color:#a9c5e8">Наверх ↑</a></div></footer>
+<script>
+(function(){
+ const buttons=[...document.querySelectorAll("[data-filter]")];
+ const cards=[...document.querySelectorAll(".ref-card")];
+ buttons.forEach(button=>button.addEventListener("click",()=>{
+  const filter=button.dataset.filter;
+  buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+  cards.forEach(card=>card.hidden=filter!=="all"&&card.dataset.category!==filter);
+ }));
+})();
+</script>
+</body></html>

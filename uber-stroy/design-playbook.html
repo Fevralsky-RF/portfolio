@@ -60,6 +60,54 @@ footer{border-top:1px solid var(--stroke);padding:23px 0;color:#71819a;font:9px 
 @media(max-width:900px){.cards{grid-template-columns:1fr}.recommendation{grid-template-columns:1fr}.hero-photo{height:270px}}
 @media(max-width:600px){.wrap{width:calc(100% - 28px)}.topbar{height:64px}.top-links{gap:10px}.top-links a:not(.btn){display:none}.hero{padding:48px 0 30px}h1{font-size:clamp(40px,12vw,58px)}.lede{font-size:13px}.hero-photo{height:230px}.hero-photo-copy{left:16px;right:15px;bottom:15px}.hero-photo-copy strong{font-size:25px}.filters{top:64px}.filter{padding:7px 10px;font-size:8px}.filter-note{display:none}.card-visual{height:210px}.card-body{padding:17px}.card-head h2{font-size:19px}.summary{font-size:10px}.recommendation{padding:19px}.mix{grid-template-columns:1fr}.mix-item{padding:11px}}
 </style>
+<style id="uber-stroy-playbook-mobile-first">
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:320px;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 32px);max-width:100%}
+ .topbar{height:auto;min-height:64px;padding:9px 0;gap:10px}
+ .brand{font-size:12px;min-width:0}
+ .brand-mark{width:34px;height:34px;flex:0 0 34px}
+ .top-links{gap:8px}.top-links .btn{min-height:44px;padding:0 11px;font-size:8px}
+ .hero{padding:45px 0 28px}
+ h1{font-size:clamp(39px,10.8vw,58px);line-height:.98;overflow-wrap:anywhere}
+ .lede{font-size:14px;line-height:1.65}
+ .hero-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .metric-chip{min-width:0;padding:9px;font-size:8px}
+ .hero-photo{height:clamp(190px,62vw,250px);border-radius:12px}
+ .hero-photo-copy{left:15px;right:15px;bottom:15px}
+ .hero-photo-copy strong{font-size:clamp(23px,7vw,32px)}
+ .filters{top:64px;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;padding:8px 0}
+ .filters::-webkit-scrollbar{display:none}
+ .filter-buttons{display:flex;flex-wrap:nowrap;width:max-content}
+ .filter{min-height:40px;white-space:nowrap;padding:9px 12px;font-size:9px}
+ .cards,.catalog{grid-template-columns:minmax(0,1fr);gap:12px}
+ .ref-card{min-width:0}
+ .card-visual{height:clamp(180px,55vw,225px)}
+ .card-body{padding:17px}
+ .card-head{align-items:flex-start;gap:9px;flex-wrap:wrap}
+ .card-head h2{font-size:20px}
+ .summary,.lesson{font-size:12px;line-height:1.6}
+ .tags{display:flex;flex-wrap:wrap;gap:6px}
+ .tag{font-size:8px;white-space:normal}
+ .card-footer{display:flex;align-items:flex-start;flex-direction:column;gap:10px}
+ .visit{width:100%;min-height:48px;display:flex;align-items:center;justify-content:center}
+ .recommendation,.source-note{padding:18px}
+ .recommendation p,.source-note{font-size:12px;line-height:1.6}
+ .mix{grid-template-columns:minmax(0,1fr);gap:9px}
+ .mix-item{padding:13px}
+ .sources{font-size:11px;line-height:1.7;overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+ .wrap{width:calc(100% - 28px)}
+ .hero-metrics{grid-template-columns:minmax(0,1fr)}
+ .card-visual{height:180px}
+ .card-head{display:block}
+}
+</style>
 </head>
 <body>
 <header><div class="wrap topbar">

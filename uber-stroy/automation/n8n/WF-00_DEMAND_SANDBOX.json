@@ -1,0 +1,75 @@
+{
+  "name": "UBER STROY | WF-00 | Demand Sandbox",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9db8ce68-0b74-4d06-8d1a-7d14c06c2a01",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Synthetic test inputs only. No external requests, no personal data.\nconst now = new Date();\nconst iso = now.toISOString();\nconst soon = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString();\n\nreturn [\n  {\n    json: {\n      demo_only: true,\n      source_id: \"demo.official_company_site\",\n      permission_status: \"APPROVED_LIMITED\",\n      source_reliability: 10,\n      canonical_url: \"https://demo.example/careers/crew-formwork\",\n      company_name: \"ООО Демострой\",\n      company_inn: null,\n      buyer_role: \"DIRECT_EMPLOYER_OR_CONTRACTOR\",\n      title: \"Бригада монолитных работ на объект\",\n      description: \"Нужны 12 человек на подготовку опалубки, подачу материалов и вспомогательные операции на строительной площадке.\",\n      location: \"Нижний Новгород\",\n      headcount: 12,\n      start_date: soon,\n      repeatable: true,\n      site_name: \"Демо строительная площадка\",\n      published_at: iso,\n      signal_kind: \"CREW_REQUEST\"\n    }\n  },\n  {\n    json: {\n      demo_only: true,\n      source_id: \"demo.official_company_site\",\n      permission_status: \"APPROVED_LIMITED\",\n      source_reliability: 10,\n      canonical_url: \"https://demo.example/jobs/operator\",\n      company_name: \"АО ДемоПром\",\n      company_inn: null,\n      buyer_role: \"DIRECT_EMPLOYER\",\n      title: \"Оператор производственной линии\",\n      description: \"Одна штатная позиция на производстве, постоянный график.\",\n      location: \"Дзержинск\",\n      headcount: 1,\n      start_date: null,\n      repeatable: false,\n      site_name: \"Демо производственная площадка\",\n      published_at: iso,\n      signal_kind: \"SINGLE_POSITION\"\n    }\n  }\n];"
+      },
+      "id": "9db8ce68-0b74-4d06-8d1a-7d14c06c2a02",
+      "name": "Seed Synthetic Demand Signals",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Deterministic normalization and provisional Demand Heat.\n// This sandbox does not create a CRM lead or contact anyone.\nfunction daysSince(value) {\n  if (!value) return null;\n  const t = Date.parse(value);\n  if (!Number.isFinite(t)) return null;\n  return Math.max(0, (Date.now() - t) / 86400000);\n}\nfunction freshnessScore(days) {\n  if (days === null) return 0;\n  if (days <= 1) return 25;\n  if (days <= 3) return 18;\n  if (days <= 7) return 10;\n  return 0;\n}\nfunction urgencyScore(value) {\n  if (!value) return 0;\n  const days = (Date.parse(value) - Date.now()) / 86400000;\n  if (!Number.isFinite(days)) return 0;\n  if (days >= 0 && days <= 3) return 20;\n  if (days <= 7 && days >= 0) return 15;\n  if (days <= 14 && days >= 0) return 8;\n  return 0;\n}\nfunction volumeScore(count) {\n  const n = Number(count);\n  if (!Number.isFinite(n) || n <= 0) return 0;\n  if (n >= 10) return 20;\n  if (n >= 5) return 16;\n  if (n >= 2) return 10;\n  return 5;\n}\nfunction canonicalize(url) {\n  try {\n    const u = new URL(url);\n    u.hash = \"\";\n    u.search = \"\";\n    return u.toString().replace(/\\/+$/, \"\");\n  } catch {\n    return String(url || \"\").trim().toLowerCase().replace(/[?#].*$/, \"\").replace(/\\/+$/, \"\");\n  }\n}\nreturn items.map(({ json }) => {\n  const j = { ...json };\n  const age = daysSince(j.published_at);\n  const score = freshnessScore(age)\n    + volumeScore(j.headcount)\n    + urgencyScore(j.start_date)\n    + (j.repeatable ? 15 : 0)\n    + ((j.location && j.site_name) ? 10 : 0)\n    + Math.min(10, Math.max(0, Number(j.source_reliability) || 0));\n  const demandType = j.signal_kind || (Number(j.headcount) >= 5 ? \"CREW_REQUEST\" : \"SINGLE_POSITION\");\n  return {\n    json: {\n      demo_only: true,\n      source_id: j.source_id,\n      source_permission: j.permission_status,\n      company_name: j.company_name || null,\n      company_inn: j.company_inn || null,\n      buyer_role: j.buyer_role || \"UNKNOWN\",\n      title: j.title || null,\n      description_summary: String(j.description || \"\").slice(0, 500),\n      canonical_url: canonicalize(j.canonical_url),\n      location: j.location || null,\n      headcount: Number(j.headcount) || null,\n      start_date: j.start_date || null,\n      demand_type: demandType,\n      demand_heat: Math.min(100, score),\n      confidence: \"DEMO_ONLY_NOT_VALIDATED\",\n      hard_stops: [],\n      review_required: true,\n      send_enabled: false,\n      dedup_key: [j.source_id, canonicalize(j.canonical_url)].join(\"|\"),\n      published_at: j.published_at || null,\n      parsed_at: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "9db8ce68-0b74-4d06-8d1a-7d14c06c2a03",
+      "name": "Normalize and Score Demand",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Seed Synthetic Demand Signals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Seed Synthetic Demand Signals": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Demand",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}

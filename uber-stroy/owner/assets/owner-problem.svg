@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#303a42"/><stop offset="1" stop-color="#080c10"/></linearGradient><linearGradient id="vest" x2="0" y2="1"><stop stop-color="#aab2b5"/><stop offset="1" stop-color="#454e55"/></linearGradient><pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#c7d0d3" stroke-opacity=".13"/></pattern></defs>
+<rect width="1100" height="760" fill="url(#bg)"/><g stroke="#8b979e" stroke-width="9" fill="none" opacity=".35"><path d="M560 120V650M560 180H1040M650 180V650M830 180V650M1010 180V650M560 350H1040M560 520H1040"/></g><rect width="1100" height="760" fill="url(#mesh)"/>
+<g transform="translate(25 32)"><path d="M225 275Q210 130 330 80Q452 50 510 190L485 295Z" fill="#c1c7c8" stroke="#111820" stroke-width="15"/><path d="M220 278Q352 235 505 278" fill="none" stroke="#edf0eb" stroke-width="18"/><path d="M332 91L360 82L391 91L382 116H340Z" fill="#89949a"/>
+<path d="M300 280Q370 330 465 277L475 390Q420 460 327 435Q270 390 300 280Z" fill="#8c6b5c"/><path d="M315 290Q380 324 459 291L450 400Q396 455 328 403Z" fill="#51595d"/>
+<path d="M285 416Q390 370 495 420L620 760H100L170 510Z" fill="url(#vest)" stroke="#101820" stroke-width="18"/><path d="M330 420L393 493L458 421" fill="none" stroke="#dce0dd" stroke-width="20"/>
+<path d="M468 448Q530 370 500 300L454 265Q418 315 446 390L410 480" fill="none" stroke="#8d6b5c" stroke-width="67" stroke-linecap="round"/><path d="M447 267Q423 226 449 195Q481 163 511 190L526 245Q497 281 447 267Z" fill="#9e7866"/>
+<path d="M425 260Q461 219 516 239" stroke="#333a40" stroke-width="19" fill="none"/><path d="M175 680L150 760H277L309 682M475 680L505 760H630L594 680" fill="#171e25"/>
+</g><path d="M45 45H330" stroke="#ff7900" stroke-width="8"/><text x="52" y="675" fill="#fff" font-family="Arial,sans-serif" font-size="26" font-weight="800" letter-spacing="4">КОГДА ПОИСК ЛЮДЕЙ</text><text x="52" y="715" fill="#ff7900" font-family="Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="4">ЗАБИРАЕТ ВРЕМЯ У ОБЪЕКТА</text>
+</svg>

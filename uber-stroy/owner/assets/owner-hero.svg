@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#111a23"/><stop offset=".54" stop-color="#9b4b16"/><stop offset="1" stop-color="#f08a28"/></linearGradient>
+<linearGradient id="vest" x2="0" y2="1"><stop stop-color="#ff9b22"/><stop offset="1" stop-color="#d84d00"/></linearGradient>
+<linearGradient id="fade" x2="0" y2="1"><stop stop-color="#080b0e" stop-opacity="0"/><stop offset="1" stop-color="#080b0e" stop-opacity=".94"/></linearGradient>
+</defs>
+<rect width="1200" height="900" fill="#080c11"/><rect width="1200" height="680" fill="url(#sky)"/><circle cx="850" cy="420" r="190" fill="#ff9c3c" opacity=".34"/>
+<path d="M0 600L110 545 230 590 360 505 485 560 620 480 760 545 900 465 1040 520 1200 450V900H0Z" fill="#1a242d"/>
+<g stroke="#141d24" stroke-width="13" fill="none"><path d="M160 90V600M90 125H820M160 125L90 92M160 125L235 92M90 125V600"/><path d="M900 20V550M760 58H1180M900 58L845 22M900 58L970 22"/></g>
+<g fill="#202b35" stroke="#74818a" stroke-width="7"><path d="M520 320H1200V750H520Z"/><path d="M520 320L630 245H1200V320Z"/><path d="M520 460H1200M520 600H1200M690 320V750M865 320V750M1040 320V750" fill="none"/></g>
+<g stroke="#e99a59" stroke-width="3" opacity=".45"><path d="M520 390H1200M520 535H1200M520 680H1200M780 320V750M955 320V750M1125 320V750" fill="none"/></g>
+<path d="M0 700L1200 620V900H0Z" fill="#10171d"/>
+<g transform="translate(320 105)">
+<path d="M160 150C158 48 220 0 295 0C376 0 430 62 432 150L410 179H175Z" fill="#f1f1ec" stroke="#1c252d" stroke-width="12"/><path d="M160 148Q294 108 432 148" fill="none" stroke="#fff" stroke-width="13"/><path d="M250 8L295 0L340 8L324 38H267Z" fill="#ff7900"/>
+<path d="M250 145Q290 166 342 145L368 255Q370 320 300 342Q224 320 226 252Z" fill="#a96f52"/><path d="M231 220Q290 265 360 218L382 260Q359 330 299 341Q237 325 213 264Z" fill="#252d34"/>
+<path d="M245 190L280 185M322 185L350 190" stroke="#171a1e" stroke-width="9" stroke-linecap="round"/><path d="M292 194L284 224L306 230" stroke="#754a39" stroke-width="6" fill="none"/><path d="M267 270Q302 286 337 268" stroke="#30201b" stroke-width="9" fill="none"/>
+<path d="M212 328Q300 292 390 328L510 800H72L132 425Z" fill="url(#vest)" stroke="#202a32" stroke-width="13"/><path d="M226 335L295 410L367 335L406 800H190Z" fill="#1d252c"/><path d="M155 438L220 425L190 800H113Z" fill="#f1f0e9"/><path d="M390 420L454 450L486 800H406Z" fill="#f1f0e9"/><path d="M244 432H365V469H244ZM244 560H377V590H244Z" fill="#f4f4ed"/><path d="M300 335V800" stroke="#161c22" stroke-width="14"/>
+<path d="M127 800L114 870H236L257 800M390 800L412 870H528L502 800" fill="#141a20"/>
+</g>
+<rect width="1200" height="900" fill="url(#fade)"/><path d="M0 18H350" stroke="#ff7900" stroke-width="8"/>
+<text x="54" y="768" fill="#fff" font-family="Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="4">UBER STROY / OWNER VIEW</text><text x="54" y="814" fill="#ff7900" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="4">СТРОИТЕЛЬНЫЙ ОПЕРАЦИОННЫЙ ПАРТНЁР</text>
+</svg>

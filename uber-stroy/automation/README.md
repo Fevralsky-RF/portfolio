@@ -11,7 +11,8 @@ Start here:
 - [Architecture](ARCHITECTURE.md)
 - [Workflow catalog](WORKFLOWS.md)
 - [Source policy](SOURCE-POLICY.md)
+- [Importable n8n sandbox workflow](n8n/WF-00_DEMAND_SANDBOX.json)
 
-The private Obsidian vault contains the database schema, company seed registry, operational notes and n8n test workflow. Do not commit worker contacts, personal data, credentials, tokens, cookies or private CRM data to this public repository.
+The private Obsidian vault contains the database schema, company seed registry and operational notes. The public sandbox workflow uses only synthetic demo records and contains no credentials. Do not commit worker contacts, personal data, credentials, tokens, cookies or private CRM data to this public repository.
 
 **Current mode:** design/MVP preparation. These documents do not claim live scraping, worker matching, outreach or dispatch is deployed.

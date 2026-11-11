@@ -1,7 +1,26 @@
-# UBER STROY OWNER — Poster Rebuilt as a Landing Page
+# UBER STROY OWNER — Owner landing page
 
-The poster itself is not embedded or repeated. Its visual hierarchy, copy themes and orange/black identity are rebuilt as native HTML/CSS sections. Three individual SVG scenes illustrate the owner/project, the problem on site, and the organized team.
+**Primary promise:** «UBER STROY — нужные люди на ваши объекты».
 
-Features: mobile-first layout, responsive desktop layout, in-page navigation, sticky mobile CTA, interactive downtime calculator, FAQ accordion, lead form validation, UTM capture, copy/download lead JSON.
+The poster is not embedded as a single image. Its hierarchy, messages and visual identity are rebuilt as native HTML/CSS sections for a construction-company owner / general contractor.
 
-The lead form is currently a prototype. It does not send or store personal data until a Russian-hosted endpoint, personal-data operator information, privacy notice and separate consent are configured.
+## Page
+https://fevralsky-rf.github.io/portfolio/uber-stroy/owner/
+
+## Sections and interactions
+- Owner-focused hero and pain → solution story.
+- Work directions, operating-control pillars and five-step process.
+- Pilot offer, downtime calculator and FAQ.
+- Mobile navigation / sticky CTA.
+- Demo lead form with validation, UTM capture and copy/download card.
+
+## Important production status
+This page is **not production-ready**:
+- The four remote WebP image blobs currently mismatch the valid local source assets; see `PROJECT_STATUS.md` and `SESSION_HANDOFF_2026-11-11.md`.
+- The form is demo-only; it does not send or persist personal data.
+- n8n endpoint, legal operator, privacy notice and consent remain to be configured.
+
+## Documentation
+- `PROJECT_STATUS.md` — confirmed state and P0/P1/P2.
+- `DECISIONS.md` — approved product, brand and release decisions.
+- `SESSION_HANDOFF_2026-11-11.md` — full technical and marketing handoff for the next session.

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#090c10">
-<meta name="description" content="Календарь отраслевых мероприятий Uber Строй: строительство, девелопмент, дороги, инженерные сети, энергетика, благоустройство и ЖКХ.">
+<meta name="description" content="Календарь отраслевых мероприятий Uber Stroy: строительство, девелопмент, дороги, инженерные сети, энергетика, благоустройство и ЖКХ.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Uber Строй — календарь отраслевых событий">
+<meta property="og:title" content="Uber Stroy — календарь отраслевых событий">
 <meta property="og:description" content="Люди отрасли. Новые связи. Рабочие контракты. Афиша строительных и инфраструктурных мероприятий.">
 <meta property="og:url" content="https://fevralsky-rf.github.io/portfolio/uber-stroy/events.html">
-<title>Uber Строй — календарь отраслевых событий</title>
+<title>Uber Stroy — календарь отраслевых событий</title>
 <style>
 :root{
   --bg:#090c10;--bg2:#0e1319;--panel:#141b22;--panel2:#1a242d;--line:#2a343d;
@@ -32,7 +32,7 @@ button{cursor:pointer}
 .eyebrow:before{content:"";width:25px;height:2px;background:var(--orange)}
 header{height:76px;position:sticky;top:0;z-index:30;background:rgba(9,12,16,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.075)}
 .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:950;letter-spacing:.08em;text-transform:none}
 .brand-mark{width:39px;height:39px;display:grid;place-items:center;background:var(--orange);color:#100b08;font:950 18px/1 Impact,Arial,sans-serif;transform:skew(-7deg);box-shadow:0 0 28px #ff5a1f35}
 .brand em{font-style:normal;color:var(--orange)}
 .nav-links{display:flex;gap:24px;align-items:center;color:#b7c0c7;font-size:11px;font-weight:800}
@@ -157,11 +157,11 @@ footer{border-top:1px solid var(--line);padding:24px 0 32px;background:#080b0e}
 <body>
 <header id="header">
  <div class="wrap nav">
-  <a class="brand" href="#top" aria-label="Uber Строй — наверх">
-   <span class="brand-mark">U</span><span>Uber <em>Строй</em></span>
+  <a class="brand" href="#top" aria-label="Uber Stroy — наверх">
+   <span class="brand-mark">U</span><span>Uber <em>Stroy</em></span>
   </a>
   <nav class="nav-links" aria-label="Основная навигация">
-   <a href="#calendar">Афиша</a><a href="#notes">Важные отметки</a><a href="#past">Архив</a>
+   <a href="#calendar">Афиша</a><a href="#notes">Важные отметки</a>
   </nav>
   <a class="nav-cta" href="#calendar">К календарю <span>↘</span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
@@ -172,7 +172,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 32px;background:#080b0e}
  <section class="hero">
   <div class="wrap hero-grid">
    <div>
-    <div class="eyebrow">Uber Строй / Industry networking</div>
+    <div class="eyebrow">Uber Stroy / Industry networking</div>
     <h1 class="display">Люди.<br><span class="outline">Проекты.</span><br><span class="hot">Контракты.</span></h1>
     <p class="lede">Календарь строительных и инфраструктурных событий. Выходим туда, где встречаются девелоперы, генподрядчики, дорожники, энергетики и люди, которые запускают реальные проекты.</p>
     <div class="hero-actions">
@@ -195,7 +195,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 32px;background:#080b0e}
    <div class="metric"><strong>14</strong><span>Нижний Новгород / онлайн<br>до 17 февраля</span></div>
    <div class="metric"><strong>02</strong><span>Внешние отраслевые<br>площадки</span></div>
    <div class="metric"><strong>01</strong><span>Дополнительное событие<br>в марте</span></div>
-   <div class="metric"><strong>03</strong><span>События<br>в архиве</span></div>
+   <div class="metric"><strong>01</strong><span>Событие<br>требует подтверждения даты</span></div>
   </div>
  </div>
 
@@ -226,7 +226,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 32px;background:#080b0e}
      <button class="filter" data-filter="nn" aria-pressed="false">Нижний / онлайн</button>
      <button class="filter" data-filter="infra" aria-pressed="false">Инфраструктура</button>
      <button class="filter" data-filter="outside" aria-pressed="false">Другие города</button>
-     <button class="filter" data-filter="archive" aria-pressed="false">Архив / проверка</button>
+     <button class="filter" data-filter="verify" aria-pressed="false">Дата уточняется</button>
     </div>
     <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Поиск: дороги, газ, ЖКХ..." autocomplete="off"></label>
    </div>
@@ -263,18 +263,11 @@ footer{border-top:1px solid var(--line);padding:24px 0 32px;background:#080b0e}
   </div>
  </section>
 
- <section class="notice" id="past" style="padding-top:0">
-  <div class="wrap">
-   <div class="eyebrow">Архив и контроль дат</div>
-   <h2 class="display" style="font-size:clamp(30px,4vw,45px);margin:12px 0 18px">Что уже <span class="orange">прошло</span></h2>
-   <div class="notice-grid" id="archiveInfo"></div>
-  </div>
- </section>
 </main>
 
 <footer>
  <div class="wrap footer-inner">
-  <div class="footer-brand">Uber <b>Строй</b> <span style="color:#65717b;font-weight:500">/ отраслевой нетворкинг</span></div>
+  <div class="footer-brand">Uber <b>Stroy</b> <span style="color:#65717b;font-weight:500">/ отраслевой нетворкинг</span></div>
   <div>Рабочая афиша · Обновлено 17.11.2026</div>
   <a href="#top" style="color:var(--orange);font-weight:900">Наверх ↑</a>
  </div>
@@ -286,7 +279,7 @@ const events = [
  {id:'kut',day:'20',month:'НОЯ',date:'20 ноября 2026',start:'2026-11-20',end:'2026-11-21',title:'XV конференция «Культура управления территорией» (КУТ-2026)',place:'ННГАСУ · Нижний Новгород',type:'Градостроительство',group:'nn',tags:['nn','infrastructure'],copy:'Развитие территорий, кадастр, геоинформатика и градостроительное планирование. Регистрация докладчиков завершена; уточнить гостевой доступ.',status:'check',statusText:'Допуск уточнить',url:'https://www.nngasu.ru/about/Structure/facult-inst/iag/ggk/science/konferentsiii/kultura-upravleniya-territoriey.php'},
  {id:'dialog',day:'23',month:'НОЯ',date:'23 ноября 2026 · 15:00–17:00',start:'2026-11-23',end:'2026-11-24',title:'Прямой диалог с властью — встреча с заместителем губернатора Сергеем Морозовым',place:'ТПП Нижегородской области · ул. Нестерова, 31',type:'B2G / инфраструктура',group:'nn',tags:['nn','infrastructure','energy','roads'],copy:'В повестке министерства строительства, транспорта, экологии, градостроительства, энергетики и ЖКХ. Контакт с представителями ведомств и регионального бизнеса.',status:'soon',statusText:'Скоро · регистрация',url:'https://nnov.tpprf.ru/ru/announcements/623215/'},
  {id:'transport',day:'25',month:'НОЯ',date:'25 ноября 2026 · выставка с 10:30, форум 11:00–14:00',start:'2026-11-25',end:'2026-11-26',title:'XI Транспортный форум и выставка автомобилей и техники для бизнеса',place:'ТПП Нижегородской области · Нижний Новгород',type:'Дороги / транспорт',group:'nn',tags:['nn','roads','infrastructure'],copy:'Транспортные и инфраструктурные компании, перевозчики и владельцы спецтехники. Поиск дорожных подрядчиков и предприятий, работающих на объектах.',status:'soon',statusText:'Регистрация',url:'https://nnov.tpprf.ru/ru/announcements/619582/'},
- {id:'gasforum',day:'25–27',month:'НОЯ',date:'25–27 ноября 2026',start:'2026-11-25',end:'2026-11-28',title:'XXIV Международный форум «Газ России 2026»',place:'Москва · ул. Намёткина, 16, корп. 2',type:'Газ / энергетика',group:'outside',tags:['outside','gas','energy'],copy:'Федеральная площадка газовой отрасли: газификация регионов, газоснабжение, кадровый потенциал и технологии. Полезно для газовой вертикали Uber Строй.',status:'open',statusText:'Москва · выезд',url:'https://forum.gazo.ru/'},
+ {id:'gasforum',day:'25–27',month:'НОЯ',date:'25–27 ноября 2026',start:'2026-11-25',end:'2026-11-28',title:'XXIV Международный форум «Газ России 2026»',place:'Москва · ул. Намёткина, 16, корп. 2',type:'Газ / энергетика',group:'outside',tags:['outside','gas','energy'],copy:'Федеральная площадка газовой отрасли: газификация регионов, газоснабжение, кадровый потенциал и технологии. Полезно для газовой вертикали Uber Stroy.',status:'open',statusText:'Москва · выезд',url:'https://forum.gazo.ru/'},
  {id:'webinar',day:'26',month:'НОЯ',date:'26 ноября 2026 · онлайн',start:'2026-11-26',end:'2026-11-27',title:'Вебинар «Строительные материалы: от нанесения кода до продажи»',place:'Онлайн',type:'Материалы / маркировка',group:'online',tags:['online','materials'],copy:'Маркировка строительных материалов и электронный документооборот. Смежный выход на производителей, импортёров, дистрибьюторов и поставщиков.',status:'open',statusText:'Онлайн',url:'https://nn1.ru/events/stroitelnye-materialy-ot-naneseniya-koda-do-prodazhi/'},
  {id:'izhs',day:'27',month:'НОЯ',date:'27 ноября 2026 · 09:30–15:30',start:'2026-11-27',end:'2026-11-28',title:'Форум «ИЖС-трансформация»',place:'ТПП Нижегородской области · ул. Нестерова, 31',type:'ИЖС / девелопмент',group:'nn',tags:['nn','development','landscape'],copy:'Застройщики ИЖС и МКД, подрядчики, производители материалов, ландшафтные и отделочные компании. Экспо и большой нетворкинг для поиска заказчиков.',status:'open',statusText:'Бесплатно · регистрация',url:'https://izhs-forum.ru/'},
  {id:'energy-dialog',day:'02',month:'ДЕК',date:'2 декабря 2026',start:'2026-12-02',end:'2026-12-03',title:'Региональный форум «СтройЭнергоДиалог»',place:'ТПП Нижегородской области · Нижний Новгород',type:'Инженерные сети / ЖКХ',group:'nn',tags:['nn','energy','gas','infrastructure'],copy:'Строительство, энергетика, ЖКХ и энергосберегающие технологии. Целевые знакомства по газовым, тепловым, водопроводным и электрическим сетям.',status:'open',statusText:'Повестка формируется',url:'https://nnov.tpprf.ru/ru/news/619208/'},
@@ -298,14 +291,11 @@ const events = [
  {id:'energy-systems',day:'18',month:'ДЕК',date:'18 декабря 2026 · 10:00–15:00',start:'2026-12-18',end:'2026-12-19',title:'I Международная конференция по безопасности, надёжности и эффективности энергетических систем',place:'ПривГУПС · Нижний Новгород',type:'Энергетика / электросети',group:'nn',tags:['nn','energy','infrastructure'],copy:'Электроэнергетические системы, сети, электроснабжение и энергетическая инфраструктура. Целевой контакт с инженерами и профильными техническими организациями.',status:'open',statusText:'Регистрация до 10.12',url:'https://confhub.ru/rus/event/10696/'},
  {id:'ngsr',day:'ДАТА',month:'УТОЧНЯЕТСЯ',date:'Декабрь 2026 · дата уточняется',start:null,end:null,title:'Новогодний вечер Нижегородской гильдии сертифицированных риэлторов (НГСР)',place:'Нижний Новгород · место уточняется',type:'Недвижимость / девелопмент',group:'nn',tags:['nn','development'],copy:'Закрытая встреча собственников и руководителей агентств недвижимости, застройщиков, банков и партнёров гильдии. Полезна для выхода на девелоперское сообщество.',status:'check',statusText:'Дата уточняется',url:'https://nngsr.ru/about/projects/6968/'},
  {id:'dortech',day:'17',month:'ФЕВ',date:'17 февраля 2027',start:'2027-02-17',end:'2027-02-18',title:'IV конференция «ДОРТЕХ» — строительство и эксплуатация дорог и искусственных сооружений',place:'Нижний Новгород',type:'Дороги / мосты',group:'nn',tags:['nn','roads','infrastructure'],copy:'Дорожные подрядчики, мосты, техника, материалы и проектирование. Специализированный нетворкинг для поиска заказчиков на дорожные и инфраструктурные бригады.',status:'open',statusText:'Запрос условий участия',url:'https://dortechconf.ru/'},
- {id:'architecture-feb',day:'24–25',month:'ФЕВ?',date:'24–25 февраля 2027 · дата не подтверждена',start:null,end:null,title:'«Архитектура: история, теория, практика» — требуется новый анонс',place:'ННГАСУ · Нижний Новгород (предположение о площадке)',type:'Архитектура / проектирование',group:'verify',tags:['verify','development'],copy:'Это событие упоминалось ранее с датой февраля 2027, но найденная официальная страница относится к архивной конференции 26–27 февраля 2026 года. Не планировать как подтверждённое событие до нового анонса.',status:'check',statusText:'Дату 2027 не подтвердили',url:'https://www.nngasu.ru/science/zodchiy-budushchego/arkhiv/2025-2026/arkhitektura.php'},
+ {id:'architecture-feb',day:'24–25',month:'ФЕВ',date:'24–25 февраля 2027 · дата не подтверждена',start:null,end:null,title:'«Архитектура: история, теория, практика» — требуется новый анонс',place:'ННГАСУ · Нижний Новгород (предположение о площадке)',type:'Архитектура / проектирование',group:'verify',tags:['verify','development'],copy:'Это событие упоминалось ранее с датой февраля 2027, но найденная официальная страница относится к архивной конференции 26–27 февраля 2026 года. Не планировать как подтверждённое событие до нового анонса.',status:'check',statusText:'Дату 2027 не подтвердили',url:'https://www.nngasu.ru/science/zodchiy-budushchego/arkhiv/2025-2026/arkhitektura.php'},
  {id:'landscape-march',day:'17–18',month:'МАР',date:'17–18 марта 2027',start:'2027-03-17',end:'2027-03-19',title:'I Международная конференция «Ландшафтная архитектура. Актуальные вопросы науки и практики»',place:'ННГАСУ · Нижний Новгород',type:'Благоустройство / озеленение',group:'nn',tags:['nn','landscape','ecology'],copy:'Ландшафтная архитектура, развитие городской среды, озеленение и благоустройство. Добавлено в наблюдение за пределами основного трёхмесячного горизонта.',status:'open',statusText:'Регистрация до 31.01.2027',url:'https://in.mmmf.msu.ru/rus/event/10654/'},
- {id:'rdda',day:'11–13',month:'НОЯ',date:'11–13 ноября 2026 · завершено',start:'2026-11-11',end:'2026-11-14',title:'Российские дни дизайна и архитектуры — 2026',place:'Нижегородская ярмарка · Нижний Новгород',type:'Выставка / материалы',group:'archive',tags:['archive','materials','landscape'],copy:'Выставка и форум для дизайнеров, архитекторов, декораторов и поставщиков отделочных материалов. Событие уже прошло; сохраняем как источник контактов и организатора.',status:'past',statusText:'Завершено',url:'https://nn1.ru/events/rossiyskie-dni-dizayna-i-arhitektury-2026/'},
- {id:'art-build',day:'13',month:'НОЯ',date:'13 ноября 2026 · завершено',start:'2026-11-13',end:'2026-11-14',title:'Архитектурно-строительная премия «Искусство строить — 2026»',place:'Нижегородская ярмарка · Нижний Новгород',type:'Девелопмент / архитектура',group:'archive',tags:['archive','development','landscape'],copy:'Премия собрала 52 проекта от 28 девелоперов и экспертов отрасли. Событие уже состоялось; страницу стоит мониторить для следующего сезона.',status:'past',statusText:'Завершено',url:'https://www.domostroynn.ru/award'},
- {id:'roads-congress',day:'01–02',month:'АВГ',date:'1–2 августа 2024 · архив',start:'2024-08-01',end:'2024-08-03',title:'Первый Нижегородский конгресс «Дороги. Мосты. Благоустройство»',place:'Sheraton Kremlin · Нижний Новгород',type:'Дороги / благоустройство',group:'archive',tags:['archive','roads','landscape'],copy:'Архивный конгресс по дорожной отрасли, мостостроению и благоустройству городской среды. Сайт сохраняем для мониторинга следующего выпуска; новой даты пока нет.',status:'past',statusText:'Архив · 2024',url:'https://nn-congress.ru/'}
 ];
 
-const monthOrder = ['НОЯ','ДЕК','ФЕВ','МАР','АВГ'];
+const monthOrder = ['НОЯ','ДЕК','ФЕВ','МАР'];
 const monthNames = {'НОЯ':'НОЯБРЬ 2026','ДЕК':'ДЕКАБРЬ 2026','ФЕВ':'ФЕВРАЛЬ 2027','МАР':'МАРТ 2027','АВГ':'АРХИВ'};
 const list = document.getElementById('eventList');
 const search = document.getElementById('search');
@@ -345,7 +335,7 @@ function render(){
   const inFilter=activeFilter==='all' ||
     (activeFilter==='nn' && ['nn','online'].includes(ev.group)) ||
     (activeFilter==='outside' && ev.group==='outside') ||
-    (activeFilter==='archive' && ['archive','verify'].includes(ev.group)) ||
+    (activeFilter==='verify' && ev.group==='verify') ||
     (activeFilter==='infra' && ev.tags.some(t=>['roads','gas','energy','infrastructure','ecology','landscape'].includes(t)));
   return inFilter && (!q || (ev.title+' '+ev.type+' '+ev.place+' '+ev.copy+' '+ev.tags.join(' ')).toLowerCase().includes(q));
  });
@@ -381,21 +371,6 @@ document.getElementById('menuToggle').addEventListener('click',()=>{
  document.getElementById('menuToggle').setAttribute('aria-expanded',String(open));
 });
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('header').classList.remove('menu-open');document.getElementById('menuToggle').setAttribute('aria-expanded','false')}));
-const archiveItems=[
- {title:'Российские дни дизайна и архитектуры — 2026',date:'11–13 ноября 2026',url:'https://nn1.ru/events/rossiyskie-dni-dizayna-i-arhitektury-2026/',note:'Выставка и форум на Нижегородской ярмарке.'},
- {title:'«Искусство строить — 2026»',date:'13 ноября 2026',url:'https://www.domostroynn.ru/award',note:'Архитектурно-строительная премия; церемония состоялась.'},
- {title:'Конгресс «Дороги. Мосты. Благоустройство»',date:'1–2 августа 2024',url:'https://nn-congress.ru/',note:'Архивный выпуск; мониторить следующий анонс.'},
- {title:'«Архитектура: история, теория, практика»',date:'24–25 февраля 2027 — не подтверждено',url:'https://www.nngasu.ru/science/zodchiy-budushchego/arkhiv/2025-2026/arkhitektura.php',note:'Ранее фигурировала дата 2027 года, но доступная официальная страница — архив программы 26–27 февраля 2026 года.'}
-];
-const archiveInfo=document.getElementById('archiveInfo');
-archiveItems.forEach(item=>{
- const box=document.createElement('div');box.className='notice-box';
- addText(box,'small','',item.date);
- addText(box,'h3','',item.title);
- addText(box,'p','',item.note);
- const a=addText(box,'a','event-link','Открыть страницу ↗');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.style.marginTop='12px';
- archiveInfo.appendChild(box);
-});
 render();
 </script>
 </body>

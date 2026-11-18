@@ -143,3 +143,12 @@ No order, buyer need, crew availability, price, contract or payment is confirmed
 - **Geography:** continue Nizhny Novgorod first. The «Белгорешенск» project is outside the current sprint; do not allocate sourcing or mobilisation effort to it. Moscow landscaping via Rinat remains next-season optionality only.
 - **CRM:** updated master workbook v5 saved at `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v5.xlsx`. Added ACT-035 (Rinat offer) and ACT-036 (Kоля partner exchange); updated C-019 and WF-008.
 - **Truth status:** 10 workers were offered to Rinat; no response/order yet. Kоля's out-of-region welder-installer need was declined. No local Kоля job, payer, rate or start date is confirmed.
+
+
+## 2026-11-18 — Warm contacts / call list
+- Created a separate warm-contact register for sales outreach from Maxim's personal address book: 10 entries (9 new records plus Kоля Колес cross-referenced to existing CRM WF-008; no duplicate).
+- Captured supplied phones: Виталий / «Меганит» — +7 920 001-31-37; Саид Хасянович — +7 920 254-55-03; Дима Третьяков — corrected phone +7 951 904-83-37. The earlier mistaken Dima number belongs only to Said.
+- Other contacts: spouse of Света (landscaping), Олег «Монолит», Егор Рыбин (connector to developers/builders), Максим Акатов («Столица Нижний»), Вадим Слоботочка (low-voltage systems), Миша Гладышев (former classmate, previously in construction). Unknown phones remain blank; provisional roles require verification.
+- Priority research task: map the «Окский берег» construction contact chain — developer/customer, general contractor, subcontractors, site/project decision-makers and payer; clarify Саид Хасянович's exact role and possible introductions.
+- CRM workbook v6 prepared with a dedicated «Тёплые контакты» sheet. Handoff: `Terra/Handoffs/UBER_STROY_WARM_CONTACTS_HANDOFF_2026-11-18.md`; session save and QA under `Terra/50-Sessions/`.
+- Treat all entries as warm leads/connectors, not confirmed demand or orders. Qualify buyer vs supplier/contractor vs connector and record call outcomes.

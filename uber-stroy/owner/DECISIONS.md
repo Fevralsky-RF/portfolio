@@ -86,3 +86,16 @@ The 27-item list is a normalized working taxonomy built from project records and
 **Governance:** maintain dated facts vs hypotheses; never equate declared headcount with available capacity; no unsupported staffing, price, SLA or outcome promises; human approval before outreach and commitments; legal/HSE and positive contribution are hard gates.
 
 **Release status:** v1.0.0 file-based skill published in GitHub and personal Library. Runtime installation, local Obsidian sync and field effectiveness are not claimed; field validation remains pending.
+
+
+## 2026-11-18 — Field-led focus: Черниговская and Nizhny Novgorod first
+
+**Decision:** Treat Rinat (foreman, warm contact on the Черниговская site) as a priority access/referral route to identify the actual site contractor, buyer and potential monolithic/support work package. Do not mark the site as a confirmed customer or demand until the exact project, payer, headcount, start date, price and acceptance/payment terms are verified.
+
+**Supply:** latest user clarification for Alexander is a claimed total pool of approximately 50–70 people across general labour, concrete workers, monolithic workers, welders and low-voltage installers. This is not date-specific confirmed capacity. R-DOM52 has been asked to provide its trade mix and category-level headcount; response pending.
+
+**Partner lead:** Kоля Колес (IP, metal-structure installation and concrete works) is recorded as a warm contractor contact. His current Nizhny Novgorod work is winding down; a welder need was mentioned, but timing and scale are unconfirmed. A large Kemerovo project is explicitly outside the current operating focus due to geography.
+
+**Geographic priority:** Nizhny Novgorod remains the immediate cash focus. Moscow landscaping through Rinat is a next-season option only. No geographic expansion or mobilisation to Kemerovo without a separate commercial decision and proven economics.
+
+**Execution rule:** the next milestone is one qualified local work package with a named payer, verified trade-specific capacity, written terms and positive contribution margin—not additional scraping or broad market coverage.

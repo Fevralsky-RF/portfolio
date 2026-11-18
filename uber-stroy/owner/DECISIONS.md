@@ -72,3 +72,17 @@ UBER STROY's strategic model is a construction workforce demand aggregator conne
 Create a distinct skill for event-led B2B acquisition across 27 normalized construction and adjacent infrastructure verticals. It owns event radar, fit scoring, target-account mapping, meeting preparation, field discovery, CRM handoff and event attribution. It complements, and does not replace, Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent.
 
 The 27-item list is a normalized working taxonomy built from project records and the company/OKVED registry; historical notes mention 23 cohort directions and four missing legacy entries. Do not represent this taxonomy as verbatim archival recovery. Do not invent attendee, workforce capacity, safety qualification, commercial result or legal status. Human approval is required before outreach. Operational field validation and live integrations remain open.
+
+
+## 2026-11-18 — UBERСТРОЙ CEO v1.0.0
+**Decision:** create and maintain a project-level CEO / Chief of Staff / CRO / COO orchestration skill.
+
+**Mission:** keep the full Uberстрой operating picture in view and prioritize actions by speed and probability of collected cash, positive contribution margin and repeatability. The daily operating question is what to do today to maximize the realistic probability of getting paid tomorrow.
+
+**Scope:** project-state review, bottleneck diagnosis, daily cash sprint, buyer/supply funnel coordination, opportunity qualification, unit economics, payment-cycle discipline, execution control, decision support and handoffs to specialist skills.
+
+**Boundary:** the CEO skill orchestrates but does not replace Growth Agent, Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect or Vertical Event Intelligence. Sales, Operations, Supply, Finance and Legal retain approval and execution ownership.
+
+**Governance:** maintain dated facts vs hypotheses; never equate declared headcount with available capacity; no unsupported staffing, price, SLA or outcome promises; human approval before outreach and commitments; legal/HSE and positive contribution are hard gates.
+
+**Release status:** v1.0.0 file-based skill published in GitHub and personal Library. Runtime installation, local Obsidian sync and field effectiveness are not claimed; field validation remains pending.

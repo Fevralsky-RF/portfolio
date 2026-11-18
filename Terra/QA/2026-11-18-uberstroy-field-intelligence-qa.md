@@ -7,7 +7,7 @@
 - [x] New contact WF-008 (Коля Колес) added.
 - [x] WF-001 Alexander updated with latest claimed total reserve 50–70 and trade mix.
 - [x] WF-002 Alexandra/R-DOM52 updated with the pending specialty request.
-- [x] Activity log ACT-031–ACT-034 populated without overwriting earlier activity placeholders.
+- [x] Activity log ACT-031–ACT-034 populated without overwriting earlier activity placeholders; workbook reopened and ACT-032 verified after fixing a merged-cell issue.
 - [x] Черниговская project note added with explicit warning that the link to any specific named developer/project is not verified.
 - [x] Project status and decisions log updated.
 - [x] Field-intelligence handoff and session save created.

@@ -1,0 +1,3 @@
+# M06 — Follow-up, ROI & Handoff
+
+Follow up within 24 hours where contact and consent allow. Create one CRM-ready opportunity per verified need. Route market/project context to Construction Market Intelligence, demand signal to Construction Demand Hunter, offer/copy insight to ICP & Conversion Architect, and pipeline execution to Growth Agent. Attribute event costs and sourced/influenced pipeline; calculate paid pilot and contribution margin, not just leads.

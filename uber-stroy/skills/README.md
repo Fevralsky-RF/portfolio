@@ -17,3 +17,4 @@ All skills label evidence vs hypothesis, avoid fabricated proof and preserve hum
 | Vertical Event Intelligence & Field Sales | `vertical-event-intelligence/SKILL.md` | Event radar, 27 verticals, buyer mapping, event scoring, pre-event ABM, field discovery, follow-up and event ROI |
 
 | Vertical Event Intelligence & Field Sales | `vertical-event-intelligence/SKILL.md` | Event radar, 27-vertical mapping, pre-event ABM, field discovery, opportunity handoff and event ROI |
+| UBERСТРОЙ CEO | `uberstroy-ceo/SKILL.md` | Project-level strategy, bottleneck diagnosis, daily cash sprint, prioritization, operating cadence and specialist-skill orchestration |

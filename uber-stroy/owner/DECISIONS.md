@@ -21,3 +21,7 @@ Do not claim guaranteed headcount, availability, date of exit, replacement SLA, 
 
 ## 2026-11-11 — Terra save convention
 Store detailed handoff in `/Terra/Handoffs/`, session save in `/Terra/50-Sessions/`, update project state and this decision log, then make a meaningful Git commit/push and separate QA note. No permanent skill was edited in this session; do not create an unnecessary duplicate skill backup. Existing growth skill remains in Library root as `UBER_STROY_Growth_Agent_Skill_v2_Zero_to_One.md`.
+
+
+## 2026-11-18 — Market research scope and evidence discipline
+The national/regional construction market study is a separate research deliverable, not a landing-page change. Quantitative claims must use primary sources and distinguish construction output, approved budget allocations, tender values, payroll, outsourced shift labour and Uber Stroy revenue. Do not present preliminary metrics or a working niche hypothesis as final conclusions. See `Terra/Handoffs/UBER_STROY_MARKET_RESEARCH_HANDOFF_2026-11-18.md`.

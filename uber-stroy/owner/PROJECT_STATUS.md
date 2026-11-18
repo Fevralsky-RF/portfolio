@@ -90,10 +90,12 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - Next validation: test one Nizhny Novgorod project and one tender; validate M04 labour demand, M05 actual contribution economics, and M12 legal/HSE gates before treating outputs as operationally proven.
 
 
-## 2026-11-18 — Event intelligence and field sales session
-- Defined the core event ICP: general contractors and specialist contractors with active projects and recurring workforce demand; adjacent segments include developers/low-rise housing, engineering networks, gasification, energy, roads, infrastructure and landscaping.
-- Buying roles: owner/CEO, construction/production director, project/site manager/foreman, HR and procurement. Buyer-side and worker-supplier funnels remain separate.
-- Recommended field shortlist: Builders Club business forum (3 Dec 2026), StroyEnergoDialog (2 Dec 2026; participation and details require confirmation), and IЖС-Transformation (27 Nov 2026). Gas Russia Forum (25–27 Nov 2026) is an additional opportunity subject to late-entry confirmation.
-- Test targets per event: 15–20 relevant contacts, 5–7 substantive conversations, 2–3 qualified needs and 1 pilot discussion. These are hypotheses/KPIs, not promised conversion.
-- Proposed new skill: Construction Event Intelligence & Field Sales. **Proposal only; not created and pending explicit user approval.**
-- Terra handoff/session/QA artifacts are saved under `Terra/Handoffs/` and `Terra/50-Sessions/`. Local Obsidian sync is not verified.
+
+## 2026-11-18 — Vertical Event Intelligence & Field Sales v1.0.0
+- Created a modular field-sales intelligence skill covering 27 normalized construction and adjacent infrastructure verticals.
+- Scope: event radar, vertical/buyer mapping, event evidence and scoring, pre-event ABM, onsite discovery, opportunity qualification, follow-up, event ROI and CRM handoff.
+- Published under `uber-stroy/skills/vertical-event-intelligence/`; master skill and 12 supporting Markdown files saved in the personal Library.
+- Complements Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent; it does not replace them.
+- Taxonomy provenance: the 2026-11-09 meeting pack said the then-current cohort map contained 23 directions and the legacy count of 27 required reconciliation of four missing items. The v1.0 list is a normalized operating taxonomy, not a verbatim recovery of the legacy list.
+- QA: package structure, 27 verticals, workflow, evidence ladder, scoring and governance documented. Local Obsidian sync is not directly verified. Field effectiveness remains unproven until tests on three verticals and two events.
+- The skill is a file-based reusable package; it is not automatically installed as a runtime agent.

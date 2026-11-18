@@ -2,7 +2,7 @@
 
 | Skill | Main file | Responsibility |
 |---|---|---|
-| Construction Market Intelligence | `construction-market-intelligence/SKILL.md` | Market, project, buyer and labour-demand intelligence |
+| Construction Market Intelligence | `construction-market-intelligence/SKILL.md` | Source-backed market, project, procurement, buyer and labour-demand intelligence; opportunity scoring and decision support |
 | Construction Demand Hunter | `construction-demand-hunter/SKILL.md` | Source signals, account resolution, buyer qualification and opportunity actions |
 | ICP & Conversion Architect | `icp-conversion-architect/SKILL.md` | ICP, buying roles, JTBD, VoC, offer, messaging, creative, landing and CRO |
 

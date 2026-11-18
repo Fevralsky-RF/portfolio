@@ -60,3 +60,11 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - Sales funnel: signal discovery → dedupe → company match → demand qualification → buyer qualification → human-approved contact → need confirmation → offer → pilot → fulfilment → outcome.
 - No live HH/Avito scanner, production CRM or automated outreach is claimed as implemented. WF-00 remains a synthetic sandbox in the latest private project status.
 - Full non-sensitive strategy brief: `uber-stroy/DEMAND-AGGREGATOR-STRATEGY.md`.
+
+
+## 2026-11-18 — Construction Demand Hunter
+- Published file-based skill package: `uber-stroy/skills/construction-demand-hunter/` (v1.0.0, 10 modules).
+- Role: operational demand-signal discovery, company resolution, buyer qualification, outreach preparation and funnel conversion intelligence.
+- Complements Construction Market Intelligence; does not replace it.
+- No live source adapters, CRM automation, bulk outreach or automatic installation are claimed by this documentation release.
+- Field validation against real opportunities remains pending.

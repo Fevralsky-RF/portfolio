@@ -16,7 +16,16 @@
 - [x] CRM v5 source workbook preserved.
 - [x] CRM v6 created with a dedicated «Тёплые контакты» sheet containing 10 records.
 - [x] Existing workbook sheets retained.
-- [ ] Local Obsidian sync verified — unavailable from this runtime.
+- [x] CRM v6 uploaded to Personal Library at `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v6.xlsx`.
+
+## Terra / Git QA
+- [x] Handoff saved to GitHub `main` and Personal Library.
+- [x] Session save saved to GitHub `main` and Personal Library.
+- [x] Separate QA note saved to GitHub `main` and Personal Library.
+- [x] `uber-stroy/owner/PROJECT_STATUS.md` updated.
+- [x] `uber-stroy/owner/DECISIONS.md` updated.
+- [x] Remote file writes returned successful commits.
+- [ ] Local Obsidian vault sync directly verified — unavailable from this runtime.
 
 ## Result
-PASS WITH LIMITATIONS after repository and Library writes are verified. Contact roles, company relationships, current projects and actual demand remain to be qualified by phone. Local Obsidian sync is not claimed.
+**PASS WITH EXPLICIT LIMITATIONS.** The warm-contact list, corrected phones, CRM v6, project status, decision log, handoff, session save and QA note are persisted in GitHub and Personal Library. Contact roles, company relationships, current projects and actual demand remain to be qualified by phone. Local Obsidian synchronization is not claimed.

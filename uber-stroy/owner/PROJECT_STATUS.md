@@ -1,6 +1,6 @@
 # UBER STROY — PROJECT STATUS
 
-**As of:** 2026-11-11  
+**As of:** 2026-11-18  
 **Current ICP slice:** owner / general contractor  
 **Status:** public landing exists; **not production-ready**.
 
@@ -77,3 +77,14 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - It complements Growth Agent v2; it does not replace channel strategy, CRM, sales pipeline or growth economics.
 - UBER STROY is its first reference implementation; owner, foreman, site master and HR are separate buyer-side ICPs; brigade lead is a supply-side funnel.
 - This skill creation does not change the owner landing's existing photo/form production blockers.
+
+
+## 2026-11-18 — Construction Market Intelligence v1.0.0
+
+- Created a reusable modular market-intelligence skill: one orchestrator plus 14 specialist modules and four support documents (README, changelog, data dictionary, scoring/governance, prompt library; 20 Markdown files total including the orchestrator and modules).
+- Published under `uber-stroy/skills/construction-market-intelligence/`; permanent master skill and supporting files are saved in the personal Library, with a ZIP backup.
+- Role: translate source-backed market, project, procurement, labour and buyer signals into qualified commercial opportunities and decisions.
+- Complements Growth Agent v2, Construction Demand Hunter and ICP & Conversion Architect; it does not replace them.
+- The package is file-based documentation, not an automatically installed runtime skill. Load the orchestrator and relevant modules when invoking it.
+- QA status: content, Library persistence, Git persistence and handoff artifacts verified. Local Obsidian vault sync was not directly verified. Effectiveness has not yet been field-tested against a real work package or executed shift.
+- Next validation: test one Nizhny Novgorod project and one tender; validate M04 labour demand, M05 actual contribution economics, and M12 legal/HSE gates before treating outputs as operationally proven.

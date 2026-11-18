@@ -2,7 +2,7 @@
 title: "ICP & Conversion Architect"
 slug: "icp-conversion-architect"
 version: "1.0.0"
-status: "active-draft-for-use"
+status: "active / reusable skill document"
 owner: "Maxim / business development"
 created: "2026-11-18"
 primary_domain: "B2B go-to-market, customer insight and conversion design"

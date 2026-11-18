@@ -54,3 +54,26 @@ Changes:
 7. No crew mobilisation before buyer, payer, scope, price, written acceptance/payment terms, legal model and HSE gates are clear.
 
 **Current truth:** new warm access and supply intelligence have been added. No confirmed order, date-specific capacity, agreed rate or collected cash has been established by these conversations.
+
+
+## 6. Addendum — follow-up update, 2026-11-18 (later touch)
+
+### Rinat / C-019 — offer of 10 monolithic workers
+- Maxim has now messaged Rinat that Uberстрой has **10 monolithic workers newly freed up**.
+- Response: pending at the time of this update.
+- Classification: supply offer made; **not** confirmed demand, order, booking or site mobilisation.
+- Next step: wait for response. If interested, immediately qualify exact object/site, legal contractor, buyer and payer, work package, exact required number and skill mix, start date/shift pattern, rate, site admission, legal engagement, HSE/PPE, acceptance and payment terms.
+- Do not assume the Черниговская project is necessarily GloraX STATUS or that Rinat is the buyer/payer.
+
+### Коля Колес / WF-008 — out-of-region need declined; local referral loop
+- Kоля reported a project in «Белгорешенске» requiring welder-installers.
+- Maxim declined this project because the geography/logistics are not attractive for the current operating focus.
+- They agreed on reciprocal local information exchange: Kоля will tell Maxim when he has projects/orders in Nizhny Novgorod; Uberстрой will tell Kоля when suitable people are available in Nizhny Novgorod.
+- No current Nizhny Novgorod order from Kоля is confirmed. Keep him as a warm local partner, not an active demand opportunity.
+- Do not spend the current sprint on the out-of-region project.
+
+### Updated CRM
+- New master: `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v5.xlsx`
+- C-019 updated with the 10-monolithic-worker offer and pending response.
+- WF-008 updated with the declined out-of-region project and reciprocal Nizhny Novgorod referral arrangement.
+- Activity log appended: ACT-035 and ACT-036.

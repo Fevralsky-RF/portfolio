@@ -66,3 +66,9 @@ UBER STROY's strategic model is a construction workforce demand aggregator conne
 **Taxonomy note:** historical notes state 23 current cohorts and a legacy commercial count of 27 with four categories to reconcile. The published 27-item catalogue is a normalized operational taxonomy, not a claim to have recovered the exact historic list.
 
 **Governance:** evidence levels E0–E5; organiser-stated audience is not confirmed attendance; human approval before outreach; no invented contacts or demand; legal, HSE, verified supply, payer, site access, contract and positive contribution are hard gates. Field validation required.
+
+
+## 2026-11-18 — Vertical Event Intelligence & Field Sales v1.0.0
+Create a distinct skill for event-led B2B acquisition across 27 normalized construction and adjacent infrastructure verticals. It owns event radar, fit scoring, target-account mapping, meeting preparation, field discovery, CRM handoff and event attribution. It complements, and does not replace, Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent.
+
+The 27-item list is a normalized working taxonomy built from project records and the company/OKVED registry; historical notes mention 23 cohort directions and four missing legacy entries. Do not represent this taxonomy as verbatim archival recovery. Do not invent attendee, workforce capacity, safety qualification, commercial result or legal status. Human approval is required before outreach. Operational field validation and live integrations remain open.

@@ -44,3 +44,10 @@ Current remote tree reports all four as 7,500 bytes; remote blob IDs differ. The
 ## Release gate
 
 Do not call the site production-ready or send paid traffic as a live lead-capture system until P0 and P1 are closed. Do not promise a conversion rate (including 90%) without real traffic and funnel data.
+
+
+## 2026-11-18 — Market research commissioned
+- User requested a primary-source analysis of Russian construction 2020–2026, outlook to 2030, cohort mapping, public vs commercial demand, national and Nizhny Novgorod SOM, city comparison and Parabellum 5×1 niche selection.
+- Research started but is **not complete**. No final SOM, city ranking, full cohort analysis or 2030 model should be represented as delivered.
+- Preliminary market indicators and the full remaining scope are documented in `Terra/Handoffs/UBER_STROY_MARKET_RESEARCH_HANDOFF_2026-11-18.md`.
+- Existing local workbooks are the starting point; avoid treating overlapping register rows as unique active sites.

@@ -33,7 +33,7 @@ On 2026-11-18 Maxim messaged her asking for a trade breakdown and whether she ca
 ## 4. CRM changes
 
 Saved updated workbook:
-`/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v2.xlsx`
+`/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v3.xlsx`
 
 Changes:
 - Added C-019 — Rinat, foreman / warm access contact for Черниговская.

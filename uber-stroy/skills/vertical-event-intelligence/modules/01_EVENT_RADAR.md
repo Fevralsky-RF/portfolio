@@ -1,0 +1,3 @@
+# M01 — Event Radar
+
+Find events by vertical, region, time window and buyer role. Search official organiser pages, chambers of commerce, sector associations, government agencies, developers, infrastructure customers and exhibitors. Capture date, venue, registration, fee, audience statement, named companies, evidence level and checked-at date. Return longlist and scored shortlist. No event without a source URL; no guessed attendees.

@@ -109,3 +109,13 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - The 27 verticals are a normalized working taxonomy. Historical project notes recorded 23 active cohort directions and four missing legacy entries; do not claim verbatim recovery.
 - Full package and Terra handoff/session/QA saved in Library. GitHub skill entry published under `uber-stroy/skills/vertical-event-intelligence/`.
 - Documentation complete; field validation, live source adapters and CRM integration remain pending. Local Obsidian sync is not verified.
+
+
+## 2026-11-18 — UBERСТРОЙ CEO skill v1.0.0
+- Created a project-level CEO / Chief of Staff / CRO / COO orchestration skill.
+- Core objective: prioritize next actions by realistic probability and timing of collected cash, positive contribution margin and repeatability.
+- Includes dated project snapshot, demand/supply funnel coordination, `DAILY_CASH_SPRINT`, bottleneck diagnosis, opportunity qualification, unit economics, cash-cycle controls, compliance safeguards and specialist-skill handoffs.
+- Published under `uber-stroy/skills/uberstroy-ceo/`; indexed in the Uberстрой skill registry and Terra skill register.
+- Master skill and ZIP package saved to personal Library.
+- The CEO skill orchestrates existing specialist skills; it does not merge or replace Growth Agent, Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect or Vertical Event Intelligence.
+- Documentation QA passed. Runtime installation, local Obsidian synchronization and field effectiveness are not claimed. Validate against real calls, qualified demand, confirmed supply and paid fulfilment.

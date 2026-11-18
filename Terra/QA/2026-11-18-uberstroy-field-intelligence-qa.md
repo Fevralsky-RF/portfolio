@@ -2,7 +2,7 @@
 **Date:** 2026-11-18
 
 ## Passed
-- [x] Master CRM v2 created and saved to Library.
+- [x] Master CRM v3 created and saved to Library; summary formulas extended through the new CRM rows.
 - [x] New contact C-019 (Rinat) added.
 - [x] New contact WF-008 (Коля Колес) added.
 - [x] WF-001 Alexander updated with latest claimed total reserve 50–70 and trade mix.

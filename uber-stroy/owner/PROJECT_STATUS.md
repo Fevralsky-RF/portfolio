@@ -99,3 +99,13 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - Taxonomy provenance: the 2026-11-09 meeting pack said the then-current cohort map contained 23 directions and the legacy count of 27 required reconciliation of four missing items. The v1.0 list is a normalized operating taxonomy, not a verbatim recovery of the legacy list.
 - QA: package structure, 27 verticals, workflow, evidence ladder, scoring and governance documented. Local Obsidian sync is not directly verified. Field effectiveness remains unproven until tests on three verticals and two events.
 - The skill is a file-based reusable package; it is not automatically installed as a runtime agent.
+
+
+## 2026-11-18 — Vertical Event Intelligence & Field Sales v1.0.0
+- Added a modular event-intelligence and field-sales skill covering 27 construction, infrastructure, engineering, municipal and adjacent verticals.
+- Package includes master skill, normalized 27-vertical catalogue, scoring/governance, prompt library, templates and six operating modules.
+- Workflow: event radar → event fit scoring → vertical/event mapping → target account and buyer mapping → pre-event ABM → field discovery → qualified opportunity → follow-up → event ROI.
+- Interfaces with Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent are defined; no existing skill was overwritten.
+- The 27 verticals are a normalized working taxonomy. Historical project notes recorded 23 active cohort directions and four missing legacy entries; do not claim verbatim recovery.
+- Full package and Terra handoff/session/QA saved in Library. GitHub skill entry published under `uber-stroy/skills/vertical-event-intelligence/`.
+- Documentation complete; field validation, live source adapters and CRM integration remain pending. Local Obsidian sync is not verified.

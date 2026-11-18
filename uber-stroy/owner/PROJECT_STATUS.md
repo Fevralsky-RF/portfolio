@@ -68,3 +68,12 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - Complements Construction Market Intelligence; does not replace it.
 - No live source adapters, CRM automation, bulk outreach or automatic installation are claimed by this documentation release.
 - Field validation against real opportunities remains pending.
+
+
+## 2026-11-18 — Conversion skill architecture
+
+- Added reusable `ICP & Conversion Architect v1.0.0` under `uber-stroy/skills/icp-conversion-architect/`.
+- Scope: ICP/buying roles, JTBD, VoC, pain-to-value, offer/messaging, creative briefs, landing architecture, forms, CRO and experiment design.
+- It complements Growth Agent v2; it does not replace channel strategy, CRM, sales pipeline or growth economics.
+- UBER STROY is its first reference implementation; owner, foreman, site master and HR are separate buyer-side ICPs; brigade lead is a supply-side funnel.
+- This skill creation does not change the owner landing's existing photo/form production blockers.

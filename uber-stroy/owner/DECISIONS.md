@@ -29,3 +29,16 @@ The national/regional construction market study is a separate research deliverab
 
 ## 2026-11-18 — Demand aggregation and managed-marketplace-first
 UBER STROY's strategic model is a construction workforce demand aggregator connected to its own and partner workforce network. Initial sources: HeadHunter, Avito and the construction-company registry. The registry represents accounts; vacancies/listings are separate signals; a verified external-workforce need becomes an opportunity. Start as a managed operator that qualifies demand, confirms capacity, matches crews, coordinates fulfilment and learns from outcomes. Move toward self-service marketplace only after repeatable paid transactions. All outreach remains human-approved; source access and reuse must be permitted. Live scanning and production CRM are not yet confirmed.
+
+
+## 2026-11-18 — ICP & Conversion Architect skill
+
+**Decision:** create a reusable `ICP & Conversion Architect v1.0.0` for deep customer understanding and conversion design.
+
+**Scope:** ICP and buying committee, JTBD, VoC, pains/outcomes, value proposition, offers, customer-language copy, creative strategy, landing pages, forms, CRO and experimentation.
+
+**Boundary:** Growth Agent v2 remains responsible for growth system, channels, ABM/content cadence, CRM/sales pipeline, lead qualification and economics. ICP & Conversion Architect owns the quality of customer insight, offer, creative and conversion surface. Keep the skills distinct and connect through a documented handoff.
+
+**UBER STROY application:** first reference project. Owner, foreman, site master and HR are distinct buyer-side ICPs; brigade lead / worker-team provider is a separate supply-side funnel.
+
+**Governance:** no fabricated evidence, no unsupported guarantees, no promised conversion percentage and no production-ready status without verified assets, functioning lead flow and privacy/compliance gates.

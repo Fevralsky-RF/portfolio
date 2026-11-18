@@ -99,3 +99,12 @@ The 27-item list is a normalized working taxonomy built from project records and
 **Geographic priority:** Nizhny Novgorod remains the immediate cash focus. Moscow landscaping through Rinat is a next-season option only. No geographic expansion or mobilisation to Kemerovo without a separate commercial decision and proven economics.
 
 **Execution rule:** the next milestone is one qualified local work package with a named payer, verified trade-specific capacity, written terms and positive contribution margin—not additional scraping or broad market coverage.
+
+
+## 2026-11-18 — Local partner loop and 10-worker offer
+
+**Rinat / Черниговская:** Maxim has offered Rinat 10 monolithic workers who have become free. Await Rinat's response. Treat this as a supply offer, not confirmed demand or an order. If accepted, qualify the actual work package, contractor, buyer/payer, exact headcount and trade mix, dates, rate, site access, HSE/legal requirements, acceptance and payment.
+
+**Коля Колес:** his current «Белгорешенск» project needs welder-installers, but Maxim declined the geography. Keep the relationship warm through reciprocal Nizhny Novgorod referrals: Kоля alerts Uberстрой to local jobs; Uberстрой alerts Kоля to suitable local workers. Do not pursue the out-of-region project in the current sprint.
+
+**Operating focus:** Nizhny Novgorod remains the immediate cash geography. Keep partner exchanges lightweight and opportunistic; the main sprint remains converting the 10-worker offer (if Rinat responds) or another local buyer need into a qualified, paid pilot. No mobilisation without confirmed buyer, payer, terms, legal/HSE and positive contribution.

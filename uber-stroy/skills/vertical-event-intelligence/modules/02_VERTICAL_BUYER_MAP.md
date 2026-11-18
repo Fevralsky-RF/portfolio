@@ -1,0 +1,3 @@
+# M02 — Vertical & Buyer Map
+
+For each selected vertical identify asset owners, technical customers, developers, general contractors, specialist subcontractors, operators and maintenance organisations. Map buying committee: economic buyer, construction/production director, project manager, site foreman, HR, procurement, operations/maintenance manager. Separate workforce suppliers from demand-side buyers. Identify work packages and exact labour roles; don't assume all work is suitable for Uber Stroy.

@@ -25,3 +25,7 @@ Store detailed handoff in `/Terra/Handoffs/`, session save in `/Terra/50-Session
 
 ## 2026-11-18 — Market research scope and evidence discipline
 The national/regional construction market study is a separate research deliverable, not a landing-page change. Quantitative claims must use primary sources and distinguish construction output, approved budget allocations, tender values, payroll, outsourced shift labour and Uber Stroy revenue. Do not present preliminary metrics or a working niche hypothesis as final conclusions. See `Terra/Handoffs/UBER_STROY_MARKET_RESEARCH_HANDOFF_2026-11-18.md`.
+
+
+## 2026-11-18 — Demand aggregation and managed-marketplace-first
+UBER STROY's strategic model is a construction workforce demand aggregator connected to its own and partner workforce network. Initial sources: HeadHunter, Avito and the construction-company registry. The registry represents accounts; vacancies/listings are separate signals; a verified external-workforce need becomes an opportunity. Start as a managed operator that qualifies demand, confirms capacity, matches crews, coordinates fulfilment and learns from outcomes. Move toward self-service marketplace only after repeatable paid transactions. All outreach remains human-approved; source access and reuse must be permitted. Live scanning and production CRM are not yet confirmed.

@@ -51,3 +51,12 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - Research started but is **not complete**. No final SOM, city ranking, full cohort analysis or 2030 model should be represented as delivered.
 - Preliminary market indicators and the full remaining scope are documented in `Terra/Handoffs/UBER_STROY_MARKET_RESEARCH_HANDOFF_2026-11-18.md`.
 - Existing local workbooks are the starting point; avoid treating overlapping register rows as unique active sites.
+
+
+## 2026-11-18 — Demand aggregator strategy
+- Strategic direction: UBER STROY is being developed as a construction workforce demand aggregator with a managed-marketplace/operator model first; self-service marketplace is a later stage after repeatable paid fulfilment.
+- Initial data perimeter: HeadHunter, Avito and the canonical construction-company registry for Nizhny Novgorod and region.
+- Entity model: company = account; vacancy/listing = signal; verified buyer need = opportunity. Multiple signals attach to one account; deduplicate reposts and mirrors while retaining source evidence/history.
+- Sales funnel: signal discovery → dedupe → company match → demand qualification → buyer qualification → human-approved contact → need confirmation → offer → pilot → fulfilment → outcome.
+- No live HH/Avito scanner, production CRM or automated outreach is claimed as implemented. WF-00 remains a synthetic sandbox in the latest private project status.
+- Full non-sensitive strategy brief: `uber-stroy/DEMAND-AGGREGATOR-STRATEGY.md`.

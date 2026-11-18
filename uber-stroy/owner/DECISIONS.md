@@ -108,3 +108,13 @@ The 27-item list is a normalized working taxonomy built from project records and
 **Коля Колес:** his current «Белгорешенск» project needs welder-installers, but Maxim declined the geography. Keep the relationship warm through reciprocal Nizhny Novgorod referrals: Kоля alerts Uberстрой to local jobs; Uberстрой alerts Kоля to suitable local workers. Do not pursue the out-of-region project in the current sprint.
 
 **Operating focus:** Nizhny Novgorod remains the immediate cash geography. Keep partner exchanges lightweight and opportunistic; the main sprint remains converting the 10-worker offer (if Rinat responds) or another local buyer need into a qualified, paid pilot. No mobilisation without confirmed buyer, payer, terms, legal/HSE and positive contribution.
+
+
+## 2026-11-18 — Warm contacts as a distinct sales channel
+**Decision:** maintain a separate warm-contact / call-list register for personal-network introductions and outreach. It complements, but does not replace, the main CRM's customer, contractor and workforce records.
+
+**Initial register:** 10 entries, including Kоля Колес linked to existing CRM record WF-008 without duplication. Supplied phones: Виталий («Меганит») +7 920 001-31-37; Саид Хасянович +7 920 254-55-03; Дима Третьяков +7 951 904-83-37. The initially supplied Dima number was corrected; +7 920 254-55-03 belongs only to Said. Unknown phones remain blank.
+
+**Qualification rule:** classify each person as buyer/decision-maker, contractor/supplier or connector; a warm introduction is not a confirmed buyer need, order or available workforce. Verify organization, active object, payer, scope, timing, rate, legal model and next action before commercial commitments.
+
+**Priority:** investigate «Окский берег» and identify developer/customer, general contractor, subcontractors, site/project decision-makers and payer; clarify Саид Хасянович's role and introduction path.

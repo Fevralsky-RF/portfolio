@@ -14,8 +14,4 @@
 
 All skills label evidence vs hypothesis, avoid fabricated proof and preserve human approval for outreach, claims and production changes.
 
-
-## Proposed — pending explicit approval
-| Skill | Proposed scope | Status |
-|---|---|---|
-| Construction Event Intelligence & Field Sales | Event research and fit scoring; company/person mapping from public event evidence; pre-event meeting plan; onsite discovery; post-event follow-up; event-to-opportunity attribution | Proposal only — not created; do not treat as an active skill until user approves |
+| Vertical Event Intelligence & Field Sales | `vertical-event-intelligence/SKILL.md` | Event radar, 27 verticals, buyer mapping, event scoring, pre-event ABM, field discovery, follow-up and event ROI |

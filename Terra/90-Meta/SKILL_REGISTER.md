@@ -15,3 +15,5 @@ Repository: `Fevralsky-RF/portfolio` · branch `main`.
 - Back up an existing skill to `/Terra/90-Meta/Skills-backup/` before replacing/upgrading it.
 - Keep version, changelog, source evidence, handoff and QA current.
 - File-based skills are reusable instruction packages, not automatically installed runtime agents.
+
+| UBERСТРОЙ CEO | 1.0.0 | `uber-stroy/skills/uberstroy-ceo/SKILL.md` | Project-level CEO/Chief of Staff/CRO/COO orchestration; cash-first prioritization, daily sprint, bottleneck diagnosis and operating control | Orchestrates specialist skills; does not replace Growth Agent, CMI, Demand Hunter, ICP & Conversion Architect or Vertical Event Intelligence |

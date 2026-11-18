@@ -55,3 +55,9 @@ UBER STROY's strategic model is a construction workforce demand aggregator conne
 **Evidence and execution gates:** source-first; E0–E5 evidence ladder with confidence separate; anti-double-counting; demand is not worker capacity; labour estimates must be work-package/productivity based; legal/HSE, verified supply, payer, site access and positive contribution remain hard gates.
 
 **Release status:** v1.0.0 package is saved and versioned. It is a file-based skill, not an automatically installed runtime agent. Field effectiveness is unproven until validated against a real project/work package and executed shift. Local Obsidian sync was not directly verified in this session.
+
+
+## 2026-11-18 — Event-led field sales as a B2B acquisition channel
+Use industry events as a deliberate account-based field-sales channel, not merely a networking calendar. Prioritise events by overlap with buyer ICP and buying committee, evidence of actual participating companies, access/registration certainty, and potential workforce demand. Before attending, qualify target accounts and book meetings; onsite, discover real workforce demand; follow up within 24 hours and only propose a pilot after capacity and economics are confirmed.
+
+**Proposed skill (not approved / not created):** Construction Event Intelligence & Field Sales. Its distinct scope would be event research and event-fit scoring, speaker/sponsor/company extraction, target-account mapping, pre-event outreach planning, onsite discovery, post-event follow-up and event attribution. It must complement—not duplicate—Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent v2. Wait for explicit user approval before creating or registering it as an active skill.

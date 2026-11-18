@@ -42,3 +42,16 @@ UBER STROY's strategic model is a construction workforce demand aggregator conne
 **UBER STROY application:** first reference project. Owner, foreman, site master and HR are distinct buyer-side ICPs; brigade lead / worker-team provider is a separate supply-side funnel.
 
 **Governance:** no fabricated evidence, no unsupported guarantees, no promised conversion percentage and no production-ready status without verified assets, functioning lead flow and privacy/compliance gates.
+
+
+## 2026-11-18 — Construction Market Intelligence v1.0.0
+
+**Decision:** create a dedicated modular Construction Market Intelligence skill for market, project, procurement, labour-demand, buyer/account and opportunity intelligence.
+
+**Architecture:** one orchestrator plus 14 specialist modules (M01–M14), with data dictionary, scoring/governance, prompt library, README and changelog. Published at `uber-stroy/skills/construction-market-intelligence/`; permanent master skill and support pack saved in Library.
+
+**Boundary:** complements Growth Agent v2 (growth/channel/CRM/sales), Construction Demand Hunter (operational demand-signal discovery and qualification), and ICP & Conversion Architect (customer insight and conversion surface). Do not merge or overwrite these skills.
+
+**Evidence and execution gates:** source-first; E0–E5 evidence ladder with confidence separate; anti-double-counting; demand is not worker capacity; labour estimates must be work-package/productivity based; legal/HSE, verified supply, payer, site access and positive contribution remain hard gates.
+
+**Release status:** v1.0.0 package is saved and versioned. It is a file-based skill, not an automatically installed runtime agent. Field effectiveness is unproven until validated against a real project/work package and executed shift. Local Obsidian sync was not directly verified in this session.

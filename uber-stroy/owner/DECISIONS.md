@@ -57,7 +57,12 @@ UBER STROY's strategic model is a construction workforce demand aggregator conne
 **Release status:** v1.0.0 package is saved and versioned. It is a file-based skill, not an automatically installed runtime agent. Field effectiveness is unproven until validated against a real project/work package and executed shift. Local Obsidian sync was not directly verified in this session.
 
 
-## 2026-11-18 — Event-led field sales as a B2B acquisition channel
-Use industry events as a deliberate account-based field-sales channel, not merely a networking calendar. Prioritise events by overlap with buyer ICP and buying committee, evidence of actual participating companies, access/registration certainty, and potential workforce demand. Before attending, qualify target accounts and book meetings; onsite, discover real workforce demand; follow up within 24 hours and only propose a pilot after capacity and economics are confirmed.
 
-**Proposed skill (not approved / not created):** Construction Event Intelligence & Field Sales. Its distinct scope would be event research and event-fit scoring, speaker/sponsor/company extraction, target-account mapping, pre-event outreach planning, onsite discovery, post-event follow-up and event attribution. It must complement—not duplicate—Construction Market Intelligence, Construction Demand Hunter, ICP & Conversion Architect and Growth Agent v2. Wait for explicit user approval before creating or registering it as an active skill.
+## 2026-11-18 — Vertical Event Intelligence & Field Sales v1.0.0
+**Decision:** publish a separate modular skill covering 27 normalized Uber Stroy market verticals. The skill owns the event-specific pre-event / onsite / post-event field-sales loop: event discovery and scoring, buyer/account mapping, meeting preparation, onsite discovery, opportunity qualification, follow-up and event ROI.
+
+**Boundary:** Construction Market Intelligence owns broad market/project/procurement intelligence; Construction Demand Hunter owns operational demand-signal discovery and qualification; ICP & Conversion Architect owns customer insight and conversion design; Growth Agent v2 owns growth, ABM, CRM and sales pipeline. The new skill complements these capabilities and must hand off structured records to them.
+
+**Taxonomy note:** historical notes state 23 current cohorts and a legacy commercial count of 27 with four categories to reconcile. The published 27-item catalogue is a normalized operational taxonomy, not a claim to have recovered the exact historic list.
+
+**Governance:** evidence levels E0–E5; organiser-stated audience is not confirmed attendance; human approval before outreach; no invented contacts or demand; legal, HSE, verified supply, payer, site access, contract and positive contribution are hard gates. Field validation required.

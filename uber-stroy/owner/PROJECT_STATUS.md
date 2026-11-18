@@ -88,3 +88,12 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 - The package is file-based documentation, not an automatically installed runtime skill. Load the orchestrator and relevant modules when invoking it.
 - QA status: content, Library persistence, Git persistence and handoff artifacts verified. Local Obsidian vault sync was not directly verified. Effectiveness has not yet been field-tested against a real work package or executed shift.
 - Next validation: test one Nizhny Novgorod project and one tender; validate M04 labour demand, M05 actual contribution economics, and M12 legal/HSE gates before treating outputs as operationally proven.
+
+
+## 2026-11-18 — Event intelligence and field sales session
+- Defined the core event ICP: general contractors and specialist contractors with active projects and recurring workforce demand; adjacent segments include developers/low-rise housing, engineering networks, gasification, energy, roads, infrastructure and landscaping.
+- Buying roles: owner/CEO, construction/production director, project/site manager/foreman, HR and procurement. Buyer-side and worker-supplier funnels remain separate.
+- Recommended field shortlist: Builders Club business forum (3 Dec 2026), StroyEnergoDialog (2 Dec 2026; participation and details require confirmation), and IЖС-Transformation (27 Nov 2026). Gas Russia Forum (25–27 Nov 2026) is an additional opportunity subject to late-entry confirmation.
+- Test targets per event: 15–20 relevant contacts, 5–7 substantive conversations, 2–3 qualified needs and 1 pilot discussion. These are hypotheses/KPIs, not promised conversion.
+- Proposed new skill: Construction Event Intelligence & Field Sales. **Proposal only; not created and pending explicit user approval.**
+- Terra handoff/session/QA artifacts are saved under `Terra/Handoffs/` and `Terra/50-Sessions/`. Local Obsidian sync is not verified.

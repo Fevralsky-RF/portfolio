@@ -15,3 +15,5 @@
 All skills label evidence vs hypothesis, avoid fabricated proof and preserve human approval for outreach, claims and production changes.
 
 | Vertical Event Intelligence & Field Sales | `vertical-event-intelligence/SKILL.md` | Event radar, 27 verticals, buyer mapping, event scoring, pre-event ABM, field discovery, follow-up and event ROI |
+
+| Vertical Event Intelligence & Field Sales | `vertical-event-intelligence/SKILL.md` | Event radar, 27-vertical mapping, pre-event ABM, field discovery, opportunity handoff and event ROI |

@@ -13,3 +13,9 @@
 - Sales, Operations, Supply, Finance and Legal own approvals and execution.
 
 All skills label evidence vs hypothesis, avoid fabricated proof and preserve human approval for outreach, claims and production changes.
+
+
+## Proposed — pending explicit approval
+| Skill | Proposed scope | Status |
+|---|---|---|
+| Construction Event Intelligence & Field Sales | Event research and fit scoring; company/person mapping from public event evidence; pre-event meeting plan; onsite discovery; post-event follow-up; event-to-opportunity attribution | Proposal only — not created; do not treat as an active skill until user approves |

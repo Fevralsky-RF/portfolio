@@ -134,3 +134,12 @@ Do not call the site production-ready or send paid traffic as a live lead-captur
 For the immediate cash sprint, focus on **Nizhny Novgorod** and pursue a concrete, executable work package rather than broad regional expansion. Prioritize: (1) qualify the Черниговская route through Rinat, especially monolithic/support needs and the actual paying contractor; (2) qualify Alexander's 50–70 claimed total reserve by trade and date; (3) await R-DOM52's category breakdown; (4) keep Kоля Колес as a warm local contractor contact, but do not divert effort to Kemerovo. Moscow landscaping is a next-season option, not near-term revenue.
 
 No order, buyer need, crew availability, price, contract or payment is confirmed by this update.
+
+
+## 2026-11-18 — Field update: 10 monolithic workers offered; local partner loop clarified
+
+- **Ринат / C-019 / Черниговская:** on 2026-11-18 Maxim messaged Rinat that Uberстрой has **10 monolithic workers newly freed up**. The offer has been sent; Rinat's reply is pending. This is an outbound supply offer, not a confirmed buyer request, order, booking or guaranteed date-specific capacity. If Rinat responds positively, qualify exact site/project and contractor, buyer/decision-maker/payer, number and skill mix, start date and shifts, rate, site access, legal engagement, HSE/PPE, acceptance and payment terms.
+- **Коля Колес / WF-008:** clarified that his current non-local project is in «Белгорешенске» and needs welder-installers. Maxim declined this geography for now. They agreed to exchange local signals: Kоля will notify Maxim if he has new Nizhny Novgorod objects/orders; Uberстрой will notify Kоля when suitable people are available locally. No active Nizhny Novgorod demand from Kоля is confirmed.
+- **Geography:** continue Nizhny Novgorod first. The «Белгорешенск» project is outside the current sprint; do not allocate sourcing or mobilisation effort to it. Moscow landscaping via Rinat remains next-season optionality only.
+- **CRM:** updated master workbook v5 saved at `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-18_v5.xlsx`. Added ACT-035 (Rinat offer) and ACT-036 (Kоля partner exchange); updated C-019 and WF-008.
+- **Truth status:** 10 workers were offered to Rinat; no response/order yet. Kоля's out-of-region welder-installer need was declined. No local Kоля job, payer, rate or start date is confirmed.

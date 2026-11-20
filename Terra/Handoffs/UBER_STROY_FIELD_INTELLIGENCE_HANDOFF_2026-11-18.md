@@ -77,3 +77,40 @@ Changes:
 - C-019 updated with the 10-monolithic-worker offer and pending response.
 - WF-008 updated with the declined out-of-region project and reciprocal Nizhny Novgorod referral arrangement.
 - Activity log appended: ACT-035 and ACT-036.
+
+
+## 7. Addendum — first commercial MVP pilot at Neimark, 2026-11-20
+
+### User-reported agreement
+- Maxim is currently working as a general labourer in an existing crew at the Neimark construction project in Nizhny Novgorod.
+- He reports an agreement to place **four additional general labourers** into that crew, with the first scheduled exit on **2026-11-21**.
+- Incoming rate to Maxim / Uberстрой arrangement: **3,700 RUB per worker-shift**.
+- Agreed payout to each worker: **3,200 RUB per worker-shift**.
+- Gross spread: **500 RUB per worker-shift**; with four scheduled people, **2,000 RUB gross spread per shift** before taxes, logistics, administration, replacements and other costs.
+- Planned shift totals: 14,800 RUB incoming; 12,800 RUB payouts; 2,000 RUB gross spread. These are calculations from the reported agreed rates, not collected cash or net profit.
+- Maxim hopes for regular placement of all four from the week of 2026-11-23 and wants to build toward 10 workers on the same site. Regularity and expansion are not confirmed.
+- Maxim describes the project's construction value as 41 billion RUB and as one of Nizhny Novgorod's most expensive projects. This is user-supplied and not independently verified.
+
+### CRM / records
+- New opportunity: **C-020** — Neimark current construction crew; counterparty and payer to be identified.
+- Activity record: **ACT-037**.
+- Pilot ID: **MVP-001**.
+- Workbook: `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-20_MVP_v6.xlsx`, with the `MVP и смены` sheet and execution checklist.
+- Earlier research may identify Monotek in the project's general-contractor chain, but that does **not** prove Monotek is the party paying under Maxim's current arrangement. Verify the exact legal counterparty.
+
+### Critical distinctions
+- Confirmed as user-reported: agreement, four-person planned group, scheduled date and rates.
+- Pending: actual attendance, full-shift execution, work acceptance, incoming payment, same-day payout, exact client/legal entity, payment basis, exact task and repeat schedule.
+- Not yet established: completed paid shift, collected revenue, net contribution, repeat contract or guaranteed workforce capacity.
+
+### 2026-11-21 follow-through
+1. Confirm the four-person roster and readiness; do not leave arrival until the morning.
+2. Confirm site access, tasks, shift duration, safety induction, PPE and legal engagement.
+3. Identify who accepts the work and who is legally / financially responsible for paying.
+4. Record attendance and actual hours; have the accepting person acknowledge the completed shift.
+5. Verify the incoming amount and its actual date; pay workers 3,200 RUB each as agreed.
+6. Capture all direct costs and calculate actual contribution.
+7. Obtain a specific repeat schedule before treating four weekly placements as recurring; scale to 10 only after quality and payment proof.
+
+### CEO implication
+This is the first live field test of the managed labour-supply model. The most valuable next activity is not additional market research: it is controlled execution, payment verification and learning whether this customer/site repeats.

@@ -118,3 +118,23 @@ The 27-item list is a normalized working taxonomy built from project records and
 **Qualification rule:** classify each person as buyer/decision-maker, contractor/supplier or connector; a warm introduction is not a confirmed buyer need, order or available workforce. Verify organization, active object, payer, scope, timing, rate, legal model and next action before commercial commitments.
 
 **Priority:** investigate «Окский берег» and identify developer/customer, general contractor, subcontractors, site/project decision-makers and payer; clarify Саид Хасянович's role and introduction path.
+
+
+## 2026-11-20 — Neimark becomes the first executing MVP pilot
+
+**Decision:** use the existing onsite relationship and the agreed four-person placement as Uberстрой's first live operating pilot (MVP-001). This supersedes a purely prospecting-led week as the immediate priority: execute and learn from the real shift before expanding lead generation or automation.
+
+**Commercial terms reported by Maxim:**
+- Four general labourers scheduled to join the existing crew at the Neimark site on 2026-11-21.
+- Incoming rate to Maxim / Uberстрой arrangement: 3,700 RUB per worker-shift.
+- Worker payout: 3,200 RUB per worker-shift.
+- Gross spread: 500 RUB per worker-shift; 2,000 RUB for four people per shift, before taxes, logistics, administration, replacements and other costs.
+- These rates are specific to MVP-001 and must not be assumed for other sites or trades.
+
+**Status:** agreement and planned first exit are reported by Maxim; attendance, accepted work, incoming payment and worker settlement have not yet been verified. Do not report completed revenue, collected cash or net profit yet.
+
+**Repeatability:** four regular workers from 2026-11-23 are hoped for, not confirmed. Scaling to 10 people is a target, not a commitment or verified capacity.
+
+**Execution gates:** verify roster and date-specific availability; task and duration; site access, induction, HSE/PPE and legal engagement; named accepting person and payer; evidence of work completion; payment timing and worker settlement; actual contribution after all costs.
+
+**Governance:** preserve Nizhny Novgorod focus. Do not assume the known project's general contractor is the buyer or payer for this specific crew arrangement without confirmation. Do not commit more workers until first-shift quality, payment and repeat demand are demonstrated.

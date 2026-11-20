@@ -1,8 +1,9 @@
 # UBER STROY — PROJECT STATUS
 
-**As of:** 2026-11-18  
+**As of:** 2026-11-20  
 **Current ICP slice:** owner / general contractor  
-**Status:** public landing exists; **not production-ready**.
+**Website status:** public landing exists; **not production-ready**.
+**Commercial status:** first operating MVP pilot agreed; four general labourers are scheduled to start on 2026-11-21 at the Neimark construction site. Execution, acceptance, collection and repeatability remain unverified.
 
 ## Confirmed state
 
@@ -152,3 +153,26 @@ No order, buyer need, crew availability, price, contract or payment is confirmed
 - Priority research task: map the «Окский берег» construction contact chain — developer/customer, general contractor, subcontractors, site/project decision-makers and payer; clarify Саид Хасянович's exact role and possible introductions.
 - CRM workbook v6 prepared with a dedicated «Тёплые контакты» sheet. Handoff: `Terra/Handoffs/UBER_STROY_WARM_CONTACTS_HANDOFF_2026-11-18.md`; session save and QA under `Terra/50-Sessions/`.
 - Treat all entries as warm leads/connectors, not confirmed demand or orders. Qualify buyer vs supplier/contractor vs connector and record call outcomes.
+
+
+## 2026-11-20 — First commercial MVP pilot agreed: Neimark
+
+- **Milestone:** Maxim reports that, while working as a general labourer in an existing crew at the Neimark construction project in Nizhny Novgorod, he agreed to place four additional general labourers into that crew for a first shift on **2026-11-21**.
+- **Pilot ID / CRM:** MVP-001 / C-020. Activity: ACT-037. The CRM workbook v6 is saved in the personal Library at `/Uber Stroy/CRM/Workforce_Fleet_Master_CRM_NN_2026-11-20_MVP_v6.xlsx`; it includes the dedicated `MVP и смены` tracker.
+- **Agreed unit rates, as reported by Maxim:** incoming rate to Maxim / Uberстрой arrangement = **3,700 RUB per worker-shift**; agreed worker payout = **3,200 RUB per worker-shift**; gross spread = **500 RUB per worker-shift**. For the scheduled four-person shift: planned inflow 14,800 RUB, planned worker payouts 12,800 RUB, gross spread 2,000 RUB before taxes, logistics, administration, replacements and other costs. This is a deal-specific pilot rate, not a market-wide tariff.
+- **Status discipline:** agreement and scheduled headcount are user-reported; the shift has not yet happened. Do not record the shift as completed, cash as collected, or 2,000 RUB as net profit.
+- **Repeat potential:** Maxim hopes that all four will continue regularly from the week of 2026-11-23 and aims to grow the team to 10 on the same site. This is an ambition / hypothesis, not a confirmed schedule or guaranteed capacity.
+- **Buyer / payer / legal chain:** the exact contracting legal entity, individual decision-maker, payer, payment instrument and documentary basis have not yet been recorded. Do not infer that a previously researched general contractor is the payer for this specific arrangement.
+- **Site / project value:** Maxim describes Neimark as one of Nizhny Novgorod's highest-value projects and cites 41 billion RUB. This figure and superlative are user-provided and have not been independently verified; they are not part of the pilot unit-economics calculation.
+- **CEO implication:** the project has moved from a purely hypothetical staffing MVP to a scheduled field pilot. The next proof points are actual attendance, accepted work, collection of the incoming amount, same-day worker settlement, complete cost accounting and a repeat order.
+
+### 2026-11-21 execution gates
+
+1. Confirm the four named workers, contacts, availability and agreed payout.
+2. Confirm precise work tasks, shift duration, start point and site entry.
+3. Confirm the site's admission, safety briefing, occupational-safety and PPE requirements, and the lawful engagement model for every worker.
+4. Identify the responsible person who accepts the shift and the legal / payment counterparty.
+5. Record actual attendance, hours, work accepted and any replacement or deduction.
+6. Confirm the amount and timing of the incoming payment; then document 3,200 RUB paid to each worker.
+7. Calculate actual gross and net contribution after taxes, logistics, payment costs and other expenses.
+8. Before expanding, obtain an explicit repeat schedule for the week of 2026-11-23. Scale toward 10 only after quality and unit economics are demonstrated.
